@@ -97,14 +97,33 @@ const STEPS: TourStep[] = [
     waitForSelector: 1000,
     scrollIntoView: false,
     triggerAction: () => {
-      // Auto-deplier le concept retenu après un court délai
-      setTimeout(() => {
+      // Auto-deplier le concept retenu — on retry plusieurs fois car sur mobile
+      // le bottom sheet peut encore animer
+      const tryDeplier = (attempt = 0) => {
+        // Si déjà déplié → stop
+        if (document.querySelector('[data-tour-proof-ctx="1"]')) return
         const block = document.querySelector('[data-tour-concept-block="retenu"]')
-        const button = block?.querySelector('button')
-        if (button && !document.querySelector('[data-tour-proof-ctx="1"]')) {
-          button.click()
+        if (!block) {
+          if (attempt < 10) setTimeout(() => tryDeplier(attempt + 1), 200)
+          return
         }
-      }, 300)
+        // Cherche le bouton "toggle" : celui qui commence par ▶ ou ▼ (au lieu du premier
+        // bouton venu, qui pourrait être un autre bouton du panneau)
+        const buttons = Array.from(block.querySelectorAll('button')) as HTMLButtonElement[]
+        const toggleBtn = buttons.find(b => /^[▶▼]/.test(b.textContent?.trim() || '')) || buttons[0]
+        if (toggleBtn) {
+          toggleBtn.click()
+          // Vérifie que ça a marché ; sinon retry
+          setTimeout(() => {
+            if (!document.querySelector('[data-tour-proof-ctx="1"]') && attempt < 5) {
+              tryDeplier(attempt + 1)
+            }
+          }, 250)
+        } else if (attempt < 10) {
+          setTimeout(() => tryDeplier(attempt + 1), 200)
+        }
+      }
+      setTimeout(() => tryDeplier(), 300)
     },
   },
   {
@@ -280,6 +299,12 @@ export default function TutorialGuide() {
       if (didScroll) {
         setTimeout(() => setRects(computeRects(el, current)), 600)
       }
+      // 3) Re-capture systématique 500ms plus tard (couvre les animations CSS/transitions
+      //    comme le slide-up du bottom sheet sur mobile, qui décalent la position après coup)
+      setTimeout(() => {
+        const elNow = document.querySelector(current.selector) as HTMLElement | null
+        if (elNow) setRects(computeRects(elNow, current))
+      }, 500)
       // Si alsoHighlight, polling rAF jusqu'à ce que l'élément soit visible (max 1.2s)
       // Cela garantit que dès que le tooltip est rendu/forcé, on recalcule immédiatement
       if (current.alsoHighlight) {
@@ -301,13 +326,17 @@ export default function TutorialGuide() {
         setTimeout(tickAlso, current.scrollIntoView ? 650 : 60)
       }
     }
-    // Helper : élément valide = présent dans le DOM ET avec des dimensions non-nulles
-    // (sinon getBoundingClientRect retourne 0,0,0,0 et la surbrillance est invisible)
+    // Helper : élément valide = présent dans le DOM, dimensions non-nulles, ET dans le viewport
+    // (sur mobile, le bottom sheet glisse depuis le bas — pendant l'animation, le rect est
+    // hors écran. Il faut rejeter ces captures pour ne garder que la position finale.)
     const findVisibleEl = (): HTMLElement | null => {
       const e = document.querySelector(current.selector) as HTMLElement | null
       if (!e) return null
       const r = e.getBoundingClientRect()
       if (r.width <= 0 || r.height <= 0) return null
+      const vpH = typeof window !== 'undefined' ? window.innerHeight : 800
+      // Rejette si entièrement hors écran (e.g. pendant l'animation slide-up du bottom sheet)
+      if (r.bottom <= 0 || r.top >= vpH) return null
       return e
     }
     const el = findVisibleEl()
