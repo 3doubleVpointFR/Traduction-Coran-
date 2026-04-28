@@ -194,7 +194,8 @@ export default async function HomePage() {
           </h2>
           <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.3))' }} />
         </div>
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-2 md:gap-0">
+        {/* Desktop : ligne horizontale avec flèches */}
+        <div className="hidden md:flex items-center justify-center gap-0">
           {PIPELINE.map((p, i) => (
             <div key={p.step} className="flex items-center">
               <div className="text-center px-3">
@@ -202,8 +203,56 @@ export default async function HomePage() {
                 <p className="text-gray-400 leading-relaxed mt-0.5" style={{ fontSize: '11px' }}>{p.desc}</p>
               </div>
               {i < PIPELINE.length - 1 && (
-                <span className="hidden md:block text-lg font-light" style={{ color: '#B8962E' }}>→</span>
+                <span className="text-lg font-light" style={{ color: '#B8962E' }}>→</span>
               )}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile : liste verticale avec numéros + ligne de connexion */}
+        <div className="md:hidden relative">
+          {PIPELINE.map((p, i) => (
+            <div key={p.step} className="flex items-start gap-3 pb-4 last:pb-0 relative">
+              {/* Cercle numéroté + ligne verticale */}
+              <div className="relative flex-shrink-0" style={{ width: 32 }}>
+                <div
+                  className="flex items-center justify-center rounded-full"
+                  style={{
+                    width: 32,
+                    height: 32,
+                    background: 'rgba(184,150,46,0.12)',
+                    border: '1.5px solid rgba(184,150,46,0.5)',
+                    color: '#B8962E',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    fontFamily: "'Cormorant Garamond', serif",
+                  }}
+                >
+                  {i + 1}
+                </div>
+                {/* Ligne verticale entre les cercles */}
+                {i < PIPELINE.length - 1 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      top: 32,
+                      bottom: -16,
+                      width: 1.5,
+                      background: 'rgba(184,150,46,0.25)',
+                      transform: 'translateX(-50%)',
+                    }}
+                  />
+                )}
+              </div>
+              <div className="flex-1 pt-1">
+                <h3 className="font-semibold" style={{ color: '#1A1410', fontSize: '14px', fontFamily: "'Cormorant Garamond', serif" }}>
+                  {p.title}
+                </h3>
+                <p style={{ color: '#6B5E52', fontSize: '12px', lineHeight: 1.55, marginTop: 2 }}>
+                  {p.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
