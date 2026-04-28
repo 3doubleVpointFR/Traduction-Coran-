@@ -52,7 +52,7 @@ const STEPS: TourStep[] = [
     position: 'left',
     title: 'Le panneau d\'analyse',
     desc: 'Ici tu vois la racine, le sens retenu, tous les sens étymologiques (avec barres de fréquence) et l\'explication du choix pour ce verset.',
-    waitForSelector: 2000,
+    waitForSelector: 5000,
     scrollIntoView: false,
     triggerAction: () => {
       // Auto-click on the first word if panel is not yet open
@@ -265,33 +265,58 @@ export default function TutorialGuide() {
         setTimeout(tickAlso, current.scrollIntoView ? 650 : 60)
       }
     }
-    const el = document.querySelector(current.selector) as HTMLElement | null
+    // Helper : élément valide = présent dans le DOM ET avec des dimensions non-nulles
+    // (sinon getBoundingClientRect retourne 0,0,0,0 et la surbrillance est invisible)
+    const findVisibleEl = (): HTMLElement | null => {
+      const e = document.querySelector(current.selector) as HTMLElement | null
+      if (!e) return null
+      const r = e.getBoundingClientRect()
+      if (r.width <= 0 || r.height <= 0) return null
+      return e
+    }
+    const el = findVisibleEl()
     if (el) {
       positionEl(el)
     } else if (current.waitForSelector) {
-      // MutationObserver : réagit instantanément dès que l'élément cible apparaît
-      // (plus efficace que polling rAF, surtout en production où la nav est plus lente)
+      // MutationObserver : attend que l'élément soit dans le DOM ET visible
+      // (couvre les cas d'animations/transitions CSS où le data-attr apparaît
+      // avant que le panneau soit réellement rendu)
       const timeout = current.waitForSelector
       let done = false
-      const observer = new MutationObserver(() => {
+      const tryPosition = () => {
         if (done) return
-        const e2 = document.querySelector(current.selector) as HTMLElement | null
+        const e2 = findVisibleEl()
         if (e2) {
           done = true
           observer.disconnect()
           positionEl(e2)
         }
+      }
+      const observer = new MutationObserver(tryPosition)
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,         // détecte aussi les changements de classes/styles
+        attributeFilter: ['style', 'class', 'data-tour-word-panel', 'data-tour-concept-tab', 'data-tour-concept-block', 'data-tour-proof-ctx', 'data-tour-verses-list'],
       })
-      observer.observe(document.body, { childList: true, subtree: true })
-      // Sécurité : arrêt forcé au bout du timeout
+      // Filet de sécurité : retry périodique au cas où dimensions changent sans mutation
+      const intervalId = setInterval(tryPosition, 100)
+      // Arrêt forcé au bout du timeout
       setTimeout(() => {
         if (done) return
         done = true
         observer.disconnect()
-        // Dernière tentative
+        clearInterval(intervalId)
+        // Dernière tentative (même si dimensions = 0, on positionne quand même)
         const e2 = document.querySelector(current.selector) as HTMLElement | null
         if (e2) positionEl(e2)
       }, timeout)
+      // Cleanup interval quand observer se déconnecte
+      const origDisconnect = observer.disconnect.bind(observer)
+      observer.disconnect = () => {
+        clearInterval(intervalId)
+        origDisconnect()
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, active])
