@@ -77,15 +77,17 @@ export default function VersePanel({
   // Extract §DEMARCHE§ intro paragraph (résumé) to display under the verse header.
   // The intro is everything in §DEMARCHE§ before the first **word** paragraph.
   let demarcheIntro = ''
+  let finaliteText = ''
   const explText = analysis?.translation_explanation || ''
   if (explText.includes('§DEMARCHE§')) {
-    const parts = explText.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE)§/)
+    const parts = explText.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE|FINALITE)§/)
     for (let i = 0; i < parts.length; i++) {
       if (parts[i] === 'DEMARCHE') {
         const dem = (parts[i + 1] || '').trim()
         const firstMark = dem.indexOf('\n\n**')
         if (firstMark > 0) demarcheIntro = dem.substring(0, firstMark).trim()
-        break
+      } else if (parts[i] === 'FINALITE') {
+        finaliteText = (parts[i + 1] || '').trim()
       }
     }
   }
@@ -176,6 +178,37 @@ export default function VersePanel({
           </div>
         )
       })()}
+
+      {/* Finalité — en quoi ce verset aide à réaliser la mission de khalifa */}
+      {finaliteText && (
+        <div
+          style={{
+            margin: '0 0 14px 0',
+            padding: '12px 14px',
+            background: 'linear-gradient(90deg, rgba(184,150,46,0.08) 0%, rgba(184,150,46,0.04) 100%)',
+            border: '1px solid rgba(184,150,46,0.3)',
+            borderRadius: '6px',
+            position: 'relative',
+          }}
+        >
+          <div
+            style={{
+              fontSize: '10px',
+              fontWeight: 700,
+              color: '#B8962E',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase' as const,
+              marginBottom: '6px',
+              fontFamily: "'Cormorant Garamond', serif",
+            }}
+          >
+            ✦ Finalité — Khalifa
+          </div>
+          <p style={{ fontSize: '12.5px', lineHeight: 1.7, color: '#3D3228', fontStyle: 'italic' as const, fontFamily: "'Cormorant Garamond', serif" }}>
+            {finaliteText}
+          </p>
+        </div>
+      )}
 
       {/* Progress bar during analysis */}
       {isAnalyzing && jobProgress && (
