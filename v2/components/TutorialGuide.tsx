@@ -630,13 +630,26 @@ export default function TutorialGuide() {
 
         <div className="flex items-center justify-between gap-2">
           <button
-            onClick={() => setStep(Math.max(0, step - 1))}
-            disabled={step === 0}
+            onClick={() => {
+              if (step === 0 || navigating) return
+              const prevStep = step - 1
+              const prevDef = STEPS[prevStep]
+              localStorage.setItem('tuto-step', String(prevStep))
+              // Si le step précédent est sur une autre page → naviguer
+              if (prevDef?.requiresPath && prevDef.requiresPath !== pathname) {
+                setNavigating(true)
+                router.push(prevDef.requiresPath)
+                // useEffect[pathname] reset navigating + lit step depuis localStorage
+              } else {
+                setStep(prevStep)
+              }
+            }}
+            disabled={step === 0 || navigating}
             className="text-xs px-3 py-1 rounded-full transition-colors"
             style={{
               border: '1px solid rgba(184,150,46,0.3)',
-              color: step === 0 ? '#C8BCAD' : '#8A7428',
-              cursor: step === 0 ? 'default' : 'pointer',
+              color: step === 0 || navigating ? '#C8BCAD' : '#8A7428',
+              cursor: step === 0 || navigating ? 'default' : 'pointer',
               background: 'transparent',
             }}
           >
