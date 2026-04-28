@@ -310,11 +310,15 @@ export default function VersePanel({
 
         if (hasSections) {
           const sectionMap: Record<string, string> = {}
-          const parts = text.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE)§/)
+          // Split sur les 4 sections : on inclut FINALITE pour qu'elle soit isolée
+          // et n'apparaisse pas dans CRITIQUE (mais on n'affiche pas son contenu ici,
+          // FINALITE est déjà affichée sous le résumé en haut)
+          const parts = text.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE|FINALITE)§/)
           for (let i = 0; i < parts.length; i++) {
             if (parts[i] === 'DEMARCHE' || parts[i] === 'JUSTIFICATION' || parts[i] === 'CRITIQUE') {
               sectionMap[parts[i]] = (parts[i + 1] || '').trim()
             }
+            // FINALITE : ignoré ici, déjà rendu en haut
           }
           // Strip §DEMARCHE§ intro (already displayed under the header) — keep only **word** paragraphs.
           if (sectionMap['DEMARCHE']) {
