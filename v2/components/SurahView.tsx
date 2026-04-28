@@ -256,6 +256,19 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     setWordAnalysis(null)
   }, [])
 
+  // Lock body scroll quand le bottom sheet mobile est ouvert
+  useEffect(() => {
+    if (activeWordKey) {
+      // Seulement si on est en mode mobile (< lg = < 1024px)
+      const isMobile = window.matchMedia('(max-width: 1023px)').matches
+      if (isMobile) {
+        const original = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        return () => { document.body.style.overflow = original }
+      }
+    }
+  }, [activeWordKey])
+
   return (
     <div>
       {/* Surah header — compact */}
@@ -295,7 +308,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         ))}
       </div>
 
-      {/* Right column: word panel (always visible) */}
+      {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}
       <div className="hidden lg:block lg:sticky lg:top-[68px] lg:self-start lg:max-h-[calc(100vh-80px)] lg:overflow-y-auto rounded-lg" style={{ border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)' }}>
         {activeWordKey ? (
           <WordPanel
@@ -344,6 +357,73 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         )}
       </div>
     </div>
+
+    {/* ═══ MOBILE BOTTOM SHEET (< 1024px) ═══ */}
+    {activeWordKey && (
+      <div className="lg:hidden fixed inset-0 z-[60]">
+        {/* Animation keyframes injectées localement */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes sheetSlideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+          }
+          @keyframes backdropFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          .word-sheet-backdrop { animation: backdropFadeIn 0.25s ease-out; }
+          .word-sheet { animation: sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
+        ` }} />
+
+        {/* Backdrop */}
+        <div
+          className="word-sheet-backdrop absolute inset-0"
+          style={{ background: 'rgba(26, 20, 16, 0.55)', backdropFilter: 'blur(2px)' }}
+          onClick={handleClosePanel}
+        />
+
+        {/* Sheet */}
+        <div
+          className="word-sheet absolute left-0 right-0 bottom-0 flex flex-col"
+          style={{
+            background: '#FFFFFF',
+            height: '88vh',
+            borderTopLeftRadius: '20px',
+            borderTopRightRadius: '20px',
+            boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
+            border: '1px solid rgba(184,150,46,0.3)',
+            borderBottom: 'none',
+          }}
+        >
+          {/* Drag handle (visuel uniquement pour l'instant) */}
+          <div
+            className="flex justify-center pt-2.5 pb-1.5 flex-shrink-0"
+            style={{
+              background: '#FFFFFF',
+              borderTopLeftRadius: '20px',
+              borderTopRightRadius: '20px',
+            }}
+          >
+            <div style={{
+              width: 44,
+              height: 4,
+              borderRadius: 2,
+              background: 'rgba(184,150,46,0.35)',
+            }} />
+          </div>
+
+          {/* Contenu scrollable du WordPanel */}
+          <div className="flex-1 overflow-y-auto overscroll-contain">
+            <WordPanel
+              analysis={wordAnalysis}
+              loading={loadingWord}
+              activeWordKey={activeWordKey}
+              onClose={handleClosePanel}
+            />
+          </div>
+        </div>
+      </div>
+    )}
     </div>
   )
 }
