@@ -212,13 +212,18 @@ export default function TutorialGuide() {
   const computeRects = (el: HTMLElement, current: TourStep): DOMRect[] => {
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
     const vpH = typeof window !== 'undefined' ? window.innerHeight : 800
-    // Sur mobile : clamp la hauteur du rect pour éviter qu'il couvre tout l'écran
-    // (cas du WordPanel dans le bottom sheet) → surbrillance focalisée sur le haut
+    // Sur mobile : intersect le rect avec le viewport (au cas où le rect
+    // dépasse en haut/bas via un container scrollé) puis cap à 35% du viewport
+    // pour ne pas couvrir tout l'écran (cas du WordPanel géant dans le sheet).
     const clamp = (r: DOMRect): DOMRect => {
       if (!isMobile) return r
-      const maxH = vpH * 0.35 // max 35% du viewport
-      if (r.height <= maxH) return r
-      return new DOMRect(r.left, r.top, r.width, maxH)
+      const visTop = Math.max(0, r.top)
+      const visBottom = Math.min(vpH, r.bottom)
+      if (visBottom <= visTop) return r // dégénéré
+      const visibleH = visBottom - visTop
+      const maxH = vpH * 0.35
+      const finalH = Math.min(visibleH, maxH)
+      return new DOMRect(r.left, visTop, r.width, finalH)
     }
     const rects: DOMRect[] = [clamp(el.getBoundingClientRect())]
     if (current.alsoHighlight) {
@@ -403,18 +408,46 @@ export default function TutorialGuide() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, active])
 
-  // Listeners scroll/resize : seulement REFRESH la position visuelle, ne déclenche jamais de scroll
+  // Listeners scroll/resize : seulement REFRESH la position visuelle (avec rAF throttle)
+  // + écoute aussi le scroll des containers scrollables (bottom sheet sur mobile)
   useEffect(() => {
     if (!active) return
-    const onScroll = () => refreshRect()
-    const onResize = () => refreshRect()
+    let rafId: number | null = null
+    const onScroll = () => {
+      if (rafId !== null) return // déjà programmé pour la prochaine frame
+      rafId = requestAnimationFrame(() => {
+        refreshRect()
+        rafId = null
+      })
+    }
+    const onResize = onScroll
+
+    // Trouve tous les ancêtres scrollables de la cible actuelle (s'il y en a)
+    const current = STEPS[step]
+    const scrollListeners: Array<{ el: HTMLElement | Window; remove: () => void }> = []
+    if (current && current.selector !== 'body') {
+      const target = document.querySelector(current.selector) as HTMLElement | null
+      let p = target?.parentElement as HTMLElement | null
+      while (p && p !== document.body) {
+        const s = getComputedStyle(p)
+        if (s.overflowY === 'auto' || s.overflowY === 'scroll') {
+          p.addEventListener('scroll', onScroll, { passive: true })
+          const captured = p
+          scrollListeners.push({ el: p, remove: () => captured.removeEventListener('scroll', onScroll) })
+        }
+        p = p.parentElement
+      }
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onResize)
     return () => {
+      if (rafId !== null) cancelAnimationFrame(rafId)
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
+      scrollListeners.forEach(l => l.remove())
     }
-  }, [active, refreshRect])
+  }, [active, refreshRect, step])
 
   // Persist step
   useEffect(() => {
