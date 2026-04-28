@@ -460,6 +460,9 @@ export default function TutorialGuide() {
     const candidates: Array<{ left: number; top: number }> = []
 
     // Position préférée selon le step
+    // Pour left/right : on centre verticalement la bulle sur la cible
+    // (au lieu d'aligner le haut → évite que la bulle descende trop bas)
+    const centerY = unionRect.top + unionRect.height / 2 - bubbleH / 2
     switch (current.position) {
       case 'bottom':
         candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.bottom + margin })
@@ -468,10 +471,10 @@ export default function TutorialGuide() {
         candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.top - margin - bubbleH })
         break
       case 'left':
-        candidates.push({ left: unionRect.left - margin - bubbleW, top: unionRect.top })
+        candidates.push({ left: unionRect.left - margin - bubbleW, top: centerY })
         break
       case 'right':
-        candidates.push({ left: unionRect.right + margin, top: unionRect.top })
+        candidates.push({ left: unionRect.right + margin, top: centerY })
         break
     }
 
