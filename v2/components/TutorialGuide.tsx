@@ -159,6 +159,7 @@ export default function TutorialGuide() {
   const [active, setActive] = useState(false)
   const [step, setStep] = useState(0)
   const [rects, setRects] = useState<DOMRect[]>([])
+  const [navigating, setNavigating] = useState(false)
 
   // Read localStorage on mount, sync state
   useEffect(() => {
@@ -168,6 +169,9 @@ export default function TutorialGuide() {
       const s = parseInt(localStorage.getItem('tuto-step') || '0', 10)
       setStep(s)
     }
+    // Reset l'état "navigating" à chaque changement de pathname
+    // → le bouton "Chargement..." redevient "Suivant" dès que la nouvelle page mount
+    setNavigating(false)
   }, [pathname])
 
   // Stop the tour entirely
@@ -645,27 +649,29 @@ export default function TutorialGuide() {
                 stop()
                 return
               }
+              if (navigating) return // évite double-clic pendant nav
               const nextStep = step + 1
-              // Sauve TOUJOURS le prochain step en localStorage
               localStorage.setItem('tuto-step', String(nextStep))
               if (current.navigateOnNext) {
-                // Si navigation : on NE change PAS le step ici → la bulle actuelle
-                // reste visible sur l'élément actuel pendant la nav.
-                // Le useEffect[pathname] re-lira localStorage quand la nouvelle
-                // page sera prête, et basculera vers le step suivant à ce moment.
+                // Affiche "Chargement…" + désactive le bouton pendant la nav
+                setNavigating(true)
                 router.push(current.navigateOnNext)
+                // Le useEffect[pathname] reset navigating + lit le step depuis localStorage
               } else {
                 setStep(nextStep)
               }
             }}
+            disabled={navigating}
             className="text-xs px-3 py-1 rounded-full transition-colors hover:shadow-md font-semibold"
             style={{
-              background: '#B8962E',
+              background: navigating ? '#C8B470' : '#B8962E',
               color: '#FFFCF6',
               letterSpacing: '0.05em',
+              cursor: navigating ? 'wait' : 'pointer',
+              opacity: navigating ? 0.85 : 1,
             }}
           >
-            {isLast ? 'Terminer ✦' : 'Suivant →'}
+            {isLast ? 'Terminer ✦' : navigating ? 'Chargement…' : 'Suivant →'}
           </button>
         </div>
       </div>
