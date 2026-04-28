@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
 
 interface EtymologyEntry {
@@ -378,29 +379,11 @@ export default function WordPanel({
                       >
                         {concept}
                       </span>
-                      {/* Tooltip :
-                        - Mobile (tap) : position fixed avec coords calculées
-                        - Desktop (hover) : position absolute classique sous l'onglet */}
+                      {/* Tooltip desktop : hover, position absolute classique */}
                       <div
                         data-tour-concept-tooltip={isActive ? '1' : undefined}
-                        className={`z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 ${
-                          isOpen
-                            ? (tooltipPos ? 'fixed block' : 'absolute block')
-                            : 'absolute hidden group-hover:block min-w-[200px] max-w-[280px] top-full mt-1 left-0'
-                        }`}
-                        style={
-                          isOpen && tooltipPos
-                            ? {
-                                boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
-                                left: tooltipPos.left,
-                                top: tooltipPos.top,
-                                width: tooltipPos.width,
-                                maxWidth: 'none',
-                              }
-                            : {
-                                boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-                              }
-                        }
+                        className="hidden md:group-hover:block absolute top-full mt-1 left-0 z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[280px]"
+                        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
@@ -421,6 +404,42 @@ export default function WordPanel({
                           ))}
                         </div>
                       </div>
+
+                      {/* Tooltip mobile : tap → portal en position fixed dans document.body
+                          (échappe à la bottom sheet transformée qui casse position:fixed) */}
+                      {isOpen && tooltipPos && typeof document !== 'undefined' && createPortal(
+                        <div
+                          data-tour-concept-tooltip={isActive ? '1' : undefined}
+                          className="fixed bg-white border border-amber-200 rounded-lg p-3"
+                          style={{
+                            left: tooltipPos.left,
+                            top: tooltipPos.top,
+                            width: tooltipPos.width,
+                            zIndex: 100,
+                            boxShadow: '0 8px 24px rgba(0,0,0,0.22)',
+                          }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
+                            {concept} ({conceptSenses.length} sens)
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {conceptSenses.map((s, j) => (
+                              <span key={j} style={{
+                                fontSize: '11px',
+                                color: '#6B5D4F',
+                                fontWeight: 400,
+                                background: 'rgba(0,0,0,0.04)',
+                                padding: '1px 6px',
+                                borderRadius: '4px',
+                              }}>
+                                {s}
+                              </span>
+                            ))}
+                          </div>
+                        </div>,
+                        document.body
+                      )}
                     </div>
                   )
                 })}
@@ -557,7 +576,7 @@ export default function WordPanel({
                             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'none' }}
                             onClick={() => handleToggleRefs(conceptSenses[0]?.id ?? 0)}
                           >
-                            <span style={{ color: '#B8962E', fontSize: '10px', marginRight: '2px', transition: 'transform 0.2s', transform: conceptIsExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>▶</span>
+                            <span style={{ color: '#B8962E', fontSize: '12px', marginRight: '2px', transition: 'transform 0.2s', transform: conceptIsExpanded ? 'rotate(90deg)' : 'rotate(0deg)', display: 'inline-block', lineHeight: 1, fontFamily: 'Arial, sans-serif' }}>{'▸'}</span>
                             <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{conceptName}</span>
                             <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: tag.color, fontStyle: 'italic' }}>{tag.label}</span>
                             <span style={{ fontSize: '10px', color: '#9E9089' }}>({conceptSenses.length} sens)</span>
@@ -718,7 +737,7 @@ export default function WordPanel({
                         onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'none' }}
                         onClick={() => handleToggleRefs(m.id)}
                       >
-                        <span style={{ color: '#B8962E', fontSize: '10px', marginRight: '2px', transition: 'transform 0.2s', transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>▶</span>
+                        <span style={{ color: '#B8962E', fontSize: '12px', marginRight: '2px', transition: 'transform 0.2s', transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)', display: 'inline-block', lineHeight: 1, fontFamily: 'Arial, sans-serif' }}>{'▸'}</span>
                         <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{m.sense}</span>
                         {(() => {
                           const tagClassif = isRetenu ? 'retenu' : classif

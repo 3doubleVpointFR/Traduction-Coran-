@@ -111,7 +111,7 @@ const STEPS: TourStep[] = [
         // Cherche le bouton "toggle" : celui qui commence par ▶ ou ▼ (au lieu du premier
         // bouton venu, qui pourrait être un autre bouton du panneau)
         const buttons = Array.from(block.querySelectorAll('button')) as HTMLButtonElement[]
-        const toggleBtn = buttons.find(b => /^[▶▼]/.test(b.textContent?.trim() || '')) || buttons[0]
+        const toggleBtn = buttons.find(b => /^[▶▸▼▾]/.test(b.textContent?.trim() || '')) || buttons[0]
         if (toggleBtn) {
           toggleBtn.click()
           // Vérifie que ça a marché ; sinon retry
