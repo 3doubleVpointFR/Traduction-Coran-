@@ -84,8 +84,18 @@ export default function VersePanel({
     for (let i = 0; i < parts.length; i++) {
       if (parts[i] === 'DEMARCHE') {
         const dem = (parts[i + 1] || '').trim()
-        const firstMark = dem.indexOf('\n\n**')
-        if (firstMark > 0) demarcheIntro = dem.substring(0, firstMark).trim()
+        // Try double-newline + ** first (standard format)
+        let firstMark = dem.indexOf('\n\n**')
+        // Fallback : if no double-newline, look for ` **` (space + bold) which is
+        // typically where a word analysis starts even without proper line breaks
+        if (firstMark < 0) firstMark = dem.indexOf(' **')
+        if (firstMark > 0) {
+          demarcheIntro = dem.substring(0, firstMark).trim()
+        } else {
+          // Last fallback : take the first sentence (up to first period followed by space+capital)
+          const sentenceMatch = dem.match(/^[^.!?]{20,}[.!?](?=\s)/)
+          if (sentenceMatch) demarcheIntro = sentenceMatch[0].trim()
+        }
       } else if (parts[i] === 'FINALITE') {
         finaliteText = (parts[i + 1] || '').trim()
       }
