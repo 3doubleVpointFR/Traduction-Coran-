@@ -191,6 +191,8 @@ export default function WordPanel({
   const [expandedRef, setExpandedRef] = useState<{ meaningId: number; ref: string; data: VerseText | null; loading: boolean } | null>(null)
   // Tooltip concept actif (utile pour mobile où il n'y a pas de hover)
   const [openTooltip, setOpenTooltip] = useState<string | null>(null)
+  // Alignement du tooltip ('left' ou 'right') selon où se trouve l'onglet à l'écran
+  const [tooltipAlign, setTooltipAlign] = useState<'left' | 'right'>('left')
   // Ferme le tooltip quand on clique en dehors
   useEffect(() => {
     if (!openTooltip) return
@@ -333,6 +335,13 @@ export default function WordPanel({
                       style={{ padding: '2px 0', cursor: 'pointer' }}
                       onClick={(e) => {
                         e.stopPropagation()
+                        // Détecte la position de l'onglet : si peu de place à droite,
+                        // on aligne le tooltip à droite (right: 0) pour qu'il ne déborde pas
+                        const rect = e.currentTarget.getBoundingClientRect()
+                        const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
+                        const TOOLTIP_W = 280
+                        const spaceRight = vpW - rect.left
+                        setTooltipAlign(spaceRight < TOOLTIP_W + 20 ? 'right' : 'left')
                         setOpenTooltip(prev => prev === concept ? null : concept)
                       }}
                     >
@@ -352,10 +361,14 @@ export default function WordPanel({
                       {/* Tooltip : visible si state = ouvert (mobile/tap), ou si hover (desktop) */}
                       <div
                         data-tour-concept-tooltip={isActive ? '1' : undefined}
-                        className={`absolute left-0 top-full mt-1 z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[320px] ${
+                        className={`absolute top-full mt-1 z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[280px] ${
                           isOpen ? 'block' : 'hidden group-hover:block'
                         }`}
-                        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
+                        style={{
+                          boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+                          left: isOpen && tooltipAlign === 'right' ? 'auto' : 0,
+                          right: isOpen && tooltipAlign === 'right' ? 0 : 'auto',
+                        }}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
