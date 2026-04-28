@@ -531,6 +531,31 @@ export default function TutorialGuide() {
 
   return (
     <>
+      {/* Styles globaux pour le tutoriel (évite styled-jsx qui plante en build) */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .tuto-quit-btn:hover {
+          background: rgba(184, 150, 46, 0.08) !important;
+          border-color: rgba(184, 150, 46, 0.5) !important;
+          color: #8A7428 !important;
+        }
+        .tuto-next-btn:not(:disabled):hover {
+          box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4);
+          transform: translateY(-1px);
+        }
+        .tuto-dot {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #FFFCF6;
+          animation: tutoDotPulse 1.05s ease-in-out infinite;
+        }
+        @keyframes tutoDotPulse {
+          0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+          40% { transform: scale(1.1); opacity: 1; }
+        }
+      ` }} />
+
       {/* Highlight zone(s) around target — overlay with rounded "holes" via SVG mask */}
       {rects.length > 0 && current.selector !== 'body' && (() => {
         const PAD = 8
@@ -618,14 +643,6 @@ export default function TutorialGuide() {
           <span style={{ fontSize: '10px', lineHeight: 1 }}>✕</span>
           <span>quitter</span>
         </button>
-
-        <style jsx>{`
-          .tuto-quit-btn:hover {
-            background: rgba(184, 150, 46, 0.08) !important;
-            border-color: rgba(184, 150, 46, 0.5) !important;
-            color: #8A7428 !important;
-          }
-        `}</style>
 
         {/* Step indicator */}
         <div className="flex items-center gap-1 mb-3 mt-2">
@@ -716,31 +733,6 @@ export default function TutorialGuide() {
               'Suivant →'
             )}
           </button>
-
-          <style jsx>{`
-            .tuto-next-btn:not(:disabled):hover {
-              box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4);
-              transform: translateY(-1px);
-            }
-            .tuto-dot {
-              display: inline-block;
-              width: 5px;
-              height: 5px;
-              border-radius: 50%;
-              background: #FFFCF6;
-              animation: tutoDotPulse 1.05s ease-in-out infinite;
-            }
-            @keyframes tutoDotPulse {
-              0%, 80%, 100% {
-                transform: scale(0.7);
-                opacity: 0.5;
-              }
-              40% {
-                transform: scale(1.1);
-                opacity: 1;
-              }
-            }
-          `}</style>
         </div>
       </div>
     </>
