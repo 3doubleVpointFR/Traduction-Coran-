@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import MobileTutorial from './MobileTutorial'
 
 interface TourStep {
   selector: string                           // CSS selector of target element
@@ -179,10 +180,21 @@ export default function TutorialGuide() {
   const [step, setStep] = useState(0)
   const [rects, setRects] = useState<DOMRect[]>([])
   const [navigating, setNavigating] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   // Offset utilisateur (drag) appliqué par-dessus la position calculée
   const [bubbleOffset, setBubbleOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
   // Reset l'offset à chaque changement d'étape
   useEffect(() => { setBubbleOffset({ x: 0, y: 0 }) }, [step])
+
+  // Détection mobile : sur < 1024px on bascule sur le tutoriel cartes plein écran
+  // (le tuto desktop avec surbrillance DOM ne marche pas bien avec le bottom sheet)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1023px)')
+    const update = () => setIsMobile(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
 
   // Read localStorage on mount, sync state
   useEffect(() => {
@@ -285,14 +297,11 @@ export default function TutorialGuide() {
 
       if (current.scrollIntoView) {
         if (scrollableAncestor) {
-          // Élément dans un container scrollable (bottom sheet mobile, etc.)
-          // → scrollIntoView gère bien la chaîne d'ancêtres scrollables
           try {
             el.scrollIntoView({ block: 'center', behavior: 'smooth' })
             didScroll = true
           } catch { /* noop */ }
         } else {
-          // Scroll de la fenêtre uniquement, avec offset pour le header sticky
           const r = el.getBoundingClientRect()
           const vpH = window.innerHeight
           const HEADER_OFFSET = 90
@@ -304,8 +313,6 @@ export default function TutorialGuide() {
           }
         }
       } else if (scrollableAncestor) {
-        // Pas de scrollIntoView demandé, mais si l'élément est dans un container
-        // scrollable et hors viewport → on scroll le container quand même
         const r = el.getBoundingClientRect()
         const vpH = window.innerHeight
         if (r.top < 0 || r.bottom > vpH) {
@@ -547,6 +554,11 @@ export default function TutorialGuide() {
   }, [step, active])
 
   if (!active) return null
+
+  // ─── Sur mobile : remplace tout par le tuto cartes plein écran ───
+  if (isMobile) {
+    return <MobileTutorial onClose={stop} />
+  }
 
   const current = STEPS[step]
   const isLast = step === STEPS.length - 1
