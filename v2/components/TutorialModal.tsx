@@ -7,23 +7,12 @@ export default function TutorialModal() {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [seen, setSeen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     setSeen(localStorage.getItem('tuto-seen') === '1')
-    // Détection mobile : on cache le bouton du tutoriel sur petit écran
-    // (le tutoriel guide est conçu pour desktop avec hovers, panneau latéral, etc.)
-    const mq = window.matchMedia('(max-width: 1023px)')
-    const update = () => setIsMobile(mq.matches)
-    update()
-    mq.addEventListener('change', update)
     // Prefetch /surah/3 dès le mount pour que la nav du tutoriel soit instantanée
     router.prefetch('/surah/3')
-    return () => mq.removeEventListener('change', update)
   }, [router])
-
-  // Sur mobile : bouton caché (le tutoriel n'est pas adapté pour l'instant)
-  if (isMobile) return null
 
   const startTour = () => {
     // S'assure que /surah/3 est prêt avant la nav (no-op si déjà prefetché)
