@@ -131,8 +131,8 @@ Exemple :
 
 ### 4b. Traduction
 1. **Français courant** : vocabulaire du quotidien. Pas de registre littéraire. Allah → "Dieu".
-2. **Démarche explicative — STRUCTURE OBLIGATOIRE en 3 sections** :
-   Le champ `translation_explanation` doit TOUJOURS contenir trois sections séparées par les marqueurs §DEMARCHE§, §JUSTIFICATION§ et §CRITIQUE§ :
+2. **Démarche explicative — STRUCTURE OBLIGATOIRE en 4 sections** :
+   Le champ `translation_explanation` doit TOUJOURS contenir QUATRE sections séparées par les marqueurs §DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§ et §FINALITE§ :
 
    **§DEMARCHE§** — Explication pédagogique de la grammaire arabe en français simple.
    - **Phrase d'introduction obligatoire** : la §DEMARCHE§ DOIT commencer par 1-2 phrases qui résument le sens du verset et font le lien avec le(s) verset(s) précédent(s). Ex: "Le verset continue la description des muttaqīn commencée au verset 3." ou "Ce verset est une invocation prononcée par ceux qui sont « enracinés dans le savoir » (verset 7)."
@@ -164,6 +164,14 @@ Exemple :
    - Identifier la source du biais (exégèse, contexte historique, vocabulaire chrétien, ajout invisible)
    - Montrer pourquoi l'étymologie pure donne un résultat différent
    - **Précision et honnêteté** : ne JAMAIS simplifier à l'excès pour défendre notre traduction. Si Lane's donne des sens qui incluent partiellement ce que la traduction courante dit, le reconnaître honnêtement, puis montrer où est la vraie nuance. La critique doit être intellectuellement honnête pour être crédible — sinon on fait la même chose que les exégètes qu'on critique.
+
+   **§FINALITE§** — 1-2 phrases maximum qui répondent à : « En quoi ce verset aide-t-il l'humain à réaliser sa mission de khalifa — c'est-à-dire vivifier la terre, établir la justice, et accomplir son adoration (qui est la finalité de l'être humain) ? »
+   - **1-2 phrases STRICT**, pas plus.
+   - **Honnêteté absolue** : si le verset n'apporte pas de contenu identifiable sur la mission khalifa (ex: lettres mystérieuses, narration historique sans implication directe, miracle propre à un prophète), DIRE EXPLICITEMENT « Ce verset n'apporte pas de contenu identifiable sur la mission de khalifa de l'humain. Il [contextualise/raconte/etc.] sans porter d'enseignement direct sur la justice, la vivification de la terre ou l'adoration. » NE JAMAIS forcer un lien artificiel.
+   - **Pas de jargon religieux** : pas de "tawhid", "iman", "hidayah". Parler naturellement.
+   - **Style** : phrase fluide, légèrement contemplative, en français standard. Italique sera appliqué côté UI.
+   - **Pas de titre, pas de balise, pas de "Ce verset..."** — juste la phrase.
+   - **Référents**: les trois axes-clés de la mission khalifa sont **(1) vivifier la terre, (2) établir la justice, (3) accomplir l'adoration**. Évoquer un ou plusieurs de ces axes selon ce qui est pertinent au verset, ne pas les forcer tous.
 
 3. **Pas de mot "concept"** : ne JAMAIS utiliser le mot "concept" dans la démarche ni la justification. Toujours dire "sens". Le mot "concept" est notre méthode interne, l'utilisateur ne doit jamais le voir.
 4. **3 phrases du quotidien** pour chaque sens retenu uniquement. **SKIP si des phrases existent déjà** pour cette racine dans `word_daily` : vérifier `SELECT count(*) FROM word_daily WHERE analysis_id = X`. Si count > 0 → ne PAS en ajouter. Les phrases sont permanentes par racine comme les sens.

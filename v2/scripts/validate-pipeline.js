@@ -321,9 +321,9 @@ async function run() {
   if (segOk) ok('Segments correctement structurés')
 
   // ================================================================
-  // 8. §DEMARCHE§ + §JUSTIFICATION§ + §CRITIQUE§ PRÉSENTS
+  // 8. §DEMARCHE§ + §JUSTIFICATION§ + §CRITIQUE§ + §FINALITE§ PRÉSENTS
   // ================================================================
-  section(8, 'Structure §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§')
+  section(8, 'Structure §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§')
   let structOk = true
   for (const v of verses) {
     const va = vaByVid[v.id]
@@ -332,8 +332,39 @@ async function run() {
     if (!te.includes('§DEMARCHE§')) { err('V' + v.verse_num + ': §DEMARCHE§ manquant'); structOk = false }
     if (!te.includes('§JUSTIFICATION§')) { err('V' + v.verse_num + ': §JUSTIFICATION§ manquant'); structOk = false }
     if (!te.includes('§CRITIQUE§')) { err('V' + v.verse_num + ': §CRITIQUE§ manquant'); structOk = false }
+    if (!te.includes('§FINALITE§')) { err('V' + v.verse_num + ': §FINALITE§ manquant (lien avec mission khalifa)'); structOk = false }
   }
-  if (structOk) ok('§DEMARCHE§, §JUSTIFICATION§ et §CRITIQUE§ présents dans tous les versets')
+  if (structOk) ok('§DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§ et §FINALITE§ présents dans tous les versets')
+
+  // ================================================================
+  // 8b. §FINALITE§ — longueur et qualité
+  // ================================================================
+  section('8b', 'Qualité de §FINALITE§ (1-2 phrases)')
+  let finaOk = true
+  for (const v of verses) {
+    const va = vaByVid[v.id]
+    if (!va || !va.translation_explanation) continue
+    const te = va.translation_explanation
+    const idx = te.indexOf('§FINALITE§')
+    if (idx === -1) continue
+    const finaText = te.slice(idx + 10).trim()
+    // Compter les phrases (approximatif via . ! ?)
+    const sentences = finaText.split(/[.!?]+/).filter(s => s.trim().length > 5)
+    if (sentences.length > 3) {
+      warn('V' + v.verse_num + `: §FINALITE§ trop long (${sentences.length} phrases, max 2)`)
+      finaOk = false
+    }
+    if (finaText.length < 50) {
+      warn('V' + v.verse_num + `: §FINALITE§ très court (${finaText.length} chars)`)
+      finaOk = false
+    }
+    // Pas de jargon religieux
+    if (/\b(tawhid|iman|hidayah|fitra|shari'?a)\b/i.test(finaText)) {
+      warn('V' + v.verse_num + `: §FINALITE§ contient du jargon religieux non expliqué`)
+      finaOk = false
+    }
+  }
+  if (finaOk) ok('§FINALITE§ a la bonne longueur (1-2 phrases) et pas de jargon')
 
   // ================================================================
   // 9. PAS DE MOT "CONCEPT" DANS LES TEXTES VISIBLES
