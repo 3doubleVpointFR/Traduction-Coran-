@@ -179,32 +179,22 @@ export default function VersePanel({
         )
       })()}
 
-      {/* Finalité — en quoi ce verset aide à réaliser la mission de khalifa */}
+      {/* Finalité — en quoi ce verset aide à réaliser la mission de khalifa
+          Même forme que le résumé du verset, mais en vert sage */}
       {finaliteText && (
         <div
           style={{
             margin: '0 0 14px 0',
-            padding: '12px 14px',
-            background: 'linear-gradient(90deg, rgba(184,150,46,0.08) 0%, rgba(184,150,46,0.04) 100%)',
-            border: '1px solid rgba(184,150,46,0.3)',
-            borderRadius: '6px',
-            position: 'relative',
+            padding: '10px 14px',
+            background: 'rgba(74, 122, 63, 0.05)',
+            borderLeft: '3px solid rgba(74, 122, 63, 0.5)',
+            borderRadius: '0 6px 6px 0',
+            fontSize: '12.5px',
+            lineHeight: 1.7,
+            color: '#3D4F33',
           }}
         >
-          <div
-            style={{
-              fontSize: '10px',
-              fontWeight: 700,
-              color: '#B8962E',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase' as const,
-              marginBottom: '6px',
-              fontFamily: "'Cormorant Garamond', serif",
-            }}
-          >
-            ✦ Finalité — Khalifa
-          </div>
-          <p style={{ fontSize: '12.5px', lineHeight: 1.7, color: '#3D3228', fontStyle: 'italic' as const, fontFamily: "'Cormorant Garamond', serif" }}>
+          <p style={{ marginBottom: 0, fontStyle: 'italic' as const }}>
             {finaliteText}
           </p>
         </div>
