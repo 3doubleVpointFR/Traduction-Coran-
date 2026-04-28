@@ -78,7 +78,10 @@ function MobileSheet({
         className="absolute left-0 right-0 bottom-0 flex flex-col"
         style={{
           background: '#FFFFFF',
-          height: '88vh',
+          // dvh = dynamic viewport height : s'adapte automatiquement quand la barre
+          // URL apparaît/disparaît sur mobile. Fallback en vh + max calculé en pixels.
+          height: 'min(88dvh, calc(100vh - 50px))',
+          maxHeight: 'calc(100vh - 50px)',
           borderTopLeftRadius: '20px',
           borderTopRightRadius: '20px',
           boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
