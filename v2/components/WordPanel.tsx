@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 
 interface EtymologyEntry {
@@ -189,6 +189,18 @@ export default function WordPanel({
   const [expandedMeanings, setExpandedMeanings] = useState<Set<number>>(new Set())
   const [expandedRefs, setExpandedRefs] = useState<Record<string, boolean>>({})
   const [expandedRef, setExpandedRef] = useState<{ meaningId: number; ref: string; data: VerseText | null; loading: boolean } | null>(null)
+  // Tooltip concept actif (utile pour mobile où il n'y a pas de hover)
+  const [openTooltip, setOpenTooltip] = useState<string | null>(null)
+  // Ferme le tooltip quand on clique en dehors
+  useEffect(() => {
+    if (!openTooltip) return
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (!target.closest('[data-concept-tab]')) setOpenTooltip(null)
+    }
+    document.addEventListener('click', handler)
+    return () => document.removeEventListener('click', handler)
+  }, [openTooltip])
 
   const handleToggleRefs = useCallback((meaningId: number) => {
     setExpandedMeanings(prev => {
@@ -311,10 +323,21 @@ export default function WordPanel({
               <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end" style={{ marginTop: '8px' }}>
                 {[...conceptMap.entries()].map(([concept, conceptSenses], i) => {
                   const isActive = conceptRetenu.has(concept)
+                  const isOpen = openTooltip === concept
                   return (
-                    <div key={i} data-tour-concept-tab={isActive ? '1' : undefined} className="relative group" style={{ padding: '2px 0' }}>
+                    <div
+                      key={i}
+                      data-tour-concept-tab={isActive ? '1' : undefined}
+                      data-concept-tab="1"
+                      className="relative group"
+                      style={{ padding: '2px 0', cursor: 'pointer' }}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setOpenTooltip(prev => prev === concept ? null : concept)
+                      }}
+                    >
                       <span
-                        className="text-center cursor-default"
+                        className="text-center"
                         style={{
                           color: isActive ? '#B8962E' : '#1A1410',
                           fontSize: isActive ? '14px' : '13px',
@@ -326,9 +349,15 @@ export default function WordPanel({
                       >
                         {concept}
                       </span>
-                      {/* Tooltip au hover */}
-                      <div data-tour-concept-tooltip={isActive ? '1' : undefined} className="absolute left-0 top-full mt-1 hidden group-hover:block z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[320px]"
-                        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}>
+                      {/* Tooltip : visible si state = ouvert (mobile/tap), ou si hover (desktop) */}
+                      <div
+                        data-tour-concept-tooltip={isActive ? '1' : undefined}
+                        className={`absolute left-0 top-full mt-1 z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[320px] ${
+                          isOpen ? 'block' : 'hidden group-hover:block'
+                        }`}
+                        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
                           {concept} ({conceptSenses.length} sens)
                         </div>

@@ -5,6 +5,129 @@ import { useRouter } from 'next/navigation'
 import VersePanel from './VersePanel'
 import WordPanel from './WordPanel'
 
+// ═══════════════════════════════════════════════════════════════
+// Mobile Bottom Sheet — drag pour fermer
+// ═══════════════════════════════════════════════════════════════
+function MobileSheet({
+  onClose,
+  analysis,
+  loading,
+  activeWordKey,
+}: {
+  onClose: () => void
+  analysis: WordAnalysis | null
+  loading: boolean
+  activeWordKey: string
+}) {
+  const [dragY, setDragY] = useState(0)         // px tirés vers le bas
+  const startYRef = useRef<number | null>(null)
+  const [closing, setClosing] = useState(false)
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    startYRef.current = e.touches[0].clientY
+  }
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (startYRef.current === null) return
+    const delta = e.touches[0].clientY - startYRef.current
+    if (delta > 0) setDragY(delta) // ne suivre que vers le bas
+  }
+  const onTouchEnd = () => {
+    if (dragY > 120) {
+      // Threshold dépassé → fermeture animée
+      setClosing(true)
+      setTimeout(onClose, 220)
+    } else {
+      setDragY(0) // snap-back
+    }
+    startYRef.current = null
+  }
+
+  return (
+    <div className="lg:hidden fixed inset-0 z-[60]">
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes sheetSlideUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
+        }
+        @keyframes sheetSlideDown {
+          to { transform: translateY(100%); }
+        }
+        @keyframes backdropFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes backdropFadeOut {
+          to { opacity: 0; }
+        }
+      ` }} />
+
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'rgba(26, 20, 16, 0.55)',
+          backdropFilter: 'blur(2px)',
+          animation: closing ? 'backdropFadeOut 0.22s ease-out forwards' : 'backdropFadeIn 0.25s ease-out',
+          opacity: dragY > 0 ? Math.max(0.2, 1 - dragY / 400) : undefined,
+        }}
+        onClick={() => { setClosing(true); setTimeout(onClose, 220) }}
+      />
+
+      {/* Sheet */}
+      <div
+        className="absolute left-0 right-0 bottom-0 flex flex-col"
+        style={{
+          background: '#FFFFFF',
+          height: '88vh',
+          borderTopLeftRadius: '20px',
+          borderTopRightRadius: '20px',
+          boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
+          border: '1px solid rgba(184,150,46,0.3)',
+          borderBottom: 'none',
+          transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
+          transition: dragY === 0 ? 'transform 0.25s cubic-bezier(0.32, 0.72, 0, 1)' : 'none',
+          animation: closing
+            ? 'sheetSlideDown 0.22s cubic-bezier(0.32, 0.72, 0, 1) forwards'
+            : (dragY === 0 ? 'sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1)' : undefined),
+        }}
+      >
+        {/* Drag handle — la zone tactile pour tirer la feuille */}
+        <div
+          className="flex justify-center pt-2.5 pb-2 flex-shrink-0 cursor-grab"
+          style={{
+            background: '#FFFFFF',
+            borderTopLeftRadius: '20px',
+            borderTopRightRadius: '20px',
+            touchAction: 'none', // empêche scroll vertical pendant le drag
+          }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          <div style={{
+            width: 44,
+            height: 4,
+            borderRadius: 2,
+            background: dragY > 0 ? '#B8962E' : 'rgba(184,150,46,0.35)',
+            transition: 'background 0.2s',
+          }} />
+        </div>
+
+        {/* Contenu scrollable */}
+        <div className="flex-1 overflow-y-auto overscroll-contain">
+          <WordPanel
+            analysis={analysis}
+            loading={loading}
+            activeWordKey={activeWordKey}
+            onClose={onClose}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 interface Surah {
   id: number
   name_ar: string
@@ -360,69 +483,12 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
 
     {/* ═══ MOBILE BOTTOM SHEET (< 1024px) ═══ */}
     {activeWordKey && (
-      <div className="lg:hidden fixed inset-0 z-[60]">
-        {/* Animation keyframes injectées localement */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes sheetSlideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-          }
-          @keyframes backdropFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          .word-sheet-backdrop { animation: backdropFadeIn 0.25s ease-out; }
-          .word-sheet { animation: sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
-        ` }} />
-
-        {/* Backdrop */}
-        <div
-          className="word-sheet-backdrop absolute inset-0"
-          style={{ background: 'rgba(26, 20, 16, 0.55)', backdropFilter: 'blur(2px)' }}
-          onClick={handleClosePanel}
-        />
-
-        {/* Sheet */}
-        <div
-          className="word-sheet absolute left-0 right-0 bottom-0 flex flex-col"
-          style={{
-            background: '#FFFFFF',
-            height: '88vh',
-            borderTopLeftRadius: '20px',
-            borderTopRightRadius: '20px',
-            boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
-            border: '1px solid rgba(184,150,46,0.3)',
-            borderBottom: 'none',
-          }}
-        >
-          {/* Drag handle (visuel uniquement pour l'instant) */}
-          <div
-            className="flex justify-center pt-2.5 pb-1.5 flex-shrink-0"
-            style={{
-              background: '#FFFFFF',
-              borderTopLeftRadius: '20px',
-              borderTopRightRadius: '20px',
-            }}
-          >
-            <div style={{
-              width: 44,
-              height: 4,
-              borderRadius: 2,
-              background: 'rgba(184,150,46,0.35)',
-            }} />
-          </div>
-
-          {/* Contenu scrollable du WordPanel */}
-          <div className="flex-1 overflow-y-auto overscroll-contain">
-            <WordPanel
-              analysis={wordAnalysis}
-              loading={loadingWord}
-              activeWordKey={activeWordKey}
-              onClose={handleClosePanel}
-            />
-          </div>
-        </div>
-      </div>
+      <MobileSheet
+        onClose={handleClosePanel}
+        analysis={wordAnalysis}
+        loading={loadingWord}
+        activeWordKey={activeWordKey}
+      />
     )}
     </div>
   )
