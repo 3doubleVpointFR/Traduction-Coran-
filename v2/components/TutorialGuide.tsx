@@ -355,17 +355,14 @@ export default function TutorialGuide() {
         setTimeout(tickAlso, current.scrollIntoView ? 650 : 60)
       }
     }
-    // Helper : élément valide = présent dans le DOM, dimensions non-nulles, ET dans le viewport
-    // (sur mobile, le bottom sheet glisse depuis le bas — pendant l'animation, le rect est
-    // hors écran. Il faut rejeter ces captures pour ne garder que la position finale.)
+    // Helper : élément valide = présent dans le DOM avec des dimensions non-nulles
+    // (le check "off-screen" a été retiré car il rejettait les éléments simplement
+    // sous le fold qui doivent être scrollés to → le scroll est géré par positionEl)
     const findVisibleEl = (): HTMLElement | null => {
       const e = document.querySelector(current.selector) as HTMLElement | null
       if (!e) return null
       const r = e.getBoundingClientRect()
       if (r.width <= 0 || r.height <= 0) return null
-      const vpH = typeof window !== 'undefined' ? window.innerHeight : 800
-      // Rejette si entièrement hors écran (e.g. pendant l'animation slide-up du bottom sheet)
-      if (r.bottom <= 0 || r.top >= vpH) return null
       return e
     }
     const el = findVisibleEl()
