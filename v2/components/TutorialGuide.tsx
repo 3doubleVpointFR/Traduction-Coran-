@@ -620,10 +620,17 @@ export default function TutorialGuide() {
                 stop()
                 return
               }
-              // Avancer l'étape, puis naviguer si demandé
-              setStep(step + 1)
+              const nextStep = step + 1
+              // Sauve TOUJOURS le prochain step en localStorage
+              localStorage.setItem('tuto-step', String(nextStep))
               if (current.navigateOnNext) {
+                // Si navigation : on NE change PAS le step ici → la bulle actuelle
+                // reste visible sur l'élément actuel pendant la nav.
+                // Le useEffect[pathname] re-lira localStorage quand la nouvelle
+                // page sera prête, et basculera vers le step suivant à ce moment.
                 router.push(current.navigateOnNext)
+              } else {
+                setStep(nextStep)
               }
             }}
             className="text-xs px-3 py-1 rounded-full transition-colors hover:shadow-md font-semibold"
