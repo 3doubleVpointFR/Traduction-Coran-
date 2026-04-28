@@ -10,9 +10,13 @@ export default function TutorialModal() {
 
   useEffect(() => {
     setSeen(localStorage.getItem('tuto-seen') === '1')
-  }, [])
+    // Prefetch /surah/3 dès le mount pour que la nav du tutoriel soit instantanée
+    router.prefetch('/surah/3')
+  }, [router])
 
   const startTour = () => {
+    // S'assure que /surah/3 est prêt avant la nav (no-op si déjà prefetché)
+    router.prefetch('/surah/3')
     localStorage.setItem('tuto-active', '1')
     localStorage.setItem('tuto-step', '0')
     setOpen(false)

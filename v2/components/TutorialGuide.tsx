@@ -34,7 +34,7 @@ const STEPS: TourStep[] = [
     desc: 'En haut le texte arabe, en dessous chaque mot aligné avec sa phonétique et sa traduction française. Le verset entouré en or est celui qu\'on va analyser ensemble.',
     scrollIntoView: true,
     forceCorner: true,
-    waitForSelector: 2000,
+    waitForSelector: 8000,
   },
   {
     selector: '[data-tour-verse-num="2"] [data-tour-word-key]',
@@ -265,18 +265,29 @@ export default function TutorialGuide() {
     if (el) {
       positionEl(el)
     } else if (current.waitForSelector) {
-      const start = Date.now()
-      const tick = () => {
+      // MutationObserver : réagit instantanément dès que l'élément cible apparaît
+      // (plus efficace que polling rAF, surtout en production où la nav est plus lente)
+      const timeout = current.waitForSelector
+      let done = false
+      const observer = new MutationObserver(() => {
+        if (done) return
         const e2 = document.querySelector(current.selector) as HTMLElement | null
         if (e2) {
+          done = true
+          observer.disconnect()
           positionEl(e2)
-          return
         }
-        if (Date.now() - start < (current.waitForSelector || 1000)) {
-          requestAnimationFrame(tick)
-        }
-      }
-      tick()
+      })
+      observer.observe(document.body, { childList: true, subtree: true })
+      // Sécurité : arrêt forcé au bout du timeout
+      setTimeout(() => {
+        if (done) return
+        done = true
+        observer.disconnect()
+        // Dernière tentative
+        const e2 = document.querySelector(current.selector) as HTMLElement | null
+        if (e2) positionEl(e2)
+      }, timeout)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, active])
