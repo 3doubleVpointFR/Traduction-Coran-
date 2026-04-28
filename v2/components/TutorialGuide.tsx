@@ -597,14 +597,35 @@ export default function TutorialGuide() {
           zIndex: 1000,
         }}
       >
-        {/* Skip top-right */}
+        {/* Skip top-right — petit bouton arrondi élégant */}
         <button
           onClick={stop}
-          className="absolute top-2 right-3 hover:opacity-70 transition-opacity"
-          style={{ color: '#9E9089', fontSize: '11px', letterSpacing: '0.05em' }}
+          className="tuto-quit-btn absolute inline-flex items-center gap-1 rounded-full transition-all"
+          style={{
+            top: '10px',
+            right: '12px',
+            padding: '3px 10px 3px 8px',
+            background: 'transparent',
+            border: '1px solid rgba(184,150,46,0.25)',
+            color: '#9E9089',
+            fontSize: '10px',
+            letterSpacing: '0.08em',
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 600,
+            textTransform: 'uppercase',
+          }}
         >
-          quitter ✕
+          <span style={{ fontSize: '10px', lineHeight: 1 }}>✕</span>
+          <span>quitter</span>
         </button>
+
+        <style jsx>{`
+          .tuto-quit-btn:hover {
+            background: rgba(184, 150, 46, 0.08) !important;
+            border-color: rgba(184, 150, 46, 0.5) !important;
+            color: #8A7428 !important;
+          }
+        `}</style>
 
         {/* Step indicator */}
         <div className="flex items-center gap-1 mb-3 mt-2">
@@ -666,26 +687,60 @@ export default function TutorialGuide() {
               const nextStep = step + 1
               localStorage.setItem('tuto-step', String(nextStep))
               if (current.navigateOnNext) {
-                // Affiche "Chargement…" + désactive le bouton pendant la nav
                 setNavigating(true)
                 router.push(current.navigateOnNext)
-                // Le useEffect[pathname] reset navigating + lit le step depuis localStorage
               } else {
                 setStep(nextStep)
               }
             }}
             disabled={navigating}
-            className="text-xs px-3 py-1 rounded-full transition-colors hover:shadow-md font-semibold"
+            className="tuto-next-btn text-xs px-3 py-1 rounded-full transition-all font-semibold"
             style={{
-              background: navigating ? '#C8B470' : '#B8962E',
+              background: '#B8962E',
               color: '#FFFCF6',
               letterSpacing: '0.05em',
               cursor: navigating ? 'wait' : 'pointer',
-              opacity: navigating ? 0.85 : 1,
+              minWidth: '90px',
+              textAlign: 'center',
             }}
           >
-            {isLast ? 'Terminer ✦' : navigating ? 'Chargement…' : 'Suivant →'}
+            {isLast ? (
+              'Terminer ✦'
+            ) : navigating ? (
+              <span className="inline-flex items-center gap-1" aria-label="Chargement">
+                <span className="tuto-dot" style={{ animationDelay: '0s' }} />
+                <span className="tuto-dot" style={{ animationDelay: '0.18s' }} />
+                <span className="tuto-dot" style={{ animationDelay: '0.36s' }} />
+              </span>
+            ) : (
+              'Suivant →'
+            )}
           </button>
+
+          <style jsx>{`
+            .tuto-next-btn:not(:disabled):hover {
+              box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4);
+              transform: translateY(-1px);
+            }
+            .tuto-dot {
+              display: inline-block;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: #FFFCF6;
+              animation: tutoDotPulse 1.05s ease-in-out infinite;
+            }
+            @keyframes tutoDotPulse {
+              0%, 80%, 100% {
+                transform: scale(0.7);
+                opacity: 0.5;
+              }
+              40% {
+                transform: scale(1.1);
+                opacity: 1;
+              }
+            }
+          `}</style>
         </div>
       </div>
     </>
