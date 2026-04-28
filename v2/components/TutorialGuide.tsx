@@ -160,6 +160,10 @@ export default function TutorialGuide() {
   const [step, setStep] = useState(0)
   const [rects, setRects] = useState<DOMRect[]>([])
   const [navigating, setNavigating] = useState(false)
+  // Offset utilisateur (drag) appliqué par-dessus la position calculée
+  const [bubbleOffset, setBubbleOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
+  // Reset l'offset à chaque changement d'étape
+  useEffect(() => { setBubbleOffset({ x: 0, y: 0 }) }, [step])
 
   // Read localStorage on mount, sync state
   useEffect(() => {
@@ -187,14 +191,23 @@ export default function TutorialGuide() {
   // Helper : calcule la liste des rects à mettre en surbrillance
   // (élément principal + alsoHighlight si visible)
   const computeRects = (el: HTMLElement, current: TourStep): DOMRect[] => {
-    const rects: DOMRect[] = [el.getBoundingClientRect()]
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
+    const vpH = typeof window !== 'undefined' ? window.innerHeight : 800
+    // Sur mobile : clamp la hauteur du rect pour éviter qu'il couvre tout l'écran
+    // (cas du WordPanel dans le bottom sheet) → surbrillance focalisée sur le haut
+    const clamp = (r: DOMRect): DOMRect => {
+      if (!isMobile) return r
+      const maxH = vpH * 0.35 // max 35% du viewport
+      if (r.height <= maxH) return r
+      return new DOMRect(r.left, r.top, r.width, maxH)
+    }
+    const rects: DOMRect[] = [clamp(el.getBoundingClientRect())]
     if (current.alsoHighlight) {
       const extra = document.querySelector(current.alsoHighlight) as HTMLElement | null
       if (extra) {
         const r2 = extra.getBoundingClientRect()
-        // Ne pas inclure si élément non rendu (width/height = 0)
         if (r2.width > 0 && r2.height > 0) {
-          rects.push(r2)
+          rects.push(clamp(r2))
         }
       }
     }
@@ -240,6 +253,25 @@ export default function TutorialGuide() {
           const targetScroll = window.scrollY + r.top - HEADER_OFFSET
           window.scrollTo({ top: targetScroll, behavior: 'smooth' })
           didScroll = true
+        }
+        // De plus, si l'élément est dans un container scrollable (ex: bottom sheet
+        // sur mobile), on scrolle aussi ce container pour que l'élément soit visible
+        // au centre — scrollIntoView remonte par défaut tous les ancêtres scrollables.
+        try {
+          el.scrollIntoView({ block: 'center', behavior: 'smooth' })
+          didScroll = true
+        } catch { /* noop */ }
+      } else {
+        // Même quand scrollIntoView n'est pas demandé, si l'élément est hors viewport
+        // (cas typique : étape suivante dans le panneau d'analyse mobile, sheet pas scrollé),
+        // on scroll juste le container interne pour qu'il soit visible
+        const r = el.getBoundingClientRect()
+        const vpH = window.innerHeight
+        if (r.top < 0 || r.bottom > vpH) {
+          try {
+            el.scrollIntoView({ block: 'center', behavior: 'smooth' })
+            didScroll = true
+          } catch { /* noop */ }
         }
       }
       // 1) Surbrillance IMMÉDIATE (position actuelle, avant scroll) → pas d'attente visible
@@ -456,10 +488,12 @@ export default function TutorialGuide() {
       return { left: '50%', top: '50%', transform: 'translate(-50%, -50%)' as const }
     }
     const margin = 16
-    const bubbleW = 340
-    const bubbleH = 220
     const vpW = window.innerWidth
     const vpH = window.innerHeight
+    const isMobile = vpW < 1024
+    // Bulle plus étroite sur mobile pour respecter les petits écrans
+    const bubbleW = isMobile ? Math.min(vpW - 24, 320) : 340
+    const bubbleH = 220
 
     // Si forceCorner = true, placer la bulle en bas-droite fixe du viewport
     // (bottom-right au lieu de top fixe pour éviter de déborder en bas)
@@ -488,9 +522,25 @@ export default function TutorialGuide() {
     // garder la première qui ne chevauche PAS la cible visible.
     const candidates: Array<{ left: number; top: number }> = []
 
-    // Position préférée selon le step
+    // ─── MOBILE : place la bulle dans le plus grand espace libre ───
+    // Sur petit écran, peu importe la position demandée — on calcule l'espace
+    // libre au-dessus et en-dessous du rect, et on prend le plus grand.
+    if (isMobile) {
+      const spaceAbove = unionRect.top
+      const spaceBelow = vpH - unionRect.bottom
+      const bubbleLeft = Math.max(8, Math.min((vpW - bubbleW) / 2, vpW - bubbleW - 8))
+      if (spaceAbove >= spaceBelow && spaceAbove >= bubbleH + 16) {
+        candidates.push({ left: bubbleLeft, top: Math.max(8, unionRect.top - margin - bubbleH) })
+      } else if (spaceBelow >= bubbleH + 16) {
+        candidates.push({ left: bubbleLeft, top: Math.min(vpH - bubbleH - 8, unionRect.bottom + margin) })
+      } else {
+        // Pas assez d'espace nulle part → coin haut (au-dessus du sheet/élément)
+        candidates.push({ left: bubbleLeft, top: 8 })
+      }
+    }
+
+    // Position préférée selon le step (desktop ou fallback mobile)
     // Pour left/right : on centre verticalement la bulle sur la cible
-    // (au lieu d'aligner le haut → évite que la bulle descende trop bas)
     const centerY = unionRect.top + unionRect.height / 2 - bubbleH / 2
     switch (current.position) {
       case 'bottom':
@@ -615,7 +665,7 @@ export default function TutorialGuide() {
         className="fixed rounded-2xl shadow-2xl"
         style={{
           ...bubble,
-          width: 340,
+          width: typeof window !== 'undefined' && window.innerWidth < 1024 ? Math.min(window.innerWidth - 24, 320) : 340,
           background: '#FFFCF6',
           border: '1px solid rgba(184,150,46,0.4)',
           padding: '20px',
