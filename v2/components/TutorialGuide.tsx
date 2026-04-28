@@ -220,6 +220,10 @@ export default function TutorialGuide() {
       setRects([])
       return
     }
+    // Clear les rects précédents tant que la nouvelle cible n'est pas trouvée
+    // → la bulle se centre automatiquement avec le texte du nouveau step
+    //   au lieu de rester collée sur l'ancienne cible (ex: pendant une nav)
+    setRects([])
     const positionEl = (el: HTMLElement) => {
       let didScroll = false
       if (current.scrollIntoView) {
