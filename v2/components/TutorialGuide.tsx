@@ -260,30 +260,47 @@ export default function TutorialGuide() {
     // → la bulle se centre automatiquement avec le texte du nouveau step
     //   au lieu de rester collée sur l'ancienne cible (ex: pendant une nav)
     setRects([])
+    // Détecte si l'élément est dans un container scrollable (autre que window)
+    const findScrollableAncestor = (node: HTMLElement | null): HTMLElement | null => {
+      let p = node?.parentElement || null
+      while (p && p !== document.body) {
+        const s = getComputedStyle(p)
+        const oy = s.overflowY
+        if ((oy === 'auto' || oy === 'scroll') && p.scrollHeight > p.clientHeight) {
+          return p
+        }
+        p = p.parentElement
+      }
+      return null
+    }
+
     const positionEl = (el: HTMLElement) => {
       let didScroll = false
+      const scrollableAncestor = findScrollableAncestor(el)
+
       if (current.scrollIntoView) {
-        const r = el.getBoundingClientRect()
-        const vpH = window.innerHeight
-        const HEADER_OFFSET = 90 // espace pour le header sticky
-        const isFullyVisible = r.top >= HEADER_OFFSET && r.bottom <= vpH
-        if (!isFullyVisible) {
-          // Calcul manuel du scroll pour amener le haut de l'élément juste sous le header
-          const targetScroll = window.scrollY + r.top - HEADER_OFFSET
-          window.scrollTo({ top: targetScroll, behavior: 'smooth' })
-          didScroll = true
+        if (scrollableAncestor) {
+          // Élément dans un container scrollable (bottom sheet mobile, etc.)
+          // → scrollIntoView gère bien la chaîne d'ancêtres scrollables
+          try {
+            el.scrollIntoView({ block: 'center', behavior: 'smooth' })
+            didScroll = true
+          } catch { /* noop */ }
+        } else {
+          // Scroll de la fenêtre uniquement, avec offset pour le header sticky
+          const r = el.getBoundingClientRect()
+          const vpH = window.innerHeight
+          const HEADER_OFFSET = 90
+          const isFullyVisible = r.top >= HEADER_OFFSET && r.bottom <= vpH
+          if (!isFullyVisible) {
+            const targetScroll = window.scrollY + r.top - HEADER_OFFSET
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' })
+            didScroll = true
+          }
         }
-        // De plus, si l'élément est dans un container scrollable (ex: bottom sheet
-        // sur mobile), on scrolle aussi ce container pour que l'élément soit visible
-        // au centre — scrollIntoView remonte par défaut tous les ancêtres scrollables.
-        try {
-          el.scrollIntoView({ block: 'center', behavior: 'smooth' })
-          didScroll = true
-        } catch { /* noop */ }
-      } else {
-        // Même quand scrollIntoView n'est pas demandé, si l'élément est hors viewport
-        // (cas typique : étape suivante dans le panneau d'analyse mobile, sheet pas scrollé),
-        // on scroll juste le container interne pour qu'il soit visible
+      } else if (scrollableAncestor) {
+        // Pas de scrollIntoView demandé, mais si l'élément est dans un container
+        // scrollable et hors viewport → on scroll le container quand même
         const r = el.getBoundingClientRect()
         const vpH = window.innerHeight
         if (r.top < 0 || r.bottom > vpH) {
