@@ -1,0 +1,315 @@
+================================================================================
+QUERY 1: word_meanings for 13 roots of Sourate 107
+================================================================================
+
+ROOT: dee2
+  wa.id: 2589
+  root_ar: د ع ع
+  root_phon: dee2
+  total_occurrences: 3
+  word_meanings count: 3
+
+  [wm.id=11808] concept="Repoussement/Brutalité" | sense="repousser violemment" | type=etymology | order=1
+    description: Acte extérieur de repousser quelqu'un avec brutalité et mépris. Le daaa est un repoussement physique et violent — il sort de celui qui repousse et atteint celui qui est repoussé. C'est directionnel et méprisant. Repousser l'orphelin c'est le traiter comme un objet qu'on écarte.
+  [wm.id=11809] concept="Repoussement/Brutalité" | sense="bousculer" | type=etymology | order=2
+  [wm.id=11810] concept="Repoussement/Brutalité" | sense="rejeter avec rudesse" | type=etymology | order=3
+
+ROOT: dyn
+  wa.id: 258
+  root_ar: د ي ن
+  root_phon: d-y-n
+  total_occurrences: 101
+  word_meanings count: 21
+
+  [wm.id=3351] concept="Dette/Obligation" | sense="dette" | type=etymology | order=16
+    description: Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.
+  [wm.id=3352] concept="Dette/Obligation" | sense="créance" | type=etymology | order=17
+    description: Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.
+  [wm.id=3353] concept="Dette/Obligation" | sense="obligation financière" | type=etymology | order=18
+    description: Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.
+  [wm.id=3354] concept="Dette/Obligation" | sense="prêt" | type=etymology | order=19
+    description: Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.
+  [wm.id=3356] concept="Eau/Liquide" | sense="pluie continue" | type=etymology | order=21
+    description: Sens concret lié à la racine. Pluie continue — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+  [wm.id=3336] concept="Obéissance/Soumission" | sense="obéir" | type=etymology | order=1
+    description: Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.
+  [wm.id=3337] concept="Obéissance/Soumission" | sense="se soumettre" | type=etymology | order=2
+    description: Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.
+  [wm.id=3338] concept="Obéissance/Soumission" | sense="soumission" | type=etymology | order=3
+    description: Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.
+  [wm.id=3339] concept="Obéissance/Soumission" | sense="assujettissement" | type=etymology | order=4
+    description: Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.
+  [wm.id=3340] concept="Religion/Système" | sense="religion" | type=etymology | order=5
+    description: Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.
+  [wm.id=3341] concept="Religion/Système" | sense="système de croyances" | type=etymology | order=6
+    description: Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.
+  [wm.id=3342] concept="Religion/Système" | sense="pratique" | type=etymology | order=7
+    description: Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.
+  [wm.id=3343] concept="Religion/Système" | sense="coutume" | type=etymology | order=8
+    description: Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.
+  [wm.id=3344] concept="Religion/Système" | sense="habitude" | type=etymology | order=9
+    description: Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.
+  [wm.id=3345] concept="Rétribution/Compte" | sense="rétribution" | type=etymology | order=10
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3346] concept="Rétribution/Compte" | sense="récompense" | type=etymology | order=11
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3347] concept="Rétribution/Compte" | sense="punition" | type=etymology | order=12
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3348] concept="Rétribution/Compte" | sense="compensation" | type=etymology | order=13
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3349] concept="Rétribution/Compte" | sense="rendre ce qui est dû" | type=etymology | order=14
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3350] concept="Rétribution/Compte" | sense="jugement" | type=etymology | order=15
+    description: Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.
+  [wm.id=3355] concept="Sens isolé/Maladie" | sense="maladie" | type=etymology | order=20
+    description: Sens concret lié à la racine. Maladie — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+
+ROOT: hdd2
+  wa.id: 2590
+  root_ar: ح ض ض
+  root_phon: hdd2
+  total_occurrences: 3
+  word_meanings count: 4
+
+  [wm.id=11811] concept="Incitation/Encouragement" | sense="inciter" | type=etymology | order=1
+    description: Acte extérieur de pousser quelqu'un à faire quelque chose de bien. L'incitation sort de celui qui encourage et atteint celui qui est poussé à agir. C'est directionnel et positif. Ne pas inciter c'est ne pas se soucier de l'autre.
+  [wm.id=11812] concept="Incitation/Encouragement" | sense="encourager" | type=etymology | order=2
+  [wm.id=11813] concept="Incitation/Encouragement" | sense="pousser à" | type=etymology | order=3
+  [wm.id=11814] concept="Incitation/Encouragement" | sense="exhorter" | type=etymology | order=4
+
+ROOT: kdhb
+  wa.id: 854
+  root_ar: ك ذ ب
+  root_phon: kdhb
+  total_occurrences: 282
+  word_meanings count: 6
+
+  [wm.id=8337] concept="Déni/Rejet" | sense="démentir" | type=etymology | order=4
+    description: Acte extérieur de déclarer faux ce que quelqu'un dit être vrai. Le déni sort de celui qui dément et atteint celui qui est démenti — c'est directionnel et confrontationnel. Démentir c'est refuser la vérité de l'autre.
+  [wm.id=8338] concept="Déni/Rejet" | sense="nier" | type=etymology | order=5
+  [wm.id=8339] concept="Déni/Rejet" | sense="traiter de menteur" | type=etymology | order=6
+  [wm.id=8334] concept="Mensonge/Fausseté" | sense="mentir" | type=etymology | order=1
+    description: Acte extérieur de dire ce qui est contraire à la réalité en le sachant. Le mensonge sort du menteur et atteint celui qui l'écoute — c'est directionnel et trompeur. Le mensonge est ponctuel dans l'acte mais corrompt la confiance de façon permanente.
+  [wm.id=8335] concept="Mensonge/Fausseté" | sense="dire le faux" | type=etymology | order=2
+  [wm.id=8336] concept="Mensonge/Fausseté" | sense="fausseté" | type=etymology | order=3
+
+ROOT: men
+  wa.id: 2308
+  root_ar: م ع ن
+  root_phon: men
+  total_occurrences: (null)
+  word_meanings count: 3
+
+  [wm.id=6209] concept="Source/Jaillissement" | sense="eau jaillissante" | type=etymology | order=1
+    description: Eau qui coule abondamment d'une source — l'eau courante (ma'în) est permanente comme flux qui ne tarit pas. C'est directionnel de la source vers l'extérieur. Les jardins du Paradis ont des sources d'eau vive. L'eau qui jaillit est signe de vie et de fertilité.
+  [wm.id=6210] concept="Source/Jaillissement" | sense="source" | type=etymology | order=2
+  [wm.id=6211] concept="Source/Jaillissement" | sense="courant" | type=etymology | order=3
+
+ROOT: mne
+  wa.id: 1574
+  root_ar: م ن ع
+  root_phon: mne
+  total_occurrences: 17
+  word_meanings count: 4
+
+  [wm.id=6009] concept="Empêchement/Interdiction" | sense="empêcher" | type=etymology | order=1
+    description: Acte de faire obstacle à ce que quelqu'un fasse ou obtienne quelque chose — empêcher (man') est directionnel vers celui qu'on empêche et ce dont on le prive. C'est ponctuel dans l'acte mais peut créer un état permanent d'interdiction. Qui empêche la mosquée de Dieu qu'on y mentionne Son nom ? L'empêcheur se dresse entre le sujet et l'objet de son désir.
+  [wm.id=6010] concept="Empêchement/Interdiction" | sense="interdire" | type=etymology | order=2
+  [wm.id=6011] concept="Empêchement/Interdiction" | sense="refuser" | type=etymology | order=3
+  [wm.id=6012] concept="Protection/Défense" | sense="protéger" | type=etymology | order=4
+    description: Empêcher le mal d'atteindre quelqu'un — la protection est l'empêchement positif, directionnel vers celui qu'on défend. Dieu est al-Mâni', Celui qui empêche le mal d'atteindre Ses serviteurs.
+
+ROOT: ray
+  wa.id: 552
+  root_ar: ر أ ي
+  root_phon: ray
+  total_occurrences: 328
+  word_meanings count: 5
+
+  [wm.id=5851] concept="Apparition" | sense="apparaître" | type=etymology | order=5
+    description: Devenir visible — ce qui apparaît passe de l'invisible au visible. C'est ponctuel dans l'événement.
+  [wm.id=5849] concept="Jugement/Avis" | sense="opinion" | type=etymology | order=3
+    description: Ce que l'on pense après réflexion — l'opinion (ra'y) est un jugement intérieur qui peut être juste ou erroné. C'est permanent comme position personnelle sur un sujet.
+  [wm.id=5850] concept="Jugement/Avis" | sense="avis" | type=etymology | order=4
+  [wm.id=5847] concept="Vision/Perception" | sense="voir" | type=etymology | order=1
+    description: Acte de percevoir par les yeux ou par l'esprit — voir est directionnel du voyant vers le vu. C'est ponctuel dans chaque acte de vision mais permanent comme capacité. Voir peut être physique (les yeux du corps) ou spirituel (les yeux du cœur). La vraie vision est celle qui voit les réalités au-delà des apparences.
+  [wm.id=5848] concept="Vision/Perception" | sense="percevoir" | type=etymology | order=2
+
+ROOT: shw2
+  wa.id: 2591
+  root_ar: س ه و
+  root_phon: shw2
+  total_occurrences: 2
+  word_meanings count: 4
+
+  [wm.id=11815] concept="Distraction/Négligence" | sense="être distrait" | type=etymology | order=1
+    description: État intérieur de celui qui n'est pas attentif à ce qu'il fait. La distraction est un état permanent de celui qui ne prend pas au sérieux — il fait les gestes sans y mettre le cœur. Le sahw est l'opposé de la présence et de la concentration.
+  [wm.id=11816] concept="Distraction/Négligence" | sense="négliger" | type=etymology | order=2
+  [wm.id=11817] concept="Distraction/Négligence" | sense="oublier" | type=etymology | order=3
+  [wm.id=11818] concept="Distraction/Négligence" | sense="être inattentif" | type=etymology | order=4
+
+ROOT: skn
+  wa.id: 462
+  root_ar: س ك ن
+  root_phon: skn
+  total_occurrences: 69
+  word_meanings count: 6
+
+  [wm.id=5516] concept="Calme/Repos" | sense="être calme" | type=etymology | order=3
+    description: État intérieur ou extérieur de tranquillité, d'absence d'agitation — le calme peut être permanent (tempérament paisible) ou temporaire (moment de paix après l'agitation). C'est un état de repos où rien ne bouge, où les forces sont en équilibre. Le calme est ce vers quoi tend l'agité, ce que cherche celui qui est troublé. La nuit apaise, la prière apaise, l'amour entre époux apaise.
+  [wm.id=5517] concept="Calme/Repos" | sense="s'apaiser" | type=etymology | order=4
+  [wm.id=5518] concept="Calme/Repos" | sense="se reposer" | type=etymology | order=5
+  [wm.id=5514] concept="Habitation/Demeure" | sense="habiter" | type=etymology | order=1
+    description: Acte de demeurer en un lieu de façon stable, d'en faire sa maison — habiter est directionnel (on s'installe dans un espace) et permanent tant qu'on reste. Habiter c'est transformer un lieu en chez-soi, y trouver repos et sécurité. La demeure est le lieu où l'on revient, où l'on se retire du monde extérieur. Habiter est le contraire d'errer.
+  [wm.id=5515] concept="Habitation/Demeure" | sense="demeurer" | type=etymology | order=2
+  [wm.id=5519] concept="Sens isolé/Pauvre" | sense="pauvre" | type=etymology | order=6
+    description: Sens dérivé de l'immobilité forcée : celui qui ne peut pas bouger par manque de moyens.
+
+ROOT: slw
+  wa.id: 283
+  root_ar: ص ل و
+  root_phon: slw
+  total_occurrences: 99
+  word_meanings count: 8
+
+  [wm.id=3668] concept="Corps/Anatomie" | sense="deuxième dans une course" | type=etymology | order=8
+    description: Sens concret lié à la racine. Deuxième dans une course — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+  [wm.id=3667] concept="Lieu/Géographie" | sense="milieu" | type=etymology | order=7
+    description: Sens concret lié à la racine. Milieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+  [wm.id=3661] concept="Prière/Invocation" | sense="prier" | type=etymology | order=1
+    description: Acte extérieur de se tourner vers Dieu par des paroles et des gestes. La prière sort de celui qui prie et se dirige vers Dieu. C'est un acte directionnel, régulier et structuré.
+  [wm.id=3662] concept="Prière/Invocation" | sense="prière rituelle" | type=etymology | order=2
+    description: Acte extérieur de se tourner vers Dieu.
+  [wm.id=3663] concept="Prière/Invocation" | sense="invoquer" | type=etymology | order=3
+    description: Acte extérieur de se tourner vers Dieu.
+  [wm.id=3664] concept="Prière/Invocation" | sense="bénir" | type=etymology | order=4
+    description: Acte extérieur de se tourner vers Dieu.
+  [wm.id=3665] concept="Prière/Invocation" | sense="lieu de prière" | type=etymology | order=5
+    description: Acte extérieur de se tourner vers Dieu.
+  [wm.id=3666] concept="Proximité/Attachement" | sense="suivre de près" | type=etymology | order=6
+    description: Acte de rester proche, de suivre de manière continue. La proximité est un état relationnel entre deux parties.
+
+ROOT: tem
+  wa.id: 577
+  root_ar: ط ع م
+  root_phon: tem
+  total_occurrences: 48
+  word_meanings count: 4
+
+  [wm.id=6766] concept="Gustation/Nourriture" | sense="goût" | type=etymology | order=1
+    description: La saveur perçue par la langue — le goût (ta'm) est la qualité sensorielle des aliments. C'est intérieur comme perception. Des fleuves dont l'eau ne change pas de goût. La nourriture (ta'âm) est ce qui sustente le corps. Nourrir le pauvre est un acte de piété recommandé.
+  [wm.id=6767] concept="Gustation/Nourriture" | sense="nourriture" | type=etymology | order=2
+  [wm.id=6768] concept="Gustation/Nourriture" | sense="manger" | type=etymology | order=3
+  [wm.id=6769] concept="Gustation/Nourriture" | sense="saveur" | type=etymology | order=4
+
+ROOT: wyl
+  wa.id: 654
+  root_ar: و ي ل
+  root_phon: wyl
+  total_occurrences: 25
+  word_meanings count: 3
+
+  [wm.id=7204] concept="Malédiction/Désastre" | sense="malheur" | type=etymology | order=1
+    description: Exclamation de détresse ou de condamnation — wayl est le cri de celui qui souffre ou l'annonce du châtiment. C'est ponctuel comme exclamation mais renvoie à un état permanent de malheur. Malheur (waylun) aux fraudeurs ! Malheur à eux pour ce que leurs mains ont écrit. Le wayl est aussi un lieu en Enfer. C'est l'opposé du salut et de la félicité.
+  [wm.id=7205] concept="Malédiction/Désastre" | sense="détresse" | type=etymology | order=2
+  [wm.id=7206] concept="Malédiction/Désastre" | sense="damnation" | type=etymology | order=3
+
+ROOT: ytm
+  wa.id: 664
+  root_ar: ي ت م
+  root_phon: ytm
+  total_occurrences: 23
+  word_meanings count: 3
+
+  [wm.id=7227] concept="Orphelinat/Solitude" | sense="être orphelin" | type=etymology | order=1
+    description: Être privé de père dans l'enfance — l'orphelin (yatîm) est l'enfant qui a perdu son père avant la puberté. C'est permanent comme état social. Quant à l'orphelin (yatîm), ne le brime pas ! Le Prophète lui-même était orphelin. Prendre soin des orphelins est un devoir majeur. Manger injustement leurs biens c'est avaler du feu.
+  [wm.id=7228] concept="Orphelinat/Solitude" | sense="orphelin" | type=etymology | order=2
+  [wm.id=7229] concept="Orphelinat/Solitude" | sense="unique" | type=etymology | order=3
+
+
+TOTAL word_meanings rows: 74
+
+================================================================================
+QUERY 2: word_daily for 13 roots of Sourate 107
+================================================================================
+
+ROOT: dee2
+  word_daily count: 3
+  [wd.id=1466] sense="repoussement" | arabic="لا تدعّ أحدا" | phon="la tadua ahadan" | french="Ne repousse personne."
+  [wd.id=1467] sense="repoussement" | arabic="دعّه بقوة" | phon="daahu bi-quwwa" | french="Il l'a repoussé avec force."
+  [wd.id=1468] sense="repoussement" | arabic="من يدعّ الضعيف يُدعّ" | phon="man yadua ad-daeef yudaa" | french="Qui repousse le faible sera repoussé."
+
+ROOT: dyn
+  word_daily count: 3
+  [wd.id=1334] sense="rétribution" | arabic="كَمَا تَدِينُ تُدَانُ" | phon="kama tadinu tudan" | french="Comme tu traites tu seras traité"
+  [wd.id=1335] sense="rétribution" | arabic="يَوْمُ ٱلدِّينِ" | phon="yawmu d-din" | french="Le Jour de la rétribution"
+  [wd.id=1336] sense="rétribution" | arabic="لَهُ دَيْنٌ عَلَيَّ" | phon="lahu daynun alayya" | french="Il a une dette sur moi"
+
+ROOT: hdd2
+  word_daily count: 3
+  [wd.id=1469] sense="incitation" | arabic="حضّ أصدقاءك على الخير" | phon="hadda asdiqaaka ala al-khayr" | french="Incite tes amis au bien."
+  [wd.id=1470] sense="incitation" | arabic="التحضيض على العلم واجب" | phon="at-tahdid ala al-ilm wajib" | french="Inciter au savoir est un devoir."
+  [wd.id=1471] sense="incitation" | arabic="حضّني على المشاركة" | phon="haddani ala al-musharaka" | french="Il m'a encouragé à participer."
+
+ROOT: kdhb
+  word_daily count: 3
+  [wd.id=1475] sense="déni" | arabic="لا تكذب بالحقيقة" | phon="la tukadhdhibu bi-l-haqiqa" | french="Ne démens pas la vérité."
+  [wd.id=1476] sense="déni" | arabic="التكذيب بالحق خطير" | phon="at-takdhibu bi-l-haqq khatir" | french="Démentir la vérité est grave."
+  [wd.id=1477] sense="déni" | arabic="كذّبوا بآيات الله" | phon="kadhdhabu bi-ayati llah" | french="Ils ont démenti les signes de Dieu."
+
+ROOT: men
+  word_daily count: 3
+  [wd.id=1484] sense="aide" | arabic="لا تمنع الماعون" | phon="la tamna al-maaun" | french="Ne refuse pas l'aide élémentaire."
+  [wd.id=1486] sense="aide" | arabic="أعطه ماعونا" | phon="aatihi maaunan" | french="Donne-lui une aide élémentaire."
+  [wd.id=1485] sense="aide" | arabic="الماعون حق الجار" | phon="al-maawunu haqqu al-jar" | french="L'aide élémentaire est le droit du voisin."
+
+ROOT: mne
+  word_daily count: 3
+  [wd.id=1499] sense="refus" | arabic="لا تمنع الخير" | phon="la tamna' al-khayr" | french="Ne refuse pas le bien."
+  [wd.id=1500] sense="refus" | arabic="من منعك حقك؟" | phon="man mana'aka haqqak?" | french="Qui t'a refusé ton droit ?"
+  [wd.id=1501] sense="refus" | arabic="المنع ظلم" | phon="al-man'u zulm" | french="Le refus est une injustice."
+
+ROOT: ray
+  word_daily count: 3
+  [wd.id=1556] sense="voir" | arabic="رَأَيْتُ ذَلِكَ بِعَيْنَيَّ" | phon="ra'aytu dhalika bi-ʻaynayyay" | french="J'ai vu cela de mes propres yeux"
+  [wd.id=1487] sense="voir" | arabic="رأيته بعيني" | phon="ra'aytuhu bi-'ayni" | french="Je l'ai vu de mes propres yeux."
+  [wd.id=1489] sense="voir" | arabic="أرأيت ما حدث؟" | phon="ara'ayta ma hadath?" | french="As-tu vu ce qui s'est passé ?"
+
+ROOT: shw2
+  word_daily count: 3
+  [wd.id=1472] sense="distraction" | arabic="لا تسه عن واجبك" | phon="la tash an wajibik" | french="Ne sois pas distrait de ton devoir."
+  [wd.id=1473] sense="distraction" | arabic="السهو عدو التركيز" | phon="as-sahwu aduwwu at-tarkiz" | french="La distraction est l'ennemi de la concentration."
+  [wd.id=1474] sense="distraction" | arabic="سها عن الموعد" | phon="saha an al-maweid" | french="Il a été distrait du rendez-vous."
+
+ROOT: skn
+  word_daily count: 3
+  [wd.id=1493] sense="pauvre" | arabic="المسكين يحتاج مساعدة" | phon="al-miskinu yahtaju musa'ada" | french="Le démuni a besoin d'aide."
+  [wd.id=1494] sense="pauvre" | arabic="لا تحتقر المسكين" | phon="la tahtaqir al-miskin" | french="Ne méprise pas le démuni."
+  [wd.id=1495] sense="pauvre" | arabic="أعط المسكين حقه" | phon="a'ti al-miskina haqqahu" | french="Donne au démuni ce qui lui revient."
+
+ROOT: slw
+  word_daily count: 3
+  [wd.id=1496] sense="prière" | arabic="الصلاة عمود الدين" | phon="as-salatu 'amudu ad-din" | french="La prière est le pilier de la voie."
+  [wd.id=1497] sense="prière" | arabic="صلّ في وقتها" | phon="salli fi waqtiha" | french="Prie à son heure."
+  [wd.id=1498] sense="prière" | arabic="الصلاة تنهى عن الفحشاء" | phon="as-salatu tanha 'an al-fahsha'" | french="La prière empêche la turpitude."
+
+ROOT: tem
+  word_daily count: 3
+  [wd.id=1491] sense="nourriture" | arabic="أطعم الجائع" | phon="at'im al-ja'i'" | french="Nourris celui qui a faim."
+  [wd.id=1492] sense="nourriture" | arabic="ما طعم هذا؟" | phon="ma ta'mu hadha?" | french="Quel goût a cela ?"
+  [wd.id=1544] sense="nourrir" | arabic="أَطْعَمَهُمُ ٱللَّهُ" | phon="aṭ'amahumu allāh" | french="Dieu les a nourris."
+
+ROOT: wyl
+  word_daily count: 3
+  [wd.id=1482] sense="malheur" | arabic="الويل عاقبة الظلم" | phon="al-waylu aqibatu az-zulm" | french="Le malheur est la conséquence de l'oppression."
+  [wd.id=1481] sense="malheur" | arabic="ويل للظالمين" | phon="waylun li-z-zalimin" | french="Malheur aux oppresseurs."
+  [wd.id=1483] sense="malheur" | arabic="ويل لمن لا يرحم" | phon="waylun li-man la yarham" | french="Malheur à celui qui n'a pas de compassion."
+
+ROOT: ytm
+  word_daily count: 3
+  [wd.id=1478] sense="orphelin" | arabic="اكفل يتيما" | phon="ikful yatiman" | french="Prends en charge un orphelin."
+  [wd.id=1480] sense="orphelin" | arabic="لا تقهر اليتيم" | phon="la taqhar al-yatim" | french="N'opprime pas l'orphelin."
+  [wd.id=1479] sense="orphelin" | arabic="اليتيم يحتاج رعاية" | phon="al-yatimu yahtaju riaya" | french="L'orphelin a besoin de soin."
+
+
+TOTAL word_daily rows: 39

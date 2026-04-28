@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Police arabe — chargée via Google Fonts dans layout.tsx */
+@layer base {
+  :root {
+    --font-arabic: 'Scheherazade New', serif;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-parchment-50 text-gray-900;
+  }
+
+  /* Direction RTL pour les blocs arabes */
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+    @apply text-right;
+  }
+}
+
+@layer components {
+  /* Texte arabe coranique */
+  .quran-text {
+    font-family: var(--font-arabic);
+    @apply text-2xl leading-loose text-right;
+    direction: rtl;
+    unicode-bidi: embed;
+  }
+
+  .quran-text-lg {
+    font-family: var(--font-arabic);
+    @apply text-4xl leading-loose text-right;
+    direction: rtl;
+  }
+
+  /* Badge morphologique */
+  .morph-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  /* Surbrillance de mot au survol */
+  .word-token {
+    @apply cursor-pointer rounded px-1 transition-colors duration-150;
+    @apply hover:bg-gold-200 hover:text-gold-900;
+  }
+
+  .word-token.active {
+    @apply bg-gold-300 text-gold-900 ring-1 ring-gold-500;
+  }
+
+  /* Panel latéral */
+  .side-panel {
+    @apply bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden;
+  }
+
+  .panel-header {
+    @apply px-4 py-3 border-b border-gray-100 bg-parchment-100;
+    @apply flex items-center justify-between;
+  }
+}

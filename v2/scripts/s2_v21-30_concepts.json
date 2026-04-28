@@ -1,0 +1,1703 @@
+{
+  "alh": {
+    "id": 250,
+    "root": "ا ل ه",
+    "occ": 2851,
+    "concepts": {
+      "Détresse": [
+        "être perplexe",
+        "se lamenter"
+      ],
+      "Domination": [
+        "asservir"
+      ],
+      "Adoration/Dévotion": [
+        "diviniser",
+        "adorer",
+        "faire adorer",
+        "se dévouer au culte"
+      ],
+      "Refuge/Protection": [
+        "demeurer",
+        "protéger",
+        "chercher refuge"
+      ],
+      "Divinité": [
+        "divinité",
+        "exclamation divine",
+        "Dieu",
+        "oui certes",
+        "divinité (concept)",
+        "théologie"
+      ]
+    }
+  },
+  "amn": {
+    "id": 287,
+    "root": "أ م ن",
+    "occ": 879,
+    "concepts": {
+      "Foi/Adhésion": [
+        "croire",
+        "avoir la foi",
+        "accepter comme vrai",
+        "croyant",
+        "confirmer"
+      ],
+      "Garantie/Protection": [
+        "accorder la sécurité",
+        "protéger"
+      ],
+      "Sens isolé/Amen": [
+        "amen"
+      ],
+      "Sécurité/Confiance": [
+        "être en sécurité",
+        "se sentir en sécurité",
+        "faire confiance",
+        "confier",
+        "fidèle",
+        "lieu sûr"
+      ]
+    }
+  },
+  "amr": {
+    "id": 428,
+    "root": "أ م ر",
+    "occ": 248,
+    "concepts": {
+      "Commandement/Autorité": [
+        "ordonner",
+        "commander",
+        "nommer gouverneur"
+      ],
+      "Consultation": [
+        "consulter"
+      ],
+      "Affaire/Chose": [
+        "affaire",
+        "chose"
+      ],
+      "Sens isolé/Multiplier": [
+        "multiplier"
+      ],
+      "Sens isolé/Signe": [
+        "signe"
+      ]
+    }
+  },
+  "ard": {
+    "id": 324,
+    "root": "أ ر ض",
+    "occ": 461,
+    "concepts": {
+      "Terre/Sol": [
+        "terre",
+        "sol",
+        "pays",
+        "bas"
+      ],
+      "Sens isolé/Rhume": [
+        "rhume"
+      ],
+      "Sens isolé/Tremblement": [
+        "tremblement"
+      ]
+    }
+  },
+  "aty": {
+    "id": 379,
+    "root": "أ ت ي",
+    "occ": 549,
+    "concepts": {
+      "Venue/Arrivée": [
+        "venir",
+        "arriver",
+        "apporter",
+        "donner",
+        "commettre"
+      ],
+      "Sens isolé/Détruire": [
+        "détruire"
+      ]
+    }
+  },
+  "baed": {
+    "id": 926,
+    "root": "ب ع د",
+    "occ": 235,
+    "concepts": {
+      "Éloignement/Distance": [
+        "être loin",
+        "éloignement"
+      ],
+      "Postériorité": [
+        "après",
+        "ensuite"
+      ],
+      "Mort/Destruction": [
+        "périr"
+      ]
+    }
+  },
+  "bed": {
+    "id": 406,
+    "root": "ب ع ض",
+    "occ": 158,
+    "concepts": {
+      "Partie/Division": [
+        "une partie",
+        "certains",
+        "diviser en parties"
+      ],
+      "Sens isolé/Moustique": [
+        "moustique"
+      ]
+    }
+  },
+  "bny": {
+    "id": 386,
+    "root": "ب ن ي",
+    "occ": 184,
+    "concepts": {
+      "Construction/Édification": [
+        "construire",
+        "bâtir",
+        "édifier",
+        "donner une maison"
+      ],
+      "Filiation": [
+        "fils"
+      ]
+    }
+  },
+  "bshr": {
+    "id": 392,
+    "root": "ب ش ر",
+    "occ": 123,
+    "concepts": {
+      "Annonce/Réjouissance": [
+        "annoncer une bonne nouvelle",
+        "réjouir",
+        "beau visage"
+      ],
+      "Surface/Contact": [
+        "peau",
+        "contact peau à peau",
+        "peler"
+      ],
+      "Corps/Anatomie": [
+        "être humain"
+      ]
+    }
+  },
+  "dew": {
+    "id": 381,
+    "root": "د ع و",
+    "occ": 212,
+    "concepts": {
+      "Appel/Invocation": [
+        "appeler",
+        "invoquer",
+        "prier",
+        "demander",
+        "inviter"
+      ],
+      "Prétention/Revendication": [
+        "prétendre",
+        "revendiquer une filiation"
+      ],
+      "Sens isolé/Maudire": [
+        "maudire"
+      ]
+    }
+  },
+  "dll": {
+    "id": 268,
+    "root": "ض ل ل",
+    "occ": 191,
+    "concepts": {
+      "Égarement/Déviation": [
+        "errer",
+        "perdre son chemin",
+        "faire égarer",
+        "être égaré",
+        "confusion",
+        "perplexité",
+        "feindre l'égarement",
+        "demander l'égarement",
+        "route qui égare",
+        "terre qui égare",
+        "cause d'égarement",
+        "dévier",
+        "s'égarer"
+      ],
+      "Disparition/Perte": [
+        "périr",
+        "mourir",
+        "être enterré",
+        "perdre quelque chose",
+        "état de perdition",
+        "futilité",
+        "vain",
+        "devenir poussière",
+        "disparaître",
+        "se perdre"
+      ],
+      "Oubli/Enterrement": [
+        "enterrer",
+        "cacher dans le sol",
+        "eau souterraine",
+        "restes d'eau",
+        "oublier"
+      ],
+      "Parenté/Famille": [
+        "fils illégitime"
+      ],
+      "Lieu/Géographie": [
+        "terre rugueuse"
+      ],
+      "Minéral/Terre": [
+        "pierres"
+      ],
+      "Sens isolé/Guide": [
+        "guide habile"
+      ],
+      "Corps/Anatomie": [
+        "sang non vengé"
+      ],
+      "Sens isolé/Suiveur": [
+        "suiveur de femmes"
+      ]
+    }
+  },
+  "dmw": {
+    "id": 439,
+    "root": "د م و",
+    "occ": 10,
+    "concepts": {
+      "Sang/Vie": [
+        "sang",
+        "saigner",
+        "ensanglanté"
+      ],
+      "Parenté/Lignée": [
+        "parenté par le sang"
+      ],
+      "Compensation": [
+        "prix du sang"
+      ]
+    }
+  },
+  "drb": {
+    "id": 405,
+    "root": "ض ر ب",
+    "occ": 58,
+    "concepts": {
+      "Frappe/Coup": [
+        "frapper",
+        "battre"
+      ],
+      "Établissement/Institution": [
+        "donner un exemple",
+        "établir",
+        "frapper la monnaie",
+        "dresser une tente"
+      ],
+      "Lieu/Géographie": [
+        "semer la discorde"
+      ],
+      "Déplacement": [
+        "voyager"
+      ]
+    }
+  },
+  "dwn": {
+    "id": 383,
+    "root": "د و ن",
+    "occ": 144,
+    "concepts": {
+      "Infériorité/En-dessous": [
+        "en dessous",
+        "inférieur",
+        "moindre"
+      ],
+      "Proximité/Moindre distance": [
+        "proche"
+      ],
+      "Sens isolé/Le": [
+        "le plus bas"
+      ]
+    }
+  },
+  "ebd": {
+    "id": 259,
+    "root": "ع ب د",
+    "occ": 275,
+    "concepts": {
+      "Sens isolé/Mépriser": [
+        "mépriser"
+      ],
+      "Servitude/Esclavage": [
+        "être humain",
+        "asservir",
+        "aplanir un chemin",
+        "serviteur",
+        "rendre soumis",
+        "esclave"
+      ],
+      "Sens isolé/Être": [
+        "être en colère"
+      ],
+      "Sens isolé/Colérique": [
+        "colérique"
+      ],
+      "Adoration/Dévotion": [
+        "vouer un culte",
+        "se dévouer",
+        "servir",
+        "adorer",
+        "adoration",
+        "dévotion"
+      ]
+    }
+  },
+  "edd": {
+    "id": 377,
+    "root": "ع د د",
+    "occ": 57,
+    "concepts": {
+      "Préparation": [
+        "préparer",
+        "équiper"
+      ],
+      "Dénombrement/Calcul": [
+        "compter",
+        "dénombrer",
+        "nombre",
+        "énumérer ses qualités",
+        "nombreux"
+      ]
+    }
+  },
+  "ehd": {
+    "id": 425,
+    "root": "ع ه د",
+    "occ": 46,
+    "concepts": {
+      "Engagement/Promesse": [
+        "engagement",
+        "pacte",
+        "promesse",
+        "confier"
+      ],
+      "Sens isolé/Époque": [
+        "époque"
+      ],
+      "Sens isolé/Rencontre": [
+        "rencontre"
+      ]
+    }
+  },
+  "elm": {
+    "id": 254,
+    "root": "ع ل م",
+    "occ": 854,
+    "concepts": {
+      "Savoir/Connaissance": [
+        "connaître",
+        "être informé",
+        "certitude",
+        "savant",
+        "science",
+        "enseignement",
+        "savoir"
+      ],
+      "Marque/Signe": [
+        "marquer",
+        "signe",
+        "drapeau",
+        "montagne",
+        "repère",
+        "étendard",
+        "lèvre fendue"
+      ],
+      "Monde/Création": [
+        "les mondes",
+        "ensemble des créatures",
+        "univers",
+        "monde"
+      ],
+      "Sens isolé/Enseigner": [
+        "enseigner"
+      ],
+      "Sens isolé/Homonyme": [
+        "homonyme"
+      ],
+      "Lieu/Géographie": [
+        "informer",
+        "nommer"
+      ]
+    }
+  },
+  "eml": {
+    "id": 393,
+    "root": "ع م ل",
+    "occ": 360,
+    "concepts": {
+      "Action/Oeuvre": [
+        "travailler",
+        "agir",
+        "oeuvre",
+        "acte",
+        "ouvrier"
+      ],
+      "Sens isolé/Gouverneur": [
+        "gouverneur"
+      ]
+    }
+  },
+  "fel": {
+    "id": 374,
+    "root": "ف ع ل",
+    "occ": 108,
+    "concepts": {
+      "Action/Acte": [
+        "agir",
+        "action",
+        "subir une action",
+        "faire ensemble",
+        "efficace",
+        "faire"
+      ]
+    }
+  },
+  "frš": {
+    "id": 385,
+    "root": "ف ر ش",
+    "occ": 6,
+    "concepts": {
+      "Étalement/Literie": [
+        "étendre",
+        "lit",
+        "tapis",
+        "étendre la terre"
+      ],
+      "Sens isolé/Médire": [
+        "médire"
+      ],
+      "Animal/Faune": [
+        "jeune bétail"
+      ]
+    }
+  },
+  "fsd": {
+    "id": 318,
+    "root": "ف س د",
+    "occ": 50,
+    "concepts": {
+      "Corruption/Désordre": [
+        "corrompre",
+        "gâter",
+        "désordre",
+        "corrupteur",
+        "corruption",
+        "détériorer"
+      ]
+    }
+  },
+  "fsq": {
+    "id": 414,
+    "root": "ف س ق",
+    "occ": 54,
+    "concepts": {
+      "Transgression/Rébellion": [
+        "sortir de l'obéissance",
+        "désobéir",
+        "pervers"
+      ],
+      "Corps/Anatomie": [
+        "datte qui sort de sa peau"
+      ]
+    }
+  },
+  "hdy": {
+    "id": 261,
+    "root": "ه د ي",
+    "occ": 316,
+    "concepts": {
+      "Conduite/Comportement": [
+        "conduite",
+        "manière d'agir",
+        "comportement calme"
+      ],
+      "Don/Offrande": [
+        "cadeau",
+        "offrande",
+        "sacrifice",
+        "présent"
+      ],
+      "Parenté/Famille": [
+        "conduire une mariée"
+      ],
+      "Sens isolé/Repentance": [
+        "repentance"
+      ],
+      "Guidance/Direction": [
+        "diriger vers la bonne voie",
+        "montrer le chemin",
+        "guidance",
+        "se guider soi-même",
+        "guider"
+      ]
+    }
+  },
+  "hjr": {
+    "id": 376,
+    "root": "ح ج ر",
+    "occ": 31,
+    "concepts": {
+      "Pierre/Matériau": [
+        "roche",
+        "pierre"
+      ],
+      "Interdit/Enclos": [
+        "interdit",
+        "sanctuaire"
+      ],
+      "Migration/Séparation": [
+        "émigrer",
+        "abandonner"
+      ],
+      "Sens isolé/Giron": [
+        "giron"
+      ]
+    }
+  },
+  "hmd": {
+    "id": 252,
+    "root": "ح م د",
+    "occ": 63,
+    "concepts": {
+      "Louange/Éloge": [
+        "éloge",
+        "loué",
+        "digne de louange",
+        "lieu de louange",
+        "bannière de louange",
+        "louable",
+        "louer",
+        "louange"
+      ],
+      "Gratitude/Remerciement": [
+        "reconnaissance",
+        "satisfait de",
+        "remercier",
+        "gratitude"
+      ],
+      "Feu/Chaleur": [
+        "chauffer"
+      ],
+      "Lieu/Géographie": [
+        "terre noire"
+      ]
+    }
+  },
+  "hqq": {
+    "id": 409,
+    "root": "ح ق ق",
+    "occ": 287,
+    "concepts": {
+      "Vérité/Réalité": [
+        "être vrai",
+        "vérité",
+        "réalité",
+        "droit"
+      ],
+      "Obligation/Nécessité": [
+        "devoir",
+        "mériter",
+        "être obligatoire"
+      ],
+      "Sens isolé/Vérifier": [
+        "vérifier"
+      ],
+      "Sens isolé/Se": [
+        "se réaliser"
+      ]
+    }
+  },
+  "hyy": {
+    "id": 404,
+    "root": "ح ي ي",
+    "occ": 184,
+    "concepts": {
+      "Vie/Vivant": [
+        "vivre",
+        "vie",
+        "vivant",
+        "donner la vie"
+      ],
+      "Salutation/Pudeur": [
+        "pudeur",
+        "saluer"
+      ],
+      "Sens isolé/Serpent": [
+        "serpent"
+      ],
+      "Eau/Liquide": [
+        "pluie"
+      ]
+    }
+  },
+  "jel": {
+    "id": 359,
+    "root": "ج ع ل",
+    "occ": 346,
+    "concepts": {
+      "Sens isolé/Récompense": [
+        "récompense"
+      ],
+      "Action/Réalisation": [
+        "rendre",
+        "faire",
+        "placer",
+        "commencer à",
+        "établir",
+        "créer"
+      ]
+    }
+  },
+  "jme": {
+    "id": 422,
+    "root": "ج م ع",
+    "occ": 129,
+    "concepts": {
+      "Rassemblement/Union": [
+        "rassembler",
+        "réunir",
+        "assembler",
+        "contracter",
+        "unanimité",
+        "vendredi",
+        "totalité"
+      ]
+    }
+  },
+  "jnn": {
+    "id": 394,
+    "root": "ج ن ن",
+    "occ": 201,
+    "concepts": {
+      "Dissimulation/Couverture": [
+        "cacher",
+        "couvrir"
+      ],
+      "Jardin/Paradis": [
+        "jardin",
+        "paradis"
+      ],
+      "Sens isolé/Embryon": [
+        "embryon"
+      ],
+      "Sens isolé/Bouclier": [
+        "bouclier"
+      ],
+      "Êtres cachés": [
+        "djinn"
+      ],
+      "Sens isolé/Folie": [
+        "folie"
+      ]
+    }
+  },
+  "jry": {
+    "id": 395,
+    "root": "ج ر ي",
+    "occ": 64,
+    "concepts": {
+      "Course/Flux": [
+        "courir",
+        "couler",
+        "se passer",
+        "faire courir",
+        "rivière"
+      ],
+      "Compétition": [
+        "rivaliser"
+      ],
+      "Sens isolé/Agent": [
+        "agent"
+      ]
+    }
+  },
+  "kfr": {
+    "id": 294,
+    "root": "ك ف ر",
+    "occ": 525,
+    "concepts": {
+      "Rejet/Ingratitude": [
+        "être ingrat",
+        "nier",
+        "renier un bienfait",
+        "rejeter",
+        "mécréant"
+      ],
+      "Expiation/Réparation": [
+        "expier",
+        "effacer les péchés"
+      ],
+      "Sens isolé/Village": [
+        "village"
+      ],
+      "Sens isolé/Goudron": [
+        "goudron"
+      ],
+      "Couverture/Dissimulation": [
+        "couvrir",
+        "cacher",
+        "la nuit qui couvre"
+      ],
+      "Sens isolé/Cultivateur": [
+        "cultivateur"
+      ]
+    }
+  },
+  "khsr": {
+    "id": 431,
+    "root": "خ س ر",
+    "occ": 65,
+    "concepts": {
+      "Perte/Diminution": [
+        "perdre",
+        "subir une perte"
+      ],
+      "Égarement": [
+        "être dans l'erreur",
+        "être trompé"
+      ],
+      "Destruction": [
+        "faire périr",
+        "perdition"
+      ]
+    }
+  },
+  "kll": {
+    "id": 372,
+    "root": "ك ل ل",
+    "occ": 377,
+    "concepts": {
+      "Émoussement/Faiblesse": [
+        "s'émousser",
+        "être fatigué"
+      ],
+      "Charge/Dépendance": [
+        "fardeau",
+        "personne à charge"
+      ],
+      "Corps/Anatomie": [
+        "couronner"
+      ],
+      "Sens isolé/Agacer": [
+        "agacer les dents"
+      ],
+      "Totalité": [
+        "chaque",
+        "totalité",
+        "tout"
+      ]
+    }
+  },
+  "kwn": {
+    "id": 2577,
+    "root": null,
+    "occ": 1390,
+    "concepts": {
+      "Lieu/État": [
+        "devenir comme",
+        "lieu",
+        "reste à ta place",
+        "état condition",
+        "motif raison"
+      ],
+      "Humilité/Soumission": [
+        "être humble soumis"
+      ],
+      "Être/Existence": [
+        "venir à l'existence",
+        "être (verbe incomplet)"
+      ]
+    }
+  },
+  "kṯr": {
+    "id": 413,
+    "root": "ك ث ر",
+    "occ": 167,
+    "concepts": {
+      "Abondance/Multiplicité": [
+        "être nombreux",
+        "abondance",
+        "beaucoup",
+        "multiplier",
+        "la plupart",
+        "souvent"
+      ]
+    }
+  },
+  "mlk": {
+    "id": 256,
+    "root": "م ل ك",
+    "occ": 206,
+    "concepts": {
+      "Possession/Autorité": [
+        "maître",
+        "possesseur",
+        "biens",
+        "esclave",
+        "asservir",
+        "posséder",
+        "propriété"
+      ],
+      "Royauté/Souveraineté": [
+        "règne",
+        "souverain",
+        "couronnement",
+        "trône",
+        "roi",
+        "royaume"
+      ],
+      "Ange/Messager": [
+        "ange",
+        "messager",
+        "message"
+      ],
+      "Sens isolé/Pâte": [
+        "pâte"
+      ],
+      "Sens isolé/Maîtriser": [
+        "maîtriser soi-même"
+      ],
+      "Eau/Liquide": [
+        "eau stagnante"
+      ]
+    }
+  },
+  "mvl": {
+    "id": 2599,
+    "root": "م ث ل",
+    "occ": 169,
+    "concepts": {
+      "Similitude/Comparaison": [
+        "exemple",
+        "parabole",
+        "similitude",
+        "comparaison",
+        "semblable"
+      ],
+      "Ressemblance/Identité": [
+        "ressembler",
+        "être semblable",
+        "pareil",
+        "équivalent"
+      ],
+      "Représentation/Image": [
+        "statue",
+        "image",
+        "représentation"
+      ]
+    }
+  },
+  "mwh": {
+    "id": 1885,
+    "root": "م و ه",
+    "occ": 63,
+    "concepts": {
+      "Eau/Liquide": [
+        "eau"
+      ]
+    }
+  },
+  "mwt": {
+    "id": 364,
+    "root": "م و ت",
+    "occ": 165,
+    "concepts": {
+      "Sens isolé/Immobile": [
+        "immobile"
+      ],
+      "Mort/Cessation": [
+        "mourir",
+        "mort",
+        "tuer",
+        "mortel",
+        "terre morte"
+      ]
+    }
+  },
+  "ndd": {
+    "id": 391,
+    "root": "ن د د",
+    "occ": 6,
+    "concepts": {
+      "Fuite/Rébellion": [
+        "fuir",
+        "s'enfuir",
+        "devenir rétif"
+      ],
+      "Opposition": [
+        "opposer",
+        "dénoncer"
+      ],
+      "Sens isolé/Disperser": [
+        "disperser"
+      ],
+      "Sens isolé/Égal": [
+        "égal"
+      ]
+    }
+  },
+  "nhr": {
+    "id": 397,
+    "root": "ن ه ر",
+    "occ": 113,
+    "concepts": {
+      "Eau/Cours d'eau": [
+        "rivière",
+        "fleuve",
+        "couler",
+        "abondance"
+      ],
+      "Clarté/Jour": [
+        "jour",
+        "clarté"
+      ],
+      "Sens isolé/Interdire": [
+        "interdire"
+      ],
+      "Sens isolé/Creuser": [
+        "creuser"
+      ]
+    }
+  },
+  "nqd": {
+    "id": 424,
+    "root": "ن ق ض",
+    "occ": 9,
+    "concepts": {
+      "Rupture/Annulation": [
+        "rompre",
+        "annuler",
+        "défaire",
+        "trahir un pacte"
+      ]
+    }
+  },
+  "nwr": {
+    "id": 349,
+    "root": "ن و ر",
+    "occ": 194,
+    "concepts": {
+      "Sens isolé/Fleur": [
+        "fleur"
+      ],
+      "Sens isolé/Fuir": [
+        "fuir"
+      ],
+      "Lumière/Clarté": [
+        "lumière",
+        "éclairer",
+        "feu",
+        "guider par la lumière"
+      ]
+    }
+  },
+  "nws": {
+    "id": 303,
+    "root": "ن و س",
+    "occ": 241,
+    "concepts": {
+      "Perception/Visibilité": [
+        "être visible",
+        "voir de loin"
+      ],
+      "Sens isolé/Être": [
+        "être agité"
+      ],
+      "Sens isolé/Oublier": [
+        "oublier"
+      ],
+      "Humanité/Peuple": [
+        "gens",
+        "êtres humains",
+        "peuple"
+      ]
+    }
+  },
+  "nzl": {
+    "id": 289,
+    "root": "ن ز ل",
+    "occ": 293,
+    "concepts": {
+      "Halte/Séjour": [
+        "s'installer",
+        "faire halte",
+        "hôte",
+        "lieu de descente"
+      ],
+      "Sens isolé/Rang": [
+        "rang"
+      ],
+      "Descente/Révélation": [
+        "pluie qui descend",
+        "descendre",
+        "faire descendre",
+        "révéler",
+        "envoyer d'en haut"
+      ]
+    }
+  },
+  "qbl": {
+    "id": 291,
+    "root": "ق ب ل",
+    "occ": 294,
+    "concepts": {
+      "Réception/Accueil": [
+        "recevoir",
+        "accepter",
+        "agréer"
+      ],
+      "Orientation/Direction": [
+        "se tourner vers",
+        "faire face",
+        "venir vers"
+      ],
+      "Sens isolé/Garantie": [
+        "garantie"
+      ],
+      "Sens isolé/Tribu": [
+        "tribu"
+      ],
+      "Sens isolé/Embrasser": [
+        "embrasser"
+      ],
+      "Antériorité/Passé": [
+        "avant",
+        "auparavant",
+        "ancien",
+        "devant"
+      ]
+    }
+  },
+  "qds": {
+    "id": 441,
+    "root": "ق د س",
+    "occ": 10,
+    "concepts": {
+      "Sainteté/Pureté": [
+        "être saint",
+        "être pur",
+        "sacré"
+      ],
+      "Purification": [
+        "purifier",
+        "sanctifier"
+      ],
+      "Lieu saint": [
+        "Jérusalem"
+      ],
+      "Être surnaturel": [
+        "Esprit saint"
+      ]
+    }
+  },
+  "qte": {
+    "id": 427,
+    "root": "ق ط ع",
+    "occ": 36,
+    "concepts": {
+      "Coupure/Séparation": [
+        "couper",
+        "rompre",
+        "interrompre",
+        "traverser"
+      ],
+      "Décision": [
+        "décider"
+      ],
+      "Eau/Liquide": [
+        "morceau"
+      ]
+    }
+  },
+  "qwl": {
+    "id": 307,
+    "root": "ق و ل",
+    "occ": 1722,
+    "concepts": {
+      "Parole/Énonciation": [
+        "discours",
+        "parler",
+        "parole",
+        "dire",
+        "affirmer"
+      ],
+      "Pensée/Avis": [
+        "avis",
+        "doctrine",
+        "opinion"
+      ],
+      "Sens isolé/Puissance": [
+        "puissance"
+      ],
+      "Corps/Anatomie": [
+        "troupeau"
+      ]
+    }
+  },
+  "rbb": {
+    "id": 253,
+    "root": "ر ب ب",
+    "occ": 980,
+    "concepts": {
+      "Croissance/Augmentation": [
+        "développer",
+        "augmenter",
+        "croître",
+        "excès",
+        "colline",
+        "éminence",
+        "faire grandir",
+        "nourrir"
+      ],
+      "Seigneurie/Autorité bienveillante": [
+        "celui qui possède",
+        "seigneur",
+        "maître",
+        "gouverner",
+        "propriétaire",
+        "celui qui élève",
+        "celui qui entretient"
+      ],
+      "Éducation/Accompagnement": [
+        "éduquer",
+        "former",
+        "accompagner la croissance",
+        "élever un enfant"
+      ],
+      "Commerce/Usure": [
+        "augmentation de dette",
+        "intérêt",
+        "usure"
+      ],
+      "Sens isolé/Fixer": [
+        "fixer"
+      ],
+      "Sens isolé/Groupe": [
+        "groupe"
+      ],
+      "Sens isolé/Rassembler": [
+        "rassembler"
+      ],
+      "Souffle/Vent": [
+        "essoufflement"
+      ],
+      "Sens isolé/Confiture": [
+        "confiture"
+      ]
+    }
+  },
+  "rje": {
+    "id": 336,
+    "root": "ر ج ع",
+    "occ": 104,
+    "concepts": {
+      "Retour/Réversion": [
+        "retourner",
+        "revenir",
+        "réverter",
+        "faire revenir",
+        "renvoyer"
+      ],
+      "Pluie/Renouvellement": [
+        "pluie"
+      ],
+      "Répétition": [
+        "répéter",
+        "réponse"
+      ],
+      "Sens isolé/Profit": [
+        "profit"
+      ],
+      "Sens isolé/Ruminer": [
+        "ruminer"
+      ]
+    }
+  },
+  "rwd": {
+    "id": 411,
+    "root": "ر و د",
+    "occ": 148,
+    "concepts": {
+      "Mouvement/Recherche": [
+        "aller et venir",
+        "chercher à convaincre",
+        "désirer"
+      ],
+      "Douceur/Lenteur": [
+        "agir doucement"
+      ],
+      "Sens isolé/Pâturage": [
+        "pâturage"
+      ]
+    }
+  },
+  "ryb": {
+    "id": 276,
+    "root": "ر ي ب",
+    "occ": 36,
+    "concepts": {
+      "Besoin/Manque": [
+        "besoin",
+        "avoir besoin de"
+      ],
+      "Sens isolé/Abondance": [
+        "abondance d'herbage"
+      ],
+      "Lieu/Géographie": [
+        "terre fertile"
+      ],
+      "Doute/Suspicion": [
+        "douter",
+        "soupçonner",
+        "inquiétude",
+        "accusation"
+      ]
+    }
+  },
+  "rzq": {
+    "id": 284,
+    "root": "ر ز ق",
+    "occ": 123,
+    "concepts": {
+      "Sens isolé/Gratitude": [
+        "gratitude pour la subsistance"
+      ],
+      "Subsistance/Provision": [
+        "pourvoir",
+        "nourrir",
+        "subsistance",
+        "moyens de vivre",
+        "part"
+      ]
+    }
+  },
+  "sbe": {
+    "id": 360,
+    "root": "ص ب ع",
+    "occ": 2,
+    "concepts": {
+      "Désignation/Pointage": [
+        "pointer du doigt",
+        "doigt",
+        "montrer du doigt avec mépris"
+      ],
+      "Orgueil": [
+        "orgueil"
+      ],
+      "Sens isolé/Bien": [
+        "bien nourrir"
+      ]
+    }
+  },
+  "sbh": {
+    "id": 440,
+    "root": "س ب ح",
+    "occ": 92,
+    "concepts": {
+      "Mouvement/Flottement": [
+        "flotter",
+        "voyager rapidement",
+        "nager"
+      ],
+      "Glorification/Louange": [
+        "louer",
+        "prier",
+        "subhana",
+        "glorifier"
+      ]
+    }
+  },
+  "sdq": {
+    "id": 384,
+    "root": "ص د ق",
+    "occ": 155,
+    "concepts": {
+      "Vérité/Sincérité": [
+        "dire vrai",
+        "vrai",
+        "sincère",
+        "confirmer"
+      ],
+      "Amitié": [
+        "ami sincère"
+      ],
+      "Don/Aumône": [
+        "aumône",
+        "dot"
+      ]
+    }
+  },
+  "sfk": {
+    "id": 438,
+    "root": "س ف ك",
+    "occ": 2,
+    "concepts": {
+      "Écoulement/Effusion": [
+        "verser",
+        "répandre"
+      ],
+      "Violence/Sang": [
+        "faire couler le sang",
+        "effusion de sang"
+      ],
+      "Sens isolé/Éloquence": [
+        "éloquence"
+      ]
+    }
+  },
+  "slh": {
+    "id": 326,
+    "root": "ص ل ح",
+    "occ": 180,
+    "concepts": {
+      "Bonté/Rectitude": [
+        "être bon",
+        "rectitude",
+        "réparer",
+        "réconcilier",
+        "oeuvre bonne",
+        "vertueux",
+        "réformer"
+      ],
+      "Sens isolé/Paix": [
+        "paix"
+      ]
+    }
+  },
+  "smw": {
+    "id": 249,
+    "root": "س م و",
+    "occ": 381,
+    "concepts": {
+      "Hauteur/Élévation": [
+        "se dresser",
+        "monter",
+        "lever le regard",
+        "être haut",
+        "élever quelqu'un",
+        "dépasser en nombre",
+        "étalon qui bondit",
+        "forme vue de loin",
+        "lune qui se dresse",
+        "surpasser",
+        "éminent",
+        "aspirer",
+        "noble",
+        "hautain",
+        "rivaliser en éminence"
+      ],
+      "Nom/Identification": [
+        "nommer",
+        "prononcer le nom de Dieu",
+        "se nommer",
+        "s'appeler mutuellement",
+        "demander le nom",
+        "renommée",
+        "nommé",
+        "homonyme",
+        "nominal",
+        "qualité de nom",
+        "revendiquer une parenté",
+        "nom"
+      ],
+      "Chasse": [
+        "chasser",
+        "chasseurs",
+        "chaussettes de chasseur",
+        "inciter à chasser",
+        "tester une chamelle"
+      ],
+      "Sens isolé/Visiter": [
+        "visiter"
+      ],
+      "Souffle/Vent": [
+        "faire partir"
+      ],
+      "Animal/Faune": [
+        "monter à cheval"
+      ],
+      "Sens isolé/Désir": [
+        "désir qui resurgit"
+      ],
+      "Sens isolé/Égal": [
+        "égal"
+      ],
+      "Sens isolé/Choisir": [
+        "choisir"
+      ],
+      "Sens isolé/Se": [
+        "se diriger vers Es-Semaweh"
+      ],
+      "Sens isolé/Regarder": [
+        "regarder la silhouette"
+      ],
+      "Ciel/Ce qui couvre": [
+        "semelle supérieure",
+        "ciel",
+        "toit",
+        "nuage",
+        "pluie",
+        "herbage",
+        "dos",
+        "pièce de tissu supérieure",
+        "céleste",
+        "bounty"
+      ]
+    }
+  },
+  "swr": {
+    "id": 380,
+    "root": "س و ر",
+    "occ": 17,
+    "concepts": {
+      "Forme/Image": [
+        "forme",
+        "image",
+        "façonner",
+        "apparence"
+      ],
+      "Sens isolé/Mur": [
+        "mur"
+      ],
+      "Sens isolé/Trompette": [
+        "trompette"
+      ]
+    }
+  },
+  "swy": {
+    "id": 295,
+    "root": "س و ي",
+    "occ": 83,
+    "concepts": {
+      "Achèvement/Perfection": [
+        "achever",
+        "rendre parfait"
+      ],
+      "Sens isolé/Se": [
+        "se tenir droit"
+      ],
+      "Lieu/Géographie": [
+        "milieu"
+      ],
+      "Égalité/Équivalence": [
+        "être égal",
+        "équivalent",
+        "même chose",
+        "indifférent",
+        "égaliser",
+        "aplanir"
+      ]
+    }
+  },
+  "thmr": {
+    "id": 390,
+    "root": "ث م ر",
+    "occ": 24,
+    "concepts": {
+      "Fruit/Produit": [
+        "fruit",
+        "récolte",
+        "richesse",
+        "produire"
+      ]
+    }
+  },
+  "thr": {
+    "id": 402,
+    "root": "ط ه ر",
+    "occ": 31,
+    "concepts": {
+      "Pureté/Purification": [
+        "être pur",
+        "purifier",
+        "se purifier",
+        "pur"
+      ]
+    }
+  },
+  "tht": {
+    "id": 396,
+    "root": "ت ح ت",
+    "occ": 51,
+    "concepts": {
+      "Position basse": [
+        "dessous",
+        "inférieur",
+        "sous"
+      ]
+    }
+  },
+  "wqd": {
+    "id": 348,
+    "root": "و ق د",
+    "occ": 11,
+    "concepts": {
+      "Feu/Combustion": [
+        "allumer",
+        "brûler",
+        "feu",
+        "combustible"
+      ]
+    }
+  },
+  "wqy": {
+    "id": 277,
+    "root": "و ق ي",
+    "occ": 258,
+    "concepts": {
+      "Protection/Préservation": [
+        "protéger",
+        "préserver",
+        "craindre",
+        "piété",
+        "se prémunir",
+        "éviter"
+      ],
+      "Sens isolé/Bouclier": [
+        "bouclier"
+      ]
+    }
+  },
+  "wsl": {
+    "id": 429,
+    "root": "و ص ل",
+    "occ": 12,
+    "concepts": {
+      "Liaison/Connexion": [
+        "joindre",
+        "lier",
+        "atteindre",
+        "arriver",
+        "lien de parenté",
+        "connexion"
+      ]
+    }
+  },
+  "wthq": {
+    "id": 426,
+    "root": "و ث ق",
+    "occ": 34,
+    "concepts": {
+      "Fermeté/Confiance": [
+        "être solide",
+        "lier solidement",
+        "avoir confiance",
+        "pacte",
+        "se garantir",
+        "être ferme"
+      ]
+    }
+  },
+  "xld": {
+    "id": 927,
+    "root": "خ ل د",
+    "occ": 87,
+    "concepts": {
+      "Inclination": [
+        "pencher vers"
+      ],
+      "Éternité/Permanence": [
+        "demeurer éternellement",
+        "rester pour toujours"
+      ]
+    }
+  },
+  "xlf": {
+    "id": 436,
+    "root": "خ ل ف",
+    "occ": 127,
+    "concepts": {
+      "Position/Arrière": [
+        "être derrière",
+        "laisser derrière"
+      ],
+      "Succession/Remplacement": [
+        "succéder",
+        "remplacer",
+        "successeur",
+        "califat"
+      ],
+      "Différence/Opposition": [
+        "différer",
+        "contredire",
+        "manquer à sa promesse"
+      ]
+    }
+  },
+  "xlq": {
+    "id": 344,
+    "root": "خ ل ق",
+    "occ": 261,
+    "concepts": {
+      "Création/Production": [
+        "création",
+        "créature",
+        "façonner",
+        "nature",
+        "caractère",
+        "créer"
+      ],
+      "Sens isolé/Mensonge": [
+        "mensonge"
+      ],
+      "Sens isolé/Lisse": [
+        "lisse"
+      ]
+    }
+  },
+  "xrj": {
+    "id": 388,
+    "root": "خ ر ج",
+    "occ": 182,
+    "concepts": {
+      "Sortie/Émergence": [
+        "sortir",
+        "faire sortir",
+        "expulser",
+        "émerger",
+        "produire"
+      ],
+      "Tribut/Revenu": [
+        "impôt",
+        "revenu"
+      ],
+      "Sens isolé/Résoudre": [
+        "résoudre"
+      ]
+    }
+  },
+  "zwj": {
+    "id": 401,
+    "root": "ز و ج",
+    "occ": 81,
+    "concepts": {
+      "Couple/Union": [
+        "coupler",
+        "marier",
+        "époux",
+        "paire",
+        "espèce"
+      ]
+    }
+  }
+}

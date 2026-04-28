@@ -1,0 +1,2498 @@
+{
+  "jya": {
+    "id": 662,
+    "root_ar": "ج ي ء",
+    "concepts": {
+      "Venue": {
+        "senses": [
+          "venir"
+        ],
+        "status": "retenu",
+        "description": "Skip si déjà fait comme jyy."
+      }
+    }
+  },
+  "rsl": {
+    "id": 688,
+    "root_ar": "ر س ل",
+    "concepts": {
+      "Eau/Liquide": {
+        "senses": [
+          "pluie"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Pluie — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Cheveux": {
+        "senses": [
+          "cheveux lâchés"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Cheveux lâchés — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Envoi/Message": {
+        "senses": [
+          "envoyer",
+          "libérer",
+          "messager",
+          "message"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de faire partir quelque chose ou quelqu'un vers une destination. L'envoi sort de l'expéditeur et atteint le destinataire. C'est directionnel et ponctuel."
+      }
+    }
+  },
+  "end": {
+    "id": 566,
+    "root_ar": "ع ن د",
+    "concepts": {
+      "Opinion/Jugement": {
+        "senses": [
+          "selon"
+        ],
+        "status": "nul",
+        "description": "Du point de vue de quelqu'un — 'indî' (selon moi) exprime un jugement personnel. C'est intérieur comme opinion propre à celui qui la formule."
+      },
+      "Proximité/Présence": {
+        "senses": [
+          "auprès de",
+          "chez",
+          "près de"
+        ],
+        "status": "retenu",
+        "description": "Préposition qui indique la proximité spatiale ou relationnelle — être auprès de quelqu'un c'est être dans son espace proche, dans sa sphère. C'est relationnel et permanent tant que dure la présence. 'Inda Allah' (auprès de Dieu) désigne ce qui est dans la science ou la présence divine, ce qui a valeur à Ses yeux. Ce qui est auprès de Dieu est meilleur et plus durable."
+      }
+    }
+  },
+  "alh": {
+    "id": 250,
+    "root_ar": "ا ل ه",
+    "concepts": {
+      "Divinité": {
+        "senses": [
+          "divinité (concept)",
+          "Dieu",
+          "théologie",
+          "divinité",
+          "exclamation divine",
+          "oui certes"
+        ],
+        "status": "retenu",
+        "description": "Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation)."
+      },
+      "Détresse": {
+        "senses": [
+          "être perplexe",
+          "se lamenter"
+        ],
+        "status": "nul",
+        "description": "État intérieur de confusion ou de chagrin intense. La perplexité bloque celui qui la vit, la lamentation déborde vers l'extérieur par des manifestations visibles. Ces états restent principalement chez celui qui les ressent."
+      },
+      "Domination": {
+        "senses": [
+          "asservir"
+        ],
+        "status": "nul",
+        "description": "Acte de soumettre l'autre, de le réduire en servitude. Acte extérieur dirigé vers l'autre qui change son statut contre sa volonté."
+      },
+      "Adoration/Dévotion": {
+        "senses": [
+          "diviniser",
+          "adorer",
+          "faire adorer",
+          "se dévouer au culte"
+        ],
+        "status": "nul",
+        "description": "Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte."
+      },
+      "Refuge/Protection": {
+        "senses": [
+          "demeurer",
+          "protéger",
+          "chercher refuge"
+        ],
+        "status": "nul",
+        "description": "Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection."
+      }
+    }
+  },
+  "sdq": {
+    "id": 384,
+    "root_ar": "ص د ق",
+    "concepts": {
+      "Vérité/Sincérité": {
+        "senses": [
+          "vrai",
+          "sincère",
+          "dire vrai",
+          "confirmer"
+        ],
+        "status": "retenu",
+        "description": "Ce qui est conforme à la réalité. Le vrai est un état permanent de correspondance entre la parole et le fait."
+      },
+      "Amitié": {
+        "senses": [
+          "ami sincère"
+        ],
+        "status": null,
+        "description": "Celui avec qui on entretient un lien de vérité et de loyauté. L'amitié sincère est fondée sur la vérité mutuelle."
+      },
+      "Don/Aumône": {
+        "senses": [
+          "aumône",
+          "dot"
+        ],
+        "status": "nul",
+        "description": "Don fait aux nécessiteux. L'aumône est un acte de vérité dans le don — on donne sincèrement, sans attendre de retour."
+      }
+    }
+  },
+  "nbdh": {
+    "id": 1408,
+    "root_ar": "ن ب ذ",
+    "concepts": {
+      "Rejet/Abandon": {
+        "senses": [
+          "jeter",
+          "rejeter",
+          "rompre un pacte"
+        ],
+        "status": "retenu",
+        "description": "Acte de lancer quelque chose loin de soi avec mépris ou décision. Le rejet sort de celui qui jette et éloigne ce qui est jeté — c'est directionnel et ponctuel. Jeter c'est se débarrasser de ce qu'on ne veut plus."
+      }
+    }
+  },
+  "frq": {
+    "id": 515,
+    "root_ar": "ف ر ق",
+    "concepts": {
+      "Groupe/Partie": {
+        "senses": [
+          "groupe",
+          "partie"
+        ],
+        "status": "nul",
+        "description": "Ensemble de personnes séparées du reste — le groupe (firqa) est une partie qui s'est distinguée de l'ensemble. C'est permanent comme identité collective."
+      },
+      "Séparation/Distinction": {
+        "senses": [
+          "séparer",
+          "distinguer",
+          "diviser",
+          "Furqân"
+        ],
+        "status": "retenu",
+        "description": "Acte de mettre à part ce qui était uni — la séparation est directionnelle, elle éloigne les parties l'une de l'autre. C'est ponctuel dans l'acte mais crée un état permanent de séparation. Le Furqân (Coran) est ce qui sépare le vrai du faux, la lumière des ténèbres. Séparer c'est créer de la clarté là où il y avait confusion."
+      }
+    }
+  },
+  "aty": {
+    "id": 379,
+    "root_ar": "أ ت ي",
+    "concepts": {
+      "Venue/Arrivée": {
+        "senses": [
+          "apporter",
+          "donner",
+          "arriver",
+          "venir",
+          "commettre"
+        ],
+        "status": "retenu",
+        "description": "Venir avec quelque chose. Apporter c'est combiner le mouvement de venue avec le transport d'un objet."
+      },
+      "Sens isolé/Détruire": {
+        "senses": [
+          "détruire"
+        ],
+        "status": "nul",
+        "description": "Anéantir, ruiner. Sens de venue destructrice — le mal vient sur quelque chose et le détruit."
+      }
+    }
+  },
+  "ktb": {
+    "id": 275,
+    "root_ar": "ك ت ب",
+    "concepts": {
+      "Obligation/Décret": {
+        "senses": [
+          "prescrire",
+          "décret divin",
+          "prédestination",
+          "rendre obligatoire",
+          "juger"
+        ],
+        "status": "nul",
+        "description": "Acte d'autorité qui impose une obligation ou un décret. L'obligation sort de celui qui prescrit et atteint celui qui est obligé. C'est un jugement rationnel dirigé vers l'extérieur, permanent et contraignant."
+      },
+      "Assemblage/Couture": {
+        "senses": [
+          "rassembler",
+          "coudre",
+          "attacher",
+          "fermer la vulve",
+          "lier l'outre",
+          "se ceindre",
+          "collecter",
+          "préparer les troupes",
+          "armée"
+        ],
+        "status": "nul",
+        "description": "Acte physique de réunir des éléments séparés en un ensemble. L'assemblage est un mouvement extérieur qui transforme le dispersé en uni. C'est ponctuel et concret."
+      },
+      "Souffle/Vent": {
+        "senses": [
+          "rétention urinaire"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Rétention urinaire — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Constipation": {
+        "senses": [
+          "constipation"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Constipation — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Gonflé": {
+        "senses": [
+          "gonflé et plein"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Gonflé et plein — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Flèche": {
+        "senses": [
+          "flèche d'entraînement"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Flèche d'entraînement — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Écriture/Inscription": {
+        "senses": [
+          "écrire",
+          "dicter",
+          "copier un livre",
+          "art de l'écriture",
+          "scribe",
+          "s'inscrire",
+          "savant",
+          "enseignant",
+          "vendeur de livres",
+          "école",
+          "demander d'écrire",
+          "écrire à quelqu'un"
+        ],
+        "status": "probable",
+        "description": "Acte extérieur et permanent de tracer des signes pour communiquer ou conserver. L'écriture sort de celui qui écrit et atteint celui qui lit. C'est un acte directionnel et durable."
+      },
+      "Livre/Écrit": {
+        "senses": [
+          "contrat de mariage",
+          "contrat d'affranchissement",
+          "écriture révélée",
+          "livre",
+          "registre",
+          "contrat écrit"
+        ],
+        "status": "retenu",
+        "description": "Support matériel ou immatériel qui contient un texte écrit."
+      }
+    }
+  },
+  "wry": {
+    "id": 685,
+    "root_ar": "و ر ي",
+    "concepts": {
+      "Dissimulation": {
+        "senses": [
+          "enterrer",
+          "cacher",
+          "dissimuler"
+        ],
+        "status": "nul",
+        "description": ""
+      },
+      "Position cachée": {
+        "senses": [
+          "derrière"
+        ],
+        "status": "retenu",
+        "description": "Ce qui se trouve de l'autre côté — warâ' désigne ce qui est derrière, hors de vue."
+      }
+    }
+  },
+  "zhr": {
+    "id": 668,
+    "root_ar": "ظ ه ر",
+    "concepts": {
+      "Manifestation/Dos": {
+        "senses": [
+          "apparaître",
+          "dos",
+          "manifeste",
+          "prévaloir"
+        ],
+        "status": "retenu",
+        "description": "Devenir visible et évident — apparaître (zahara) est le passage du caché au visible. C'est directionnel vers l'extérieur. Le manifeste (zâhir) s'oppose au caché (bâtin). Il est le Premier et le Dernier, le Manifeste (az-Zâhir) et le Caché. Le dos (zahr) est la partie visible quand on tourne le dos. Prévaloir (azhara) c'est dominer et devenir visible."
+      }
+    }
+  },
+  "elm": {
+    "id": 254,
+    "root_ar": "ع ل م",
+    "concepts": {
+      "Monde/Création": {
+        "senses": [
+          "univers",
+          "monde",
+          "ensemble des créatures",
+          "les mondes"
+        ],
+        "status": "nul",
+        "description": "L'ensemble des êtres créés, la totalité de ce qui existe. Le monde est extérieur, observable et englobant. Le Lane's lie ce mot à la racine \"marquer\" : le monde est le signe par lequel on connaît le Créateur."
+      },
+      "Sens isolé/Enseigner": {
+        "senses": [
+          "enseigner"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Enseigner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Homonyme": {
+        "senses": [
+          "homonyme"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Homonyme — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "informer",
+          "nommer"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Informer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Marque/Signe": {
+        "senses": [
+          "lèvre fendue",
+          "marquer",
+          "signe",
+          "drapeau",
+          "montagne",
+          "repère",
+          "étendard"
+        ],
+        "status": "nul",
+        "description": "Réalité extérieure et observable qui permet d'identifier. Le signe est ce qui se distingue et rend visible. C'est un repère physique ou abstrait qui pointe vers quelque chose."
+      },
+      "Savoir/Connaissance": {
+        "senses": [
+          "science",
+          "certitude",
+          "enseignement",
+          "connaître",
+          "être informé",
+          "savoir",
+          "savant"
+        ],
+        "status": "retenu",
+        "description": "Réalité intérieure de la compréhension et de la certitude. Le savoir est un état permanent qui réside dans l'esprit de celui qui sait. C'est la capacité de distinguer le vrai du faux par la compréhension profonde."
+      }
+    }
+  },
+  "t b e": {
+    "id": 894,
+    "root_ar": "ت ب ع",
+    "concepts": {
+      "Suivi/Poursuite": {
+        "senses": [
+          "suivre",
+          "poursuivre",
+          "imiter",
+          "faire suivre"
+        ],
+        "status": null,
+        "description": "Acte de marcher derrière quelqu'un ou de se conformer à son exemple. Le suivi est directionnel — il part du suiveur et se dirige vers celui qui est suivi. C'est un mouvement permanent tant que le suiveur ne dévie pas. Suivre c'est accepter la direction d'un autre."
+      },
+      "Succession": {
+        "senses": [
+          "successeur",
+          "partisan"
+        ],
+        "status": null,
+        "description": "Celui qui vient après et prend la suite. La succession est l'enchaînement temporel — chaque chose laisse place à ce qui la suit. C'est permanent dans le cycle."
+      }
+    }
+  },
+  "tlw": {
+    "id": 730,
+    "root_ar": "ت ل و",
+    "concepts": {
+      "Récitation/Succession": {
+        "senses": [
+          "réciter",
+          "lire",
+          "succéder"
+        ],
+        "status": "retenu",
+        "description": "Lire à haute voix — réciter (talâ) c'est énoncer les paroles sacrées. C'est ponctuel comme acte et répété comme pratique. Récite (utlu) ce qui t'a été révélé du Livre. La tilâwa est la récitation du Coran, acte de culte. Talâ signifie aussi suivre, venir après. Le tâlî suit le précédent. Réciter c'est suivre la Parole, la faire passer de Dieu à soi puis aux autres."
+      }
+    }
+  },
+  "mlk": {
+    "id": 256,
+    "root_ar": "م ل ك",
+    "concepts": {
+      "Possession/Autorité": {
+        "senses": [
+          "maître",
+          "possesseur",
+          "biens",
+          "esclave",
+          "asservir",
+          "posséder",
+          "propriété"
+        ],
+        "status": "nul",
+        "description": "Réalité extérieure de détention avec droit et autorité. Posséder implique commander, interdire et disposer. Le possesseur a le pouvoir sur ce qu'il possède. C'est un état permanent tant que la possession dure."
+      },
+      "Royauté/Souveraineté": {
+        "senses": [
+          "règne",
+          "roi",
+          "souverain",
+          "couronnement",
+          "trône",
+          "royaume"
+        ],
+        "status": "probable",
+        "description": "Autorité suprême exercée sur un peuple ou un territoire. Le roi commande et gouverne. C'est un acte extérieur permanent dirigé vers les sujets."
+      },
+      "Sens isolé/Pâte": {
+        "senses": [
+          "pâte"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Pâte — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Maîtriser": {
+        "senses": [
+          "maîtriser soi-même"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Maîtriser soi-même — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Eau/Liquide": {
+        "senses": [
+          "eau stagnante"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Eau stagnante — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Ange/Messager": {
+        "senses": [
+          "ange",
+          "messager",
+          "message"
+        ],
+        "status": "retenu",
+        "description": "Être qui transmet la communication. Le Lane's lie ce sens à la racine par l'idée de message et d'envoi."
+      }
+    }
+  },
+  "kfr": {
+    "id": 294,
+    "root_ar": "ك ف ر",
+    "concepts": {
+      "Rejet/Ingratitude": {
+        "senses": [
+          "renier un bienfait",
+          "rejeter",
+          "mécréant",
+          "être ingrat",
+          "nier"
+        ],
+        "status": "probable",
+        "description": "Acte extérieur de refuser de reconnaître."
+      },
+      "Couverture/Dissimulation": {
+        "senses": [
+          "couvrir",
+          "cacher",
+          "la nuit qui couvre"
+        ],
+        "status": "retenu",
+        "description": "Acte physique de cacher quelque chose en le recouvrant. La couverture est un acte extérieur qui empêche de voir ce qui est dessous. Le sens physique premier est concret : la nuit couvre le jour, la terre couvre la graine."
+      },
+      "Expiation/Réparation": {
+        "senses": [
+          "expier",
+          "effacer les péchés"
+        ],
+        "status": "nul",
+        "description": "Acte extérieur de compenser une faute par une action réparatrice. L'expiation sort de celui qui répare et efface la faute."
+      },
+      "Sens isolé/Village": {
+        "senses": [
+          "village"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Village — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Goudron": {
+        "senses": [
+          "goudron"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Goudron — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Cultivateur": {
+        "senses": [
+          "cultivateur"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Cultivateur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "shr": {
+    "id": 731,
+    "root_ar": "س ح ر",
+    "concepts": {
+      "Magie/Aube": {
+        "senses": [
+          "magie",
+          "ensorceler",
+          "aube"
+        ],
+        "status": null,
+        "description": "Art occulte qui trompe les sens — la magie (sihr) est l'illusion qui détourne du réel. C'est intérieur (tromperie) et extérieur (effets apparents). Ils enseignèrent aux gens la magie (al-sihr). Les magiciens de Pharaon furent vaincus par Moïse. Le sihr est interdit car il implique souvent l'aide des démons. Le sahar est aussi l'aube, le moment avant le lever du soleil. Les deux sens partagent l'idée de ce qui précède la clarté."
+      }
+    }
+  },
+  "nzl": {
+    "id": 289,
+    "root_ar": "ن ز ل",
+    "concepts": {
+      "Descente/Révélation": {
+        "senses": [
+          "pluie qui descend",
+          "faire descendre",
+          "révéler",
+          "descendre",
+          "envoyer d'en haut"
+        ],
+        "status": "retenu",
+        "description": "Mouvement extérieur du haut vers le bas."
+      },
+      "Halte/Séjour": {
+        "senses": [
+          "s'installer",
+          "faire halte",
+          "lieu de descente",
+          "hôte"
+        ],
+        "status": "nul",
+        "description": "Acte de s'arrêter dans un lieu pour y séjourner. L'installation est un mouvement qui aboutit à un état de repos."
+      },
+      "Sens isolé/Rang": {
+        "senses": [
+          "rang"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Rang — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "ahd": {
+    "id": 2574,
+    "root_ar": null,
+    "concepts": {
+      "Sens isolé/Calamité": {
+        "senses": [
+          "calamité"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Calamité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Minéral/Terre": {
+        "senses": [
+          "tradition isolée"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Tradition isolée — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Quiconque/Indéfini": {
+        "senses": [
+          "quelque chose",
+          "quiconque",
+          "personne"
+        ],
+        "status": "peu_probable",
+        "description": "Pronom indéfini qui désigne n'importe quelle personne ou chose, utilisé dans les phrases négatives et interrogatives pour nier l'existence ou questionner l'identité. C'est un outil grammatical dont la réalité est extérieure et relationnelle."
+      },
+      "Unicité/Indivisibilité": {
+        "senses": [
+          "un (premier des nombres)",
+          "unité",
+          "l'Indivisible",
+          "déclarer l'unicité"
+        ],
+        "status": "nul",
+        "description": "Qualité intrinsèque d'être un et indivisible, qui ne peut pas être séparé en parties. C'est un état permanent et absolu qui définit la nature profonde de ce qui est qualifié. Le Lane's (Lane's Arabic-English Lexicon, Edward Lane, 1863) distingue explicitement ahad de wahid : ahad est l'indivisible qui n'a pas de second, wahid est le premier des nombres. Cette distinction fait de ahad un mot de qualité, pas de quantité."
+      },
+      "Sens isolé/Dimanche": {
+        "senses": [
+          "dimanche"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Dimanche — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Solitude/Isolement": {
+        "senses": [
+          "être seul",
+          "ne pas connaître"
+        ],
+        "status": "nul",
+        "description": "État de celui qui est à l'écart des autres, sans compagnie ni partage. C'est un état intérieur qui reste chez celui qui le vit. La solitude n'atteint pas l'autre, elle est ressentie par celui qui est seul."
+      },
+      "Nombre/Quantification": {
+        "senses": [
+          "rendre onze",
+          "un des plusieurs",
+          "un par un"
+        ],
+        "status": "probable",
+        "description": "Le chiffre un comme quantité arithmétique mesurable. C'est un constat objectif de combien il y en a, pas une qualification de ce que la chose est. La réalité est extérieure et comptable."
+      }
+    }
+  },
+  "qwl": {
+    "id": 307,
+    "root_ar": "ق و ل",
+    "concepts": {
+      "Parole/Énonciation": {
+        "senses": [
+          "parler",
+          "parole",
+          "discours",
+          "dire",
+          "affirmer"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de produire des mots pour communiquer."
+      },
+      "Pensée/Avis": {
+        "senses": [
+          "avis",
+          "doctrine",
+          "opinion"
+        ],
+        "status": "nul",
+        "description": "État intérieur de jugement sur quelque chose."
+      },
+      "Sens isolé/Puissance": {
+        "senses": [
+          "puissance"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Puissance — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "troupeau"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Troupeau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "ftn": {
+    "id": 879,
+    "root_ar": "ف ت ن",
+    "concepts": {
+      "Épreuve/Tentation": {
+        "senses": [
+          "tenter",
+          "séduire",
+          "fondre l'or (purifier par le feu)",
+          "éprouver"
+        ],
+        "status": null,
+        "description": ""
+      },
+      "Désordre/Persécution": {
+        "senses": [
+          "discorde",
+          "persécution",
+          "châtiment par le feu"
+        ],
+        "status": null,
+        "description": "État de trouble et de division dans une communauté. La discorde sort de ceux qui la sèment et atteint toute la communauté — c'est multidirectionnel et peut devenir permanent si rien ne l'arrête."
+      }
+    }
+  },
+  "byn": {
+    "id": 596,
+    "root_ar": "ب ي ن",
+    "concepts": {
+      "Séparation/Distance": {
+        "senses": [
+          "séparer",
+          "quitter",
+          "entre"
+        ],
+        "status": "retenu",
+        "description": "Acte de mettre de la distance entre deux choses. La séparation est extérieure et visible."
+      },
+      "Clarté/Évidence": {
+        "senses": [
+          "être clair",
+          "expliquer",
+          "preuve",
+          "évident"
+        ],
+        "status": "nul",
+        "description": "État de ce qui est visible et compréhensible sans ambiguïté. La clarté est extérieure et permanente — ce qui est clair se montre à tous."
+      }
+    }
+  },
+  "mra": {
+    "id": 881,
+    "root_ar": "م ر أ",
+    "concepts": {
+      "Personne/Individu": {
+        "senses": [
+          "femme (imra'a)",
+          "homme (imru')"
+        ],
+        "status": "retenu",
+        "description": ""
+      },
+      "Santé/Bienfaisance": {
+        "senses": [
+          "être digeste",
+          "être bienfaisant",
+          "être sain"
+        ],
+        "status": "nul",
+        "description": ""
+      }
+    }
+  },
+  "zwj": {
+    "id": 401,
+    "root_ar": "ز و ج",
+    "concepts": {
+      "Couple/Union": {
+        "senses": [
+          "coupler",
+          "marier",
+          "époux",
+          "paire",
+          "espèce"
+        ],
+        "status": "retenu",
+        "description": "Acte de réunir deux choses ensemble pour en faire une paire. Le couplage transforme deux entités séparées en une unité."
+      }
+    }
+  },
+  "drr": {
+    "id": 795,
+    "root_ar": "ض ر ر",
+    "concepts": {
+      "Nuisance/Mal": {
+        "senses": [
+          "nuire",
+          "tort",
+          "dommage"
+        ],
+        "status": null,
+        "description": "Causer du tort — nuire (darra) c'est infliger un dommage. C'est ponctuel comme acte et peut être permanent comme effet. Ils ne vous nuiront (yadurrûkum) en rien. Les ennemis ne peuvent nuire sans la permission de Dieu. Le darar est le dommage, la durr est le mal. La darûra est la nécessité impérieuse. Lâ darara wa lâ dirâr : pas de nuisance ni de représailles nuisibles."
+      }
+    }
+  },
+  "nfa": {
+    "id": 933,
+    "root_ar": "ن ف ع",
+    "concepts": {
+      "Utilité/Profit": {
+        "senses": [
+          "être utile",
+          "profiter",
+          "avantage",
+          "servir"
+        ],
+        "status": null,
+        "description": "État de ce qui apporte un avantage à celui qui l'utilise. L'utilité est une qualité permanente de ce qui sert — elle sort de la chose utile et atteint celui qui en bénéficie. Ce qui est utile contribue au bien-être et à l'accomplissement."
+      }
+    }
+  },
+  "axr": {
+    "id": 292,
+    "root_ar": "ء خ ر",
+    "concepts": {
+      "Sens isolé/Arrière": {
+        "senses": [
+          "arrière"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Arrière — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Postériorité/Retard": {
+        "senses": [
+          "retarder",
+          "reporter",
+          "reculer",
+          "après",
+          "dernier",
+          "l'au-delà",
+          "fin"
+        ],
+        "status": "retenu",
+        "description": "Position dans le temps qui suit le moment présent ou un autre événement. La postériorité est un état temporel objectif — ce qui est après reste après. Le retard est un mouvement vers l'arrière dans le temps."
+      },
+      "Sens isolé/Derrière": {
+        "senses": [
+          "derrière"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Derrière — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "xlq": {
+    "id": 344,
+    "root_ar": "خ ل ق",
+    "concepts": {
+      "Sens isolé/Mensonge": {
+        "senses": [
+          "mensonge"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Mensonge — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Création/Production": {
+        "senses": [
+          "créer",
+          "création",
+          "créature",
+          "façonner",
+          "nature",
+          "caractère"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de faire exister ce qui n'existait pas. La création sort du créateur et produit une réalité nouvelle. C'est un acte directionnel et fondamental — il transforme le néant en existence."
+      },
+      "Sens isolé/Lisse": {
+        "senses": [
+          "lisse"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Lisse — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "bas": {
+    "id": 713,
+    "root_ar": "ب أ س",
+    "concepts": {
+      "Puissance/Malheur": {
+        "senses": [
+          "force",
+          "châtiment",
+          "malheur"
+        ],
+        "status": "retenu",
+        "description": "Capacité de nuire ou de se défendre — le ba's est la force guerrière, la puissance. C'est aussi le malheur qui s'abat. Ils n'ont aucune force (lâ ba'sa) qui les protège. Le châtiment (ba's) de Dieu est terrible pour ceux qui le méritent. La puissance peut être positive (défense) ou négative (destruction). Quand Notre ba's les atteignit."
+      }
+    }
+  },
+  "nfs": {
+    "id": 298,
+    "root_ar": "ن ف س",
+    "concepts": {
+      "Souffle/Vie": {
+        "senses": [
+          "souffle",
+          "respirer",
+          "soulagement"
+        ],
+        "status": "nul",
+        "description": "Mouvement physique de l'air qui entre et sort du corps. Le souffle est extérieur, visible et vital — sans lui, pas de vie. C'est un mouvement permanent tant que la vie dure."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "sang"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Sang — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Oeil": {
+        "senses": [
+          "oeil mauvais"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Oeil mauvais — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Quantité": {
+        "senses": [
+          "quantité"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Quantité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Âme/Être": {
+        "senses": [
+          "désir",
+          "âme",
+          "personne",
+          "esprit",
+          "soi-même"
+        ],
+        "status": "retenu",
+        "description": "Réalité intérieure de l'être vivant."
+      }
+    }
+  },
+  "knw": {
+    "id": 2117,
+    "root_ar": "ك و ن",
+    "concepts": {
+      "Existence/Devenir": {
+        "senses": [
+          "être",
+          "devenir",
+          "exister"
+        ],
+        "status": "retenu",
+        "description": "Avoir l'existence — être (kâna/yakûnu) est le verbe fondamental de l'existence. C'est permanent pour Dieu, variable pour les créatures. Dieu était (kâna) et rien n'était avec Lui. Kun fa-yakûn : Sois et c'est. Le takwîn est la création, le fait de faire être. L'univers (al-kawn) est tout ce qui existe. Kâna exprime aussi le passé : il était ainsi."
+      }
+    }
+  },
+  "amn": {
+    "id": 287,
+    "root_ar": "أ م ن",
+    "concepts": {
+      "Foi/Adhésion": {
+        "senses": [
+          "accepter comme vrai",
+          "croire",
+          "avoir la foi",
+          "confirmer",
+          "croyant"
+        ],
+        "status": "retenu",
+        "description": "Acte intérieur d'adhésion et de conviction."
+      },
+      "Garantie/Protection": {
+        "senses": [
+          "accorder la sécurité",
+          "protéger"
+        ],
+        "status": "nul",
+        "description": "Acte extérieur de donner une garantie ou une protection."
+      },
+      "Sens isolé/Amen": {
+        "senses": [
+          "amen"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Amen — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sécurité/Confiance": {
+        "senses": [
+          "faire confiance",
+          "être en sécurité",
+          "confier",
+          "se sentir en sécurité",
+          "fidèle",
+          "lieu sûr"
+        ],
+        "status": "probable",
+        "description": "État de tranquillité intérieure."
+      }
+    }
+  },
+  "wqy": {
+    "id": 277,
+    "root_ar": "و ق ي",
+    "concepts": {
+      "Sens isolé/Bouclier": {
+        "senses": [
+          "bouclier"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Bouclier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Protection/Préservation": {
+        "senses": [
+          "protéger",
+          "préserver",
+          "craindre",
+          "piété",
+          "se prémunir",
+          "éviter"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de mettre à l'abri du danger ou du mal. La protection sort de celui qui protège et atteint celui qui est protégé. C'est un acte directionnel et peut être permanent."
+      }
+    }
+  },
+  "thwb": {
+    "id": 726,
+    "root_ar": "ث و ب",
+    "concepts": {
+      "Vêtement/Rétribution": {
+        "senses": [
+          "vêtement",
+          "récompense",
+          "revenir"
+        ],
+        "status": null,
+        "description": "Ce qui couvre le corps et ce qui revient comme rétribution — le vêtement (thawb) habille et protège. C'est permanent comme objet. Purifie tes vêtements (thiyâbaka). La pureté vestimentaire accompagne la pureté spirituelle. Le thawâb est la récompense, ce qui 'revient' pour les bonnes actions. Vêtement et récompense partagent l'idée de ce qui enveloppe et couvre l'être."
+      }
+    }
+  },
+  "rey": {
+    "id": 1618,
+    "root_ar": "ر ع ي",
+    "concepts": {
+      "Pâturage/Protection": {
+        "senses": [
+          "paître",
+          "garder",
+          "veiller sur"
+        ],
+        "status": null,
+        "description": "Faire manger l'herbe aux bêtes — paître (ra'â) c'est conduire le troupeau aux pâturages. C'est permanent comme activité pastorale. Des prophètes furent bergers. Le ra'î est le berger, le gardien du troupeau. La ri'âya est la protection, le soin apporté à ce qu'on garde. Qui ne garde pas sa parole (lâ yar'auna) n'a pas de protection. Le berger est responsable de chaque bête."
+      }
+    }
+  },
+  "sme": {
+    "id": 302,
+    "root_ar": "س م ع",
+    "concepts": {
+      "Renommée/Bruit": {
+        "senses": [
+          "réputation",
+          "bruit",
+          "faire entendre"
+        ],
+        "status": null,
+        "description": "Ce qui est entendu par les gens à propos de quelqu'un. La réputation sort de la personne et se propage vers l'extérieur par le bruit et la parole."
+      },
+      "Audition/Écoute": {
+        "senses": [
+          "ouïe",
+          "exaucer",
+          "entendre",
+          "obéir",
+          "écouter"
+        ],
+        "status": "retenu",
+        "description": "Acte de percevoir par l'oreille."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "oreille"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Oreille — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "alm": {
+    "id": 315,
+    "root_ar": "أ ل م",
+    "concepts": {
+      "Douleur/Souffrance": {
+        "senses": [
+          "douleur",
+          "souffrir",
+          "faire mal",
+          "châtiment douloureux"
+        ],
+        "status": null,
+        "description": "État intérieur de souffrance physique ou morale. La douleur reste chez celui qui la ressent — c'est un état qui ne sort pas vers l'extérieur par lui-même. Elle peut être ponctuelle ou permanente."
+      }
+    }
+  },
+  "wdd": {
+    "id": 703,
+    "root_ar": "و د د",
+    "concepts": {
+      "Amour/Affection": {
+        "senses": [
+          "aimer",
+          "affection",
+          "souhaiter"
+        ],
+        "status": "retenu",
+        "description": "Éprouver de l'affection pour quelqu'un — aimer (wadda/yawaddu) est l'inclination du cœur vers l'aimé. C'est intérieur et peut être permanent. Dieu est le Très-Affectueux (al-Wadûd). Le wudd est l'amour tendre, l'affection sincère. Ils voudraient (yawaddûna) que vous mécroiyez. Le souhait (widâd) est l'expression du désir intérieur."
+      }
+    }
+  },
+  "ahl": {
+    "id": 736,
+    "root_ar": "أ ه ل",
+    "concepts": {
+      "Famille/Communauté": {
+        "senses": [
+          "famille",
+          "gens de",
+          "peuple"
+        ],
+        "status": null,
+        "description": "Ensemble de personnes liées par le sang ou l'appartenance. La famille est une réalité relationnelle permanente."
+      },
+      "Mérite/Aptitude": {
+        "senses": [
+          "digne de"
+        ],
+        "status": null,
+        "description": "État de celui qui est qualifié pour quelque chose. Le mérite est un jugement objectif sur la capacité."
+      },
+      "Sens isolé/Accueillir": {
+        "senses": [
+          "accueillir"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Accueillir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Parenté/Famille": {
+        "senses": [
+          "se marier"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Se marier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "rbb": {
+    "id": 253,
+    "root_ar": "ر ب ب",
+    "concepts": {
+      "Commerce/Usure": {
+        "senses": [
+          "augmentation de dette",
+          "usure",
+          "intérêt"
+        ],
+        "status": "nul",
+        "description": "Augmentation dans le domaine financier. L'usure est l'augmentation illégitime d'une dette. C'est un acte extérieur et transactionnel."
+      },
+      "Sens isolé/Fixer": {
+        "senses": [
+          "fixer"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Fixer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Groupe": {
+        "senses": [
+          "groupe"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Groupe — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Rassembler": {
+        "senses": [
+          "rassembler"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Rassembler — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Souffle/Vent": {
+        "senses": [
+          "essoufflement"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Essoufflement — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Seigneurie/Autorité bienveillante": {
+        "senses": [
+          "seigneur",
+          "celui qui possède",
+          "propriétaire",
+          "maître",
+          "gouverner",
+          "celui qui élève",
+          "celui qui entretient"
+        ],
+        "status": "retenu",
+        "description": "Relation extérieure permanente entre un maître et ce qu'il gouverne. Le seigneur possède, élève et entretient. C'est un acte dirigé vers l'extérieur : le seigneur fait grandir ce qui est sous sa responsabilité. L'autorité inclut la possession, l'éducation et le soin."
+      },
+      "Sens isolé/Confiture": {
+        "senses": [
+          "confiture"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Confiture — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Croissance/Augmentation": {
+        "senses": [
+          "colline",
+          "éminence",
+          "développer",
+          "augmenter",
+          "croître",
+          "excès",
+          "faire grandir",
+          "nourrir"
+        ],
+        "status": "probable",
+        "description": "Réalité physique de ce qui grandit, augmente, se développe. C'est un processus graduel et continu. Le sens premier est l'augmentation en taille ou en quantité."
+      },
+      "Éducation/Accompagnement": {
+        "senses": [
+          "former",
+          "éduquer",
+          "accompagner la croissance",
+          "élever un enfant"
+        ],
+        "status": "probable",
+        "description": "Acte extérieur et continu d'accompagnement dans la croissance. Élever un enfant, éduquer, former. C'est un processus long et permanent qui transforme celui qui le reçoit."
+      }
+    }
+  },
+  "khs": {
+    "id": 738,
+    "root_ar": "خ ص ص",
+    "concepts": {
+      "Particularité/Exclusivité": {
+        "senses": [
+          "spécifier",
+          "distinguer",
+          "élite"
+        ],
+        "status": null,
+        "description": "Réserver à quelqu'un en particulier — spécifier (khassa) c'est distinguer du général. C'est permanent comme qualité. Il spécifie (yakhtassu) de Sa miséricorde qui Il veut. Dieu choisit qui Il distingue. Le khâss est le particulier, l'élite. La khâssiyya est la propriété distinctive. Ce qui est khuṣûṣ concerne un cas particulier. L'élection divine distingue certains serviteurs."
+      }
+    }
+  },
+  "rhm": {
+    "id": 251,
+    "root_ar": "ر ح م",
+    "concepts": {
+      "Utérus/Reproduction": {
+        "senses": [
+          "vulve",
+          "utérus gonflé",
+          "utérus",
+          "chamelle malade post-partum",
+          "sortie de l'utérus",
+          "maladie de l'utérus"
+        ],
+        "status": "nul",
+        "description": "Réalité physique intérieure liée à l'organe maternel et aux processus de reproduction. L'utérus est le lieu clos et protégé où la vie se forme. C'est un état intérieur, physique et permanent tant que l'organe existe."
+      },
+      "Parenté/Lien familial": {
+        "senses": [
+          "sentiment de parenté",
+          "lien de parenté",
+          "parents par les femmes",
+          "parent interdit au mariage",
+          "connecté par parenté"
+        ],
+        "status": "nul",
+        "description": "Relation horizontale entre humains fondée sur le partage d'un lien biologique (la matrice commune). C'est un état permanent et extérieur qui relie les personnes entre elles. Le lien existe indépendamment de la volonté des parties."
+      },
+      "Provision/Bienfait matériel": {
+        "senses": [
+          "prophétie",
+          "subsistance",
+          "pluie",
+          "abondance"
+        ],
+        "status": "peu_probable",
+        "description": "Manifestation concrète et matérielle de la miséricorde. C'est le résultat tangible de la tendresse : la pluie qui nourrit, les moyens de subsistance, l'abondance. C'est extérieur, observable et souvent ponctuel."
+      },
+      "Sens isolé/Outre": {
+        "senses": [
+          "outre abîmée"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Outre abîmée — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "La Mecque",
+          "Médine"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. La Mecque — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/La": {
+        "senses": [
+          "la crainte vaut mieux que la pitié"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. La crainte vaut mieux que la pitié — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Miséricorde/Tendresse": {
+        "senses": [
+          "traiter avec compassion",
+          "se forcer à la compassion",
+          "miséricorde réciproque",
+          "dire \"que Dieu te fasse miséricorde\"",
+          "miséricorde",
+          "pardon",
+          "demander la miséricorde",
+          "le Compatissant",
+          "plus miséricordieux",
+          "objet de miséricorde",
+          "traité avec beaucoup de compassion"
+        ],
+        "status": "retenu",
+        "description": "Mouvement intérieur de tendresse qui se dirige vers l'extérieur en actes de bienfaisance. La miséricorde part de celui qui la ressent et atteint celui qui la reçoit. C'est une qualité permanente qui pousse à faire du bien, à pardonner, à protéger."
+      }
+    }
+  },
+  "fdl": {
+    "id": 524,
+    "root_ar": "ف ض ل",
+    "concepts": {
+      "Reste/Surplus": {
+        "senses": [
+          "surplus",
+          "reste"
+        ],
+        "status": "nul",
+        "description": "Ce qui reste après que le nécessaire a été pris — le surplus est ce qui dépasse le besoin. C'est permanent comme quantité disponible. Donner de son surplus aux autres est recommandé."
+      },
+      "Excellence/Faveur": {
+        "senses": [
+          "être supérieur",
+          "grâce",
+          "faveur",
+          "mérite"
+        ],
+        "status": "retenu",
+        "description": "État de ce qui dépasse les autres en qualité ou en valeur — l'excellence (fadl) est permanente comme qualité intrinsèque. C'est un jugement comparatif : celui qui a le fadl surpasse les autres. La grâce de Dieu (fadl Allah) est ce qu'Il donne en plus de ce qui est dû, par pure générosité. La faveur divine distingue et élève celui qui la reçoit."
+      }
+    }
+  },
+  "ezm": {
+    "id": 310,
+    "root_ar": "ع ظ م",
+    "concepts": {
+      "Structure/Ossature": {
+        "senses": [
+          "os",
+          "squelette"
+        ],
+        "status": null,
+        "description": "Élément physique dur et solide qui donne sa structure au corps. L'os est intérieur, permanent et structurel — il soutient tout ce qui est autour."
+      },
+      "Sens isolé/Châtiment": {
+        "senses": [
+          "châtiment terrible"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Châtiment terrible — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Grandeur/Importance": {
+        "senses": [
+          "être grand",
+          "grandir",
+          "immense",
+          "magnifier"
+        ],
+        "status": "retenu",
+        "description": "État de ce qui dépasse en taille, en rang ou en valeur. La grandeur est un état objectif et permanent — ce qui est grand est reconnu comme tel par tous. Elle peut être physique ou abstraite."
+      }
+    }
+  },
+  "ayt": {
+    "id": 475,
+    "root_ar": "آ ي ة",
+    "concepts": {
+      "Signe/Preuve": {
+        "senses": [
+          "signe",
+          "miracle",
+          "preuve"
+        ],
+        "status": "retenu",
+        "description": "Ce qui montre ou indique autre chose que soi — le signe est permanent comme réalité signifiante et directionnel vers ce qu'il signifie. Les signes de Dieu dans la création pointent vers le Créateur. Le signe demande à être lu, interprété, compris. Ne pas voir les signes c'est être aveugle du cœur."
+      },
+      "Révélation/Parole": {
+        "senses": [
+          "verset"
+        ],
+        "status": "probable",
+        "description": "Unité de sens dans le texte révélé — le verset est un signe verbal qui porte un message divin. C'est permanent comme texte sacré. Chaque verset est une parole de Dieu adressée aux hommes, à méditer et à suivre."
+      }
+    }
+  },
+  "nsy": {
+    "id": 511,
+    "root_ar": "ن س ي",
+    "concepts": {
+      "Oubli/Négligence": {
+        "senses": [
+          "oublier",
+          "négliger",
+          "omettre",
+          "laisser"
+        ],
+        "status": "retenu",
+        "description": "Acte involontaire ou volontaire de perdre le souvenir de quelque chose — l'oubli est la disparition de la conscience de ce qui était su. C'est ponctuel quand il survient mais peut devenir permanent. L'oubli de Dieu est le pire des oublis car il fait perdre le sens de l'existence. Dieu n'oublie pas, mais Il peut 'oublier' celui qui L'a oublié, c'est-à-dire le délaisser."
+      }
+    }
+  },
+  "mvl": {
+    "id": 2599,
+    "root_ar": "م ث ل",
+    "concepts": {
+      "Similitude/Comparaison": {
+        "senses": [
+          "exemple",
+          "parabole",
+          "similitude",
+          "comparaison",
+          "semblable"
+        ],
+        "status": null,
+        "description": "Acte de mettre en parallèle deux réalités pour éclairer l'une par l'autre — le mathal est un exemple qui sort de celui qui compare et atteint celui qui écoute. C'est directionnel et pédagogique. Le mathal est permanent comme outil d'explication. La parabole éclaire l'inconnu par le connu."
+      },
+      "Ressemblance/Identité": {
+        "senses": [
+          "ressembler",
+          "être semblable",
+          "pareil",
+          "équivalent"
+        ],
+        "status": null,
+        "description": "État de correspondance entre deux choses — la ressemblance est un lien entre deux réalités qui partagent des caractéristiques. C'est relationnel et peut être permanent ou temporaire."
+      },
+      "Représentation/Image": {
+        "senses": [
+          "statue",
+          "image",
+          "représentation"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Forme visible qui représente quelque chose — l'image ou la statue est une matérialisation de la ressemblance."
+      }
+    }
+  },
+  "kll": {
+    "id": 372,
+    "root_ar": "ك ل ل",
+    "concepts": {
+      "Émoussement/Faiblesse": {
+        "senses": [
+          "s'émousser",
+          "être fatigué"
+        ],
+        "status": null,
+        "description": "Perdre son tranchant ou son acuité. L'émoussement est un état de perte de force ou de netteté. Ce qui est émoussé ne coupe plus et ne perce plus."
+      },
+      "Charge/Dépendance": {
+        "senses": [
+          "fardeau",
+          "personne à charge"
+        ],
+        "status": null,
+        "description": "Ce qui pèse sur quelqu'un. Le fardeau est une charge extérieure qui accable celui qui la porte — il est lourd et constant."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "couronner"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Couronner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Agacer": {
+        "senses": [
+          "agacer les dents"
+        ],
+        "status": null,
+        "description": "Provoquer une sensation désagréable dans les dents. Sens physique concret isolé."
+      },
+      "Totalité": {
+        "senses": [
+          "chaque",
+          "tout",
+          "totalité"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "qdr": {
+    "id": 373,
+    "root_ar": "ق د ر",
+    "concepts": {
+      "Puissance/Capacité": {
+        "senses": [
+          "pouvoir",
+          "être capable"
+        ],
+        "status": "retenu",
+        "description": "Avoir la capacité de faire quelque chose. Le pouvoir est une force intérieure qui se manifeste par la capacité d'agir sur le monde extérieur."
+      },
+      "Sens isolé/Marmite": {
+        "senses": [
+          "marmite"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Marmite — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Mesure/Détermination": {
+        "senses": [
+          "mesurer",
+          "déterminer",
+          "décréter",
+          "destin",
+          "valeur"
+        ],
+        "status": "probable",
+        "description": "Acte de calculer la quantité, la taille ou la proportion de quelque chose. La mesure est un acte rationnel et objectif qui donne une valeur précise aux choses."
+      }
+    }
+  },
+  "smw": {
+    "id": 249,
+    "root_ar": "س م و",
+    "concepts": {
+      "Hauteur/Élévation": {
+        "senses": [
+          "se dresser",
+          "monter",
+          "lever le regard",
+          "être haut",
+          "élever quelqu'un",
+          "dépasser en nombre",
+          "étalon qui bondit",
+          "forme vue de loin",
+          "lune qui se dresse",
+          "surpasser",
+          "éminent",
+          "aspirer",
+          "noble",
+          "hautain",
+          "rivaliser en éminence"
+        ],
+        "status": "nul",
+        "description": "Réalité physique et abstraite de ce qui se dresse, se lève, dépasse. Mouvement ascendant depuis le bas vers le haut, que ce soit physiquement (se lever, monter) ou socialement (noblesse, éminence). C'est un état qui se manifeste vers l'extérieur et qui peut être observé par les autres."
+      },
+      "Nom/Identification": {
+        "senses": [
+          "nommer",
+          "prononcer le nom de Dieu",
+          "se nommer",
+          "s'appeler mutuellement",
+          "demander le nom",
+          "renommée",
+          "nommé",
+          "homonyme",
+          "nominal",
+          "qualité de nom",
+          "revendiquer une parenté",
+          "nom"
+        ],
+        "status": "retenu",
+        "description": "Réalité extérieure et permanente qui permet d'identifier, de distinguer et de communiquer. Le nom est un signe qui pointe vers ce qu'il désigne. Il sort de celui qui nomme et atteint ce qui est nommé. Il crée un pont entre la chose et celui qui la connaît."
+      },
+      "Chasse": {
+        "senses": [
+          "chasser",
+          "chasseurs",
+          "chaussettes de chasseur",
+          "inciter à chasser",
+          "tester une chamelle"
+        ],
+        "status": "nul",
+        "description": "Activité extérieure de poursuite et de capture. Mouvement actif vers l'extérieur pour atteindre une cible. C'est un acte ponctuel et dirigé."
+      },
+      "Sens isolé/Visiter": {
+        "senses": [
+          "visiter"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Visiter — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Souffle/Vent": {
+        "senses": [
+          "faire partir"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Faire partir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Animal/Faune": {
+        "senses": [
+          "monter à cheval"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Monter à cheval — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Désir": {
+        "senses": [
+          "désir qui resurgit"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Désir qui resurgit — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Égal": {
+        "senses": [
+          "égal"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Égal — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Choisir": {
+        "senses": [
+          "choisir"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Choisir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Se": {
+        "senses": [
+          "se diriger vers Es-Semaweh"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Se diriger vers Es-Semaweh — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Regarder": {
+        "senses": [
+          "regarder la silhouette"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Regarder la silhouette — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Ciel/Ce qui couvre": {
+        "senses": [
+          "pièce de tissu supérieure",
+          "semelle supérieure",
+          "céleste",
+          "bounty",
+          "ciel",
+          "toit",
+          "nuage",
+          "pluie",
+          "herbage",
+          "dos"
+        ],
+        "status": "retenu",
+        "description": "Ce qui est au-dessus et enveloppe. Le ciel comme voûte qui recouvre la terre, et tout ce qui sert de couverture au-dessus de quelque chose. Inclut les phénomènes qui viennent d'en haut (pluie, nuages). C'est une réalité extérieure permanente et observable."
+      }
+    }
+  },
+  "ard": {
+    "id": 324,
+    "root_ar": "أ ر ض",
+    "concepts": {
+      "Sens isolé/Rhume": {
+        "senses": [
+          "rhume"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Rhume — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Tremblement": {
+        "senses": [
+          "tremblement"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Tremblement — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Terre/Sol": {
+        "senses": [
+          "terre",
+          "bas",
+          "sol",
+          "pays"
+        ],
+        "status": "retenu",
+        "description": "Surface solide sur laquelle on vit et on marche. La terre est extérieure, permanente et universelle — elle est le support de toute activité humaine."
+      }
+    }
+  },
+  "dwn": {
+    "id": 383,
+    "root_ar": "د و ن",
+    "concepts": {
+      "Infériorité/En-dessous": {
+        "senses": [
+          "en dessous",
+          "inférieur",
+          "moindre"
+        ],
+        "status": "retenu",
+        "description": "Position spatiale inférieure. Ce qui est en dessous est dans une position moindre par rapport à ce qui est au-dessus."
+      },
+      "Proximité/Moindre distance": {
+        "senses": [
+          "proche"
+        ],
+        "status": null,
+        "description": "Ce qui est à faible distance. Le proche est accessible et atteignable. Ce concept est central dans la compréhension du verset où il apparaît."
+      },
+      "Sens isolé/Le": {
+        "senses": [
+          "le plus bas"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Le plus bas — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "w l y": {
+    "id": 904,
+    "root_ar": "و ل ي",
+    "concepts": {
+      "Autorité/Gestion": {
+        "senses": [
+          "gouverner",
+          "prendre en charge"
+        ],
+        "status": "probable",
+        "description": "Acte extérieur de prendre en charge les affaires d'un groupe. L'autorité sort du gouvernant et atteint les gouvernés — c'est directionnel et permanent tant que dure le mandat."
+      },
+      "Sens isolé/Se": {
+        "senses": [
+          "se succéder"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Se succéder — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Proximité/Alliance": {
+        "senses": [
+          "ami intime",
+          "être proche",
+          "allié",
+          "protecteur"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "nsr": {
+    "id": 537,
+    "root_ar": "ن ص ر",
+    "concepts": {
+      "Alliance/Soutien": {
+        "senses": [
+          "partisan"
+        ],
+        "status": "nul",
+        "description": "Celui qui soutient une cause ou une personne — le partisan (nâsir) est permanent dans son engagement envers ce qu'il soutient."
+      },
+      "Secours/Victoire": {
+        "senses": [
+          "défendre",
+          "aider",
+          "victoire",
+          "secourir"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "rwd": {
+    "id": 411,
+    "root_ar": "ر و د",
+    "concepts": {
+      "Mouvement/Recherche": {
+        "senses": [
+          "aller et venir",
+          "chercher à convaincre",
+          "désirer"
+        ],
+        "status": null,
+        "description": "Se déplacer dans plusieurs directions. Le va-et-vient est un mouvement exploratoire."
+      },
+      "Douceur/Lenteur": {
+        "senses": [
+          "agir doucement"
+        ],
+        "status": null,
+        "description": "Procéder avec précaution et lenteur. La douceur dans l'action est un mouvement mesuré."
+      },
+      "Sens isolé/Pâturage": {
+        "senses": [
+          "pâturage"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Pâturage — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "sal": {
+    "id": 739,
+    "root_ar": "س أ ل",
+    "concepts": {
+      "Requête/Interrogation": {
+        "senses": [
+          "questionner",
+          "interroger",
+          "demander"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "qbl": {
+    "id": 291,
+    "root_ar": "ق ب ل",
+    "concepts": {
+      "Antériorité/Passé": {
+        "senses": [
+          "avant",
+          "auparavant",
+          "ancien",
+          "devant"
+        ],
+        "status": "retenu",
+        "description": "Position dans le temps qui précède le moment présent. L'antériorité est un état temporel objectif et permanent — ce qui est avant reste avant."
+      },
+      "Orientation/Direction": {
+        "senses": [
+          "se tourner vers",
+          "faire face",
+          "venir vers"
+        ],
+        "status": null,
+        "description": "Mouvement extérieur de se diriger vers quelque chose. L'orientation est directionnelle — on quitte une direction pour en prendre une autre."
+      },
+      "Sens isolé/Garantie": {
+        "senses": [
+          "garantie"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Garantie — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Tribu": {
+        "senses": [
+          "tribu"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Tribu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Embrasser": {
+        "senses": [
+          "embrasser"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Embrasser — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Réception/Accueil": {
+        "senses": [
+          "recevoir",
+          "accepter",
+          "agréer"
+        ],
+        "status": "nul",
+        "description": "Acte extérieur de prendre ce qui vient vers soi. La réception est directionnelle — quelque chose arrive et on le prend. C'est un acte qui atteint celui qui reçoit."
+      }
+    }
+  },
+  "bdl": {
+    "id": 562,
+    "root_ar": "ب د ل",
+    "concepts": {
+      "Changement/Substitution": {
+        "senses": [
+          "changer",
+          "remplacer",
+          "substituer",
+          "échange"
+        ],
+        "status": "retenu",
+        "description": "Acte de mettre une chose à la place d'une autre — le changement (tabdîl) est directionnel de l'ancien vers le nouveau. C'est ponctuel dans l'acte mais crée un nouvel état. Dieu peut changer les mauvaises actions en bonnes pour celui qui se repent. Changer la parole de Dieu est impossible car elle est immuable."
+      }
+    }
+  },
+  "dll": {
+    "id": 268,
+    "root_ar": "ض ل ل",
+    "concepts": {
+      "Égarement/Déviation": {
+        "senses": [
+          "errer",
+          "perdre son chemin",
+          "faire égarer",
+          "être égaré",
+          "confusion",
+          "perplexité",
+          "feindre l'égarement",
+          "demander l'égarement",
+          "route qui égare",
+          "terre qui égare",
+          "cause d'égarement",
+          "dévier",
+          "s'égarer"
+        ],
+        "status": "retenu",
+        "description": "Mouvement actif de quitter le bon chemin, de dévier de la direction correcte. L'égarement suppose qu'il y avait un chemin connu et qu'on l'a quitté. C'est un acte extérieur, observable et continu tant qu'on reste hors du chemin."
+      },
+      "Disparition/Perte": {
+        "senses": [
+          "périr",
+          "mourir",
+          "être enterré",
+          "perdre quelque chose",
+          "état de perdition",
+          "futilité",
+          "vain",
+          "devenir poussière",
+          "disparaître",
+          "se perdre"
+        ],
+        "status": "probable",
+        "description": "Processus de devenir introuvable, de se perdre physiquement ou de périr. La disparition est un état résultant — on n'est plus là. C'est extérieur et observable par les autres."
+      },
+      "Oubli/Enterrement": {
+        "senses": [
+          "enterrer",
+          "cacher dans le sol",
+          "eau souterraine",
+          "restes d'eau",
+          "oublier"
+        ],
+        "status": "nul",
+        "description": "Processus intérieur de perdre le souvenir ou acte de cacher dans le sol. L'oubli est intérieur (dans la mémoire), l'enterrement est extérieur (dans la terre). Les deux partagent l'idée de rendre invisible."
+      },
+      "Parenté/Famille": {
+        "senses": [
+          "fils illégitime"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Fils illégitime — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "terre rugueuse"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Terre rugueuse — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Minéral/Terre": {
+        "senses": [
+          "pierres"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Pierres — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Guide": {
+        "senses": [
+          "guide habile"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Guide habile — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "sang non vengé"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Sang non vengé — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Suiveur": {
+        "senses": [
+          "suiveur de femmes"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Suiveur de femmes — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "swy": {
+    "id": 295,
+    "root_ar": "س و ي",
+    "concepts": {
+      "Achèvement/Perfection": {
+        "senses": [
+          "achever",
+          "rendre parfait"
+        ],
+        "status": null,
+        "description": "Acte de mener à son terme, de compléter. L'achèvement est un acte extérieur qui transforme l'incomplet en complet."
+      },
+      "Sens isolé/Se": {
+        "senses": [
+          "se tenir droit"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Se tenir droit — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "milieu"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Milieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Égalité/Équivalence": {
+        "senses": [
+          "être égal",
+          "équivalent",
+          "même chose",
+          "indifférent",
+          "égaliser",
+          "aplanir"
+        ],
+        "status": "retenu",
+        "description": "État objectif où deux choses sont au même niveau. L'égalité est un constat extérieur et permanent — deux choses sont ou ne sont pas égales."
+      }
+    }
+  },
+  "s b l": {
+    "id": 1179,
+    "root_ar": "س ب ل",
+    "concepts": {
+      "Voie/Chemin": {
+        "senses": [
+          "chemin",
+          "voie",
+          "cause (fi sabili)"
+        ],
+        "status": null,
+        "description": "La route que l'on emprunte pour aller quelque part. Le chemin est permanent dans sa trace — il guide celui qui le suit vers une destination. Le sabil est la voie par laquelle on atteint un but, qu'il soit physique ou spirituel."
+      },
+      "Végétation/Plante": {
+        "senses": [
+          "épi pendant"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Épi pendant — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "kthr": {
+    "id": 715,
+    "root_ar": "ك ث ر",
+    "concepts": {
+      "Abondance/Multiplicité": {
+        "senses": [
+          "beaucoup",
+          "abondant",
+          "nombreux"
+        ],
+        "status": "retenu",
+        "description": "En grande quantité — beaucoup (kathîr) s'oppose à peu (qalîl). C'est permanent comme quantité relative. Beaucoup (kathîran) d'entre eux sont pervers. La majorité n'est pas toujours dans le vrai. Le kathîr peut être une bénédiction (progéniture nombreuse) ou une illusion (richesses qui détournent). Al-Kawthar est l'abondance donnée au Prophète. L'abondance vraie vient de Dieu."
+      }
+    }
+  },
+  "baed": {
+    "id": 926,
+    "root_ar": "ب ع د",
+    "concepts": {
+      "Éloignement/Distance": {
+        "senses": [
+          "éloignement",
+          "être loin"
+        ],
+        "status": "nul",
+        "description": ""
+      },
+      "Mort/Destruction": {
+        "senses": [
+          "périr"
+        ],
+        "status": "nul",
+        "description": "Sens figuré de l'éloignement ultime — celui qui périt est éloigné définitivement."
+      },
+      "Postériorité": {
+        "senses": [
+          "après",
+          "ensuite"
+        ],
+        "status": "retenu",
+        "description": "Position dans le temps qui suit un autre événement. L'après est directionnel — il pointe vers ce qui vient plus tard. Après est le contraire d'avant, c'est ce qui succède."
+      }
+    }
+  },
+  "hsd": {
+    "id": 744,
+    "root_ar": "ح س د",
+    "concepts": {
+      "Envie/Jalousie": {
+        "senses": [
+          "convoitise",
+          "jalousie",
+          "envier"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "hqq": {
+    "id": 409,
+    "root_ar": "ح ق ق",
+    "concepts": {
+      "Obligation/Nécessité": {
+        "senses": [
+          "devoir",
+          "mériter",
+          "être obligatoire"
+        ],
+        "status": "nul",
+        "description": "Acte qui s'impose par la nature des choses. Le devoir est une obligation rationnelle qui atteint celui qui doit agir."
+      },
+      "Sens isolé/Vérifier": {
+        "senses": [
+          "vérifier"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Vérifier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Se": {
+        "senses": [
+          "se réaliser"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Se réaliser — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Vérité/Réalité": {
+        "senses": [
+          "vérité",
+          "être vrai",
+          "réalité",
+          "droit"
+        ],
+        "status": "retenu",
+        "description": "État objectif de ce qui correspond à la réalité."
+      }
+    }
+  },
+  "efw": {
+    "id": 547,
+    "root_ar": "ع ف و",
+    "concepts": {
+      "Surplus/Excès": {
+        "senses": [
+          "surplus"
+        ],
+        "status": "nul",
+        "description": "Ce qui dépasse le nécessaire — le 'afw est aussi ce qui reste après avoir satisfait le besoin. Donnez de votre surplus (al-'afw)."
+      },
+      "Pardon/Effacement": {
+        "senses": [
+          "pardonner",
+          "effacer",
+          "excuser"
+        ],
+        "status": "retenu",
+        "description": "Acte d'effacer la faute et de renoncer à la punition méritée — le pardon ('afw) est directionnel de celui qui pardonne vers celui qui est pardonné. C'est ponctuel mais libère définitivement de la dette. Dieu est 'Afuww, Celui qui efface les péchés et les fait disparaître. Le pardon est plus élevé que la justice stricte car il donne plus que ce qui est dû."
+      }
+    }
+  },
+  "sfh": {
+    "id": 332,
+    "root_ar": "س ف ه",
+    "concepts": {
+      "Légèreté/Stupidité": {
+        "senses": [
+          "être insensé",
+          "léger d'esprit",
+          "stupide",
+          "déclarer insensé",
+          "agir de manière insensée"
+        ],
+        "status": null,
+        "description": "État intérieur de manque de sagesse et de discernement. L'insensé ne mesure pas les conséquences de ses actes. C'est un état permanent de déficience intellectuelle et morale."
+      },
+      "Agitation/Mouvement": {
+        "senses": [
+          "agitation"
+        ],
+        "status": null,
+        "description": "État de mouvement désordonné. L'agitation est physique — le vent agite les branches, la mer agite les vagues. C'est un mouvement sans direction."
+      },
+      "Sens isolé/Soif": {
+        "senses": [
+          "soif violente"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Soif violente — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Se": {
+        "senses": [
+          "se quereller"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Se quereller — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "amr": {
+    "id": 428,
+    "root_ar": "أ م ر",
+    "concepts": {
+      "Commandement/Autorité": {
+        "senses": [
+          "nommer gouverneur",
+          "ordonner",
+          "commander"
+        ],
+        "status": "retenu",
+        "description": "Donner le pouvoir de commander à quelqu'un. La nomination est un acte qui transfère l'autorité."
+      },
+      "Consultation": {
+        "senses": [
+          "consulter"
+        ],
+        "status": "nul",
+        "description": "Demander l'avis de quelqu'un. La consultation est un mouvement vers l'autre pour chercher la sagesse."
+      },
+      "Affaire/Chose": {
+        "senses": [
+          "affaire",
+          "chose"
+        ],
+        "status": "nul",
+        "description": "Ce qui occupe et nécessite une action. L'affaire est une réalité qui demande une décision ou un commandement."
+      },
+      "Sens isolé/Multiplier": {
+        "senses": [
+          "multiplier"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Multiplier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Signe": {
+        "senses": [
+          "signe"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Signe — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      }
+    }
+  },
+  "qwm": {
+    "id": 263,
+    "root_ar": "ق و م",
+    "concepts": {
+      "Gestion/Administration": {
+        "senses": [
+          "gérer",
+          "administrer",
+          "prendre en charge",
+          "diriger",
+          "veiller sur"
+        ],
+        "status": "nul",
+        "description": "Acte extérieur de prendre en charge une affaire et de la diriger. Celui qui gère se lève pour s'occuper de quelque chose. C'est un acte continu et responsable."
+      },
+      "Valeur/Mesure": {
+        "senses": [
+          "valeur",
+          "prix",
+          "estimation",
+          "stature",
+          "taille"
+        ],
+        "status": "nul",
+        "description": "Réalité abstraite qui permet d'estimer la juste mesure de quelque chose. La valeur est un jugement qui évalue ce que quelque chose vaut."
+      },
+      "Subsistance": {
+        "senses": [
+          "subsistance",
+          "nourriture",
+          "ce qui fait vivre"
+        ],
+        "status": "nul",
+        "description": "Ce qui permet de survivre, la nourriture qui soutient la vie. C'est ce grâce à quoi on se tient debout (on survit)."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "lieu"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Lieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Résidence": {
+        "senses": [
+          "résidence"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Résidence — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Station": {
+        "senses": [
+          "station"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Station — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Verticalité/Droiture": {
+        "senses": [
+          "se lever",
+          "droit",
+          "se dresser",
+          "corriger",
+          "se tenir debout",
+          "rectitude",
+          "redresser"
+        ],
+        "status": "probable",
+        "description": "Réalité physique et morale de ce qui se tient droit, sans déviation. La verticalité est observable de l'extérieur. C'est un état permanent tant qu'on le maintient. La droiture morale est l'extension de la droiture physique."
+      },
+      "Peuple/Communauté": {
+        "senses": [
+          "peuple",
+          "communauté",
+          "nation",
+          "tribu",
+          "groupe"
+        ],
+        "status": "retenu",
+        "description": "Groupe de personnes qui se tiennent ensemble. Le peuple est une réalité extérieure, observable et permanente. Le lien est celui de la communauté, pas de la parenté."
+      }
+    }
+  },
+  "slw": {
+    "id": 283,
+    "root_ar": "ص ل و",
+    "concepts": {
+      "Proximité/Attachement": {
+        "senses": [
+          "suivre de près"
+        ],
+        "status": "nul",
+        "description": "Acte de rester proche, de suivre de manière continue. La proximité est un état relationnel entre deux parties."
+      },
+      "Corps/Anatomie": {
+        "senses": [
+          "deuxième dans une course"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Deuxième dans une course — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Lieu/Géographie": {
+        "senses": [
+          "milieu"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Milieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Prière/Invocation": {
+        "senses": [
+          "prier",
+          "prière rituelle",
+          "invoquer",
+          "bénir",
+          "lieu de prière"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de se tourner vers Dieu par des paroles et des gestes. La prière sort de celui qui prie et se dirige vers Dieu. C'est un acte directionnel, régulier et structuré."
+      }
+    }
+  },
+  "zkw": {
+    "id": 504,
+    "root_ar": "ز ك و",
+    "concepts": {
+      "Purification/Croissance": {
+        "senses": [
+          "aumône légale",
+          "prospérer",
+          "purifier",
+          "croître",
+          "être pur"
+        ],
+        "status": "retenu",
+        "description": ""
+      }
+    }
+  },
+  "qdm": {
+    "id": 698,
+    "root_ar": "ق د م",
+    "concepts": {
+      "Antériorité/Établissement": {
+        "senses": [
+          "précéder",
+          "ancien",
+          "pied",
+          "avancer"
+        ],
+        "status": "retenu",
+        "description": "Venir avant dans le temps ou avancer — précéder (qaddama) c'est être ou mettre avant. C'est directionnel vers l'avant temporel. Ce que leurs mains ont avancé (qaddamat). Le qadîm est l'ancien, ce qui existe de longtemps. Le pied (qadam) est ce qui avance le premier. Avoir un pied de vérité (qadam sidq) c'est avoir un précédent honorable. L'établissement ferme."
+      }
+    }
+  },
+  "wjd": {
+    "id": 700,
+    "root_ar": "و ج د",
+    "concepts": {
+      "Découverte/Existence": {
+        "senses": [
+          "trouver",
+          "exister",
+          "rencontrer"
+        ],
+        "status": "retenu",
+        "description": "Rencontrer ce qu'on cherchait ou ce qu'on ne cherchait pas — trouver (wajada) est le moment de la découverte. C'est ponctuel comme action. Nous l'avons trouvé (wajadnâhu) patient. Le wujûd est l'existence, le fait d'être trouvé, d'être là. Celui qui existe peut être trouvé. Dieu est al-Wâjid, Celui qui trouve et Celui qui existe par excellence."
+      }
+    }
+  },
+  "eml": {
+    "id": 393,
+    "root_ar": "ع م ل",
+    "concepts": {
+      "Sens isolé/Gouverneur": {
+        "senses": [
+          "gouverneur"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Gouverneur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Action/Oeuvre": {
+        "senses": [
+          "travailler",
+          "agir",
+          "oeuvre",
+          "acte",
+          "ouvrier"
+        ],
+        "status": "retenu",
+        "description": "Acte extérieur de produire un effort pour obtenir un résultat. Le travail sort de celui qui agit et transforme la réalité. C'est un acte continu et volontaire."
+      }
+    }
+  },
+  "bsr": {
+    "id": 304,
+    "root_ar": "ب ص ر",
+    "concepts": {
+      "Corps/Anatomie": {
+        "senses": [
+          "peau"
+        ],
+        "status": "nul",
+        "description": "Sens concret lié à la racine. Peau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Sens isolé/Miroir": {
+        "senses": [
+          "miroir"
+        ],
+        "status": null,
+        "description": "Sens concret lié à la racine. Miroir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+      },
+      "Vision/Perception": {
+        "senses": [
+          "voir",
+          "vue",
+          "regarder",
+          "clairvoyance",
+          "comprendre",
+          "preuve visible"
+        ],
+        "status": "retenu",
+        "description": "Acte de percevoir par les yeux. La vision est un acte réceptif — la lumière vient de l'extérieur et atteint celui qui voit. C'est un acte directionnel de l'extérieur vers l'intérieur, permanent tant que l'organe fonctionne."
+      }
+    }
+  }
+}

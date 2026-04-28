@@ -1,0 +1,3536 @@
+{
+  "V2:81": {
+    "verse_id": 88,
+    "analysis_id": 445,
+    "segments": [
+      {
+        "phon": "بَلَYٰ",
+        "type": "particle",
+        "arabic": "بَلَYٰ",
+        "phonetic": "بَلَYٰ",
+        "position": 0,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "مَن",
+        "type": "particle",
+        "arabic": "مَن",
+        "phonetic": "مَن",
+        "position": 1,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "كَسَبَ",
+        "root": "ك س ب",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "كَسَبَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème"
+        },
+        "phonetic": "كَسَبَ",
+        "position": 2,
+        "word_key": "ksb",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "سَيِّئَةً",
+        "root": "س و ا",
+        "type": "important",
+        "arabic": "سَيِّئَةً",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "phonetic": "سَيِّئَةً",
+        "position": 3,
+        "word_key": "swa",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَحَٰطَتْ",
+        "root": "ح و ط",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَأَحَٰطَتْ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème"
+        },
+        "phonetic": "أَحَٰطَتْ",
+        "position": 4,
+        "word_key": "hwt",
+        "verb_form": "IV",
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "phon": "هِ.",
+        "type": "particle",
+        "arabic": "بِهِ.",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هِ.",
+        "position": 5,
+        "is_particle": true,
+        "prefix_particle": "bi",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "خَطِيٓـَٔتُ",
+        "root": "خ ط ا",
+        "type": "important",
+        "arabic": "خَطِيٓـَٔتُهُ،",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "suffix_pronoun": "3MS"
+        },
+        "phonetic": "خَطِيٓـَٔتُ",
+        "position": 6,
+        "word_key": null,
+        "is_particle": false,
+        "suffix_pronoun": "3MS"
+      },
+      {
+        "phon": "أُو۟لَٰٓئِكَ",
+        "type": "particle",
+        "arabic": "فَأُو۟لَٰٓئِكَ",
+        "phonetic": "أُو۟لَٰٓئِكَ",
+        "position": 7,
+        "is_particle": true,
+        "prefix_particle": "fa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "أَصْحَٰبُ",
+        "root": "ص ح ب",
+        "type": "important",
+        "arabic": "أَصْحَٰبُ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "أَصْحَٰبُ",
+        "position": 8,
+        "word_key": "shb",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "نَّارِ",
+        "root": "ن و ر",
+        "type": "important",
+        "arabic": "ٱلنَّارِ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "نَّارِ",
+        "position": 9,
+        "word_key": "nwr",
+        "is_particle": false
+      },
+      {
+        "phon": "هُمْ",
+        "type": "particle",
+        "arabic": "هُمْ",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هُمْ",
+        "position": 10,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "فِي",
+        "type": "particle",
+        "arabic": "فِيهَا",
+        "grammar": {
+          "suffix_pronoun": "3FS"
+        },
+        "phonetic": "فِي",
+        "position": 11,
+        "is_particle": true,
+        "suffix_pronoun": "3FS",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "خَٰلِدُونَ",
+        "root": "خ ل د",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "خَٰلِدُونَ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "خَٰلِدُونَ",
+        "position": 12,
+        "word_key": "khd",
+        "is_particle": false
+      }
+    ]
+  },
+  "V2:82": {
+    "verse_id": 89,
+    "analysis_id": 448,
+    "segments": [
+      {
+        "phon": "ٱلَّذِينَ",
+        "type": "particle",
+        "arabic": "وَٱلَّذِينَ",
+        "phonetic": "ٱلَّذِينَ",
+        "position": 0,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "ءَامَنُ",
+        "root": "ا م ن",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "ءَامَنُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "ءَامَنُ",
+        "position": 1,
+        "word_key": "amn",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "عَمِلُ",
+        "root": "ع م ل",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَعَمِلُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "عَمِلُ",
+        "position": 2,
+        "word_key": "eml",
+        "is_particle": false,
+        "suffix_pronoun": "3MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "صَّٰلِحَٰتِ",
+        "root": "ص ل ح",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "ٱلصَّٰلِحَٰتِ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "féminin",
+          "number": "pluriel"
+        },
+        "definite": true,
+        "phonetic": "صَّٰلِحَٰتِ",
+        "position": 3,
+        "word_key": "slh",
+        "is_particle": false
+      },
+      {
+        "phon": "أُو۟لَٰٓئِكَ",
+        "type": "particle",
+        "arabic": "أُو۟لَٰٓئِكَ",
+        "phonetic": "أُو۟لَٰٓئِكَ",
+        "position": 4,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "أَصْحَٰبُ",
+        "root": "ص ح ب",
+        "type": "important",
+        "arabic": "أَصْحَٰبُ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "أَصْحَٰبُ",
+        "position": 5,
+        "word_key": "shb",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "جَنَّةِ",
+        "root": "ج ن ن",
+        "type": "important",
+        "arabic": "ٱلْجَنَّةِ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "جَنَّةِ",
+        "position": 6,
+        "word_key": "jnn",
+        "is_particle": false
+      },
+      {
+        "phon": "هُمْ",
+        "type": "particle",
+        "arabic": "هُمْ",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هُمْ",
+        "position": 7,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "فِي",
+        "type": "particle",
+        "arabic": "فِيهَا",
+        "grammar": {
+          "suffix_pronoun": "3FS"
+        },
+        "phonetic": "فِي",
+        "position": 8,
+        "is_particle": true,
+        "suffix_pronoun": "3FS",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "خَٰلِدُونَ",
+        "root": "خ ل د",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "خَٰلِدُونَ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "خَٰلِدُونَ",
+        "position": 9,
+        "word_key": "khd",
+        "is_particle": false
+      }
+    ]
+  },
+  "V2:83": {
+    "verse_id": 90,
+    "analysis_id": 451,
+    "segments": [
+      {
+        "phon": "إِذْ",
+        "type": "particle",
+        "arabic": "وَإِذْ",
+        "phonetic": "إِذْ",
+        "position": 0,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَخَذْ",
+        "root": "ا خ",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "أَخَذْنَا",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "أَخَذْ",
+        "position": 1,
+        "word_key": "akhz",
+        "is_particle": false,
+        "suffix_pronoun": "1P"
+      },
+      {
+        "pos": "nom",
+        "phon": "مِيثَٰقَ",
+        "root": "و ث ق",
+        "type": "important",
+        "arabic": "مِيثَٰقَ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "مِيثَٰقَ",
+        "position": 2,
+        "word_key": "wthq",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "بَنِYٓ",
+        "root": "ب ن ي",
+        "type": "important",
+        "arabic": "بَنِYٓ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "بَنِYٓ",
+        "position": 3,
+        "word_key": "bny",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "إِسْرَٰٓءِيلَ",
+        "type": "important",
+        "arabic": "إِسْرَٰٓءِيلَ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "إِسْرَٰٓءِيلَ",
+        "position": 4,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "لَا",
+        "phonetic": "لَا",
+        "position": 5,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَعْبُدُ",
+        "root": "ع ب د",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَعْبُدُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَعْبُدُ",
+        "position": 6,
+        "word_key": "ebd",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "preceded_by_negation": true
+      },
+      {
+        "phon": "إِلَّا",
+        "type": "particle",
+        "arabic": "إِلَّا",
+        "phonetic": "إِلَّا",
+        "position": 7,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهَ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهَ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهَ",
+        "position": 8,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "وَٰلِدَيْنِ",
+        "root": "و ل د",
+        "type": "important",
+        "arabic": "وَبِٱلْوَٰلِدَيْنِ",
+        "gender": "masculin",
+        "number": "duel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "duel"
+        },
+        "definite": true,
+        "phonetic": "وَٰلِدَيْنِ",
+        "position": 9,
+        "word_key": "bn",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "nom",
+        "phon": "إِحْسَانًا",
+        "root": "ح س ن",
+        "type": "important",
+        "arabic": "إِحْسَانًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "إِحْسَانًا",
+        "position": 10,
+        "word_key": "hsn",
+        "verb_form": "IV",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "ذِY",
+        "type": "important",
+        "arabic": "وَذِY",
+        "gender": "masculin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "singulier"
+        },
+        "phonetic": "ذِY",
+        "position": 11,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "قُرْبَYٰ",
+        "root": "ق ر ب",
+        "type": "important",
+        "arabic": "ٱلْقُرْبَYٰ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "قُرْبَYٰ",
+        "position": 12,
+        "word_key": "qrb",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "يَتَٰمَYٰ",
+        "root": "ي ت م",
+        "type": "important",
+        "arabic": "وَٱلْيَتَٰمَYٰ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "definite": true,
+        "phonetic": "يَتَٰمَYٰ",
+        "position": 13,
+        "word_key": "ytm",
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "مَسَٰكِينِ",
+        "root": "س ك ن",
+        "type": "important",
+        "arabic": "وَٱلْمَسَٰكِينِ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "definite": true,
+        "phonetic": "مَسَٰكِينِ",
+        "position": 14,
+        "word_key": "skn",
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "verbe",
+        "phon": "قُولُ",
+        "root": "ق و ل",
+        "type": "important",
+        "tense": "impératif",
+        "arabic": "وَقُولُوا۟",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "impératif",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "قُولُ",
+        "position": 15,
+        "word_key": "qwl",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "نَّاسِ",
+        "root": "ن و س",
+        "type": "important",
+        "arabic": "لِلنَّاسِ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "نَّاسِ",
+        "position": 16,
+        "word_key": "nws",
+        "is_particle": false,
+        "prefix_particle": "li"
+      },
+      {
+        "pos": "nom",
+        "phon": "حُسْنًا",
+        "root": "ح س ن",
+        "type": "important",
+        "arabic": "حُسْنًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "حُسْنًا",
+        "position": 17,
+        "word_key": "hsn",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَقِيمُ",
+        "root": "ق و م",
+        "type": "important",
+        "tense": "impératif",
+        "arabic": "وَأَقِيمُوا۟",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "impératif",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "أَقِيمُ",
+        "position": 18,
+        "word_key": "qwm",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "صَّلَوٰةَ",
+        "root": "ص ل و",
+        "type": "important",
+        "arabic": "ٱلصَّلَوٰةَ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "صَّلَوٰةَ",
+        "position": 19,
+        "word_key": "slw",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "ءَاتُ",
+        "root": "ا ت ي",
+        "type": "important",
+        "tense": "impératif",
+        "arabic": "وَءَاتُوا۟",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "impératif",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "ءَاتُ",
+        "position": 20,
+        "word_key": "aty",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "زَّكَوٰةَ",
+        "root": "ز ك و",
+        "type": "important",
+        "arabic": "ٱلزَّكَوٰةَ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "زَّكَوٰةَ",
+        "position": 21,
+        "word_key": "zkw",
+        "is_particle": false
+      },
+      {
+        "phon": "ثُمَّ",
+        "type": "particle",
+        "arabic": "ثُمَّ",
+        "phonetic": "ثُمَّ",
+        "position": 22,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَوَلَّيْ",
+        "root": "و ل ي",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "تَوَلَّيْتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَوَلَّيْ",
+        "position": 23,
+        "word_key": "w l y",
+        "verb_form": "V",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "إِلَّا",
+        "type": "particle",
+        "arabic": "إِلَّا",
+        "phonetic": "إِلَّا",
+        "position": 24,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "قَلِيلًا",
+        "root": "ق ل ل",
+        "type": "important",
+        "arabic": "قَلِيلًا",
+        "gender": "masculin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "singulier"
+        },
+        "phonetic": "قَلِيلًا",
+        "position": 25,
+        "word_key": "qll",
+        "is_particle": false
+      },
+      {
+        "phon": "مِّن",
+        "type": "particle",
+        "arabic": "مِّنكُمْ",
+        "grammar": {
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "مِّن",
+        "position": 26,
+        "is_particle": true,
+        "suffix_pronoun": "2MP",
+        "word_key": null
+      },
+      {
+        "phon": "أَنتُم",
+        "type": "particle",
+        "arabic": "وَأَنتُم",
+        "person": "2ème",
+        "grammar": {
+          "person": "2ème"
+        },
+        "phonetic": "أَنتُم",
+        "position": 27,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "مُّعْرِضُونَ",
+        "root": "ع ر ض",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "مُّعْرِضُونَ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "مُّعْرِضُونَ",
+        "position": 28,
+        "word_key": "erd",
+        "verb_form": "IV",
+        "is_particle": false
+      }
+    ]
+  },
+  "V2:84": {
+    "verse_id": 91,
+    "analysis_id": 450,
+    "segments": [
+      {
+        "phon": "إِذْ",
+        "type": "particle",
+        "arabic": "وَإِذْ",
+        "phonetic": "إِذْ",
+        "position": 0,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَخَذْ",
+        "root": "ا خ",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "أَخَذْنَا",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "أَخَذْ",
+        "position": 1,
+        "word_key": "akhz",
+        "is_particle": false,
+        "suffix_pronoun": "1P"
+      },
+      {
+        "pos": "nom",
+        "phon": "مِيثَٰقَ",
+        "root": "و ث ق",
+        "type": "important",
+        "arabic": "مِيثَٰقَكُمْ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "مِيثَٰقَ",
+        "position": 2,
+        "word_key": "wthq",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "لَا",
+        "phonetic": "لَا",
+        "position": 3,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَسْفِكُ",
+        "root": "س ف ك",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَسْفِكُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَسْفِكُ",
+        "position": 4,
+        "word_key": "sfk",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "preceded_by_negation": true
+      },
+      {
+        "pos": "nom",
+        "phon": "دِمَآءَ",
+        "root": "د م و",
+        "type": "important",
+        "arabic": "دِمَآءَكُمْ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "دِمَآءَ",
+        "position": 5,
+        "word_key": "dmw",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "وَلَا",
+        "phonetic": "لَا",
+        "position": 6,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تُخْرِجُ",
+        "root": "خ ر ج",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تُخْرِجُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تُخْرِجُ",
+        "position": 7,
+        "word_key": "xrj",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "preceded_by_negation": true
+      },
+      {
+        "pos": "nom",
+        "phon": "أَنفُسَ",
+        "root": "ن ف س",
+        "type": "important",
+        "arabic": "أَنفُسَكُم",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "أَنفُسَ",
+        "position": 8,
+        "word_key": "nfs",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "مِّن",
+        "type": "particle",
+        "arabic": "مِّن",
+        "phonetic": "مِّن",
+        "position": 9,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "دِيَٰرِ",
+        "root": "د و ر",
+        "type": "important",
+        "arabic": "دِيَٰرِكُمْ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "دِيَٰرِ",
+        "position": 10,
+        "word_key": "dwr",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "ثُمَّ",
+        "type": "particle",
+        "arabic": "ثُمَّ",
+        "phonetic": "ثُمَّ",
+        "position": 11,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَقْرَرْ",
+        "root": "ق ر ر",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "أَقْرَرْتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "أَقْرَرْ",
+        "position": 12,
+        "word_key": "qrr",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "أَنتُمْ",
+        "type": "particle",
+        "arabic": "وَأَنتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "person": "2ème"
+        },
+        "phonetic": "أَنتُمْ",
+        "position": 13,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَشْهَدُ",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَشْهَدُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَشْهَدُ",
+        "position": 14,
+        "is_particle": true,
+        "suffix_pronoun": "2MP",
+        "word_key": null
+      }
+    ]
+  },
+  "V2:85": {
+    "verse_id": 92,
+    "analysis_id": 452,
+    "segments": [
+      {
+        "phon": "ثُمَّ",
+        "type": "particle",
+        "arabic": "ثُمَّ",
+        "phonetic": "ثُمَّ",
+        "position": 0,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "أَنتُمْ",
+        "type": "particle",
+        "arabic": "أَنتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "person": "2ème"
+        },
+        "phonetic": "أَنتُمْ",
+        "position": 1,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "هَٰٓؤُلَآءِ",
+        "type": "particle",
+        "arabic": "هَٰٓؤُلَآءِ",
+        "phonetic": "هَٰٓؤُلَآءِ",
+        "position": 2,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَقْتُلُ",
+        "root": "ق ت ل",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَقْتُلُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَقْتُلُ",
+        "position": 3,
+        "word_key": "qtl",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "أَنفُسَ",
+        "root": "ن ف س",
+        "type": "important",
+        "arabic": "أَنفُسَكُمْ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "أَنفُسَ",
+        "position": 4,
+        "word_key": "nfs",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "تُخْرِجُ",
+        "root": "خ ر ج",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "وَتُخْرِجُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تُخْرِجُ",
+        "position": 5,
+        "word_key": "xrj",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "فَرِيقًا",
+        "root": "ف ر ق",
+        "type": "important",
+        "arabic": "فَرِيقًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "فَرِيقًا",
+        "position": 6,
+        "word_key": "frq",
+        "is_particle": false
+      },
+      {
+        "phon": "مِّن",
+        "type": "particle",
+        "arabic": "مِّنكُم",
+        "grammar": {
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "مِّن",
+        "position": 7,
+        "is_particle": true,
+        "suffix_pronoun": "2MP",
+        "word_key": null
+      },
+      {
+        "phon": "مِّن",
+        "type": "particle",
+        "arabic": "مِّن",
+        "phonetic": "مِّن",
+        "position": 8,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "دِيَٰرِ",
+        "root": "د و ر",
+        "type": "important",
+        "arabic": "دِيَٰرِهِمْ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "دِيَٰرِ",
+        "position": 9,
+        "word_key": "dwr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَظَٰهَرُ",
+        "root": "ظ ه ر",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَظَٰهَرُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَظَٰهَرُ",
+        "position": 10,
+        "word_key": "zhr",
+        "verb_form": "VI",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "phon": "عَلَيْ",
+        "type": "particle",
+        "arabic": "عَلَيْهِم",
+        "grammar": {
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "عَلَيْ",
+        "position": 11,
+        "is_particle": true,
+        "suffix_pronoun": "3MP",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "إِثْمِ",
+        "root": "ا ث م",
+        "type": "important",
+        "arabic": "بِٱلْإِثْمِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "إِثْمِ",
+        "position": 12,
+        "word_key": "athm",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "nom",
+        "phon": "عُدْوَٰنِ",
+        "root": "ع د و",
+        "type": "important",
+        "arabic": "وَٱلْعُدْوَٰنِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "عُدْوَٰنِ",
+        "position": 13,
+        "word_key": null,
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "phon": "إِن",
+        "type": "particle",
+        "arabic": "وَإِن",
+        "phonetic": "إِن",
+        "position": 14,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يَأْتُ",
+        "root": "ا ت ي",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يَأْتُوكُمْ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "يَأْتُ",
+        "position": 15,
+        "word_key": "aty",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "أُسَٰرَYٰ",
+        "root": "ا س ر",
+        "type": "important",
+        "arabic": "أُسَٰرَYٰ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "أُسَٰرَYٰ",
+        "position": 16,
+        "word_key": "asr",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "تُفَٰدُ",
+        "root": "ف د ي",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تُفَٰدُوهُمْ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "تُفَٰدُ",
+        "position": 17,
+        "word_key": "fdy",
+        "verb_form": "III",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "هُوَ",
+        "type": "particle",
+        "arabic": "وَهُوَ",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هُوَ",
+        "position": 18,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "مُحَرَّمٌ",
+        "root": "ح ر م",
+        "type": "important",
+        "voice": "passif",
+        "arabic": "مُحَرَّمٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "voice": "passif",
+          "gender": "masculin"
+        },
+        "phonetic": "مُحَرَّمٌ",
+        "position": 19,
+        "word_key": "hrm",
+        "verb_form": "II",
+        "is_particle": false
+      },
+      {
+        "phon": "عَلَيْ",
+        "type": "particle",
+        "arabic": "عَلَيْكُمْ",
+        "grammar": {
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "عَلَيْ",
+        "position": 20,
+        "is_particle": true,
+        "suffix_pronoun": "2MP",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "إِخْرَاجُ",
+        "root": "خ ر ج",
+        "type": "important",
+        "arabic": "إِخْرَاجُهُمْ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "إِخْرَاجُ",
+        "position": 21,
+        "word_key": "xrj",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "تُؤْمِنُ",
+        "root": "ا م ن",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "أَفَتُؤْمِنُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تُؤْمِنُ",
+        "position": 22,
+        "word_key": "amn",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "fa"
+      },
+      {
+        "pos": "nom",
+        "phon": "بَعْضِ",
+        "root": "ب ع ض",
+        "type": "important",
+        "arabic": "بِبَعْضِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "بَعْضِ",
+        "position": 23,
+        "word_key": "bed",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "nom",
+        "phon": "كِتَٰبِ",
+        "root": "ك ت ب",
+        "type": "important",
+        "arabic": "ٱلْكِتَٰبِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "كِتَٰبِ",
+        "position": 24,
+        "word_key": "ktb",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَكْفُرُ",
+        "root": "ك ف ر",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "وَتَكْفُرُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَكْفُرُ",
+        "position": 25,
+        "word_key": "kfr",
+        "is_particle": false,
+        "suffix_pronoun": "2MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "بَعْضٍ",
+        "root": "ب ع ض",
+        "type": "important",
+        "arabic": "بِبَعْضٍ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "بَعْضٍ",
+        "position": 26,
+        "word_key": "bed",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "phon": "مَا",
+        "type": "particle",
+        "arabic": "فَمَا",
+        "phonetic": "مَا",
+        "position": 27,
+        "is_particle": true,
+        "prefix_particle": "fa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "جَزَآءُ",
+        "root": "ج ز ي",
+        "type": "important",
+        "arabic": "جَزَآءُ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "جَزَآءُ",
+        "position": 28,
+        "word_key": "jzy",
+        "is_particle": false,
+        "preceded_by_negation": true
+      },
+      {
+        "phon": "مَن",
+        "type": "particle",
+        "arabic": "مَن",
+        "phonetic": "مَن",
+        "position": 29,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يَفْعَلُ",
+        "root": "ف ع ل",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يَفْعَلُ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème"
+        },
+        "phonetic": "يَفْعَلُ",
+        "position": 30,
+        "word_key": "fel",
+        "is_particle": false
+      },
+      {
+        "phon": "ذَٰلِكَ",
+        "type": "particle",
+        "arabic": "ذَٰلِكَ",
+        "phonetic": "ذَٰلِكَ",
+        "position": 31,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "مِن",
+        "type": "particle",
+        "arabic": "مِنكُمْ",
+        "grammar": {
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "مِن",
+        "position": 32,
+        "is_particle": true,
+        "suffix_pronoun": "2MP",
+        "word_key": null
+      },
+      {
+        "phon": "إِلَّا",
+        "type": "particle",
+        "arabic": "إِلَّا",
+        "phonetic": "إِلَّا",
+        "position": 33,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "خِزْYٌ",
+        "root": "خ ز ي",
+        "type": "important",
+        "arabic": "خِزْYٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "خِزْYٌ",
+        "position": 34,
+        "word_key": "khzy",
+        "is_particle": false
+      },
+      {
+        "phon": "فِY",
+        "type": "particle",
+        "arabic": "فِY",
+        "phonetic": "فِY",
+        "position": 35,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "حَيَوٰةِ",
+        "root": "ح ي ي",
+        "type": "important",
+        "arabic": "ٱلْحَيَوٰةِ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "حَيَوٰةِ",
+        "position": 36,
+        "word_key": "hyy",
+        "is_particle": false
+      },
+      {
+        "pos": "adjectif",
+        "phon": "دُّنْيَا",
+        "root": "د ن و",
+        "type": "important",
+        "arabic": "ٱلدُّنْيَا",
+        "gender": "féminin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "adjectif",
+          "gender": "féminin",
+          "number": "singulier"
+        },
+        "definite": true,
+        "phonetic": "دُّنْيَا",
+        "position": 37,
+        "word_key": "dnw",
+        "is_particle": false
+      },
+      {
+        "phon": "يَوْمَ",
+        "root": "ي و م",
+        "type": "particle",
+        "arabic": "وَيَوْمَ",
+        "gender": "masculin",
+        "grammar": {
+          "gender": "masculin"
+        },
+        "phonetic": "يَوْمَ",
+        "position": 38,
+        "word_key": "ywm",
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "قِيَٰمَةِ",
+        "root": "ق و م",
+        "type": "important",
+        "arabic": "ٱلْقِيَٰمَةِ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "قِيَٰمَةِ",
+        "position": 39,
+        "word_key": "qwm",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "يُرَدُّ",
+        "root": "ر د د",
+        "type": "important",
+        "tense": "inaccompli",
+        "voice": "passif",
+        "arabic": "يُرَدُّونَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "voice": "passif",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "يُرَدُّ",
+        "position": 40,
+        "word_key": "rdd",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "إِلَYٰٓ",
+        "type": "particle",
+        "arabic": "إِلَYٰٓ",
+        "phonetic": "إِلَYٰٓ",
+        "position": 41,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "أَشَدِّ",
+        "type": "important",
+        "arabic": "أَشَدِّ",
+        "gender": "masculin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "singulier"
+        },
+        "phonetic": "أَشَدِّ",
+        "position": 42,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "عَذَابِ",
+        "root": "ع",
+        "type": "important",
+        "arabic": "ٱلْعَذَابِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "عَذَابِ",
+        "position": 43,
+        "word_key": "particle",
+        "is_particle": true
+      },
+      {
+        "phon": "مَا",
+        "type": "particle",
+        "arabic": "وَمَا",
+        "phonetic": "مَا",
+        "position": 44,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهُ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهُ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهُ",
+        "position": 45,
+        "word_key": "alh",
+        "is_particle": false,
+        "preceded_by_negation": true
+      },
+      {
+        "pos": "nom",
+        "phon": "غَٰفِلٍ",
+        "root": "غ ف ل",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "بِغَٰفِلٍ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin"
+        },
+        "phonetic": "غَٰفِلٍ",
+        "position": 46,
+        "word_key": "ghfl",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "phon": "مَّا",
+        "type": "particle",
+        "arabic": "عَمَّا",
+        "phonetic": "مَّا",
+        "position": 47,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَعْمَلُ",
+        "root": "ع م ل",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَعْمَلُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَعْمَلُ",
+        "position": 48,
+        "word_key": "eml",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      }
+    ]
+  },
+  "V2:86": {
+    "verse_id": 93,
+    "analysis_id": 449,
+    "segments": [
+      {
+        "phon": "أُو۟لَٰٓئِكَ",
+        "type": "particle",
+        "arabic": "أُو۟لَٰٓئِكَ",
+        "phonetic": "أُو۟لَٰٓئِكَ",
+        "position": 0,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "ٱلَّذِينَ",
+        "type": "particle",
+        "arabic": "ٱلَّذِينَ",
+        "phonetic": "ٱلَّذِينَ",
+        "position": 1,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "ٱشْتَرَ",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "ٱشْتَرَوُا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "ٱشْتَرَ",
+        "position": 2,
+        "verb_form": "VIII",
+        "is_particle": true,
+        "suffix_pronoun": "3MP",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "حَيَوٰةَ",
+        "root": "ح ي ي",
+        "type": "important",
+        "arabic": "ٱلْحَيَوٰةَ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "definite": true,
+        "phonetic": "حَيَوٰةَ",
+        "position": 3,
+        "word_key": "hyy",
+        "is_particle": false
+      },
+      {
+        "pos": "adjectif",
+        "phon": "دُّنْيَا",
+        "root": "د ن و",
+        "type": "important",
+        "arabic": "ٱلدُّنْيَا",
+        "gender": "féminin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "adjectif",
+          "gender": "féminin",
+          "number": "singulier"
+        },
+        "definite": true,
+        "phonetic": "دُّنْيَا",
+        "position": 4,
+        "word_key": "dnw",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "ءَاخِرَةِ",
+        "root": "ا خ ر",
+        "type": "important",
+        "arabic": "بِٱلْءَاخِرَةِ",
+        "gender": "féminin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "singulier"
+        },
+        "definite": true,
+        "phonetic": "ءَاخِرَةِ",
+        "position": 5,
+        "word_key": "axr",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "فَلَا",
+        "phonetic": "لَا",
+        "position": 6,
+        "is_particle": true,
+        "prefix_particle": "fa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يُخَفَّفُ",
+        "root": "خ ف ف",
+        "type": "important",
+        "tense": "inaccompli",
+        "voice": "passif",
+        "arabic": "يُخَفَّفُ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "voice": "passif",
+          "person": "3ème"
+        },
+        "phonetic": "يُخَفَّفُ",
+        "position": 7,
+        "word_key": "xff",
+        "verb_form": "II",
+        "is_particle": false,
+        "preceded_by_negation": true
+      },
+      {
+        "phon": "عَنْ",
+        "type": "particle",
+        "arabic": "عَنْهُمُ",
+        "grammar": {
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "عَنْ",
+        "position": 8,
+        "is_particle": true,
+        "suffix_pronoun": "3MP",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "عَذَابُ",
+        "root": "ع",
+        "type": "important",
+        "arabic": "ٱلْعَذَابُ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "عَذَابُ",
+        "position": 9,
+        "word_key": "particle",
+        "is_particle": true
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "وَلَا",
+        "phonetic": "لَا",
+        "position": 10,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "phon": "هُمْ",
+        "type": "particle",
+        "arabic": "هُمْ",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هُمْ",
+        "position": 11,
+        "is_particle": true,
+        "preceded_by_negation": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يُنصَرُ",
+        "root": "ن ص ر",
+        "type": "important",
+        "tense": "inaccompli",
+        "voice": "passif",
+        "arabic": "يُنصَرُونَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "voice": "passif",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "يُنصَرُ",
+        "position": 12,
+        "word_key": "nsr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      }
+    ]
+  },
+  "V2:87": {
+    "verse_id": 94,
+    "analysis_id": 457,
+    "segments": [
+      {
+        "phon": "قَدْ",
+        "type": "particle",
+        "arabic": "وَلَقَدْ",
+        "phonetic": "قَدْ",
+        "position": 0,
+        "is_particle": true,
+        "prefix_particle": "la",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "ءَاتَيْ",
+        "root": "ا ت ي",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "ءَاتَيْنَا",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "ءَاتَيْ",
+        "position": 1,
+        "word_key": "aty",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "1P"
+      },
+      {
+        "pos": "nom",
+        "phon": "مُوسَY",
+        "type": "important",
+        "arabic": "مُوسَY",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "مُوسَY",
+        "position": 2,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "كِتَٰبَ",
+        "root": "ك ت ب",
+        "type": "important",
+        "arabic": "ٱلْكِتَٰبَ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "كِتَٰبَ",
+        "position": 3,
+        "word_key": "ktb",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "قَفَّيْ",
+        "root": "ق ف و",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَقَفَّيْنَا",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "قَفَّيْ",
+        "position": 4,
+        "word_key": "qfw",
+        "verb_form": "II",
+        "is_particle": false,
+        "suffix_pronoun": "1P",
+        "prefix_particle": "wa"
+      },
+      {
+        "phon": "مِن۞",
+        "type": "particle",
+        "arabic": "مِن۞",
+        "phonetic": "مِن۞",
+        "position": 5,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "بَعْدِ",
+        "root": "ب ع د",
+        "type": "important",
+        "arabic": "بَعْدِهِ.",
+        "grammar": {
+          "pos": "nom",
+          "suffix_pronoun": "3MS"
+        },
+        "phonetic": "بَعْدِ",
+        "position": 6,
+        "word_key": "baed",
+        "is_particle": false,
+        "suffix_pronoun": "3MS"
+      },
+      {
+        "pos": "nom",
+        "phon": "رُّسُلِ",
+        "root": "ر س ل",
+        "type": "important",
+        "arabic": "بِٱلرُّسُلِ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "definite": true,
+        "phonetic": "رُّسُلِ",
+        "position": 7,
+        "word_key": "rsl",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "verbe",
+        "phon": "ءَاتَيْ",
+        "root": "ا ت ي",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَءَاتَيْنَا",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "ءَاتَيْ",
+        "position": 8,
+        "word_key": "aty",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "1P",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "عِيسَY",
+        "type": "important",
+        "arabic": "عِيسَY",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "عِيسَY",
+        "position": 9,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱبْنَ",
+        "root": "ب ن ي",
+        "type": "important",
+        "arabic": "ٱبْنَ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "ٱبْنَ",
+        "position": 10,
+        "word_key": "bny",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "مَرْيَمَ",
+        "type": "important",
+        "arabic": "مَرْيَمَ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "phonetic": "مَرْيَمَ",
+        "position": 11,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "بَيِّنَٰتِ",
+        "root": "ب ي ن",
+        "type": "important",
+        "arabic": "ٱلْبَيِّنَٰتِ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel"
+        },
+        "definite": true,
+        "phonetic": "بَيِّنَٰتِ",
+        "position": 12,
+        "word_key": "byn",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَيَّدْ",
+        "root": "ا ي د",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَأَيَّدْنَٰهُ",
+        "person": "1ère",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "1ère",
+          "suffix_pronoun": "3MS"
+        },
+        "phonetic": "أَيَّدْ",
+        "position": 13,
+        "word_key": "ayd",
+        "verb_form": "II",
+        "is_particle": false,
+        "suffix_pronoun": "3MS",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "رُوحِ",
+        "root": "ر و ح",
+        "type": "important",
+        "arabic": "بِرُوحِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "رُوحِ",
+        "position": 14,
+        "word_key": "rwh",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "nom",
+        "phon": "قُدُسِ",
+        "root": "ق د س",
+        "type": "important",
+        "arabic": "ٱلْقُدُسِ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "definite": true,
+        "phonetic": "قُدُسِ",
+        "position": 15,
+        "word_key": "qds",
+        "is_particle": false
+      },
+      {
+        "phon": "كُلَّمَا",
+        "root": "ك ل ل",
+        "type": "particle",
+        "arabic": "أَفَكُلَّمَا",
+        "phonetic": "كُلَّمَا",
+        "position": 16,
+        "word_key": null,
+        "is_particle": false,
+        "prefix_particle": "fa"
+      },
+      {
+        "pos": "verbe",
+        "phon": "جَآءَ",
+        "root": "ج ي ا",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "جَآءَكُمْ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "جَآءَ",
+        "position": 17,
+        "word_key": "jya",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "رَسُولٌ۞",
+        "root": "ر س ل",
+        "type": "important",
+        "arabic": "رَسُولٌ۞",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "رَسُولٌ۞",
+        "position": 18,
+        "word_key": "rsl",
+        "is_particle": false
+      },
+      {
+        "phon": "مَا",
+        "type": "particle",
+        "arabic": "بِمَا",
+        "phonetic": "مَا",
+        "position": 19,
+        "is_particle": true,
+        "prefix_particle": "bi",
+        "word_key": null
+      },
+      {
+        "phon": "لَا",
+        "type": "particle",
+        "arabic": "لَا",
+        "phonetic": "لَا",
+        "position": 20,
+        "is_particle": true,
+        "preceded_by_negation": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَهْوَYٰٓ",
+        "root": "ه و ي",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَهْوَYٰٓ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème"
+        },
+        "phonetic": "تَهْوَYٰٓ",
+        "position": 21,
+        "word_key": "hwy",
+        "is_particle": false,
+        "preceded_by_negation": true
+      },
+      {
+        "pos": "nom",
+        "phon": "أَنفُسُ",
+        "root": "ن ف س",
+        "type": "important",
+        "arabic": "أَنفُسُكُمُ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "أَنفُسُ",
+        "position": 22,
+        "word_key": "nfs",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "ٱسْتَكْبَرْ",
+        "root": "ك ب ر",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "ٱسْتَكْبَرْتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "ٱسْتَكْبَرْ",
+        "position": 23,
+        "word_key": "kbr",
+        "verb_form": "X",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "فَرِيقًا",
+        "root": "ف ر ق",
+        "type": "important",
+        "arabic": "فَفَرِيقًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "فَرِيقًا",
+        "position": 24,
+        "word_key": "frq",
+        "is_particle": false,
+        "prefix_particle": "fa"
+      },
+      {
+        "pos": "verbe",
+        "phon": "كَذَّبْ",
+        "root": "ك",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "كَذَّبْتُمْ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "كَذَّبْ",
+        "position": 25,
+        "word_key": "k",
+        "verb_form": "II",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "فَرِيقًا",
+        "root": "ف ر ق",
+        "type": "important",
+        "arabic": "وَفَرِيقًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "فَرِيقًا",
+        "position": 26,
+        "word_key": "frq",
+        "is_particle": false,
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "verbe",
+        "phon": "تَقْتُلُ",
+        "root": "ق ت ل",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "تَقْتُلُونَ",
+        "person": "2ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "2ème",
+          "suffix_pronoun": "2MP"
+        },
+        "phonetic": "تَقْتُلُ",
+        "position": 27,
+        "word_key": "qtl",
+        "is_particle": false,
+        "suffix_pronoun": "2MP"
+      }
+    ]
+  },
+  "V2:88": {
+    "verse_id": 95,
+    "analysis_id": 453,
+    "segments": [
+      {
+        "pos": "verbe",
+        "phon": "قَالُ",
+        "root": "ق و ل",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَقَالُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "قَالُ",
+        "position": 0,
+        "word_key": "qwl",
+        "is_particle": false,
+        "suffix_pronoun": "3MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "pos": "nom",
+        "phon": "قُلُوبُ",
+        "root": "ق ل ب",
+        "type": "important",
+        "arabic": "قُلُوبُنَا",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "1P"
+        },
+        "phonetic": "قُلُوبُ",
+        "position": 1,
+        "word_key": "qlb",
+        "is_particle": false,
+        "suffix_pronoun": "1P"
+      },
+      {
+        "pos": "nom",
+        "phon": "غُلْفٌ۞",
+        "root": "غ ل ف",
+        "type": "important",
+        "arabic": "غُلْفٌ۞",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "غُلْفٌ۞",
+        "position": 2,
+        "word_key": "ghl f",
+        "is_particle": false
+      },
+      {
+        "phon": "بَل",
+        "type": "particle",
+        "arabic": "بَل",
+        "phonetic": "بَل",
+        "position": 3,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "لَّعَنَ",
+        "root": "ل ع ن",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "لَّعَنَهُمُ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "لَّعَنَ",
+        "position": 4,
+        "word_key": "len",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهُ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهُ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهُ",
+        "position": 5,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "كُفْرِ",
+        "root": "ك ف ر",
+        "type": "important",
+        "arabic": "بِكُفْرِهِمْ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "كُفْرِ",
+        "position": 6,
+        "word_key": "kfr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP",
+        "prefix_particle": "bi"
+      },
+      {
+        "pos": "nom",
+        "phon": "قَلِيلًا",
+        "root": "ق ل ل",
+        "type": "important",
+        "arabic": "فَقَلِيلًا",
+        "gender": "masculin",
+        "number": "singulier",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "singulier"
+        },
+        "phonetic": "قَلِيلًا",
+        "position": 7,
+        "word_key": "qll",
+        "is_particle": false,
+        "prefix_particle": "fa"
+      },
+      {
+        "phon": "مَّا",
+        "type": "particle",
+        "arabic": "مَّا",
+        "phonetic": "مَّا",
+        "position": 8,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يُؤْمِنُ",
+        "root": "ا م ن",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يُؤْمِنُونَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "يُؤْمِنُ",
+        "position": 9,
+        "word_key": "amn",
+        "verb_form": "IV",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      }
+    ]
+  },
+  "V2:89": {
+    "verse_id": 96,
+    "analysis_id": 454,
+    "segments": [
+      {
+        "phon": "لَمَّا",
+        "type": "particle",
+        "arabic": "وَلَمَّا",
+        "phonetic": "لَمَّا",
+        "position": 0,
+        "is_particle": true,
+        "prefix_particle": "wa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "جَآءَ",
+        "root": "ج ي ا",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "جَآءَهُمْ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "جَآءَ",
+        "position": 1,
+        "word_key": "jya",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "nom",
+        "phon": "كِتَٰبٌ",
+        "root": "ك ت ب",
+        "type": "important",
+        "arabic": "كِتَٰبٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "كِتَٰبٌ",
+        "position": 2,
+        "word_key": "ktb",
+        "is_particle": false
+      },
+      {
+        "phon": "مِّنْ",
+        "type": "particle",
+        "arabic": "مِّنْ",
+        "phonetic": "مِّنْ",
+        "position": 3,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "عِندِ",
+        "root": "ع ن د",
+        "type": "important",
+        "arabic": "عِندِ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "عِندِ",
+        "position": 4,
+        "word_key": "end",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهِ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهِ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهِ",
+        "position": 5,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "pos": "adjectif",
+        "phon": "مُصَدِّقٌ",
+        "root": "ص د ق",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "مُصَدِّقٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "adjectif",
+          "voice": "actif",
+          "gender": "masculin"
+        },
+        "phonetic": "مُصَدِّقٌ",
+        "position": 6,
+        "word_key": "sdq",
+        "verb_form": "II",
+        "is_particle": false
+      },
+      {
+        "phon": "مَا",
+        "type": "particle",
+        "arabic": "لِّمَا",
+        "phonetic": "مَا",
+        "position": 7,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "مَعَ",
+        "type": "particle",
+        "arabic": "مَعَهُمْ",
+        "grammar": {
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "مَعَ",
+        "position": 8,
+        "is_particle": true,
+        "suffix_pronoun": "3MP",
+        "preceded_by_negation": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "كَانُ",
+        "root": "ك و ن",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "وَكَانُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "كَانُ",
+        "position": 9,
+        "word_key": "knw",
+        "is_particle": false,
+        "suffix_pronoun": "3MP",
+        "prefix_particle": "wa"
+      },
+      {
+        "phon": "مِن",
+        "type": "particle",
+        "arabic": "مِن",
+        "phonetic": "مِن",
+        "position": 10,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "قَبْلُ",
+        "root": "ق ب ل",
+        "type": "important",
+        "arabic": "قَبْلُ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "قَبْلُ",
+        "position": 11,
+        "word_key": "qbl",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "يَسْتَفْتِحُ",
+        "root": "ف ت ح",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يَسْتَفْتِحُونَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "يَسْتَفْتِحُ",
+        "position": 12,
+        "word_key": null,
+        "verb_form": "X",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "عَلَY",
+        "type": "particle",
+        "arabic": "عَلَY",
+        "phonetic": "عَلَY",
+        "position": 13,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "ٱلَّذِينَ",
+        "type": "particle",
+        "arabic": "ٱلَّذِينَ",
+        "phonetic": "ٱلَّذِينَ",
+        "position": 14,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "كَفَرُ",
+        "root": "ك ف ر",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "كَفَرُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "كَفَرُ",
+        "position": 15,
+        "word_key": "kfr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "لَمَّا",
+        "type": "particle",
+        "arabic": "فَلَمَّا",
+        "phonetic": "لَمَّا",
+        "position": 16,
+        "is_particle": true,
+        "prefix_particle": "fa",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "جَآءَ",
+        "root": "ج ي ا",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "جَآءَهُم",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "جَآءَ",
+        "position": 17,
+        "word_key": "jya",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "مَّا",
+        "type": "particle",
+        "arabic": "مَّا",
+        "phonetic": "مَّا",
+        "position": 18,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "عَرَفُ",
+        "root": "ع ر ف",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "عَرَفُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "عَرَفُ",
+        "position": 19,
+        "word_key": "e r f",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "pos": "verbe",
+        "phon": "كَفَرُ",
+        "root": "ك ف ر",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "كَفَرُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "كَفَرُ",
+        "position": 20,
+        "word_key": "kfr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "هِ.",
+        "type": "particle",
+        "arabic": "بِهِ.",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هِ.",
+        "position": 21,
+        "is_particle": true,
+        "prefix_particle": "bi",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "لَعْنَةُ",
+        "root": "ل ع ن",
+        "type": "important",
+        "arabic": "فَلَعْنَةُ",
+        "gender": "féminin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin"
+        },
+        "phonetic": "لَعْنَةُ",
+        "position": 22,
+        "word_key": "len",
+        "is_particle": false,
+        "prefix_particle": "fa"
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهِ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهِ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهِ",
+        "position": 23,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "phon": "عَلَY",
+        "type": "particle",
+        "arabic": "عَلَY",
+        "phonetic": "عَلَY",
+        "position": 24,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "كَٰفِرِينَ",
+        "root": "ك ف ر",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "ٱلْكَٰفِرِينَ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "definite": true,
+        "phonetic": "كَٰفِرِينَ",
+        "position": 25,
+        "word_key": "kfr",
+        "is_particle": false
+      }
+    ]
+  },
+  "V2:90": {
+    "verse_id": 97,
+    "analysis_id": 455,
+    "segments": [
+      {
+        "phon": "مَا",
+        "root": "ب ا س",
+        "type": "particle",
+        "arabic": "بِئْسَمَا",
+        "phonetic": "مَا",
+        "position": 0,
+        "word_key": "bas",
+        "is_particle": false
+      },
+      {
+        "pos": "verbe",
+        "phon": "ٱشْتَرَ",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "ٱشْتَرَوْا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "ٱشْتَرَ",
+        "position": 1,
+        "verb_form": "VIII",
+        "is_particle": true,
+        "suffix_pronoun": "3MP",
+        "preceded_by_negation": true,
+        "word_key": null
+      },
+      {
+        "phon": "هِ.ٓ",
+        "type": "particle",
+        "arabic": "بِهِ.ٓ",
+        "person": "3ème",
+        "grammar": {
+          "person": "3ème"
+        },
+        "phonetic": "هِ.ٓ",
+        "position": 2,
+        "is_particle": true,
+        "prefix_particle": "bi",
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "أَنفُسَ",
+        "root": "ن ف س",
+        "type": "important",
+        "arabic": "أَنفُسَهُمْ",
+        "gender": "féminin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "féminin",
+          "number": "pluriel",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "أَنفُسَ",
+        "position": 3,
+        "word_key": "nfs",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "أَن",
+        "type": "particle",
+        "arabic": "أَن",
+        "phonetic": "أَن",
+        "position": 4,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يَكْفُرُ",
+        "root": "ك ف ر",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يَكْفُرُوا۟",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "يَكْفُرُ",
+        "position": 5,
+        "word_key": "kfr",
+        "is_particle": false,
+        "suffix_pronoun": "3MP"
+      },
+      {
+        "phon": "مَآ",
+        "type": "particle",
+        "arabic": "بِمَآ",
+        "phonetic": "مَآ",
+        "position": 6,
+        "is_particle": true,
+        "prefix_particle": "bi",
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "أَنزَلَ",
+        "root": "ن ز ل",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "أَنزَلَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème"
+        },
+        "phonetic": "أَنزَلَ",
+        "position": 7,
+        "word_key": "nzl",
+        "verb_form": "IV",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهُ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهُ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهُ",
+        "position": 8,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "بَغْيًا",
+        "root": "ب غ ي",
+        "type": "important",
+        "arabic": "بَغْيًا",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "بَغْيًا",
+        "position": 9,
+        "word_key": "bghy",
+        "is_particle": false
+      },
+      {
+        "phon": "أَن",
+        "type": "particle",
+        "arabic": "أَن",
+        "phonetic": "أَن",
+        "position": 10,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يُنَزِّلَ",
+        "root": "ن ز ل",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يُنَزِّلَ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème"
+        },
+        "phonetic": "يُنَزِّلَ",
+        "position": 11,
+        "word_key": "nzl",
+        "verb_form": "II",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "ٱللَّهُ",
+        "root": "ا ل ه",
+        "type": "important",
+        "arabic": "ٱللَّهُ",
+        "grammar": {
+          "pos": "nom"
+        },
+        "phonetic": "ٱللَّهُ",
+        "position": 12,
+        "word_key": "alh",
+        "is_particle": false
+      },
+      {
+        "phon": "مِن",
+        "type": "particle",
+        "arabic": "مِن",
+        "phonetic": "مِن",
+        "position": 13,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "فَضْلِ",
+        "root": "ف ض ل",
+        "type": "important",
+        "arabic": "فَضْلِهِ.",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "suffix_pronoun": "3MS"
+        },
+        "phonetic": "فَضْلِ",
+        "position": 14,
+        "word_key": "fdl",
+        "is_particle": false,
+        "suffix_pronoun": "3MS"
+      },
+      {
+        "phon": "عَلَYٰ",
+        "type": "particle",
+        "arabic": "عَلَYٰ",
+        "phonetic": "عَلَYٰ",
+        "position": 15,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "مَن",
+        "type": "particle",
+        "arabic": "مَن",
+        "phonetic": "مَن",
+        "position": 16,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "verbe",
+        "phon": "يَشَآءُ",
+        "type": "important",
+        "tense": "inaccompli",
+        "arabic": "يَشَآءُ",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "inaccompli",
+          "person": "3ème"
+        },
+        "phonetic": "يَشَآءُ",
+        "position": 17,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "phon": "مِنْ",
+        "type": "particle",
+        "arabic": "مِنْ",
+        "phonetic": "مِنْ",
+        "position": 18,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "عِبَادِ",
+        "root": "ع ب د",
+        "type": "important",
+        "arabic": "عِبَادِهِ.",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin",
+          "number": "pluriel",
+          "suffix_pronoun": "3MS"
+        },
+        "phonetic": "عِبَادِ",
+        "position": 19,
+        "word_key": "ebd",
+        "is_particle": false,
+        "suffix_pronoun": "3MS"
+      },
+      {
+        "pos": "verbe",
+        "phon": "بَآءُ",
+        "root": "ب و ا",
+        "type": "important",
+        "tense": "accompli",
+        "arabic": "فَبَآءُو",
+        "person": "3ème",
+        "grammar": {
+          "pos": "verbe",
+          "tense": "accompli",
+          "person": "3ème",
+          "suffix_pronoun": "3MP"
+        },
+        "phonetic": "بَآءُ",
+        "position": 20,
+        "word_key": "bwa",
+        "is_particle": false,
+        "suffix_pronoun": "3MP",
+        "prefix_particle": "fa"
+      },
+      {
+        "pos": "nom",
+        "phon": "غَضَبٍ",
+        "root": "غ ض ب",
+        "type": "important",
+        "arabic": "بِغَضَبٍ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "غَضَبٍ",
+        "position": 21,
+        "word_key": "ghdb",
+        "is_particle": false,
+        "prefix_particle": "bi"
+      },
+      {
+        "phon": "عَلَYٰ",
+        "type": "particle",
+        "arabic": "عَلَYٰ",
+        "phonetic": "عَلَYٰ",
+        "position": 22,
+        "is_particle": true,
+        "word_key": null
+      },
+      {
+        "pos": "nom",
+        "phon": "غَضَبٍ",
+        "root": "غ ض ب",
+        "type": "important",
+        "arabic": "غَضَبٍ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "غَضَبٍ",
+        "position": 23,
+        "word_key": "ghdb",
+        "is_particle": false
+      },
+      {
+        "pos": "nom",
+        "phon": "كَٰفِرِينَ",
+        "root": "ك ف ر",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "وَلِلْكَٰفِرِينَ",
+        "gender": "masculin",
+        "number": "pluriel",
+        "grammar": {
+          "pos": "nom",
+          "voice": "actif",
+          "gender": "masculin",
+          "number": "pluriel"
+        },
+        "phonetic": "كَٰفِرِينَ",
+        "position": 24,
+        "word_key": "kfr",
+        "is_particle": false,
+        "prefix_particle": "li"
+      },
+      {
+        "pos": "nom",
+        "phon": "عَذَابٌ",
+        "root": "ع",
+        "type": "important",
+        "arabic": "عَذَابٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "nom",
+          "gender": "masculin"
+        },
+        "phonetic": "عَذَابٌ",
+        "position": 25,
+        "word_key": "particle",
+        "is_particle": true
+      },
+      {
+        "pos": "adjectif",
+        "phon": "مُّهِينٌ",
+        "root": "ه و ن",
+        "type": "important",
+        "voice": "actif",
+        "arabic": "مُّهِينٌ",
+        "gender": "masculin",
+        "grammar": {
+          "pos": "adjectif",
+          "voice": "actif",
+          "gender": "masculin"
+        },
+        "phonetic": "مُّهِينٌ",
+        "position": 26,
+        "word_key": "hwn",
+        "verb_form": "IV",
+        "is_particle": false
+      }
+    ]
+  }
+}

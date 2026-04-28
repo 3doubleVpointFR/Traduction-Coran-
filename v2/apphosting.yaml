@@ -1,0 +1,51 @@
+# Firebase App Hosting configuration
+# Doc : https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  cpu: 1
+  memoryMiB: 512
+  maxInstances: 3
+  minInstances: 0
+  concurrency: 80
+
+env:
+  # ─── Supabase (publiques, OK en clair) ──────────────────────────────
+  - variable: NEXT_PUBLIC_SUPABASE_URL
+    value: https://gwtgftosscjupxxsubev.supabase.co
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_SUPABASE_ANON_KEY
+    value: sb_publishable_iqiXAlQDVYdRY5aZUu0Y4w_5P45eZeE
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: SUPABASE_URL
+    value: https://gwtgftosscjupxxsubev.supabase.co
+    availability:
+      - RUNTIME
+
+  - variable: SUPABASE_ANON_KEY
+    value: sb_publishable_iqiXAlQDVYdRY5aZUu0Y4w_5P45eZeE
+    availability:
+      - RUNTIME
+
+  - variable: LLM_PROVIDER
+    value: openai
+    availability:
+      - RUNTIME
+
+  # ─── Secrets (stockés dans Google Secret Manager) ───────────────────
+  - variable: SUPABASE_SERVICE_KEY
+    secret: supabase-service-key
+
+  - variable: OPENAI_API_KEY
+    secret: openai-api-key
+
+  - variable: ANTHROPIC_API_KEY
+    secret: anthropic-api-key
+
+  - variable: GOOGLE_API_KEY
+    secret: google-api-key

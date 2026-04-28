@@ -1,0 +1,1196 @@
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2772
+CONCEPT: Adoration/Dévotion
+SENSE: adorer
+DISPLAY_ORDER: 1
+STATUS: nul
+DESCRIPTION: Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte.
+PROOF_CTX: Le verset identifie QUI est adoré (la divinité), pas l'acte d'adorer.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2773
+CONCEPT: Adoration/Dévotion
+SENSE: faire adorer
+DISPLAY_ORDER: 2
+STATUS: nul
+DESCRIPTION: Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte.
+PROOF_CTX: Adorer est le sens premier de la racine a-l-h. Mais le verset nomme Dieu, il ne décrit pas l'acte d'adorer. L'adoration est l'action du fidèle, le verset parle de l'identité de Dieu. La distinction : adorer est ce qu'on FAIT, la divinité est ce que Dieu EST.
+AXE1_VERSET: Le verset est une déclaration d'identité ("Il est Dieu, unique"), pas une injonction d'adoration. Le champ lexical est celui de la définition, pas de la dévotion. Adorer viendrait après l'identification : on identifie d'abord, on adore ensuite.
+AXE2_VOISINS: Aucun verset de la sourate ne parle d'adoration. Les versets qualifient (v1-2) et nient (v3-4). La sourate définit, elle n'ordonne pas d'adorer.
+AXE3_SOURATE: Al-Ikhlas est une sourate de définition, pas d'injonction. L'adoration est un thème d'autres sourates.
+AXE4_COHERENCE: Le Coran distingue le nom Allah (l'identité) de l'acte d'adorer (ibada). Quand le Coran veut parler d'adoration, il utilise le verbe abada.
+AXE5_FREQUENCE: L'adoration est une action du khalifa, pas l'identité de Dieu.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2774
+CONCEPT: Adoration/Dévotion
+SENSE: se dévouer au culte
+DISPLAY_ORDER: 3
+STATUS: nul
+DESCRIPTION: Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte.
+PROOF_CTX: L'adoration est l'acte du fidèle (ce qu'on fait). Le verset dit "pour Dieu" (destinataire), pas "en adorant Dieu" (action). L'adoration viendra au verset 5.
+AXE1_VERSET: Le verset attribue la louange à Dieu. Le champ lexical est celui de l'attribution, pas de la dévotion active. La particule li (pour) indique le destinataire, pas l'action.
+AXE2_VOISINS: L'adoration est mentionnée au verset 5. Le verset 2 attribue, le verset 5 adore. Les deux sont distincts.
+AXE3_SOURATE: La Fatiha sépare l'attribution (v2) de l'adoration (v5). Le verset 2 est dans la partie déclarative, pas dans la partie engagement.
+AXE4_COHERENCE: Le Coran distingue l'attribution (li-llahi) de l'adoration (na'budu). Les deux constructions ont des fonctions différentes.
+AXE5_FREQUENCE: L'adoration est une action. Le verset pose une attribution, pas une action.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2775
+CONCEPT: Adoration/Dévotion
+SENSE: diviniser
+DISPLAY_ORDER: 4
+STATUS: nul
+DESCRIPTION: Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte.
+PROOF_CTX: Le mot est un nom propre en idafa, pas un acte d’adoration.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2782
+CONCEPT: Détresse
+SENSE: être perplexe
+DISPLAY_ORDER: 11
+STATUS: nul
+DESCRIPTION: État intérieur de confusion ou de chagrin intense. La perplexité bloque celui qui la vit, la lamentation déborde vers l'extérieur par des manifestations visibles. Ces états restent principalement chez celui qui les ressent.
+PROOF_CTX: Hors contexte.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2783
+CONCEPT: Détresse
+SENSE: se lamenter
+DISPLAY_ORDER: 12
+STATUS: nul
+DESCRIPTION: État intérieur de confusion ou de chagrin intense. La perplexité bloque celui qui la vit, la lamentation déborde vers l'extérieur par des manifestations visibles. Ces états restent principalement chez celui qui les ressent.
+PROOF_CTX: État intérieur de confusion ou de chagrin. Le verset est une ouverture sereine, pas un cri de détresse.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2776
+CONCEPT: Divinité
+SENSE: divinité
+DISPLAY_ORDER: 5
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: Le sens retenu est « Divinité ». Le mot ilahi est un nom en idafa rattaché à an-nas — la Divinité des gens. C'est le troisième et dernier attribut : Seigneur → Roi → Divinité. La Divinité est ce vers quoi se dirige l'adoration — c'est l'identité ultime de Dieu. Le test grammatical : un nom en idafa peut-il désigner la divinité d'un peuple ? Oui — « la Divinité des gens » identifie le seul vrai objet d'adoration pour l'humanité.
+AXE1_VERSET: Le mot ilahi complète la triple qualification de Dieu. Le champ lexical culmine avec l'adoration — le Seigneur élève, le Roi gouverne, la Divinité est adorée.
+AXE2_VOISINS: Après les deux premiers attributs, la Divinité ferme la qualification avant le danger (v4). Toute la puissance protectrice de Dieu est résumée en trois mots.
+AXE3_SOURATE: La protection vient de celui qui est Seigneur, Roi et Divinité — la triple légitimité de la protection.
+AXE4_COHERENCE: Le Coran affirme partout qu'il n'y a qu'une seule divinité. La sourate 114 dit : la Divinité des gens est une seule.
+AXE5_FREQUENCE: Reconnaître la divinité unique permet de ne pas se tourner vers de faux protecteurs — c'est le fondement de la mission humaine.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2777
+CONCEPT: Divinité
+SENSE: divinité (concept)
+DISPLAY_ORDER: 6
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: La divinité est la position relationnelle de ce qui reçoit l'adoration. Le mot Allah est le nom propre qui désigne cette divinité. Test de compatibilité : le mot est un nom propre défini. Le concept de divinité peut-il être identifié comme une réalité connue et définie ? Oui : Allah est le nom propre qui identifie LA divinité par excellence. Distinction avec "Adoration/Dévotion" : l'adoration est ce qu'on FAIT envers Dieu (action du fidèle), la divinité est ce que Dieu EST (son identité). Le verset identifie QUI est Dieu (divinité), il ne décrit pas ce qu'on fait envers Lui (adoration). Distinction avec "Refuge/Protection" : le refuge est une action vers Dieu (on cherche sa protection), la divinité est ce que Dieu EST. Le verset dit ce qu'Il est.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2778
+CONCEPT: Divinité
+SENSE: Dieu
+DISPLAY_ORDER: 7
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: Le verset 112:1 dit "huwa llahu ahadun" (Il est Dieu, unique). Allah est le nom propre de la Divinité, l'objet vers lequel se dirige l'adoration. Le verset identifie Dieu dans une déclaration d'identité absolue. Le concept de divinité est ce que le nom Allah désigne : l'être vers lequel tout se tourne.
+AXE1_VERSET: Le verset est une déclaration d'identité : "Il est Dieu, unique". Le mot Allah identifie la Divinité, le mot ahad qualifie sa nature. Le champ lexical est celui de l'identité absolue. Allah est le pivot entre le pronom "Il" (huwa) et la qualité "unique" (ahad). Le verset nomme d'abord (Allah) puis qualifie (ahad).
+AXE2_VOISINS: Le verset 2 qualifie Dieu d'as-samad. Les versets 3-4 nient l'engendrement et l'existence d'un égal. Le verset 1 ouvre cette série en nommant Dieu : d'abord on dit qui Il est (Dieu, unique), puis on le qualifie (v2), puis on dit ce qu'Il n'est pas (v3-4). Allah est le premier mot significatif de cette définition.
+AXE3_SOURATE: La sourate Al-Ikhlas est une sourate de définition de Dieu. Le verset 1 pose le fondement en nommant Dieu. Tout commence par l'identification : avant de qualifier, il faut nommer. La divinité est le concept que le nom Allah identifie.
+AXE4_COHERENCE: Le Coran utilise Allah comme nom propre de Dieu des milliers de fois. C'est le mot le plus fréquent du texte coranique. L'usage est constant : Allah désigne toujours la Divinité.
+AXE5_FREQUENCE: Reconnaître la Divinité est le fondement de la mission du khalifa. Sans cette reconnaissance, pas de cadre pour la justice ni la civilisation.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2779
+CONCEPT: Divinité
+SENSE: théologie
+DISPLAY_ORDER: 8
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: Le verset 112:2 dit "allahu s-samadu" (Dieu, celui vers qui on se tourne). Allah ouvre le verset comme sujet. Le contexte est celui de la qualification : on ne dit plus QUI est Dieu (v1) mais CE QU'Il est (v2). La divinité est le concept que le nom Allah identifie.
+AXE1_VERSET: Le verset dit "allahu s-samadu". Allah est le sujet de la phrase nominale. Le champ lexical est celui de la qualification : après l'identification (v1), on qualifie Dieu avec un attribut (as-samad). Le mot Allah relie les deux versets : même sujet, nouvel attribut.
+AXE2_VOISINS: Le verset 1 identifie Dieu comme unique. Le verset 2 ajoute un attribut relationnel. La progression va de l'identité intrinsèque à la relation avec les autres. Allah est le fil conducteur.
+AXE3_SOURATE: La sourate répète Allah dans les versets 1 et 2 pour ancrer la définition. Le verset 2 est la deuxième face : après l'unicité, la centralité.
+AXE4_COHERENCE: Le Coran utilise Allah suivi d'attributs dans de nombreuses formules. C'est un modèle coranique classique.
+AXE5_FREQUENCE: La centralité de Dieu fonde la direction de la mission du khalifa : tout converge vers un seul point.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2780
+CONCEPT: Divinité
+SENSE: exclamation divine
+DISPLAY_ORDER: 9
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: Le sens retenu est "Divinité". Allah est le nom propre de la Divinité, ce vers quoi se dirige l'adoration. Le mot est un nom propre défini, il identifie une réalité connue et précise. Le test de compatibilité : un nom propre défini peut-il désigner la divinité ? Oui — Allah est par définition le nom propre de la Divinité. Distinction avec "Adoration/Dévotion" : l'adoration est l'acte du fidèle (ce qu'on fait), la divinité est l'identité de Dieu (ce qu'Il est). Le verset 1 identifie, il ne décrit pas l'acte d'adorer. L'adoration viendra au verset 5 (iyyaka na'budu).
+AXE1_VERSET: Le verset dit bi-smi llahi (au nom de Dieu). Le mot allahi est en position de complément du nom (ismi). Le champ lexical est celui de l'identification et de l'invocation. On nomme Dieu, on L'identifie. Les deux attributs qui suivent (ar-rahmani ar-rahimi) qualifient cette identité. La divinité est le concept que le nom propre Allah désigne.
+AXE2_VOISINS: Le verset 2 continue la qualification : Seigneur des mondes. Les versets 3-4 ajoutent d'autres attributs. Le verset 1 pose l'identité de base (la Divinité), les versets suivants la développent. La progression va de l'identité (v1) à la description (v2-4) à l'engagement (v5-7).
+AXE3_SOURATE: La Fatiha pose la relation entre l'humain et Dieu. Nommer la Divinité en premier est le fondement de cette relation. Avant de qualifier, de louer ou de demander, il faut identifier à qui on s'adresse. La divinité est le premier concept posé.
+AXE4_COHERENCE: Le Coran utilise Allah comme nom propre de la Divinité des milliers de fois. C'est le mot le plus fréquent du texte. L'usage est constant et univoque. Le mot ilah (divinité en tant que concept) et Allah (nom propre de la Divinité) sont distincts mais liés par la même racine.
+AXE5_FREQUENCE: Reconnaître la Divinité est le fondement de la mission de justice et de civilisation. Sans cette reconnaissance, pas de cadre pour l'action. Le verset 1 pose ce cadre en une formule.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2781
+CONCEPT: Divinité
+SENSE: oui certes
+DISPLAY_ORDER: 10
+STATUS: retenu
+DESCRIPTION: Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).
+PROOF_CTX: Le sens retenu est « Divinité ». Allāh est en position de complément d’idafa de dīni — il identifie à qui appartient cette voie. C’est la voie de Dieu, pas celle d’un autre. Le nom propre désigne l’identité divine.
+AXE1_VERSET: Le mot Allāh est le complément d’idafa de dīn — il définit la voie comme étant celle de Dieu. Le champ lexical (entrer dans la voie de X) exige l’identification de X. Allāh est cette identification.
+AXE2_VOISINS: Au verset 1, Allāh est la source du secours. Au verset 2, Allāh est le propriétaire de la voie. Au verset 3, il est appelé « ton Seigneur » et « celui qui accueille le retour ». La progression montre Dieu sous différentes facettes : source de secours, auteur de la voie, accueillant.
+AXE3_SOURATE: Dieu est l’acteur central de la sourate : Il secourt, Il a une voie, Il accueille le retour. Son identification par le nom propre au verset 2 continue celle du verset 1.
+AXE4_COHERENCE: La construction dīni llāhi (la voie de Dieu) apparaît dans le Coran en 3:73, 9:33, 48:28. Elle désigne toujours le cadre de vie voulu par Dieu.
+AXE5_FREQUENCE: La voie de Dieu est le cadre de la mission humaine de justice. Identifier cette voie comme celle de Dieu lui donne son autorité et sa légitimité.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2787
+CONCEPT: Domination
+SENSE: asservir
+DISPLAY_ORDER: 16
+STATUS: nul
+DESCRIPTION: Acte de soumettre l'autre, de le réduire en servitude. Acte extérieur dirigé vers l'autre qui change son statut contre sa volonté.
+PROOF_CTX: Hors contexte.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2784
+CONCEPT: Refuge/Protection
+SENSE: chercher refuge
+DISPLAY_ORDER: 13
+STATUS: nul
+DESCRIPTION: Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection.
+PROOF_CTX: La protection est dans a'udhu (v1), pas dans ilah.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2785
+CONCEPT: Refuge/Protection
+SENSE: protéger
+DISPLAY_ORDER: 14
+STATUS: nul
+DESCRIPTION: Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection.
+PROOF_CTX: Chercher refuge est une action vers Dieu. Le verset invoque, il ne demande pas de refuge. Le Coran utilise d'autres formules pour le refuge (audhu billahi). La frontière philosophique : chercher refuge est une demande motivée par la peur, l'invocation du verset 1 est une formule d'ouverture, pas de demande.
+AXE1_VERSET: Le verset est une formule d'invocation (au nom de Dieu). Le champ lexical est celui de l'identification, pas de la protection. On nomme Dieu, on ne Lui demande pas de protection. La demande viendra aux versets 5-7.
+AXE2_VOISINS: Les versets voisins qualifient Dieu (miséricordieux, seigneur, maître). Aucun ne parle de refuge ou de protection. Le registre est identitaire et qualificatif, pas protecteur.
+AXE3_SOURATE: La Fatiha pose une relation de louange et de demande de guidance, pas de refuge. Le refuge est un thème des sourates 113-114 (al-Falaq, an-Nas).
+AXE4_COHERENCE: Le Coran utilise audhu billahi (je cherche refuge auprès de Dieu) pour le refuge. Cette formule est distincte de bi-smi llahi (au nom de Dieu). Les deux constructions ont des fonctions différentes.
+AXE5_FREQUENCE: Chercher refuge est une action ponctuelle motivée par la peur. Le verset 1 pose un cadre permanent pour tout ce qui suit.
+---
+ROOT: alh | analysis_id: 250 | meaning_id: 2786
+CONCEPT: Refuge/Protection
+SENSE: demeurer
+DISPLAY_ORDER: 15
+STATUS: nul
+DESCRIPTION: Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection.
+PROOF_CTX: Hors contexte.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4294
+CONCEPT: Abondance/Accroissement
+SENSE: augmenter
+DISPLAY_ORDER: 8
+STATUS: null
+DESCRIPTION: Faire croître en quantité. L'augmentation est un mouvement vers le plus qui transforme l'état initial.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4295
+CONCEPT: Abondance/Accroissement
+SENSE: rendre abondant
+DISPLAY_ORDER: 9
+STATUS: null
+DESCRIPTION: Faire qu'il y ait beaucoup de quelque chose. L'abondance est l'état où rien ne manque.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4296
+CONCEPT: Abondance/Accroissement
+SENSE: remplir
+DISPLAY_ORDER: 10
+STATUS: null
+DESCRIPTION: Faire qu'un récipient soit plein. Le remplissage est un acte qui comble un vide.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4291
+CONCEPT: Aide/Renfort
+SENSE: aider
+DISPLAY_ORDER: 5
+STATUS: null
+DESCRIPTION: Acte extérieur de fournir un soutien à quelqu'un. L'aide sort de celui qui aide et atteint celui qui est aidé. C'est directionnel et volontaire.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4292
+CONCEPT: Aide/Renfort
+SENSE: renforcer
+DISPLAY_ORDER: 6
+STATUS: null
+DESCRIPTION: Augmenter la force ou le nombre d'un groupe. Le renfort est une extension appliquée aux forces humaines.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4293
+CONCEPT: Aide/Renfort
+SENSE: troupe de renfort
+DISPLAY_ORDER: 7
+STATUS: null
+DESCRIPTION: Force militaire qui s'ajoute à l'armée existante. Le renfort est concret et change le rapport de force.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4300
+CONCEPT: Écriture/Langage
+SENSE: encre
+DISPLAY_ORDER: 14
+STATUS: null
+DESCRIPTION: Sens concret lié à la racine. Encre — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4287
+CONCEPT: Extension/Étirement
+SENSE: tirer
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte physique de tirer vers soi ou dans une direction. Le tirage est extérieur, directionnel et modifie la position de l'objet tiré.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4288
+CONCEPT: Extension/Étirement
+SENSE: étendre
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Augmenter la longueur ou l'étendue de quelque chose. L'extension transforme ce qui est compact en quelque chose de déployé.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4289
+CONCEPT: Extension/Étirement
+SENSE: étirer
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Allonger en exerçant une force. L'étirement modifie la forme de l'objet de manière visible.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4290
+CONCEPT: Extension/Étirement
+SENSE: allonger
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Rendre plus long. L'allongement est un changement mesurable de dimension.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4299
+CONCEPT: Extension/Étirement
+SENSE: grand
+DISPLAY_ORDER: 13
+STATUS: null
+DESCRIPTION: Qui a une grande taille ou stature. La grandeur est une extension appliquée au corps humain.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4297
+CONCEPT: Mesure/Durée
+SENSE: durée
+DISPLAY_ORDER: 11
+STATUS: null
+DESCRIPTION: Étendue de temps. La durée est une extension appliquée au temps — elle a un début et une fin.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4298
+CONCEPT: Mesure/Durée
+SENSE: limite de temps
+DISPLAY_ORDER: 12
+STATUS: null
+DESCRIPTION: Point extrême au-delà duquel le temps est épuisé. La limite marque la fin de l'extension temporelle.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mdd | analysis_id: 321 | meaning_id: 4301
+CONCEPT: Sens isolé/Pus
+SENSE: pus
+DISPLAY_ORDER: 15
+STATUS: null
+DESCRIPTION: Sens concret lié à la racine. Pus — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wqd | analysis_id: 348 | meaning_id: 4100
+CONCEPT: Feu/Combustion
+SENSE: allumer
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte extérieur de produire du feu. Le feu est une transformation visible et directionnelle — il consume et éclaire. C'est ponctuel mais avec des effets permanents.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wqd | analysis_id: 348 | meaning_id: 4101
+CONCEPT: Feu/Combustion
+SENSE: brûler
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Acte de consumer par le feu.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wqd | analysis_id: 348 | meaning_id: 4102
+CONCEPT: Feu/Combustion
+SENSE: feu
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Réalité physique de combustion.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wqd | analysis_id: 348 | meaning_id: 4103
+CONCEPT: Feu/Combustion
+SENSE: combustible
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Ce qui alimente le feu.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3851
+CONCEPT: Lumière/Clarté
+SENSE: lumière
+DISPLAY_ORDER: 1
+STATUS: retenu
+DESCRIPTION: Réalité extérieure qui rend visible ce qui était caché dans l'obscurité. La lumière sort de sa source et atteint tout ce qu'elle éclaire. Elle est permanente tant que la source existe.
+PROOF_CTX: Le sens retenu est « Lumière/Clarté » avec le sens spécifique de « feu » (nar). Le mot naran est un nom indéfini (un feu, pas LE feu). La racine n-w-r couvre à la fois la lumière et le feu — les deux sont des manifestations de l'énergie lumineuse. Dans ce verset, c'est le feu destructeur (nar) qui est visé, pas la lumière guidante (nur). Le feu est qualifié par dhat lahab (dotée de flamme) — c'est un feu qui brûle activement.
+AXE1_VERSET: Le mot naran est le complément de sayasla (il sera exposé à un feu). Il est suivi de dhat lahab (dotée de flamme). Le champ lexical est celui du feu destructeur — pas de la lumière bienfaisante.
+AXE2_VOISINS: Le feu du verset 3 est la conséquence de la ruine (v1) et de l'inutilité de la richesse (v2). C'est le lieu de la combustion — l'aboutissement de la sourate.
+AXE3_SOURATE: Le feu est le destin final de celui dont les mains ont péri. La sourate progresse vers le feu comme point culminant.
+AXE4_COHERENCE: Le Coran distingue nar (feu destructeur) et nur (lumière bienfaisante) bien qu'ils viennent de la même racine n-w-r. Dans la sourate 111, c'est le feu destructeur. Dans la sourate 24:35, c'est la lumière divine. Le contexte détermine le sens.
+AXE5_FREQUENCE: Le feu est l'avertissement suprême — il rappelle que les actes ont des conséquences. La mission humaine est d'éviter le feu par la justice.
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3852
+CONCEPT: Lumière/Clarté
+SENSE: éclairer
+DISPLAY_ORDER: 2
+STATUS: retenu
+DESCRIPTION: Réalité extérieure qui rend visible.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3853
+CONCEPT: Lumière/Clarté
+SENSE: feu
+DISPLAY_ORDER: 3
+STATUS: retenu
+DESCRIPTION: Réalité extérieure qui rend visible.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3854
+CONCEPT: Lumière/Clarté
+SENSE: guider par la lumière
+DISPLAY_ORDER: 4
+STATUS: retenu
+DESCRIPTION: Réalité extérieure qui rend visible.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3855
+CONCEPT: Sens isolé/Fleur
+SENSE: fleur
+DISPLAY_ORDER: 5
+STATUS: nul
+DESCRIPTION: Sens concret lié à la racine. Fleur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: Hors sujet.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: nwr | analysis_id: 349 | meaning_id: 3856
+CONCEPT: Sens isolé/Fuir
+SENSE: fuir
+DISPLAY_ORDER: 6
+STATUS: nul
+DESCRIPTION: Sens concret lié à la racine. Fuir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: Hors sujet.
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4568
+CONCEPT: Charge/Dépendance
+SENSE: fardeau
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Ce qui pèse sur quelqu'un. Le fardeau est une charge extérieure qui accable celui qui la porte — il est lourd et constant.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4569
+CONCEPT: Charge/Dépendance
+SENSE: personne à charge
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Celui qui dépend d'un autre pour sa subsistance. La personne à charge est un poids économique et moral pour celui qui la soutient.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4570
+CONCEPT: Corps/Anatomie
+SENSE: couronner
+DISPLAY_ORDER: 5
+STATUS: null
+DESCRIPTION: Sens concret lié à la racine. Couronner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4566
+CONCEPT: Émoussement/Faiblesse
+SENSE: s'émousser
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Perdre son tranchant ou son acuité. L'émoussement est un état de perte de force ou de netteté. Ce qui est émoussé ne coupe plus et ne perce plus.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4567
+CONCEPT: Émoussement/Faiblesse
+SENSE: être fatigué
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Perdre ses forces par l'effort. La fatigue est un état d'épuisement qui diminue la capacité d'agir.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: kll | analysis_id: 372 | meaning_id: 4571
+CONCEPT: Sens isolé/Agacer
+SENSE: agacer les dents
+DISPLAY_ORDER: 6
+STATUS: null
+DESCRIPTION: Provoquer une sensation désagréable dans les dents. Sens physique concret isolé.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4589
+CONCEPT: Dénombrement/Calcul
+SENSE: compter
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte rationnel de déterminer la quantité d'éléments. Le comptage est un acte mental objectif qui produit un nombre.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4590
+CONCEPT: Dénombrement/Calcul
+SENSE: dénombrer
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Établir le nombre exact d'un ensemble. Le dénombrement est un calcul exhaustif.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4591
+CONCEPT: Dénombrement/Calcul
+SENSE: nombre
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Résultat du comptage. Le nombre est une valeur objective et mesurable.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4594
+CONCEPT: Dénombrement/Calcul
+SENSE: énumérer ses qualités
+DISPLAY_ORDER: 6
+STATUS: null
+DESCRIPTION: Compter et réciter ses mérites. L'énumération est un comptage appliqué aux qualités morales.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4595
+CONCEPT: Dénombrement/Calcul
+SENSE: nombreux
+DISPLAY_ORDER: 7
+STATUS: null
+DESCRIPTION: Qui est en grande quantité. Ce qui est nombreux dépasse ce qui peut être facilement compté.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4592
+CONCEPT: Préparation
+SENSE: préparer
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Rendre quelque chose prêt pour un usage futur. La préparation est un acte anticipatoire — on agit maintenant pour ce qui viendra.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: edd | analysis_id: 377 | meaning_id: 4593
+CONCEPT: Préparation
+SENSE: équiper
+DISPLAY_ORDER: 5
+STATUS: null
+DESCRIPTION: Fournir ce qui est nécessaire pour une tâche. L'équipement est la préparation matérielle.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4772
+CONCEPT: Rassemblement/Union
+SENSE: rassembler
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte de réunir ce qui est dispersé. Le rassemblement transforme la dispersion en unité. C'est un acte extérieur directionnel.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4773
+CONCEPT: Rassemblement/Union
+SENSE: réunir
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Mettre ensemble des choses ou des personnes séparées. La réunion crée un tout à partir de parties.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4774
+CONCEPT: Rassemblement/Union
+SENSE: assembler
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Joindre les parties pour former un ensemble. L'assemblage est un acte de construction par réunion.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4775
+CONCEPT: Rassemblement/Union
+SENSE: contracter
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Rapprocher les parties. La contraction est un rassemblement spatial.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4776
+CONCEPT: Rassemblement/Union
+SENSE: unanimité
+DISPLAY_ORDER: 5
+STATUS: null
+DESCRIPTION: Accord de tous sur un point. L'unanimité est le rassemblement des avis en un seul.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4777
+CONCEPT: Rassemblement/Union
+SENSE: vendredi
+DISPLAY_ORDER: 6
+STATUS: null
+DESCRIPTION: Jour du rassemblement. Le vendredi est le jour où les gens se réunissent pour la prière.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: jme | analysis_id: 422 | meaning_id: 4778
+CONCEPT: Rassemblement/Union
+SENSE: totalité
+DISPLAY_ORDER: 7
+STATUS: null
+DESCRIPTION: L'ensemble complet. La totalité est le résultat final du rassemblement — tout est réuni.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: xld | analysis_id: 927 | meaning_id: 8638
+CONCEPT: Éternité/Permanence
+SENSE: demeurer éternellement
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: État de ce qui ne finit jamais et ne change pas. L'éternité est l'absence totale de fin — c'est la permanence absolue. Demeurer éternellement c'est être soustrait au temps et à la mort.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: xld | analysis_id: 927 | meaning_id: 8639
+CONCEPT: Éternité/Permanence
+SENSE: rester pour toujours
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: xld | analysis_id: 927 | meaning_id: 8640
+CONCEPT: Inclination
+SENSE: pencher vers
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Mouvement intérieur de l'âme vers ce qui attire. L'inclination est directionnelle et peut devenir permanente.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3990
+CONCEPT: Calcul/Évaluation
+SENSE: compter
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte rationnel de mesurer et d'évaluer. Le calcul aboutit à un jugement objectif et permanent.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3991
+CONCEPT: Calcul/Évaluation
+SENSE: estimer
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Acte rationnel de mesurer.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3992
+CONCEPT: Calcul/Évaluation
+SENSE: penser
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: Acte rationnel d'évaluer.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3993
+CONCEPT: Calcul/Évaluation
+SENSE: compte
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Résultat du calcul.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3996
+CONCEPT: Sens isolé/Noblesse
+SENSE: noblesse
+DISPLAY_ORDER: 7
+STATUS: null
+DESCRIPTION: Sens concret lié à la racine. Noblesse — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3994
+CONCEPT: Suffisance
+SENSE: suffire
+DISPLAY_ORDER: 5
+STATUS: null
+DESCRIPTION: État de ce qui comble le besoin sans surplus ni manque. Ce concept est central dans la compréhension du verset où il apparaît.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: hsb | analysis_id: 996 | meaning_id: 3995
+CONCEPT: Suffisance
+SENSE: suffisant
+DISPLAY_ORDER: 6
+STATUS: null
+DESCRIPTION: État de ce qui comble le besoin.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mwl | analysis_id: 1148 | meaning_id: 9473
+CONCEPT: Richesse/Biens
+SENSE: richesse
+DISPLAY_ORDER: 1
+STATUS: retenu
+DESCRIPTION: Ce que l'on possède de biens matériels et qui permet de vivre. La richesse est un état permanent tant que les biens demeurent — elle donne pouvoir et indépendance. Le mal (biens) est ce qui est désiré et accumulé.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mwl | analysis_id: 1148 | meaning_id: 9474
+CONCEPT: Richesse/Biens
+SENSE: biens
+DISPLAY_ORDER: 2
+STATUS: retenu
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mwl | analysis_id: 1148 | meaning_id: 9475
+CONCEPT: Richesse/Biens
+SENSE: fortune
+DISPLAY_ORDER: 3
+STATUS: retenu
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: mwl | analysis_id: 1148 | meaning_id: 9476
+CONCEPT: Richesse/Biens
+SENSE: être riche
+DISPLAY_ORDER: 4
+STATUS: retenu
+DESCRIPTION: 
+PROOF_CTX: Le sens retenu est « Richesse/Biens ». Le mot maluhu est un nom avec pronom possessif (mal = richesse, hu = sa). C'est sa richesse personnelle — ce qu'il possède en biens matériels. Le verset dit que cette richesse ne lui a servi à rien (ma aghna). La richesse est l'objet qui devait protéger mais qui a échoué.
+AXE1_VERSET: Le mot maluhu est l'un des deux sujets du verbe ma aghna (n'a pas servi). Le champ lexical est celui de la possession matérielle inutile. La richesse et l'acquisition sont mises sur le même plan — ni l'une ni l'autre ne sauvent.
+AXE2_VOISINS: Le verset 1 parle des mains (actes) qui ont péri. Le verset 2 ajoute que la richesse non plus n'a pas servi. La sourate monte : les actes sont perdus, la richesse est inutile, le feu attend.
+AXE3_SOURATE: La richesse fait partie du portrait de cet homme — il avait des biens et ce qu'il avait acquis. Mais rien de tout cela ne le protège de la ruine annoncée au verset 1.
+AXE4_COHERENCE: Le Coran mentionne la richesse (mal) comme un test — elle peut être un bienfait ou une tentation. Dans la sourate 111, la richesse est ce qui n'a pas protégé.
+AXE5_FREQUENCE: La richesse qui ne sert pas la justice ne protège pas son possesseur. La mission humaine dépasse l'accumulation de biens.
+---
+ROOT: tle | analysis_id: 1400 | meaning_id: 10253
+CONCEPT: Lever/Apparition
+SENSE: se lever (soleil)
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Mouvement de ce qui monte au-dessus de l'horizon pour devenir visible. Le lever est directionnel vers le haut — il rend visible ce qui était caché. Le lever du soleil éclaire le monde, le lever d'une étoile annonce un événement.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: tle | analysis_id: 1400 | meaning_id: 10254
+CONCEPT: Lever/Apparition
+SENSE: apparaître
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: tle | analysis_id: 1400 | meaning_id: 10255
+CONCEPT: Lever/Apparition
+SENSE: informer
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: tle | analysis_id: 1400 | meaning_id: 10256
+CONCEPT: Sens isolé/Bourgeon
+SENSE: bourgeon
+DISPLAY_ORDER: 4
+STATUS: null
+DESCRIPTION: Sens concret lié à la racine. Bourgeon — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: emd | analysis_id: 1541 | meaning_id: 10428
+CONCEPT: Intention/Volonté
+SENSE: faire exprès
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte accompli avec préméditation et conscience. L'intention est un mouvement intérieur de la volonté qui dirige l'acte — c'est le contraire de l'accident. Ce qui est fait exprès engage la responsabilité de celui qui agit.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: emd | analysis_id: 1541 | meaning_id: 10429
+CONCEPT: Support/Pilier
+SENSE: colonne
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: Ce qui soutient et maintient debout une structure. La colonne est permanente dans sa fonction de support — elle porte ce qui est au-dessus d'elle.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: emd | analysis_id: 1541 | meaning_id: 10430
+CONCEPT: Support/Pilier
+SENSE: pilier
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: fad | analysis_id: 1813 | meaning_id: 10710
+CONCEPT: Cœur/Siège des émotions
+SENSE: cœur
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: L'organe qui ressent et réagit aux événements. Le fuad est le cœur dans sa dimension émotionnelle — il est le siège de la passion, de la peur et de l'amour. Permanent dans sa fonction de récepteur des émotions.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: fad | analysis_id: 1813 | meaning_id: 10711
+CONCEPT: Cœur/Siège des émotions
+SENSE: passion
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: lmz | analysis_id: 2060 | meaning_id: 11080
+CONCEPT: Médisance/Calomnie
+SENSE: critiquer en secret
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte de parler en mal de quelqu'un en son absence ou par des signes. La médisance est directionnelle et cachée — elle sort du médisant et atteint le visé sans qu'il le sache.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: lmz | analysis_id: 2060 | meaning_id: 11081
+CONCEPT: Médisance/Calomnie
+SENSE: calomnier
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: dry | analysis_id: 2098 | meaning_id: 6628
+CONCEPT: Connaissance/Perception
+SENSE: savoir
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Avoir connaissance de quelque chose — savoir (darâ/yadrî) est la conscience de ce qui est. Et que t'en sais-tu (mâ adrâka) ? Cette formule introduit souvent une réalité que l'homme ne peut saisir par lui-même. Seul Dieu fait savoir ce qui échappe à la perception humaine.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: dry | analysis_id: 2098 | meaning_id: 6629
+CONCEPT: Connaissance/Perception
+SENSE: percevoir
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: dry | analysis_id: 2098 | meaning_id: 6630
+CONCEPT: Connaissance/Perception
+SENSE: se rendre compte
+DISPLAY_ORDER: 3
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wsd | analysis_id: 2422 | meaning_id: 11477
+CONCEPT: Fermeture/Scellement
+SENSE: fermer hermétiquement
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte de bloquer toute sortie. La fermeture hermétique est permanente — rien ne peut s'échapper.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: wsd | analysis_id: 2422 | meaning_id: 11478
+CONCEPT: Fermeture/Scellement
+SENSE: sceller
+DISPLAY_ORDER: 2
+STATUS: null
+DESCRIPTION: 
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null
+---
+ROOT: htm | analysis_id: 2491 | meaning_id: 11708
+CONCEPT: Brisure/Destruction
+SENSE: briser
+DISPLAY_ORDER: 1
+STATUS: null
+DESCRIPTION: Acte de réduire en morceaux. Irréversible. Ce concept est central dans la compréhension du verset où il apparaît.
+PROOF_CTX: null
+AXE1_VERSET: null
+AXE2_VOISINS: null
+AXE3_SOURATE: null
+AXE4_COHERENCE: null
+AXE5_FREQUENCE: null

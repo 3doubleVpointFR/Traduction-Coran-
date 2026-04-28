@@ -1,0 +1,1916 @@
+{
+  "vwa": [
+    {
+      "id": 882,
+      "verse_id": 6198,
+      "word_key": "ray",
+      "sense_chosen": "vision",
+      "analysis_axes": {
+        "concepts": {
+          "Apparition": {
+            "senses": [
+              "apparaître"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le sujet voit, il n'apparaît pas. Hors sujet."
+          },
+          "Jugement/Avis": {
+            "senses": [
+              "opinion",
+              "avis"
+            ],
+            "status": "peu_probable",
+            "proof_ctx": "Le jugement est un acte intérieur — former un avis. Le verset invite à VOIR un comportement extérieur, pas à former une opinion. La question ara'ayta est « as-tu vu ? », pas « que penses-tu ? ».",
+            "axe1_verset": "Le champ lexical est celui de l'observation, pas du jugement. Le verbe est suivi de alladhi (celui qui) qui pointe vers une personne observable.",
+            "axe2_voisins": "Les versets suivants décrivent des actions visibles (repousser, ne pas nourrir). C'est de l'observation, pas du jugement.",
+            "axe3_sourate": "La sourate montre des actes concrets, pas des opinions.",
+            "axe4_coherence": "Le Coran utilise ara'ayta pour l'observation, pas pour l'opinion.",
+            "axe5_frequence": "L'observation précède le jugement — il faut d'abord voir pour pouvoir juger."
+          },
+          "Vision/Perception": {
+            "senses": [
+              "voir",
+              "percevoir"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Vision/Perception ». Le verbe ara'ayta est à l'accompli deuxième personne (une forme qui dit que l'action a eu lieu) avec le hamza interrogatif a- — « as-tu vu ? ». C'est une question rhétorique qui invite le Prophète à observer une réalité. Le test grammatical : un verbe accompli interrogatif peut-il exprimer la vision ? Oui — « as-tu vu celui qui... » est une invitation à observer et comprendre. Distinction avec « Jugement/Avis » : le jugement est intérieur, la vision est une observation extérieure. Le verset invite à voir, pas à juger.",
+            "axe1_verset": "Le verbe ara'ayta ouvre la sourate par une question — « as-tu vu celui qui dément ? ». Le champ lexical est celui de l'observation directe. On invite le Prophète à regarder le comportement de cette personne pour comprendre ce qu'est le déni de la rétribution.",
+            "axe2_voisins": "Les versets 2-3 décrivent ce que le Prophète doit observer : celui qui repousse l'orphelin et ne nourrit pas le pauvre. La vision du verset 1 est le cadre — les versets suivants montrent ce qu'il y a à voir.",
+            "axe3_sourate": "La sourate commence par « as-tu vu » — elle est construite comme une démonstration visuelle. Le thème est : regarde ce que fait celui qui dément, et tu comprendras ce qu'est le vrai déni.",
+            "axe4_coherence": "Le Coran utilise ara'ayta dans d'autres sourates pour les questions rhétoriques (sourate 96:9 — ara'ayta alladhi yanha). C'est un schéma récurrent d'invitation à observer.",
+            "axe5_frequence": "Observer le comportement des gens permet de comprendre leurs vraies croyances. La mission humaine de justice commence par l'observation lucide de la réalité."
+          }
+        },
+        "sense_chosen": "as-tu vu",
+        "concept_chosen": "Vision/Perception"
+      },
+      "position": 1,
+      "verse_num": 1
+    },
+    {
+      "id": 883,
+      "verse_id": 6198,
+      "word_key": "kdhb",
+      "sense_chosen": "déni",
+      "analysis_axes": {
+        "concepts": {
+          "Déni/Rejet": {
+            "senses": [
+              "nier",
+              "démentir",
+              "traiter de menteur"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Déni/Rejet ». Le verbe yukadhdhibu est à la forme II inaccompli (une forme intensive qui dit que l'action est faite avec insistance et en continu) — « il dément activement et continuellement ». La forme II ajoute l'intensité : ce n'est pas un doute passager mais un déni actif et permanent. Le verbe est suivi de bi-d-din (la rétribution) — il dément la rétribution. Distinction avec « Mensonge/Fausseté » : le mensonge est dire le faux, le déni est refuser de reconnaître le vrai. Le verset décrit quelqu'un qui REJETTE une vérité, pas quelqu'un qui INVENTE un mensonge.",
+            "axe1_verset": "Le verbe yukadhdhibu est relié à bi-d-din par la préposition bi. Le champ lexical est celui du refus de reconnaître une réalité. On dément la rétribution — on refuse de croire que les actes auront des conséquences.",
+            "axe2_voisins": "Les versets 2-3 montrent les conséquences de ce déni : celui qui ne croit pas à la rétribution maltraite l'orphelin et ignore le pauvre. Le déni mène directement au mauvais comportement.",
+            "axe3_sourate": "Le déni de la rétribution est le point de départ de toute la sourate. C'est PARCE qu'il dément que cette personne agit mal. La sourate lie la croyance au comportement.",
+            "axe4_coherence": "Le Coran utilise kadhdhabha (forme II) pour le déni actif dans d'autres versets. La forme II insiste sur l'intensité et la répétition du déni.",
+            "axe5_frequence": "Le déni de la rétribution — le refus de croire que les actes ont des conséquences — est la racine de l'injustice. Celui qui ne croit pas au retour de ses actes n'a aucune raison de bien agir."
+          },
+          "Mensonge/Fausseté": {
+            "senses": [
+              "mentir",
+              "dire le faux",
+              "fausseté"
+            ],
+            "status": "probable",
+            "proof_ctx": "Le mensonge est un acte de parole — dire ce qui est contraire à la réalité. Le déni est un acte de rejet — refuser de reconnaître ce qui est vrai. Le verset décrit quelqu'un qui REJETTE la rétribution, pas quelqu'un qui invente un mensonge. La distinction : le menteur sait la vérité et dit le contraire, le démenteur refuse de l'accepter. La forme II (yukadhdhibu) est intensive et indique le rejet actif.",
+            "axe1_verset": "Le verbe yukadhdhibu avec bi (avec/en) signifie « démentir, rejeter » — pas « mentir à quelqu'un ». Le champ est celui du rejet, pas de la fabrication de faux.",
+            "axe2_voisins": "Les conséquences décrites (maltraiter l'orphelin, ne pas nourrir) sont le résultat d'un rejet de principes, pas d'un mensonge.",
+            "axe3_sourate": "Le thème est le lien entre croyance et acte — le déni de la rétribution mène au mauvais comportement.",
+            "axe4_coherence": "Le Coran distingue kadhaba (mentir, forme I) de kadhdhabha (démentir, forme II). La forme II est le rejet, pas le mensonge.",
+            "axe5_frequence": "Le mensonge est un acte ponctuel, le déni est un état permanent. La sourate traite d'un état qui produit un comportement."
+          }
+        },
+        "sense_chosen": "dément",
+        "concept_chosen": "Déni/Rejet"
+      },
+      "position": 3,
+      "verse_num": 1
+    },
+    {
+      "id": 884,
+      "verse_id": 6198,
+      "word_key": "dyn",
+      "sense_chosen": "rétribution",
+      "analysis_axes": {
+        "concepts": {
+          "Eau/Liquide": {
+            "senses": [
+              "pluie continue"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Dette/Obligation": {
+            "senses": [
+              "dette",
+              "créance"
+            ],
+            "status": "nul",
+            "proof_ctx": "Pas de contexte financier dans cette sourate."
+          },
+          "Religion/Système": {
+            "senses": [
+              "religion",
+              "système de croyances",
+              "pratique"
+            ],
+            "status": "probable",
+            "proof_ctx": "La religion est le système complet de croyances et de pratiques. La rétribution est le mécanisme de retour des actes. Le verset montre que le déni mène au mauvais comportement (v2-7) — ce lien est plus direct avec la rétribution (cause-conséquence des actes) qu'avec la religion (système global). De plus, la sourate 1:4 utilise le même mot (ad-din) clairement pour la rétribution (yawm ad-din = jour de la rétribution).",
+            "axe1_verset": "Le champ lexical est celui du déni et de ses conséquences comportementales — plus proche de la rétribution que de la religion.",
+            "axe2_voisins": "Les versets 2-7 décrivent un comportement, pas un système religieux. Le déni mène à des actes — c'est la logique de la rétribution.",
+            "axe3_sourate": "Le thème est le lien entre croyance en la rétribution et comportement, pas l'appartenance à une religion.",
+            "axe4_coherence": "La sourate 1:4 confirme que ad-din peut signifier la rétribution. La sourate 109:6 confirme qu'il peut signifier la voie. Le contexte tranche.",
+            "axe5_frequence": "La rétribution est plus directement liée au comportement que la religion — le verset montre cette causalité."
+          },
+          "Rétribution/Compte": {
+            "senses": [
+              "rétribution",
+              "récompense",
+              "punition",
+              "compensation",
+              "rendre ce qui est dû",
+              "jugement"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Rétribution/Compte ». Le mot ad-din est un nom défini avec al- (la rétribution connue). Dans ce verset, démentir « le din » c'est nier que les actes auront un retour. Le test grammatical : un nom défini peut-il désigner la rétribution comme réalité connue ? Oui — la rétribution est une réalité identifiée. Distinction avec « Religion/Système » : la religion est un système de vie, la rétribution est le mécanisme de retour des actes. Le verset dit que cette personne dément le din — elle ne croit pas que ses actes auront des conséquences. Les versets 2-7 montrent les conséquences de ce déni : quelqu'un qui ne croit pas au retour de ses actes maltraite les faibles et ne se soucie que des apparences.",
+            "axe1_verset": "Le mot ad-din est le complément de yukadhdhibu (démentir). Le champ lexical est celui du refus de croire au retour des actes. La rétribution est ce qui est démenti.",
+            "axe2_voisins": "Les versets 2-3 montrent le comportement de celui qui dément : il maltraite l'orphelin et ne nourrit pas le pauvre. Ce comportement est logique si on ne croit pas au retour des actes — pourquoi aider si rien ne revient ?",
+            "axe3_sourate": "La sourate oppose le déni de la rétribution (v1) au mauvais comportement (v2-7). Le din est le pivot — tout découle de la croyance ou non au retour des actes.",
+            "axe4_coherence": "Le Coran utilise din pour la rétribution dans la sourate 1:4 (yawm ad-din = le jour de la rétribution). Dans la sourate 107, le din est le même — le retour des actes. La cohérence est totale.",
+            "axe5_frequence": "Croire que les actes ont des conséquences est le fondement de la responsabilité humaine. Sans rétribution, aucune raison d'être juste — c'est exactement ce que la sourate montre."
+          },
+          "Sens isolé/Maladie": {
+            "senses": [
+              "maladie"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Obéissance/Soumission": {
+            "senses": [
+              "obéir",
+              "se soumettre"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle de démentir, pas d'obéir ou de se soumettre."
+          }
+        },
+        "sense_chosen": "la rétribution",
+        "concept_chosen": "Rétribution/Compte"
+      },
+      "position": 4,
+      "verse_num": 1
+    },
+    {
+      "id": 885,
+      "verse_id": 6199,
+      "word_key": "dee2",
+      "sense_chosen": "repoussement",
+      "analysis_axes": {
+        "concepts": {
+          "Repoussement/Brutalité": {
+            "senses": [
+              "repousser violemment",
+              "bousculer",
+              "rejeter avec rudesse"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Repoussement/Brutalité ». Le verbe yaduu est à l'inaccompli (action en cours et habituelle) — « il repousse habituellement ». Le complément est al-yatim (l'orphelin). Repousser l'orphelin c'est le traiter avec mépris et brutalité — le rejeter physiquement quand il se présente. C'est un acte extérieur, directionnel, du fort vers le faible.",
+            "axe1_verset": "Le verbe yaduu est suivi de al-yatim — il repousse l'orphelin. Le champ lexical est celui de la violence envers les faibles. L'inaccompli dit que c'est une habitude, pas un accident.",
+            "axe2_voisins": "Le verset 1 explique pourquoi : il dément la rétribution. Le verset 3 ajoute un autre comportement : il ne nourrit pas le pauvre. Les versets 2-3 sont les preuves du déni — voilà ce que fait celui qui ne croit pas au retour de ses actes.",
+            "axe3_sourate": "Repousser l'orphelin est le premier signe concret du déni de la rétribution. La sourate montre les actes qui trahissent l'incroyance.",
+            "axe4_coherence": "Le Coran mentionne l'orphelin dans de nombreux versets comme test de la bonté (sourate 93:9 — quant à l'orphelin, ne le repousse pas). La sourate 107 confirme que repousser l'orphelin est le signe du déni.",
+            "axe5_frequence": "Protéger les faibles — et en premier lieu les orphelins — est au cœur de la mission de justice. Repousser l'orphelin est la corruption la plus basique."
+          }
+        },
+        "sense_chosen": "repousse",
+        "concept_chosen": "Repoussement/Brutalité"
+      },
+      "position": 3,
+      "verse_num": 2
+    },
+    {
+      "id": 886,
+      "verse_id": 6199,
+      "word_key": "ytm",
+      "sense_chosen": "orphelin",
+      "analysis_axes": {
+        "concepts": {
+          "Orphelinat/Solitude": {
+            "senses": [
+              "être orphelin",
+              "orphelin",
+              "unique"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Orphelinat/Solitude ». Le mot al-yatim est un nom défini avec al- (l'orphelin connu) — l'orphelin en tant que catégorie sociale identifiée. L'orphelin est celui qui a perdu son père et qui est sans protection. Le texte ne parle pas d'un orphelin spécifique mais de l'orphelin comme type — tout orphelin.",
+            "axe1_verset": "Le mot al-yatim est le complément de yaduu (repousser). L'orphelin est la victime du repoussement. Le champ lexical est celui de la vulnérabilité sociale.",
+            "axe2_voisins": "Après l'orphelin (v2), le verset 3 mentionne le pauvre (miskin). Les deux sont les catégories vulnérables de la société — ceux qui ont besoin de protection.",
+            "axe3_sourate": "L'orphelin et le pauvre sont les témoins du vrai état de la personne. Celui qui dément la rétribution les maltraite car il ne croit pas aux conséquences de ses actes.",
+            "axe4_coherence": "Le Coran protège l'orphelin dans de nombreux versets (sourate 4:2, 6:152, 89:17, 93:9). L'orphelin est un test central de la justice.",
+            "axe5_frequence": "L'orphelin est le premier test de la mission humaine — protéger celui qui n'a personne pour le protéger."
+          }
+        },
+        "sense_chosen": "l'orphelin",
+        "concept_chosen": "Orphelinat/Solitude"
+      },
+      "position": 4,
+      "verse_num": 2
+    },
+    {
+      "id": 887,
+      "verse_id": 6200,
+      "word_key": "hdd2",
+      "sense_chosen": "incitation",
+      "analysis_axes": {
+        "concepts": {
+          "Incitation/Encouragement": {
+            "senses": [
+              "inciter",
+              "encourager",
+              "pousser à",
+              "exhorter"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Incitation/Encouragement ». Le verbe yahuddu est à l'inaccompli (action habituelle) avec la négation wa la — « et il n'incite pas ». Le verbe est suivi de ala taaam al-miskin (à la nourriture du pauvre). Il n'encourage pas les gens à nourrir le pauvre — c'est pire que de ne pas nourrir soi-même, c'est ne même pas pousser les autres à le faire. Le double refus : il ne nourrit pas ET il n'incite pas.",
+            "axe1_verset": "Le verbe yahuddu est nié et suivi de ala taaam al-miskin (à nourrir le pauvre). Le champ lexical est celui de l'indifférence sociale — ne pas agir ET ne pas encourager les autres à agir.",
+            "axe2_voisins": "Le verset 2 montre le repoussement de l'orphelin, le verset 3 montre l'indifférence envers le pauvre. Les deux sont des signes du déni de la rétribution.",
+            "axe3_sourate": "L'absence d'incitation à nourrir le pauvre est le deuxième signe du déni. La sourate monte : repousser l'orphelin (acte direct) → ne pas inciter à nourrir (absence d'acte).",
+            "axe4_coherence": "Le Coran utilise la même formule dans la sourate 69:34 (lam yahuddu ala taaam al-miskin — il n'incitait pas à nourrir le pauvre). La cohérence est directe — c'est le même reproche.",
+            "axe5_frequence": "La mission humaine n'est pas seulement d'agir soi-même mais d'inciter les autres à agir. L'indifférence qui ne se soucie même pas de pousser les autres à aider est la forme la plus profonde de corruption."
+          }
+        },
+        "sense_chosen": "n'incite pas",
+        "concept_chosen": "Incitation/Encouragement"
+      },
+      "position": 2,
+      "verse_num": 3
+    },
+    {
+      "id": 888,
+      "verse_id": 6200,
+      "word_key": "tem",
+      "sense_chosen": "nourriture",
+      "analysis_axes": {
+        "concepts": {
+          "Gustation/Nourriture": {
+            "senses": [
+              "goût",
+              "nourriture",
+              "manger"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Gustation/Nourriture ». Le mot taaam est un nom en idafa rattaché à al-miskin (le pauvre) — la nourriture du pauvre. C'est ce que le pauvre a besoin de manger — le minimum vital. Le verset dit que cette personne n'incite même pas à fournir cette nourriture.",
+            "axe1_verset": "Le mot taaam est rattaché à al-miskin par une idafa — la nourriture du pauvre. Le champ lexical est celui du besoin vital non satisfait.",
+            "axe2_voisins": "La nourriture du pauvre est le complément de l'incitation (v3). C'est l'objet concret de l'indifférence sociale.",
+            "axe3_sourate": "La nourriture représente le minimum — le besoin le plus basique. Celui qui ne se soucie même pas de ce minimum est au plus bas de l'indifférence.",
+            "axe4_coherence": "Le Coran mentionne la nourriture du pauvre dans la sourate 69:34 avec la même formule. Nourrir le pauvre est un acte fondamental.",
+            "axe5_frequence": "Assurer la nourriture du pauvre est le premier devoir social. Ne pas s'en soucier est la forme la plus concrète de corruption."
+          }
+        },
+        "sense_chosen": "la nourriture",
+        "concept_chosen": "Gustation/Nourriture"
+      },
+      "position": 4,
+      "verse_num": 3
+    },
+    {
+      "id": 889,
+      "verse_id": 6200,
+      "word_key": "skn",
+      "sense_chosen": "pauvre",
+      "analysis_axes": {
+        "concepts": {
+          "Calme/Repos": {
+            "senses": [
+              "être calme",
+              "s'apaiser"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle du pauvre, pas du calme."
+          },
+          "Habitation/Demeure": {
+            "senses": [
+              "habiter",
+              "demeurer"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle du pauvre (miskin), pas d'habitation."
+          },
+          "Sens isolé/Pauvre": {
+            "senses": [
+              "pauvre"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Sens isolé/Pauvre ». Le mot al-miskin est un nom défini — le pauvre, le démuni. La racine s-k-n signifie être calme, immobile. Le miskin est celui qui est immobilisé par le manque — il ne peut pas bouger, il est bloqué dans sa pauvreté. C'est un état permanent qui empêche d'agir.",
+            "axe1_verset": "Le mot al-miskin est le complément de taaam — la nourriture du pauvre. Le champ lexical est celui de la vulnérabilité sociale — l'orphelin (v2) et le pauvre (v3) sont les deux catégories les plus fragiles.",
+            "axe2_voisins": "L'orphelin (v2) et le pauvre (v3) forment un couple de vulnérabilité. Les deux sont maltraités ou ignorés par celui qui dément la rétribution.",
+            "axe3_sourate": "Le pauvre est le deuxième témoin du déni — après l'orphelin. La sourate montre que le déni de la rétribution se manifeste dans le traitement des plus faibles.",
+            "axe4_coherence": "Le Coran mentionne le miskin dans de nombreux versets comme bénéficiaire de l'aumône et de l'aide (sourate 2:83, 4:36, 76:8). Le miskin est un test central.",
+            "axe5_frequence": "Le pauvre est celui que la société doit protéger en priorité. L'ignorer est la corruption sociale la plus basique."
+          }
+        },
+        "sense_chosen": "le démuni",
+        "concept_chosen": "Sens isolé/Pauvre"
+      },
+      "position": 5,
+      "verse_num": 3
+    },
+    {
+      "id": 890,
+      "verse_id": 6201,
+      "word_key": "wyl",
+      "sense_chosen": "malheur",
+      "analysis_axes": {
+        "concepts": {
+          "Malédiction/Désastre": {
+            "senses": [
+              "malheur",
+              "détresse",
+              "ruine"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Malédiction/Désastre ». Le mot wayl est un nom indéfini (un malheur) suivi de li (pour) et al-musallin (les priants). Wayl = un malheur POUR les priants. C'est un avertissement sévère — le texte ne dit pas quel est ce malheur exactement, il dit juste que c'est un wayl, un désastre.",
+            "axe1_verset": "Le mot wayl ouvre le verset 4 avec la particule fa (alors/donc) qui lie aux versets précédents. Le champ lexical est celui de l'avertissement — après avoir décrit le déni et ses signes (v1-3), le texte prononce un avertissement.",
+            "axe2_voisins": "Les versets 1-3 décrivent le déni et ses manifestations. Le verset 4 change de ton — il passe de la description à l'avertissement. Le wayl est le pivot de la sourate.",
+            "axe3_sourate": "Le wayl est le tournant — la sourate passe de « voici ce que fait celui qui dément » à « malheur à ceux qui prient (sans y être présents) ». Le thème s'élargit : même les priants peuvent être concernés.",
+            "axe4_coherence": "Le Coran utilise wayl dans d'autres versets comme avertissement (sourate 83:1 — wayl li-l-mutaffifin = malheur aux fraudeurs). C'est toujours un avertissement sévère.",
+            "axe5_frequence": "L'avertissement rappelle que les actes formels (la prière) ne suffisent pas sans sincérité. La mission humaine exige la cohérence entre l'intérieur et l'extérieur."
+          }
+        },
+        "sense_chosen": "malheur",
+        "concept_chosen": "Malédiction/Désastre"
+      },
+      "position": 1,
+      "verse_num": 4
+    },
+    {
+      "id": 891,
+      "verse_id": 6201,
+      "word_key": "slw",
+      "sense_chosen": "prière",
+      "analysis_axes": {
+        "concepts": {
+          "Corps/Anatomie": {
+            "senses": [
+              "deuxième dans une course"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Lieu/Géographie": {
+            "senses": [
+              "milieu"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Prière/Invocation": {
+            "senses": [
+              "prier",
+              "prière rituelle",
+              "invoquer"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Prière/Invocation ». Au verset 4, al-musallin est un participe actif pluriel défini (ceux qui prient activement) — les priants. Au verset 5, salatihim est un nom en idafa avec pronom (leur prière). Le test grammatical : un participe actif peut-il désigner des gens qui prient ? Oui — les musallin sont ceux qui font la prière. Le verset dit « malheur aux priants qui... » — le malheur ne vise pas la prière elle-même mais les priants qui sont distraits de leur prière (v5).",
+            "axe1_verset": "Au v4, al-musallin est le complément de wayl li (malheur à). Au v5, salatihim est la prière dont ils sont distraits. Le champ lexical est celui de la prière formelle sans substance.",
+            "axe2_voisins": "Le v5 précise : ils sont distraits de leur prière. Le v6 ajoute : ils font de l'ostentation. Le v7 conclut : ils refusent l'aide élémentaire. Les priants visés sont ceux qui prient sans y être présents.",
+            "axe3_sourate": "La sourate oppose le vrai engagement (aider l'orphelin, nourrir le pauvre) à l'apparence (prier sans être présent, faire de l'ostentation). La prière est le symbole de l'apparence quand elle est vide de substance.",
+            "axe4_coherence": "Le Coran dit dans la sourate 29:45 que la prière empêche la turpitude et le mal. La sourate 107 montre le cas inverse : quand la prière ne remplit pas cette fonction car le priant est absent.",
+            "axe5_frequence": "La prière sans présence et sans conséquence sur le comportement est une forme de corruption — elle donne l'apparence de la piété sans la substance de la justice."
+          },
+          "Proximité/Attachement": {
+            "senses": [
+              "suivre de près"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle de prière rituelle, pas de proximité physique."
+          }
+        },
+        "sense_chosen": "les priants",
+        "concept_chosen": "Prière/Invocation"
+      },
+      "position": 2,
+      "verse_num": 4
+    },
+    {
+      "id": 892,
+      "verse_id": 6202,
+      "word_key": "slw",
+      "sense_chosen": "prière",
+      "analysis_axes": {
+        "concepts": {
+          "Corps/Anatomie": {
+            "senses": [
+              "deuxième dans une course"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Lieu/Géographie": {
+            "senses": [
+              "milieu"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Prière/Invocation": {
+            "senses": [
+              "prier",
+              "prière rituelle",
+              "invoquer"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Prière/Invocation ». Au verset 4, al-musallin est un participe actif pluriel défini (ceux qui prient activement) — les priants. Au verset 5, salatihim est un nom en idafa avec pronom (leur prière). Le test grammatical : un participe actif peut-il désigner des gens qui prient ? Oui — les musallin sont ceux qui font la prière. Le verset dit « malheur aux priants qui... » — le malheur ne vise pas la prière elle-même mais les priants qui sont distraits de leur prière (v5).",
+            "axe1_verset": "Au v4, al-musallin est le complément de wayl li (malheur à). Au v5, salatihim est la prière dont ils sont distraits. Le champ lexical est celui de la prière formelle sans substance.",
+            "axe2_voisins": "Le v5 précise : ils sont distraits de leur prière. Le v6 ajoute : ils font de l'ostentation. Le v7 conclut : ils refusent l'aide élémentaire. Les priants visés sont ceux qui prient sans y être présents.",
+            "axe3_sourate": "La sourate oppose le vrai engagement (aider l'orphelin, nourrir le pauvre) à l'apparence (prier sans être présent, faire de l'ostentation). La prière est le symbole de l'apparence quand elle est vide de substance.",
+            "axe4_coherence": "Le Coran dit dans la sourate 29:45 que la prière empêche la turpitude et le mal. La sourate 107 montre le cas inverse : quand la prière ne remplit pas cette fonction car le priant est absent.",
+            "axe5_frequence": "La prière sans présence et sans conséquence sur le comportement est une forme de corruption — elle donne l'apparence de la piété sans la substance de la justice."
+          },
+          "Proximité/Attachement": {
+            "senses": [
+              "suivre de près"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle de prière rituelle, pas de proximité physique."
+          }
+        },
+        "sense_chosen": "les priants",
+        "concept_chosen": "Prière/Invocation"
+      },
+      "position": 4,
+      "verse_num": 5
+    },
+    {
+      "id": 893,
+      "verse_id": 6202,
+      "word_key": "shw2",
+      "sense_chosen": "distraction",
+      "analysis_axes": {
+        "concepts": {
+          "Distraction/Négligence": {
+            "senses": [
+              "être distrait",
+              "négliger",
+              "oublier",
+              "être inattentif"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Distraction/Négligence ». Le mot sahun est un participe actif pluriel (ceux qui sont distraits activement) — les distraits. Le participe actif dit que la distraction est leur état permanent, pas un moment d'inattention. Ils sont distraits DE leur prière (an salatihim) — la préposition an (de, loin de) indique qu'ils sont éloignés de ce qu'ils font. Le texte ne dit pas « dans » leur prière mais « de » leur prière — ils sont à distance de leur propre acte.",
+            "axe1_verset": "Le mot sahun qualifie les priants du verset 4. Le champ lexical est celui de l'absence intérieure — le corps prie mais l'esprit est ailleurs. La préposition an (de/loin de) est cruciale : ils sont loin de leur prière.",
+            "axe2_voisins": "Le verset 4 avertit les priants, le verset 5 précise : ceux qui sont distraits de leur prière. Le verset 6 ajoute l'ostentation. La distraction est le premier défaut — la prière sans présence.",
+            "axe3_sourate": "La distraction dans la prière est le pendant de l'indifférence sociale (v2-3). La même personne qui ignore le pauvre est distraite dans sa prière — cohérence entre l'intérieur vide et l'extérieur indifférent.",
+            "axe4_coherence": "Le Coran valorise la présence dans la prière (sourate 23:2 — ceux qui sont concentrés dans leur prière). La sourate 107 décrit l'opposé : ceux qui sont distraits.",
+            "axe5_frequence": "La distraction dans les actes importants est une forme de corruption intérieure. La mission humaine exige la présence — être là vraiment, pas seulement physiquement."
+          }
+        },
+        "sense_chosen": "distraits",
+        "concept_chosen": "Distraction/Négligence"
+      },
+      "position": 5,
+      "verse_num": 5
+    },
+    {
+      "id": 894,
+      "verse_id": 6203,
+      "word_key": "ray",
+      "sense_chosen": "ostentation",
+      "analysis_axes": {
+        "concepts": {
+          "Apparition": {
+            "senses": [
+              "apparaître"
+            ],
+            "status": "nul",
+            "proof_ctx": "Hors sujet."
+          },
+          "Jugement/Avis": {
+            "senses": [
+              "opinion"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset décrit l'ostentation, pas une opinion."
+          },
+          "Vision/Perception": {
+            "senses": [
+              "voir",
+              "percevoir"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Vision/Perception » avec le sens causatif : yura'un = ils font voir, ils montrent. Le verbe yura'un est à la forme III inaccompli (une forme qui implique la réciprocité ou la direction vers l'autre) — « ils font voir aux gens ». C'est le riya' — montrer ses actes aux autres pour être vu. La racine r-'-y (voir) prend ici le sens de « faire voir » — l'ostentation est un acte de vision dirigé vers les spectateurs. Le texte ne précise pas ce qu'ils montrent — il dit juste qu'ils font de l'ostentation.",
+            "axe1_verset": "Le verbe yura'un décrit le comportement des priants distraits — ils font étalage. Le champ lexical est celui de l'apparence sans substance.",
+            "axe2_voisins": "Après la distraction (v5), l'ostentation (v6). Les deux sont liés : celui qui n'est pas présent dans sa prière la fait pour les autres, pas pour Dieu.",
+            "axe3_sourate": "L'ostentation est le troisième défaut après le déni (v1) et la distraction (v5). La sourate montre une dégradation : déni → indifférence → prière vide → ostentation → refus d'aider.",
+            "axe4_coherence": "Le Coran dénonce l'ostentation dans la sourate 4:142 (yura'un an-nas — ils font voir aux gens). La même racine, le même reproche.",
+            "axe5_frequence": "L'ostentation corrompt les actes — faire le bien pour être vu vide l'acte de sa substance. La mission humaine exige la sincérité."
+          }
+        },
+        "sense_chosen": "font étalage",
+        "concept_chosen": "Vision/Perception"
+      },
+      "position": 3,
+      "verse_num": 6
+    },
+    {
+      "id": 895,
+      "verse_id": 6204,
+      "word_key": "mne",
+      "sense_chosen": "refus",
+      "analysis_axes": {
+        "concepts": {
+          "Protection/Défense": {
+            "senses": [
+              "protéger"
+            ],
+            "status": "nul",
+            "proof_ctx": "Le verset parle d'empêcher l'aide, pas de protéger."
+          },
+          "Empêchement/Interdiction": {
+            "senses": [
+              "empêcher",
+              "interdire",
+              "refuser"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Empêchement/Interdiction ». Le verbe yamnaaun est à l'inaccompli pluriel (action habituelle) — « ils refusent habituellement ». Le complément est al-maaun (l'aide élémentaire). Ils empêchent l'accès à l'aide la plus basique. L'empêchement est directionnel — il bloque ce qui devrait passer de celui qui a vers celui qui n'a pas.",
+            "axe1_verset": "Le verbe yamnaaun est suivi de al-maaun. Le champ lexical est celui du blocage — ils retiennent ce qui devrait être donné.",
+            "axe2_voisins": "Le verset 7 conclut la sourate par le refus ultime : même l'aide la plus basique est refusée. Après le déni (v1), la maltraitance (v2), l'indifférence (v3), la prière vide (v4-5), l'ostentation (v6), le refus d'aider (v7).",
+            "axe3_sourate": "Le refus de l'aide élémentaire est le dernier signe et le plus concret. La sourate se termine sur l'acte le plus simple : donner l'aide de base — et ils ne le font même pas.",
+            "axe4_coherence": "Le Coran dénonce ceux qui empêchent le bien dans la sourate 68:12 (mannaa li-l-khayr = celui qui empêche le bien). Le refus d'aider est un reproche récurrent.",
+            "axe5_frequence": "Refuser l'aide élémentaire est la forme la plus basse de l'injustice — même le minimum n'est pas donné. La mission humaine commence par ne pas bloquer ce qui est dû aux autres."
+          }
+        },
+        "sense_chosen": "refusent",
+        "concept_chosen": "Empêchement/Interdiction"
+      },
+      "position": 1,
+      "verse_num": 7
+    },
+    {
+      "id": 896,
+      "verse_id": 6204,
+      "word_key": "men",
+      "sense_chosen": "aide",
+      "analysis_axes": {
+        "concepts": {
+          "Source/Jaillissement": {
+            "senses": [
+              "eau jaillissante",
+              "source",
+              "courant"
+            ],
+            "status": "retenu",
+            "proof_ctx": "Le sens retenu est « Source/Jaillissement ». Le mot al-maaun est un nom défini — l'aide élémentaire, ce qui coule facilement et qu'on ne devrait pas retenir. La racine m-'-n signifie couler, jaillir. Le maaun est ce qui devrait couler naturellement d'une personne vers une autre — l'aide basique, les petits objets du quotidien qu'on prête sans y penser. Le texte ne précise pas quels objets — il dit « le maaun », l'aide qui coule. Retenir le maaun c'est bloquer ce qui devrait s'écouler naturellement.",
+            "axe1_verset": "Le mot al-maaun est le complément de yamnaaun (ils refusent). Le champ lexical est celui de l'aide basique refusée — le minimum qu'on devrait laisser couler vers les autres.",
+            "axe2_voisins": "Le maaun conclut la sourate — c'est le test final. Après tous les défauts listés, le dernier est le plus simple : refuser l'aide élémentaire.",
+            "axe3_sourate": "Le maaun donne son nom à la sourate. C'est le symbole de tout ce qui est dénoncé : celui qui dément la rétribution finit par refuser même l'aide la plus basique.",
+            "axe4_coherence": "Le Coran valorise le don et le partage dans de nombreux versets. Le maaun est le niveau le plus bas du partage — ce qui ne coûte presque rien. Le refuser est le signe le plus clair d'un cœur fermé.",
+            "axe5_frequence": "L'aide élémentaire est le minimum de la solidarité humaine. La mission de civilisation commence par laisser couler vers les autres ce qui ne coûte rien. Bloquer ce flux est la corruption à son état le plus simple."
+          }
+        },
+        "sense_chosen": "l'aide élémentaire",
+        "concept_chosen": "Source/Jaillissement"
+      },
+      "position": 2,
+      "verse_num": 7
+    }
+  ],
+  "verse_analyses_all": [
+    {
+      "verse_id": 6198,
+      "translation_explanation": "§DEMARCHE§\n\nLe verbe **ara'ayta** est composé du hamza interrogatif **a-** (est-ce que) et du verbe **ra'ayta** à l'accompli deuxième personne (une forme qui dit que l'action a eu lieu) — « as-tu vu ? ». C'est une question rhétorique : elle n'attend pas de réponse mais invite à observer. Le Coran utilise cette formule pour attirer l'attention sur un phénomène que le Prophète doit observer et comprendre.\n\nLe pronom relatif **alladhi** (celui qui) introduit la personne à observer.\n\nLe verbe **yukadhdhibu** est à la forme II inaccompli (une forme intensive qui dit que l'action est faite avec insistance et de façon habituelle) — « il dément activement et continuellement ». La forme II (avec le redoublement de la deuxième lettre) ajoute l'intensité : ce n'est pas un doute passager mais un rejet actif et permanent. La forme I (kadhaba) signifie mentir, la forme II (kadhdhabha) signifie démentir/rejeter — le passage de I à II change le sens de « produire le faux » à « rejeter le vrai ».\n\nLa préposition **bi** (en/par) relie le verbe à son objet : **ad-din** — la rétribution. Le din dans ce verset désigne le retour des actes — le principe que ce qu'on fait revient. D'après la cohérence coranique, la sourate 1:4 utilise le même mot (yawm ad-din = le jour de la rétribution), confirmant ce sens. Les versets 2-7 montrent les conséquences de ce déni : celui qui ne croit pas au retour de ses actes maltraite les faibles et ne fait que des apparences.\n\n§JUSTIFICATION§\n\n**as-tu vu** — Le sens retenu est « Vision/Perception ». L'expression « as-tu vu » rend la question rhétorique ara'ayta. L'alternative « sais-tu » est écartée car le texte dit « voir », pas « savoir » — c'est une invitation à observer, pas à connaître.\n\n**dément** — Le sens retenu est « Déni/Rejet ». Le mot « dément » est choisi car il capture le rejet actif d'une vérité. L'alternative « nie » est écartée car « nier » est plus passif — on peut nier par ignorance. « Démentir » implique un refus actif face à une vérité connue. L'alternative « traite de mensonge » est écartée car c'est une périphrase.\n\n**la rétribution** — Le sens retenu est « Rétribution/Compte ». Le mot « rétribution » est choisi car il capture le retour des actes — récompense et punition. L'alternative « la religion » est écartée car le contexte (les versets 2-7 montrent les conséquences sur le comportement) oriente vers la rétribution, pas vers un système religieux. L'alternative « le jugement » est écartée car le jugement est le processus, la rétribution est le résultat.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. Hamidullah traduit « traite de mensonge la Rétribution », ce qui est une périphrase pour yukadhdhibu. Le choix de « dément » est plus concis et fidèle à la forme II intensive de la racine k-dh-b, qui exprime un rejet actif et non une simple accusation de mensonge.",
+      "full_translation": "Vois-tu celui qui traite de mensonge la Rétribution ?",
+      "segments": [
+        {
+          "fr": "as-tu vu",
+          "pos": "verbe",
+          "phon": "ara'ayta",
+          "arabic": "أَرَءَيْتَ",
+          "position": 1,
+          "word_key": "ray",
+          "is_particle": false,
+          "sense_retenu": "voir"
+        },
+        {
+          "fr": "celui qui",
+          "phon": "alladhi",
+          "arabic": "ٱلَّذِى",
+          "position": 2,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "dément",
+          "pos": "verbe",
+          "phon": "yukadhdhibu",
+          "arabic": "يُكَذِّبُ",
+          "position": 3,
+          "word_key": "kdhb",
+          "is_particle": false,
+          "sense_retenu": "démentir"
+        },
+        {
+          "fr": "la rétribution",
+          "pos": "nom",
+          "phon": "bi-d-din",
+          "arabic": "بِٱلدِّينِ",
+          "position": 4,
+          "word_key": "dyn",
+          "is_particle": false,
+          "sense_retenu": "rétribution"
+        }
+      ],
+      "verse_num": 1
+    },
+    {
+      "verse_id": 6199,
+      "translation_explanation": "§DEMARCHE§\n\nLa particule **fa** (alors/donc) lie ce verset au précédent — elle introduit la conséquence : voilà ce que fait celui qui dément la rétribution.\n\nLe démonstratif **dhalika** (celui-là) pointe vers la personne décrite au verset 1 — celui qui dément.\n\nLe pronom relatif **alladhi** (celui qui) introduit la description de son comportement.\n\nLe verbe **yaduu** est à l'inaccompli (une forme qui dit que l'action est en cours et habituelle) — « il repousse habituellement ». D'après les sources étymologiques, la racine d-'-' signifie repousser violemment, bousculer, rejeter avec brutalité. Ce n'est pas un simple refus — c'est un acte physique et méprisant.\n\nLe mot **al-yatim** est un nom défini avec al- (l'orphelin, catégorie connue). L'orphelin est celui qui a perdu son père — il est sans protection naturelle. Le texte dit que celui qui dément la rétribution repousse cette personne vulnérable.\n\n§JUSTIFICATION§\n\n**repousse** — Le sens retenu est « Repoussement/Brutalité ». Le mot « repousse » est choisi car il capture l'acte physique et méprisant. L'alternative « rejette » est écartée car « rejeter » est plus abstrait — « repousser » implique un geste physique. L'alternative « maltraite » est écartée car le texte décrit un acte spécifique (repousser), pas un traitement général.\n\n**l'orphelin** — Le sens retenu est « Orphelinat/Solitude ». Le mot « orphelin » est gardé car c'est le français courant pour yatim. L'alternative « le faible » est écartée car le texte dit précisément « l'orphelin », pas « le faible » en général.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. Le verbe « repousse » correspond bien à la racine d-ayn-ayn qui implique un acte physique et brutal, et Hamidullah utilise le même verbe.",
+      "full_translation": "C'est bien lui qui repousse l'orphelin,",
+      "segments": [
+        {
+          "fr": "c'est bien celui",
+          "phon": "fa-dhalika alladhi",
+          "arabic": "فَذَٰلِكَ ٱلَّذِى",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "qui repousse",
+          "pos": "verbe",
+          "phon": "yaduu",
+          "arabic": "يَدُعُّ",
+          "position": 3,
+          "word_key": "dee2",
+          "is_particle": false,
+          "sense_retenu": "repousser violemment"
+        },
+        {
+          "fr": "l'orphelin",
+          "pos": "nom",
+          "phon": "al-yatim",
+          "arabic": "ٱلْيَتِيمَ",
+          "position": 4,
+          "word_key": "ytm",
+          "is_particle": false,
+          "sense_retenu": "orphelin"
+        }
+      ],
+      "verse_num": 2
+    },
+    {
+      "verse_id": 6200,
+      "translation_explanation": "§DEMARCHE§\n\nLa conjonction **wa** (et) lie ce verset au précédent — c'est le deuxième signe du déni.\n\nLa particule **la** est une négation — « ne...pas ».\n\nLe verbe **yahuddu** est à l'inaccompli (action habituelle) — « il n'incite pas habituellement ». D'après les sources étymologiques, la racine h-d-d signifie inciter, encourager, pousser quelqu'un à faire quelque chose. La négation dit qu'il ne fait même pas l'effort de pousser les autres à agir. C'est pire que de ne pas nourrir soi-même — c'est ne même pas encourager les autres à le faire.\n\nLa préposition **ala** (à/sur) introduit l'objet de l'incitation.\n\nLe mot **taaam** est un nom en idafa rattaché à **al-miskin** — la nourriture du pauvre. Le taaam est ce que le pauvre a besoin de manger — le minimum vital.\n\nLe mot **al-miskin** est un nom défini — le démuni, le pauvre. La racine s-k-n signifie être calme, immobile. Le miskin est celui qui est immobilisé par le manque — bloqué dans sa pauvreté, incapable de bouger.\n\n§JUSTIFICATION§\n\n**n'incite pas** — Le sens retenu est « Incitation/Encouragement ». L'expression « n'incite pas » rend la négation du verbe yahuddu. L'alternative « n'encourage pas » est écartée car « inciter » est plus fort — il implique une poussée active, pas juste un encouragement verbal.\n\n**nourrir** — Le sens retenu est « Gustation/Nourriture ». Le mot « nourrir » rend taaam (nourriture) en verbe pour fluidifier le français. L'alternative « la nourriture de » est écartée car c'est plus lourd en français courant.\n\n**le démuni** — Le sens retenu est « Sens isolé/Pauvre ». Le mot « démuni » est choisi car il capture l'état de celui qui n'a rien — le miskin est immobilisé par le manque. L'alternative « le pauvre » est possible mais « démuni » est plus précis — il dit « sans moyens », alors que « pauvre » peut être relatif.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. La différence principale est « le démuni » au lieu de « le pauvre » chez Hamidullah. La racine s-k-n (être immobile, bloqué) décrit un état de privation totale — « démuni » (sans moyens) capture mieux cette immobilité que « pauvre » qui peut être relatif.",
+      "full_translation": "et qui n'encourage point à nourrir le pauvre.",
+      "segments": [
+        {
+          "fr": "et ne...pas",
+          "phon": "wa la",
+          "arabic": "وَلَا",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "incite",
+          "pos": "verbe",
+          "phon": "yahuddu",
+          "arabic": "يَحُضُّ",
+          "position": 2,
+          "word_key": "hdd2",
+          "is_particle": false,
+          "sense_retenu": "inciter"
+        },
+        {
+          "fr": "à",
+          "phon": "ala",
+          "arabic": "عَلَىٰ",
+          "position": 3,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "nourrir",
+          "pos": "nom",
+          "phon": "taaam",
+          "arabic": "طَعَامِ",
+          "position": 4,
+          "word_key": "tem",
+          "is_particle": false,
+          "sense_retenu": "nourriture"
+        },
+        {
+          "fr": "le démuni",
+          "pos": "nom",
+          "phon": "al-miskin",
+          "arabic": "ٱلْمِسْكِينِ",
+          "position": 5,
+          "word_key": "skn",
+          "is_particle": false,
+          "sense_retenu": "pauvre"
+        }
+      ],
+      "verse_num": 3
+    },
+    {
+      "verse_id": 6201,
+      "translation_explanation": "§DEMARCHE§\n\nLa particule **fa** (alors/donc) lie ce verset aux précédents. Après avoir décrit le déni et ses signes (v1-3), le texte prononce un avertissement.\n\nLe mot **wayl** est un nom indéfini — un malheur, un désastre. Le texte ne précise pas la nature exacte de ce malheur — il dit juste que c'est un wayl, quelque chose de terrible.\n\nLa préposition **li** (pour/à) introduit ceux qui sont visés.\n\nLe mot **al-musallin** est un participe actif pluriel défini avec al- (une forme qui dit que ces personnes FONT l'action activement et en continu) — « les priants ». Le participe actif dit que la prière est leur activité identitaire — ils sont connus pour prier. Mais le wayl les vise quand même — le verset 5 va préciser pourquoi.\n\nLe fait que le malheur vise des PRIANTS est frappant. Ce ne sont pas les non-priants qui sont visés mais les priants qui ont un défaut — défaut précisé aux versets 5-7.\n\n§JUSTIFICATION§\n\n**malheur** — Le sens retenu est « Malédiction/Désastre ». Le mot « malheur » est choisi car c'est le français courant pour exprimer un avertissement grave. L'alternative « perdition » est écartée car c'est du registre littéraire. L'alternative « ruine » est écartée car elle est financière en français courant.\n\n**les priants** — Le sens retenu est « Prière/Invocation ». Le mot « priants » rend le participe actif al-musallin — ceux qui font la prière activement. L'alternative « ceux qui prient » est écartée car c'est une périphrase — « priants » est plus concis et rend le participe actif.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. Hamidullah traduit « ceux qui prient », là où la traduction étymologique donne « les priants ». Le participe actif al-musallin est mieux rendu par un participe en français (« priants ») que par une périphrase relative, car il désigne une identité permanente et non un acte ponctuel.",
+      "full_translation": "Malheur donc, à ceux qui prient",
+      "segments": [
+        {
+          "fr": "alors malheur",
+          "pos": "nom",
+          "phon": "fa-wayl",
+          "arabic": "فَوَيْلٌ",
+          "position": 1,
+          "word_key": "wyl",
+          "is_particle": false,
+          "sense_retenu": "malheur"
+        },
+        {
+          "fr": "aux priants",
+          "pos": "nom",
+          "phon": "li-l-musallin",
+          "arabic": "لِّلْمُصَلِّينَ",
+          "position": 2,
+          "word_key": "slw",
+          "is_particle": false,
+          "sense_retenu": "prière"
+        }
+      ],
+      "verse_num": 4
+    },
+    {
+      "verse_id": 6202,
+      "translation_explanation": "§DEMARCHE§\n\nLe pronom relatif **alladhina** (ceux qui) introduit la qualification des priants visés — ce n'est pas tous les priants mais ceux qui ont cette caractéristique.\n\nLe pronom **hum** (eux) insiste sur l'identité.\n\nLa préposition **an** (de/loin de) est cruciale. Elle dit « distraits DE leur prière » — pas « distraits DANS leur prière ». La différence est fondamentale : être distrait dans la prière c'est un moment d'inattention (ça arrive à tout le monde). Être distrait DE la prière c'est être structurellement éloigné de ce qu'on fait — la prière n'est pas une priorité, on la fait machinalement sans y être présent.\n\nLe mot **salatihim** est un nom en idafa avec pronom (salat = prière, him = leur) — leur prière.\n\nLe mot **sahun** est un participe actif pluriel (ceux qui sont distraits activement et en permanence) — les distraits. Le participe actif dit que la distraction est leur état permanent, pas un moment ponctuel.\n\n§JUSTIFICATION§\n\n**distraits** — Le sens retenu est « Distraction/Négligence ». Le mot « distraits » est choisi car il capture l'état d'absence intérieure. L'alternative « négligents » est écartée car la négligence implique un choix conscient de ne pas faire, alors que la distraction est un état d'absence — le corps est là, l'esprit non. L'alternative « inattentifs » est écartée car c'est du registre scolaire.\n\n**leur prière** — Le sens retenu est « Prière/Invocation ». L'expression « leur prière » rend salatihim avec le possessif.\n\n§CRITIQUE§\n\nHamidullah traduit « tout en négligeant (et retardant) leurs Salat ». La traduction étymologique donne « distraits de leur prière ». La différence est significative : sahun (participe actif de la racine s-h-w) décrit un état de distraction et d absence, pas un retard volontaire. De plus, la préposition an (de/loin de) indique une distance structurelle vis-à-vis de la prière, pas une négligence dans son accomplissement.",
+      "full_translation": "tout en négligeant (et retardant) leurs Salat,",
+      "segments": [
+        {
+          "fr": "qui sont",
+          "phon": "alladhina hum",
+          "arabic": "ٱلَّذِينَ هُمْ",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "de leur prière",
+          "pos": "nom",
+          "phon": "an salatihim",
+          "arabic": "عَن صَلَاتِهِمْ",
+          "position": 4,
+          "word_key": "slw",
+          "is_particle": false,
+          "sense_retenu": "prière"
+        },
+        {
+          "fr": "distraits",
+          "pos": "nom",
+          "phon": "sahun",
+          "arabic": "سَاهُونَ",
+          "position": 5,
+          "word_key": "shw2",
+          "is_particle": false,
+          "sense_retenu": "être distrait"
+        }
+      ],
+      "verse_num": 5
+    },
+    {
+      "verse_id": 6203,
+      "translation_explanation": "§DEMARCHE§\n\nLe pronom relatif **alladhina** (ceux qui) ajoute une deuxième qualification.\n\nLe pronom **hum** (eux) insiste.\n\nLe verbe **yura'un** est à la forme III inaccompli (une forme qui implique la réciprocité ou la direction vers l'autre) — « ils font voir aux gens ». La racine r-'-y (voir) prend ici le sens causatif : faire voir, montrer. C'est le riya' — l'ostentation. Ils font leurs actes pour être vus des gens, pas pour Dieu. L'inaccompli dit que c'est leur habitude permanente.\n\nLe texte ne précise pas ce qu'ils montrent — il dit juste qu'ils « font voir ». Le contexte (la prière, verset 4-5) suggère que c'est leur prière qu'ils montrent, mais le texte ne le dit pas explicitement.\n\n§JUSTIFICATION§\n\n**font étalage** — Le sens retenu est « Vision/Perception » (sens causatif : faire voir). L'expression « font étalage » est choisie car elle capture l'acte de montrer ses actions pour être vu. L'alternative « font de l'ostentation » est écartée car « ostentation » est du registre soutenu — « faire étalage » est du français courant. L'alternative « se montrent » est écartée car elle est trop vague — « faire étalage » implique qu'on étale ses actes devant les autres.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. Hamidullah traduit « pleins d ostentation ». La traduction étymologique donne « font étalage », qui rend le sens causatif de la forme III yura un (racine r-hamza-y, voir) — littéralement « faire voir aux gens » — dans un français plus courant qu ostentation.",
+      "full_translation": "qui sont pleins d'ostentation,",
+      "segments": [
+        {
+          "fr": "qui",
+          "phon": "alladhina hum",
+          "arabic": "ٱلَّذِينَ هُمْ",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "font étalage",
+          "pos": "verbe",
+          "phon": "yura'un",
+          "arabic": "يُرَآءُونَ",
+          "position": 3,
+          "word_key": "ray",
+          "is_particle": false,
+          "sense_retenu": "voir"
+        }
+      ],
+      "verse_num": 6
+    },
+    {
+      "verse_id": 6204,
+      "translation_explanation": "§DEMARCHE§\n\nLa conjonction **wa** (et) ajoute le dernier défaut.\n\nLe verbe **yamnaaun** est à l'inaccompli pluriel (action habituelle) — « ils refusent habituellement ». D'après les sources étymologiques, la racine m-n-' signifie empêcher, bloquer, retenir. Ce n'est pas un simple « non » — c'est un blocage actif de ce qui devrait passer.\n\nLe mot **al-maaun** est un nom défini avec al- — l'aide élémentaire. La racine m-'-n signifie couler, jaillir. Le maaun est ce qui devrait couler naturellement d'une personne vers une autre — les petits gestes d'aide quotidienne, les objets qu'on prête sans y penser (un outil, un ustensile, un peu d'eau). C'est le minimum de la solidarité humaine.\n\nCe mot donne son nom à la sourate entière. Le texte se termine sur le refus le plus basique : même l'aide qui ne coûte presque rien est bloquée. La sourate progresse du déni de la rétribution (v1) jusqu'au refus de l'aide la plus élémentaire (v7) — du plus abstrait au plus concret.\n\n§JUSTIFICATION§\n\n**refusent** — Le sens retenu est « Empêchement/Interdiction ». Le mot « refusent » est choisi car il capture le blocage actif. L'alternative « empêchent » est écartée car « empêcher » implique un obstacle mis pour les autres, alors que « refuser » est un acte personnel. L'alternative « retiennent » est écartée car c'est plus passif.\n\n**l'aide élémentaire** — Le sens retenu est « Source/Jaillissement ». L'expression « aide élémentaire » est choisie car elle capture ce qui devrait couler naturellement (racine m-'-n = couler) et qui est du niveau le plus basique. L'alternative « le nécessaire » est écartée car trop vague. L'alternative « les petites aides » est écartée car le texte utilise un singulier défini (al-maaun), pas un pluriel. L'alternative « l'ustensile » est écartée car c'est une interprétation exégétique qui réduit le maaun à un objet spécifique — le texte dit « l'aide élémentaire » au sens large.\n\n§CRITIQUE§\n\nHamidullah traduit « refusent l ustensile ». La traduction étymologique donne « refusent l aide élémentaire ». La racine m-hamza-n signifie couler, jaillir — al-maaun désigne ce qui devrait couler naturellement entre les gens, c est-à-dire l entraide de base. Réduire cela à « l ustensile » est une interprétation exégétique qui restreint le sens du mot à un objet matériel spécifique.",
+      "full_translation": "et refusent l'ustensile.",
+      "segments": [
+        {
+          "fr": "et refusent",
+          "pos": "verbe",
+          "phon": "wa-yamnaaun",
+          "arabic": "وَيَمْنَعُونَ",
+          "position": 1,
+          "word_key": "mne",
+          "is_particle": false,
+          "sense_retenu": "refus"
+        },
+        {
+          "fr": "l'aide élémentaire",
+          "pos": "nom",
+          "phon": "al-maaun",
+          "arabic": "ٱلْمَاعُونَ",
+          "position": 2,
+          "word_key": "men",
+          "is_particle": false,
+          "sense_retenu": "source"
+        }
+      ],
+      "verse_num": 7
+    }
+  ],
+  "translation_explanations_v1_v7": [
+    {
+      "verse_num": 1,
+      "translation_explanation": "§DEMARCHE§\n\nLe verbe **ara'ayta** est composé du hamza interrogatif **a-** (est-ce que) et du verbe **ra'ayta** à l'accompli deuxième personne (une forme qui dit que l'action a eu lieu) — « as-tu vu ? ». C'est une question rhétorique : elle n'attend pas de réponse mais invite à observer. Le Coran utilise cette formule pour attirer l'attention sur un phénomène que le Prophète doit observer et comprendre.\n\nLe pronom relatif **alladhi** (celui qui) introduit la personne à observer.\n\nLe verbe **yukadhdhibu** est à la forme II inaccompli (une forme intensive qui dit que l'action est faite avec insistance et de façon habituelle) — « il dément activement et continuellement ». La forme II (avec le redoublement de la deuxième lettre) ajoute l'intensité : ce n'est pas un doute passager mais un rejet actif et permanent. La forme I (kadhaba) signifie mentir, la forme II (kadhdhabha) signifie démentir/rejeter — le passage de I à II change le sens de « produire le faux » à « rejeter le vrai ».\n\nLa préposition **bi** (en/par) relie le verbe à son objet : **ad-din** — la rétribution. Le din dans ce verset désigne le retour des actes — le principe que ce qu'on fait revient. D'après la cohérence coranique, la sourate 1:4 utilise le même mot (yawm ad-din = le jour de la rétribution), confirmant ce sens. Les versets 2-7 montrent les conséquences de ce déni : celui qui ne croit pas au retour de ses actes maltraite les faibles et ne fait que des apparences.\n\n§JUSTIFICATION§\n\n**as-tu vu** — Le sens retenu est « Vision/Perception ». L'expression « as-tu vu » rend la question rhétorique ara'ayta. L'alternative « sais-tu » est écartée car le texte dit « voir », pas « savoir » — c'est une invitation à observer, pas à connaître.\n\n**dément** — Le sens retenu est « Déni/Rejet ». Le mot « dément » est choisi car il capture le rejet actif d'une vérité. L'alternative « nie » est écartée car « nier » est plus passif — on peut nier par ignorance. « Démentir » implique un refus actif face à une vérité connue. L'alternative « traite de mensonge » est écartée car c'est une périphrase.\n\n**la rétribution** — Le sens retenu est « Rétribution/Compte ». Le mot « rétribution » est choisi car il capture le retour des actes — récompense et punition. L'alternative « la religion » est écartée car le contexte (les versets 2-7 montrent les conséquences sur le comportement) oriente vers la rétribution, pas vers un système religieux. L'alternative « le jugement » est écartée car le jugement est le processus, la rétribution est le résultat.\n\n§CRITIQUE§\n\nLes traductions courantes donnent sensiblement le même sens. Hamidullah traduit « traite de mensonge la Rétribution », ce qui est une périphrase pour yukadhdhibu. Le choix de « dément » est plus concis et fidèle à la forme II intensive de la racine k-dh-b, qui exprime un rejet actif et non une simple accusation de mensonge.",
+      "full_translation": "Vois-tu celui qui traite de mensonge la Rétribution ?"
+    },
+    {
+      "verse_num": 7,
+      "translation_explanation": "§DEMARCHE§\n\nLa conjonction **wa** (et) ajoute le dernier défaut.\n\nLe verbe **yamnaaun** est à l'inaccompli pluriel (action habituelle) — « ils refusent habituellement ». D'après les sources étymologiques, la racine m-n-' signifie empêcher, bloquer, retenir. Ce n'est pas un simple « non » — c'est un blocage actif de ce qui devrait passer.\n\nLe mot **al-maaun** est un nom défini avec al- — l'aide élémentaire. La racine m-'-n signifie couler, jaillir. Le maaun est ce qui devrait couler naturellement d'une personne vers une autre — les petits gestes d'aide quotidienne, les objets qu'on prête sans y penser (un outil, un ustensile, un peu d'eau). C'est le minimum de la solidarité humaine.\n\nCe mot donne son nom à la sourate entière. Le texte se termine sur le refus le plus basique : même l'aide qui ne coûte presque rien est bloquée. La sourate progresse du déni de la rétribution (v1) jusqu'au refus de l'aide la plus élémentaire (v7) — du plus abstrait au plus concret.\n\n§JUSTIFICATION§\n\n**refusent** — Le sens retenu est « Empêchement/Interdiction ». Le mot « refusent » est choisi car il capture le blocage actif. L'alternative « empêchent » est écartée car « empêcher » implique un obstacle mis pour les autres, alors que « refuser » est un acte personnel. L'alternative « retiennent » est écartée car c'est plus passif.\n\n**l'aide élémentaire** — Le sens retenu est « Source/Jaillissement ». L'expression « aide élémentaire » est choisie car elle capture ce qui devrait couler naturellement (racine m-'-n = couler) et qui est du niveau le plus basique. L'alternative « le nécessaire » est écartée car trop vague. L'alternative « les petites aides » est écartée car le texte utilise un singulier défini (al-maaun), pas un pluriel. L'alternative « l'ustensile » est écartée car c'est une interprétation exégétique qui réduit le maaun à un objet spécifique — le texte dit « l'aide élémentaire » au sens large.\n\n§CRITIQUE§\n\nHamidullah traduit « refusent l ustensile ». La traduction étymologique donne « refusent l aide élémentaire ». La racine m-hamza-n signifie couler, jaillir — al-maaun désigne ce qui devrait couler naturellement entre les gens, c est-à-dire l entraide de base. Réduire cela à « l ustensile » est une interprétation exégétique qui restreint le sens du mot à un objet matériel spécifique.",
+      "full_translation": "et refusent l'ustensile."
+    }
+  ],
+  "segments_all": [
+    {
+      "verse_num": 1,
+      "segments": [
+        {
+          "fr": "as-tu vu",
+          "pos": "verbe",
+          "phon": "ara'ayta",
+          "arabic": "أَرَءَيْتَ",
+          "position": 1,
+          "word_key": "ray",
+          "is_particle": false,
+          "sense_retenu": "voir"
+        },
+        {
+          "fr": "celui qui",
+          "phon": "alladhi",
+          "arabic": "ٱلَّذِى",
+          "position": 2,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "dément",
+          "pos": "verbe",
+          "phon": "yukadhdhibu",
+          "arabic": "يُكَذِّبُ",
+          "position": 3,
+          "word_key": "kdhb",
+          "is_particle": false,
+          "sense_retenu": "démentir"
+        },
+        {
+          "fr": "la rétribution",
+          "pos": "nom",
+          "phon": "bi-d-din",
+          "arabic": "بِٱلدِّينِ",
+          "position": 4,
+          "word_key": "dyn",
+          "is_particle": false,
+          "sense_retenu": "rétribution"
+        }
+      ]
+    },
+    {
+      "verse_num": 2,
+      "segments": [
+        {
+          "fr": "c'est bien celui",
+          "phon": "fa-dhalika alladhi",
+          "arabic": "فَذَٰلِكَ ٱلَّذِى",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "qui repousse",
+          "pos": "verbe",
+          "phon": "yaduu",
+          "arabic": "يَدُعُّ",
+          "position": 3,
+          "word_key": "dee2",
+          "is_particle": false,
+          "sense_retenu": "repousser violemment"
+        },
+        {
+          "fr": "l'orphelin",
+          "pos": "nom",
+          "phon": "al-yatim",
+          "arabic": "ٱلْيَتِيمَ",
+          "position": 4,
+          "word_key": "ytm",
+          "is_particle": false,
+          "sense_retenu": "orphelin"
+        }
+      ]
+    },
+    {
+      "verse_num": 3,
+      "segments": [
+        {
+          "fr": "et ne...pas",
+          "phon": "wa la",
+          "arabic": "وَلَا",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "incite",
+          "pos": "verbe",
+          "phon": "yahuddu",
+          "arabic": "يَحُضُّ",
+          "position": 2,
+          "word_key": "hdd2",
+          "is_particle": false,
+          "sense_retenu": "inciter"
+        },
+        {
+          "fr": "à",
+          "phon": "ala",
+          "arabic": "عَلَىٰ",
+          "position": 3,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "nourrir",
+          "pos": "nom",
+          "phon": "taaam",
+          "arabic": "طَعَامِ",
+          "position": 4,
+          "word_key": "tem",
+          "is_particle": false,
+          "sense_retenu": "nourriture"
+        },
+        {
+          "fr": "le démuni",
+          "pos": "nom",
+          "phon": "al-miskin",
+          "arabic": "ٱلْمِسْكِينِ",
+          "position": 5,
+          "word_key": "skn",
+          "is_particle": false,
+          "sense_retenu": "pauvre"
+        }
+      ]
+    },
+    {
+      "verse_num": 4,
+      "segments": [
+        {
+          "fr": "alors malheur",
+          "pos": "nom",
+          "phon": "fa-wayl",
+          "arabic": "فَوَيْلٌ",
+          "position": 1,
+          "word_key": "wyl",
+          "is_particle": false,
+          "sense_retenu": "malheur"
+        },
+        {
+          "fr": "aux priants",
+          "pos": "nom",
+          "phon": "li-l-musallin",
+          "arabic": "لِّلْمُصَلِّينَ",
+          "position": 2,
+          "word_key": "slw",
+          "is_particle": false,
+          "sense_retenu": "prière"
+        }
+      ]
+    },
+    {
+      "verse_num": 5,
+      "segments": [
+        {
+          "fr": "qui sont",
+          "phon": "alladhina hum",
+          "arabic": "ٱلَّذِينَ هُمْ",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "de leur prière",
+          "pos": "nom",
+          "phon": "an salatihim",
+          "arabic": "عَن صَلَاتِهِمْ",
+          "position": 4,
+          "word_key": "slw",
+          "is_particle": false,
+          "sense_retenu": "prière"
+        },
+        {
+          "fr": "distraits",
+          "pos": "nom",
+          "phon": "sahun",
+          "arabic": "سَاهُونَ",
+          "position": 5,
+          "word_key": "shw2",
+          "is_particle": false,
+          "sense_retenu": "être distrait"
+        }
+      ]
+    },
+    {
+      "verse_num": 6,
+      "segments": [
+        {
+          "fr": "qui",
+          "phon": "alladhina hum",
+          "arabic": "ٱلَّذِينَ هُمْ",
+          "position": 1,
+          "word_key": null,
+          "is_particle": true
+        },
+        {
+          "fr": "font étalage",
+          "pos": "verbe",
+          "phon": "yura'un",
+          "arabic": "يُرَآءُونَ",
+          "position": 3,
+          "word_key": "ray",
+          "is_particle": false,
+          "sense_retenu": "voir"
+        }
+      ]
+    },
+    {
+      "verse_num": 7,
+      "segments": [
+        {
+          "fr": "et refusent",
+          "pos": "verbe",
+          "phon": "wa-yamnaaun",
+          "arabic": "وَيَمْنَعُونَ",
+          "position": 1,
+          "word_key": "mne",
+          "is_particle": false,
+          "sense_retenu": "refus"
+        },
+        {
+          "fr": "l'aide élémentaire",
+          "pos": "nom",
+          "phon": "al-maaun",
+          "arabic": "ٱلْمَاعُونَ",
+          "position": 2,
+          "word_key": "men",
+          "is_particle": false,
+          "sense_retenu": "source"
+        }
+      ]
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": 3351,
+      "analysis_id": 258,
+      "concept": "Dette/Obligation",
+      "sense": "dette",
+      "meaning_type": "etymology",
+      "display_order": 16,
+      "description": "Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3352,
+      "analysis_id": 258,
+      "concept": "Dette/Obligation",
+      "sense": "créance",
+      "meaning_type": "etymology",
+      "display_order": 17,
+      "description": "Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3353,
+      "analysis_id": 258,
+      "concept": "Dette/Obligation",
+      "sense": "obligation financière",
+      "meaning_type": "etymology",
+      "display_order": 18,
+      "description": "Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3354,
+      "analysis_id": 258,
+      "concept": "Dette/Obligation",
+      "sense": "prêt",
+      "meaning_type": "etymology",
+      "display_order": 19,
+      "description": "Relation extérieure et transactionnelle entre un créancier et un débiteur. La dette lie deux parties par une obligation de remboursement.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3356,
+      "analysis_id": 258,
+      "concept": "Eau/Liquide",
+      "sense": "pluie continue",
+      "meaning_type": "etymology",
+      "display_order": 21,
+      "description": "Sens concret lié à la racine. Pluie continue — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3336,
+      "analysis_id": 258,
+      "concept": "Obéissance/Soumission",
+      "sense": "obéir",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.",
+      "status": "probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3337,
+      "analysis_id": 258,
+      "concept": "Obéissance/Soumission",
+      "sense": "se soumettre",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.",
+      "status": "probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3338,
+      "analysis_id": 258,
+      "concept": "Obéissance/Soumission",
+      "sense": "soumission",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.",
+      "status": "probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3339,
+      "analysis_id": 258,
+      "concept": "Obéissance/Soumission",
+      "sense": "assujettissement",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "Acte extérieur et continu de se conformer à une autorité. L'obéissance sort de celui qui obéit et atteint celui à qui on obéit. C'est un acte volontaire et relationnel.",
+      "status": "probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3340,
+      "analysis_id": 258,
+      "concept": "Religion/Système",
+      "sense": "religion",
+      "meaning_type": "etymology",
+      "display_order": 5,
+      "description": "Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.",
+      "status": "retenu",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3341,
+      "analysis_id": 258,
+      "concept": "Religion/Système",
+      "sense": "système de croyances",
+      "meaning_type": "etymology",
+      "display_order": 6,
+      "description": "Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.",
+      "status": "retenu",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3342,
+      "analysis_id": 258,
+      "concept": "Religion/Système",
+      "sense": "pratique",
+      "meaning_type": "etymology",
+      "display_order": 7,
+      "description": "Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.",
+      "status": "retenu",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3343,
+      "analysis_id": 258,
+      "concept": "Religion/Système",
+      "sense": "coutume",
+      "meaning_type": "etymology",
+      "display_order": 8,
+      "description": "Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.",
+      "status": "retenu",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3344,
+      "analysis_id": 258,
+      "concept": "Religion/Système",
+      "sense": "habitude",
+      "meaning_type": "etymology",
+      "display_order": 9,
+      "description": "Ensemble de croyances et de pratiques auxquelles on se conforme. C'est un cadre extérieur permanent qui organise la conduite. Le système est global et englobant.",
+      "status": "retenu",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3345,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "rétribution",
+      "meaning_type": "etymology",
+      "display_order": 10,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3346,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "récompense",
+      "meaning_type": "etymology",
+      "display_order": 11,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3347,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "punition",
+      "meaning_type": "etymology",
+      "display_order": 12,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3348,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "compensation",
+      "meaning_type": "etymology",
+      "display_order": 13,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3349,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "rendre ce qui est dû",
+      "meaning_type": "etymology",
+      "display_order": 14,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3350,
+      "analysis_id": 258,
+      "concept": "Rétribution/Compte",
+      "sense": "jugement",
+      "meaning_type": "etymology",
+      "display_order": 15,
+      "description": "Acte extérieur de rendre à chacun ce qu'il mérite pour ses actes. La rétribution sort de celui qui rétribue et atteint celui qui est rétribué. C'est le résultat final d'une évaluation.",
+      "status": "peu_probable",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3355,
+      "analysis_id": 258,
+      "concept": "Sens isolé/Maladie",
+      "sense": "maladie",
+      "meaning_type": "etymology",
+      "display_order": 20,
+      "description": "Sens concret lié à la racine. Maladie — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+      "status": "nul",
+      "word_key": "dyn"
+    },
+    {
+      "id": 3668,
+      "analysis_id": 283,
+      "concept": "Corps/Anatomie",
+      "sense": "deuxième dans une course",
+      "meaning_type": "etymology",
+      "display_order": 8,
+      "description": "Sens concret lié à la racine. Deuxième dans une course — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+      "status": "nul",
+      "word_key": "slw"
+    },
+    {
+      "id": 3667,
+      "analysis_id": 283,
+      "concept": "Lieu/Géographie",
+      "sense": "milieu",
+      "meaning_type": "etymology",
+      "display_order": 7,
+      "description": "Sens concret lié à la racine. Milieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+      "status": "nul",
+      "word_key": "slw"
+    },
+    {
+      "id": 3661,
+      "analysis_id": 283,
+      "concept": "Prière/Invocation",
+      "sense": "prier",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte extérieur de se tourner vers Dieu par des paroles et des gestes. La prière sort de celui qui prie et se dirige vers Dieu. C'est un acte directionnel, régulier et structuré.",
+      "status": "retenu",
+      "word_key": "slw"
+    },
+    {
+      "id": 3662,
+      "analysis_id": 283,
+      "concept": "Prière/Invocation",
+      "sense": "prière rituelle",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "Acte extérieur de se tourner vers Dieu.",
+      "status": "retenu",
+      "word_key": "slw"
+    },
+    {
+      "id": 3663,
+      "analysis_id": 283,
+      "concept": "Prière/Invocation",
+      "sense": "invoquer",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "Acte extérieur de se tourner vers Dieu.",
+      "status": "retenu",
+      "word_key": "slw"
+    },
+    {
+      "id": 3664,
+      "analysis_id": 283,
+      "concept": "Prière/Invocation",
+      "sense": "bénir",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "Acte extérieur de se tourner vers Dieu.",
+      "status": "retenu",
+      "word_key": "slw"
+    },
+    {
+      "id": 3665,
+      "analysis_id": 283,
+      "concept": "Prière/Invocation",
+      "sense": "lieu de prière",
+      "meaning_type": "etymology",
+      "display_order": 5,
+      "description": "Acte extérieur de se tourner vers Dieu.",
+      "status": "retenu",
+      "word_key": "slw"
+    },
+    {
+      "id": 3666,
+      "analysis_id": 283,
+      "concept": "Proximité/Attachement",
+      "sense": "suivre de près",
+      "meaning_type": "etymology",
+      "display_order": 6,
+      "description": "Acte de rester proche, de suivre de manière continue. La proximité est un état relationnel entre deux parties.",
+      "status": "nul",
+      "word_key": "slw"
+    },
+    {
+      "id": 5516,
+      "analysis_id": 462,
+      "concept": "Calme/Repos",
+      "sense": "être calme",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "État intérieur ou extérieur de tranquillité, d'absence d'agitation — le calme peut être permanent (tempérament paisible) ou temporaire (moment de paix après l'agitation). C'est un état de repos où rien ne bouge, où les forces sont en équilibre. Le calme est ce vers quoi tend l'agité, ce que cherche celui qui est troublé. La nuit apaise, la prière apaise, l'amour entre époux apaise.",
+      "status": "nul",
+      "word_key": "skn"
+    },
+    {
+      "id": 5517,
+      "analysis_id": 462,
+      "concept": "Calme/Repos",
+      "sense": "s'apaiser",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "",
+      "status": "nul",
+      "word_key": "skn"
+    },
+    {
+      "id": 5518,
+      "analysis_id": 462,
+      "concept": "Calme/Repos",
+      "sense": "se reposer",
+      "meaning_type": "etymology",
+      "display_order": 5,
+      "description": "",
+      "status": "nul",
+      "word_key": "skn"
+    },
+    {
+      "id": 5514,
+      "analysis_id": 462,
+      "concept": "Habitation/Demeure",
+      "sense": "habiter",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte de demeurer en un lieu de façon stable, d'en faire sa maison — habiter est directionnel (on s'installe dans un espace) et permanent tant qu'on reste. Habiter c'est transformer un lieu en chez-soi, y trouver repos et sécurité. La demeure est le lieu où l'on revient, où l'on se retire du monde extérieur. Habiter est le contraire d'errer.",
+      "status": "nul",
+      "word_key": "skn"
+    },
+    {
+      "id": 5515,
+      "analysis_id": 462,
+      "concept": "Habitation/Demeure",
+      "sense": "demeurer",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "nul",
+      "word_key": "skn"
+    },
+    {
+      "id": 5519,
+      "analysis_id": 462,
+      "concept": "Sens isolé/Pauvre",
+      "sense": "pauvre",
+      "meaning_type": "etymology",
+      "display_order": 6,
+      "description": "Sens dérivé de l'immobilité forcée : celui qui ne peut pas bouger par manque de moyens.",
+      "status": "retenu",
+      "word_key": "skn"
+    },
+    {
+      "id": 5851,
+      "analysis_id": 552,
+      "concept": "Apparition",
+      "sense": "apparaître",
+      "meaning_type": "etymology",
+      "display_order": 5,
+      "description": "Devenir visible — ce qui apparaît passe de l'invisible au visible. C'est ponctuel dans l'événement.",
+      "status": "nul",
+      "word_key": "ray"
+    },
+    {
+      "id": 5849,
+      "analysis_id": 552,
+      "concept": "Jugement/Avis",
+      "sense": "opinion",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "Ce que l'on pense après réflexion — l'opinion (ra'y) est un jugement intérieur qui peut être juste ou erroné. C'est permanent comme position personnelle sur un sujet.",
+      "status": "nul",
+      "word_key": "ray"
+    },
+    {
+      "id": 5850,
+      "analysis_id": 552,
+      "concept": "Jugement/Avis",
+      "sense": "avis",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "",
+      "status": "nul",
+      "word_key": "ray"
+    },
+    {
+      "id": 5847,
+      "analysis_id": 552,
+      "concept": "Vision/Perception",
+      "sense": "voir",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte de percevoir par les yeux ou par l'esprit — voir est directionnel du voyant vers le vu. C'est ponctuel dans chaque acte de vision mais permanent comme capacité. Voir peut être physique (les yeux du corps) ou spirituel (les yeux du cœur). La vraie vision est celle qui voit les réalités au-delà des apparences.",
+      "status": "retenu",
+      "word_key": "ray"
+    },
+    {
+      "id": 5848,
+      "analysis_id": 552,
+      "concept": "Vision/Perception",
+      "sense": "percevoir",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "ray"
+    },
+    {
+      "id": 6766,
+      "analysis_id": 577,
+      "concept": "Gustation/Nourriture",
+      "sense": "goût",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "La saveur perçue par la langue — le goût (ta'm) est la qualité sensorielle des aliments. C'est intérieur comme perception. Des fleuves dont l'eau ne change pas de goût. La nourriture (ta'âm) est ce qui sustente le corps. Nourrir le pauvre est un acte de piété recommandé.",
+      "status": "retenu",
+      "word_key": "tem"
+    },
+    {
+      "id": 6767,
+      "analysis_id": 577,
+      "concept": "Gustation/Nourriture",
+      "sense": "nourriture",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "tem"
+    },
+    {
+      "id": 6768,
+      "analysis_id": 577,
+      "concept": "Gustation/Nourriture",
+      "sense": "manger",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "tem"
+    },
+    {
+      "id": 6769,
+      "analysis_id": 577,
+      "concept": "Gustation/Nourriture",
+      "sense": "saveur",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "",
+      "status": "retenu",
+      "word_key": "tem"
+    },
+    {
+      "id": 7204,
+      "analysis_id": 654,
+      "concept": "Malédiction/Désastre",
+      "sense": "malheur",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Exclamation de détresse ou de condamnation — wayl est le cri de celui qui souffre ou l'annonce du châtiment. C'est ponctuel comme exclamation mais renvoie à un état permanent de malheur. Malheur (waylun) aux fraudeurs ! Malheur à eux pour ce que leurs mains ont écrit. Le wayl est aussi un lieu en Enfer. C'est l'opposé du salut et de la félicité.",
+      "status": "retenu",
+      "word_key": "wyl"
+    },
+    {
+      "id": 7205,
+      "analysis_id": 654,
+      "concept": "Malédiction/Désastre",
+      "sense": "détresse",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "wyl"
+    },
+    {
+      "id": 7206,
+      "analysis_id": 654,
+      "concept": "Malédiction/Désastre",
+      "sense": "damnation",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "wyl"
+    },
+    {
+      "id": 7227,
+      "analysis_id": 664,
+      "concept": "Orphelinat/Solitude",
+      "sense": "être orphelin",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Être privé de père dans l'enfance — l'orphelin (yatîm) est l'enfant qui a perdu son père avant la puberté. C'est permanent comme état social. Quant à l'orphelin (yatîm), ne le brime pas ! Le Prophète lui-même était orphelin. Prendre soin des orphelins est un devoir majeur. Manger injustement leurs biens c'est avaler du feu.",
+      "status": "retenu",
+      "word_key": "ytm"
+    },
+    {
+      "id": 7228,
+      "analysis_id": 664,
+      "concept": "Orphelinat/Solitude",
+      "sense": "orphelin",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "ytm"
+    },
+    {
+      "id": 7229,
+      "analysis_id": 664,
+      "concept": "Orphelinat/Solitude",
+      "sense": "unique",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "ytm"
+    },
+    {
+      "id": 8337,
+      "analysis_id": 854,
+      "concept": "Déni/Rejet",
+      "sense": "démentir",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "Acte extérieur de déclarer faux ce que quelqu'un dit être vrai. Le déni sort de celui qui dément et atteint celui qui est démenti — c'est directionnel et confrontationnel. Démentir c'est refuser la vérité de l'autre.",
+      "status": "retenu",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 8338,
+      "analysis_id": 854,
+      "concept": "Déni/Rejet",
+      "sense": "nier",
+      "meaning_type": "etymology",
+      "display_order": 5,
+      "description": "",
+      "status": "retenu",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 8339,
+      "analysis_id": 854,
+      "concept": "Déni/Rejet",
+      "sense": "traiter de menteur",
+      "meaning_type": "etymology",
+      "display_order": 6,
+      "description": "",
+      "status": "retenu",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 8334,
+      "analysis_id": 854,
+      "concept": "Mensonge/Fausseté",
+      "sense": "mentir",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte extérieur de dire ce qui est contraire à la réalité en le sachant. Le mensonge sort du menteur et atteint celui qui l'écoute — c'est directionnel et trompeur. Le mensonge est ponctuel dans l'acte mais corrompt la confiance de façon permanente.",
+      "status": "probable",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 8335,
+      "analysis_id": 854,
+      "concept": "Mensonge/Fausseté",
+      "sense": "dire le faux",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "probable",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 8336,
+      "analysis_id": 854,
+      "concept": "Mensonge/Fausseté",
+      "sense": "fausseté",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "probable",
+      "word_key": "kdhb"
+    },
+    {
+      "id": 6009,
+      "analysis_id": 1574,
+      "concept": "Empêchement/Interdiction",
+      "sense": "empêcher",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte de faire obstacle à ce que quelqu'un fasse ou obtienne quelque chose — empêcher (man') est directionnel vers celui qu'on empêche et ce dont on le prive. C'est ponctuel dans l'acte mais peut créer un état permanent d'interdiction. Qui empêche la mosquée de Dieu qu'on y mentionne Son nom ? L'empêcheur se dresse entre le sujet et l'objet de son désir.",
+      "status": "retenu",
+      "word_key": "mne"
+    },
+    {
+      "id": 6010,
+      "analysis_id": 1574,
+      "concept": "Empêchement/Interdiction",
+      "sense": "interdire",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "mne"
+    },
+    {
+      "id": 6011,
+      "analysis_id": 1574,
+      "concept": "Empêchement/Interdiction",
+      "sense": "refuser",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "mne"
+    },
+    {
+      "id": 6012,
+      "analysis_id": 1574,
+      "concept": "Protection/Défense",
+      "sense": "protéger",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "Empêcher le mal d'atteindre quelqu'un — la protection est l'empêchement positif, directionnel vers celui qu'on défend. Dieu est al-Mâni', Celui qui empêche le mal d'atteindre Ses serviteurs.",
+      "status": "nul",
+      "word_key": "mne"
+    },
+    {
+      "id": 6209,
+      "analysis_id": 2308,
+      "concept": "Source/Jaillissement",
+      "sense": "eau jaillissante",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Eau qui coule abondamment d'une source — l'eau courante (ma'în) est permanente comme flux qui ne tarit pas. C'est directionnel de la source vers l'extérieur. Les jardins du Paradis ont des sources d'eau vive. L'eau qui jaillit est signe de vie et de fertilité.",
+      "status": "retenu",
+      "word_key": "men"
+    },
+    {
+      "id": 6210,
+      "analysis_id": 2308,
+      "concept": "Source/Jaillissement",
+      "sense": "source",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "men"
+    },
+    {
+      "id": 6211,
+      "analysis_id": 2308,
+      "concept": "Source/Jaillissement",
+      "sense": "courant",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "men"
+    },
+    {
+      "id": 11808,
+      "analysis_id": 2589,
+      "concept": "Repoussement/Brutalité",
+      "sense": "repousser violemment",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte extérieur de repousser quelqu'un avec brutalité et mépris. Le daaa est un repoussement physique et violent — il sort de celui qui repousse et atteint celui qui est repoussé. C'est directionnel et méprisant. Repousser l'orphelin c'est le traiter comme un objet qu'on écarte.",
+      "status": "retenu",
+      "word_key": "dee2"
+    },
+    {
+      "id": 11809,
+      "analysis_id": 2589,
+      "concept": "Repoussement/Brutalité",
+      "sense": "bousculer",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "dee2"
+    },
+    {
+      "id": 11810,
+      "analysis_id": 2589,
+      "concept": "Repoussement/Brutalité",
+      "sense": "rejeter avec rudesse",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "dee2"
+    },
+    {
+      "id": 11811,
+      "analysis_id": 2590,
+      "concept": "Incitation/Encouragement",
+      "sense": "inciter",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "Acte extérieur de pousser quelqu'un à faire quelque chose de bien. L'incitation sort de celui qui encourage et atteint celui qui est poussé à agir. C'est directionnel et positif. Ne pas inciter c'est ne pas se soucier de l'autre.",
+      "status": "retenu",
+      "word_key": "hdd2"
+    },
+    {
+      "id": 11812,
+      "analysis_id": 2590,
+      "concept": "Incitation/Encouragement",
+      "sense": "encourager",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "hdd2"
+    },
+    {
+      "id": 11813,
+      "analysis_id": 2590,
+      "concept": "Incitation/Encouragement",
+      "sense": "pousser à",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "hdd2"
+    },
+    {
+      "id": 11814,
+      "analysis_id": 2590,
+      "concept": "Incitation/Encouragement",
+      "sense": "exhorter",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "",
+      "status": "retenu",
+      "word_key": "hdd2"
+    },
+    {
+      "id": 11815,
+      "analysis_id": 2591,
+      "concept": "Distraction/Négligence",
+      "sense": "être distrait",
+      "meaning_type": "etymology",
+      "display_order": 1,
+      "description": "État intérieur de celui qui n'est pas attentif à ce qu'il fait. La distraction est un état permanent de celui qui ne prend pas au sérieux — il fait les gestes sans y mettre le cœur. Le sahw est l'opposé de la présence et de la concentration.",
+      "status": "retenu",
+      "word_key": "shw2"
+    },
+    {
+      "id": 11816,
+      "analysis_id": 2591,
+      "concept": "Distraction/Négligence",
+      "sense": "négliger",
+      "meaning_type": "etymology",
+      "display_order": 2,
+      "description": "",
+      "status": "retenu",
+      "word_key": "shw2"
+    },
+    {
+      "id": 11817,
+      "analysis_id": 2591,
+      "concept": "Distraction/Négligence",
+      "sense": "oublier",
+      "meaning_type": "etymology",
+      "display_order": 3,
+      "description": "",
+      "status": "retenu",
+      "word_key": "shw2"
+    },
+    {
+      "id": 11818,
+      "analysis_id": 2591,
+      "concept": "Distraction/Négligence",
+      "sense": "être inattentif",
+      "meaning_type": "etymology",
+      "display_order": 4,
+      "description": "",
+      "status": "retenu",
+      "word_key": "shw2"
+    }
+  ],
+  "daily_phrase_counts": {
+    "dyn": 3,
+    "dee2": 3,
+    "hdd2": 3,
+    "shw2": 3,
+    "kdhb": 3,
+    "ytm": 3,
+    "wyl": 3,
+    "men": 3,
+    "tem": 3,
+    "skn": 3,
+    "slw": 3,
+    "mne": 3,
+    "ray": 3
+  }
+}

@@ -1,0 +1,46 @@
+# Next.js
+.next/
+out/
+build/
+
+# Node
+node_modules/
+
+# Base de données (ne pas versionner les données brutes)
+data/quran.db
+data/quran.db-shm
+data/quran.db-wal
+data/raw/
+v2/quran_analysis.db
+
+# Logs
+npm-debug.log*
+*.log
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+v2/tmp_json/
+v2/tmp_roots_v2.json
+v2/lanes_data/
+v2/lanes_lexicon.sqlite.zip
+v2/components/WordPanel.backup.tsx
+v2/tmpclaude-*
+v2/scripts/tmpclaude-*
+lexicon.db
+
+# Scripts de debug temporaires (probes, fixes, dumps)
+v2/scripts/_*.js
+v2/scripts/_*.mjs
+v2/scripts/_*.txt
+v2/script.js
+v2/debug.txt
+
+# Internals
+.claude/
+data/lanes.db

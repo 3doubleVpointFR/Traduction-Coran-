@@ -1,0 +1,4142 @@
+{
+  "adhn": {
+    "wa_id": 361,
+    "word_key": "adhn",
+    "root_ar": "أ ذ ن",
+    "total_occurrences": 102,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Annonce/Avertissement",
+        "description_first": "Informer de quelque chose à venir. L'avertissement sort de celui qui sait et atteint celui qui doit être prévenu.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "avertir",
+            "description": "Informer de quelque chose à venir. L'avertissement sort de celui qui sait et atteint celui qui doit être prévenu."
+          },
+          {
+            "display_order": 8,
+            "sense": "appel à la prière",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Écoute/Oreille",
+        "description_first": "Acte de prêter attention à un son ou une parole. L'écoute est un acte intérieur réceptif — on ouvre son oreille pour recevoir ce qui vient de l'extérieur.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "écouter",
+            "description": "Acte de prêter attention à un son ou une parole. L'écoute est un acte intérieur réceptif — on ouvre son oreille pour recevoir ce qui vient de l'extérieur."
+          },
+          {
+            "display_order": 2,
+            "sense": "oreille",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "tordre l'oreille",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Permission/Autorisation",
+        "description_first": "Accord donné pour faire quelque chose. La permission sort de celui qui autorise et atteint celui qui demande. C'est un acte de volonté qui ouvre une porte.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "permission",
+            "description": "Accord donné pour faire quelque chose. La permission sort de celui qui autorise et atteint celui qui demande. C'est un acte de volonté qui ouvre une porte."
+          },
+          {
+            "display_order": 5,
+            "sense": "autoriser",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "demander la permission",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "volonté divine",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "alh": {
+    "wa_id": 250,
+    "word_key": "alh",
+    "root_ar": "ا ل ه",
+    "total_occurrences": 2851,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Adoration/Dévotion",
+        "description_first": "Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "adorer",
+            "description": "Acte extérieur dirigé vers l'objet d'adoration. Celui qui adore dirige sa dévotion vers ce qu'il adore. C'est une action relationnelle qui sort de l'adorateur et atteint l'adoré. Peut être ponctuel (un acte de dévotion) ou permanent (une vie de dévotion). Couvre aussi l'acte de faire adorer quelqu'un d'autre et celui de se consacrer soi-même au culte."
+          },
+          {
+            "display_order": 2,
+            "sense": "faire adorer",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "se dévouer au culte",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "diviniser",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Détresse",
+        "description_first": "État intérieur de confusion ou de chagrin intense. La perplexité bloque celui qui la vit, la lamentation déborde vers l'extérieur par des manifestations visibles. Ces états restent principalement chez celui qui les ressent.",
+        "senses": [
+          {
+            "display_order": 11,
+            "sense": "être perplexe",
+            "description": "État intérieur de confusion ou de chagrin intense. La perplexité bloque celui qui la vit, la lamentation déborde vers l'extérieur par des manifestations visibles. Ces états restent principalement chez celui qui les ressent."
+          },
+          {
+            "display_order": 12,
+            "sense": "se lamenter",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Divinité",
+        "description_first": "Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation).",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "divinité",
+            "description": "Position relationnelle : ce qui reçoit l'adoration, ce vers quoi on se tourne avec dévotion. Ce n'est pas une qualité intérieure — c'est une position définie par la relation entre l'adorateur et l'adoré. Le concept existe dans cette relation. Couvre le concept abstrait (divinité), le nom propre (Dieu), et les extensions linguistiques (théologie, exclamation)."
+          },
+          {
+            "display_order": 6,
+            "sense": "divinité (concept)",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "Dieu",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "théologie",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "exclamation divine",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "oui certes",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Domination",
+        "description_first": "Acte de soumettre l'autre, de le réduire en servitude. Acte extérieur dirigé vers l'autre qui change son statut contre sa volonté.",
+        "senses": [
+          {
+            "display_order": 16,
+            "sense": "asservir",
+            "description": "Acte de soumettre l'autre, de le réduire en servitude. Acte extérieur dirigé vers l'autre qui change son statut contre sa volonté."
+          }
+        ]
+      },
+      {
+        "concept": "Refuge/Protection",
+        "description_first": "Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection.",
+        "senses": [
+          {
+            "display_order": 13,
+            "sense": "chercher refuge",
+            "description": "Mouvement vers un protecteur ou acte de protection envers l'autre. Réalité relationnelle qui nécessite deux parties : celui qui cherche le refuge et celui qui l'offre. Couvre les deux directions : chercher la protection et accorder la protection."
+          },
+          {
+            "display_order": 14,
+            "sense": "protéger",
+            "description": null
+          },
+          {
+            "display_order": 15,
+            "sense": "demeurer",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "amn": {
+    "wa_id": 287,
+    "word_key": "amn",
+    "root_ar": "أ م ن",
+    "total_occurrences": 879,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Foi/Adhésion",
+        "description_first": "Acte intérieur d'adhésion et de conviction qui se dirige vers l'extérieur par la déclaration et l'action. La foi est un mouvement intérieur qui atteint l'extérieur par ses conséquences. Elle est permanente une fois établie.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "croire",
+            "description": "Acte intérieur d'adhésion et de conviction qui se dirige vers l'extérieur par la déclaration et l'action. La foi est un mouvement intérieur qui atteint l'extérieur par ses conséquences. Elle est permanente une fois établie."
+          },
+          {
+            "display_order": 8,
+            "sense": "avoir la foi",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "accepter comme vrai",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "croyant",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "confirmer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Garantie/Protection",
+        "description_first": "Acte extérieur de donner une garantie ou une protection. L'acte sort de celui qui protège et atteint celui qui est protégé.",
+        "senses": [
+          {
+            "display_order": 12,
+            "sense": "protéger",
+            "description": "Acte extérieur de donner une garantie ou une protection. L'acte sort de celui qui protège et atteint celui qui est protégé."
+          },
+          {
+            "display_order": 13,
+            "sense": "accorder la sécurité",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sécurité/Confiance",
+        "description_first": "État de tranquillité intérieure qui vient de l'absence de danger. La sécurité peut rester intérieure (sentiment) ou se manifester extérieurement (lieu sûr). C'est un état permanent tant que la cause de sécurité existe.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être en sécurité",
+            "description": "État de tranquillité intérieure qui vient de l'absence de danger. La sécurité peut rester intérieure (sentiment) ou se manifester extérieurement (lieu sûr). C'est un état permanent tant que la cause de sécurité existe."
+          },
+          {
+            "display_order": 2,
+            "sense": "se sentir en sécurité",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "faire confiance",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "confier",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "fidèle",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "lieu sûr",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Amen",
+        "description_first": "Sens concret lié à la racine. Amen — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 14,
+            "sense": "amen",
+            "description": "Sens concret lié à la racine. Amen — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "ard": {
+    "wa_id": 324,
+    "word_key": "ard",
+    "root_ar": "أ ر ض",
+    "total_occurrences": 461,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Sens isolé/Rhume",
+        "description_first": "Sens concret lié à la racine. Rhume — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "rhume",
+            "description": "Sens concret lié à la racine. Rhume — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Tremblement",
+        "description_first": "Sens concret lié à la racine. Tremblement — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "tremblement",
+            "description": "Sens concret lié à la racine. Tremblement — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Terre/Sol",
+        "description_first": "Surface solide sur laquelle on vit et on marche. La terre est extérieure, permanente et universelle — elle est le support de toute activité humaine.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "terre",
+            "description": "Surface solide sur laquelle on vit et on marche. La terre est extérieure, permanente et universelle — elle est le support de toute activité humaine."
+          },
+          {
+            "display_order": 2,
+            "sense": "sol",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "pays",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "bas",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "bkm": {
+    "wa_id": 334,
+    "word_key": "bkm",
+    "root_ar": "ب ك م",
+    "total_occurrences": 6,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Mutisme",
+        "description_first": "État de ne pas pouvoir parler, soit par nature soit par incapacité à formuler sa pensée. Le mutisme est une fermeture de la parole qui empêche toute expression vers l'extérieur.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être muet",
+            "description": "État de ne pas pouvoir parler, soit par nature soit par incapacité à formuler sa pensée. Le mutisme est une fermeture de la parole qui empêche toute expression vers l'extérieur."
+          },
+          {
+            "display_order": 2,
+            "sense": "muet de naissance",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "incapable de s'exprimer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "parole empêchée",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "brq": {
+    "wa_id": 358,
+    "word_key": "brq",
+    "root_ar": "ب ر ق",
+    "total_occurrences": 6,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Éclair/Éclat",
+        "description_first": "Émettre une lumière vive et soudaine. La brillance est un éclat qui sort de la source et atteint les yeux de celui qui regarde. C'est instantané et visible.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "briller",
+            "description": "Émettre une lumière vive et soudaine. La brillance est un éclat qui sort de la source et atteint les yeux de celui qui regarde. C'est instantané et visible."
+          },
+          {
+            "display_order": 2,
+            "sense": "éclair",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "éclat",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "faire briller son épée",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "se diriger vers la foudre",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Écarquiller",
+        "description_first": "Ouvrir grand les yeux pour regarder intensément. Sens physique lié à la brillance du regard.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "écarquiller les yeux",
+            "description": "Ouvrir grand les yeux pour regarder intensément. Sens physique lié à la brillance du regard."
+          }
+        ]
+      }
+    ]
+  },
+  "bsr": {
+    "wa_id": 304,
+    "word_key": "bsr",
+    "root_ar": "ب ص ر",
+    "total_occurrences": 148,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Corps/Anatomie",
+        "description_first": "Sens concret lié à la racine. Peau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "peau",
+            "description": "Sens concret lié à la racine. Peau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Miroir",
+        "description_first": "Sens concret lié à la racine. Miroir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "miroir",
+            "description": "Sens concret lié à la racine. Miroir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Vision/Perception",
+        "description_first": "Acte de percevoir par les yeux. La vision est un acte réceptif — la lumière vient de l'extérieur et atteint celui qui voit. C'est un acte directionnel de l'extérieur vers l'intérieur, permanent tant que l'organe fonctionne.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "voir",
+            "description": "Acte de percevoir par les yeux. La vision est un acte réceptif — la lumière vient de l'extérieur et atteint celui qui voit. C'est un acte directionnel de l'extérieur vers l'intérieur, permanent tant que l'organe fonctionne."
+          },
+          {
+            "display_order": 2,
+            "sense": "regarder",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "vue",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "clairvoyance",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "comprendre",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "preuve visible",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "dhb": {
+    "wa_id": 352,
+    "word_key": "dhb",
+    "root_ar": "ذ ه ب",
+    "total_occurrences": 56,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Départ/Mouvement",
+        "description_first": "Acte de se déplacer d'un point à un autre. Aller est un mouvement directionnel vers l'avant — on quitte un lieu pour en rejoindre un autre.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "aller",
+            "description": "Acte de se déplacer d'un point à un autre. Aller est un mouvement directionnel vers l'avant — on quitte un lieu pour en rejoindre un autre."
+          },
+          {
+            "display_order": 2,
+            "sense": "partir",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "passer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "disparaître",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Doctrine/Voie",
+        "description_first": "Voie de pensée adoptée par un groupe. L'école de pensée est un chemin intellectuel suivi — elle indique la direction de la réflexion.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "école de pensée",
+            "description": "Voie de pensée adoptée par un groupe. L'école de pensée est un chemin intellectuel suivi — elle indique la direction de la réflexion."
+          },
+          {
+            "display_order": 8,
+            "sense": "suivre une doctrine",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Or/Richesse",
+        "description_first": "Métal précieux jaune. L'or est concret, permanent et universellement valorisé. C'est la richesse matérielle par excellence.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "or",
+            "description": "Métal précieux jaune. L'or est concret, permanent et universellement valorisé. C'est la richesse matérielle par excellence."
+          },
+          {
+            "display_order": 6,
+            "sense": "dorer",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "dll": {
+    "wa_id": 268,
+    "word_key": "dll",
+    "root_ar": "ض ل ل",
+    "total_occurrences": 191,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Corps/Anatomie",
+        "description_first": "Sens concret lié à la racine. Sang non vengé — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 33,
+            "sense": "sang non vengé",
+            "description": "Sens concret lié à la racine. Sang non vengé — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Disparition/Perte",
+        "description_first": "Processus de devenir introuvable, de se perdre physiquement ou de périr. La disparition est un état résultant — on n'est plus là. C'est extérieur et observable par les autres.",
+        "senses": [
+          {
+            "display_order": 14,
+            "sense": "disparaître",
+            "description": "Processus de devenir introuvable, de se perdre physiquement ou de périr. La disparition est un état résultant — on n'est plus là. C'est extérieur et observable par les autres."
+          },
+          {
+            "display_order": 15,
+            "sense": "se perdre",
+            "description": null
+          },
+          {
+            "display_order": 16,
+            "sense": "périr",
+            "description": null
+          },
+          {
+            "display_order": 17,
+            "sense": "mourir",
+            "description": null
+          },
+          {
+            "display_order": 18,
+            "sense": "devenir poussière",
+            "description": null
+          },
+          {
+            "display_order": 19,
+            "sense": "être enterré",
+            "description": null
+          },
+          {
+            "display_order": 20,
+            "sense": "perdre quelque chose",
+            "description": null
+          },
+          {
+            "display_order": 21,
+            "sense": "état de perdition",
+            "description": null
+          },
+          {
+            "display_order": 22,
+            "sense": "futilité",
+            "description": null
+          },
+          {
+            "display_order": 23,
+            "sense": "vain",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Égarement/Déviation",
+        "description_first": "Mouvement actif de quitter le bon chemin, de dévier de la direction correcte. L'égarement suppose qu'il y avait un chemin connu et qu'on l'a quitté. C'est un acte extérieur, observable et continu tant qu'on reste hors du chemin.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "s'égarer",
+            "description": "Mouvement actif de quitter le bon chemin, de dévier de la direction correcte. L'égarement suppose qu'il y avait un chemin connu et qu'on l'a quitté. C'est un acte extérieur, observable et continu tant qu'on reste hors du chemin."
+          },
+          {
+            "display_order": 2,
+            "sense": "dévier",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "errer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "perdre son chemin",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "faire égarer",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "être égaré",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "confusion",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "perplexité",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "feindre l'égarement",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "demander l'égarement",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "route qui égare",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "terre qui égare",
+            "description": null
+          },
+          {
+            "display_order": 13,
+            "sense": "cause d'égarement",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Lieu/Géographie",
+        "description_first": "Sens concret lié à la racine. Terre rugueuse — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 29,
+            "sense": "terre rugueuse",
+            "description": "Sens concret lié à la racine. Terre rugueuse — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Minéral/Terre",
+        "description_first": "Sens concret lié à la racine. Pierres — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 30,
+            "sense": "pierres",
+            "description": "Sens concret lié à la racine. Pierres — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Oubli/Enterrement",
+        "description_first": "Processus intérieur de perdre le souvenir ou acte de cacher dans le sol. L'oubli est intérieur (dans la mémoire), l'enterrement est extérieur (dans la terre). Les deux partagent l'idée de rendre invisible.",
+        "senses": [
+          {
+            "display_order": 24,
+            "sense": "oublier",
+            "description": "Processus intérieur de perdre le souvenir ou acte de cacher dans le sol. L'oubli est intérieur (dans la mémoire), l'enterrement est extérieur (dans la terre). Les deux partagent l'idée de rendre invisible."
+          },
+          {
+            "display_order": 25,
+            "sense": "enterrer",
+            "description": null
+          },
+          {
+            "display_order": 26,
+            "sense": "cacher dans le sol",
+            "description": null
+          },
+          {
+            "display_order": 27,
+            "sense": "eau souterraine",
+            "description": null
+          },
+          {
+            "display_order": 28,
+            "sense": "restes d'eau",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Parenté/Famille",
+        "description_first": "Sens concret lié à la racine. Fils illégitime — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 32,
+            "sense": "fils illégitime",
+            "description": "Sens concret lié à la racine. Fils illégitime — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Guide",
+        "description_first": "Sens concret lié à la racine. Guide habile — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 31,
+            "sense": "guide habile",
+            "description": "Sens concret lié à la racine. Guide habile — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Suiveur",
+        "description_first": "Sens concret lié à la racine. Suiveur de femmes — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 34,
+            "sense": "suiveur de femmes",
+            "description": "Sens concret lié à la racine. Suiveur de femmes — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "dwa": {
+    "wa_id": 350,
+    "word_key": "dwa",
+    "root_ar": "ض و أ",
+    "total_occurrences": 6,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Lumière/Éclairage",
+        "description_first": "Acte de produire de la clarté. La lumière sort de sa source et atteint tout ce qui l'entoure. C'est directionnel et transformateur — elle rend visible ce qui était caché.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "donner de la lumière",
+            "description": "Acte de produire de la clarté. La lumière sort de sa source et atteint tout ce qui l'entoure. C'est directionnel et transformateur — elle rend visible ce qui était caché."
+          },
+          {
+            "display_order": 2,
+            "sense": "briller",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "éclairer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "mettre en lumière",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "chercher la lumière",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Observation secrète",
+        "description_first": "Être dans le noir pour voir les autres sans être vu. L'observation secrète est un acte de perception unidirectionnel — on voit sans être vu.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "se tenir dans l'ombre pour observer",
+            "description": "Être dans le noir pour voir les autres sans être vu. L'observation secrète est un acte de perception unidirectionnel — on voit sans être vu."
+          }
+        ]
+      }
+    ]
+  },
+  "elm": {
+    "wa_id": 254,
+    "word_key": "elm",
+    "root_ar": "ع ل م",
+    "total_occurrences": 854,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Lieu/Géographie",
+        "description_first": "Sens concret lié à la racine. Informer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 20,
+            "sense": "informer",
+            "description": "Sens concret lié à la racine. Informer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          },
+          {
+            "display_order": 21,
+            "sense": "nommer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Marque/Signe",
+        "description_first": "Réalité extérieure et observable qui permet d'identifier. Le signe est ce qui se distingue et rend visible. C'est un repère physique ou abstrait qui pointe vers quelque chose.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "marquer",
+            "description": "Réalité extérieure et observable qui permet d'identifier. Le signe est ce qui se distingue et rend visible. C'est un repère physique ou abstrait qui pointe vers quelque chose."
+          },
+          {
+            "display_order": 9,
+            "sense": "signe",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "drapeau",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "montagne",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "repère",
+            "description": null
+          },
+          {
+            "display_order": 13,
+            "sense": "étendard",
+            "description": null
+          },
+          {
+            "display_order": 14,
+            "sense": "lèvre fendue",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Monde/Création",
+        "description_first": "L'ensemble des êtres créés, la totalité de ce qui existe. Le monde est extérieur, observable et englobant. Le Lane's lie ce mot à la racine \"marquer\" : le monde est le signe par lequel on connaît le Créateur.",
+        "senses": [
+          {
+            "display_order": 15,
+            "sense": "monde",
+            "description": "L'ensemble des êtres créés, la totalité de ce qui existe. Le monde est extérieur, observable et englobant. Le Lane's lie ce mot à la racine \"marquer\" : le monde est le signe par lequel on connaît le Créateur."
+          },
+          {
+            "display_order": 16,
+            "sense": "les mondes",
+            "description": null
+          },
+          {
+            "display_order": 17,
+            "sense": "ensemble des créatures",
+            "description": null
+          },
+          {
+            "display_order": 18,
+            "sense": "univers",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Savoir/Connaissance",
+        "description_first": "Réalité intérieure de la compréhension et de la certitude. Le savoir est un état permanent qui réside dans l'esprit de celui qui sait. C'est la capacité de distinguer le vrai du faux par la compréhension profonde.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "savoir",
+            "description": "Réalité intérieure de la compréhension et de la certitude. Le savoir est un état permanent qui réside dans l'esprit de celui qui sait. C'est la capacité de distinguer le vrai du faux par la compréhension profonde."
+          },
+          {
+            "display_order": 2,
+            "sense": "connaître",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "être informé",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "certitude",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "savant",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "science",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "enseignement",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Enseigner",
+        "description_first": "Sens concret lié à la racine. Enseigner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 19,
+            "sense": "enseigner",
+            "description": "Sens concret lié à la racine. Enseigner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Homonyme",
+        "description_first": "Sens concret lié à la racine. Homonyme — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 22,
+            "sense": "homonyme",
+            "description": "Sens concret lié à la racine. Homonyme — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "emh": {
+    "wa_id": 323,
+    "word_key": "emh",
+    "root_ar": "ع م ه",
+    "total_occurrences": 7,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Confusion/Égarement",
+        "description_first": "État intérieur de trouble où l'on ne voit pas le droit chemin. La confusion est un état passif et permanent tant qu'on ne retrouve pas la direction. C'est l'opposé de la guidance.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être confus",
+            "description": "État intérieur de trouble où l'on ne voit pas le droit chemin. La confusion est un état passif et permanent tant qu'on ne retrouve pas la direction. C'est l'opposé de la guidance."
+          },
+          {
+            "display_order": 2,
+            "sense": "être perplexe",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "errer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "aller et venir dans la confusion",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "sans repères",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Injustice",
+        "description_first": "Acte extérieur de traiter quelqu'un injustement faute d'information fiable. L'injustice par ignorance sort de celui qui juge mal et atteint celui qui est lésé.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "faire du tort par ignorance",
+            "description": "Acte extérieur de traiter quelqu'un injustement faute d'information fiable. L'injustice par ignorance sort de celui qui juge mal et atteint celui qui est lésé."
+          }
+        ]
+      }
+    ]
+  },
+  "emy": {
+    "wa_id": 335,
+    "word_key": "emy",
+    "root_ar": "ع م ى",
+    "total_occurrences": 25,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Cécité/Aveuglement",
+        "description_first": "État de ne pas voir, physiquement ou mentalement. La cécité est une fermeture des yeux qui coupe celui qui en souffre du monde visible. C'est un état permanent qui empêche toute perception visuelle.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être aveugle",
+            "description": "État de ne pas voir, physiquement ou mentalement. La cécité est une fermeture des yeux qui coupe celui qui en souffre du monde visible. C'est un état permanent qui empêche toute perception visuelle."
+          },
+          {
+            "display_order": 2,
+            "sense": "rendre aveugle",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "aveugle",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "aveugle d'esprit",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "feindre l'aveuglement",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Obscurité/Confusion",
+        "description_first": "Rendre une information inapparente ou difficile à comprendre. L'obscurcissement est un voile mis sur le sens — il empêche la compréhension.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "obscurcir",
+            "description": "Rendre une information inapparente ou difficile à comprendre. L'obscurcissement est un voile mis sur le sens — il empêche la compréhension."
+          },
+          {
+            "display_order": 7,
+            "sense": "errer",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "erreur",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "orgueil",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "sans repères",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Choisir",
+        "description_first": "Sens concret lié à la racine. Choisir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 12,
+            "sense": "choisir",
+            "description": "Sens concret lié à la racine. Choisir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Nuages",
+        "description_first": "Nuages épais qui ressemblent à de la fumée au sommet des montagnes. Sens météorologique concret.",
+        "senses": [
+          {
+            "display_order": 11,
+            "sense": "nuages denses",
+            "description": "Nuages épais qui ressemblent à de la fumée au sommet des montagnes. Sens météorologique concret."
+          }
+        ]
+      }
+    ]
+  },
+  "fsd": {
+    "wa_id": 318,
+    "word_key": "fsd",
+    "root_ar": "ف س د",
+    "total_occurrences": 50,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Corruption/Désordre",
+        "description_first": "Acte extérieur de détruire l'ordre juste. La corruption sort de celui qui corrompt et atteint ce qui est corrompu. C'est un acte directionnel qui transforme le bon en mauvais, l'ordre en désordre.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "corrompre",
+            "description": "Acte extérieur de détruire l'ordre juste. La corruption sort de celui qui corrompt et atteint ce qui est corrompu. C'est un acte directionnel qui transforme le bon en mauvais, l'ordre en désordre."
+          },
+          {
+            "display_order": 2,
+            "sense": "gâter",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "désordre",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "corrupteur",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "corruption",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "détériorer",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "hdr": {
+    "wa_id": 815,
+    "word_key": "hdr",
+    "root_ar": "ح ض ر",
+    "total_occurrences": 25,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Mort/Destruction",
+        "description_first": "Sens concret lié à la racine. Mort (la mort se présente) — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "mort (la mort se présente)",
+            "description": "Sens concret lié à la racine. Mort (la mort se présente) — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Présence/Témoignage",
+        "description_first": "État de celui qui est là, dans le lieu et le moment. La présence est un état qui lie la personne à l'endroit — elle est permanente tant que la personne reste. Être présent c'est être disponible et témoin de ce qui se passe.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être présent",
+            "description": "État de celui qui est là, dans le lieu et le moment. La présence est un état qui lie la personne à l'endroit — elle est permanente tant que la personne reste. Être présent c'est être disponible et témoin de ce qui se passe."
+          },
+          {
+            "display_order": 2,
+            "sense": "assister à",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "venir",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "se présenter",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sédentarité/Civilisation",
+        "description_first": "Le lieu où les gens résident de façon permanente, par opposition au désert. La sédentarité est un état de stabilité — c'est l'installation durable en un lieu qui crée la civilisation et la communauté.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "zone habitée (hadar)",
+            "description": "Le lieu où les gens résident de façon permanente, par opposition au désert. La sédentarité est un état de stabilité — c'est l'installation durable en un lieu qui crée la civilisation et la communauté."
+          },
+          {
+            "display_order": 6,
+            "sense": "sédentaire (vs. nomade)",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "hdy": {
+    "wa_id": 261,
+    "word_key": "hdy",
+    "root_ar": "ه د ي",
+    "total_occurrences": 316,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Conduite/Comportement",
+        "description_first": "Manière d'agir et de se comporter. La conduite est extérieure et observable. C'est un état permanent qui reflète le caractère de la personne.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "conduite",
+            "description": "Manière d'agir et de se comporter. La conduite est extérieure et observable. C'est un état permanent qui reflète le caractère de la personne."
+          },
+          {
+            "display_order": 7,
+            "sense": "manière d'agir",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "comportement calme",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Don/Offrande",
+        "description_first": "Acte extérieur de donner quelque chose à quelqu'un. Le don sort de celui qui donne et atteint celui qui reçoit. C'est un acte ponctuel et volontaire.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "cadeau",
+            "description": "Acte extérieur de donner quelque chose à quelqu'un. Le don sort de celui qui donne et atteint celui qui reçoit. C'est un acte ponctuel et volontaire."
+          },
+          {
+            "display_order": 10,
+            "sense": "offrande",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "sacrifice",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "présent",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Guidance/Direction",
+        "description_first": "Acte extérieur de montrer le chemin correct à quelqu'un. La guidance sort de celui qui guide et atteint celui qui est guidé. C'est un acte relationnel qui suppose une connaissance du bon chemin et la volonté de le partager.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "guider",
+            "description": "Acte extérieur de montrer le chemin correct à quelqu'un. La guidance sort de celui qui guide et atteint celui qui est guidé. C'est un acte relationnel qui suppose une connaissance du bon chemin et la volonté de le partager."
+          },
+          {
+            "display_order": 2,
+            "sense": "diriger vers la bonne voie",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "montrer le chemin",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "guidance",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "se guider soi-même",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Parenté/Famille",
+        "description_first": "Sens concret lié à la racine. Conduire une mariée — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 13,
+            "sense": "conduire une mariée",
+            "description": "Sens concret lié à la racine. Conduire une mariée — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Repentance",
+        "description_first": "Sens concret lié à la racine. Repentance — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 14,
+            "sense": "repentance",
+            "description": "Sens concret lié à la racine. Repentance — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "hwt": {
+    "wa_id": 365,
+    "word_key": "hwt",
+    "root_ar": "ح و ط",
+    "total_occurrences": 28,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Protection/Encerclement",
+        "description_first": "Acte de veiller sur quelqu'un ou quelque chose pour le protéger. La garde est un acte extérieur permanent qui empêche le mal d'atteindre ce qui est gardé.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "garder",
+            "description": "Acte de veiller sur quelqu'un ou quelque chose pour le protéger. La garde est un acte extérieur permanent qui empêche le mal d'atteindre ce qui est gardé."
+          },
+          {
+            "display_order": 2,
+            "sense": "protéger",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "entourer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "encercler",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "mur",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "englober",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Ruser",
+        "description_first": "Essayer de tourner quelqu'un par la ruse. Sens isolé lié à l'idée de contourner.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "ruser pour convaincre",
+            "description": "Essayer de tourner quelqu'un par la ruse. Sens isolé lié à l'idée de contourner."
+          }
+        ]
+      }
+    ]
+  },
+  "hza": {
+    "wa_id": 320,
+    "word_key": "hza",
+    "root_ar": "ه ز أ",
+    "total_occurrences": 34,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Moquerie/Dérision",
+        "description_first": "Acte extérieur de tourner quelqu'un en ridicule. La moquerie sort de celui qui moque et atteint celui qui est moqué. C'est directionnel et dégradant — elle rabaisse l'autre.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "se moquer",
+            "description": "Acte extérieur de tourner quelqu'un en ridicule. La moquerie sort de celui qui moque et atteint celui qui est moqué. C'est directionnel et dégradant — elle rabaisse l'autre."
+          },
+          {
+            "display_order": 2,
+            "sense": "railler",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "ridiculiser",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "celui dont on se moque",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "moqueur",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Briser",
+        "description_first": "Sens concret lié à la racine. Briser — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "briser",
+            "description": "Sens concret lié à la racine. Briser — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Froid",
+        "description_first": "Sens concret lié à la racine. Froid intense — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "froid intense",
+            "description": "Sens concret lié à la racine. Froid intense — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "jel": {
+    "wa_id": 359,
+    "word_key": "jel",
+    "root_ar": "ج ع ل",
+    "total_occurrences": 346,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Action/Réalisation",
+        "description_first": "Acte extérieur de produire quelque chose ou de transformer un état. L'action sort de celui qui agit et transforme la réalité. C'est l'acte fondamental — faire, c'est passer de l'intention au résultat.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "faire",
+            "description": "Acte extérieur de produire quelque chose ou de transformer un état. L'action sort de celui qui agit et transforme la réalité. C'est l'acte fondamental — faire, c'est passer de l'intention au résultat."
+          },
+          {
+            "display_order": 2,
+            "sense": "rendre",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "placer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "commencer à",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "établir",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "créer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Récompense",
+        "description_first": "Sens concret lié à la racine. Récompense — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "récompense",
+            "description": "Sens concret lié à la racine. Récompense — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "kfr": {
+    "wa_id": 294,
+    "word_key": "kfr",
+    "root_ar": "ك ف ر",
+    "total_occurrences": 525,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Couverture/Dissimulation",
+        "description_first": "Acte physique de cacher quelque chose en le recouvrant. La couverture est un acte extérieur qui empêche de voir ce qui est dessous. Le sens physique premier est concret : la nuit couvre le jour, la terre couvre la graine.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "couvrir",
+            "description": "Acte physique de cacher quelque chose en le recouvrant. La couverture est un acte extérieur qui empêche de voir ce qui est dessous. Le sens physique premier est concret : la nuit couvre le jour, la terre couvre la graine."
+          },
+          {
+            "display_order": 2,
+            "sense": "cacher",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "la nuit qui couvre",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Expiation/Réparation",
+        "description_first": "Acte extérieur de compenser une faute par une action réparatrice. L'expiation sort de celui qui répare et efface la faute.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "expier",
+            "description": "Acte extérieur de compenser une faute par une action réparatrice. L'expiation sort de celui qui répare et efface la faute."
+          },
+          {
+            "display_order": 10,
+            "sense": "effacer les péchés",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Rejet/Ingratitude",
+        "description_first": "Acte extérieur de refuser de reconnaître. Le rejet sort de celui qui nie et atteint ce qui est nié. C'est un acte directionnel et volontaire qui refuse la réalité de quelque chose.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "nier",
+            "description": "Acte extérieur de refuser de reconnaître. Le rejet sort de celui qui nie et atteint ce qui est nié. C'est un acte directionnel et volontaire qui refuse la réalité de quelque chose."
+          },
+          {
+            "display_order": 5,
+            "sense": "être ingrat",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "renier un bienfait",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "rejeter",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "mécréant",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Cultivateur",
+        "description_first": "Sens concret lié à la racine. Cultivateur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 11,
+            "sense": "cultivateur",
+            "description": "Sens concret lié à la racine. Cultivateur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Goudron",
+        "description_first": "Sens concret lié à la racine. Goudron — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 12,
+            "sense": "goudron",
+            "description": "Sens concret lié à la racine. Goudron — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Village",
+        "description_first": "Sens concret lié à la racine. Village — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 13,
+            "sense": "village",
+            "description": "Sens concret lié à la racine. Village — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "kll": {
+    "wa_id": 372,
+    "word_key": "kll",
+    "root_ar": "ك ل ل",
+    "total_occurrences": 377,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Charge/Dépendance",
+        "description_first": "Ce qui pèse sur quelqu'un. Le fardeau est une charge extérieure qui accable celui qui la porte — il est lourd et constant.",
+        "senses": [
+          {
+            "display_order": 3,
+            "sense": "fardeau",
+            "description": "Ce qui pèse sur quelqu'un. Le fardeau est une charge extérieure qui accable celui qui la porte — il est lourd et constant."
+          },
+          {
+            "display_order": 4,
+            "sense": "personne à charge",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Corps/Anatomie",
+        "description_first": "Sens concret lié à la racine. Couronner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "couronner",
+            "description": "Sens concret lié à la racine. Couronner — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Émoussement/Faiblesse",
+        "description_first": "Perdre son tranchant ou son acuité. L'émoussement est un état de perte de force ou de netteté. Ce qui est émoussé ne coupe plus et ne perce plus.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "s'émousser",
+            "description": "Perdre son tranchant ou son acuité. L'émoussement est un état de perte de force ou de netteté. Ce qui est émoussé ne coupe plus et ne perce plus."
+          },
+          {
+            "display_order": 2,
+            "sense": "être fatigué",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Agacer",
+        "description_first": "Provoquer une sensation désagréable dans les dents. Sens physique concret isolé.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "agacer les dents",
+            "description": "Provoquer une sensation désagréable dans les dents. Sens physique concret isolé."
+          }
+        ]
+      }
+    ]
+  },
+  "kwd": {
+    "wa_id": 630,
+    "word_key": "kwd",
+    "root_ar": "ك و د",
+    "total_occurrences": 24,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Imminence/Proximité",
+        "description_first": "État de ce qui va se produire sans s'être encore produit — kâda/yakâdu marque l'imminence. C'est ponctuel comme moment de bascule. Le ciel est sur le point (takâdu) de se fendre. L'huile brillerait presque (yakâdu) même sans feu. Kâda exprime la proximité extrême d'un événement qui n'a pas encore basculé dans l'être.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être sur le point de",
+            "description": "État de ce qui va se produire sans s'être encore produit — kâda/yakâdu marque l'imminence. C'est ponctuel comme moment de bascule. Le ciel est sur le point (takâdu) de se fendre. L'huile brillerait presque (yakâdu) même sans feu. Kâda exprime la proximité extrême d'un événement qui n'a pas encore basculé dans l'être."
+          },
+          {
+            "display_order": 2,
+            "sense": "presque",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "faillir",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "kwn": {
+    "wa_id": 2577,
+    "word_key": "kwn",
+    "root_ar": null,
+    "total_occurrences": 1390,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Être/Existence",
+        "description_first": "Le verbe fondamental d'existence et d'attribution. Quand il est incomplet (suivi d'un attribut), il sert de support grammatical : il porte le temps et la négation sans décrire une réalité en soi. Quand il est complet, il décrit le passage du néant à l'être.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être (verbe incomplet)",
+            "description": "Le verbe fondamental d'existence et d'attribution. Quand il est incomplet (suivi d'un attribut), il sert de support grammatical : il porte le temps et la négation sans décrire une réalité en soi. Quand il est complet, il décrit le passage du néant à l'être."
+          },
+          {
+            "display_order": 2,
+            "sense": "venir à l'existence",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Humilité/Soumission",
+        "description_first": "État intérieur de petitesse et d'abaissement volontaire. C'est un état ressenti par celui qui se soumet.",
+        "senses": [
+          {
+            "display_order": 3,
+            "sense": "être humble soumis",
+            "description": "État intérieur de petitesse et d'abaissement volontaire. C'est un état ressenti par celui qui se soumet."
+          }
+        ]
+      },
+      {
+        "concept": "Lieu/État",
+        "description_first": "Réalité spatiale ou situationnelle — l'endroit ou la condition dans laquelle on se trouve.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "lieu",
+            "description": "Réalité spatiale ou situationnelle — l'endroit ou la condition dans laquelle on se trouve."
+          },
+          {
+            "display_order": 5,
+            "sense": "reste à ta place",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "état condition",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "motif raison",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "devenir comme",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "lqy": {
+    "wa_id": 327,
+    "word_key": "lqy",
+    "root_ar": "ل ق ي",
+    "total_occurrences": 146,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Jeter/Lancer",
+        "description_first": "Acte extérieur de projeter quelque chose loin de soi. Le lancer sort de la main et atteint une cible. C'est directionnel et ponctuel.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "jeter",
+            "description": "Acte extérieur de projeter quelque chose loin de soi. Le lancer sort de la main et atteint une cible. C'est directionnel et ponctuel."
+          },
+          {
+            "display_order": 5,
+            "sense": "lancer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Rencontre/Face à face",
+        "description_first": "Acte extérieur de se trouver face à face avec quelqu'un ou quelque chose. La rencontre est directionnelle — les deux parties convergent.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "rencontrer",
+            "description": "Acte extérieur de se trouver face à face avec quelqu'un ou quelque chose. La rencontre est directionnelle — les deux parties convergent."
+          },
+          {
+            "display_order": 2,
+            "sense": "trouver",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "recevoir",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Inspirer",
+        "description_first": "Sens concret lié à la racine. Inspirer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "inspirer",
+            "description": "Sens concret lié à la racine. Inspirer — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "mdd": {
+    "wa_id": 321,
+    "word_key": "mdd",
+    "root_ar": "م د د",
+    "total_occurrences": 32,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Abondance/Accroissement",
+        "description_first": "Faire croître en quantité. L'augmentation est un mouvement vers le plus qui transforme l'état initial.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "augmenter",
+            "description": "Faire croître en quantité. L'augmentation est un mouvement vers le plus qui transforme l'état initial."
+          },
+          {
+            "display_order": 9,
+            "sense": "rendre abondant",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "remplir",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Aide/Renfort",
+        "description_first": "Acte extérieur de fournir un soutien à quelqu'un. L'aide sort de celui qui aide et atteint celui qui est aidé. C'est directionnel et volontaire.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "aider",
+            "description": "Acte extérieur de fournir un soutien à quelqu'un. L'aide sort de celui qui aide et atteint celui qui est aidé. C'est directionnel et volontaire."
+          },
+          {
+            "display_order": 6,
+            "sense": "renforcer",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "troupe de renfort",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Écriture/Langage",
+        "description_first": "Sens concret lié à la racine. Encre — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 14,
+            "sense": "encre",
+            "description": "Sens concret lié à la racine. Encre — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Extension/Étirement",
+        "description_first": "Acte physique de tirer vers soi ou dans une direction. Le tirage est extérieur, directionnel et modifie la position de l'objet tiré.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "tirer",
+            "description": "Acte physique de tirer vers soi ou dans une direction. Le tirage est extérieur, directionnel et modifie la position de l'objet tiré."
+          },
+          {
+            "display_order": 2,
+            "sense": "étendre",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "étirer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "allonger",
+            "description": null
+          },
+          {
+            "display_order": 13,
+            "sense": "grand",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Mesure/Durée",
+        "description_first": "Étendue de temps. La durée est une extension appliquée au temps — elle a un début et une fin.",
+        "senses": [
+          {
+            "display_order": 11,
+            "sense": "durée",
+            "description": "Étendue de temps. La durée est une extension appliquée au temps — elle a un début et une fin."
+          },
+          {
+            "display_order": 12,
+            "sense": "limite de temps",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Pus",
+        "description_first": "Sens concret lié à la racine. Pus — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 15,
+            "sense": "pus",
+            "description": "Sens concret lié à la racine. Pus — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "mshy": {
+    "wa_id": 368,
+    "word_key": "mshy",
+    "root_ar": "م ش ي",
+    "total_occurrences": 23,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Marche/Déplacement",
+        "description_first": "Acte de se déplacer à pied. La marche est un mouvement extérieur, volontaire et continu qui transporte le corps d'un point à un autre.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "marcher",
+            "description": "Acte de se déplacer à pied. La marche est un mouvement extérieur, volontaire et continu qui transporte le corps d'un point à un autre."
+          },
+          {
+            "display_order": 2,
+            "sense": "aller à pied",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "marcher lentement",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "marcher avec quelqu'un",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "se promener",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Purger",
+        "description_first": "Faire évacuer les intestins. Sens médical concret isolé lié au mouvement interne.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "purger",
+            "description": "Faire évacuer les intestins. Sens médical concret isolé lié au mouvement interne."
+          }
+        ]
+      }
+    ]
+  },
+  "mvl": {
+    "wa_id": 2599,
+    "word_key": "mvl",
+    "root_ar": "م ث ل",
+    "total_occurrences": 169,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Représentation/Image",
+        "description_first": "Sens concret lié à la racine. Forme visible qui représente quelque chose — l'image ou la statue est une matérialisation de la ressemblance.",
+        "senses": [
+          {
+            "display_order": 10,
+            "sense": "statue",
+            "description": "Sens concret lié à la racine. Forme visible qui représente quelque chose — l'image ou la statue est une matérialisation de la ressemblance."
+          },
+          {
+            "display_order": 11,
+            "sense": "image",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "représentation",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Ressemblance/Identité",
+        "description_first": "État de correspondance entre deux choses — la ressemblance est un lien entre deux réalités qui partagent des caractéristiques. C'est relationnel et peut être permanent ou temporaire.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "ressembler",
+            "description": "État de correspondance entre deux choses — la ressemblance est un lien entre deux réalités qui partagent des caractéristiques. C'est relationnel et peut être permanent ou temporaire."
+          },
+          {
+            "display_order": 7,
+            "sense": "être semblable",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "pareil",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "équivalent",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Similitude/Comparaison",
+        "description_first": "Acte de mettre en parallèle deux réalités pour éclairer l'une par l'autre — le mathal est un exemple qui sort de celui qui compare et atteint celui qui écoute. C'est directionnel et pédagogique. Le mathal est permanent comme outil d'explication. La parabole éclaire l'inconnu par le connu.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "exemple",
+            "description": "Acte de mettre en parallèle deux réalités pour éclairer l'une par l'autre — le mathal est un exemple qui sort de celui qui compare et atteint celui qui écoute. C'est directionnel et pédagogique. Le mathal est permanent comme outil d'explication. La parabole éclaire l'inconnu par le connu."
+          },
+          {
+            "display_order": 2,
+            "sense": "parabole",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "similitude",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "comparaison",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "semblable",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "mwt": {
+    "wa_id": 364,
+    "word_key": "mwt",
+    "root_ar": "م و ت",
+    "total_occurrences": 165,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Mort/Cessation",
+        "description_first": "Acte de cesser de vivre. La mort est un événement ponctuel qui met fin à l'état de vie. C'est irréversible et objectif — la personne passe de l'état vivant à l'état mort.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "mourir",
+            "description": "Acte de cesser de vivre. La mort est un événement ponctuel qui met fin à l'état de vie. C'est irréversible et objectif — la personne passe de l'état vivant à l'état mort."
+          },
+          {
+            "display_order": 2,
+            "sense": "mort",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "tuer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "mortel",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "terre morte",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Immobile",
+        "description_first": "Sens concret lié à la racine. Immobile — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "immobile",
+            "description": "Sens concret lié à la racine. Immobile — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "nwr": {
+    "wa_id": 349,
+    "word_key": "nwr",
+    "root_ar": "ن و ر",
+    "total_occurrences": 194,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Lumière/Clarté",
+        "description_first": "Réalité extérieure qui rend visible ce qui était caché dans l'obscurité. La lumière sort de sa source et atteint tout ce qu'elle éclaire. Elle est permanente tant que la source existe.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "lumière",
+            "description": "Réalité extérieure qui rend visible ce qui était caché dans l'obscurité. La lumière sort de sa source et atteint tout ce qu'elle éclaire. Elle est permanente tant que la source existe."
+          },
+          {
+            "display_order": 2,
+            "sense": "éclairer",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "feu",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "guider par la lumière",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Fleur",
+        "description_first": "Sens concret lié à la racine. Fleur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "fleur",
+            "description": "Sens concret lié à la racine. Fleur — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Fuir",
+        "description_first": "Sens concret lié à la racine. Fuir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "fuir",
+            "description": "Sens concret lié à la racine. Fuir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "nws": {
+    "wa_id": 303,
+    "word_key": "nws",
+    "root_ar": "ن و س",
+    "total_occurrences": 241,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Humanité/Peuple",
+        "description_first": "Ensemble des êtres humains considérés collectivement. Les gens sont une réalité extérieure, visible et permanente — ils forment le tissu social dans lequel on vit.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "gens",
+            "description": "Ensemble des êtres humains considérés collectivement. Les gens sont une réalité extérieure, visible et permanente — ils forment le tissu social dans lequel on vit."
+          },
+          {
+            "display_order": 2,
+            "sense": "êtres humains",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "peuple",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Perception/Visibilité",
+        "description_first": "Acte de percevoir à distance. La perception est un acte réceptif directionnel. Ce concept est central dans la compréhension du verset où il apparaît.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "voir de loin",
+            "description": "Acte de percevoir à distance. La perception est un acte réceptif directionnel. Ce concept est central dans la compréhension du verset où il apparaît."
+          },
+          {
+            "display_order": 5,
+            "sense": "être visible",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Être",
+        "description_first": "Sens concret lié à la racine. Être agité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "être agité",
+            "description": "Sens concret lié à la racine. Être agité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Oublier",
+        "description_first": "Sens concret lié à la racine. Oublier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "oublier",
+            "description": "Sens concret lié à la racine. Oublier — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "qdr": {
+    "wa_id": 373,
+    "word_key": "qdr",
+    "root_ar": "ق د ر",
+    "total_occurrences": 132,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Mesure/Détermination",
+        "description_first": "Acte de calculer la quantité, la taille ou la proportion de quelque chose. La mesure est un acte rationnel et objectif qui donne une valeur précise aux choses.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "mesurer",
+            "description": "Acte de calculer la quantité, la taille ou la proportion de quelque chose. La mesure est un acte rationnel et objectif qui donne une valeur précise aux choses."
+          },
+          {
+            "display_order": 2,
+            "sense": "déterminer",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "décréter",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "destin",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "valeur",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Puissance/Capacité",
+        "description_first": "Avoir la capacité de faire quelque chose. Le pouvoir est une force intérieure qui se manifeste par la capacité d'agir sur le monde extérieur.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "pouvoir",
+            "description": "Avoir la capacité de faire quelque chose. Le pouvoir est une force intérieure qui se manifeste par la capacité d'agir sur le monde extérieur."
+          },
+          {
+            "display_order": 5,
+            "sense": "être capable",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Marmite",
+        "description_first": "Sens concret lié à la racine. Marmite — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "marmite",
+            "description": "Sens concret lié à la racine. Marmite — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "qwl": {
+    "wa_id": 307,
+    "word_key": "qwl",
+    "root_ar": "ق و ل",
+    "total_occurrences": 1722,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Corps/Anatomie",
+        "description_first": "Sens concret lié à la racine. Troupeau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 10,
+            "sense": "troupeau",
+            "description": "Sens concret lié à la racine. Troupeau — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Parole/Énonciation",
+        "description_first": "Acte extérieur de produire des mots pour communiquer. La parole sort de celui qui parle et atteint celui qui écoute. C'est un acte directionnel, ponctuel mais avec des effets permanents.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "dire",
+            "description": "Acte extérieur de produire des mots pour communiquer. La parole sort de celui qui parle et atteint celui qui écoute. C'est un acte directionnel, ponctuel mais avec des effets permanents."
+          },
+          {
+            "display_order": 2,
+            "sense": "parler",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "parole",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "discours",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "affirmer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Pensée/Avis",
+        "description_first": "État intérieur de jugement sur quelque chose. L'opinion est un jugement rationnel qui peut rester intérieur ou se manifester par la parole.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "opinion",
+            "description": "État intérieur de jugement sur quelque chose. L'opinion est un jugement rationnel qui peut rester intérieur ou se manifester par la parole."
+          },
+          {
+            "display_order": 7,
+            "sense": "avis",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "doctrine",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Puissance",
+        "description_first": "Sens concret lié à la racine. Puissance — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "puissance",
+            "description": "Sens concret lié à la racine. Puissance — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "qwm": {
+    "wa_id": 263,
+    "word_key": "qwm",
+    "root_ar": "ق و م",
+    "total_occurrences": 660,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Gestion/Administration",
+        "description_first": "Acte extérieur de prendre en charge une affaire et de la diriger. Celui qui gère se lève pour s'occuper de quelque chose. C'est un acte continu et responsable.",
+        "senses": [
+          {
+            "display_order": 13,
+            "sense": "gérer",
+            "description": "Acte extérieur de prendre en charge une affaire et de la diriger. Celui qui gère se lève pour s'occuper de quelque chose. C'est un acte continu et responsable."
+          },
+          {
+            "display_order": 14,
+            "sense": "administrer",
+            "description": null
+          },
+          {
+            "display_order": 15,
+            "sense": "prendre en charge",
+            "description": null
+          },
+          {
+            "display_order": 16,
+            "sense": "diriger",
+            "description": null
+          },
+          {
+            "display_order": 17,
+            "sense": "veiller sur",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Lieu/Géographie",
+        "description_first": "Sens concret lié à la racine. Lieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 26,
+            "sense": "lieu",
+            "description": "Sens concret lié à la racine. Lieu — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Peuple/Communauté",
+        "description_first": "Groupe de personnes qui se tiennent ensemble. Le peuple est une réalité extérieure, observable et permanente. Le lien est celui de la communauté, pas de la parenté.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "peuple",
+            "description": "Groupe de personnes qui se tiennent ensemble. Le peuple est une réalité extérieure, observable et permanente. Le lien est celui de la communauté, pas de la parenté."
+          },
+          {
+            "display_order": 9,
+            "sense": "communauté",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "tribu",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "nation",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "groupe",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Résidence",
+        "description_first": "Sens concret lié à la racine. Résidence — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 27,
+            "sense": "résidence",
+            "description": "Sens concret lié à la racine. Résidence — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Station",
+        "description_first": "Sens concret lié à la racine. Station — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 28,
+            "sense": "station",
+            "description": "Sens concret lié à la racine. Station — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Subsistance",
+        "description_first": "Ce qui permet de survivre, la nourriture qui soutient la vie. C'est ce grâce à quoi on se tient debout (on survit).",
+        "senses": [
+          {
+            "display_order": 23,
+            "sense": "subsistance",
+            "description": "Ce qui permet de survivre, la nourriture qui soutient la vie. C'est ce grâce à quoi on se tient debout (on survit)."
+          },
+          {
+            "display_order": 24,
+            "sense": "nourriture",
+            "description": null
+          },
+          {
+            "display_order": 25,
+            "sense": "ce qui fait vivre",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Valeur/Mesure",
+        "description_first": "Réalité abstraite qui permet d'estimer la juste mesure de quelque chose. La valeur est un jugement qui évalue ce que quelque chose vaut.",
+        "senses": [
+          {
+            "display_order": 18,
+            "sense": "valeur",
+            "description": "Réalité abstraite qui permet d'estimer la juste mesure de quelque chose. La valeur est un jugement qui évalue ce que quelque chose vaut."
+          },
+          {
+            "display_order": 19,
+            "sense": "prix",
+            "description": null
+          },
+          {
+            "display_order": 20,
+            "sense": "estimation",
+            "description": null
+          },
+          {
+            "display_order": 21,
+            "sense": "stature",
+            "description": null
+          },
+          {
+            "display_order": 22,
+            "sense": "taille",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Verticalité/Droiture",
+        "description_first": "Réalité physique et morale de ce qui se tient droit, sans déviation. La verticalité est observable de l'extérieur. C'est un état permanent tant qu'on le maintient. La droiture morale est l'extension de la droiture physique.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "se lever",
+            "description": "Réalité physique et morale de ce qui se tient droit, sans déviation. La verticalité est observable de l'extérieur. C'est un état permanent tant qu'on le maintient. La droiture morale est l'extension de la droiture physique."
+          },
+          {
+            "display_order": 2,
+            "sense": "se dresser",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "droit",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "rectitude",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "redresser",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "corriger",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "se tenir debout",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "rbh": {
+    "wa_id": 339,
+    "word_key": "rbh",
+    "root_ar": "ر ب ح",
+    "total_occurrences": 0,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Gain/Profit",
+        "description_first": "Acte extérieur d'obtenir un avantage matériel par le commerce ou l'effort. Le gain sort de la transaction et atteint celui qui en bénéficie. C'est directionnel et mesurable.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "gagner",
+            "description": "Acte extérieur d'obtenir un avantage matériel par le commerce ou l'effort. Le gain sort de la transaction et atteint celui qui en bénéficie. C'est directionnel et mesurable."
+          },
+          {
+            "display_order": 2,
+            "sense": "profit",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "commerce profitable",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "donner du profit",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "chercher le gain",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Être",
+        "description_first": "Sens concret lié à la racine. Être confus — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "être confus",
+            "description": "Sens concret lié à la racine. Être confus — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "red": {
+    "wa_id": 357,
+    "word_key": "red",
+    "root_ar": "ر ع د",
+    "total_occurrences": 2,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Sens isolé/Menacer",
+        "description_first": "Faire gronder sa voix pour intimider. Extension métaphorique du tonnerre appliquée à la parole humaine.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "menacer",
+            "description": "Faire gronder sa voix pour intimider. Extension métaphorique du tonnerre appliquée à la parole humaine."
+          }
+        ]
+      },
+      {
+        "concept": "Tonnerre/Grondement",
+        "description_first": "Produire un son violent venant du ciel. Le tonnerre est un grondement extérieur, puissant et soudain qui frappe les oreilles de ceux qui l'entendent.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "tonner",
+            "description": "Produire un son violent venant du ciel. Le tonnerre est un grondement extérieur, puissant et soudain qui frappe les oreilles de ceux qui l'entendent."
+          },
+          {
+            "display_order": 2,
+            "sense": "tonnerre",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "être frappé par le tonnerre",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Tremblement/Peur",
+        "description_first": "Être secoué involontairement par la peur ou le froid. Le tremblement est un mouvement incontrôlable du corps — c'est une réaction physique à une cause extérieure.",
+        "senses": [
+          {
+            "display_order": 3,
+            "sense": "trembler",
+            "description": "Être secoué involontairement par la peur ou le froid. Le tremblement est un mouvement incontrôlable du corps — c'est une réaction physique à une cause extérieure."
+          },
+          {
+            "display_order": 4,
+            "sense": "frissonner",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "rje": {
+    "wa_id": 336,
+    "word_key": "rje",
+    "root_ar": "ر ج ع",
+    "total_occurrences": 104,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Pluie/Renouvellement",
+        "description_first": "Eau qui retourne du ciel vers la terre. La pluie est un retour cyclique — l'eau monte puis redescend. C'est le retour par excellence dans la nature.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "pluie",
+            "description": "Eau qui retourne du ciel vers la terre. La pluie est un retour cyclique — l'eau monte puis redescend. C'est le retour par excellence dans la nature."
+          }
+        ]
+      },
+      {
+        "concept": "Répétition",
+        "description_first": "Dire ou faire quelque chose de nouveau. La répétition est un retour dans le temps — on revient à ce qui a déjà été dit ou fait.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "répéter",
+            "description": "Dire ou faire quelque chose de nouveau. La répétition est un retour dans le temps — on revient à ce qui a déjà été dit ou fait."
+          },
+          {
+            "display_order": 8,
+            "sense": "réponse",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Retour/Réversion",
+        "description_first": "Acte de revenir à un lieu ou un état antérieur. Le retour est un mouvement directionnel vers l'origine — on revient là d'où l'on est parti. C'est l'opposé du départ.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "retourner",
+            "description": "Acte de revenir à un lieu ou un état antérieur. Le retour est un mouvement directionnel vers l'origine — on revient là d'où l'on est parti. C'est l'opposé du départ."
+          },
+          {
+            "display_order": 2,
+            "sense": "revenir",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "réverter",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "faire revenir",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "renvoyer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Profit",
+        "description_first": "Retour positif d'un investissement. Le profit est ce qui revient de l'effort — c'est un retour matériel.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "profit",
+            "description": "Retour positif d'un investissement. Le profit est ce qui revient de l'effort — c'est un retour matériel."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Ruminer",
+        "description_first": "Faire revenir la nourriture pour la mâcher de nouveau. La rumination est un retour physique de ce qui a été avalé.",
+        "senses": [
+          {
+            "display_order": 10,
+            "sense": "ruminer",
+            "description": "Faire revenir la nourriture pour la mâcher de nouveau. La rumination est un retour physique de ce qui a été avalé."
+          }
+        ]
+      }
+    ]
+  },
+  "sbe": {
+    "wa_id": 360,
+    "word_key": "sbe",
+    "root_ar": "ص ب ع",
+    "total_occurrences": 2,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Désignation/Pointage",
+        "description_first": "Acte de diriger son doigt vers quelqu'un pour le désigner. Le pointage est un acte extérieur directionnel — il sort de celui qui pointe et atteint celui qui est désigné.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "pointer du doigt",
+            "description": "Acte de diriger son doigt vers quelqu'un pour le désigner. Le pointage est un acte extérieur directionnel — il sort de celui qui pointe et atteint celui qui est désigné."
+          },
+          {
+            "display_order": 2,
+            "sense": "doigt",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "montrer du doigt avec mépris",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Orgueil",
+        "description_first": "Sentiment de supériorité excessive. L'orgueil est un état intérieur qui se manifeste par le mépris des autres.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "orgueil",
+            "description": "Sentiment de supériorité excessive. L'orgueil est un état intérieur qui se manifeste par le mépris des autres."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Bien",
+        "description_first": "Sens concret lié à la racine. Bien nourrir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "bien nourrir",
+            "description": "Sens concret lié à la racine. Bien nourrir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "seq": {
+    "wa_id": 554,
+    "word_key": "seq",
+    "root_ar": "ص ع ق",
+    "total_occurrences": 11,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Foudre/Anéantissement",
+        "description_first": "Être frappé par la foudre ou par un choc violent qui terrasse — être foudroyé (sa'aq) est passif, on subit le coup qui vient du ciel. C'est ponctuel et peut être fatal. Le jour où le souffle sera soufflé dans la trompe, tous ceux qui sont dans les cieux et sur terre seront foudroyés sauf ceux que Dieu voudra épargner.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "foudroyer",
+            "description": "Être frappé par la foudre ou par un choc violent qui terrasse — être foudroyé (sa'aq) est passif, on subit le coup qui vient du ciel. C'est ponctuel et peut être fatal. Le jour où le souffle sera soufflé dans la trompe, tous ceux qui sont dans les cieux et sur terre seront foudroyés sauf ceux que Dieu voudra épargner."
+          },
+          {
+            "display_order": 2,
+            "sense": "terrasser",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "s'évanouir",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "tonnerre",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "sfh": {
+    "wa_id": 332,
+    "word_key": "sfh",
+    "root_ar": "س ف ه",
+    "total_occurrences": 11,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Agitation/Mouvement",
+        "description_first": "État de mouvement désordonné. L'agitation est physique — le vent agite les branches, la mer agite les vagues. C'est un mouvement sans direction.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "agitation",
+            "description": "État de mouvement désordonné. L'agitation est physique — le vent agite les branches, la mer agite les vagues. C'est un mouvement sans direction."
+          }
+        ]
+      },
+      {
+        "concept": "Légèreté/Stupidité",
+        "description_first": "État intérieur de manque de sagesse et de discernement. L'insensé ne mesure pas les conséquences de ses actes. C'est un état permanent de déficience intellectuelle et morale.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être insensé",
+            "description": "État intérieur de manque de sagesse et de discernement. L'insensé ne mesure pas les conséquences de ses actes. C'est un état permanent de déficience intellectuelle et morale."
+          },
+          {
+            "display_order": 2,
+            "sense": "léger d'esprit",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "stupide",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "déclarer insensé",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "agir de manière insensée",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Se",
+        "description_first": "Sens concret lié à la racine. Se quereller — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "se quereller",
+            "description": "Sens concret lié à la racine. Se quereller — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Soif",
+        "description_first": "Sens concret lié à la racine. Soif violente — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "soif violente",
+            "description": "Sens concret lié à la racine. Soif violente — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "sher": {
+    "wa_id": 842,
+    "word_key": "sher",
+    "root_ar": "ش ع ر",
+    "total_occurrences": 40,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Cheveux/Poils",
+        "description_first": "Ce qui pousse du corps et couvre la peau. Les cheveux sont permanents dans leur croissance — ils sont le signe visible de la vitalité. Le poil est ce qui perçoit le monde par le toucher, lié au sens de sentir.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "cheveux",
+            "description": "Ce qui pousse du corps et couvre la peau. Les cheveux sont permanents dans leur croissance — ils sont le signe visible de la vitalité. Le poil est ce qui perçoit le monde par le toucher, lié au sens de sentir."
+          },
+          {
+            "display_order": 5,
+            "sense": "poils",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Perception/Conscience",
+        "description_first": "Acte intérieur de prendre conscience de quelque chose par les sens ou l'intuition. La perception est le premier contact entre l'être et le monde — elle est directionnelle de l'extérieur vers l'intérieur. Sentir c'est savoir par l'expérience directe, pas par le raisonnement.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "sentir",
+            "description": "Acte intérieur de prendre conscience de quelque chose par les sens ou l'intuition. La perception est le premier contact entre l'être et le monde — elle est directionnelle de l'extérieur vers l'intérieur. Sentir c'est savoir par l'expérience directe, pas par le raisonnement."
+          },
+          {
+            "display_order": 2,
+            "sense": "savoir",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "être conscient de",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Poésie/Expression",
+        "description_first": "Art de la parole rythmée qui naît de la perception fine des choses. La poésie est un acte extérieur d'expression qui part du poète et atteint l'auditeur — elle transforme le sentiment intérieur en parole qui touche.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "poésie",
+            "description": "Art de la parole rythmée qui naît de la perception fine des choses. La poésie est un acte extérieur d'expression qui part du poète et atteint l'auditeur — elle transforme le sentiment intérieur en parole qui touche."
+          },
+          {
+            "display_order": 7,
+            "sense": "poète",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Rituel/Culte",
+        "description_first": "Sens concret lié à la racine. Rite sacré — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "rite sacré",
+            "description": "Sens concret lié à la racine. Rite sacré — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "shry": {
+    "wa_id": 871,
+    "word_key": "shry",
+    "root_ar": "ش ر ي",
+    "total_occurrences": 25,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Échange/Transaction",
+        "description_first": "Acte extérieur de donner quelque chose pour obtenir autre chose en retour. L'échange est bidirectionnel — il sort de l'acheteur et de la marchandise en même temps. C'est ponctuel dans l'acte mais crée un transfert permanent de propriété.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "acheter",
+            "description": "Acte extérieur de donner quelque chose pour obtenir autre chose en retour. L'échange est bidirectionnel — il sort de l'acheteur et de la marchandise en même temps. C'est ponctuel dans l'acte mais crée un transfert permanent de propriété."
+          },
+          {
+            "display_order": 2,
+            "sense": "vendre",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "échanger",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sacrifice/Don de soi",
+        "description_first": "Acte de donner sa propre personne en échange de quelque chose de plus grand. Le sacrifice de soi sort de celui qui se donne — c'est directionnel et irréversible. Celui qui se vend s'échange lui-même contre une cause.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "se vendre (sacrifier sa vie)",
+            "description": "Acte de donner sa propre personne en échange de quelque chose de plus grand. Le sacrifice de soi sort de celui qui se donne — c'est directionnel et irréversible. Celui qui se vend s'échange lui-même contre une cause."
+          }
+        ]
+      }
+    ]
+  },
+  "shtn": {
+    "wa_id": 1533,
+    "word_key": "shtn",
+    "root_ar": "ش ي ط",
+    "total_occurrences": 25,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Égarement/Rébellion",
+        "description_first": "L'être éloigné de la miséricorde qui pousse les autres à s'éloigner aussi. Le shaytan est permanent dans sa rébellion — son action est directionnelle vers ses victimes.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "diable",
+            "description": "L'être éloigné de la miséricorde qui pousse les autres à s'éloigner aussi. Le shaytan est permanent dans sa rébellion — son action est directionnelle vers ses victimes."
+          },
+          {
+            "display_order": 2,
+            "sense": "être rebelle",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "shy": {
+    "wa_id": 466,
+    "word_key": "shy",
+    "root_ar": "ش ي أ",
+    "total_occurrences": 519,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Chose/Être",
+        "description_first": "Toute réalité qui existe ou peut être conçue — la chose est le concept le plus général qui englobe tout ce qui est quelque chose plutôt que rien. C'est permanent comme catégorie : tout ce qui n'est pas le néant est chose. La chose peut être matérielle ou immatérielle, grande ou petite, mais elle a une réalité, une existence propre.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "chose",
+            "description": "Toute réalité qui existe ou peut être conçue — la chose est le concept le plus général qui englobe tout ce qui est quelque chose plutôt que rien. C'est permanent comme catégorie : tout ce qui n'est pas le néant est chose. La chose peut être matérielle ou immatérielle, grande ou petite, mais elle a une réalité, une existence propre."
+          },
+          {
+            "display_order": 2,
+            "sense": "quelque chose",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Néant",
+        "description_first": "Absence totale de chose, négation absolue de l'être — rien est le contraire de tout, le vide absolu où il n'y a rien. C'est permanent comme concept mais ne désigne aucune réalité positive. De rien, rien ne vient naturellement — seul le Créateur fait surgir quelque chose du néant.",
+        "senses": [
+          {
+            "display_order": 3,
+            "sense": "rien",
+            "description": "Absence totale de chose, négation absolue de l'être — rien est le contraire de tout, le vide absolu où il n'y a rien. C'est permanent comme concept mais ne désigne aucune réalité positive. De rien, rien ne vient naturellement — seul le Créateur fait surgir quelque chose du néant."
+          }
+        ]
+      },
+      {
+        "concept": "Volonté",
+        "description_first": "Acte intérieur de diriger sa volonté vers un objet, de désirer quelque chose — vouloir une chose c'est tendre vers elle par l'intention. C'est directionnel de l'intérieur vers l'objet voulu. La volonté est le moteur de l'action : on fait ce qu'on veut, on cherche ce qu'on désire.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "vouloir",
+            "description": "Acte intérieur de diriger sa volonté vers un objet, de désirer quelque chose — vouloir une chose c'est tendre vers elle par l'intention. C'est directionnel de l'intérieur vers l'objet voulu. La volonté est le moteur de l'action : on fait ce qu'on veut, on cherche ce qu'on désire."
+          }
+        ]
+      }
+    ]
+  },
+  "slh": {
+    "wa_id": 326,
+    "word_key": "slh",
+    "root_ar": "ص ل ح",
+    "total_occurrences": 180,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Bonté/Rectitude",
+        "description_first": "État de ce qui est conforme à l'ordre juste. La bonté est un état objectif et permanent — ce qui est bon reste bon.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être bon",
+            "description": "État de ce qui est conforme à l'ordre juste. La bonté est un état objectif et permanent — ce qui est bon reste bon."
+          },
+          {
+            "display_order": 2,
+            "sense": "rectitude",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "réparer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "réconcilier",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "oeuvre bonne",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "vertueux",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Paix",
+        "description_first": "Sens concret lié à la racine. Paix — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "paix",
+            "description": "Sens concret lié à la racine. Paix — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "sme": {
+    "wa_id": 302,
+    "word_key": "sme",
+    "root_ar": "س م ع",
+    "total_occurrences": 185,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Audition/Écoute",
+        "description_first": "Acte de percevoir par l'oreille. L'audition est un acte réceptif — le son vient de l'extérieur et atteint celui qui entend. C'est un acte directionnel de l'extérieur vers l'intérieur.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "entendre",
+            "description": "Acte de percevoir par l'oreille. L'audition est un acte réceptif — le son vient de l'extérieur et atteint celui qui entend. C'est un acte directionnel de l'extérieur vers l'intérieur."
+          },
+          {
+            "display_order": 2,
+            "sense": "écouter",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "ouïe",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "obéir",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "exaucer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Corps/Anatomie",
+        "description_first": "Sens concret lié à la racine. Oreille — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "oreille",
+            "description": "Sens concret lié à la racine. Oreille — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Renommée/Bruit",
+        "description_first": "Ce qui est entendu par les gens à propos de quelqu'un. La réputation sort de la personne et se propage vers l'extérieur par le bruit et la parole.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "réputation",
+            "description": "Ce qui est entendu par les gens à propos de quelqu'un. La réputation sort de la personne et se propage vers l'extérieur par le bruit et la parole."
+          },
+          {
+            "display_order": 7,
+            "sense": "bruit",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "faire entendre",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "smm": {
+    "wa_id": 333,
+    "word_key": "smm",
+    "root_ar": "ص م م",
+    "total_occurrences": 15,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Obstruction",
+        "description_first": "Ce qui ferme l'ouverture d'un récipient. Le bouchon est un obstacle concret qui empêche le passage.",
+        "senses": [
+          {
+            "display_order": 8,
+            "sense": "bouchon",
+            "description": "Ce qui ferme l'ouverture d'un récipient. Le bouchon est un obstacle concret qui empêche le passage."
+          }
+        ]
+      },
+      {
+        "concept": "Pénétration/Fermeté",
+        "description_first": "Traverser un obstacle avec force. La pénétration est un mouvement directionnel qui va en profondeur — elle atteint l'os et le traverse.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "pénétrer",
+            "description": "Traverser un obstacle avec force. La pénétration est un mouvement directionnel qui va en profondeur — elle atteint l'os et le traverse."
+          },
+          {
+            "display_order": 6,
+            "sense": "trancher",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "détermination",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "épée tranchante",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Avare",
+        "description_first": "Celui qui ne laisse rien sortir. L'avarice est une fermeture totale — rien ne passe.",
+        "senses": [
+          {
+            "display_order": 11,
+            "sense": "avare",
+            "description": "Celui qui ne laisse rien sortir. L'avarice est une fermeture totale — rien ne passe."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Calamité",
+        "description_first": "Sens concret lié à la racine. Calamité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 9,
+            "sense": "calamité",
+            "description": "Sens concret lié à la racine. Calamité — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Surdité",
+        "description_first": "État de ne pas entendre. La surdité est un état permanent qui coupe celui qui en souffre du monde sonore. C'est une fermeture de l'oreille qui empêche la réception.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être sourd",
+            "description": "État de ne pas entendre. La surdité est un état permanent qui coupe celui qui en souffre du monde sonore. C'est une fermeture de l'oreille qui empêche la réception."
+          },
+          {
+            "display_order": 2,
+            "sense": "rendre sourd",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "feindre la surdité",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "sourd",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "smw": {
+    "wa_id": 249,
+    "word_key": "smw",
+    "root_ar": "س م و",
+    "total_occurrences": 381,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Animal/Faune",
+        "description_first": "Sens concret lié à la racine. Monter à cheval — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 48,
+            "sense": "monter à cheval",
+            "description": "Sens concret lié à la racine. Monter à cheval — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Chasse",
+        "description_first": "Activité extérieure de poursuite et de capture. Mouvement actif vers l'extérieur pour atteindre une cible. C'est un acte ponctuel et dirigé.",
+        "senses": [
+          {
+            "display_order": 38,
+            "sense": "chasser",
+            "description": "Activité extérieure de poursuite et de capture. Mouvement actif vers l'extérieur pour atteindre une cible. C'est un acte ponctuel et dirigé."
+          },
+          {
+            "display_order": 39,
+            "sense": "chasseurs",
+            "description": null
+          },
+          {
+            "display_order": 40,
+            "sense": "chaussettes de chasseur",
+            "description": null
+          },
+          {
+            "display_order": 41,
+            "sense": "inciter à chasser",
+            "description": null
+          },
+          {
+            "display_order": 42,
+            "sense": "tester une chamelle",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Ciel/Ce qui couvre",
+        "description_first": "Ce qui est au-dessus et enveloppe. Le ciel comme voûte qui recouvre la terre, et tout ce qui sert de couverture au-dessus de quelque chose. Inclut les phénomènes qui viennent d'en haut (pluie, nuages). C'est une réalité extérieure permanente et observable.",
+        "senses": [
+          {
+            "display_order": 16,
+            "sense": "ciel",
+            "description": "Ce qui est au-dessus et enveloppe. Le ciel comme voûte qui recouvre la terre, et tout ce qui sert de couverture au-dessus de quelque chose. Inclut les phénomènes qui viennent d'en haut (pluie, nuages). C'est une réalité extérieure permanente et observable."
+          },
+          {
+            "display_order": 17,
+            "sense": "toit",
+            "description": null
+          },
+          {
+            "display_order": 18,
+            "sense": "nuage",
+            "description": null
+          },
+          {
+            "display_order": 19,
+            "sense": "pluie",
+            "description": null
+          },
+          {
+            "display_order": 20,
+            "sense": "herbage",
+            "description": null
+          },
+          {
+            "display_order": 21,
+            "sense": "dos",
+            "description": null
+          },
+          {
+            "display_order": 22,
+            "sense": "semelle supérieure",
+            "description": null
+          },
+          {
+            "display_order": 23,
+            "sense": "pièce de tissu supérieure",
+            "description": null
+          },
+          {
+            "display_order": 24,
+            "sense": "céleste",
+            "description": null
+          },
+          {
+            "display_order": 25,
+            "sense": "bounty",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Hauteur/Élévation",
+        "description_first": "Réalité physique et abstraite de ce qui se dresse, se lève, dépasse. Mouvement ascendant depuis le bas vers le haut, que ce soit physiquement (se lever, monter) ou socialement (noblesse, éminence). C'est un état qui se manifeste vers l'extérieur et qui peut être observé par les autres.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être haut",
+            "description": "Réalité physique et abstraite de ce qui se dresse, se lève, dépasse. Mouvement ascendant depuis le bas vers le haut, que ce soit physiquement (se lever, monter) ou socialement (noblesse, éminence). C'est un état qui se manifeste vers l'extérieur et qui peut être observé par les autres."
+          },
+          {
+            "display_order": 2,
+            "sense": "se dresser",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "monter",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "lever le regard",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "aspirer",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "noble",
+            "description": null
+          },
+          {
+            "display_order": 7,
+            "sense": "hautain",
+            "description": null
+          },
+          {
+            "display_order": 8,
+            "sense": "rivaliser en éminence",
+            "description": null
+          },
+          {
+            "display_order": 9,
+            "sense": "élever quelqu'un",
+            "description": null
+          },
+          {
+            "display_order": 10,
+            "sense": "dépasser en nombre",
+            "description": null
+          },
+          {
+            "display_order": 11,
+            "sense": "étalon qui bondit",
+            "description": null
+          },
+          {
+            "display_order": 12,
+            "sense": "forme vue de loin",
+            "description": null
+          },
+          {
+            "display_order": 13,
+            "sense": "lune qui se dresse",
+            "description": null
+          },
+          {
+            "display_order": 14,
+            "sense": "surpasser",
+            "description": null
+          },
+          {
+            "display_order": 15,
+            "sense": "éminent",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Nom/Identification",
+        "description_first": "Réalité extérieure et permanente qui permet d'identifier, de distinguer et de communiquer. Le nom est un signe qui pointe vers ce qu'il désigne. Il sort de celui qui nomme et atteint ce qui est nommé. Il crée un pont entre la chose et celui qui la connaît.",
+        "senses": [
+          {
+            "display_order": 26,
+            "sense": "nom",
+            "description": "Réalité extérieure et permanente qui permet d'identifier, de distinguer et de communiquer. Le nom est un signe qui pointe vers ce qu'il désigne. Il sort de celui qui nomme et atteint ce qui est nommé. Il crée un pont entre la chose et celui qui la connaît."
+          },
+          {
+            "display_order": 27,
+            "sense": "nommer",
+            "description": null
+          },
+          {
+            "display_order": 28,
+            "sense": "prononcer le nom de Dieu",
+            "description": null
+          },
+          {
+            "display_order": 29,
+            "sense": "se nommer",
+            "description": null
+          },
+          {
+            "display_order": 30,
+            "sense": "s'appeler mutuellement",
+            "description": null
+          },
+          {
+            "display_order": 31,
+            "sense": "demander le nom",
+            "description": null
+          },
+          {
+            "display_order": 32,
+            "sense": "renommée",
+            "description": null
+          },
+          {
+            "display_order": 33,
+            "sense": "nommé",
+            "description": null
+          },
+          {
+            "display_order": 34,
+            "sense": "homonyme",
+            "description": null
+          },
+          {
+            "display_order": 35,
+            "sense": "nominal",
+            "description": null
+          },
+          {
+            "display_order": 36,
+            "sense": "qualité de nom",
+            "description": null
+          },
+          {
+            "display_order": 37,
+            "sense": "revendiquer une parenté",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Choisir",
+        "description_first": "Sens concret lié à la racine. Choisir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 44,
+            "sense": "choisir",
+            "description": "Sens concret lié à la racine. Choisir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Désir",
+        "description_first": "Sens concret lié à la racine. Désir qui resurgit — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 50,
+            "sense": "désir qui resurgit",
+            "description": "Sens concret lié à la racine. Désir qui resurgit — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Égal",
+        "description_first": "Sens concret lié à la racine. Égal — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 43,
+            "sense": "égal",
+            "description": "Sens concret lié à la racine. Égal — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Regarder",
+        "description_first": "Sens concret lié à la racine. Regarder la silhouette — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 49,
+            "sense": "regarder la silhouette",
+            "description": "Sens concret lié à la racine. Regarder la silhouette — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Se",
+        "description_first": "Sens concret lié à la racine. Se diriger vers Es-Semaweh — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 46,
+            "sense": "se diriger vers Es-Semaweh",
+            "description": "Sens concret lié à la racine. Se diriger vers Es-Semaweh — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Sens isolé/Visiter",
+        "description_first": "Sens concret lié à la racine. Visiter — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 45,
+            "sense": "visiter",
+            "description": "Sens concret lié à la racine. Visiter — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      },
+      {
+        "concept": "Souffle/Vent",
+        "description_first": "Sens concret lié à la racine. Faire partir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 47,
+            "sense": "faire partir",
+            "description": "Sens concret lié à la racine. Faire partir — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  },
+  "swb": {
+    "wa_id": 917,
+    "word_key": "swb",
+    "root_ar": "ص و ب",
+    "total_occurrences": 77,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Atteinte/Affliction",
+        "description_first": "Événement qui tombe sur quelqu'un et le touche directement. L'atteinte est directionnelle — elle sort de sa cause et frappe celui qui la reçoit. C'est ponctuel dans le choc mais les effets peuvent être permanents. L'affliction est ce qui atteint sans qu'on puisse l'éviter.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "frapper (calamité)",
+            "description": "Événement qui tombe sur quelqu'un et le touche directement. L'atteinte est directionnelle — elle sort de sa cause et frappe celui qui la reçoit. C'est ponctuel dans le choc mais les effets peuvent être permanents. L'affliction est ce qui atteint sans qu'on puisse l'éviter."
+          },
+          {
+            "display_order": 2,
+            "sense": "atteindre",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "toucher",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "pluie abondante",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Endurance",
+        "description_first": "Capacité intérieure de supporter l'épreuve sans fléchir. La patience est un état permanent de résistance — elle reste dans celui qui endure.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "patience",
+            "description": "Capacité intérieure de supporter l'épreuve sans fléchir. La patience est un état permanent de résistance — elle reste dans celui qui endure."
+          }
+        ]
+      },
+      {
+        "concept": "Justesse/Rectitude",
+        "description_first": "État de ce qui est conforme à la vérité et au droit. La justesse est un état intérieur de conformité au réel — elle est permanente chez celui qui vise juste.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "être juste",
+            "description": "État de ce qui est conforme à la vérité et au droit. La justesse est un état intérieur de conformité au réel — elle est permanente chez celui qui vise juste."
+          },
+          {
+            "display_order": 6,
+            "sense": "viser juste",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "tgy": {
+    "wa_id": 2598,
+    "word_key": "tgy",
+    "root_ar": "ط غ ي",
+    "total_occurrences": 39,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Inondation/Débordement",
+        "description_first": "Sens concret lié à la racine. Eau qui déborde, inondation — ce sens éclaire le champ sémantique de l'excès et du franchissement des limites.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "déborder",
+            "description": "Sens concret lié à la racine. Eau qui déborde, inondation — ce sens éclaire le champ sémantique de l'excès et du franchissement des limites."
+          },
+          {
+            "display_order": 7,
+            "sense": "inonder",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Transgression/Excès",
+        "description_first": "Acte extérieur de dépasser les limites fixées — le tughyan est un débordement qui sort de celui qui transgresse et affecte tout ce qui l'entoure. C'est directionnel du transgresseur vers les limites qu'il franchit. Le tughyan peut être permanent comme caractère ou ponctuel comme acte. L'eau qui déborde (tafa) est du même champ sémantique — le tughyan est un excès qui ne reconnaît aucune borne.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "transgresser",
+            "description": "Acte extérieur de dépasser les limites fixées — le tughyan est un débordement qui sort de celui qui transgresse et affecte tout ce qui l'entoure. C'est directionnel du transgresseur vers les limites qu'il franchit. Le tughyan peut être permanent comme caractère ou ponctuel comme acte. L'eau qui déborde (tafa) est du même champ sémantique — le tughyan est un excès qui ne reconnaît aucune borne."
+          },
+          {
+            "display_order": 2,
+            "sense": "dépasser les limites",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "outrepasser",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "excès",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "tyrannie",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "tjr": {
+    "wa_id": 340,
+    "word_key": "tjr",
+    "root_ar": "ت ج ر",
+    "total_occurrences": 9,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Commerce",
+        "description_first": "Acte extérieur d'acheter et vendre pour obtenir un gain. Le commerce est un mouvement réciproque entre deux parties — chacun donne et reçoit. C'est un acte volontaire orienté vers le profit.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "commercer",
+            "description": "Acte extérieur d'acheter et vendre pour obtenir un gain. Le commerce est un mouvement réciproque entre deux parties — chacun donne et reçoit. C'est un acte volontaire orienté vers le profit."
+          },
+          {
+            "display_order": 2,
+            "sense": "commerce profitable",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "marchand",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "rivaliser dans le commerce",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "trk": {
+    "wa_id": 353,
+    "word_key": "trk",
+    "root_ar": "ت ر ك",
+    "total_occurrences": 43,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Abandon/Renoncement",
+        "description_first": "Acte de ne plus s'occuper de quelque chose. Laisser c'est se retirer d'une situation ou d'un objet. C'est un acte volontaire de désengagement.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "laisser",
+            "description": "Acte de ne plus s'occuper de quelque chose. Laisser c'est se retirer d'une situation ou d'un objet. C'est un acte volontaire de désengagement."
+          },
+          {
+            "display_order": 2,
+            "sense": "abandonner",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "renoncer",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "quitter",
+            "description": null
+          },
+          {
+            "display_order": 5,
+            "sense": "délaisser",
+            "description": null
+          },
+          {
+            "display_order": 6,
+            "sense": "renoncer mutuellement",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "wqd": {
+    "wa_id": 348,
+    "word_key": "wqd",
+    "root_ar": "و ق د",
+    "total_occurrences": 11,
+    "daily_phrases_count": 3,
+    "concepts": [
+      {
+        "concept": "Feu/Combustion",
+        "description_first": "Acte extérieur de produire du feu. Le feu est une transformation visible et directionnelle — il consume et éclaire. C'est ponctuel mais avec des effets permanents.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "allumer",
+            "description": "Acte extérieur de produire du feu. Le feu est une transformation visible et directionnelle — il consume et éclaire. C'est ponctuel mais avec des effets permanents."
+          },
+          {
+            "display_order": 2,
+            "sense": "brûler",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "feu",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "combustible",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "xlw": {
+    "wa_id": 827,
+    "word_key": "xlw",
+    "root_ar": "خ ل و",
+    "total_occurrences": 28,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Abandon",
+        "description_first": "Acte extérieur de ne pas retenir, de permettre à l'autre d'être libre. L'abandon sort de celui qui laisse et atteint ce qui est laissé — c'est directionnel et ponctuel.",
+        "senses": [
+          {
+            "display_order": 6,
+            "sense": "laisser",
+            "description": "Acte extérieur de ne pas retenir, de permettre à l'autre d'être libre. L'abandon sort de celui qui laisse et atteint ce qui est laissé — c'est directionnel et ponctuel."
+          },
+          {
+            "display_order": 7,
+            "sense": "libérer",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Passage/Passé",
+        "description_first": "Mouvement du temps qui s'écoule et ne revient pas. Ce qui est passé est définitivement parti — c'est directionnel et irréversible. Les peuples passés sont ceux qui ont traversé le temps et disparu.",
+        "senses": [
+          {
+            "display_order": 4,
+            "sense": "passer (temps révolu)",
+            "description": "Mouvement du temps qui s'écoule et ne revient pas. Ce qui est passé est définitivement parti — c'est directionnel et irréversible. Les peuples passés sont ceux qui ont traversé le temps et disparu."
+          },
+          {
+            "display_order": 5,
+            "sense": "les générations passées",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Vacuité/Solitude",
+        "description_first": "État de ce qui ne contient rien ni personne. La vacuité est un état intérieur et permanent tant que rien ne vient la remplir. L'espace vide attend d'être occupé — il est potentiel pur.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "être vide",
+            "description": "État de ce qui ne contient rien ni personne. La vacuité est un état intérieur et permanent tant que rien ne vient la remplir. L'espace vide attend d'être occupé — il est potentiel pur."
+          },
+          {
+            "display_order": 2,
+            "sense": "être seul",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "être libre de",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "xtf": {
+    "wa_id": 2600,
+    "word_key": "xtf",
+    "root_ar": "خ ط ف",
+    "total_occurrences": 4,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Saisissement/Arrachement",
+        "description_first": "Acte extérieur de prendre quelque chose avec une rapidité fulgurante — le khatf sort de celui qui saisit et atteint ce qui est saisi. C'est directionnel, ponctuel et violent dans sa rapidité. L'éclair qui 'saisit' la vue est un khatf — la vitesse est essentielle au concept.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "saisir rapidement",
+            "description": "Acte extérieur de prendre quelque chose avec une rapidité fulgurante — le khatf sort de celui qui saisit et atteint ce qui est saisi. C'est directionnel, ponctuel et violent dans sa rapidité. L'éclair qui 'saisit' la vue est un khatf — la vitesse est essentielle au concept."
+          },
+          {
+            "display_order": 2,
+            "sense": "arracher",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "enlever brusquement",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "ravir",
+            "description": null
+          }
+        ]
+      }
+    ]
+  },
+  "zlm": {
+    "wa_id": 354,
+    "word_key": "zlm",
+    "root_ar": "ظ ل م",
+    "total_occurrences": 315,
+    "daily_phrases_count": 0,
+    "concepts": [
+      {
+        "concept": "Injustice/Oppression",
+        "description_first": "Acte extérieur de placer quelque chose là où ce n'est pas sa place. L'injustice sort de celui qui opprime et atteint celui qui est opprimé. C'est un acte directionnel et volontaire.",
+        "senses": [
+          {
+            "display_order": 1,
+            "sense": "opprimer",
+            "description": "Acte extérieur de placer quelque chose là où ce n'est pas sa place. L'injustice sort de celui qui opprime et atteint celui qui est opprimé. C'est un acte directionnel et volontaire."
+          },
+          {
+            "display_order": 2,
+            "sense": "être injuste",
+            "description": null
+          },
+          {
+            "display_order": 3,
+            "sense": "injustice",
+            "description": null
+          },
+          {
+            "display_order": 4,
+            "sense": "oppresseur",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Obscurité/Ténèbres",
+        "description_first": "État de ce qui est privé de lumière. L'obscurité est un état extérieur qui empêche de voir.",
+        "senses": [
+          {
+            "display_order": 5,
+            "sense": "obscurité",
+            "description": "État de ce qui est privé de lumière. L'obscurité est un état extérieur qui empêche de voir."
+          },
+          {
+            "display_order": 6,
+            "sense": "ténèbres",
+            "description": null
+          }
+        ]
+      },
+      {
+        "concept": "Souffle/Vent",
+        "description_first": "Sens concret lié à la racine. Se faire du tort — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes.",
+        "senses": [
+          {
+            "display_order": 7,
+            "sense": "se faire du tort",
+            "description": "Sens concret lié à la racine. Se faire du tort — ce sens est un usage spécifique et concret de la racine qui peut éclairer le champ sémantique dans certains contextes."
+          }
+        ]
+      }
+    ]
+  }
+}

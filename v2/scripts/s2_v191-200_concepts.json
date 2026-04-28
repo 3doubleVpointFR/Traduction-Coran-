@@ -1,0 +1,2647 @@
+{
+  "qtl": [
+    {
+      "concept_name": "Meurtre/Combat",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Meurtre/Combat",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Meurtre/Combat",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Meurtre/Combat",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Meurtre/Combat",
+      "status": "retenu"
+    }
+  ],
+  "thqf": [
+    {
+      "concept_name": "Rencontre/Découverte",
+      "status": null
+    },
+    {
+      "concept_name": "Rencontre/Découverte",
+      "status": null
+    },
+    {
+      "concept_name": "Habileté",
+      "status": null
+    },
+    {
+      "concept_name": "Rencontre/Découverte",
+      "status": null
+    }
+  ],
+  "khrj": [
+    {
+      "concept_name": "Extraction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Tribut",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Expulsion",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Production",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sortie/Extériorisation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Sortie/Extériorisation",
+      "status": "retenu"
+    }
+  ],
+  "ftn": [
+    {
+      "concept_name": "Désordre/Persécution",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Désordre/Persécution",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Désordre/Persécution",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Épreuve/Tentation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Épreuve/Tentation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Épreuve/Tentation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Épreuve/Tentation",
+      "status": "retenu"
+    }
+  ],
+  "shdd": [
+    {
+      "concept_name": "Force",
+      "status": "retenu"
+    }
+  ],
+  "end": [
+    {
+      "concept_name": "Opinion/Jugement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Proximité/Présence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Proximité/Présence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Proximité/Présence",
+      "status": "retenu"
+    }
+  ],
+  "sjd": [
+    {
+      "concept_name": "Prosternation/Adoration",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Prosternation/Adoration",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Prosternation/Adoration",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Lieu de prosternation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Prosternation/Adoration",
+      "status": "retenu"
+    }
+  ],
+  "hrm": [
+    {
+      "concept_name": "Sens isolé/Épouse",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Interdiction/Sacré",
+      "status": "retenu"
+    }
+  ],
+  "htى": [],
+  "jzy": [
+    {
+      "concept_name": "Rétribution/Justice",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rétribution/Justice",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Suffisance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Rétribution/Justice",
+      "status": "retenu"
+    }
+  ],
+  "kfr": [
+    {
+      "concept_name": "Rejet/Ingratitude",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Expiation/Réparation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Village",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Cultivateur",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Couverture/Dissimulation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Couverture/Dissimulation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Sens isolé/Goudron",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Expiation/Réparation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Couverture/Dissimulation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Rejet/Ingratitude",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rejet/Ingratitude",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rejet/Ingratitude",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rejet/Ingratitude",
+      "status": "retenu"
+    }
+  ],
+  "nhy": [
+    {
+      "concept_name": "Interdiction/Empêchement",
+      "status": null
+    },
+    {
+      "concept_name": "Interdiction/Empêchement",
+      "status": null
+    },
+    {
+      "concept_name": "Interdiction/Empêchement",
+      "status": null
+    },
+    {
+      "concept_name": "Intelligence/Discernement",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Atteindre",
+      "status": null
+    }
+  ],
+  "alh": [
+    {
+      "concept_name": "Détresse",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Domination",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Refuge/Protection",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Adoration/Dévotion",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Refuge/Protection",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Refuge/Protection",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Adoration/Dévotion",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Détresse",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Adoration/Dévotion",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Adoration/Dévotion",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Divinité",
+      "status": "retenu"
+    }
+  ],
+  "gfr": [
+    {
+      "concept_name": "Pardon/Couverture",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Pardon/Couverture",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Pardon/Couverture",
+      "status": "retenu"
+    }
+  ],
+  "rhm": [
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Lien familial",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Provision/Bienfait matériel",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Outre",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lieu/Géographie",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/La",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Provision/Bienfait matériel",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Lien familial",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Lien familial",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Provision/Bienfait matériel",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Lien familial",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Lien familial",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Lieu/Géographie",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Utérus/Reproduction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Provision/Bienfait matériel",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Miséricorde/Tendresse",
+      "status": "retenu"
+    }
+  ],
+  "kwn": [
+    {
+      "concept_name": "Lieu/État",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lieu/État",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Humilité/Soumission",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lieu/État",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lieu/État",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lieu/État",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Être/Existence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Être/Existence",
+      "status": "retenu"
+    }
+  ],
+  "dyn": [
+    {
+      "concept_name": "Religion/Système",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Dette/Obligation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Dette/Obligation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Dette/Obligation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Maladie",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Eau/Liquide",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Dette/Obligation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Obéissance/Soumission",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Religion/Système",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Religion/Système",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Obéissance/Soumission",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Obéissance/Soumission",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Religion/Système",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Religion/Système",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rétribution/Compte",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Obéissance/Soumission",
+      "status": "probable"
+    }
+  ],
+  "edw": [
+    {
+      "concept_name": "Transgression/Excès",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Course/Vitesse",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Hostilité/Inimitié",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Hostilité/Inimitié",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Transgression/Excès",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Hostilité/Inimitié",
+      "status": "probable"
+    }
+  ],
+  "zlm": [
+    {
+      "concept_name": "Souffle/Vent",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Obscurité/Ténèbres",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Injustice/Oppression",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Injustice/Oppression",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Injustice/Oppression",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Injustice/Oppression",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Obscurité/Ténèbres",
+      "status": "nul"
+    }
+  ],
+  "shhr": [
+    {
+      "concept_name": "Renommée",
+      "status": null
+    },
+    {
+      "concept_name": "Temps/Mois",
+      "status": "retenu"
+    }
+  ],
+  "qss": [
+    {
+      "concept_name": "Narration/Récit",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": null
+    },
+    {
+      "concept_name": "Suivi/Pistage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Narration/Récit",
+      "status": "probable"
+    }
+  ],
+  "etd": [
+    {
+      "concept_name": "Préparation/Disponibilité",
+      "status": null
+    },
+    {
+      "concept_name": "Préparation/Disponibilité",
+      "status": null
+    },
+    {
+      "concept_name": "Préparation/Disponibilité",
+      "status": null
+    }
+  ],
+  "mthl": [
+    {
+      "concept_name": "Sens isolé/Mutiler",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Station/Présence",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Station/Présence",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Ressemblance/Exemple",
+      "status": "retenu"
+    }
+  ],
+  "wqy": [
+    {
+      "concept_name": "Sens isolé/Bouclier",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Protection/Préservation",
+      "status": "retenu"
+    }
+  ],
+  "elm": [
+    {
+      "concept_name": "Sens isolé/Enseigner",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Homonyme",
+      "status": null
+    },
+    {
+      "concept_name": "Lieu/Géographie",
+      "status": null
+    },
+    {
+      "concept_name": "Lieu/Géographie",
+      "status": null
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Monde/Création",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Monde/Création",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Monde/Création",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Monde/Création",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Savoir/Connaissance",
+      "status": "retenu"
+    }
+  ],
+  "nfq": [
+    {
+      "concept_name": "Dépense/Distribution",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Dépense/Distribution",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Hypocrisie/Double-face",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Hypocrisie/Double-face",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Vendre",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Mourir",
+      "status": null
+    },
+    {
+      "concept_name": "Passage/Traversée",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Passage/Traversée",
+      "status": "peu_probable"
+    },
+    {
+      "concept_name": "Dépense/Distribution",
+      "status": "retenu"
+    }
+  ],
+  "sbl": [
+    {
+      "concept_name": "Voie/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Voie/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Voie/Direction",
+      "status": "retenu"
+    }
+  ],
+  "lqy": [
+    {
+      "concept_name": "Jeter/Lancer",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Inspirer",
+      "status": null
+    },
+    {
+      "concept_name": "Jeter/Lancer",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Rencontre/Face à face",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rencontre/Face à face",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rencontre/Face à face",
+      "status": "retenu"
+    }
+  ],
+  "ydy": [
+    {
+      "concept_name": "Action/Pouvoir",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Pouvoir",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Antériorité",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Action/Pouvoir",
+      "status": "retenu"
+    }
+  ],
+  "hlk": [
+    {
+      "concept_name": "Destruction/Anéantissement",
+      "status": null
+    },
+    {
+      "concept_name": "Destruction/Anéantissement",
+      "status": null
+    },
+    {
+      "concept_name": "Destruction/Anéantissement",
+      "status": null
+    },
+    {
+      "concept_name": "Destruction/Anéantissement",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Gaspiller",
+      "status": null
+    }
+  ],
+  "hsn": [
+    {
+      "concept_name": "Excellence morale",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Beauté/Bonté",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Excellence morale",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Beauté/Bonté",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Beauté/Bonté",
+      "status": "probable"
+    }
+  ],
+  "hbb": [
+    {
+      "concept_name": "Graine/Semence",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Graine/Semence",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Lien",
+      "status": null
+    },
+    {
+      "concept_name": "Amour/Affection",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Amour/Affection",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Amour/Affection",
+      "status": "retenu"
+    }
+  ],
+  "tmm": [
+    {
+      "concept_name": "Achèvement/Perfection",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Achèvement/Perfection",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Achèvement/Perfection",
+      "status": "retenu"
+    }
+  ],
+  "hjj": [
+    {
+      "concept_name": "Pèlerinage/Preuve",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Pèlerinage/Preuve",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Pèlerinage/Preuve",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Pèlerinage/Preuve",
+      "status": "retenu"
+    }
+  ],
+  "emr": [
+    {
+      "concept_name": "Habitation/Construction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Habitation/Construction",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Vie/Durée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Vie/Durée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Vie/Durée",
+      "status": "retenu"
+    }
+  ],
+  "hsr": [
+    {
+      "concept_name": "Découvrement/Révélation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Épuisement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Épuisement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Regret/Désolation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Regret/Désolation",
+      "status": "retenu"
+    }
+  ],
+  "ysr": [
+    {
+      "concept_name": "Facilité/Aisance",
+      "status": null
+    },
+    {
+      "concept_name": "Facilité/Aisance",
+      "status": null
+    },
+    {
+      "concept_name": "Facilité/Aisance",
+      "status": null
+    },
+    {
+      "concept_name": "Facilité/Aisance",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Côté",
+      "status": null
+    }
+  ],
+  "hdy": [
+    {
+      "concept_name": "Conduite/Comportement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Conduite/Comportement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Don/Offrande",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Don/Offrande",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Don/Offrande",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Famille",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Repentance",
+      "status": null
+    },
+    {
+      "concept_name": "Don/Offrande",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Conduite/Comportement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Guidance/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Guidance/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Guidance/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Guidance/Direction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Guidance/Direction",
+      "status": "retenu"
+    }
+  ],
+  "hlq": [
+    {
+      "concept_name": "Rasage/Coupe",
+      "status": null
+    },
+    {
+      "concept_name": "Rasage/Coupe",
+      "status": null
+    },
+    {
+      "concept_name": "Gorge/Passage",
+      "status": null
+    },
+    {
+      "concept_name": "Anneau/Encerclement",
+      "status": null
+    },
+    {
+      "concept_name": "Anneau/Encerclement",
+      "status": null
+    }
+  ],
+  "blgh": [
+    {
+      "concept_name": "Atteinte/Accomplissement",
+      "status": null
+    },
+    {
+      "concept_name": "Atteinte/Accomplissement",
+      "status": null
+    },
+    {
+      "concept_name": "Atteinte/Accomplissement",
+      "status": null
+    },
+    {
+      "concept_name": "Transmission/Communication",
+      "status": null
+    },
+    {
+      "concept_name": "Transmission/Communication",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Être",
+      "status": null
+    }
+  ],
+  "hll": [
+    {
+      "concept_name": "Dissolution/Libération",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Dissolution/Libération",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Installation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Installation",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Licéité/Permission",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Licéité/Permission",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Licéité/Permission",
+      "status": "retenu"
+    }
+  ],
+  "mrd": [
+    {
+      "concept_name": "Sens isolé/Défaut",
+      "status": null
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Maladie/Faiblesse",
+      "status": "retenu"
+    }
+  ],
+  "adhy": [
+    {
+      "concept_name": "Nuisance/Souffrance",
+      "status": null
+    },
+    {
+      "concept_name": "Nuisance/Souffrance",
+      "status": null
+    }
+  ],
+  "ras": [
+    {
+      "concept_name": "Tête/Sommet",
+      "status": null
+    },
+    {
+      "concept_name": "Tête/Sommet",
+      "status": null
+    },
+    {
+      "concept_name": "Tête/Sommet",
+      "status": null
+    },
+    {
+      "concept_name": "Tête/Sommet",
+      "status": null
+    },
+    {
+      "concept_name": "Capital/Principal",
+      "status": null
+    }
+  ],
+  "fdy": [
+    {
+      "concept_name": "Rançon/Sacrifice",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rançon/Sacrifice",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rançon/Sacrifice",
+      "status": "retenu"
+    }
+  ],
+  "swm": [
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Pâturage",
+      "status": null
+    },
+    {
+      "concept_name": "Affliction",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Marque/Signe",
+      "status": "nul"
+    }
+  ],
+  "sdq": [
+    {
+      "concept_name": "Amitié",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Don/Aumône",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Vérité/Sincérité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Don/Aumône",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Vérité/Sincérité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Vérité/Sincérité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Vérité/Sincérité",
+      "status": "retenu"
+    }
+  ],
+  "nsk": [
+    {
+      "concept_name": "Dévotion/Culte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Purification",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sacrifice",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Dévotion/Culte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Dévotion/Culte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Rite/Cérémonie",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Rite/Cérémonie",
+      "status": "retenu"
+    }
+  ],
+  "amn": [
+    {
+      "concept_name": "Garantie/Protection",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Amen",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Garantie/Protection",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sécurité/Confiance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Foi/Adhésion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Foi/Adhésion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Foi/Adhésion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Foi/Adhésion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Foi/Adhésion",
+      "status": "retenu"
+    }
+  ],
+  "mte": [
+    {
+      "concept_name": "Bien/Provision",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Durée/Extension",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Bien/Provision",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Jouissance/Profit",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Jouissance/Profit",
+      "status": "retenu"
+    }
+  ],
+  "wjd": [
+    {
+      "concept_name": "Découverte/Existence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Découverte/Existence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Découverte/Existence",
+      "status": "retenu"
+    }
+  ],
+  "thlth": [
+    {
+      "concept_name": "Nombre/Trinité",
+      "status": null
+    },
+    {
+      "concept_name": "Nombre/Trinité",
+      "status": null
+    },
+    {
+      "concept_name": "Nombre/Trinité",
+      "status": null
+    }
+  ],
+  "ywm": [
+    {
+      "concept_name": "Événement/Moment marquant",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Événement/Moment marquant",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Étape",
+      "status": null
+    },
+    {
+      "concept_name": "Temps/Cycle",
+      "status": null
+    },
+    {
+      "concept_name": "Événement/Moment marquant",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Événement/Moment marquant",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Temps/Période",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Temps/Période",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Temps/Période",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Temps/Période",
+      "status": "retenu"
+    }
+  ],
+  "sbe": [
+    {
+      "concept_name": "Désignation/Pointage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Orgueil",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Bien",
+      "status": null
+    },
+    {
+      "concept_name": "Désignation/Pointage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Désignation/Pointage",
+      "status": "retenu"
+    }
+  ],
+  "rje": [
+    {
+      "concept_name": "Pluie/Renouvellement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Répétition",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Répétition",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Profit",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Ruminer",
+      "status": null
+    },
+    {
+      "concept_name": "Retour/Réversion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Retour/Réversion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Retour/Réversion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Retour/Réversion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Retour/Réversion",
+      "status": "retenu"
+    }
+  ],
+  "eshr": [
+    {
+      "concept_name": "Nombre/Complétude",
+      "status": null
+    },
+    {
+      "concept_name": "Nombre/Complétude",
+      "status": null
+    },
+    {
+      "concept_name": "Nombre/Complétude",
+      "status": null
+    },
+    {
+      "concept_name": "Relation proche",
+      "status": null
+    }
+  ],
+  "kml": [
+    {
+      "concept_name": "Complétude/Perfection",
+      "status": null
+    },
+    {
+      "concept_name": "Complétude/Perfection",
+      "status": null
+    },
+    {
+      "concept_name": "Complétude/Perfection",
+      "status": null
+    },
+    {
+      "concept_name": "Complétude/Perfection",
+      "status": null
+    }
+  ],
+  "ahl": [
+    {
+      "concept_name": "Mérite/Aptitude",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Accueillir",
+      "status": null
+    },
+    {
+      "concept_name": "Parenté/Famille",
+      "status": null
+    },
+    {
+      "concept_name": "Famille/Communauté",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Famille/Communauté",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Famille/Communauté",
+      "status": "retenu"
+    }
+  ],
+  "hdr": [
+    {
+      "concept_name": "Sédentarité/Civilisation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Mort/Destruction",
+      "status": null
+    },
+    {
+      "concept_name": "Sédentarité/Civilisation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Présence/Témoignage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Présence/Témoignage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Présence/Témoignage",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Présence/Témoignage",
+      "status": "retenu"
+    }
+  ],
+  "eqb": [
+    {
+      "concept_name": "Talon/Arrière",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Succession/Conséquence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Succession/Conséquence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Succession/Conséquence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Talon/Arrière",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Châtiment/Rétribution",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Châtiment/Rétribution",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Descendance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Descendance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Succession/Conséquence",
+      "status": "retenu"
+    }
+  ],
+  "frd": [
+    {
+      "concept_name": "Part déterminée",
+      "status": null
+    },
+    {
+      "concept_name": "Obligation/Devoir",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Obligation/Devoir",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Obligation/Devoir",
+      "status": "retenu"
+    }
+  ],
+  "hnn": [
+    {
+      "concept_name": "Lieu/Proximité",
+      "status": null
+    },
+    {
+      "concept_name": "Lieu/Proximité",
+      "status": null
+    },
+    {
+      "concept_name": "Lieu/Proximité",
+      "status": null
+    }
+  ],
+  "rfṯ": [
+    {
+      "concept_name": "Indécence/Intimité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Indécence/Intimité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Indécence/Intimité",
+      "status": "retenu"
+    }
+  ],
+  "fsq": [
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": null
+    },
+    {
+      "concept_name": "Transgression/Rébellion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Transgression/Rébellion",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Transgression/Rébellion",
+      "status": "retenu"
+    }
+  ],
+  "jdl": [
+    {
+      "concept_name": "Argumentation/Dispute",
+      "status": null
+    },
+    {
+      "concept_name": "Argumentation/Dispute",
+      "status": null
+    },
+    {
+      "concept_name": "Argumentation/Dispute",
+      "status": null
+    },
+    {
+      "concept_name": "Torsion/Tressage",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Être",
+      "status": null
+    }
+  ],
+  "fel": [
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Action/Acte",
+      "status": "retenu"
+    }
+  ],
+  "khyr": [
+    {
+      "concept_name": "Bien/Excellence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Bien/Excellence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Bien/Excellence",
+      "status": "retenu"
+    }
+  ],
+  "zwd": [
+    {
+      "concept_name": "Provisions/Viatique",
+      "status": null
+    },
+    {
+      "concept_name": "Provisions/Viatique",
+      "status": null
+    },
+    {
+      "concept_name": "Provisions/Viatique",
+      "status": null
+    },
+    {
+      "concept_name": "Provisions/Viatique",
+      "status": null
+    },
+    {
+      "concept_name": "Récipient",
+      "status": null
+    },
+    {
+      "concept_name": "Récipient",
+      "status": null
+    }
+  ],
+  "awl": [
+    {
+      "concept_name": "Instrument/Outil",
+      "status": null
+    },
+    {
+      "concept_name": "Instrument/Outil",
+      "status": null
+    },
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": null
+    },
+    {
+      "concept_name": "Retour/Origine",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Retour/Origine",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Retour/Origine",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Retour/Origine",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Gouvernance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Famille/Appartenance",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Famille/Appartenance",
+      "status": "probable"
+    }
+  ],
+  "lbb": [
+    {
+      "concept_name": "Intelligence/Essence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Intelligence/Essence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Intelligence/Essence",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Intelligence/Essence",
+      "status": "retenu"
+    }
+  ],
+  "jnh": [
+    {
+      "concept_name": "Aile/Côté",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Péché",
+      "status": null
+    },
+    {
+      "concept_name": "Aile/Côté",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Inclinaison/Penchant",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Inclinaison/Penchant",
+      "status": "retenu"
+    }
+  ],
+  "bghy": [
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": null
+    },
+    {
+      "concept_name": "Transgression/Injustice",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Transgression/Injustice",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Transgression/Injustice",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Recherche/Quête",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Recherche/Quête",
+      "status": "retenu"
+    }
+  ],
+  "fdl": [
+    {
+      "concept_name": "Reste/Surplus",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Reste/Surplus",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Excellence/Faveur",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Excellence/Faveur",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Excellence/Faveur",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Excellence/Faveur",
+      "status": "retenu"
+    }
+  ],
+  "rbb": [
+    {
+      "concept_name": "Commerce/Usure",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Fixer",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Groupe",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Sens isolé/Rassembler",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Souffle/Vent",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Commerce/Usure",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Confiture",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Commerce/Usure",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Éducation/Accompagnement",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Éducation/Accompagnement",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Éducation/Accompagnement",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Croissance/Augmentation",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Éducation/Accompagnement",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Seigneurie/Autorité bienveillante",
+      "status": "retenu"
+    }
+  ],
+  "fdw": [
+    {
+      "concept_name": "Espace/Débordement",
+      "status": null
+    },
+    {
+      "concept_name": "Espace/Débordement",
+      "status": null
+    },
+    {
+      "concept_name": "Espace/Débordement",
+      "status": null
+    },
+    {
+      "concept_name": "Espace/Débordement",
+      "status": null
+    }
+  ],
+  "erf": [
+    {
+      "concept_name": "Connaissance/Reconnaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Connaissance/Reconnaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Connaissance/Reconnaissance",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Connaissance/Reconnaissance",
+      "status": "retenu"
+    }
+  ],
+  "sher": [
+    {
+      "concept_name": "Cheveux/Poils",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Cheveux/Poils",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Poésie/Expression",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Poésie/Expression",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Perception/Conscience",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Perception/Conscience",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Perception/Conscience",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Rituel/Culte",
+      "status": "retenu"
+    }
+  ],
+  "dhkr": [
+    {
+      "concept_name": "Masculin",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Mémoire/Rappel",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Mémoire/Rappel",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Mémoire/Rappel",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Mémoire/Rappel",
+      "status": "retenu"
+    }
+  ],
+  "qbl": [
+    {
+      "concept_name": "Sens isolé/Garantie",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Tribu",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Embrasser",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Réception/Accueil",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Réception/Accueil",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Orientation/Direction",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Orientation/Direction",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Antériorité/Passé",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Antériorité/Passé",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Antériorité/Passé",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Orientation/Direction",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Réception/Accueil",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Antériorité/Passé",
+      "status": "retenu"
+    }
+  ],
+  "dll": [
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Oubli/Enterrement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Oubli/Enterrement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Oubli/Enterrement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Oubli/Enterrement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Famille",
+      "status": null
+    },
+    {
+      "concept_name": "Lieu/Géographie",
+      "status": null
+    },
+    {
+      "concept_name": "Minéral/Terre",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Guide",
+      "status": null
+    },
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Suiveur",
+      "status": null
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Disparition/Perte",
+      "status": "probable"
+    },
+    {
+      "concept_name": "Oubli/Enterrement",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Égarement/Déviation",
+      "status": "retenu"
+    }
+  ],
+  "fyd": [
+    {
+      "concept_name": "Débordement/Abondance",
+      "status": null
+    },
+    {
+      "concept_name": "Débordement/Abondance",
+      "status": null
+    },
+    {
+      "concept_name": "Débordement/Abondance",
+      "status": null
+    },
+    {
+      "concept_name": "Débordement/Abondance",
+      "status": null
+    },
+    {
+      "concept_name": "Sens isolé/Mourir",
+      "status": null
+    }
+  ],
+  "nws": [
+    {
+      "concept_name": "Perception/Visibilité",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Être",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Perception/Visibilité",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Oublier",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Humanité/Peuple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Humanité/Peuple",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Humanité/Peuple",
+      "status": "retenu"
+    }
+  ],
+  "qdy": [
+    {
+      "concept_name": "Jugement/Décret",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Jugement/Décret",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Jugement/Décret",
+      "status": "retenu"
+    }
+  ],
+  "aba": [
+    {
+      "concept_name": "Refus/Rejet",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Refus/Rejet",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parenté/Paternité",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Parenté/Paternité",
+      "status": "retenu"
+    }
+  ],
+  "qwl": [
+    {
+      "concept_name": "Pensée/Avis",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Pensée/Avis",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Puissance",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Corps/Anatomie",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Pensée/Avis",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Parole/Énonciation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Parole/Énonciation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Parole/Énonciation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Parole/Énonciation",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Parole/Énonciation",
+      "status": "retenu"
+    }
+  ],
+  "aty": [
+    {
+      "concept_name": "Sens isolé/Détruire",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Venue/Arrivée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Venue/Arrivée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Venue/Arrivée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Venue/Arrivée",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Venue/Arrivée",
+      "status": "retenu"
+    }
+  ],
+  "dnw": [
+    {
+      "concept_name": "Proximité/Monde d'ici-bas",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Proximité/Monde d'ici-bas",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Proximité/Monde d'ici-bas",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Proximité/Monde d'ici-bas",
+      "status": "retenu"
+    }
+  ],
+  "axr": [
+    {
+      "concept_name": "Sens isolé/Arrière",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Sens isolé/Derrière",
+      "status": "nul"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    },
+    {
+      "concept_name": "Postériorité/Retard",
+      "status": "retenu"
+    }
+  ],
+  "khlq": [
+    {
+      "concept_name": "Création/Formation",
+      "status": null
+    },
+    {
+      "concept_name": "Nature/Caractère",
+      "status": null
+    }
+  ]
+}
