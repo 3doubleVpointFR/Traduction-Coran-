@@ -225,6 +225,23 @@ Les 5 axes existants doivent être appliqués **rigoureusement** AVANT de reteni
 
 Quand un de ces mots apparaît, TOUJOURS vérifier le sens primaire étymologique dans le Lane's et ne pas se fier au sens communément admis. Le contexte du verset détermine quel sens primaire est activé — ne jamais figer un sens sur une racine.
 
+## RÈGLE — Résumé / phrase d'introduction agréable à lire
+
+L'intro de la §DEMARCHE§ est le RÉSUMÉ visible en haut du verset (encadré or). Il est lu en premier, par tous les utilisateurs — y compris ceux qui ne déplieront jamais l'analyse mot à mot. Il doit donc être :
+
+1. **Agréable à lire** — phrases courtes, français simple, ton fluide.
+2. **PAS de jargon technique grammatical** : ne JAMAIS écrire « négation modale », « particule conjonctive », « subjonctif régi par », « phrase nominale taqdim », etc. dans le résumé. Ces analyses sont réservées aux paragraphes mot à mot.
+3. **PAS de méta-discours sur l'analyse** : ne JAMAIS écrire « l'analyse mot par mot ci-dessous éclaire les choix lexicaux retenus », « voir l'analyse », ou similaire. Le lecteur sait qu'il y a une analyse plus bas.
+4. **PAS de phonétique arabe brute** dans le résumé, sauf 1-2 mots-clés essentiels (ex: nom propre, racine emblématique). Ne JAMAIS écrire des phrases entières en phonétique (« mā kāna li-bashar an... »).
+5. **Dire ce que le verset DIT**, pas comment il est construit grammaticalement. Le contenu, pas la forme.
+6. **Lien avec verset précédent** : recommandé quand pertinent — mais en français simple (« Ce verset prolonge le V79 », pas « V79 répond par la négative à V78 selon la structure mā... »).
+
+Exemple cassé (V80 avant correction) :
+> ❌ « Le verset 80 prolonge directement l'argumentation du verset 79 — la phrase mā kāna li-bashar an... s'étend par wa-lā yaʾmurakum (« et qu'il ne vous ordonne pas »), reliant la même négation modale à un nouveau scénario [...] L'analyse mot par mot ci-dessous éclaire les choix lexicaux retenus. »
+
+Exemple corrigé :
+> ✅ « Ce verset prolonge le verset 79 sur la fonction du prophète. Le texte rappelle qu'aucun envoyé de Dieu (prophète ou ange) ne peut être pris pour seigneur — seul Dieu l'est. Le verset se termine par une question rhétorique : Dieu n'irait pas vous demander de rejeter la foi après que vous l'avez embrassée. »
+
 ## RÈGLE — UN MOT PAR PARAGRAPHE DANS LA §DEMARCHE§
 Chaque mot important DOIT avoir son propre paragraphe dédié dans la §DEMARCHE§. Ne JAMAIS regrouper 2 mots ou plus dans le même paragraphe. Chaque paragraphe commence par le mot en gras (**Mot**) suivi de sa traduction entre parenthèses, puis l'analyse grammaticale. Séparer chaque mot par un double saut de ligne (\n\n).
 

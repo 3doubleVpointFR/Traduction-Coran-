@@ -789,6 +789,45 @@ async function run() {
   if (posWordOk) ok('Aucun "position X" dans les textes visibles')
 
   // ================================================================
+  // 24a. RÉSUMÉ DE LA §DEMARCHE§ — agréable à lire (pas de jargon)
+  // ================================================================
+  section('24a', 'Résumé de §DEMARCHE§ agréable à lire (pas de jargon)')
+  let resumeOk = true
+  // Marqueurs de jargon grammatical / méta-discours / phonétique brute
+  const TECH_JARGON = [
+    /négation modale/i,
+    /subjonctif régi/i,
+    /particule conjonctive/i,
+    /phrase nominale taqdim/i,
+    /interrogative ʾ?ayamur/i,
+    /\(forme [IVXLC]+\)/i,
+    /l'analyse mot par mot/i,
+    /ci-dessous éclaire/i,
+    /choix lexicaux retenus/i,
+  ]
+  // Détection phonétique brute longue (≥ 3 mots phonétiques d'affilée)
+  const PHON_PATTERN = /[a-zāīūʿʾḏḥḍṣṭẓšġ]+(-[a-zāīūʿʾḏḥḍṣṭẓšġ]+)?\s+[a-zāīūʿʾḏḥḍṣṭẓšġ]+(-[a-zāīūʿʾḏḥḍṣṭẓšġ]+)?\s+[a-zāīūʿʾḏḥḍṣṭẓšġ]+/i
+  for (const v of verses) {
+    const va = vaByVid[v.id]
+    if (!va || !va.translation_explanation) continue
+    const expl = va.translation_explanation
+    const demStart = expl.indexOf('§DEMARCHE§')
+    const justStart = expl.indexOf('§JUSTIFICATION§')
+    if (demStart < 0 || justStart < 0) continue
+    const dem = expl.slice(demStart + 11, justStart).trim()
+    const firstWord = dem.indexOf('\n\n**')
+    if (firstWord <= 0) continue
+    const intro = dem.slice(0, firstWord).trim()
+    for (const re of TECH_JARGON) {
+      if (re.test(intro)) {
+        warn('V' + v.verse_num + `: résumé contient un terme technique : ${re.source}`)
+        resumeOk = false
+      }
+    }
+  }
+  if (resumeOk) ok('Résumés de §DEMARCHE§ : pas de jargon technique détecté')
+
+  // ================================================================
   // 24b. RACINES À DUALITÉ PHYSIQUE/ABSTRAIT — vérifier le concept retenu
   // ================================================================
   section('24b', 'Racines à dualité physique/abstrait (k-f-r, ḍ-r-b, ʿ-q-d, ḥ-k-m)')
