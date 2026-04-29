@@ -10,7 +10,19 @@ Avant l'étape 3, vérifier CHAQUE racine importante du verset :
 **Pourquoi** : L'étape 2 originale a été faite par GPT-4.1-mini avec un tagging rapide. 2315 racines sur 2355 n'ont que 2-3 sens devinés sans consultation du Lane's. Il faut compléter au fil de l'eau.
 
 ## ÉTAPE 2 — Si une racine est suspecte ou n'existe pas en base
-Avant de commencer l'étape 3, vérifier que TOUTES les racines des mots importants du verset existent dans `word_analyses` et ont des concepts SUFFISAMMENT RICHES dans `word_meanings`. Si une racine est suspecte (critères ci-dessus) ou n'existe pas :
+
+### 🚨 RÈGLE ANTI-DOUBLONS — OBLIGATOIRE
+Avant de créer une nouvelle entrée dans `word_analyses`, **TOUJOURS chercher par `root_ar` (la racine arabe), pas seulement par `word_key`**. La BDD a accumulé de nombreux doublons à cause de variations de translittération (ex: `zyg`/`zygh`, `jme`/`jmE`/`jma`, `wed`/`waed`/`wEd`). Une même racine arabe peut donc avoir plusieurs `word_key` dans la BDD.
+
+Procédure obligatoire :
+1. Lire `root_ar` du mot dans la table `words` (ex: `ز ي غ`)
+2. Faire `SELECT * FROM word_analyses WHERE root_ar = 'ز ي غ' OR root_ar = 'زيغ'` (avec et sans espaces)
+3. Si **aucune entrée** → créer la nouvelle racine
+4. Si **une seule entrée** → utiliser celle-ci (ne JAMAIS créer un doublon avec un word_key différent)
+5. Si **plusieurs entrées** (doublons existants) → utiliser celle qui a le plus de sens / le step le plus avancé (`senses_done` > `etymology` > `tagged`) et signaler le doublon
+
+### Procédure étape 2
+Avant de commencer l'étape 3, vérifier que TOUTES les racines des mots importants du verset existent dans `word_analyses` et ont des concepts SUFFISAMMENT RICHES dans `word_meanings`. Si une racine est suspecte (critères ci-dessus) ou n'existe pas (après vérification anti-doublons) :
 
 1. **Créer l'entrée** dans `word_analyses` (word_key, root_ar, root_transliteration)
 2. **Consulter le Lane's SQLite** (`lanes_data/lexicon.sqlite`) — chercher la racine dans les tables `entry` ou `root`. Extraire TOUS les sens attestés, y compris les sens physiques obscurs.
@@ -30,9 +42,9 @@ Pour CHAQUE mot important du verset, analyser les CONCEPTS de sa racine (pas les
 - **nul** : concept hors sujet — proof_ctx court (1 phrase)
 - **peu_probable** : concept possible mais inadapté — proof_ctx 1-2 phrases avec distinction philosophique vs le retenu
 - **probable** : concept cohérent mais moins précis — proof_ctx 1-2 phrases avec distinction philosophique vs le retenu
-- **retenu** : le seul meilleur concept — proof_ctx 1-2 phrases avec distinction philosophique vs CHAQUE concept probable
+- **retenu** : le seul meilleur concept — proof_ctx 4 phrases MINIMUM avec distinction philosophique vs CHAQUE concept probable
 
-### Les 5 axes — RÉFLEXION INTERNE (pas écrits)
+### Les 5 axes — RÉFLEXION INTERNE (pas écrits) le plus important 
 Claude réfléchit à ces 5 axes dans sa tête AVANT de choisir le concept retenu, mais ne les écrit PAS dans les données :
 1. **Champ lexical du verset** : ce concept est-il en accord avec les autres mots du verset ?
 2. **Contexte des versets voisins** : ce concept correspond-il au sujet du passage ?

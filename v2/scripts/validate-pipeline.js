@@ -789,6 +789,41 @@ async function run() {
   if (posWordOk) ok('Aucun "position X" dans les textes visibles')
 
   // ================================================================
+  // 24c. DOUBLONS DE RACINES — chaque word_key utilisé doit être unique pour sa racine
+  // ================================================================
+  section('24c', 'Doublons de racines — word_key unique par root_ar')
+  let dupOk = true
+  // Récupère tous les word_keys utilisés dans les VWAs des versets analysés
+  const vwasUsedKeys = new Set()
+  for (const v of verses) {
+    const vList = vwaByVid && vwaByVid[v.id] ? vwaByVid[v.id] : []
+    for (const vwa of vList) if (vwa.word_key) vwasUsedKeys.add(vwa.word_key)
+  }
+  // Pour chaque word_key utilisé, vérifie qu'il n'a pas de doublon par root_ar
+  if (vwasUsedKeys.size > 0) {
+    const { data: usedRoots } = await db
+      .from('word_analyses')
+      .select('id, word_key, root_ar')
+      .in('word_key', Array.from(vwasUsedKeys))
+    for (const u of usedRoots || []) {
+      if (!u.root_ar) continue
+      const normalize = s => (s || '').replace(/[\s\-]/g, '').trim()
+      const norm = normalize(u.root_ar)
+      // Cherche des doublons avec la même racine normalisée
+      const { data: allWithSameRoot } = await db
+        .from('word_analyses')
+        .select('id, word_key, root_ar')
+        .neq('id', u.id)
+      const dups = (allWithSameRoot || []).filter(x => normalize(x.root_ar) === norm)
+      if (dups.length > 0) {
+        warn(`word_key "${u.word_key}" (id=${u.id}) a ${dups.length} doublon(s) en BDD : ${dups.map(d => d.word_key).join(', ')} — vérifier qu'on utilise la racine canonique`)
+        dupOk = false
+      }
+    }
+  }
+  if (dupOk) ok('Aucun doublon de racine détecté pour les word_keys utilisés')
+
+  // ================================================================
   // 24a. RÉSUMÉ DE LA §DEMARCHE§ — agréable à lire (pas de jargon)
   // ================================================================
   section('24a', 'Résumé de §DEMARCHE§ agréable à lire (pas de jargon)')
