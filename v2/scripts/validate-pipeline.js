@@ -824,6 +824,81 @@ async function run() {
   if (dupOk) ok('Aucun doublon de racine détecté pour les word_keys utilisés')
 
   // ================================================================
+  // 24d. COHÉRENCE §CRITIQUE§ vs translation_arab
+  // ================================================================
+  section('24d', 'Cohérence §CRITIQUE§ vs translation_arab (notre traduction respecte ce qu\'on critique)')
+  let critCoherOk = true
+  for (const v of verses) {
+    const va = vaByVid[v.id]
+    if (!va || !va.translation_explanation || !va.translation_arab) continue
+    const expl = va.translation_explanation
+    const trans = va.translation_arab.toLowerCase()
+    const critStart = expl.indexOf('§CRITIQUE§')
+    const finalStart = expl.indexOf('§FINALITE§')
+    if (critStart < 0) continue
+    const critique = expl.slice(critStart + 11, finalStart > 0 ? finalStart : undefined)
+
+    // Extrait tous les blocs **X vs « Y »** : ...
+    const blockRe = /\*\*([^*]{2,80})\s+vs\s+«\s*([^»]{2,80})\s*»\*\*\s*:/g
+    let m
+    while ((m = blockRe.exec(critique)) !== null) {
+      const ours = m[1].trim().toLowerCase()
+      const hami = m[2].trim().toLowerCase()
+      // Si le bloc dit "sensiblement le même sens" ou "convergent", c'est une convergence — skip
+      const blockEnd = critique.indexOf('**', m.index + m[0].length)
+      const blockText = critique.slice(m.index, blockEnd > 0 ? blockEnd : critique.length)
+      if (/sensiblement le même sens|convergent|convergence|pas de divergence/i.test(blockText)) {
+        continue
+      }
+      // Cœur du check : si on critique un mot ou une expression précise d'Hamidullah,
+      // on ne doit PAS utiliser cette même expression VERBATIM dans NOTRE traduction.
+      // On compare hami EXACTEMENT (modulo casse/espaces) avec translation_arab.
+      // Si hami est court (≤ 4 mots), on cherche la sous-chaîne complète.
+      // Si hami est long (> 4 mots), il s'agit probablement d'une expression
+      // structurelle qu'on critique pour sa forme — on cherche alors les segments
+      // courts à problème (verbe principal seul).
+      const cleanHami = hami.trim().replace(/\s+/g, ' ')
+      const hamiWordCount = cleanHami.split(/\s+/).length
+      const STOPWORDS_LONG = new Set([
+        'le','la','les','un','une','des','de','du','à','au','aux','et','ou',
+        'mais','que','qui','dont','sont','est','être','dans','sur','par','pour',
+        'sans','avec','il','elle','nous','vous','ils','elles','toi','vous',
+        'allah','dieu','seigneur','sa','son','ses','ne','pas','plus','tout','tous',
+        'certes','certains','certain','certaine','vraiment','toujours'
+      ])
+
+      let flagged = false
+      if (hamiWordCount <= 4) {
+        // Expression courte : chercher la chaîne complète dans trans
+        if (trans.includes(cleanHami)) {
+          err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) mais translation_arab contient cette expression verbatim`)
+          critCoherOk = false
+          flagged = true
+        }
+      } else {
+        // Expression longue : extraire le verbe ou nom principal (≥ 6 lettres, non-stopword)
+        // qui n'apparaît pas dans ours (donc spécifique à Hami)
+        const hamiKeyWords = cleanHami.split(/\s+/)
+          .map(w => w.replace(/[^\wÀ-ÿ']/g, '').toLowerCase())
+          .filter(w => w.length >= 6 && !STOPWORDS_LONG.has(w))
+        const oursKeyWords = new Set(
+          ours.split(/\s+/).map(w => w.replace(/[^\wÀ-ÿ']/g, '').toLowerCase())
+        )
+        for (const w of hamiKeyWords) {
+          if (oursKeyWords.has(w)) continue // mot partagé, pas spécifique à Hami
+          if (trans.toLowerCase().includes(w)) {
+            err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) — le mot "${w}" qui est dans Hamidullah mais PAS dans notre version critique apparaît cependant dans translation_arab`)
+            critCoherOk = false
+            flagged = true
+            break
+          }
+        }
+      }
+    }
+  }
+  if (critCoherOk) ok('§CRITIQUE§ et translation_arab cohérents (notre traduction respecte ce qu\'on critique)')
+
+  // ================================================================
   // 24a. RÉSUMÉ DE LA §DEMARCHE§ — agréable à lire (pas de jargon)
   // ================================================================
   section('24a', 'Résumé de §DEMARCHE§ agréable à lire (pas de jargon)')
