@@ -181,6 +181,41 @@ Exemple :
 - `verse_analyses` : translation_arab, translation_explanation, segments, **full_translation** (traduction classique Hamidullah pour comparaison dans l'UI)
 - `word_daily` : analysis_id, sense, arabic, phon, french
 
+## RÈGLE CRITIQUE — Racines à dualité physique/abstrait
+
+Certaines racines arabes ont un sens étymologique premier **physique** (couvrir, frapper, lier, etc.) qui dérive ensuite un sens **actif/abstrait** (nier, juger, contracter, etc.). Quand une racine présente cette dualité dans `word_meanings`, l'étape 3 DOIT systématiquement **confronter le contexte grammatical au sens physique avant de le retenir**.
+
+### Test obligatoire — Structure grammaticale du verset
+Pour chaque verset utilisant une racine à dualité physique/abstraite, répondre AVANT de choisir le concept :
+1. **Qui fait l'action ?** — sujet
+2. **Sur quoi/qui ?** — objet
+3. **L'objet est-il caché (concept passif) ou refusé/rejeté ouvertement (concept actif) ?**
+
+Si l'objet n'est pas effectivement « caché » mais « rejeté en pleine lumière », le concept actif/abstrait l'emporte sur le concept physique, peu importe l'antériorité étymologique.
+
+### Cas k-f-r (couvrir / rejeter)
+- Sens premier (Lane's) : **couvrir** (le cultivateur couvre la graine, la nuit couvre le jour)
+- Usage coranique **massivement majoritaire** : **rejet / ingratitude** (refuser de reconnaître les signes, les bienfaits)
+- Test grammatical : si le contexte parle de signes/preuves/bienfaits visibles que les acteurs **refusent** ou **dénient** → concept retenu = **Rejet/Ingratitude**, **jamais Couverture/Dissimulation**
+- Le concept Couverture/Dissimulation ne s'applique pour k-f-r que dans des contextes rares où le sens physique premier est explicitement activé (ex: cultivateur, nuit qui couvre)
+
+### Autres racines à risque (à confronter au contexte)
+- **k-f-r** (couvrir → rejeter / être ingrat)
+- **ḍ-r-b** (frapper → fixer une règle, parcourir, frapper monnaie)
+- **ʿ-q-d** (nouer → conclure un contrat, prendre une résolution)
+- **ḥ-k-m** (empêcher de bouger → juger, gouverner)
+
+### Pourquoi cette règle existe
+La pipeline tend à retenir le sens étymologique premier par défaut, parce qu'il est listé en premier dans `word_meanings`. Mais le Coran utilise massivement les sens dérivés actifs. Sans cette règle, on classe systématiquement les contextes de rejet en « couverture », ce qui est **anachronique**.
+
+Exemple cassé identifié : S3:V52 (Jésus face aux Enfants d'Israël) classé en « Couverture/Dissimulation » alors que c'est clairement un contexte de **rejet actif** des signes — corrigé manuellement en « Rejet/Ingratitude ».
+
+### Application des 5 axes — Renforcement
+Les 5 axes existants doivent être appliqués **rigoureusement** AVANT de retenir un concept :
+- **Axe 1 (champ lexical)** : si le verset cite des signes/preuves/bienfaits, le sens « couvrir » physique est exclu sauf cas explicite
+- **Axe 2 (versets voisins)** : si les voisins parlent de rejet/refus, c'est le concept Rejet
+- **Axe 4 (cohérence coranique)** : k-f-r dans le Coran = rejet dans 95% des occurrences
+
 ## RÈGLE — SENS POST-ISLAMIQUES
 ⚠️ Certains sens listés dans les dictionnaires (y compris le Lane's) sont des extensions tardives, post-islamiques. Exemples connus :
 - **dīn** (د ي ن) → "religion" est post-islamique. Le sens primaire est "dette/obligation/rétribution". Choisir selon le contexte (dette, devoir, rétribution...).

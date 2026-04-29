@@ -789,6 +789,31 @@ async function run() {
   if (posWordOk) ok('Aucun "position X" dans les textes visibles')
 
   // ================================================================
+  // 24b. RACINES À DUALITÉ PHYSIQUE/ABSTRAIT — vérifier le concept retenu
+  // ================================================================
+  section('24b', 'Racines à dualité physique/abstrait (k-f-r, ḍ-r-b, ʿ-q-d, ḥ-k-m)')
+  // Heuristique : si k-f-r est utilisé dans un verset qui mentionne signes/preuves
+  // (āyāt, bayyināt, hudā, dhikr) → le concept doit être Rejet/Ingratitude, pas Couverture
+  const SIGN_KEYWORDS = /\b(āy|signe|preuve|bayyin|hudā|guidance|dhikr|rappel|miracle|signe|verset|écriture|kitāb)\b/i
+  let dualityOk = true
+  for (const v of verses) {
+    const va = vaByVid[v.id]
+    if (!va || !va.segments) continue
+    const kfrSeg = (va.segments || []).find(s => s.word_key === 'kfr')
+    if (!kfrSeg) continue
+    // Récupère la VWA pour ce verset/mot
+    const vwa = vwaByVid && vwaByVid[v.id] ? vwaByVid[v.id].find(x => x.word_key === 'kfr') : null
+    const concept = vwa?.analysis_axes?.concept_chosen || ''
+    const trans = (va.full_translation || '') + ' ' + (va.translation_arab || '')
+    const hasSigns = SIGN_KEYWORDS.test(trans)
+    if (concept === 'Couverture/Dissimulation' && hasSigns) {
+      warn('V' + v.verse_num + `: k-f-r classé "Couverture/Dissimulation" mais le contexte mentionne signes/preuves → vérifier si "Rejet/Ingratitude" ne serait pas plus juste`)
+      dualityOk = false
+    }
+  }
+  if (dualityOk) ok('Racines à dualité physique/abstrait : pas de classement suspect détecté')
+
+  // ================================================================
   // 25. §CRITIQUE§ format — doit contenir **vs** ou "sensiblement"
   // ================================================================
   section(25, 'Format §CRITIQUE§ (comparaisons avec traductions courantes)')
