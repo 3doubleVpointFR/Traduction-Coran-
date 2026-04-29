@@ -851,14 +851,11 @@ async function run() {
         continue
       }
       // Cœur du check : si on critique un mot ou une expression précise d'Hamidullah,
-      // on ne doit PAS utiliser cette même expression VERBATIM dans NOTRE traduction.
-      // On compare hami EXACTEMENT (modulo casse/espaces) avec translation_arab.
-      // Si hami est court (≤ 4 mots), on cherche la sous-chaîne complète.
-      // Si hami est long (> 4 mots), il s'agit probablement d'une expression
-      // structurelle qu'on critique pour sa forme — on cherche alors les segments
-      // courts à problème (verbe principal seul).
+      // on ne doit PAS utiliser exactement cette même chose dans NOTRE traduction.
+      // PRINCIPE : ne flagger que les mots qui sont SPÉCIFIQUES à Hamidullah
+      // (présents dans Y mais pas dans X) et qui apparaissent dans trans.
+      // Ainsi si X="ange" et Y="Anges" (même mot, formes différentes), on ne flagge pas.
       const cleanHami = hami.trim().replace(/\s+/g, ' ')
-      const hamiWordCount = cleanHami.split(/\s+/).length
       const STOPWORDS_LONG = new Set([
         'le','la','les','un','une','des','de','du','à','au','aux','et','ou',
         'mais','que','qui','dont','sont','est','être','dans','sur','par','pour',
@@ -867,31 +864,28 @@ async function run() {
         'certes','certains','certain','certaine','vraiment','toujours'
       ])
 
-      let flagged = false
-      if (hamiWordCount <= 4) {
-        // Expression courte : chercher la chaîne complète dans trans
-        if (trans.includes(cleanHami)) {
-          err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) mais translation_arab contient cette expression verbatim`)
+      // Normalise un mot en radical conservateur (enlève majuscules + suffixes triviaux)
+      const stem = (w) => w.replace(/[^\wÀ-ÿ']/g, '').toLowerCase()
+        .replace(/(ements?|ions?|ait|ais|ant|ées?|er|es|e|és|s|x)$/i, '')
+
+      // Extrait les radicaux des mots significatifs (≥ 5 lettres, hors stopwords)
+      const sigStems = (text) => new Set(
+        text.split(/\s+/)
+          .map(stem)
+          .filter(s => s.length >= 5 && !STOPWORDS_LONG.has(s))
+      )
+
+      const oursStems = sigStems(ours)
+      const hamiStems = sigStems(cleanHami)
+
+      // Trouve les radicaux SPÉCIFIQUES à Hamidullah (= dans Y mais pas dans X)
+      const specificToHami = [...hamiStems].filter(s => !oursStems.has(s))
+
+      for (const s of specificToHami) {
+        if (trans.toLowerCase().includes(s)) {
+          err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) — le radical "${s}" est spécifique à Hamidullah (absent de notre version "${m[1].trim()}") mais apparaît dans translation_arab`)
           critCoherOk = false
-          flagged = true
-        }
-      } else {
-        // Expression longue : extraire le verbe ou nom principal (≥ 6 lettres, non-stopword)
-        // qui n'apparaît pas dans ours (donc spécifique à Hami)
-        const hamiKeyWords = cleanHami.split(/\s+/)
-          .map(w => w.replace(/[^\wÀ-ÿ']/g, '').toLowerCase())
-          .filter(w => w.length >= 6 && !STOPWORDS_LONG.has(w))
-        const oursKeyWords = new Set(
-          ours.split(/\s+/).map(w => w.replace(/[^\wÀ-ÿ']/g, '').toLowerCase())
-        )
-        for (const w of hamiKeyWords) {
-          if (oursKeyWords.has(w)) continue // mot partagé, pas spécifique à Hami
-          if (trans.toLowerCase().includes(w)) {
-            err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) — le mot "${w}" qui est dans Hamidullah mais PAS dans notre version critique apparaît cependant dans translation_arab`)
-            critCoherOk = false
-            flagged = true
-            break
-          }
+          break
         }
       }
     }

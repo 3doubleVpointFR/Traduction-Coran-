@@ -4,6 +4,86 @@ import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
 
+/**
+ * Mini parseur markdown pour les proof_ctx :
+ * - `**texte**` → gras
+ * - `*texte*` → italique
+ * - `` `texte` `` → code (sans police monospace, juste accent doré)
+ * - `\n\n` → nouveau paragraphe
+ * - `\n` → saut de ligne simple
+ *
+ * Renvoie du JSX, pas du HTML brut, donc sécurisé contre injection.
+ */
+function renderMarkdown(text: string): React.ReactNode {
+  if (!text) return null
+  const paragraphs = text.split(/\n\s*\n/)
+  return paragraphs.map((para, pi) => {
+    // Tokenize : code → bold → italic
+    const nodes: React.ReactNode[] = []
+    let remaining = para
+    let key = 0
+
+    const consume = (re: RegExp, wrap: (inner: React.ReactNode, k: number) => React.ReactNode) => {
+      const next: React.ReactNode[] = []
+      for (const node of nodes.length ? nodes : [remaining]) {
+        if (typeof node !== 'string') { next.push(node); continue }
+        let lastIdx = 0
+        let m: RegExpExecArray | null
+        const localRe = new RegExp(re.source, re.flags)
+        while ((m = localRe.exec(node)) !== null) {
+          if (m.index > lastIdx) next.push(node.slice(lastIdx, m.index))
+          next.push(wrap(consumeInner(m[1]), key++))
+          lastIdx = m.index + m[0].length
+        }
+        if (lastIdx < node.length) next.push(node.slice(lastIdx))
+      }
+      nodes.length = 0
+      nodes.push(...next)
+    }
+
+    const consumeInner = (s: string): React.ReactNode => {
+      // Apply nested italic + code in inner text of bold
+      const parts: React.ReactNode[] = []
+      const innerRe = /\*([^*\n]+?)\*|`([^`\n]+?)`/g
+      let lastIdx = 0
+      let m: RegExpExecArray | null
+      while ((m = innerRe.exec(s)) !== null) {
+        if (m.index > lastIdx) parts.push(s.slice(lastIdx, m.index))
+        if (m[1] !== undefined) parts.push(<em key={key++}>{m[1]}</em>)
+        else if (m[2] !== undefined) parts.push(<code key={key++} style={{ color: '#9C7C2E', fontFamily: 'inherit', fontWeight: 600, fontStyle: 'italic' }}>{m[2]}</code>)
+        lastIdx = m.index + m[0].length
+      }
+      if (lastIdx < s.length) parts.push(s.slice(lastIdx))
+      return parts.length === 1 ? parts[0] : <>{parts}</>
+    }
+
+    // 1. Code spans first (to protect their content)
+    consume(/`([^`\n]+?)`/g, (inner, k) => <code key={k} style={{ color: '#9C7C2E', fontFamily: 'inherit', fontWeight: 600, fontStyle: 'italic' }}>{inner}</code>)
+    // 2. Bold + italic combined (***X***) — must come before bold and italic
+    consume(/\*\*\*([^*\n]+?)\*\*\*/g, (inner, k) => <strong key={k}><em>{inner}</em></strong>)
+    // 3. Bold (with possible italic inside)
+    consume(/\*\*([^*\n]+?)\*\*/g, (inner, k) => <strong key={k}>{inner}</strong>)
+    // 4. Italic (remaining single asterisks)
+    consume(/\*([^*\n]+?)\*/g, (inner, k) => <em key={k}>{inner}</em>)
+
+    // Handle single \n inside paragraph as <br/>
+    const finalNodes: React.ReactNode[] = []
+    nodes.forEach((n, ni) => {
+      if (typeof n === 'string') {
+        const lines = n.split('\n')
+        lines.forEach((line, li) => {
+          if (li > 0) finalNodes.push(<br key={`br-${pi}-${ni}-${li}`} />)
+          if (line) finalNodes.push(line)
+        })
+      } else {
+        finalNodes.push(n)
+      }
+    })
+
+    return <p key={pi} style={{ margin: pi === 0 ? 0 : '0.6em 0 0 0' }}>{finalNodes}</p>
+  })
+}
+
 interface EtymologyEntry {
   id: number
   sense: string
@@ -673,14 +753,15 @@ export default function WordPanel({
                             return (
                               <>
                                 {proofText && (
-                                  <p data-tour-proof-ctx={conceptStatus === 'retenu' ? '1' : undefined} className="rounded" style={{
+                                  <div data-tour-proof-ctx={conceptStatus === 'retenu' ? '1' : undefined} className="rounded" style={{
                                     color: '#1A1410',
                                     background: conceptHasRetenu ? '#FDF6E8' : conceptStatus === 'probable' ? '#E8F5F0' : '#F5F5F5',
                                     borderLeft: `4px solid ${borderColor}`,
                                     border: `1px solid ${borderColor}33`,
                                     borderLeftWidth: '4px',
-                                    padding: '12px 14px'
-                                  }}>{proofText}</p>
+                                    padding: '12px 14px',
+                                    lineHeight: 1.55,
+                                  }}>{renderMarkdown(proofText)}</div>
                                 )}
                                 {(a1 || a2 || a3 || a4 || a5) && (
                                   <div className="space-y-1 mt-1">
