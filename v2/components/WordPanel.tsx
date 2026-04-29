@@ -335,34 +335,53 @@ export default function WordPanel({
                       data-concept-tab="1"
                       className="relative group"
                       style={{ padding: '2px 0', cursor: 'pointer' }}
+                      onMouseEnter={(e) => {
+                        // Sur desktop seulement : positionne le tooltip via portal au hover
+                        const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
+                        if (vpW < 1024) return // mobile : ignoré, on garde le tap
+                        const rect = e.currentTarget.getBoundingClientRect()
+                        const SIDE_MARGIN = 12
+                        const desiredW = 280
+                        // Aligne la tooltip sur le bord gauche de l'onglet,
+                        // mais clamp à droite pour ne pas dépasser le viewport
+                        let left = rect.left
+                        if (left + desiredW + SIDE_MARGIN > vpW) {
+                          left = Math.max(SIDE_MARGIN, vpW - desiredW - SIDE_MARGIN)
+                        }
+                        setTooltipPos({ left, top: rect.bottom + 4, width: desiredW })
+                        setOpenTooltip(concept)
+                      }}
+                      onMouseLeave={(e) => {
+                        const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
+                        if (vpW < 1024) return
+                        // Vérifie que la souris n'est pas passée sur le tooltip lui-même
+                        const related = e.relatedTarget as Node | null
+                        if (related && (related as HTMLElement).closest?.('[data-concept-tooltip-portal="1"]')) return
+                        setOpenTooltip(null)
+                        setTooltipPos(null)
+                      }}
                       onClick={(e) => {
                         e.stopPropagation()
-                        // Si on referme le même tooltip → close
+                        const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
+                        const isMobile = vpW < 1024
+                        if (!isMobile) return // desktop : géré par hover
+                        // Mobile tap : si on referme le même → close
                         if (openTooltip === concept) {
                           setOpenTooltip(null)
                           setTooltipPos(null)
                           return
                         }
                         const rect = e.currentTarget.getBoundingClientRect()
-                        const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
-                        const isMobile = vpW < 1024
-                        if (isMobile) {
-                          // Sur mobile : tooltip en position fixed avec largeur adaptée
-                          // au viewport (jamais plus large que vpW - 24px)
-                          const SIDE_MARGIN = 12
-                          const desiredW = Math.min(280, vpW - SIDE_MARGIN * 2)
-                          // Centre la tooltip sur l'onglet, mais clamp dans le viewport
-                          const tabCenter = rect.left + rect.width / 2
-                          let left = tabCenter - desiredW / 2
-                          left = Math.max(SIDE_MARGIN, Math.min(left, vpW - desiredW - SIDE_MARGIN))
-                          setTooltipPos({
-                            left,
-                            top: rect.bottom + 6,
-                            width: desiredW,
-                          })
-                        } else {
-                          setTooltipPos(null) // Desktop : positionnement absolute classique
-                        }
+                        const SIDE_MARGIN = 12
+                        const desiredW = Math.min(280, vpW - SIDE_MARGIN * 2)
+                        const tabCenter = rect.left + rect.width / 2
+                        let left = tabCenter - desiredW / 2
+                        left = Math.max(SIDE_MARGIN, Math.min(left, vpW - desiredW - SIDE_MARGIN))
+                        setTooltipPos({
+                          left,
+                          top: rect.bottom + 6,
+                          width: desiredW,
+                        })
                         setOpenTooltip(concept)
                       }}
                     >
@@ -379,13 +398,8 @@ export default function WordPanel({
                       >
                         {concept}
                       </span>
-                      {/* Tooltip desktop : hover, position absolute classique */}
-                      <div
-                        data-tour-concept-tooltip={isActive ? '1' : undefined}
-                        className="hidden md:group-hover:block absolute top-full mt-1 left-0 z-50 bg-white border border-amber-200 rounded-lg shadow-lg p-3 min-w-[200px] max-w-[280px]"
-                        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
-                        onClick={(e) => e.stopPropagation()}
-                      >
+                      {/* Tooltip desktop fallback (au cas où le portal ne se monte pas) — caché */}
+                      <div className="hidden">
                         <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
                           {concept} ({conceptSenses.length} sens)
                         </div>
@@ -405,11 +419,12 @@ export default function WordPanel({
                         </div>
                       </div>
 
-                      {/* Tooltip mobile : tap → portal en position fixed dans document.body
-                          (échappe à la bottom sheet transformée qui casse position:fixed) */}
+                      {/* Tooltip via portal (desktop hover + mobile tap) en position fixed dans
+                          document.body — échappe au container parent + s'adapte au viewport */}
                       {isOpen && tooltipPos && typeof document !== 'undefined' && createPortal(
                         <div
                           data-tour-concept-tooltip={isActive ? '1' : undefined}
+                          data-concept-tooltip-portal="1"
                           className="fixed bg-white border border-amber-200 rounded-lg p-3"
                           style={{
                             left: tooltipPos.left,
@@ -417,6 +432,10 @@ export default function WordPanel({
                             width: tooltipPos.width,
                             zIndex: 100,
                             boxShadow: '0 8px 24px rgba(0,0,0,0.22)',
+                          }}
+                          onMouseLeave={() => {
+                            const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
+                            if (vpW >= 1024) { setOpenTooltip(null); setTooltipPos(null) }
                           }}
                           onClick={(e) => e.stopPropagation()}
                         >
