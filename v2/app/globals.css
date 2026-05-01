@@ -5,9 +5,13 @@
 @layer base {
   html {
     font-size: 120%;
+    /* Désactive le bounce / pull-to-refresh sur mobile (élimine le tremblement
+       quand le scroll tape les bords) */
+    overscroll-behavior-y: none;
   }
   body {
     @apply bg-parchment-50 text-gray-900 antialiased;
+    overscroll-behavior-y: none;
   }
 }
 
