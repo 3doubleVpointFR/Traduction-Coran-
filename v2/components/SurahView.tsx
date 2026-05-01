@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useRef, useEffect, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import VersePanel from './VersePanel'
 import WordPanel from './WordPanel'
@@ -394,6 +394,15 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   const [analyzingVerse, setAnalyzingVerse] = useState<number | null>(null)
   const [jobProgress, setJobProgress] = useState<JobProgress | null>(null)
   const [jumpInput, setJumpInput] = useState('')
+  // useTransition garde l'ancien contenu visible pendant que Next.js fetch la
+  // nouvelle page → plus de flash skeleton entre les pages. isPending sert à
+  // dimmer subtilement les versets pendant la transition.
+  const [isPending, startTransition] = useTransition()
+  const goToPage = useCallback((p: number) => {
+    startTransition(() => {
+      router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
+    })
+  }, [router, surah.id])
 
   // Helper : scroll smooth + flash or sur un verset déjà rendu dans le DOM
   const HEADER_GAP = 70
@@ -891,9 +900,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           current={currentPage}
           total={totalPages}
           delayMs={600}
-          onChange={(p) => {
-            router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
-          }}
+          onChange={goToPage}
         />
       )}
 
@@ -903,7 +910,14 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           sourates avec peu de versets. */}
       <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
       {/* Left column: verses */}
-      <div className="space-y-4">
+      <div
+        className="space-y-4"
+        style={{
+          opacity: isPending ? 0.5 : 1,
+          transition: 'opacity 220ms ease',
+          pointerEvents: isPending ? 'none' : 'auto',
+        }}
+      >
         {/* Verse list */}
         {verses.map((verse) => (
           <VersePanel
@@ -1071,9 +1085,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         current={currentPage}
         total={totalPages}
         delayMs={750}
-        onChange={(p) => {
-          router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
-        }}
+        onChange={goToPage}
       />
     )}
 
