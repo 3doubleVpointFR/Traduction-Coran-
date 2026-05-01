@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useId } from 'react'
 import Link from 'next/link'
 
 interface Surah {
@@ -11,11 +11,9 @@ interface Surah {
   verse_count: number
 }
 
-type ViewMode = 'list' | 'grid'
-
 export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
   const [search, setSearch] = useState('')
-  const [view, setView] = useState<ViewMode>('list')
+  const searchId = useId()
 
   const filtered = surahs.filter(s => {
     if (!search.trim()) return true
@@ -30,96 +28,95 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
 
   return (
     <div>
-      {/* Search bar + view toggle */}
-      <div className="mb-5 flex gap-3 items-center">
-        <input
-          type="text"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder="Rechercher une sourate..."
-          style={{
-            flex: 1,
-            padding: '12px 16px',
-            borderRadius: '8px',
-            border: '1px solid rgba(184,150,46,0.3)',
-            background: '#FFFFFF',
-            fontSize: '15px',
-            color: '#1A1410',
-            outline: 'none',
-            fontFamily: "'Cormorant Garamond', serif",
-            letterSpacing: '0.02em',
-          }}
-          onFocus={e => { e.currentTarget.style.borderColor = '#B8962E'; e.currentTarget.style.boxShadow = '0 0 0 2px rgba(184,150,46,0.12)' }}
-          onBlur={e => { e.currentTarget.style.borderColor = 'rgba(184,150,46,0.3)'; e.currentTarget.style.boxShadow = 'none' }}
-        />
-        <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid rgba(184,150,46,0.3)' }}>
-          <button
-            onClick={() => setView('list')}
-            style={{
-              padding: '10px 12px',
-              background: view === 'list' ? 'rgba(184,150,46,0.12)' : '#FFFFFF',
-              border: 'none',
-              cursor: 'pointer',
-              color: view === 'list' ? '#B8962E' : '#9E9089',
-              fontSize: '16px',
-              lineHeight: 1,
-            }}
-            title="Vue liste"
+      {/* Search bar — sticky pour rester visible quand on scrolle 114 sourates */}
+      <div
+        className="surah-search-bar mb-6"
+        style={{
+          position: 'sticky',
+          top: '60px',
+          zIndex: 30,
+          paddingTop: '6px',
+          paddingBottom: '6px',
+          background: 'linear-gradient(to bottom, #FDFAF3 0%, #FDFAF3 70%, rgba(253,250,243,0) 100%)',
+        }}
+      >
+        <label htmlFor={searchId} className="sr-only">Rechercher une sourate</label>
+        <div className="relative">
+          {/* Icône loupe */}
+          <span
+            aria-hidden="true"
+            className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ color: '#B8962E', opacity: 0.7 }}
           >
-            ☰
-          </button>
-          <button
-            onClick={() => setView('grid')}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </span>
+          <input
+            id={searchId}
+            type="search"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Rechercher une sourate..."
+            aria-label="Rechercher une sourate"
+            className="w-full surah-search"
             style={{
-              padding: '10px 12px',
-              background: view === 'grid' ? 'rgba(184,150,46,0.12)' : '#FFFFFF',
-              border: 'none',
-              borderLeft: '1px solid rgba(184,150,46,0.3)',
-              cursor: 'pointer',
-              color: view === 'grid' ? '#B8962E' : '#9E9089',
-              fontSize: '16px',
-              lineHeight: 1,
+              minHeight: '50px',
+              padding: '14px 18px 14px 46px',
+              borderRadius: '12px',
+              border: '1px solid rgba(184,150,46,0.28)',
+              background: '#FFFFFF',
+              fontSize: '15.5px',
+              color: '#1A1410',
+              outline: 'none',
+              fontFamily: "'Cormorant Garamond', serif",
+              letterSpacing: '0.02em',
+              boxShadow: '0 1px 2px rgba(184,150,46,0.04)',
+              transition: 'all 0.2s ease',
             }}
-            title="Vue grille"
-          >
-            ▦
-          </button>
+          />
         </div>
       </div>
 
       {/* Results count when searching */}
       {search.trim() && (
-        <p className="mb-3" style={{ fontSize: '12px', color: '#9E9089' }}>
+        <p role="status" aria-live="polite" className="mb-3" style={{ fontSize: '13px', color: '#6B5E52', fontStyle: 'italic' }}>
           {filtered.length} sourate{filtered.length > 1 ? 's' : ''} trouvée{filtered.length > 1 ? 's' : ''}
         </p>
       )}
 
-      {/* ═══ LIST VIEW ═══ */}
-      {view === 'list' && (
-        <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(184,150,46,0.25)' }}>
-          {filtered.map((s, i) => (
+      {/* ═══ LIST VIEW (seule vue désormais) ═══ */}
+      <ul
+        className="rounded-xl overflow-hidden list-none p-0 m-0"
+        style={{
+          background: '#FFFFFF',
+          border: '1px solid rgba(184,150,46,0.18)',
+          boxShadow: '0 1px 3px rgba(120,90,30,0.04), 0 4px 14px rgba(120,90,30,0.04)',
+        }}
+      >
+        {filtered.map((s, i) => (
+          <li key={s.id} className="m-0">
             <Link
-              key={s.id}
               href={`/surah/${s.id}`}
-              className="flex items-center gap-4 transition-colors cursor-pointer"
+              className="surah-row flex items-center gap-3 sm:gap-4 transition-colors cursor-pointer relative"
               style={{
-                padding: '10px 16px',
+                padding: '14px 16px',
                 background: '#FFFFFF',
-                borderBottom: i < filtered.length - 1 ? '1px solid rgba(184,150,46,0.12)' : 'none',
+                borderBottom: i < filtered.length - 1 ? '1px solid rgba(184,150,46,0.1)' : 'none',
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(184,150,46,0.04)' }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#FFFFFF' }}
             >
-              {/* Numéro */}
+              {/* Numéro — élégant en italique Cormorant */}
               <span style={{
-                width: '32px',
-                fontSize: '16px',
-                color: '#B8962E',
-                fontWeight: 800,
+                width: '34px',
+                fontSize: 'clamp(18px, 4.5vw, 20px)',
+                color: '#8A7428',
+                fontWeight: 600,
                 fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: 'italic',
                 textAlign: 'center',
                 flexShrink: 0,
-                WebkitTextStroke: '0.33px rgba(26,20,16,0.4)',
+                letterSpacing: '0.02em',
               }}>
                 {s.id}
               </span>
@@ -127,79 +124,51 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
               {/* Nom latin + français */}
               <div className="flex-1 min-w-0">
                 <span style={{
-                  fontSize: '15px',
+                  fontSize: 'clamp(15px, 4vw, 16px)',
                   fontWeight: 600,
                   color: '#1A1410',
                   fontFamily: "'Cormorant Garamond', serif",
+                  letterSpacing: '0.01em',
                 }}>
                   {s.name_latin}
                 </span>
-                <span style={{ color: '#9E9089', fontSize: '13px', marginLeft: '8px', fontStyle: 'italic' }}>
+                <span className="hidden sm:inline" style={{ color: '#6B5E52', fontSize: '13.5px', marginLeft: '10px', fontStyle: 'italic' }}>
                   {s.name_fr}
                 </span>
               </div>
 
               {/* Signes */}
               <span style={{ fontSize: '13px', color: '#6B5E52', flexShrink: 0, fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>
-                {s.verse_count} <span style={{ fontSize: '11px', color: '#9E9089', letterSpacing: '0.03em' }}>signes</span>
+                {s.verse_count} <span style={{ fontSize: '11.5px', color: '#8A7E72', letterSpacing: '0.04em' }}>signes</span>
               </span>
 
               {/* Arabe */}
-              <span className="font-arabic" style={{ fontSize: '20px', color: '#B8962E', flexShrink: 0, width: '80px', textAlign: 'right' }}>
+              <span className="font-arabic" lang="ar" dir="rtl" style={{ fontSize: 'clamp(20px, 5.5vw, 22px)', color: '#B8962E', flexShrink: 0, width: 'clamp(70px, 22vw, 90px)', textAlign: 'right', lineHeight: 1.4 }}>
                 {s.name_ar}
               </span>
             </Link>
-          ))}
-        </div>
-      )}
-
-      {/* ═══ GRID VIEW ═══ */}
-      {view === 'grid' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {filtered.map((s) => (
-            <Link
-              key={s.id}
-              href={`/surah/${s.id}`}
-              className="group rounded-lg cursor-pointer transition-colors"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid rgba(184,150,46,0.25)',
-                padding: '14px 12px 12px',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(184,150,46,0.15)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(184,150,46,0.25)'; e.currentTarget.style.boxShadow = 'none' }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span style={{ fontSize: '14px', color: '#B8962E', fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>
-                  {s.id}
-                </span>
-                <span style={{ fontSize: '10px', color: '#9E9089' }}>
-                  {s.verse_count} signes
-                </span>
-              </div>
-              <div className="text-right mb-2">
-                <span className="font-arabic" style={{ fontSize: '22px', color: '#B8962E', lineHeight: 1.2 }}>
-                  {s.name_ar}
-                </span>
-              </div>
-              <div style={{ borderTop: '1px solid rgba(184,150,46,0.15)', paddingTop: '6px' }}>
-                <p style={{ color: '#1A1410', fontSize: '13px', fontWeight: 600, fontFamily: "'Cormorant Garamond', serif" }}>
-                  {s.name_latin}
-                </p>
-                <p style={{ color: '#9E9089', fontSize: '10px', fontStyle: 'italic' }}>
-                  {s.name_fr}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
+          </li>
+        ))}
+      </ul>
 
       {filtered.length === 0 && (
-        <p className="text-center py-8" style={{ color: '#9E9089', fontSize: '14px', fontFamily: "'Cormorant Garamond', serif" }}>
+        <p className="text-center py-10" style={{ color: '#6B5E52', fontSize: '14.5px', fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic' }}>
           Aucune sourate trouvée
         </p>
       )}
+
+      <style jsx>{`
+        .surah-search:focus,
+        .surah-search:focus-visible {
+          border-color: #B8962E !important;
+          box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15), 0 1px 3px rgba(184, 150, 46, 0.1) !important;
+          outline: none !important;
+        }
+        .surah-row:hover,
+        .surah-row:focus-visible {
+          background: linear-gradient(to right, rgba(184, 150, 46, 0.07), rgba(184, 150, 46, 0.03)) !important;
+        }
+      `}</style>
     </div>
   )
 }

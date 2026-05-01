@@ -38,3 +38,146 @@
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out both;
 }
+
+/* Focus visible global — anneau or fidèle à la palette */
+*:focus-visible {
+  outline: 2px solid #B8962E;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content : invisible jusqu'au focus clavier */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 16px;
+  background: #B8962E;
+  color: #FFFCF6;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+  z-index: 100;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ═══ ANIMATIONS MODERNES — réutilisables sur tous les panneaux ═══ */
+
+/* Dépliage de section (Démarche / Justification / Critique, etc.) */
+@keyframes sectionUnfold {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.section-unfold {
+  animation: sectionUnfold 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+  will-change: opacity, transform;
+}
+
+/* Chevron qui pivote au lieu de switcher de glyphe */
+.smooth-chevron {
+  display: inline-block;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+  line-height: 1;
+}
+.smooth-chevron.is-open {
+  transform: rotate(90deg);
+}
+
+/* Mot souligné — micro-interaction au hover */
+.word-tap {
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.word-tap:hover {
+  transform: translateY(-1px);
+}
+
+/* Tooltip de concept — apparition fluide */
+.concept-tooltip-anim {
+  animation: tooltipIn 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top left;
+}
+@keyframes tooltipIn {
+  from { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* Onglet de concept (regroupement de sens) — soulignement plus vivant */
+.concept-tab {
+  transition:
+    color 220ms ease,
+    border-color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+/* Hover de boutons/cartes/références — feedback tactile subtil */
+.lift-hover {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease, background-color 200ms ease;
+}
+.lift-hover:hover {
+  transform: translateY(-1px);
+}
+
+/* ═══ OPTIMISATIONS DE SCROLL ═══
+   Isole le rendu de chaque verset → le scroll ne déclenche plus
+   le repaint complet de la page mais seulement des sections visibles. */
+
+/* Cards de versets — contain isole les calculs de layout/paint */
+[data-tour-verse-num] {
+  contain: layout style paint;
+  /* content-visibility: auto saute le rendu des versets hors viewport →
+     gros gain perf quand il y a beaucoup de versets. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Promotion GPU sur les éléments sticky (header, search bar, panneau droit) :
+   évite les reflow coûteux lors du scroll en les plaçant sur leur propre couche. */
+header.sticky,
+.word-panel-wrapper,
+.surah-search-bar {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Le scroll sur Windows/Chrome est plus fluide avec un défilement adapté */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Respect des préférences utilisateur — réduit les animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .section-unfold,
+  .smooth-chevron,
+  .word-tap,
+  .concept-tooltip-anim,
+  .concept-tab,
+  .lift-hover {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

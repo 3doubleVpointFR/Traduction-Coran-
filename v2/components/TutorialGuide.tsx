@@ -56,9 +56,10 @@ const STEPS: TourStep[] = [
     waitForSelector: 5000,
     scrollIntoView: false,
     triggerAction: () => {
-      // Auto-click on the first word if panel is not yet open
-      const panel = document.querySelector('[data-tour-word-panel="1"]')
-      if (!panel) {
+      // Le wrapper est toujours présent (data-tour-word-panel) — on détecte le contenu réel
+      // via un élément qui n'apparaît que quand un mot est analysé (concept-tab).
+      const hasAnalysis = document.querySelector('[data-tour-concept-tab="1"]')
+      if (!hasAnalysis) {
         const word = document.querySelector('[data-tour-verse-num="2"] [data-tour-word-key]') as HTMLElement
         if (word) word.click()
       }
@@ -224,18 +225,23 @@ export default function TutorialGuide() {
   const computeRects = (el: HTMLElement, current: TourStep): DOMRect[] => {
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
     const vpH = typeof window !== 'undefined' ? window.innerHeight : 800
-    // Sur mobile : intersect le rect avec le viewport (au cas où le rect
-    // dépasse en haut/bas via un container scrollé) puis cap à 35% du viewport
-    // pour ne pas couvrir tout l'écran (cas du WordPanel géant dans le sheet).
+    const HEADER = 56 // hauteur approximative du header sticky en haut
+    const PAD = 8     // padding ajouté autour du rect au moment du rendu (doit être anticipé)
+    // Clamp le rect dans les limites visibles du viewport.
+    // Important : on tient compte du PAD qui sera ajouté au rendu pour que la box finale
+    // (rect + PAD de chaque côté) ne déborde NI sous le header NI hors du bas du viewport.
     const clamp = (r: DOMRect): DOMRect => {
-      if (!isMobile) return r
-      const visTop = Math.max(0, r.top)
-      const visBottom = Math.min(vpH, r.bottom)
-      if (visBottom <= visTop) return r // dégénéré
+      const visTop = Math.max(HEADER + PAD, r.top)
+      const visBottom = Math.min(vpH - PAD - 8, r.bottom)
+      if (visBottom <= visTop) return r // dégénéré : on garde le rect original
       const visibleH = visBottom - visTop
-      const maxH = vpH * 0.35
-      const finalH = Math.min(visibleH, maxH)
-      return new DOMRect(r.left, visTop, r.width, finalH)
+      if (isMobile) {
+        const maxH = vpH * 0.35
+        const finalH = Math.min(visibleH, maxH)
+        return new DOMRect(r.left, visTop, r.width, finalH)
+      }
+      // Desktop : clamp simple aux bornes visibles
+      return new DOMRect(r.left, visTop, r.width, visibleH)
     }
     const rects: DOMRect[] = [clamp(el.getBoundingClientRect())]
     if (current.alsoHighlight) {
@@ -273,10 +279,6 @@ export default function TutorialGuide() {
       setRects([])
       return
     }
-    // Clear les rects précédents tant que la nouvelle cible n'est pas trouvée
-    // → la bulle se centre automatiquement avec le texte du nouveau step
-    //   au lieu de rester collée sur l'ancienne cible (ex: pendant une nav)
-    setRects([])
     // Détecte si l'élément est dans un container scrollable (autre que window)
     const findScrollableAncestor = (node: HTMLElement | null): HTMLElement | null => {
       let p = node?.parentElement || null
@@ -367,8 +369,11 @@ export default function TutorialGuide() {
     }
     const el = findVisibleEl()
     if (el) {
+      // Même page : on ne clear PAS les rects → transition CSS douce vers la nouvelle position
       positionEl(el)
     } else if (current.waitForSelector) {
+      // Élément absent (souvent navigation cross-page) → clear pour éviter un surlignage périmé
+      setRects([])
       // MutationObserver : attend que l'élément soit dans le DOM ET visible
       // (couvre les cas d'animations/transitions CSS où le data-attr apparaît
       // avant que le panneau soit réellement rendu)
@@ -410,6 +415,56 @@ export default function TutorialGuide() {
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, active])
+
+  // ResizeObserver — recalcule les rects quand l'élément cible CHANGE DE TAILLE.
+  // Crucial pour les panneaux dont le contenu charge tardivement (API) : sinon
+  // le surlignage reste sur l'ancienne taille (placeholder) et coupe le panneau.
+  useEffect(() => {
+    if (!active) return
+    const current = STEPS[step]
+    if (!current || current.selector === 'body') return
+    if (typeof ResizeObserver === 'undefined') return
+
+    let observer: ResizeObserver | null = null
+    let observed: HTMLElement | null = null
+    let pollId: number | null = null
+    let stopId: number | null = null
+
+    const attach = () => {
+      const el = document.querySelector(current.selector) as HTMLElement | null
+      if (!el || el === observed) return
+      // Nouvel élément trouvé → on (re)attache l'observer dessus
+      if (observer) observer.disconnect()
+      observed = el
+      observer = new ResizeObserver(() => {
+        const e = document.querySelector(current.selector) as HTMLElement | null
+        if (!e) return
+        const r = e.getBoundingClientRect()
+        if (r.width > 0 && r.height > 0) {
+          setRects(computeRects(e, current))
+        }
+      })
+      observer.observe(el)
+    }
+
+    // Tentative immédiate puis polling court (max 5s) pour rattraper les éléments
+    // qui apparaissent en différé (panneau qui se construit, contenu API qui arrive).
+    attach()
+    pollId = window.setInterval(attach, 250)
+    stopId = window.setTimeout(() => {
+      if (pollId !== null) {
+        clearInterval(pollId)
+        pollId = null
+      }
+    }, 5000)
+
+    return () => {
+      if (observer) observer.disconnect()
+      if (pollId !== null) clearInterval(pollId)
+      if (stopId !== null) clearTimeout(stopId)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, active])
 
   // Listeners scroll/resize : seulement REFRESH la position visuelle (avec rAF throttle)
@@ -583,12 +638,13 @@ export default function TutorialGuide() {
     const bubbleW = isMobile ? Math.min(vpW - 24, 320) : 340
     const bubbleH = 220
 
-    // Si forceCorner = true, placer la bulle en bas-droite fixe du viewport
-    // (bottom-right au lieu de top fixe pour éviter de déborder en bas)
+    // Si forceCorner = true, placer la bulle en bas-GAUCHE fixe du viewport
+    // (l'ancien bottom-right couvrait le WordPanel à droite, ce qui n'a pas de sens
+    //  quand un step pointe vers le panneau lui-même)
     if (current.forceCorner) {
       return {
-        left: `${vpW - bubbleW - 16}px`,
-        bottom: '16px',
+        left: '24px',
+        bottom: '24px',
         top: 'auto' as const,
         transform: 'none' as const,
       }
@@ -602,12 +658,48 @@ export default function TutorialGuide() {
       bottom: Math.min(vpH, unionRect.bottom),
     }
 
+    // Zone du WordPanel (desktop uniquement) — détectée toujours pour 2 usages :
+    //   - Si la cible n'est PAS dans le panneau → on évite le panneau (wouldCoverPanel)
+    //   - Si la cible EST dans le panneau → on positionne la bulle à gauche du panneau
+    //     (et non à gauche de la cible elle-même, ce qui pouvait déborder à cause du padding interne)
+    const isPanelStep =
+      current.selector.includes('data-tour-word-panel') ||
+      current.selector.includes('data-tour-concept') ||
+      current.selector.includes('data-tour-proof-ctx') ||
+      current.selector.includes('data-tour-verses-list')
+    let panelRect: { left: number; right: number; top: number; bottom: number } | null = null
+    if (!isMobile) {
+      const panelEl = document.querySelector('[data-tour-word-panel="1"]') as HTMLElement | null
+      if (panelEl) {
+        const r = panelEl.getBoundingClientRect()
+        if (r.width > 0 && r.height > 0) {
+          panelRect = {
+            left: Math.max(0, r.left),
+            right: Math.min(vpW, r.right),
+            top: Math.max(0, r.top),
+            bottom: Math.min(vpH, r.bottom),
+          }
+        }
+      }
+    }
+
+    const SAFE = 12 // marge de respiration vis-à-vis des zones interdites
+
     const wouldOverlap = (l: number, t: number) =>
-      l < visibleRect.right + 8 && l + bubbleW > visibleRect.left - 8 &&
-      t < visibleRect.bottom + 8 && t + bubbleH > visibleRect.top - 8
+      l < visibleRect.right + SAFE && l + bubbleW > visibleRect.left - SAFE &&
+      t < visibleRect.bottom + SAFE && t + bubbleH > visibleRect.top - SAFE
+
+    const wouldCoverPanel = (l: number, t: number) => {
+      // Si l'étape pointe vers un élément DANS le panneau, on ne peut pas l'éviter (la cible y est).
+      // Mais on veut quand même que la bulle ne déborde pas par-dessus → check seulement
+      // pour les steps qui ne sont PAS sur le panneau.
+      if (!panelRect || isPanelStep) return false
+      return l < panelRect.right + SAFE && l + bubbleW > panelRect.left - SAFE &&
+             t < panelRect.bottom + SAFE && t + bubbleH > panelRect.top - SAFE
+    }
 
     // Stratégie : tester d'abord les 4 positions classiques par ordre de préférence,
-    // garder la première qui ne chevauche PAS la cible visible.
+    // garder la première qui ne chevauche PAS la cible visible NI le WordPanel.
     const candidates: Array<{ left: number; top: number }> = []
 
     // ─── MOBILE : place la bulle dans le plus grand espace libre ───
@@ -630,40 +722,65 @@ export default function TutorialGuide() {
     // Position préférée selon le step (desktop ou fallback mobile)
     // Pour left/right : on centre verticalement la bulle sur la cible
     const centerY = unionRect.top + unionRect.height / 2 - bubbleH / 2
-    switch (current.position) {
-      case 'bottom':
-        candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.bottom + margin })
-        break
-      case 'top':
-        candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.top - margin - bubbleH })
-        break
-      case 'left':
-        candidates.push({ left: unionRect.left - margin - bubbleW, top: centerY })
-        break
-      case 'right':
-        candidates.push({ left: unionRect.right + margin, top: centerY })
-        break
+
+    // Cas spécial : étape ciblant un élément DANS le panneau, position 'left'
+    // → on positionne la bulle à gauche du PANNEAU (pas de la cible interne) avec marge confortable.
+    //   Sinon le bord droit de la bulle (avec son ombre) débordait sous le panneau.
+    if (isPanelStep && current.position === 'left' && panelRect) {
+      const PANEL_GAP = 24 // marge entre la bulle et le panneau
+      candidates.push({
+        left: panelRect.left - PANEL_GAP - bubbleW,
+        top: centerY,
+      })
+    } else {
+      switch (current.position) {
+        case 'bottom':
+          candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.bottom + margin })
+          break
+        case 'top':
+          candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.top - margin - bubbleH })
+          break
+        case 'left':
+          candidates.push({ left: unionRect.left - margin - bubbleW, top: centerY })
+          break
+        case 'right':
+          candidates.push({ left: unionRect.right + margin, top: centerY })
+          break
+      }
     }
 
-    // Fallbacks : droite, gauche, en bas du viewport, coin bas-droite fixe
-    candidates.push({ left: visibleRect.right + margin, top: visibleRect.top })       // à droite de la zone visible
-    candidates.push({ left: visibleRect.left - margin - bubbleW, top: visibleRect.top }) // à gauche
-    candidates.push({ left: vpW - bubbleW - 16, top: vpH - bubbleH - 16 })             // coin bas-droite fixe
+    // Fallbacks : zone à gauche du WordPanel d'abord, puis sous/au-dessus de la cible,
+    // enfin coin bas-gauche en dernier ressort (NE PAS retomber bottom-right qui couvrait le panneau).
+    if (panelRect) {
+      // Si on connaît le panneau, on cherche en priorité la zone à gauche du panneau
+      const safeRight = panelRect.left - margin - bubbleW
+      candidates.push({ left: Math.max(margin, safeRight), top: visibleRect.top })             // à gauche du panneau, aligné cible
+      candidates.push({ left: Math.max(margin, safeRight), top: vpH - bubbleH - 24 })          // bas-gauche du panneau
+    }
+    candidates.push({ left: visibleRect.right + margin, top: visibleRect.top })                  // à droite de la cible
+    candidates.push({ left: visibleRect.left - margin - bubbleW, top: visibleRect.top })          // à gauche de la cible
+    candidates.push({ left: 24, top: vpH - bubbleH - 24 })                                        // coin bas-gauche fixe
 
-    // Choisir la première candidate qui ne chevauche pas et qui est dans le viewport
-    let chosen = candidates[candidates.length - 1] // fallback final
+    // Choisir la première candidate qui ne chevauche pas la cible NI le panneau, et reste dans le viewport.
+    // EDGE_MARGIN = 16px de respiration aux bords (avant 8 → trop collé)
+    const EDGE_MARGIN = 16
+    let chosen = candidates[candidates.length - 1] // fallback final = bas-gauche
     for (const c of candidates) {
-      const inViewport = c.left >= 8 && c.top >= 8 && c.left + bubbleW <= vpW - 8 && c.top + bubbleH <= vpH - 8
-      if (inViewport && !wouldOverlap(c.left, c.top)) {
+      const inViewport =
+        c.left >= EDGE_MARGIN &&
+        c.top >= EDGE_MARGIN &&
+        c.left + bubbleW <= vpW - EDGE_MARGIN &&
+        c.top + bubbleH <= vpH - EDGE_MARGIN
+      if (inViewport && !wouldOverlap(c.left, c.top) && !wouldCoverPanel(c.left, c.top)) {
         chosen = c
         break
       }
     }
 
     let { left, top } = chosen
-    // Clamp final dans le viewport
-    left = Math.max(8, Math.min(left, vpW - bubbleW - 8))
-    top = Math.max(8, Math.min(top, vpH - bubbleH - 8))
+    // Clamp final dans le viewport — au moins EDGE_MARGIN des bords
+    left = Math.max(EDGE_MARGIN, Math.min(left, vpW - bubbleW - EDGE_MARGIN))
+    top = Math.max(EDGE_MARGIN, Math.min(top, vpH - bubbleH - EDGE_MARGIN))
     return { left: `${left}px`, top: `${top}px`, transform: 'none' as const }
   })()
 
@@ -671,14 +788,71 @@ export default function TutorialGuide() {
     <>
       {/* Styles globaux pour le tutoriel (évite styled-jsx qui plante en build) */}
       <style dangerouslySetInnerHTML={{ __html: `
+        /* Transitions de mouvement pour fluidifier les changements d'étape */
+        .tuto-bubble {
+          transition:
+            left 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            top 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            bottom 420ms cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: left, top, bottom;
+        }
+        .tuto-highlight-box {
+          transition:
+            left 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            top 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            width 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            height 420ms cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: left, top, width, height;
+        }
+        .tuto-mask-rect {
+          transition:
+            x 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            y 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            width 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            height 420ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Fade-in du contenu de la bulle à chaque changement d'étape */
+        .tuto-content-anim {
+          animation: tutoContentIn 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes tutoContentIn {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        /* Apparition initiale très douce de la bulle */
+        .tuto-bubble-enter {
+          animation: tutoBubbleEnter 320ms ease-out both;
+        }
+        @keyframes tutoBubbleEnter {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .tuto-quit-btn {
+          transition: all 220ms ease;
+        }
         .tuto-quit-btn:hover {
           background: rgba(184, 150, 46, 0.08) !important;
           border-color: rgba(184, 150, 46, 0.5) !important;
           color: #8A7428 !important;
         }
+        .tuto-next-btn {
+          transition: box-shadow 240ms ease, transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
         .tuto-next-btn:not(:disabled):hover {
           box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4);
           transform: translateY(-1px);
+        }
+        .tuto-prev-btn {
+          transition: all 220ms ease;
+        }
+        .tuto-prev-btn:not(:disabled):hover {
+          background: rgba(184, 150, 46, 0.08) !important;
+        }
+        /* Indicateur d'étapes — transitions élégantes */
+        .tuto-step-dot {
+          transition:
+            width 380ms cubic-bezier(0.16, 1, 0.3, 1),
+            background 380ms ease;
         }
         .tuto-dot {
           display: inline-block;
@@ -691,6 +865,18 @@ export default function TutorialGuide() {
         @keyframes tutoDotPulse {
           0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
           40% { transform: scale(1.1); opacity: 1; }
+        }
+        /* Respect des préférences utilisateur */
+        @media (prefers-reduced-motion: reduce) {
+          .tuto-bubble,
+          .tuto-highlight-box,
+          .tuto-mask-rect,
+          .tuto-step-dot,
+          .tuto-content-anim,
+          .tuto-bubble-enter {
+            transition: none !important;
+            animation: none !important;
+          }
         }
       ` }} />
 
@@ -716,7 +902,17 @@ export default function TutorialGuide() {
                 <mask id="tuto-mask">
                   <rect width="100%" height="100%" fill="white" />
                   {boxes.map((b, i) => (
-                    <rect key={i} x={b.x} y={b.y} width={b.w} height={b.h} rx={RADIUS} ry={RADIUS} fill="black" />
+                    <rect
+                      key={i}
+                      className="tuto-mask-rect"
+                      x={b.x}
+                      y={b.y}
+                      width={b.w}
+                      height={b.h}
+                      rx={RADIUS}
+                      ry={RADIUS}
+                      fill="black"
+                    />
                   ))}
                 </mask>
               </defs>
@@ -726,7 +922,7 @@ export default function TutorialGuide() {
             {boxes.map((b, i) => (
               <div
                 key={i}
-                className="fixed pointer-events-none"
+                className="tuto-highlight-box fixed pointer-events-none"
                 style={{
                   left: b.x,
                   top: b.y,
@@ -750,27 +946,43 @@ export default function TutorialGuide() {
 
       {/* Bubble */}
       <div
-        className="fixed rounded-2xl shadow-2xl"
+        className="tuto-bubble tuto-bubble-enter fixed overflow-hidden"
         style={{
           ...bubble,
-          width: typeof window !== 'undefined' && window.innerWidth < 1024 ? Math.min(window.innerWidth - 24, 320) : 340,
-          background: '#FFFCF6',
-          border: '1px solid rgba(184,150,46,0.4)',
-          padding: '20px',
+          width: typeof window !== 'undefined' && window.innerWidth < 1024 ? Math.min(window.innerWidth - 24, 320) : 360,
+          background: 'linear-gradient(135deg, #FFFCF6 0%, #FAF7F2 100%)',
+          border: '1px solid rgba(184,150,46,0.32)',
+          borderRadius: '18px',
+          padding: '22px 22px 18px',
           zIndex: 1000,
+          boxShadow: '0 14px 38px rgba(120,90,30,0.16), 0 3px 10px rgba(120,90,30,0.08), inset 0 1px 0 rgba(255,255,255,0.5)',
         }}
       >
+        {/* Bandeau décoratif or en haut de la bulle */}
+        <div
+          aria-hidden="true"
+          className="absolute"
+          style={{
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '3px',
+            background: 'linear-gradient(to right, transparent 0%, #C9A23A 25%, #B8962E 50%, #C9A23A 75%, transparent 100%)',
+            opacity: 0.85,
+          }}
+        />
+
         {/* Skip top-right — petit bouton arrondi élégant */}
         <button
           onClick={stop}
-          className="tuto-quit-btn absolute inline-flex items-center gap-1 rounded-full transition-all"
+          className="tuto-quit-btn absolute inline-flex items-center gap-1 rounded-full"
           style={{
-            top: '10px',
+            top: '12px',
             right: '12px',
-            padding: '3px 10px 3px 8px',
+            padding: '4px 11px 4px 9px',
             background: 'transparent',
-            border: '1px solid rgba(184,150,46,0.25)',
-            color: '#9E9089',
+            border: '1px solid rgba(184,150,46,0.28)',
+            color: '#8A7E72',
             fontSize: '10px',
             letterSpacing: '0.08em',
             fontFamily: "'Cormorant Garamond', serif",
@@ -783,26 +995,42 @@ export default function TutorialGuide() {
         </button>
 
         {/* Step indicator */}
-        <div className="flex items-center gap-1 mb-3 mt-2">
+        <div className="flex items-center gap-1 mb-4 mt-3">
           {STEPS.map((_, i) => (
             <div
               key={i}
-              className="rounded-full transition-all"
+              className="tuto-step-dot rounded-full"
               style={{
-                width: i === step ? 18 : 5,
+                width: i === step ? 20 : 5,
                 height: 4,
-                background: i === step ? '#B8962E' : i < step ? 'rgba(184,150,46,0.5)' : 'rgba(184,150,46,0.2)',
+                background: i === step
+                  ? 'linear-gradient(to right, #C9A23A, #B8962E)'
+                  : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
               }}
             />
           ))}
         </div>
 
-        <h3 className="font-semibold mb-2" style={{ color: '#1A1410', fontSize: '15px', fontFamily: "'Cormorant Garamond', serif" }}>
-          {current.title}
-        </h3>
-        <p className="text-xs mb-4" style={{ color: '#5A4E42', lineHeight: 1.55 }}>
-          {current.desc}
-        </p>
+        {/* Contenu animé — fade-in à chaque changement d'étape via key */}
+        <div key={step} className="tuto-content-anim">
+          <h3
+            className="mb-2.5 flex items-baseline gap-2"
+            style={{
+              color: '#1A1410',
+              fontSize: '17px',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 600,
+              letterSpacing: '0.01em',
+              lineHeight: 1.25,
+            }}
+          >
+            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '13px', opacity: 0.7, flexShrink: 0 }}>✦</span>
+            <span>{current.title}</span>
+          </h3>
+          <p style={{ color: '#5A4E42', fontSize: '12.5px', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+            {current.desc}
+          </p>
+        </div>
 
         <div className="flex items-center justify-between gap-2">
           <button
@@ -821,7 +1049,7 @@ export default function TutorialGuide() {
               }
             }}
             disabled={step === 0 || navigating}
-            className="text-xs px-3 py-1 rounded-full transition-colors"
+            className="tuto-prev-btn text-xs px-3 py-1 rounded-full"
             style={{
               border: '1px solid rgba(184,150,46,0.3)',
               color: step === 0 || navigating ? '#C8BCAD' : '#8A7428',

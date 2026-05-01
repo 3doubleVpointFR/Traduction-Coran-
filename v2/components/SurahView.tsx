@@ -397,22 +397,90 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
 
   return (
     <div>
-      {/* Surah header — compact */}
-      <div className="text-center pb-3 mb-4">
-        <h1 className="font-arabic text-5xl" style={{ color: '#B8962E' }}>{surah.name_ar}</h1>
-        <div className="flex items-center justify-center gap-2 mt-2">
-          <span className="uppercase tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif", color: '#1A1410', letterSpacing: '0.08em', fontSize: '18px' }}>
+      {/* Surah header — compact, raffiné, cohérent avec la home */}
+      <header className="surah-header text-center pt-4 pb-4 mb-5">
+        <h1
+          className="font-arabic"
+          lang="ar"
+          dir="rtl"
+          style={{
+            color: '#B8962E',
+            fontSize: 'clamp(2rem, 4vw, 2.75rem)',
+            lineHeight: 1.1,
+            margin: 0,
+            textShadow: '0 1px 0 rgba(184,150,46,0.06)',
+          }}
+        >
+          {surah.name_ar}
+        </h1>
+
+        {/* Ornement décoratif — signature visuelle cohérente avec le hero d'accueil */}
+        <div
+          aria-hidden="true"
+          className="flex items-center justify-center gap-4 mt-3 mb-3 mx-auto"
+          style={{ maxWidth: '300px' }}
+        >
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.45))' }} />
+          <span style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.45))' }} />
+        </div>
+
+        <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+          <span
+            className="uppercase"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              color: '#1A1410',
+              letterSpacing: '0.12em',
+              fontSize: 'clamp(15px, 2vw, 18px)',
+              fontWeight: 600,
+            }}
+          >
             {surah.name_latin}
           </span>
-          <span style={{ color: 'rgba(184,150,46,0.4)', fontSize: '18px' }}>·</span>
-          <span style={{ color: '#6B5E52', fontSize: '18px' }}>{surah.name_fr}</span>
+          <span aria-hidden="true" style={{ color: 'rgba(184,150,46,0.5)', fontSize: '14px' }}>·</span>
+          <span
+            className="italic"
+            style={{
+              color: '#6B5E52',
+              fontSize: 'clamp(14px, 2vw, 17px)',
+              fontFamily: "'Cormorant Garamond', serif",
+            }}
+          >
+            {surah.name_fr}
+          </span>
         </div>
+
         {surah.id !== 1 && surah.id !== 9 && (
-          <p className="font-arabic text-xl mt-2" dir="rtl" style={{ color: '#9E9089' }}>
+          <p
+            className="font-arabic mt-4"
+            lang="ar"
+            dir="rtl"
+            style={{
+              color: '#8A7E72',
+              fontSize: 'clamp(18px, 2.5vw, 22px)',
+              lineHeight: 1.6,
+              opacity: 0.85,
+              margin: '16px 0 0 0',
+            }}
+          >
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
           </p>
         )}
-      </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .surah-header {
+            animation: surahHeaderIn 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+          }
+          @keyframes surahHeaderIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .surah-header { animation: none !important; }
+          }
+        ` }} />
+      </header>
 
       {/* Grid: verses + panel (aligned) */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6">
@@ -435,52 +503,147 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       </div>
 
       {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}
-      <div className="hidden lg:block lg:sticky lg:top-[68px] lg:self-start lg:max-h-[calc(100vh-80px)] lg:overflow-y-auto rounded-lg" style={{ border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)' }}>
+      <div
+        data-tour-word-panel="1"
+        className="word-panel-wrapper hidden lg:block lg:sticky lg:top-[68px] lg:self-start lg:max-h-[calc(100vh-80px)] lg:overflow-y-auto relative"
+        style={{
+          background: '#FFFFFF',
+          border: '1px solid rgba(184,150,46,0.25)',
+          borderRadius: '18px',
+          boxShadow: '0 12px 32px rgba(120,90,30,0.08), 0 2px 8px rgba(120,90,30,0.05)',
+        }}
+      >
+        {/* Bandeau or décoratif en haut — signature visuelle */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'sticky',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '3px',
+            background: 'linear-gradient(to right, transparent 0%, #C9A23A 25%, #B8962E 50%, #C9A23A 75%, transparent 100%)',
+            opacity: 0.85,
+            zIndex: 2,
+            borderTopLeftRadius: '18px',
+            borderTopRightRadius: '18px',
+          }}
+        />
+
         {activeWordKey ? (
-          <WordPanel
-            analysis={wordAnalysis}
-            loading={loadingWord}
-            activeWordKey={activeWordKey}
-            onClose={handleClosePanel}
-          />
+          <div key={activeWordKey} className="word-panel-content">
+            <WordPanel
+              analysis={wordAnalysis}
+              loading={loadingWord}
+              activeWordKey={activeWordKey}
+              onClose={handleClosePanel}
+            />
+          </div>
         ) : (
-          <div className="side-panel flex flex-col items-center px-8 text-center" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
-            <div className="font-arabic mb-6" style={{ fontSize: '70px', color: 'rgba(184,150,46,0.35)', lineHeight: 1 }}>ع</div>
-            <h3 className="mb-3" style={{ color: '#1A1410', fontSize: '18px', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>
+          <div className="word-panel-placeholder side-panel flex flex-col items-center px-8 text-center" style={{ paddingTop: '64px', paddingBottom: '72px', background: 'transparent', border: 'none', boxShadow: 'none' }}>
+            {/* Calligraphie ʿayn en filigrane */}
+            <div
+              className="font-arabic mb-5"
+              lang="ar"
+              dir="rtl"
+              aria-hidden="true"
+              style={{
+                fontSize: '92px',
+                color: 'rgba(184,150,46,0.32)',
+                lineHeight: 1,
+                textShadow: '0 1px 0 rgba(255,255,255,0.4)',
+              }}
+            >
+              ع
+            </div>
+
+            {/* Ornement fin sous la lettre */}
+            <div
+              aria-hidden="true"
+              className="flex items-center justify-center gap-2 mb-5"
+              style={{ color: '#B8962E', opacity: 0.5 }}
+            >
+              <div className="h-px" style={{ width: '28px', background: 'rgba(184,150,46,0.4)' }} />
+              <span style={{ fontSize: '10px' }}>✦</span>
+              <div className="h-px" style={{ width: '28px', background: 'rgba(184,150,46,0.4)' }} />
+            </div>
+
+            <h3
+              className="mb-3"
+              style={{
+                color: '#1A1410',
+                fontSize: '20px',
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 600,
+                letterSpacing: '0.04em',
+              }}
+            >
               Analyse lexicale
             </h3>
-            <p style={{ color: '#6B5E52', fontSize: '14px', lineHeight: '1.7', maxWidth: '320px' }}>
-              Cliquez sur un <strong style={{ color: '#1A1410' }}>mot souligné</strong> dans un verset pour explorer :
+
+            <p
+              className="mb-5"
+              style={{
+                color: '#5A4E42',
+                fontSize: '14px',
+                lineHeight: 1.7,
+                maxWidth: '300px',
+              }}
+            >
+              Clique sur un <span className="font-semibold" style={{ color: '#8A7428' }}>mot souligné</span> d&apos;un verset pour ouvrir son analyse complète.
             </p>
-            <ul className="mt-4 text-left space-y-2" style={{ color: '#6B5E52', fontSize: '13px' }}>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#B8962E', fontSize: '16px', lineHeight: 1 }}>&#9672;</span>
-                <span>La racine arabe et ses sens étymologiques</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#B8962E', fontSize: '16px', lineHeight: 1 }}>&#9672;</span>
-                <span>5 éclairages pour comprendre chaque sens</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#B8962E', fontSize: '16px', lineHeight: 1 }}>&#9672;</span>
-                <span>La justification du sens retenu</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#B8962E', fontSize: '16px', lineHeight: 1 }}>&#9672;</span>
-                <span>Les occurrences dans le Coran</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#B8962E', fontSize: '16px', lineHeight: 1 }}>&#9672;</span>
-                <span>Expressions du quotidien avec le mot</span>
-              </li>
+
+            <ul className="text-left space-y-2.5" style={{ color: '#5A4E42', fontSize: '13px', maxWidth: '300px' }}>
+              {[
+                'La racine arabe et ses sens étymologiques',
+                '5 éclairages pour comprendre chaque sens',
+                'La justification du sens retenu',
+                'Les occurrences dans le Coran',
+                'Expressions du quotidien avec le mot',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '14px', lineHeight: 1.4, flexShrink: 0, marginTop: '1px' }}>◇</span>
+                  <span style={{ lineHeight: 1.55 }}>{item}</span>
+                </li>
+              ))}
             </ul>
-            <div className="mt-8 flex items-center gap-3" style={{ color: '#B8962E', fontSize: '11px', letterSpacing: '0.1em' }}>
-              <span style={{ width: '30px', height: '1px', background: 'rgba(184,150,46,0.6)', display: 'inline-block' }} />
-              <span>SÉLECTIONNEZ UN MOT</span>
-              <span style={{ width: '30px', height: '1px', background: 'rgba(184,150,46,0.6)', display: 'inline-block' }} />
+
+            <div
+              className="mt-7 inline-flex items-center gap-3"
+              style={{
+                color: '#8A7428',
+                fontSize: '10.5px',
+                letterSpacing: '0.18em',
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                textTransform: 'uppercase',
+              }}
+            >
+              <span style={{ width: '28px', height: '1px', background: 'rgba(184,150,46,0.5)', display: 'inline-block' }} />
+              <span>Sélectionne un mot</span>
+              <span style={{ width: '28px', height: '1px', background: 'rgba(184,150,46,0.5)', display: 'inline-block' }} />
             </div>
           </div>
         )}
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .word-panel-content {
+            animation: wpFade 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+          }
+          .word-panel-placeholder {
+            animation: wpFade 320ms ease-out both;
+          }
+          @keyframes wpFade {
+            from { opacity: 0; transform: translateY(4px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .word-panel-content,
+            .word-panel-placeholder {
+              animation: none !important;
+            }
+          }
+        ` }} />
       </div>
     </div>
 

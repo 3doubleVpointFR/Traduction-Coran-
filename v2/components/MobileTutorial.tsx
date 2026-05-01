@@ -357,42 +357,113 @@ export default function MobileTutorial({ onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex flex-col"
+      className="fixed inset-0 z-[200] flex flex-col mt-overlay-enter"
       style={{
-        background: 'linear-gradient(180deg, #FFFCF6 0%, #FAF7F2 100%)',
+        background: 'linear-gradient(180deg, #FFFCF6 0%, #FAF7F2 55%, #F5EFE3 100%)',
       }}
     >
+      {/* Bandeau or décoratif en haut — signature visuelle cohérente */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '3px',
+          background: 'linear-gradient(to right, transparent 0%, #C9A23A 25%, #B8962E 50%, #C9A23A 75%, transparent 100%)',
+          opacity: 0.85,
+          zIndex: 1,
+        }}
+      />
+
+      {/* Subtil dégradé radial décoratif en haut/bas */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '40%',
+          background: 'radial-gradient(ellipse at top, rgba(184,150,46,0.06), transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes mtSlideInRight {
-          from { transform: translateX(40px); opacity: 0; }
+          from { transform: translateX(28px); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
         @keyframes mtSlideInLeft {
-          from { transform: translateX(-40px); opacity: 0; }
+          from { transform: translateX(-28px); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
         @keyframes mtFadeIn {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes mtOverlayIn {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        .mt-card-next { animation: mtSlideInRight 0.32s cubic-bezier(0.32, 0.72, 0, 1); }
-        .mt-card-prev { animation: mtSlideInLeft 0.32s cubic-bezier(0.32, 0.72, 0, 1); }
-        .mt-fadein { animation: mtFadeIn 0.3s ease-out; }
-        .mt-dot-pulse { animation: mtFadeIn 0.5s ease-out; }
+        .mt-card-next { animation: mtSlideInRight 360ms cubic-bezier(0.16, 1, 0.3, 1); }
+        .mt-card-prev { animation: mtSlideInLeft 360ms cubic-bezier(0.16, 1, 0.3, 1); }
+        .mt-fadein { animation: mtFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+        .mt-overlay-enter { animation: mtOverlayIn 240ms ease-out; }
+        .mt-step-dot {
+          transition: width 360ms cubic-bezier(0.16, 1, 0.3, 1), background 320ms ease;
+        }
+        .mt-quit-btn {
+          transition: all 220ms ease;
+        }
+        .mt-quit-btn:hover, .mt-quit-btn:focus-visible {
+          background: rgba(184, 150, 46, 0.08) !important;
+          border-color: rgba(184, 150, 46, 0.5) !important;
+          color: #8A7428 !important;
+        }
+        .mt-prev-btn {
+          transition: all 220ms ease;
+        }
+        .mt-prev-btn:not(:disabled):hover, .mt-prev-btn:not(:disabled):focus-visible {
+          background: rgba(184, 150, 46, 0.08) !important;
+          border-color: rgba(184, 150, 46, 0.5) !important;
+        }
+        .mt-next-btn {
+          transition: box-shadow 240ms ease, transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mt-next-btn:hover, .mt-next-btn:focus-visible {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 20px rgba(184, 150, 46, 0.42), 0 2px 6px rgba(184, 150, 46, 0.18) !important;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mt-card-next, .mt-card-prev, .mt-fadein, .mt-overlay-enter {
+            animation: none !important;
+          }
+          .mt-step-dot, .mt-next-btn, .mt-prev-btn, .mt-quit-btn {
+            transition: none !important;
+          }
+          .mt-next-btn:hover, .mt-next-btn:focus-visible {
+            transform: none;
+          }
+        }
       ` }} />
 
       {/* Header — step indicator + skip */}
-      <div className="flex items-center justify-between px-5 pt-5 pb-3 mt-fadein">
+      <div className="relative flex items-center justify-between px-5 pt-6 pb-3 mt-fadein" style={{ zIndex: 2 }}>
         {/* Step dots */}
         <div className="flex items-center gap-1.5">
           {CARDS.map((_, i) => (
             <div
               key={i}
-              className="rounded-full transition-all"
+              className="mt-step-dot rounded-full"
               style={{
-                width: i === step ? 22 : 6,
-                height: 5,
-                background: i === step ? '#B8962E' : i < step ? 'rgba(184,150,46,0.5)' : 'rgba(184,150,46,0.2)',
+                width: i === step ? 22 : 5,
+                height: 4,
+                background: i === step
+                  ? 'linear-gradient(to right, #C9A23A, #B8962E)'
+                  : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
               }}
             />
           ))}
@@ -401,13 +472,13 @@ export default function MobileTutorial({ onClose }: Props) {
         {/* Skip button */}
         <button
           onClick={onClose}
-          className="inline-flex items-center gap-1 rounded-full transition-colors"
+          className="mt-quit-btn inline-flex items-center gap-1 rounded-full"
           style={{
-            padding: '4px 12px 4px 10px',
+            padding: '5px 13px 5px 11px',
             background: 'transparent',
-            border: '1px solid rgba(184,150,46,0.3)',
-            color: '#9E9089',
-            fontSize: '11px',
+            border: '1px solid rgba(184,150,46,0.28)',
+            color: '#8A7E72',
+            fontSize: '10.5px',
             letterSpacing: '0.08em',
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 600,
@@ -420,7 +491,7 @@ export default function MobileTutorial({ onClose }: Props) {
       </div>
 
       {/* Card content — slide animation on step change */}
-      <div className="flex-1 flex flex-col items-center justify-center px-7 overflow-hidden">
+      <div className="relative flex-1 flex flex-col items-center justify-center px-6 sm:px-8 overflow-hidden" style={{ zIndex: 2 }}>
         <div
           key={step}
           className={direction === 'next' ? 'mt-card-next' : 'mt-card-prev'}
@@ -428,45 +499,49 @@ export default function MobileTutorial({ onClose }: Props) {
         >
           {/* Illustration mock-up de l'app */}
           {card.illustration && (
-            <div className="mb-5">
+            <div className="mb-6">
               <Illustration kind={card.illustration} />
             </div>
           )}
 
           {/* Title */}
           <h2
-            className="text-center mb-3"
+            className="text-center"
             style={{
               color: '#1A1410',
-              fontSize: '24px',
+              fontSize: 'clamp(1.5rem, 6vw, 1.85rem)',
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
               letterSpacing: '0.02em',
               lineHeight: 1.15,
+              margin: '0 0 14px 0',
             }}
           >
             {card.title}
           </h2>
 
-          {/* Decorative separator */}
+          {/* Ornement décoratif — cohérent avec le verset Khalifa */}
           <div
-            className="mx-auto mb-4"
-            style={{
-              width: 40,
-              height: 1,
-              background: 'rgba(184,150,46,0.5)',
-            }}
-          />
+            aria-hidden="true"
+            className="flex items-center justify-center mx-auto mb-5"
+            style={{ color: '#B8962E', opacity: 0.55, gap: '10px' }}
+          >
+            <div className="h-px" style={{ width: '32px', background: 'rgba(184,150,46,0.4)' }} />
+            <span style={{ fontSize: '11px', opacity: 0.95 }}>✦</span>
+            <div className="h-px" style={{ width: '32px', background: 'rgba(184,150,46,0.4)' }} />
+          </div>
 
           {/* Body */}
           <p
-            className="text-center"
+            className="text-center mx-auto"
             style={{
               color: '#5A4E42',
-              fontSize: '14.5px',
-              lineHeight: 1.65,
+              fontSize: 'clamp(13.5px, 4vw, 15px)',
+              lineHeight: 1.7,
               fontFamily: "'Cormorant Garamond', serif",
               letterSpacing: '0.01em',
+              maxWidth: '32rem',
+              margin: '0 auto',
             }}
           >
             {renderBody(card.body, card.highlight)}
@@ -475,22 +550,23 @@ export default function MobileTutorial({ onClose }: Props) {
       </div>
 
       {/* Bottom nav — prev / next */}
-      <div className="flex items-center justify-between gap-3 px-5 pb-7 pt-4 mt-fadein">
+      <div className="relative flex items-center justify-between gap-3 px-5 pb-7 pt-4 mt-fadein" style={{ zIndex: 2 }}>
         <button
           onClick={goPrev}
           disabled={step === 0}
-          className="rounded-full transition-all"
+          className="mt-prev-btn rounded-full"
           style={{
-            padding: '11px 22px',
-            border: '1px solid rgba(184,150,46,0.3)',
-            color: step === 0 ? '#C8BCAD' : '#8A7428',
+            padding: '12px 22px',
+            border: '1px solid rgba(184,150,46,0.32)',
+            color: step === 0 ? '#C8BCAD' : '#6B5E52',
             cursor: step === 0 ? 'default' : 'pointer',
-            background: 'transparent',
+            background: step === 0 ? 'transparent' : 'rgba(255,253,247,0.5)',
             fontSize: '13px',
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 600,
             letterSpacing: '0.05em',
-            opacity: step === 0 ? 0.5 : 1,
+            minHeight: '44px',
+            opacity: step === 0 ? 0.4 : 1,
           }}
         >
           ← Précédent
@@ -498,18 +574,20 @@ export default function MobileTutorial({ onClose }: Props) {
 
         <button
           onClick={goNext}
-          className="rounded-full transition-all"
+          className="mt-next-btn rounded-full"
           style={{
             padding: '12px 26px',
-            background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 50%, #9E7E1F 100%)',
+            background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
             color: '#FFFCF6',
-            border: '1px solid rgba(158,126,31,0.6)',
-            boxShadow: '0 4px 14px rgba(184,150,46,0.35)',
+            border: '1px solid rgba(158,126,31,0.5)',
+            boxShadow: '0 3px 12px rgba(184,150,46,0.35), 0 1px 2px rgba(184,150,46,0.18)',
             fontSize: '14px',
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 700,
             letterSpacing: '0.05em',
             textShadow: '0 1px 1px rgba(80,55,10,0.25)',
+            minHeight: '44px',
+            cursor: 'pointer',
           }}
         >
           {isLast ? 'Terminer ✦' : 'Suivant →'}

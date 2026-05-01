@@ -171,11 +171,13 @@ function RefsToggle({ label, refs, meaningId, expandedRef, onClickRef }: {
         className="flex items-center gap-1 text-[10px] w-full text-left"
         style={{ color: '#6B5E52' }}
       >
-        <span>{open ? '▾' : '▸'}</span>
+        <span className={`smooth-chevron${open ? ' is-open' : ''}`} style={{ fontSize: '10px' }}>
+          ▸
+        </span>
         <span className="font-medium">{label}</span>
       </button>
       {open && (
-        <div className="mt-1 pl-3">
+        <div className="section-unfold mt-1 pl-3">
           <div className="flex flex-wrap gap-1">
             {uniqueRefs.slice(0, 100).map((ref) => (
               <button
@@ -244,13 +246,19 @@ function InsightToggle({ label, content }: { label: string; content?: string }) 
           borderRadius: open ? '4px' : '0',
           paddingLeft: open ? '8px' : '0',
           paddingRight: open ? '8px' : '0',
+          transition: 'background 220ms ease, padding 220ms ease',
         }}
       >
-        <span style={{ color: '#B8962E' }}>{open ? '▾' : '▸'}</span>
+        <span
+          className={`smooth-chevron${open ? ' is-open' : ''}`}
+          style={{ color: '#B8962E', fontSize: '12px' }}
+        >
+          ▸
+        </span>
         <span>{label}</span>
       </button>
       {open && (
-        <div style={{ marginLeft: '8px', borderLeft: '3px solid rgba(184,150,46,0.4)', paddingLeft: '12px' }}>
+        <div className="section-unfold" style={{ marginLeft: '8px', borderLeft: '3px solid rgba(184,150,46,0.4)', paddingLeft: '12px' }}>
           <p
             style={{ fontSize: '13px', color: '#4A3F35', lineHeight: 1.7, padding: '6px 0 10px 0' }}
             dangerouslySetInnerHTML={{ __html: highlightPhonetic(content) }}
@@ -353,7 +361,7 @@ export default function WordPanel({
   }
 
   return (
-    <div data-tour-word-panel="1" className="side-panel space-y-4">
+    <div className="side-panel space-y-4">
       {/* Header */}
       <div className="space-y-3">
         {/* Racine + close */}
@@ -505,13 +513,18 @@ export default function WordPanel({
                         <div
                           data-tour-concept-tooltip={isActive ? '1' : undefined}
                           data-concept-tooltip-portal="1"
-                          className="fixed bg-white border border-amber-200 rounded-lg p-3"
+                          className="concept-tooltip-anim fixed overflow-hidden"
                           style={{
+                            position: 'fixed',
                             left: tooltipPos.left,
                             top: tooltipPos.top,
                             width: tooltipPos.width,
                             zIndex: 100,
-                            boxShadow: '0 8px 24px rgba(0,0,0,0.22)',
+                            background: 'linear-gradient(135deg, #FFFCF6 0%, #FAF7F2 100%)',
+                            border: '1px solid rgba(184,150,46,0.32)',
+                            borderRadius: '12px',
+                            padding: '12px 14px 14px',
+                            boxShadow: '0 14px 32px rgba(120,90,30,0.18), 0 3px 10px rgba(120,90,30,0.10), inset 0 1px 0 rgba(255,255,255,0.5)',
                           }}
                           onMouseLeave={() => {
                             const vpW = typeof window !== 'undefined' ? window.innerWidth : 1024
@@ -519,19 +532,69 @@ export default function WordPanel({
                           }}
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <div style={{ fontSize: '11px', fontWeight: 700, color: '#B8962E', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
-                            {concept} ({conceptSenses.length} sens)
-                          </div>
-                          <div className="flex flex-wrap gap-1">
-                            {conceptSenses.map((s, j) => (
-                              <span key={j} style={{
+                          {/* Bandeau or en haut, signature visuelle */}
+                          <div
+                            aria-hidden="true"
+                            style={{
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              height: '2px',
+                              background: 'linear-gradient(to right, transparent 0%, #C9A23A 30%, #B8962E 50%, #C9A23A 70%, transparent 100%)',
+                              opacity: 0.85,
+                            }}
+                          />
+
+                          {/* Titre avec ✦ */}
+                          <div className="flex items-center gap-1.5 mb-2.5" style={{ marginTop: '2px' }}>
+                            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.85, lineHeight: 1 }}>✦</span>
+                            <span
+                              style={{
+                                fontFamily: "'Cormorant Garamond', serif",
                                 fontSize: '11px',
-                                color: '#6B5D4F',
-                                fontWeight: 400,
-                                background: 'rgba(0,0,0,0.04)',
-                                padding: '1px 6px',
-                                borderRadius: '4px',
-                              }}>
+                                fontWeight: 700,
+                                color: '#8A7428',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.12em',
+                              }}
+                            >
+                              {concept}
+                            </span>
+                            <span
+                              style={{
+                                fontSize: '10px',
+                                color: '#A89C90',
+                                fontStyle: 'italic',
+                                marginLeft: '2px',
+                              }}
+                            >
+                              {conceptSenses.length} sens
+                            </span>
+                          </div>
+
+                          {/* Liste des sens — cartes parchemin avec point or */}
+                          <div className="flex flex-wrap gap-1.5">
+                            {conceptSenses.map((s, j) => (
+                              <span
+                                key={j}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '6px',
+                                  fontSize: '14px',
+                                  color: '#1A1410',
+                                  fontFamily: "'Cormorant Garamond', serif",
+                                  fontWeight: 600,
+                                  background: '#FFFFFF',
+                                  border: '1px solid rgba(184,150,46,0.4)',
+                                  padding: '4px 12px 4px 10px',
+                                  borderRadius: '999px',
+                                  letterSpacing: '0.01em',
+                                  boxShadow: '0 1px 2px rgba(120,90,30,0.06), inset 0 1px 0 rgba(255,255,255,0.5)',
+                                }}
+                              >
+                                <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '9px', opacity: 0.95, lineHeight: 1 }}>●</span>
                                 {s}
                               </span>
                             ))}
@@ -699,7 +762,7 @@ export default function WordPanel({
 
                       {/* Contenu déplié du concept */}
                       {conceptIsExpanded && (
-                        <div className="mt-2 text-xs space-y-2">
+                        <div className="section-unfold mt-2 text-xs space-y-2">
                           {/* Refs cliquables des versets — EN HAUT */}
                           {(() => {
                             // Use refs_by_concept if available, otherwise aggregate from refs_by_sense
@@ -896,7 +959,7 @@ export default function WordPanel({
 
                   {/* Proof + axes (expanded) */}
                   {isExpanded && (
-                    <div className="mt-2 text-xs space-y-2">
+                    <div className="section-unfold mt-2 text-xs space-y-2">
                       {/* Verse refs for this sense */}
                       {(() => {
                         const rawRefs = counts.refs_by_sense?.[m.sense] ?? []

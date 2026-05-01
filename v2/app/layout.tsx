@@ -32,18 +32,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} font-sans`}>
+        <a href="#main" className="skip-link">Aller au contenu</a>
         <header className="sticky top-0 z-40" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(184,150,46,0.2)' }}>
           <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
-              <span className="font-arabic" style={{ fontSize: '18px', color: '#B8962E' }}>قُرْآناً عَرَبِيًّا</span>
-              <span style={{ color: '#B8962E', fontSize: '8px' }}>✦</span>
+            <Link href="/" className="flex items-center gap-3 transition-colors cursor-pointer hover:text-gold-700" aria-label="Retour à l'accueil — Un Coran Arab">
+              <span className="font-arabic" lang="ar" style={{ fontSize: '18px', color: '#B8962E' }}>قُرْآناً عَرَبِيًّا</span>
+              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '8px' }}>✦</span>
               <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '14px', color: '#3D3228', letterSpacing: '0.15em', fontWeight: 500 }}>
                 UN CORAN ARAB
               </span>
             </Link>
           </div>
         </header>
-        <main className="max-w-7xl mx-auto px-4 py-6">
+        <main id="main" className="max-w-7xl mx-auto px-4 pt-2 pb-6">
           {children}
         </main>
         <TutorialGuide />

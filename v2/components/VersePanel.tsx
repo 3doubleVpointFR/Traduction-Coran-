@@ -344,7 +344,7 @@ export default function VersePanel({
           }
 
           const renderContent = (content: string, accentColor: string) => (
-            <div style={{ padding: '10px 14px', borderLeft: `3px solid ${accentColor}`, fontSize: '12.5px', lineHeight: 1.85, color: '#5A4E42', marginTop: '6px' }}>
+            <div className="section-unfold" style={{ padding: '10px 14px', borderLeft: `3px solid ${accentColor}`, fontSize: '12.5px', lineHeight: 1.85, color: '#5A4E42', marginTop: '6px' }}>
               {content.split('\n\n').filter((s: string) => s.trim()).map((paragraph: string, j: number) => {
                 const chunks = paragraph.split(/(\*\*[^*]+\*\*)/g)
                 return (
