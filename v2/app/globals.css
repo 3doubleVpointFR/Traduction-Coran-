@@ -218,21 +218,28 @@
 
 /* ═══ Pagination sourate (mobile) — minimaliste moderne ═══ */
 .surah-page-num {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 5px;
   border: none;
   background: transparent;
   color: #6B5E52;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: background 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.surah-page-num > * {
+  position: relative;
+  z-index: 1;
 }
 .surah-page-num:active {
   transform: scale(0.94);
@@ -249,12 +256,32 @@
   box-shadow: 0 2px 6px rgba(184, 150, 46, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   text-shadow: 0 1px 1px rgba(80, 55, 10, 0.25);
 }
+/* Shimmer (lumière qui passe) sur la page active — comme le bouton Visite guidée */
+.surah-page-num.is-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.38) 50%, transparent 70%);
+  transform: translateX(-100%);
+  pointer-events: none;
+  animation: tutoShimmer 4.5s linear infinite;
+  animation-delay: 1.2s;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .surah-page-num.is-active::before {
+    animation: none !important;
+  }
+}
 .surah-page-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: 1px solid rgba(184, 150, 46, 0.28);
   background: #FFFFFF;
@@ -262,6 +289,7 @@
   cursor: pointer;
   transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
   flex-shrink: 0;
+  margin: 0 2px;
 }
 .surah-page-arrow:disabled {
   opacity: 0.35;
