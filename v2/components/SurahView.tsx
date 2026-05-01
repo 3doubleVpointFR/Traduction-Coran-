@@ -19,27 +19,68 @@ function MobileSheet({
   loading: boolean
   activeWordKey: string
 }) {
-  const [dragY, setDragY] = useState(0)         // px tirés vers le bas
+  // Refs pour manipulation DOM directe (PAS de React state pendant le drag,
+  // sinon re-render à 60fps = saccade). On utilise refs + style.transform.
   const startYRef = useRef<number | null>(null)
-  const [closing, setClosing] = useState(false)
+  const lastDeltaRef = useRef<number>(0)
+  const sheetRef = useRef<HTMLDivElement | null>(null)
+  const backdropRef = useRef<HTMLDivElement | null>(null)
+
+  const closeAnimated = () => {
+    if (sheetRef.current) {
+      sheetRef.current.style.transition = 'transform 220ms cubic-bezier(0.32, 0.72, 0, 1)'
+      sheetRef.current.style.transform = 'translateY(100%)'
+    }
+    if (backdropRef.current) {
+      backdropRef.current.style.transition = 'opacity 220ms ease-out'
+      backdropRef.current.style.opacity = '0'
+    }
+    setTimeout(onClose, 220)
+  }
 
   const onTouchStart = (e: React.TouchEvent) => {
     startYRef.current = e.touches[0].clientY
+    lastDeltaRef.current = 0
+    // Désactive transition + animation entrance pour suivre le doigt sans lag
+    if (sheetRef.current) {
+      sheetRef.current.style.transition = 'none'
+      sheetRef.current.style.animation = 'none'
+    }
+    if (backdropRef.current) {
+      backdropRef.current.style.transition = 'none'
+    }
   }
   const onTouchMove = (e: React.TouchEvent) => {
     if (startYRef.current === null) return
     const delta = e.touches[0].clientY - startYRef.current
-    if (delta > 0) setDragY(delta) // ne suivre que vers le bas
+    if (delta > 0) {
+      lastDeltaRef.current = delta
+      // Direct DOM — aucun re-render React
+      if (sheetRef.current) {
+        sheetRef.current.style.transform = `translateY(${delta}px)`
+      }
+      if (backdropRef.current) {
+        backdropRef.current.style.opacity = String(Math.max(0.2, 1 - delta / 400))
+      }
+    }
   }
   const onTouchEnd = () => {
-    if (dragY > 120) {
-      // Threshold dépassé → fermeture animée
-      setClosing(true)
-      setTimeout(onClose, 220)
+    const delta = lastDeltaRef.current
+    if (delta > 120) {
+      closeAnimated()
     } else {
-      setDragY(0) // snap-back
+      // Snap-back smooth
+      if (sheetRef.current) {
+        sheetRef.current.style.transition = 'transform 240ms cubic-bezier(0.32, 0.72, 0, 1)'
+        sheetRef.current.style.transform = 'translateY(0)'
+      }
+      if (backdropRef.current) {
+        backdropRef.current.style.transition = 'opacity 240ms ease-out'
+        backdropRef.current.style.opacity = ''
+      }
     }
     startYRef.current = null
+    lastDeltaRef.current = 0
   }
 
   return (
@@ -77,18 +118,19 @@ function MobileSheet({
 
       {/* Backdrop */}
       <div
+        ref={backdropRef}
         className="absolute inset-0"
         style={{
           background: 'rgba(26, 20, 16, 0.55)',
           backdropFilter: 'blur(2px)',
-          animation: closing ? 'backdropFadeOut 0.22s ease-out forwards' : 'backdropFadeIn 0.25s ease-out',
-          opacity: dragY > 0 ? Math.max(0.2, 1 - dragY / 400) : undefined,
+          animation: 'backdropFadeIn 0.25s ease-out',
         }}
-        onClick={() => { setClosing(true); setTimeout(onClose, 220) }}
+        onClick={closeAnimated}
       />
 
       {/* Sheet */}
       <div
+        ref={sheetRef}
         className="absolute left-0 right-0 bottom-0 flex flex-col"
         style={{
           background: '#FFFFFF',
@@ -101,11 +143,8 @@ function MobileSheet({
           boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
           border: '1px solid rgba(184,150,46,0.3)',
           borderBottom: 'none',
-          transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
-          transition: dragY === 0 ? 'transform 0.25s cubic-bezier(0.32, 0.72, 0, 1)' : 'none',
-          animation: closing
-            ? 'sheetSlideDown 0.22s cubic-bezier(0.32, 0.72, 0, 1) forwards'
-            : (dragY === 0 ? 'sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1)' : undefined),
+          animation: 'sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1)',
+          willChange: 'transform',
         }}
       >
         {/* Drag handle — la zone tactile pour tirer la feuille */}
@@ -138,19 +177,25 @@ function MobileSheet({
             }}
           />
           <div
-            className={dragY === 0 ? 'sheet-handle-bar' : ''}
+            className="sheet-handle-bar"
             style={{
               width: 44,
               height: 4,
               borderRadius: 2,
-              background: dragY > 0 ? '#B8962E' : 'rgba(184,150,46,0.35)',
+              background: 'rgba(184,150,46,0.4)',
               transition: 'background 0.2s',
             }}
           />
         </div>
 
-        {/* Contenu scrollable */}
-        <div className="flex-1 overflow-y-auto overscroll-contain">
+        {/* Contenu scrollable — optimisations mobile */}
+        <div
+          className="flex-1 overflow-y-auto overscroll-contain"
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            contain: 'layout paint',
+          }}
+        >
           <WordPanel
             analysis={analysis}
             loading={loading}
