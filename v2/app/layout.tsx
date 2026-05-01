@@ -42,12 +42,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             boxShadow: '0 1px 2px rgba(61,50,40,0.04), 0 4px 12px -8px rgba(184,150,46,0.18)',
           }}
         >
-          {/* min-height fixe : empêche le header de grossir quand la police
-              Cormorant Garamond charge en différé (fallback serif plus haut →
-              header gros 1s → shrink). Le min-height absorbe le swap. */}
+          {/* HEIGHT FIXE (pas min-height) : bloque totalement le header au cas
+              où le swap de police Cormorant rendrait la box plus haute. Avec
+              flex items-center, le contenu se centre dans la hauteur. py-* a
+              été retiré pour que padding ne s'ajoute pas à la box. */}
           <div
-            className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between"
-            style={{ minHeight: 'clamp(56px, 8vw, 72px)' }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between"
+            style={{ height: 'clamp(58px, 8vw, 72px)' }}
           >
             <Link
               href="/"
