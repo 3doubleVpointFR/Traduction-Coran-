@@ -377,9 +377,13 @@ interface Props {
   verses: Verse[]
   wordsByVerse: Record<number, Word[]>
   analysesByVerse: Record<number, VerseAnalysis | unknown>
+  currentPage: number
+  totalPages: number
+  pageSize: number
+  allDoneVerseNums: number[]
 }
 
-export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse }: Props) {
+export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse, currentPage, totalPages, pageSize, allDoneVerseNums }: Props) {
   const router = useRouter()
   const [activeWordKey, setActiveWordKey] = useState<string | null>(null)
   const [wordAnalysis, setWordAnalysis] = useState<WordAnalysis | null>(null)
@@ -388,57 +392,25 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   const [jobProgress, setJobProgress] = useState<JobProgress | null>(null)
   const [jumpInput, setJumpInput] = useState('')
 
-  // Pagination mobile : 10 versets par page, pour éviter le ralentissement
-  // sur sourates longues (286 versets en sourate 2 = trop d'instances React).
-  const VERSES_PER_PAGE_MOBILE = 10
-  const [isMobile, setIsMobile] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 1023px)')
-    const update = () => setIsMobile(mq.matches)
-    update()
-    mq.addEventListener('change', update)
-    return () => mq.removeEventListener('change', update)
-  }, [])
-  const totalPages = isMobile ? Math.ceil(verses.length / VERSES_PER_PAGE_MOBILE) : 1
-  const visibleVerses = isMobile
-    ? verses.slice((currentPage - 1) * VERSES_PER_PAGE_MOBILE, currentPage * VERSES_PER_PAGE_MOBILE)
-    : verses
-
-  // Saute vers le verset {n} : scroll smooth pour positionner le verset
-  // EXACTEMENT en haut (juste sous le header), + flash or sur la carte.
-  // Sur mobile : navigue vers la bonne page d'abord puis scrolle.
-  const jumpToVerse = (n: number) => {
-    if (!Number.isFinite(n) || n < 1 || n > surah.verse_count) return
-    const verseIdx = verses.findIndex(v => v.verse_num === n)
-    if (verseIdx === -1) return
-
-    // Polling jusqu'à 1.5s pour attendre que le verset soit dans le DOM.
-    // 1) scrollIntoView natif (respecte scroll-margin-top), 2) correction
-    // après 700ms pour neutraliser tout drift du smooth scroll.
-    const HEADER_GAP = 70 // px du haut où on veut le verset
-    const scrollToTarget = (smooth: boolean) => {
-      const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
-      if (!el) return
-      const rect = el.getBoundingClientRect()
-      const targetY = Math.max(0, window.scrollY + rect.top - HEADER_GAP)
-      window.scrollTo({ top: targetY, behavior: smooth ? 'smooth' : 'auto' })
-    }
+  // Helper : scroll smooth + flash or sur un verset déjà rendu dans le DOM
+  const HEADER_GAP = 70
+  const scrollAndFlash = (n: number) => {
     const tryScroll = (attempt = 0) => {
       const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
       if (el) {
-        // Double rAF pour laisser le layout se stabiliser après re-render
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            scrollToTarget(true)
+            const rect = el.getBoundingClientRect()
+            const targetY = Math.max(0, window.scrollY + rect.top - HEADER_GAP)
+            window.scrollTo({ top: targetY, behavior: 'smooth' })
             el.classList.add('verse-jump-flash')
             setTimeout(() => el.classList.remove('verse-jump-flash'), 1500)
-            // Correction après que le smooth scroll soit fini : si on n'est pas
-            // pile à HEADER_GAP du haut, on snap.
+            // Correction après le smooth scroll
             setTimeout(() => {
               const r = el.getBoundingClientRect()
               if (Math.abs(r.top - HEADER_GAP) > 6) {
-                scrollToTarget(false)
+                const ty = Math.max(0, window.scrollY + r.top - HEADER_GAP)
+                window.scrollTo({ top: ty, behavior: 'auto' })
               }
             }, 750)
           })
@@ -449,15 +421,37 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         setTimeout(() => tryScroll(attempt + 1), 50)
       }
     }
-
-    if (isMobile) {
-      const targetPage = Math.floor(verseIdx / VERSES_PER_PAGE_MOBILE) + 1
-      if (targetPage !== currentPage) {
-        setCurrentPage(targetPage)
-      }
-    }
-    // Le polling se charge d'attendre le DOM, qu'on ait changé de page ou non
     tryScroll()
+  }
+
+  // Si l'URL contient un hash #verse-X-Y, scroll vers ce verset au mount
+  // (utilisé après une navigation vers une autre page via le verse jumper)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const hash = window.location.hash
+    if (!hash || !hash.startsWith(`#verse-${surah.id}-`)) return
+    const verseNum = parseInt(hash.replace(`#verse-${surah.id}-`, ''), 10)
+    if (!Number.isFinite(verseNum)) return
+    scrollAndFlash(verseNum)
+    // Nettoie le hash de l'URL pour éviter de re-scroller sur les futurs renders
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage])
+
+  // Saute vers le verset {n} : si sur même page → scroll. Sinon, navigue à la
+  // bonne page (URL change → server fetch → useEffect ci-dessus scrolle).
+  const jumpToVerse = (n: number) => {
+    if (!Number.isFinite(n) || n < 1 || n > surah.verse_count) return
+    const idxInDone = allDoneVerseNums.indexOf(n)
+    if (idxInDone === -1) return // verset non analysé, ignore
+    const targetPage = Math.floor(idxInDone / pageSize) + 1
+    if (targetPage !== currentPage) {
+      // Navigue à la page cible avec hash → server fetch → effet scroll
+      router.push(`/surah/${surah.id}?page=${targetPage}#verse-${surah.id}-${n}`)
+      return
+    }
+    // Même page : scroll direct
+    scrollAndFlash(n)
   }
   const [verseAnalyses, setVerseAnalyses] = useState<Record<number, VerseAnalysis>>(
     analysesByVerse as Record<number, VerseAnalysis>
@@ -881,20 +875,20 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
       {/* Left column: verses */}
       <div className="space-y-4">
-        {/* Pagination en haut (mobile) */}
-        {isMobile && totalPages > 1 && (
+        {/* Pagination en haut (toutes plateformes — pagination serveur) */}
+        {totalPages > 1 && (
           <Pagination
             current={currentPage}
             total={totalPages}
             onChange={(p) => {
-              setCurrentPage(p)
+              router.push(`/surah/${surah.id}?page=${p}`)
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           />
         )}
 
         {/* Verse list */}
-        {visibleVerses.map((verse) => (
+        {verses.map((verse) => (
           <VersePanel
             key={verse.id}
             verse={verse}
@@ -908,13 +902,13 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           />
         ))}
 
-        {/* Pagination en bas (mobile) */}
-        {isMobile && totalPages > 1 && (
+        {/* Pagination en bas */}
+        {totalPages > 1 && (
           <Pagination
             current={currentPage}
             total={totalPages}
             onChange={(p) => {
-              setCurrentPage(p)
+              router.push(`/surah/${surah.id}?page=${p}`)
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           />

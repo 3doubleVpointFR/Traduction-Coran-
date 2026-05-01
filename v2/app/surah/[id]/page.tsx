@@ -6,8 +6,11 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 export const fetchCache = 'force-no-store'
 
+const PAGE_SIZE = 20
+
 interface Props {
   params: { id: string }
+  searchParams: { page?: string }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -22,8 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function SurahPage({ params }: Props) {
+export default async function SurahPage({ params, searchParams }: Props) {
   const surahId = parseInt(params.id)
+  const requestedPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
 
   if (isNaN(surahId) || surahId < 1 || surahId > 114) {
     return (
@@ -79,19 +83,30 @@ export default async function SurahPage({ params }: Props) {
     )
   }
 
-  // Get words grouped by verse (paginated — Supabase default limit is 1000)
-  const verseIds = filteredVerses.map(v => v.id)
+  // ─── PAGINATION SERVEUR ───
+  // On ne fetch les words + analyses QUE pour les versets de la page courante.
+  // Réduit drastiquement la taille du payload + la durée de la requête.
+  const totalPages = Math.max(1, Math.ceil(filteredVerses.length / PAGE_SIZE))
+  const currentPage = Math.min(requestedPage, totalPages)
+  const startIdx = (currentPage - 1) * PAGE_SIZE
+  const endIdx = startIdx + PAGE_SIZE
+  const pageVerses = filteredVerses.slice(startIdx, endIdx)
+  const pageVerseIds = pageVerses.map(v => v.id)
 
+  // Liste légère de tous les verse_num analysés (pour le verse jumper :
+  // il a besoin de connaître TOUS les versets disponibles pour calculer
+  // sur quelle page se trouve un verset cible)
+  const allDoneVerseNums = filteredVerses.map(v => v.verse_num)
+
+  // Get words for CURRENT PAGE verses only
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const wordsByVerse: Record<number, any[]> = {}
-  // Paginate words: fetch in chunks of .in() with 100 IDs, then paginate within each
-  for (let i = 0; i < verseIds.length; i += 100) {
-    const chunk = verseIds.slice(i, i + 100)
+  if (pageVerseIds.length > 0) {
     for (let offset = 0; ; offset += 1000) {
       const { data: batch } = await db
         .from('words')
         .select('*')
-        .in('verse_id', chunk)
+        .in('verse_id', pageVerseIds)
         .order('position')
         .range(offset, offset + 999)
 
@@ -104,14 +119,13 @@ export default async function SurahPage({ params }: Props) {
     }
   }
 
-  // Get existing verse analyses (chunked .in() to avoid URL length limit)
+  // Get analyses for CURRENT PAGE verses only
   const analysesByVerse: Record<number, unknown> = {}
-  for (let i = 0; i < verseIds.length; i += 100) {
-    const chunk = verseIds.slice(i, i + 100)
-    const { data: analyses, error: analysesErr } = await db
+  if (pageVerseIds.length > 0) {
+    const { data: analyses } = await db
       .from('verse_analyses')
       .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, model_used, prompt_version, generated_at')
-      .in('verse_id', chunk)
+      .in('verse_id', pageVerseIds)
 
     for (const a of analyses ?? []) {
       analysesByVerse[a.verse_id] = a
@@ -121,9 +135,13 @@ export default async function SurahPage({ params }: Props) {
   return (
     <SurahView
       surah={surahRes.data}
-      verses={filteredVerses}
+      verses={pageVerses}
       wordsByVerse={wordsByVerse}
       analysesByVerse={analysesByVerse}
+      currentPage={currentPage}
+      totalPages={totalPages}
+      pageSize={PAGE_SIZE}
+      allDoneVerseNums={allDoneVerseNums}
     />
   )
 }
