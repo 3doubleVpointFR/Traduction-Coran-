@@ -212,7 +212,7 @@ function MobileSheet({
 
 
 // Pagination mobile : numéros de pages cliquables, style minimaliste moderne
-function Pagination({ current, total, onChange }: { current: number; total: number; onChange: (page: number) => void }) {
+function Pagination({ current, total, onChange, delayMs }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number }) {
   const pages: (number | 'ellipsis')[] = []
   const showAround = 1
   const start = Math.max(2, current - showAround)
@@ -224,7 +224,10 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
   if (total > 1) pages.push(total)
 
   return (
-    <div className="surah-pagination flex flex-col items-center gap-1.5 py-3">
+    <div
+      className="surah-pagination page-section-anim flex flex-col items-center gap-1.5 py-3"
+      style={delayMs != null ? { animationDelay: `${delayMs}ms` } : undefined}
+    >
       {/* Indicateur "Page X sur Y" en italique Cormorant */}
       <p
         className="italic"
@@ -887,6 +890,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         <Pagination
           current={currentPage}
           total={totalPages}
+          delayMs={600}
           onChange={(p) => {
             router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
           }}
@@ -1066,6 +1070,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       <Pagination
         current={currentPage}
         total={totalPages}
+        delayMs={750}
         onChange={(p) => {
           router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
         }}
