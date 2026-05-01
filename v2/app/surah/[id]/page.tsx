@@ -119,16 +119,22 @@ export default async function SurahPage({ params, searchParams }: Props) {
     }
   }
 
-  // Get analyses for CURRENT PAGE verses only
+  // Get analyses for CURRENT PAGE verses only.
+  // IMPORTANT : on filtre sur translation_arab non-null + on prend la plus récente,
+  // sinon une vieille ligne sans traduction peut écraser la bonne dans la map et
+  // faire apparaître le bouton "Traduire ce signe" sur un verset déjà traduit.
   const analysesByVerse: Record<number, unknown> = {}
   if (pageVerseIds.length > 0) {
     const { data: analyses } = await db
       .from('verse_analyses')
       .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, model_used, prompt_version, generated_at')
       .in('verse_id', pageVerseIds)
+      .not('translation_arab', 'is', null)
+      .order('generated_at', { ascending: false })
 
     for (const a of analyses ?? []) {
-      analysesByVerse[a.verse_id] = a
+      // Première itération = ligne la plus récente (ordre desc) → on ne l'écrase pas
+      if (!analysesByVerse[a.verse_id]) analysesByVerse[a.verse_id] = a
     }
   }
 
