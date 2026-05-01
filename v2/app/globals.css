@@ -403,14 +403,17 @@
   animation: wpBarFill 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Bloc concept (retenu/probable/exclu) — hover lift discret */
+/* Bloc concept (retenu/probable/exclu) — hover lift discret + isolation paint */
 .wp-concept-block {
   transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
   border-radius: 4px;
+  contain: layout paint; /* isole les calculs paint/layout pendant le scroll */
 }
-.wp-concept-block:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(184, 150, 46, 0.10);
+@media (hover: hover) {
+  .wp-concept-block:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(184, 150, 46, 0.10);
+  }
 }
 
 /* Référence de verset cliquable — lift + couleur plus dense */
@@ -418,9 +421,11 @@
   display: inline-block;
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), background 220ms ease;
 }
-.wp-verse-ref:hover {
-  transform: translateY(-1px);
-  background: rgba(184, 150, 46, 0.22) !important;
+@media (hover: hover) {
+  .wp-verse-ref:hover {
+    transform: translateY(-1px);
+    background: rgba(184, 150, 46, 0.22) !important;
+  }
 }
 
 /* Étoile ✦ du tooltip de concept — tour complet à l'apparition (visible) */

@@ -188,12 +188,14 @@ function MobileSheet({
           />
         </div>
 
-        {/* Contenu scrollable — optimisations mobile */}
+        {/* Contenu scrollable — optimisations mobile (scroll fluide sans bounce janky) */}
         <div
-          className="flex-1 overflow-y-auto overscroll-contain"
+          className="flex-1 overflow-y-auto"
           style={{
             WebkitOverflowScrolling: 'touch',
             contain: 'layout paint',
+            overscrollBehavior: 'none', // désactive complètement le bounce qui lague
+            touchAction: 'pan-y',
           }}
         >
           <WordPanel
