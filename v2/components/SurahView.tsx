@@ -164,6 +164,87 @@ function MobileSheet({
 }
 
 
+// Pagination mobile : numéros de pages cliquables, style minimaliste moderne
+function Pagination({ current, total, onChange }: { current: number; total: number; onChange: (page: number) => void }) {
+  const pages: (number | 'ellipsis')[] = []
+  const showAround = 1
+  const start = Math.max(2, current - showAround)
+  const end = Math.min(total - 1, current + showAround)
+  pages.push(1)
+  if (start > 2) pages.push('ellipsis')
+  for (let i = start; i <= end; i++) pages.push(i)
+  if (end < total - 1) pages.push('ellipsis')
+  if (total > 1) pages.push(total)
+
+  return (
+    <div className="surah-pagination flex flex-col items-center gap-1.5 py-3">
+      {/* Indicateur "Page X sur Y" en italique Cormorant */}
+      <p
+        className="italic"
+        style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: '11px',
+          color: '#8A7E72',
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          margin: 0,
+          lineHeight: 1,
+        }}
+      >
+        Page <strong style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>{current}</strong> sur {total}
+      </p>
+
+      {/* Boutons pages avec ellipses */}
+      <div className="flex items-center gap-0.5 flex-wrap justify-center">
+        <button
+          type="button"
+          onClick={() => current > 1 && onChange(current - 1)}
+          disabled={current === 1}
+          aria-label="Page précédente"
+          className="surah-page-arrow"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        {pages.map((p, i) =>
+          p === 'ellipsis' ? (
+            <span
+              key={`e-${i}`}
+              className="surah-page-ellipsis"
+              aria-hidden="true"
+            >
+              …
+            </span>
+          ) : (
+            <button
+              key={p}
+              type="button"
+              onClick={() => onChange(p)}
+              aria-label={`Page ${p}`}
+              aria-current={p === current ? 'page' : undefined}
+              className={`surah-page-num${p === current ? ' is-active' : ''}`}
+            >
+              {p}
+            </button>
+          )
+        )}
+        <button
+          type="button"
+          onClick={() => current < total && onChange(current + 1)}
+          disabled={current === total}
+          aria-label="Page suivante"
+          className="surah-page-arrow"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  )
+}
+
 interface Surah {
   id: number
   name_ar: string
@@ -260,18 +341,76 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   const [jobProgress, setJobProgress] = useState<JobProgress | null>(null)
   const [jumpInput, setJumpInput] = useState('')
 
-  // Saute vers le verset {n} : scroll smooth + flash or sur la carte
+  // Pagination mobile : 10 versets par page, pour éviter le ralentissement
+  // sur sourates longues (286 versets en sourate 2 = trop d'instances React).
+  const VERSES_PER_PAGE_MOBILE = 10
+  const [isMobile, setIsMobile] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1023px)')
+    const update = () => setIsMobile(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+  const totalPages = isMobile ? Math.ceil(verses.length / VERSES_PER_PAGE_MOBILE) : 1
+  const visibleVerses = isMobile
+    ? verses.slice((currentPage - 1) * VERSES_PER_PAGE_MOBILE, currentPage * VERSES_PER_PAGE_MOBILE)
+    : verses
+
+  // Saute vers le verset {n} : scroll smooth pour positionner le verset
+  // EXACTEMENT en haut (juste sous le header), + flash or sur la carte.
+  // Sur mobile : navigue vers la bonne page d'abord puis scrolle.
   const jumpToVerse = (n: number) => {
     if (!Number.isFinite(n) || n < 1 || n > surah.verse_count) return
-    const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
-    if (!el) {
-      // Verset non analysé / non rendu → ne rien faire
-      return
+    const verseIdx = verses.findIndex(v => v.verse_num === n)
+    if (verseIdx === -1) return
+
+    // Polling jusqu'à 1.5s pour attendre que le verset soit dans le DOM.
+    // 1) scrollIntoView natif (respecte scroll-margin-top), 2) correction
+    // après 700ms pour neutraliser tout drift du smooth scroll.
+    const HEADER_GAP = 70 // px du haut où on veut le verset
+    const scrollToTarget = (smooth: boolean) => {
+      const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const targetY = Math.max(0, window.scrollY + rect.top - HEADER_GAP)
+      window.scrollTo({ top: targetY, behavior: smooth ? 'smooth' : 'auto' })
     }
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    // Flash dorée brève sur le verset
-    el.classList.add('verse-jump-flash')
-    setTimeout(() => el.classList.remove('verse-jump-flash'), 1500)
+    const tryScroll = (attempt = 0) => {
+      const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
+      if (el) {
+        // Double rAF pour laisser le layout se stabiliser après re-render
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            scrollToTarget(true)
+            el.classList.add('verse-jump-flash')
+            setTimeout(() => el.classList.remove('verse-jump-flash'), 1500)
+            // Correction après que le smooth scroll soit fini : si on n'est pas
+            // pile à HEADER_GAP du haut, on snap.
+            setTimeout(() => {
+              const r = el.getBoundingClientRect()
+              if (Math.abs(r.top - HEADER_GAP) > 6) {
+                scrollToTarget(false)
+              }
+            }, 750)
+          })
+        })
+        return
+      }
+      if (attempt < 30) {
+        setTimeout(() => tryScroll(attempt + 1), 50)
+      }
+    }
+
+    if (isMobile) {
+      const targetPage = Math.floor(verseIdx / VERSES_PER_PAGE_MOBILE) + 1
+      if (targetPage !== currentPage) {
+        setCurrentPage(targetPage)
+      }
+    }
+    // Le polling se charge d'attendre le DOM, qu'on ait changé de page ou non
+    tryScroll()
   }
   const [verseAnalyses, setVerseAnalyses] = useState<Record<number, VerseAnalysis>>(
     analysesByVerse as Record<number, VerseAnalysis>
@@ -695,8 +834,20 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
       {/* Left column: verses */}
       <div className="space-y-4">
+        {/* Pagination en haut (mobile) */}
+        {isMobile && totalPages > 1 && (
+          <Pagination
+            current={currentPage}
+            total={totalPages}
+            onChange={(p) => {
+              setCurrentPage(p)
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          />
+        )}
+
         {/* Verse list */}
-        {verses.map((verse) => (
+        {visibleVerses.map((verse) => (
           <VersePanel
             key={verse.id}
             verse={verse}
@@ -709,6 +860,18 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             onAnalyze={() => handleAnalyzeVerse(verse.id, verse.surah_id, verse.verse_num)}
           />
         ))}
+
+        {/* Pagination en bas (mobile) */}
+        {isMobile && totalPages > 1 && (
+          <Pagination
+            current={currentPage}
+            total={totalPages}
+            onChange={(p) => {
+              setCurrentPage(p)
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          />
+        )}
       </div>
 
       {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}

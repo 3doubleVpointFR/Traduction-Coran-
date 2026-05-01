@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { cn, cleanArabicText } from '@/lib/utils'
 import type { JobProgress } from './SurahView'
 
@@ -76,6 +76,8 @@ export default function VersePanel({
   const [verseHideArabic, setVerseHideArabic] = useState(false)
   const [verseHidePhon, setVerseHidePhon] = useState(false)
   const [verseHideSections, setVerseHideSections] = useState(false)
+  // Résumé : par défaut entièrement visible, bouton "Réduire" pour le replier après lecture
+  const [resumeExpanded, setResumeExpanded] = useState(true)
   const segments = analysis?.segments
 
   // Extract §DEMARCHE§ intro paragraph (résumé) to display under the verse header.
@@ -104,7 +106,7 @@ export default function VersePanel({
   }
 
   return (
-    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className={`verse-card rounded-lg p-5${verseHideArabic ? ' verse-hide-arabic' : ''}${verseHidePhon ? ' verse-hide-phon' : ''}${verseHideSections ? ' verse-hide-sections' : ''}`} style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '110px' }}>
+    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className={`verse-card rounded-lg p-5${verseHideArabic ? ' verse-hide-arabic' : ''}${verseHidePhon ? ' verse-hide-phon' : ''}${verseHideSections ? ' verse-hide-sections' : ''}`} style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '70px' }}>
       {/* Verse header */}
       <div className="flex items-center justify-between mb-4 gap-2">
         <span className="verse-header-label" style={{ color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
@@ -157,15 +159,13 @@ export default function VersePanel({
         return (
           <div
             data-tour-summary="1"
+            className="resume-box"
             style={{
               margin: '0 0 14px 0',
-              padding: '14px 18px',
               background: 'rgba(184,150,46,0.13)',
               border: '1px solid rgba(184,150,46,0.32)',
               borderLeft: '5px solid rgba(184,150,46,0.85)',
               borderRadius: '0 10px 10px 0',
-              fontSize: '17px',
-              lineHeight: 1.55,
               color: '#1A1410',
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 500,
@@ -173,14 +173,12 @@ export default function VersePanel({
             }}
           >
             <div
-              className="italic uppercase"
+              className="italic uppercase resume-label"
               style={{
-                fontSize: '9.5px',
                 letterSpacing: '0.16em',
                 color: '#8A7428',
                 fontWeight: 700,
                 fontFamily: "'Cormorant Garamond', serif",
-                marginBottom: '6px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '5px',
@@ -189,35 +187,45 @@ export default function VersePanel({
               <span aria-hidden="true">✦</span>
               Résumé
             </div>
-            {paragraphs.map((para, i) => {
-              // Process **bold** then *italic* inside each paragraph.
-              const boldChunks = para.split(/(\*\*[^*]+\*\*)/g)
-              return (
-                <p key={i} style={{ marginBottom: i < paragraphs.length - 1 ? '6px' : 0, fontStyle: 'italic' }}>
-                  {boldChunks.map((chunk, k) => {
-                    if (chunk.startsWith('**') && chunk.endsWith('**')) {
-                      return (
-                        <span key={k} style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>
-                          {chunk.slice(2, -2)}
-                        </span>
-                      )
-                    }
-                    // *italic* nested inside (single asterisks) — render in lighter accent.
-                    const italicParts = chunk.split(/(\*[^*]+\*)/g)
-                    return italicParts.map((part, m) => {
-                      if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
+            <div className={`resume-content${resumeExpanded ? '' : ' is-collapsed'}`}>
+              {paragraphs.map((para, i) => {
+                // Process **bold** then *italic* inside each paragraph.
+                const boldChunks = para.split(/(\*\*[^*]+\*\*)/g)
+                return (
+                  <p key={i} style={{ marginBottom: i < paragraphs.length - 1 ? '6px' : 0, fontStyle: 'italic' }}>
+                    {boldChunks.map((chunk, k) => {
+                      if (chunk.startsWith('**') && chunk.endsWith('**')) {
                         return (
-                          <span key={`${k}-${m}`} style={{ color: '#8B6914', fontWeight: 500 }}>
-                            {part.slice(1, -1)}
+                          <span key={k} style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>
+                            {chunk.slice(2, -2)}
                           </span>
                         )
                       }
-                      return <React.Fragment key={`${k}-${m}`}>{part}</React.Fragment>
-                    })
-                  })}
-                </p>
-              )
-            })}
+                      // *italic* nested inside (single asterisks) — render in lighter accent.
+                      const italicParts = chunk.split(/(\*[^*]+\*)/g)
+                      return italicParts.map((part, m) => {
+                        if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
+                          return (
+                            <span key={`${k}-${m}`} style={{ color: '#8B6914', fontWeight: 500 }}>
+                              {part.slice(1, -1)}
+                            </span>
+                          )
+                        }
+                        return <React.Fragment key={`${k}-${m}`}>{part}</React.Fragment>
+                      })
+                    })}
+                  </p>
+                )
+              })}
+            </div>
+            <button
+              type="button"
+              onClick={() => setResumeExpanded(e => !e)}
+              className="resume-toggle-btn"
+              aria-expanded={resumeExpanded}
+            >
+              {resumeExpanded ? 'Réduire ↑' : 'Voir le résumé ↓'}
+            </button>
           </div>
         )
       })()}
