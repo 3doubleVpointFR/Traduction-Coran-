@@ -27,15 +27,31 @@ function MobileSheet({
   const backdropRef = useRef<HTMLDivElement | null>(null)
 
   const closeAnimated = () => {
+    // Sortie animée du sheet : slide-down + fade-out + blur.
+    // IMPORTANT : on doit explicitement cancel l'animation CSS d'entrée
+    // (sheetSlideUp) avant de set la transition, sinon l'animation (avec
+    // fill-mode both) override la transition et la sortie est instantanée.
     if (sheetRef.current) {
-      sheetRef.current.style.transition = 'transform 220ms cubic-bezier(0.32, 0.72, 0, 1)'
+      sheetRef.current.style.animation = 'none'
+      // Force un reflow pour que le navigateur prenne en compte
+      // animation:none avant d'appliquer la transition (sinon il bat le
+      // changement et la transition ne se déclenche pas).
+      void sheetRef.current.offsetHeight
+      sheetRef.current.style.transition =
+        'transform 360ms cubic-bezier(0.32, 0.72, 0, 1), ' +
+        'opacity 360ms cubic-bezier(0.32, 0.72, 0, 1), ' +
+        'filter 360ms cubic-bezier(0.32, 0.72, 0, 1)'
       sheetRef.current.style.transform = 'translateY(100%)'
+      sheetRef.current.style.opacity = '0'
+      sheetRef.current.style.filter = 'blur(6px)'
     }
     if (backdropRef.current) {
-      backdropRef.current.style.transition = 'opacity 220ms ease-out'
+      backdropRef.current.style.animation = 'none'
+      void backdropRef.current.offsetHeight
+      backdropRef.current.style.transition = 'opacity 360ms cubic-bezier(0.4, 0, 0.2, 1)'
       backdropRef.current.style.opacity = '0'
     }
-    setTimeout(onClose, 220)
+    setTimeout(onClose, 360)
   }
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -87,18 +103,20 @@ function MobileSheet({
     <div className="lg:hidden fixed inset-0 z-[60]">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes sheetSlideUp {
-          from { transform: translateY(100%); opacity: 0.6; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes sheetSlideDown {
-          to { transform: translateY(100%); opacity: 0.6; }
+          from {
+            transform: translateY(100%);
+            opacity: 0;
+            filter: blur(6px);
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+            filter: blur(0);
+          }
         }
         @keyframes backdropFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes backdropFadeOut {
-          to { opacity: 0; }
+          from { opacity: 0; backdrop-filter: blur(0); -webkit-backdrop-filter: blur(0); }
+          to { opacity: 1; backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
         }
         @keyframes sheetHandlePulse {
           0%, 100% { transform: scaleX(1); opacity: 1; }
@@ -116,14 +134,15 @@ function MobileSheet({
         }
       ` }} />
 
-      {/* Backdrop */}
+      {/* Backdrop : fade + backdrop-blur progressif synchronisé avec le sheet */}
       <div
         ref={backdropRef}
         className="absolute inset-0"
         style={{
           background: 'rgba(26, 20, 16, 0.55)',
           backdropFilter: 'blur(2px)',
-          animation: 'backdropFadeIn 0.25s ease-out',
+          WebkitBackdropFilter: 'blur(2px)',
+          animation: 'backdropFadeIn 480ms cubic-bezier(0.4, 0, 0.2, 1)',
         }}
         onClick={closeAnimated}
       />
@@ -143,8 +162,10 @@ function MobileSheet({
           boxShadow: '0 -8px 32px rgba(0,0,0,0.18)',
           border: '1px solid rgba(184,150,46,0.3)',
           borderBottom: 'none',
-          animation: 'sheetSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1)',
-          willChange: 'transform',
+          /* 480ms (était 380ms) avec un easing plus doux à la fin pour que
+             la montée se "pose" en douceur plutôt que d'arriver vite. */
+          animation: 'sheetSlideUp 480ms cubic-bezier(0.22, 1, 0.36, 1)',
+          willChange: 'transform, opacity, filter',
         }}
       >
         {/* Drag handle — la zone tactile pour tirer la feuille */}
@@ -202,7 +223,7 @@ function MobileSheet({
             analysis={analysis}
             loading={loading}
             activeWordKey={activeWordKey}
-            onClose={onClose}
+            onClose={closeAnimated}
           />
         </div>
       </div>
@@ -211,120 +232,59 @@ function MobileSheet({
 }
 
 
-// Pagination : 7 slots TOUJOURS rendus (les inutilisés sont invisibles mais
-// gardent leur place via visibility:hidden) → boutons figés au même endroit
-// quelle que soit la page active. Évite la confusion utilisateur.
-//
-// Layout fixe : [<] [1] [...] [n-1] [n] [n+1] [...] [total] [>]
+// Pagination minimaliste : [<] PAGE X SUR Y [>]
+// Toujours le même layout, pas de trous, pas de boutons qui bougent.
+// Pour sauter directement à une page précise, l'utilisateur a le verse jumper
+// (qui calcule la page cible à partir d'un numéro de signe).
 function Pagination({ current, total, onChange, delayMs }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number }) {
-  // Conditions de visibilité par slot
-  const showLeftEllipsis = current >= 4
-  const showLeftNeighbor = current > 2 && current - 1 !== 1
-  const showCurrentMiddle = current !== 1 && current !== total
-  const showRightNeighbor = current < total - 1 && current + 1 !== total
-  const showRightEllipsis = current <= total - 3
-  const hasLast = total > 1
-
-  // Helper : button slot avec visibility (preserve la place quand caché)
-  const Slot = ({
-    page,
-    visible,
-    label,
-  }: { page: number; visible: boolean; label: string }) => (
-    <button
-      type="button"
-      onClick={() => visible && onChange(page)}
-      aria-hidden={!visible}
-      tabIndex={visible ? 0 : -1}
-      aria-label={`Page ${label}`}
-      aria-current={visible && page === current ? 'page' : undefined}
-      className={`surah-page-num${visible && page === current ? ' is-active' : ''}`}
-      style={{ visibility: visible ? 'visible' : 'hidden' }}
-    >
-      {page}
-    </button>
-  )
-
   return (
     <div
-      className="surah-pagination page-section-anim flex flex-col items-center gap-1.5 py-3"
+      className="surah-pagination page-section-anim flex items-center justify-center gap-3 py-3"
       style={delayMs != null ? { animationDelay: `${delayMs}ms` } : undefined}
     >
-      {/* Indicateur "Page X sur Y" en italique Cormorant */}
+      <button
+        type="button"
+        onClick={() => current > 1 && onChange(current - 1)}
+        disabled={current === 1}
+        aria-label="Page précédente"
+        className="surah-page-arrow"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      {/* Indicateur "Page X sur Y" centré entre les deux flèches.
+          min-width fixe pour que l'indicateur ne change pas de largeur quand
+          le numéro passe de 1 chiffre à 2 chiffres → flèches stables. */}
       <p
-        className="italic"
+        className="italic surah-page-counter"
         style={{
           fontFamily: "'Cormorant Garamond', serif",
-          fontSize: '11px',
+          fontSize: '12px',
           color: '#8A7E72',
-          letterSpacing: '0.08em',
+          letterSpacing: '0.10em',
           textTransform: 'uppercase',
           margin: 0,
           lineHeight: 1,
+          minWidth: '110px',
+          textAlign: 'center',
         }}
       >
         Page <strong style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>{current}</strong> sur {total}
       </p>
 
-      {/* 7 slots fixes — pas de flex-wrap pour éviter le retour à la ligne */}
-      <div className="flex items-center gap-0.5 justify-center">
-        <button
-          type="button"
-          onClick={() => current > 1 && onChange(current - 1)}
-          disabled={current === 1}
-          aria-label="Page précédente"
-          className="surah-page-arrow"
-        >
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-
-        {/* Slot 1 : page 1 (toujours visible) */}
-        <Slot page={1} visible={true} label="1" />
-
-        {/* Slot 2 : ellipsis gauche */}
-        <span
-          className="surah-page-ellipsis"
-          aria-hidden="true"
-          style={{ visibility: showLeftEllipsis ? 'visible' : 'hidden' }}
-        >
-          …
-        </span>
-
-        {/* Slot 3 : voisin gauche (current - 1) */}
-        <Slot page={current - 1} visible={showLeftNeighbor} label={String(current - 1)} />
-
-        {/* Slot 4 : page courante au milieu */}
-        <Slot page={current} visible={showCurrentMiddle} label={String(current)} />
-
-        {/* Slot 5 : voisin droit (current + 1) */}
-        <Slot page={current + 1} visible={showRightNeighbor} label={String(current + 1)} />
-
-        {/* Slot 6 : ellipsis droit */}
-        <span
-          className="surah-page-ellipsis"
-          aria-hidden="true"
-          style={{ visibility: showRightEllipsis ? 'visible' : 'hidden' }}
-        >
-          …
-        </span>
-
-        {/* Slot 7 : dernière page */}
-        <Slot page={total} visible={hasLast} label={String(total)} />
-
-        <button
-          type="button"
-          onClick={() => current < total && onChange(current + 1)}
-          disabled={current === total}
-          aria-label="Page suivante"
-          className="surah-page-arrow"
-        >
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={() => current < total && onChange(current + 1)}
+        disabled={current === total}
+        aria-label="Page suivante"
+        className="surah-page-arrow"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
     </div>
   )
 }
@@ -943,12 +903,15 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           pour que le panneau droit (sticky) reste collé au scroll même sur les
           sourates avec peu de versets. */}
       <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
-      {/* Left column: verses */}
+      {/* Left column: verses.
+          key={currentPage} : la div re-monte à chaque changement de page →
+          déclenche l'animation .verses-page-enter (slide-up + fade-in).
+          Pendant isPending (sortie de la page courante) : dim + blur léger
+          + slide-up subtil pour donner l'impression que le contenu "part". */}
       <div
-        className="space-y-4"
+        key={currentPage}
+        className={`space-y-4 verses-page-enter${isPending ? ' verses-page-leaving' : ''}`}
         style={{
-          opacity: isPending ? 0.5 : 1,
-          transition: 'opacity 220ms ease',
           pointerEvents: isPending ? 'none' : 'auto',
         }}
       >

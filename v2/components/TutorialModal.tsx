@@ -99,86 +99,10 @@ export default function TutorialModal() {
         <span aria-hidden="true" className="tuto-cta-arrow" style={{ fontSize: '14px', marginLeft: '1px', display: 'inline-block', position: 'relative', zIndex: 1 }}>→</span>
       </button>
 
-      <style jsx>{`
-        /* Mobile : bouton beaucoup plus compact pour la barre du haut */
-        @media (max-width: 639px) {
-          .tuto-cta-btn {
-            padding: 6px 14px !important;
-            min-width: 0 !important;
-            font-size: 11px !important;
-            gap: 6px !important;
-            letter-spacing: 0.03em !important;
-          }
-          .tuto-cta-btn :global(span) {
-            font-size: 11px !important;
-          }
-          .tuto-cta-btn :global(span):first-child {
-            font-size: 12px !important;
-          }
-        }
-        @media (prefers-reduced-motion: no-preference) {
-          .tuto-cta-btn {
-            animation: tutoPulse 3s ease-in-out infinite;
-          }
-        }
-        .tuto-cta-btn:hover,
-        .tuto-cta-btn:focus-visible {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 18px rgba(184, 150, 46, 0.4), 0 2px 6px rgba(184, 150, 46, 0.2) !important;
-          animation-play-state: paused;
-        }
-        @keyframes tutoPulse {
-          0%, 100% {
-            box-shadow: 0 2px 8px rgba(184, 150, 46, 0.3), 0 1px 2px rgba(184, 150, 46, 0.15);
-          }
-          50% {
-            box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4), 0 0 0 4px rgba(184, 150, 46, 0.1);
-          }
-        }
-        /* Modal — entrée douce */
-        .tuto-modal-overlay {
-          animation: tutoOverlayIn 240ms ease-out;
-        }
-        .tuto-modal-card {
-          animation: tutoModalIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes tutoOverlayIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes tutoModalIn {
-          from { opacity: 0; transform: translateY(12px) scale(0.97); }
-          to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        /* Modal — hovers fluides */
-        .tuto-modal-close:hover,
-        .tuto-modal-close:focus-visible {
-          background: rgba(184, 150, 46, 0.08) !important;
-          border-color: rgba(184, 150, 46, 0.5) !important;
-          color: #8A7428 !important;
-        }
-        .tuto-modal-btn-secondary:hover,
-        .tuto-modal-btn-secondary:focus-visible {
-          background: rgba(184, 150, 46, 0.08) !important;
-          border-color: rgba(184, 150, 46, 0.5) !important;
-          color: #5A4E42 !important;
-        }
-        .tuto-modal-btn-primary:hover,
-        .tuto-modal-btn-primary:focus-visible {
-          transform: translateY(-1px);
-          box-shadow: 0 6px 16px rgba(184, 150, 46, 0.42), 0 2px 6px rgba(184, 150, 46, 0.2) !important;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .tuto-modal-overlay,
-          .tuto-modal-card {
-            animation: none !important;
-          }
-          .tuto-modal-btn-primary:hover,
-          .tuto-modal-btn-primary:focus-visible {
-            transform: none;
-          }
-        }
-      `}</style>
+      {/* CSS du bouton + modal migrée vers globals.css : avec <style jsx>,
+          les media queries s'injectaient au mount JS, ce qui causait un flash
+          de "bouton qui grandit pendant 1s" au F5 mobile (les overrides mobile
+          n'étaient pas encore appliqués pendant le SSR initial). */}
 
       {open && mounted && createPortal(
         <div

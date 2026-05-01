@@ -399,6 +399,11 @@ export default function VersePanel({
 
           return (
             <div data-tour-sections="1" className="mt-3 pt-2" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
+              {/* Wrapper interne pour le trick grid-template-rows : permet à
+                  l'animation de pliage de s'adapter à la hauteur RÉELLE du
+                  contenu (au lieu de transitionner depuis un max-height
+                  généreux qui crée un effet "rien... puis collapse rapide"). */}
+              <div className="sections-inner">
               {sections.map((sec, idx) => {
                 if (!sectionMap[sec.key]) return null
                 const roman = ['I', 'II', 'III'][idx] || ''
@@ -440,10 +445,20 @@ export default function VersePanel({
                         marginLeft: '4px',
                       }} />
                     </button>
-                    {sec.show && renderContent(sectionMap[sec.key], sec.color)}
+                    {/* Wrapper TOUJOURS monté (avec is-closed quand caché) →
+                        anime DANS LES DEUX SENS (déplier ET plier) avec blur
+                        fade. Sinon le && unmounte la div instantanément et il
+                        n'y a pas de transition au pliage. */}
+                    <div
+                      className={`section-fold-wrap${sec.show ? '' : ' is-closed'}`}
+                      aria-hidden={!sec.show}
+                    >
+                      {renderContent(sectionMap[sec.key], sec.color)}
+                    </div>
                   </div>
                 )
               })}
+              </div>
             </div>
           )
         }

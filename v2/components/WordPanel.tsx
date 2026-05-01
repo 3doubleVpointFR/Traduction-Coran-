@@ -766,9 +766,13 @@ export default function WordPanel({
                         </div>
                       </div>
 
-                      {/* Contenu déplié du concept */}
-                      {conceptIsExpanded && (
-                        <div className="section-unfold mt-2 text-xs space-y-2">
+                      {/* Contenu déplié du concept.
+                          Wrapper toujours monté avec is-closed → animation
+                          bidirectionnelle (plier ET déplier) avec blur fade. */}
+                      <div
+                        className={`section-fold-wrap mt-2 text-xs space-y-2${conceptIsExpanded ? '' : ' is-closed'}`}
+                        aria-hidden={!conceptIsExpanded}
+                      >
                           {/* Refs cliquables des versets — EN HAUT */}
                           {(() => {
                             // Use refs_by_concept if available, otherwise aggregate from refs_by_sense
@@ -852,7 +856,6 @@ export default function WordPanel({
                           })()}
 
                         </div>
-                      )}
                     </div>
                   )
                 })
@@ -970,10 +973,14 @@ export default function WordPanel({
                     </div>
                   </div>
 
-                  {/* Proof + axes (expanded) */}
-                  {isExpanded && (
-                    <div className="section-unfold mt-2 text-xs space-y-2">
-                      {/* Verse refs for this sense */}
+                  {/* Proof + axes (expanded).
+                      Wrapper toujours monté avec is-closed → animation
+                      bidirectionnelle (plier ET déplier) avec blur fade. */}
+                  <div
+                    className={`section-fold-wrap mt-2 text-xs space-y-2${isExpanded ? '' : ' is-closed'}`}
+                    aria-hidden={!isExpanded}
+                  >
+                    {/* Verse refs for this sense */}
                       {(() => {
                         const rawRefs = counts.refs_by_sense?.[m.sense] ?? []
                         if (rawRefs.length === 0) return null
@@ -1025,8 +1032,7 @@ export default function WordPanel({
 
                       {/* Justification — NE PAS afficher les axes de word_meanings ici,
                           les axes sont par verset et viennent du VWA (section concept ci-dessus) */}
-                    </div>
-                  )}
+                  </div>
                 </div>
               )
             })

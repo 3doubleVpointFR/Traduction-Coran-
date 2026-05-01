@@ -72,15 +72,48 @@
 
 /* ═══ ANIMATIONS MODERNES — réutilisables sur tous les panneaux ═══ */
 
-/* Dépliage de section (Démarche / Justification / Critique, etc.) */
+/* Dépliage de section au mount uniquement (one-shot animation à l'apparition).
+   Pour des transitions BIDIRECTIONNELLES (plier ET déplier), utiliser plutôt
+   .section-fold-wrap (toggle de classe). */
 @keyframes sectionUnfold {
-  from { opacity: 0; transform: translateY(-3px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-3px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 .section-unfold {
-  animation: sectionUnfold 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: sectionUnfold 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
   transform-origin: top center;
-  will-change: opacity, transform;
+  will-change: opacity, transform, filter;
+}
+
+/* Wrapper de pliage/dépliage BIDIRECTIONNEL (toggle is-closed via JS).
+   Toujours monté → la transition joue dans les deux sens (déplier ET plier).
+   blur(2px) ↔ blur(0) lisse le passage comme partout dans l'app.
+   Toutes les transitions synchronisées (même durée + easing) → mouvement
+   unique fluide, pas d'effet "en 2 temps". */
+.section-fold-wrap {
+  overflow: hidden;
+  max-height: 5000px;
+  opacity: 1;
+  filter: blur(0);
+  transition: max-height 420ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity    420ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter     420ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin     420ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.section-fold-wrap.is-closed {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  filter: blur(2px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-fold-wrap {
+    transition: none !important;
+  }
+  .section-fold-wrap.is-closed {
+    filter: none !important;
+  }
 }
 
 /* Chevron qui pivote au lieu de switcher de glyphe */
@@ -122,6 +155,90 @@
     color 220ms ease,
     border-color 280ms cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+}
+
+/* ═══ Bouton "Visite guidée" + modal tutoriel ═══
+   Migré de <style jsx> dans TutorialModal.tsx vers globals.css : avec
+   styled-jsx, les media queries s'injectaient au mount JS, ce qui causait
+   un flash de "bouton qui grandit 1s" au F5 mobile (overrides mobile pas
+   encore appliqués pendant le SSR initial). En CSS global, c'est en place
+   dès le premier paint. */
+@media (max-width: 639px) {
+  .tuto-cta-btn {
+    padding: 6px 14px !important;
+    min-width: 0 !important;
+    font-size: 11px !important;
+    gap: 6px !important;
+    letter-spacing: 0.03em !important;
+  }
+  .tuto-cta-btn span {
+    font-size: 11px !important;
+  }
+  .tuto-cta-btn span:first-child {
+    font-size: 12px !important;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tuto-cta-btn {
+    animation: tutoPulse 3s ease-in-out infinite;
+  }
+}
+.tuto-cta-btn:hover,
+.tuto-cta-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 150, 46, 0.4), 0 2px 6px rgba(184, 150, 46, 0.2) !important;
+  animation-play-state: paused;
+}
+@keyframes tutoPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(184, 150, 46, 0.3), 0 1px 2px rgba(184, 150, 46, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 14px rgba(184, 150, 46, 0.4), 0 0 0 4px rgba(184, 150, 46, 0.1);
+  }
+}
+/* Modal — entrée douce */
+.tuto-modal-overlay {
+  animation: tutoOverlayIn 240ms ease-out;
+}
+.tuto-modal-card {
+  animation: tutoModalIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes tutoOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tutoModalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* Modal — hovers fluides */
+.tuto-modal-close:hover,
+.tuto-modal-close:focus-visible {
+  background: rgba(184, 150, 46, 0.08) !important;
+  border-color: rgba(184, 150, 46, 0.5) !important;
+  color: #8A7428 !important;
+}
+.tuto-modal-btn-secondary:hover,
+.tuto-modal-btn-secondary:focus-visible {
+  background: rgba(184, 150, 46, 0.08) !important;
+  border-color: rgba(184, 150, 46, 0.5) !important;
+  color: #5A4E42 !important;
+}
+.tuto-modal-btn-primary:hover,
+.tuto-modal-btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(184, 150, 46, 0.42), 0 2px 6px rgba(184, 150, 46, 0.2) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tuto-modal-overlay,
+  .tuto-modal-card {
+    animation: none !important;
+  }
+  .tuto-modal-btn-primary:hover,
+  .tuto-modal-btn-primary:focus-visible {
+    transform: none;
+  }
 }
 
 /* ═══ Bouton "Traduire ce signe" — gradient or + lift au hover ═══ */
@@ -171,13 +288,18 @@
   overflow: hidden;
   max-height: 2000px;
   opacity: 1;
-  transition: max-height 380ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 240ms ease,
-              margin 380ms cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(0);
+  /* Toutes les transitions synchronisées (même durée + easing) → mouvement
+     unique fluide, pas d'effet "en 2 temps". */
+  transition: max-height 420ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity    420ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter     420ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin     420ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .resume-content.is-collapsed {
   max-height: 0 !important;
   opacity: 0 !important;
+  filter: blur(2px) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -217,6 +339,73 @@
   .resume-toggle-btn:hover {
     color: #8A7428;
     text-decoration: underline;
+  }
+}
+
+/* ═══ Transitions de page (changement de pagination) ═══
+   Sortie : conteneur dim + blur léger + slide-up subtil (homogène).
+   Entrée : chaque verset fade-up INDIVIDUELLEMENT avec stagger (cascade).
+   Le contraste sortie homogène / entrée en cascade est ce qui rend la
+   transition particulièrement fluide. */
+
+/* Conteneur : transition douce des changements opacity/filter/transform
+   pendant la sortie (isPending). */
+.verses-page-enter {
+  transition: opacity 320ms ease, filter 320ms ease, transform 320ms ease;
+  will-change: opacity, transform, filter;
+}
+
+/* Stagger : chaque enfant (VersePanel) fade-up individuellement avec un
+   petit délai entre eux → cascade smooth. Le filter blur(2px) → 0 lisse
+   le passage entre l'état flouté de la sortie et l'arrivée nette (sinon
+   le contraste blur → sharp est perçu comme "brutal"). Easing Material
+   standard pour un feel doux du début à la fin. */
+.verses-page-enter > * {
+  animation: verseItemEnter 620ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  will-change: opacity, transform, filter;
+}
+@keyframes verseItemEnter {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.verses-page-enter > *:nth-child(1)  { animation-delay:   0ms; }
+.verses-page-enter > *:nth-child(2)  { animation-delay:  30ms; }
+.verses-page-enter > *:nth-child(3)  { animation-delay:  60ms; }
+.verses-page-enter > *:nth-child(4)  { animation-delay:  90ms; }
+.verses-page-enter > *:nth-child(5)  { animation-delay: 120ms; }
+.verses-page-enter > *:nth-child(6)  { animation-delay: 150ms; }
+.verses-page-enter > *:nth-child(7)  { animation-delay: 180ms; }
+.verses-page-enter > *:nth-child(8)  { animation-delay: 210ms; }
+.verses-page-enter > *:nth-child(9)  { animation-delay: 240ms; }
+.verses-page-enter > *:nth-child(10) { animation-delay: 270ms; }
+
+/* Sortie : le conteneur entier dim + blur léger + slide-up subtil.
+   Adouci pour que le pont avec l'entrée (qui fade-in depuis blur 2px)
+   soit visuellement continu. */
+.verses-page-leaving {
+  opacity: 0.4 !important;
+  filter: blur(2px) !important;
+  transform: translateY(-3px) !important;
+}
+.verses-page-leaving > * {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verses-page-enter > * {
+    animation: none !important;
+  }
+  .verses-page-leaving {
+    transform: none !important;
+    filter: none !important;
   }
 }
 
@@ -542,58 +731,98 @@
   }
 }
 
-/* Animation smooth pour cacher/afficher : max-height + opacity (universel et fiable).
-   On utilise des max-height généreux pour ne pas tronquer le contenu visible. */
+/* Animation smooth pour cacher/afficher : max-height + opacity + blur fade.
+   IMPORTANT : toutes les transitions partagent la MÊME durée et la MÊME
+   easing → l'œil perçoit un mouvement unique synchronisé, pas un effet
+   "en 2 temps" (opacité qui finit avant que la box collapse). Le blur fade
+   "flou → net" lisse encore plus le passage. */
 .quran-text {
   overflow: hidden;
   max-height: 400px;
-  transition: max-height 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 220ms ease,
-              margin 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              padding 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-width 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: max-height       380ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity          380ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter           380ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin           380ms cubic-bezier(0.4, 0, 0.2, 1),
+              padding          380ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-width     380ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  filter: blur(0);
 }
 .surah-bismillah {
   overflow: hidden;
   max-height: 80px;
-  transition: max-height 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 220ms ease,
-              margin 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              padding 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: max-height       380ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity          380ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter           380ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin           380ms cubic-bezier(0.4, 0, 0.2, 1),
+              padding          380ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  filter: blur(0);
 }
+/* .wf-words-grid et [data-tour-sections="1"] : utilisent le trick
+   grid-template-rows: 1fr → 0fr qui anime depuis la hauteur RÉELLE du
+   contenu (et non depuis un max-height généreux qui crée un effet "rien
+   se passe... puis collapse rapide"). Nécessite un enfant unique avec
+   overflow:hidden + min-height:0. */
 .wf-words-grid {
-  overflow: hidden;
-  max-height: 800px;
-  transition: max-height 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 220ms ease,
-              margin 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              padding 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-width 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 380ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity            380ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter             380ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin             380ms cubic-bezier(0.4, 0, 0.2, 1),
+              padding            380ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-width       380ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  filter: blur(0);
 }
+.wf-words-grid > * {
+  overflow: hidden;
+  min-height: 0;
+}
+
 [data-tour-sections="1"] {
-  overflow: hidden;
-  max-height: 3000px;
-  transition: max-height 380ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 220ms ease,
-              margin 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              padding 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-width 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 420ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity            420ms cubic-bezier(0.4, 0, 0.2, 1),
+              filter             420ms cubic-bezier(0.4, 0, 0.2, 1),
+              margin             420ms cubic-bezier(0.4, 0, 0.2, 1),
+              padding            420ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-width       420ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  filter: blur(0);
 }
-/* État caché — collapse complet : max-height: 0 + tous les espaces (margin, padding,
-   border) ramenés à 0 pour ne laisser AUCUN espace blanc résiduel */
+[data-tour-sections="1"] > .sections-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+/* État caché — éléments texte (max-height collapse). */
 body.hide-arabic .quran-text,
 body.hide-arabic .surah-bismillah,
-.verse-card.verse-hide-arabic .quran-text,
+.verse-card.verse-hide-arabic .quran-text {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  filter: blur(2px) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top-width: 0 !important;
+  border-bottom-width: 0 !important;
+}
+
+/* État caché — éléments grid (collapse via grid-template-rows: 0fr).
+   Pas de max-height ici : l'animation se base sur la hauteur réelle du
+   contenu, pas sur une valeur arbitraire généreuse → plus de "rien... puis
+   collapse rapide", c'est un mouvement unique fluide. */
 body.hide-phon .wf-words-grid,
 .verse-card.verse-hide-phon .wf-words-grid,
 body.hide-sections [data-tour-sections="1"],
 .verse-card.verse-hide-sections [data-tour-sections="1"] {
-  max-height: 0 !important;
+  grid-template-rows: 0fr !important;
   opacity: 0 !important;
+  filter: blur(2px) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-top: 0 !important;
