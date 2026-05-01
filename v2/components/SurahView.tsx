@@ -471,10 +471,10 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     setVerseAnalyses(analysesByVerse as Record<number, VerseAnalysis>)
   }, [analysesByVerse])
 
-  // Force fresh data from server on mount (bypass Next.js router cache)
-  useEffect(() => {
-    router.refresh()
-  }, [router])
+  // Note : on NE fait PAS router.refresh() au mount. La page utilise déjà
+  // force-dynamic + revalidate=0, donc chaque navigation refetch côté serveur.
+  // Un router.refresh() au mount déclenchait un second cycle render → skeleton →
+  // animation au F5, qui coupait l'animation initiale du titre.
 
   const handleWordClick = useCallback(async (wordKey: string, activeId?: string, senseRetenu?: string, verseId?: number, position?: number) => {
     const newActiveId = activeId ?? wordKey
