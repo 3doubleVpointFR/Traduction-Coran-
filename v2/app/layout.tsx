@@ -42,7 +42,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             boxShadow: '0 1px 2px rgba(61,50,40,0.04), 0 4px 12px -8px rgba(184,150,46,0.18)',
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between">
+          {/* min-height fixe : empêche le header de grossir quand la police
+              Cormorant Garamond charge en différé (fallback serif plus haut →
+              header gros 1s → shrink). Le min-height absorbe le swap. */}
+          <div
+            className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between"
+            style={{ minHeight: 'clamp(56px, 8vw, 72px)' }}
+          >
             <Link
               href="/"
               title="Cliquer pour revenir à l'accueil"

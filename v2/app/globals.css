@@ -227,9 +227,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
+  /* width fixe : tous les slots font la même taille indépendamment du nombre
+     de chiffres ("5" et "26" prennent la même place) → boutons figés au
+     même endroit quelle que soit la page active. */
+  width: 26px;
   height: 20px;
-  padding: 0 4px;
+  padding: 0;
+  flex-shrink: 0;
   border-radius: 5px;
   border: none;
   background: transparent;
@@ -312,7 +316,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 18px;
+  /* Même largeur que .surah-page-num pour conserver des slots fixes. */
+  width: 26px;
+  height: 20px;
+  flex-shrink: 0;
   color: #B8B0A4;
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px;

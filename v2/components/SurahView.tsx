@@ -211,17 +211,39 @@ function MobileSheet({
 }
 
 
-// Pagination mobile : numéros de pages cliquables, style minimaliste moderne
+// Pagination : 7 slots TOUJOURS rendus (les inutilisés sont invisibles mais
+// gardent leur place via visibility:hidden) → boutons figés au même endroit
+// quelle que soit la page active. Évite la confusion utilisateur.
+//
+// Layout fixe : [<] [1] [...] [n-1] [n] [n+1] [...] [total] [>]
 function Pagination({ current, total, onChange, delayMs }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number }) {
-  const pages: (number | 'ellipsis')[] = []
-  const showAround = 1
-  const start = Math.max(2, current - showAround)
-  const end = Math.min(total - 1, current + showAround)
-  pages.push(1)
-  if (start > 2) pages.push('ellipsis')
-  for (let i = start; i <= end; i++) pages.push(i)
-  if (end < total - 1) pages.push('ellipsis')
-  if (total > 1) pages.push(total)
+  // Conditions de visibilité par slot
+  const showLeftEllipsis = current >= 4
+  const showLeftNeighbor = current > 2 && current - 1 !== 1
+  const showCurrentMiddle = current !== 1 && current !== total
+  const showRightNeighbor = current < total - 1 && current + 1 !== total
+  const showRightEllipsis = current <= total - 3
+  const hasLast = total > 1
+
+  // Helper : button slot avec visibility (preserve la place quand caché)
+  const Slot = ({
+    page,
+    visible,
+    label,
+  }: { page: number; visible: boolean; label: string }) => (
+    <button
+      type="button"
+      onClick={() => visible && onChange(page)}
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
+      aria-label={`Page ${label}`}
+      aria-current={visible && page === current ? 'page' : undefined}
+      className={`surah-page-num${visible && page === current ? ' is-active' : ''}`}
+      style={{ visibility: visible ? 'visible' : 'hidden' }}
+    >
+      {page}
+    </button>
+  )
 
   return (
     <div
@@ -244,8 +266,8 @@ function Pagination({ current, total, onChange, delayMs }: { current: number; to
         Page <strong style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>{current}</strong> sur {total}
       </p>
 
-      {/* Boutons pages avec ellipses */}
-      <div className="flex items-center gap-0.5 flex-wrap justify-center">
+      {/* 7 slots fixes — pas de flex-wrap pour éviter le retour à la ligne */}
+      <div className="flex items-center gap-0.5 justify-center">
         <button
           type="button"
           onClick={() => current > 1 && onChange(current - 1)}
@@ -257,28 +279,40 @@ function Pagination({ current, total, onChange, delayMs }: { current: number; to
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
-        {pages.map((p, i) =>
-          p === 'ellipsis' ? (
-            <span
-              key={`e-${i}`}
-              className="surah-page-ellipsis"
-              aria-hidden="true"
-            >
-              …
-            </span>
-          ) : (
-            <button
-              key={p}
-              type="button"
-              onClick={() => onChange(p)}
-              aria-label={`Page ${p}`}
-              aria-current={p === current ? 'page' : undefined}
-              className={`surah-page-num${p === current ? ' is-active' : ''}`}
-            >
-              {p}
-            </button>
-          )
-        )}
+
+        {/* Slot 1 : page 1 (toujours visible) */}
+        <Slot page={1} visible={true} label="1" />
+
+        {/* Slot 2 : ellipsis gauche */}
+        <span
+          className="surah-page-ellipsis"
+          aria-hidden="true"
+          style={{ visibility: showLeftEllipsis ? 'visible' : 'hidden' }}
+        >
+          …
+        </span>
+
+        {/* Slot 3 : voisin gauche (current - 1) */}
+        <Slot page={current - 1} visible={showLeftNeighbor} label={String(current - 1)} />
+
+        {/* Slot 4 : page courante au milieu */}
+        <Slot page={current} visible={showCurrentMiddle} label={String(current)} />
+
+        {/* Slot 5 : voisin droit (current + 1) */}
+        <Slot page={current + 1} visible={showRightNeighbor} label={String(current + 1)} />
+
+        {/* Slot 6 : ellipsis droit */}
+        <span
+          className="surah-page-ellipsis"
+          aria-hidden="true"
+          style={{ visibility: showRightEllipsis ? 'visible' : 'hidden' }}
+        >
+          …
+        </span>
+
+        {/* Slot 7 : dernière page */}
+        <Slot page={total} visible={hasLast} label={String(total)} />
+
         <button
           type="button"
           onClick={() => current < total && onChange(current + 1)}
