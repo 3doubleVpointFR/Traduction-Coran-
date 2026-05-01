@@ -881,8 +881,11 @@ async function run() {
       // Trouve les radicaux SPÉCIFIQUES à Hamidullah (= dans Y mais pas dans X)
       const specificToHami = [...hamiStems].filter(s => !oursStems.has(s))
 
+      // Vérifier que le radical apparaît comme radical d'un mot dans translation_arab,
+      // pas juste en sous-chaîne (sinon "tourn" matcherait dans "détourn" → faux positif)
+      const transStems = sigStems(trans)
       for (const s of specificToHami) {
-        if (trans.toLowerCase().includes(s)) {
+        if (transStems.has(s)) {
           err(`V${v.verse_num} §CRITIQUE§ INCOHÉRENT : on critique "${m[2].trim()}" (Hamidullah) — le radical "${s}" est spécifique à Hamidullah (absent de notre version "${m[1].trim()}") mais apparaît dans translation_arab`)
           critCoherOk = false
           break
@@ -1282,6 +1285,46 @@ async function run() {
     }
   }
   if (mlkRslOk) ok('mlk/rsl correctement distingués (ange vs messager)')
+
+  // ================================================================
+  // 37. Fluidité française — patterns lourds ou bancals à détecter
+  // ================================================================
+  section(37, 'Fluidité française de translation_arab (patterns lourds, grammaire bancale)')
+  let fluidOk = true
+  // Patterns connus à signaler comme erreurs
+  const FLUID_PATTERNS = [
+    {
+      re: /\bapr[èe]s que (?:vous |tu |ils |elles |nous |je |il |elle )?(?:êtes|es|sont|sommes|suis|est)\b(?!\s+(?:été|venu|venus|venue|venues|allé|allés|allée|allées))/i,
+      label: '« après que » + présent : grammaticalement incorrect en français moderne. Utiliser « après » + infinitif passé ou « après que » + passé composé'
+    },
+    {
+      re: /\b(?:ordonn(?:e|er|erait|ait|ent|é)|recommand(?:e|er|erait|ait|ent|é)|demand(?:e|er|erait|ait|ent|é)|propos(?:e|er|erait|ait|ent|é)|ne (?:vous |t')(?:ordonne|recommande|demande|propose) pas) que (?:vous |tu |ils |elles |nous )(?!\s+(?:soyez |sois |soient |soyons ))[a-zàâéèêëïîôùûüç]+(?:iez|isses?|ions)\b/i,
+      label: 'verbe « ordonner/recommander/demander/proposer + que + subjonctif » est lourd en français. Préférer l\'infinitif (« ordonner d\'adopter » plutôt que « ordonner que vous adoptiez »)'
+    },
+    {
+      re: /\bnous sommes de ceux qui se remett(?:e|en)t\b(?!\s+à)/i,
+      label: '« se remettent » sans complément est ambigu en français contemporain (= convalescence). Utiliser « remis » (participe d\'état) ou ajouter complément'
+    },
+    {
+      re: /\bje me remets\b(?!\s+(?:à|en|de\b))|tu te remets\b(?!\s+(?:à|en|de\b))/i,
+      label: '« se remettre » sans complément évoque la convalescence en français contemporain'
+    },
+  ]
+  for (const v of verses) {
+    const va = vaByVid[v.id]
+    if (!va || !va.translation_arab) continue
+    const trans = va.translation_arab
+    for (const p of FLUID_PATTERNS) {
+      const m = trans.match(p.re)
+      if (m) {
+        warn('V' + v.verse_num + ' fluidité : ' + p.label + ' (passage : « ...' + trans.slice(Math.max(0, m.index - 20), Math.min(trans.length, m.index + 60)) + '... »)')
+        fluidOk = false
+      }
+    }
+  }
+  if (fluidOk) ok('Aucun pattern de fluidité française suspect détecté')
+  // Note pédagogique pour l'opérateur
+  console.log('  ℹ️  Test à effectuer manuellement : RELIRE LA TRADUCTION À VOIX HAUTE comme un francophone naïf, et vérifier 3 niveaux : (1) lexical — chaque mot est univoque sans contexte ; (2) grammatical — la construction française tient indépendamment de l\'arabe ; (3) fluidité — pas de subordonnées enchâssées ni périphrases empilées.')
 
   // ================================================================
   // RÉSUMÉ FINAL
