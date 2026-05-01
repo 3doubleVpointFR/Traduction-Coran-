@@ -16,6 +16,7 @@ interface TourStep {
   requiresPath?: string                      // this step is only active on this path
   forceCorner?: boolean                      // force bubble to bottom-right corner (don't pointer-place)
   alsoHighlight?: string                     // additional selector(s) to include in the highlight zone
+  fullHeight?: boolean                       // ne pas capper la hauteur de la zone surlignée (full height)
 }
 
 const STEPS: TourStep[] = [
@@ -35,7 +36,17 @@ const STEPS: TourStep[] = [
     desc: 'En haut le texte arabe, en dessous chaque mot aligné avec sa phonétique et sa traduction française. Le verset entouré en or est celui qu\'on va analyser ensemble.',
     scrollIntoView: true,
     forceCorner: true,
+    fullHeight: true,
     waitForSelector: 8000,
+  },
+  {
+    selector: '[data-tour-verse-num="2"] [data-tour-summary="1"]',
+    position: 'bottom',
+    title: 'Le résumé du verset',
+    desc: 'Cet encadré or apparaît en haut de chaque verset analysé : il résume en 1-2 phrases l\'idée centrale et la portée du verset. Une vue d\'ensemble avant de plonger dans l\'analyse mot par mot.',
+    scrollIntoView: true,
+    forceCorner: true,
+    waitForSelector: 5000,
   },
   {
     selector: '[data-tour-verse-num="2"] [data-tour-word-key]',
@@ -67,12 +78,11 @@ const STEPS: TourStep[] = [
   },
   {
     selector: '[data-tour-concept-tab="1"]',
-    position: 'bottom',
+    position: 'left',
     title: 'Les regroupements de sens',
     desc: 'En haut du panneau tu vois les regroupements de sens de la racine (par ex. Divinité, Adoration/Dévotion...). Chaque regroupement rassemble plusieurs sens qui partagent une même nature philosophique. Survole l\'un d\'eux avec ta souris pour voir tous les sens qui le composent — comme dans l\'encadré or qui s\'affiche maintenant.',
     waitForSelector: 1000,
     scrollIntoView: false,
-    forceCorner: true,
     alsoHighlight: '[data-tour-concept-tooltip="1"]',
   },
   {
@@ -230,6 +240,15 @@ export default function TutorialGuide() {
     // Clamp le rect dans les limites visibles du viewport.
     // Important : on tient compte du PAD qui sera ajouté au rendu pour que la box finale
     // (rect + PAD de chaque côté) ne déborde NI sous le header NI hors du bas du viewport.
+    // Pour les steps du WordPanel (à droite), on ne cap PAS la hauteur :
+    // la bulle est placée à gauche du panel (logique panel-aware), donc le surlignage
+    // peut être full-height sans gêner la bulle.
+    const isPanelStep =
+      current.selector.includes('data-tour-word-panel') ||
+      current.selector.includes('data-tour-concept') ||
+      current.selector.includes('data-tour-proof-ctx') ||
+      current.selector.includes('data-tour-verses-list')
+
     const clamp = (r: DOMRect): DOMRect => {
       const visTop = Math.max(HEADER + PAD, r.top)
       const visBottom = Math.min(vpH - PAD - 8, r.bottom)
@@ -240,8 +259,14 @@ export default function TutorialGuide() {
         const finalH = Math.min(visibleH, maxH)
         return new DOMRect(r.left, visTop, r.width, finalH)
       }
-      // Desktop : clamp simple aux bornes visibles
-      return new DOMRect(r.left, visTop, r.width, visibleH)
+      // Desktop : pas de cap pour les steps du panneau ou fullHeight=true (full-height OK).
+      // Pour les autres : cap à 50% pour qu'un coin du viewport reste libre pour la bulle.
+      if (isPanelStep || current.fullHeight) {
+        return new DOMRect(r.left, visTop, r.width, visibleH)
+      }
+      const maxH = vpH * 0.5
+      const finalH = Math.min(visibleH, maxH)
+      return new DOMRect(r.left, visTop, r.width, finalH)
     }
     const rects: DOMRect[] = [clamp(el.getBoundingClientRect())]
     if (current.alsoHighlight) {
@@ -630,25 +655,14 @@ export default function TutorialGuide() {
     if (!unionRect || current.selector === 'body' || current.position === 'center') {
       return { left: '50%', top: '50%', transform: 'translate(-50%, -50%)' as const }
     }
-    const margin = 16
+    const margin = 28
     const vpW = window.innerWidth
     const vpH = window.innerHeight
     const isMobile = vpW < 1024
-    // Bulle plus étroite sur mobile pour respecter les petits écrans
-    const bubbleW = isMobile ? Math.min(vpW - 24, 320) : 340
+    // Bulle plus étroite sur mobile pour respecter les petits écrans.
+    // IMPORTANT : doit correspondre à la largeur réellement rendue plus bas (360 desktop).
+    const bubbleW = isMobile ? Math.min(vpW - 24, 320) : 360
     const bubbleH = 220
-
-    // Si forceCorner = true, placer la bulle en bas-GAUCHE fixe du viewport
-    // (l'ancien bottom-right couvrait le WordPanel à droite, ce qui n'a pas de sens
-    //  quand un step pointe vers le panneau lui-même)
-    if (current.forceCorner) {
-      return {
-        left: '24px',
-        bottom: '24px',
-        top: 'auto' as const,
-        transform: 'none' as const,
-      }
-    }
 
     // Helper : zone interdite = la cible visible dans le viewport (intersection)
     const visibleRect = {
@@ -656,6 +670,39 @@ export default function TutorialGuide() {
       right: Math.min(vpW, unionRect.right),
       top: Math.max(0, unionRect.top),
       bottom: Math.min(vpH, unionRect.bottom),
+    }
+
+    // Si forceCorner = true, choisir le coin du viewport le plus éloigné de la cible
+    // ET qui ne chevauche pas la zone surlignée (avec marge SAFE).
+    // Marges 32 en haut / 64 en bas — laisse de la place pour l'ombre portée
+    // de la bulle (jusqu'à ~52px en dessous) sans toucher la barre Windows.
+    if (current.forceCorner) {
+      const TOP_MARGIN = 32
+      const BOTTOM_MARGIN = 64
+      const SIDE_MARGIN = 24
+      const corners = [
+        { left: SIDE_MARGIN, top: TOP_MARGIN },                                                       // top-left
+        { left: vpW - bubbleW - SIDE_MARGIN, top: TOP_MARGIN },                                       // top-right
+        { left: SIDE_MARGIN, top: vpH - bubbleH - BOTTOM_MARGIN },                                    // bottom-left
+        { left: vpW - bubbleW - SIDE_MARGIN, top: vpH - bubbleH - BOTTOM_MARGIN },                    // bottom-right
+      ]
+      const tcx = visibleRect.left + (visibleRect.right - visibleRect.left) / 2
+      const tcy = visibleRect.top + (visibleRect.bottom - visibleRect.top) / 2
+      corners.sort((a, b) => {
+        const da = Math.hypot(a.left + bubbleW / 2 - tcx, a.top + bubbleH / 2 - tcy)
+        const db = Math.hypot(b.left + bubbleW / 2 - tcx, b.top + bubbleH / 2 - tcy)
+        return db - da
+      })
+      const SAFE_FC = 18
+      const overlapsTarget = (l: number, t: number) =>
+        l < visibleRect.right + SAFE_FC && l + bubbleW > visibleRect.left - SAFE_FC &&
+        t < visibleRect.bottom + SAFE_FC && t + bubbleH > visibleRect.top - SAFE_FC
+      const chosen = corners.find(c => !overlapsTarget(c.left, c.top)) ?? corners[0]
+      return {
+        left: `${chosen.left}px`,
+        top: `${chosen.top}px`,
+        transform: 'none' as const,
+      }
     }
 
     // Zone du WordPanel (desktop uniquement) — détectée toujours pour 2 usages :
@@ -683,17 +730,16 @@ export default function TutorialGuide() {
       }
     }
 
-    const SAFE = 12 // marge de respiration vis-à-vis des zones interdites
+    const SAFE = 18 // marge de respiration vis-à-vis des zones interdites
 
     const wouldOverlap = (l: number, t: number) =>
       l < visibleRect.right + SAFE && l + bubbleW > visibleRect.left - SAFE &&
       t < visibleRect.bottom + SAFE && t + bubbleH > visibleRect.top - SAFE
 
+    // Toujours éviter de recouvrir le WordPanel — même quand la cible est DANS le panel
+    // (la bulle se positionne à côté du panel, et la flèche/halo suffit à pointer la cible interne).
     const wouldCoverPanel = (l: number, t: number) => {
-      // Si l'étape pointe vers un élément DANS le panneau, on ne peut pas l'éviter (la cible y est).
-      // Mais on veut quand même que la bulle ne déborde pas par-dessus → check seulement
-      // pour les steps qui ne sont PAS sur le panneau.
-      if (!panelRect || isPanelStep) return false
+      if (!panelRect) return false
       return l < panelRect.right + SAFE && l + bubbleW > panelRect.left - SAFE &&
              t < panelRect.bottom + SAFE && t + bubbleH > panelRect.top - SAFE
     }
@@ -722,6 +768,15 @@ export default function TutorialGuide() {
     // Position préférée selon le step (desktop ou fallback mobile)
     // Pour left/right : on centre verticalement la bulle sur la cible
     const centerY = unionRect.top + unionRect.height / 2 - bubbleH / 2
+    const cx = unionRect.left + unionRect.width / 2 - bubbleW / 2
+
+    // 4 positions adjacentes à la cible — la bulle "colle" au surlignage avec un petit gap
+    const sidePositions: Record<string, { left: number; top: number }> = {
+      top:    { left: cx, top: unionRect.top - margin - bubbleH },
+      bottom: { left: cx, top: unionRect.bottom + margin },
+      left:   { left: unionRect.left - margin - bubbleW, top: centerY },
+      right:  { left: unionRect.right + margin, top: centerY },
+    }
 
     // Cas spécial : étape ciblant un élément DANS le panneau, position 'left'
     // → on positionne la bulle à gauche du PANNEAU (pas de la cible interne) avec marge confortable.
@@ -732,34 +787,46 @@ export default function TutorialGuide() {
         left: panelRect.left - PANEL_GAP - bubbleW,
         top: centerY,
       })
-    } else {
-      switch (current.position) {
-        case 'bottom':
-          candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.bottom + margin })
-          break
-        case 'top':
-          candidates.push({ left: unionRect.left + unionRect.width / 2 - bubbleW / 2, top: unionRect.top - margin - bubbleH })
-          break
-        case 'left':
-          candidates.push({ left: unionRect.left - margin - bubbleW, top: centerY })
-          break
-        case 'right':
-          candidates.push({ left: unionRect.right + margin, top: centerY })
-          break
-      }
+    } else if (current.position && current.position !== 'center' && sidePositions[current.position]) {
+      candidates.push(sidePositions[current.position])
     }
 
-    // Fallbacks : zone à gauche du WordPanel d'abord, puis sous/au-dessus de la cible,
-    // enfin coin bas-gauche en dernier ressort (NE PAS retomber bottom-right qui couvrait le panneau).
+    // Fallbacks adjacents : on essaie les 3 autres côtés de la cible (opposé en premier).
+    // → la bulle reste TOUJOURS collée au surlignage (avec gap), jamais reléguée dans un coin.
+    const orderMap: Record<string, Array<'top' | 'bottom' | 'left' | 'right'>> = {
+      top:    ['bottom', 'left', 'right'],
+      bottom: ['top', 'left', 'right'],
+      left:   ['right', 'top', 'bottom'],
+      right:  ['left', 'top', 'bottom'],
+    }
+    const fallbackOrder = (current.position && orderMap[current.position]) || ['bottom', 'top', 'left', 'right']
+    fallbackOrder.forEach(p => {
+      if (sidePositions[p]) candidates.push(sidePositions[p])
+    })
+
+    // Fallback panel-aware : zone à gauche du WordPanel
     if (panelRect) {
-      // Si on connaît le panneau, on cherche en priorité la zone à gauche du panneau
       const safeRight = panelRect.left - margin - bubbleW
       candidates.push({ left: Math.max(margin, safeRight), top: visibleRect.top })             // à gauche du panneau, aligné cible
       candidates.push({ left: Math.max(margin, safeRight), top: vpH - bubbleH - 24 })          // bas-gauche du panneau
     }
-    candidates.push({ left: visibleRect.right + margin, top: visibleRect.top })                  // à droite de la cible
-    candidates.push({ left: visibleRect.left - margin - bubbleW, top: visibleRect.top })          // à gauche de la cible
-    candidates.push({ left: 24, top: vpH - bubbleH - 24 })                                        // coin bas-gauche fixe
+
+    // Les 4 coins du viewport, triés par distance à la cible (le plus éloigné en premier).
+    // Garantit qu'au pire, la bulle finit dans le coin le plus loin du surlignage.
+    // Marge bas 64px : place pour l'ombre portée + barre Windows.
+    const targetCx = visibleRect.left + (visibleRect.right - visibleRect.left) / 2
+    const targetCy = visibleRect.top + (visibleRect.bottom - visibleRect.top) / 2
+    const cornerCandidates = [
+      { left: 24, top: 32 },                                          // top-left
+      { left: vpW - bubbleW - 24, top: 32 },                          // top-right
+      { left: 24, top: vpH - bubbleH - 64 },                          // bottom-left
+      { left: vpW - bubbleW - 24, top: vpH - bubbleH - 64 },          // bottom-right
+    ].sort((a, b) => {
+      const da = Math.hypot(a.left + bubbleW / 2 - targetCx, a.top + bubbleH / 2 - targetCy)
+      const db = Math.hypot(b.left + bubbleW / 2 - targetCx, b.top + bubbleH / 2 - targetCy)
+      return db - da
+    })
+    cornerCandidates.forEach(c => candidates.push(c))
 
     // Choisir la première candidate qui ne chevauche pas la cible NI le panneau, et reste dans le viewport.
     // EDGE_MARGIN = 16px de respiration aux bords (avant 8 → trop collé)
@@ -803,6 +870,15 @@ export default function TutorialGuide() {
             width 420ms cubic-bezier(0.16, 1, 0.3, 1),
             height 420ms cubic-bezier(0.16, 1, 0.3, 1);
           will-change: left, top, width, height;
+          animation: tutoHighlightPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes tutoHighlightPulse {
+          0%, 100% {
+            box-shadow: 0 0 0 4px rgba(184,150,46,0.18), 0 8px 24px rgba(184,150,46,0.15);
+          }
+          50% {
+            box-shadow: 0 0 0 7px rgba(184,150,46,0.30), 0 8px 28px rgba(184,150,46,0.22);
+          }
         }
         .tuto-mask-rect {
           transition:
@@ -818,6 +894,16 @@ export default function TutorialGuide() {
         @keyframes tutoContentIn {
           from { opacity: 0; transform: translateY(4px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        /* Étoile ✦ du titre qui pivote à chaque nouvelle étape */
+        .tuto-title-star {
+          display: inline-block;
+          animation: tutoTitleStarSpin 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+          transform-origin: center;
+        }
+        @keyframes tutoTitleStarSpin {
+          from { transform: rotate(-180deg); opacity: 0; }
+          to { transform: rotate(0deg); opacity: 0.7; }
         }
         /* Apparition initiale très douce de la bulle */
         .tuto-bubble-enter {
@@ -848,6 +934,25 @@ export default function TutorialGuide() {
         .tuto-prev-btn:not(:disabled):hover {
           background: rgba(184, 150, 46, 0.08) !important;
         }
+        /* Flèches des boutons : glissent au hover */
+        .tuto-prev-arrow,
+        .tuto-next-arrow {
+          display: inline-block;
+          transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .tuto-prev-btn:not(:disabled):hover .tuto-prev-arrow {
+          transform: translateX(-3px);
+        }
+        .tuto-next-btn:not(:disabled):hover .tuto-next-arrow {
+          transform: translateX(3px);
+        }
+        .tuto-end-star {
+          display: inline-block;
+          transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .tuto-next-btn:not(:disabled):hover .tuto-end-star {
+          transform: rotate(360deg);
+        }
         /* Indicateur d'étapes — transitions élégantes */
         .tuto-step-dot {
           transition:
@@ -873,9 +978,14 @@ export default function TutorialGuide() {
           .tuto-mask-rect,
           .tuto-step-dot,
           .tuto-content-anim,
-          .tuto-bubble-enter {
+          .tuto-bubble-enter,
+          .tuto-title-star,
+          .tuto-prev-arrow,
+          .tuto-next-arrow,
+          .tuto-end-star {
             transition: none !important;
             animation: none !important;
+            transform: none !important;
           }
         }
       ` }} />
@@ -971,6 +1081,19 @@ export default function TutorialGuide() {
             opacity: 0.85,
           }}
         />
+        {/* Bandeau décoratif or en bas (symétrie / signature manuscrit) */}
+        <div
+          aria-hidden="true"
+          className="absolute"
+          style={{
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: '2px',
+            background: 'linear-gradient(to right, transparent 0%, rgba(184,150,46,0.45) 30%, rgba(184,150,46,0.7) 50%, rgba(184,150,46,0.45) 70%, transparent 100%)',
+            opacity: 0.8,
+          }}
+        />
 
         {/* Skip top-right — petit bouton arrondi élégant */}
         <button
@@ -995,20 +1118,35 @@ export default function TutorialGuide() {
         </button>
 
         {/* Step indicator */}
-        <div className="flex items-center gap-1 mb-4 mt-3">
-          {STEPS.map((_, i) => (
-            <div
-              key={i}
-              className="tuto-step-dot rounded-full"
-              style={{
-                width: i === step ? 20 : 5,
-                height: 4,
-                background: i === step
-                  ? 'linear-gradient(to right, #C9A23A, #B8962E)'
-                  : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
-              }}
-            />
-          ))}
+        <div className="mb-4 mt-3">
+          <div className="flex items-center gap-1 mb-1.5">
+            {STEPS.map((_, i) => (
+              <div
+                key={i}
+                className="tuto-step-dot rounded-full"
+                style={{
+                  width: i === step ? 20 : 5,
+                  height: 4,
+                  background: i === step
+                    ? 'linear-gradient(to right, #C9A23A, #B8962E)'
+                    : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
+                }}
+              />
+            ))}
+          </div>
+          <p
+            className="italic"
+            style={{
+              color: '#8A7E72',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '11px',
+              letterSpacing: '0.06em',
+              margin: 0,
+              lineHeight: 1,
+            }}
+          >
+            Étape {step + 1} sur {STEPS.length}
+          </p>
         </div>
 
         {/* Contenu animé — fade-in à chaque changement d'étape via key */}
@@ -1024,7 +1162,7 @@ export default function TutorialGuide() {
               lineHeight: 1.25,
             }}
           >
-            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '13px', opacity: 0.7, flexShrink: 0 }}>✦</span>
+            <span key={`star-${step}`} aria-hidden="true" className="tuto-title-star" style={{ color: '#B8962E', fontSize: '13px', flexShrink: 0 }}>✦</span>
             <span>{current.title}</span>
           </h3>
           <p style={{ color: '#5A4E42', fontSize: '12.5px', lineHeight: 1.6, margin: '0 0 16px 0' }}>
@@ -1057,7 +1195,7 @@ export default function TutorialGuide() {
               background: 'transparent',
             }}
           >
-            ← Précédent
+            <span className="tuto-prev-arrow" aria-hidden="true">←</span> Précédent
           </button>
 
           <button
@@ -1088,7 +1226,7 @@ export default function TutorialGuide() {
             }}
           >
             {isLast ? (
-              'Terminer ✦'
+              <>Terminer <span className="tuto-end-star" aria-hidden="true">✦</span></>
             ) : navigating ? (
               <span className="inline-flex items-center gap-1" aria-label="Chargement">
                 <span className="tuto-dot" style={{ animationDelay: '0s' }} />
@@ -1096,7 +1234,7 @@ export default function TutorialGuide() {
                 <span className="tuto-dot" style={{ animationDelay: '0.36s' }} />
               </span>
             ) : (
-              'Suivant →'
+              <>Suivant <span className="tuto-next-arrow" aria-hidden="true">→</span></>
             )}
           </button>
         </div>

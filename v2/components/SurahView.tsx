@@ -46,11 +46,11 @@ function MobileSheet({
     <div className="lg:hidden fixed inset-0 z-[60]">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes sheetSlideUp {
-          from { transform: translateY(100%); }
-          to { transform: translateY(0); }
+          from { transform: translateY(100%); opacity: 0.6; }
+          to { transform: translateY(0); opacity: 1; }
         }
         @keyframes sheetSlideDown {
-          to { transform: translateY(100%); }
+          to { transform: translateY(100%); opacity: 0.6; }
         }
         @keyframes backdropFadeIn {
           from { opacity: 0; }
@@ -58,6 +58,20 @@ function MobileSheet({
         }
         @keyframes backdropFadeOut {
           to { opacity: 0; }
+        }
+        @keyframes sheetHandlePulse {
+          0%, 100% { transform: scaleX(1); opacity: 1; }
+          50% { transform: scaleX(1.18); opacity: 0.7; }
+        }
+        .sheet-handle-bar {
+          animation: sheetHandlePulse 2.4s ease-in-out infinite;
+          animation-delay: 1s;
+          transform-origin: center;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .sheet-handle-bar {
+            animation: none !important;
+          }
         }
       ` }} />
 
@@ -96,7 +110,7 @@ function MobileSheet({
       >
         {/* Drag handle — la zone tactile pour tirer la feuille */}
         <div
-          className="flex justify-center pt-2.5 pb-2 flex-shrink-0 cursor-grab"
+          className="relative flex justify-center pt-2.5 pb-2 flex-shrink-0 cursor-grab"
           style={{
             background: '#FFFFFF',
             borderTopLeftRadius: '20px',
@@ -107,13 +121,32 @@ function MobileSheet({
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div style={{
-            width: 44,
-            height: 4,
-            borderRadius: 2,
-            background: dragY > 0 ? '#B8962E' : 'rgba(184,150,46,0.35)',
-            transition: 'background 0.2s',
-          }} />
+          {/* Bandeau or décoratif en haut — signature visuelle cohérente */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2.5px',
+              background: 'linear-gradient(to right, transparent 0%, #C9A23A 25%, #B8962E 50%, #C9A23A 75%, transparent 100%)',
+              opacity: 0.85,
+              borderTopLeftRadius: '20px',
+              borderTopRightRadius: '20px',
+              pointerEvents: 'none',
+            }}
+          />
+          <div
+            className={dragY === 0 ? 'sheet-handle-bar' : ''}
+            style={{
+              width: 44,
+              height: 4,
+              borderRadius: 2,
+              background: dragY > 0 ? '#B8962E' : 'rgba(184,150,46,0.35)',
+              transition: 'background 0.2s',
+            }}
+          />
         </div>
 
         {/* Contenu scrollable */}
@@ -138,6 +171,19 @@ interface Surah {
   name_latin: string
   verse_count: number
   revelation: string
+}
+
+// Convertit un entier en chiffres romains (max 114 → CXIV)
+function toRoman(n: number): string {
+  const map: Array<[number, string]> = [
+    [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+    [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
+  ]
+  let r = ''
+  for (const [v, s] of map) {
+    while (n >= v) { r += s; n -= v }
+  }
+  return r
 }
 
 interface Verse {
@@ -212,6 +258,21 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   const [loadingWord, setLoadingWord] = useState(false)
   const [analyzingVerse, setAnalyzingVerse] = useState<number | null>(null)
   const [jobProgress, setJobProgress] = useState<JobProgress | null>(null)
+  const [jumpInput, setJumpInput] = useState('')
+
+  // Saute vers le verset {n} : scroll smooth + flash or sur la carte
+  const jumpToVerse = (n: number) => {
+    if (!Number.isFinite(n) || n < 1 || n > surah.verse_count) return
+    const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
+    if (!el) {
+      // Verset non analysé / non rendu → ne rien faire
+      return
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Flash dorée brève sur le verset
+    el.classList.add('verse-jump-flash')
+    setTimeout(() => el.classList.remove('verse-jump-flash'), 1500)
+  }
   const [verseAnalyses, setVerseAnalyses] = useState<Record<number, VerseAnalysis>>(
     analysesByVerse as Record<number, VerseAnalysis>
   )
@@ -382,15 +443,23 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     setWordAnalysis(null)
   }, [])
 
-  // Lock body scroll quand le bottom sheet mobile est ouvert
+  // Filet de sécurité : au mount de la page sourate, on s'assure que le body
+  // est bien scrollable (au cas où un composant précédent aurait laissé overflow:hidden).
+  useEffect(() => {
+    document.body.style.overflow = ''
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  // Lock body scroll quand le bottom sheet mobile est ouvert.
+  // Important : la cleanup remet TOUJOURS overflow='' pour éviter qu'un autre
+  // composant qui aurait verrouillé entre-temps laisse le body bloqué.
   useEffect(() => {
     if (activeWordKey) {
       // Seulement si on est en mode mobile (< lg = < 1024px)
       const isMobile = window.matchMedia('(max-width: 1023px)').matches
       if (isMobile) {
-        const original = document.body.style.overflow
         document.body.style.overflow = 'hidden'
-        return () => { document.body.style.overflow = original }
+        return () => { document.body.style.overflow = '' }
       }
     }
   }, [activeWordKey])
@@ -399,8 +468,26 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     <div>
       {/* Surah header — compact, raffiné, cohérent avec la home */}
       <header className="surah-header text-center pt-4 pb-4 mb-5">
+        {/* Petit préfixe "Sourate III" en italique Cormorant or */}
+        <p
+          className="surah-num italic"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            color: '#8A7428',
+            fontSize: '11.5px',
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            fontWeight: 600,
+            margin: '0 0 8px 0',
+            lineHeight: 1,
+          }}
+        >
+          Sourate {toRoman(surah.id)}
+        </p>
+
+        {/* Nom arabe encadré par les parenthèses ornées coraniques ﴾ ﴿ */}
         <h1
-          className="font-arabic"
+          className="surah-title font-arabic inline-flex items-center justify-center"
           lang="ar"
           dir="rtl"
           style={{
@@ -409,23 +496,26 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             lineHeight: 1.1,
             margin: 0,
             textShadow: '0 1px 0 rgba(184,150,46,0.06)',
+            gap: '0.4em',
           }}
         >
-          {surah.name_ar}
+          <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '0.85em', opacity: 0.85, fontWeight: 400 }}>﴾</span>
+          <span>{surah.name_ar}</span>
+          <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '0.85em', opacity: 0.85, fontWeight: 400 }}>﴿</span>
         </h1>
 
         {/* Ornement décoratif — signature visuelle cohérente avec le hero d'accueil */}
         <div
           aria-hidden="true"
-          className="flex items-center justify-center gap-4 mt-3 mb-3 mx-auto"
+          className="surah-ornament flex items-center justify-center gap-4 mt-3 mb-3 mx-auto"
           style={{ maxWidth: '300px' }}
         >
           <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.45))' }} />
-          <span style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+          <span className="surah-ornament-star" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1, display: 'inline-block' }}>✦</span>
           <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.45))' }} />
         </div>
 
-        <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+        <div className="surah-meta flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
           <span
             className="uppercase"
             style={{
@@ -451,9 +541,112 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           </span>
         </div>
 
+        {/* Métadonnées : nombre de signes */}
+        {surah.verse_count > 0 && (
+          <p
+            className="surah-meta-info italic"
+            style={{
+              color: '#8A7E72',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '12px',
+              letterSpacing: '0.05em',
+              margin: '6px 0 0 0',
+              lineHeight: 1,
+            }}
+          >
+            {surah.verse_count} signe{surah.verse_count > 1 ? 's' : ''}
+          </p>
+        )}
+
+        {/* Saut rapide vers un verset — utile sur les sourates longues (10+ versets) */}
+        {surah.verse_count > 10 && (
+          <form
+            className="surah-meta-info verse-jumper inline-flex items-center mt-3 mx-auto"
+            onSubmit={(e) => {
+              e.preventDefault()
+              const n = parseInt(jumpInput, 10)
+              if (Number.isFinite(n)) {
+                jumpToVerse(n)
+                setJumpInput('')
+              }
+            }}
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid rgba(184,150,46,0.35)',
+              borderRadius: '999px',
+              padding: '3px 4px 3px 14px',
+              boxShadow: '0 1px 3px rgba(184,150,46,0.08), inset 0 1px 0 rgba(255,255,255,0.5)',
+              gap: '8px',
+              transition: 'border-color 220ms ease, box-shadow 220ms ease',
+            }}
+          >
+            <label
+              htmlFor="verse-jump-input"
+              style={{
+                color: '#8A7E72',
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: 'italic',
+                fontSize: '12.5px',
+                letterSpacing: '0.04em',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Aller au signe
+            </label>
+            <input
+              id="verse-jump-input"
+              type="number"
+              inputMode="numeric"
+              min={1}
+              max={surah.verse_count}
+              value={jumpInput}
+              onChange={(e) => setJumpInput(e.target.value)}
+              placeholder={`1–${surah.verse_count}`}
+              style={{
+                width: '64px',
+                padding: '4px 0',
+                border: 'none',
+                background: 'transparent',
+                fontSize: '13.5px',
+                color: '#1A1410',
+                textAlign: 'center',
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 600,
+                outline: 'none',
+              }}
+            />
+            <button
+              type="submit"
+              aria-label="Aller au verset"
+              className="verse-jumper-btn"
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                border: '1px solid rgba(158,126,31,0.4)',
+                background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
+                color: '#FFFCF6',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px',
+                fontWeight: 700,
+                lineHeight: 1,
+                flexShrink: 0,
+                boxShadow: '0 2px 6px rgba(184,150,46,0.35), inset 0 1px 0 rgba(255,255,255,0.25)',
+                textShadow: '0 1px 1px rgba(80,55,10,0.25)',
+                transition: 'transform 200ms ease, box-shadow 200ms ease',
+              }}
+            >
+              →
+            </button>
+          </form>
+        )}
+
         {surah.id !== 1 && surah.id !== 9 && (
           <p
-            className="font-arabic mt-4"
+            className="surah-bismillah font-arabic mt-4"
             lang="ar"
             dir="rtl"
             style={{
@@ -469,21 +662,37 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         )}
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .surah-header {
-            animation: surahHeaderIn 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
-          }
-          @keyframes surahHeaderIn {
-            from { opacity: 0; transform: translateY(-6px); }
+          @keyframes surahFadeUp {
+            from { opacity: 0; transform: translateY(6px); }
             to   { opacity: 1; transform: translateY(0); }
           }
+          @keyframes surahStarSpin {
+            from { transform: rotate(-720deg) scale(0.4); opacity: 0; }
+            to   { transform: rotate(0deg) scale(1); opacity: 0.85; }
+          }
+          .surah-num       { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1)   0ms both; }
+          .surah-title     { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1)  80ms both; }
+          .surah-ornament  { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 220ms both; }
+          .surah-meta      { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 360ms both; }
+          .surah-meta-info { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both; }
+          .surah-bismillah { animation: surahFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 540ms both; }
+          .surah-ornament-star {
+            animation: surahStarSpin 1300ms cubic-bezier(0.16, 1, 0.3, 1) 240ms both;
+            transform-origin: center;
+          }
           @media (prefers-reduced-motion: reduce) {
-            .surah-header { animation: none !important; }
+            .surah-num, .surah-title, .surah-ornament, .surah-meta, .surah-meta-info, .surah-bismillah, .surah-ornament-star {
+              animation: none !important;
+            }
           }
         ` }} />
       </header>
 
-      {/* Grid: verses + panel (aligned) */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6">
+      {/* Grid: verses + panel (aligned).
+          lg:min-h sur la grille → garantit que la rangée a une hauteur suffisante
+          pour que le panneau droit (sticky) reste collé au scroll même sur les
+          sourates avec peu de versets. */}
+      <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
       {/* Left column: verses */}
       <div className="space-y-4">
         {/* Verse list */}
@@ -505,7 +714,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}
       <div
         data-tour-word-panel="1"
-        className="word-panel-wrapper hidden lg:block lg:sticky lg:top-[68px] lg:self-start lg:max-h-[calc(100vh-80px)] lg:overflow-y-auto relative"
+        className="word-panel-wrapper hidden lg:block lg:sticky lg:top-[84px] lg:self-start lg:max-h-[calc(100vh-96px)] lg:overflow-y-auto relative"
         style={{
           background: '#FFFFFF',
           border: '1px solid rgba(184,150,46,0.25)',

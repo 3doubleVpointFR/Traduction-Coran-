@@ -1,19 +1,20 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 
 export default function TutorialModal() {
   const router = useRouter()
   const [open, setOpen] = useState(false)
-  const [seen, setSeen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const triggerRef = useRef<HTMLButtonElement | null>(null)
   const dialogRef = useRef<HTMLDivElement | null>(null)
   const firstFocusRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    setSeen(localStorage.getItem('tuto-seen') === '1')
+    setMounted(true)
     router.prefetch('/surah/3')
   }, [router])
 
@@ -61,7 +62,14 @@ export default function TutorialModal() {
     localStorage.setItem('tuto-active', '1')
     localStorage.setItem('tuto-step', '0')
     setOpen(false)
-    window.dispatchEvent(new Event('tuto-changed'))
+    // Step 1 cible la grille des sourates (présente uniquement sur /).
+    // Si on est sur une sourate, on revient à la home — TutorialGuide
+    // détectera le changement de pathname et activera le tutoriel.
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      router.push('/')
+    } else {
+      window.dispatchEvent(new Event('tuto-changed'))
+    }
   }
 
   return (
@@ -69,9 +77,10 @@ export default function TutorialModal() {
       <button
         ref={triggerRef}
         onClick={() => setOpen(true)}
-        className="tuto-cta-btn inline-flex items-center gap-2.5 rounded-full transition-all"
+        className="tuto-cta-btn inline-flex items-center justify-center gap-2.5 rounded-full transition-all"
         style={{
-          padding: '13px 26px',
+          padding: '8px 24px',
+          minWidth: '195px',
           fontSize: '14px',
           fontFamily: "'Cormorant Garamond', serif",
           fontWeight: 700,
@@ -81,27 +90,30 @@ export default function TutorialModal() {
           border: '1px solid rgba(158,126,31,0.5)',
           boxShadow: '0 2px 8px rgba(184,150,46,0.3), 0 1px 2px rgba(184,150,46,0.15)',
           textShadow: '0 1px 1px rgba(80,55,10,0.25)',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <span aria-hidden="true" style={{ fontSize: '15px', opacity: 0.95 }}>✦</span>
-        {seen ? 'Refaire la visite guidée' : 'Faire la visite guidée (1 min)'}
-        <span aria-hidden="true" style={{ fontSize: '14px', marginLeft: '1px' }}>→</span>
+        <span aria-hidden="true" className="tuto-cta-star" style={{ fontSize: '15px', opacity: 0.95, display: 'inline-block', position: 'relative', zIndex: 1 }}>✦</span>
+        <span style={{ position: 'relative', zIndex: 1 }}>Visite guidée</span>
+        <span aria-hidden="true" className="tuto-cta-arrow" style={{ fontSize: '14px', marginLeft: '1px', display: 'inline-block', position: 'relative', zIndex: 1 }}>→</span>
       </button>
 
       <style jsx>{`
-        /* Mobile : bouton réduit de ~15% pour ne pas dominer l'écran */
+        /* Mobile : bouton beaucoup plus compact pour la barre du haut */
         @media (max-width: 639px) {
           .tuto-cta-btn {
-            padding: 11px 22px !important;
-            font-size: 12px !important;
-            gap: 8px !important;
-            letter-spacing: 0.04em !important;
+            padding: 6px 14px !important;
+            min-width: 0 !important;
+            font-size: 11px !important;
+            gap: 6px !important;
+            letter-spacing: 0.03em !important;
           }
           .tuto-cta-btn :global(span) {
-            font-size: 12px !important;
+            font-size: 11px !important;
           }
           .tuto-cta-btn :global(span):first-child {
-            font-size: 13px !important;
+            font-size: 12px !important;
           }
         }
         @media (prefers-reduced-motion: no-preference) {
@@ -168,7 +180,7 @@ export default function TutorialModal() {
         }
       `}</style>
 
-      {open && (
+      {open && mounted && createPortal(
         <div
           className="tuto-modal-overlay fixed inset-0 z-50 overflow-y-auto"
           style={{ background: 'rgba(26, 20, 16, 0.55)', backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
@@ -367,7 +379,8 @@ export default function TutorialModal() {
             </div>
           </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )

@@ -77,7 +77,6 @@ export default function VersePanel({
   // Extract §DEMARCHE§ intro paragraph (résumé) to display under the verse header.
   // The intro is everything in §DEMARCHE§ before the first **word** paragraph.
   let demarcheIntro = ''
-  let finaliteText = ''
   const explText = analysis?.translation_explanation || ''
   if (explText.includes('§DEMARCHE§')) {
     const parts = explText.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE|FINALITE)§/)
@@ -96,39 +95,38 @@ export default function VersePanel({
           const sentenceMatch = dem.match(/^[^.!?]{20,}[.!?](?=\s)/)
           if (sentenceMatch) demarcheIntro = sentenceMatch[0].trim()
         }
-      } else if (parts[i] === 'FINALITE') {
-        finaliteText = (parts[i + 1] || '').trim()
       }
     }
   }
 
   return (
-    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className="rounded-lg p-5 transition-colors" style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '80px' }}>
+    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className="verse-card rounded-lg p-5" style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '110px' }}>
       {/* Verse header */}
       <div className="flex items-center justify-between mb-4">
         <span style={{ fontSize: '16px', color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, letterSpacing: '0.05em' }}>
+          <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '12px', marginRight: '6px', opacity: 0.85 }}>✦</span>
           Sourate {verse.surah_id}, Signe {verse.verse_num}
         </span>
         {!analysis && !isAnalyzing && (
           <button
             onClick={onAnalyze}
-            className="transition-colors"
+            className="verse-translate-btn inline-flex items-center gap-1.5 rounded-full"
             style={{
               fontSize: '11px',
               fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 600,
+              fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase' as const,
-              padding: '6px 16px',
-              borderRadius: '6px',
-              border: '1px solid rgba(184,150,46,0.3)',
-              color: '#8A7428',
-              background: 'rgba(184,150,46,0.06)',
+              padding: '7px 18px',
+              border: '1px solid rgba(158,126,31,0.5)',
+              color: '#FFFCF6',
+              background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
+              boxShadow: '0 2px 8px rgba(184,150,46,0.3), 0 1px 2px rgba(184,150,46,0.15)',
+              textShadow: '0 1px 1px rgba(80,55,10,0.25)',
               cursor: 'pointer',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#B8962E'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.borderColor = '#B8962E' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(184,150,46,0.06)'; e.currentTarget.style.color = '#8A7428'; e.currentTarget.style.borderColor = 'rgba(184,150,46,0.3)' }}
           >
+            <span aria-hidden="true" style={{ fontSize: '11px', opacity: 0.95 }}>✦</span>
             Traduire ce signe
           </button>
         )}
@@ -145,17 +143,39 @@ export default function VersePanel({
         const paragraphs = demarcheIntro.split('\n\n').filter(s => s.trim())
         return (
           <div
+            data-tour-summary="1"
             style={{
               margin: '0 0 14px 0',
-              padding: '10px 14px',
-              background: 'rgba(184,150,46,0.05)',
-              borderLeft: '3px solid rgba(184,150,46,0.5)',
-              borderRadius: '0 6px 6px 0',
-              fontSize: '12.5px',
-              lineHeight: 1.7,
-              color: '#5A4E42',
+              padding: '14px 18px',
+              background: 'rgba(184,150,46,0.13)',
+              border: '1px solid rgba(184,150,46,0.32)',
+              borderLeft: '5px solid rgba(184,150,46,0.85)',
+              borderRadius: '0 10px 10px 0',
+              fontSize: '17px',
+              lineHeight: 1.55,
+              color: '#1A1410',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 500,
+              boxShadow: '0 2px 6px rgba(120,90,30,0.10), inset 0 1px 0 rgba(255,255,255,0.4)',
             }}
           >
+            <div
+              className="italic uppercase"
+              style={{
+                fontSize: '9.5px',
+                letterSpacing: '0.16em',
+                color: '#8A7428',
+                fontWeight: 700,
+                fontFamily: "'Cormorant Garamond', serif",
+                marginBottom: '6px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+              }}
+            >
+              <span aria-hidden="true">✦</span>
+              Résumé
+            </div>
             {paragraphs.map((para, i) => {
               // Process **bold** then *italic* inside each paragraph.
               const boldChunks = para.split(/(\*\*[^*]+\*\*)/g)
@@ -188,27 +208,6 @@ export default function VersePanel({
           </div>
         )
       })()}
-
-      {/* Finalité — en quoi ce verset aide à réaliser la mission de khalifa
-          Même forme que le résumé du verset, mais en vert sage */}
-      {finaliteText && (
-        <div
-          style={{
-            margin: '0 0 14px 0',
-            padding: '10px 14px',
-            background: 'rgba(74, 122, 63, 0.05)',
-            borderLeft: '3px solid rgba(74, 122, 63, 0.5)',
-            borderRadius: '0 6px 6px 0',
-            fontSize: '12.5px',
-            lineHeight: 1.7,
-            color: '#3D4F33',
-          }}
-        >
-          <p style={{ marginBottom: 0, fontStyle: 'italic' as const }}>
-            {finaliteText}
-          </p>
-        </div>
-      )}
 
       {/* Progress bar during analysis */}
       {isAnalyzing && jobProgress && (
@@ -337,14 +336,24 @@ export default function VersePanel({
             const parts = text.split(/(\*[^*]+\*)/g)
             return parts.map((part: string, i: number) => {
               if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
-                return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: '#8B6914', fontWeight: 500 }}>{part.slice(1, -1)}</span>
+                return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 500, opacity: 0.85 }}>{part.slice(1, -1)}</span>
               }
               return <span key={baseKey + '-t' + i}>{part}</span>
             })
           }
 
           const renderContent = (content: string, accentColor: string) => (
-            <div className="section-unfold" style={{ padding: '10px 14px', borderLeft: `3px solid ${accentColor}`, fontSize: '12.5px', lineHeight: 1.85, color: '#5A4E42', marginTop: '6px' }}>
+            <div className="section-unfold" style={{
+              padding: '12px 18px',
+              borderLeft: `4px solid ${accentColor}`,
+              borderRadius: '0 10px 10px 0',
+              background: `${accentColor}0A`,
+              fontSize: '12.5px',
+              lineHeight: 1.85,
+              color: '#5A4E42',
+              marginTop: '6px',
+              boxShadow: '0 1px 3px rgba(184,150,46,0.05)',
+            }}>
               {content.split('\n\n').filter((s: string) => s.trim()).map((paragraph: string, j: number) => {
                 const chunks = paragraph.split(/(\*\*[^*]+\*\*)/g)
                 return (
@@ -369,19 +378,46 @@ export default function VersePanel({
 
           return (
             <div data-tour-sections="1" className="mt-3 pt-2" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
-              {sections.map(sec => {
+              {sections.map((sec, idx) => {
                 if (!sectionMap[sec.key]) return null
+                const roman = ['I', 'II', 'III'][idx] || ''
                 return (
-                  <div key={sec.key} style={{ marginBottom: '4px' }}>
+                  <div key={sec.key} className="mb-2 sm:mb-3.5">
                     <button
-                      className="flex items-center gap-1.5 w-full text-left"
-                      style={{ padding: '4px 0', cursor: 'pointer', background: 'none', border: 'none' }}
+                      className="verse-section-btn flex items-center gap-2 w-full text-left"
+                      style={{
+                        padding: '6px 10px',
+                        cursor: 'pointer',
+                        background: 'none',
+                        border: 'none',
+                        borderRadius: '6px',
+                        ['--section-hover-bg' as string]: `${sec.color}1A`,
+                      }}
                       onClick={sec.toggle}
                     >
-                      <span style={{ color: sec.color, fontSize: '10px' }}>{sec.show ? '▾' : '▸'}</span>
-                      <span style={{ fontSize: '10px', fontWeight: 600, color: sec.color, letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>
+                      <span className={`smooth-chevron${sec.show ? ' is-open' : ''}`} style={{ color: sec.color, fontSize: '11px' }}>▸</span>
+                      {roman && (
+                        <span style={{
+                          color: sec.color,
+                          fontSize: '11.5px',
+                          fontFamily: "'Cormorant Garamond', serif",
+                          fontStyle: 'italic',
+                          fontWeight: 700,
+                          letterSpacing: '0.04em',
+                          opacity: 0.85,
+                        }}>
+                          {roman}
+                          <span className="hidden sm:inline"> —</span>
+                        </span>
+                      )}
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: sec.color, letterSpacing: '0.16em', textTransform: 'uppercase' as const, fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic' }}>
                         {sec.label}
                       </span>
+                      <span aria-hidden="true" className="hidden sm:block flex-1 h-px" style={{
+                        background: `linear-gradient(to right, ${sec.color}40, transparent)`,
+                        minWidth: '24px',
+                        marginLeft: '4px',
+                      }} />
                     </button>
                     {sec.show && renderContent(sectionMap[sec.key], sec.color)}
                   </div>
@@ -395,24 +431,33 @@ export default function VersePanel({
         return (
           <div className="mt-3 pt-2" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
             <button
-              className="flex items-center gap-1.5 w-full text-left"
-              style={{ padding: '4px 0', cursor: 'pointer', background: 'none', border: 'none' }}
+              className="verse-section-btn flex items-center gap-1.5 w-full text-left"
+              style={{
+                padding: '6px 10px',
+                cursor: 'pointer',
+                background: 'none',
+                border: 'none',
+                borderRadius: '6px',
+              }}
               onClick={() => setShowExplanation(!showExplanation)}
             >
-              <span style={{ color: '#B8962E', fontSize: '10px' }}>{showExplanation ? '▾' : '▸'}</span>
+              <span className={`smooth-chevron${showExplanation ? ' is-open' : ''}`} style={{ color: '#B8962E', fontSize: '10px' }}>▸</span>
+              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.7 }}>✦</span>
               <span style={{ fontSize: '10px', fontWeight: 600, color: '#3D3228', letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>
                 Démarche de la traduction
               </span>
             </button>
             {showExplanation && (
-              <div style={{
-                marginTop: '8px',
-                marginLeft: '14px',
-                padding: '10px 14px',
-                borderLeft: '3px solid rgba(184,150,46,0.5)',
+              <div className="section-unfold" style={{
+                marginTop: '6px',
+                padding: '12px 18px',
+                borderLeft: '4px solid rgba(184,150,46,0.6)',
+                borderRadius: '0 10px 10px 0',
+                background: 'rgba(184,150,46,0.06)',
                 fontSize: '12.5px',
                 lineHeight: 1.85,
                 color: '#5A4E42',
+                boxShadow: '0 1px 3px rgba(184,150,46,0.05)',
               }}>
                 {text
                   .split(/(?<=\.)\s+/)
@@ -441,8 +486,9 @@ export default function VersePanel({
         <div data-tour-translations="1" className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
           {/* Traduction classique (Hamidullah) */}
           {analysis?.full_translation && analysis?.translation_arab && (
-            <div className="text-center mb-4">
+            <div className="text-center">
               <span className="uppercase block mb-1" style={{ fontSize: '10px', letterSpacing: '0.12em' }}>
+                <span aria-hidden="true" style={{ color: '#9A8E82', marginRight: '5px', opacity: 0.85 }}>✦</span>
                 <span style={{ color: '#6B5E52', fontWeight: 600 }}>Traduction courante</span>
                 <span style={{ color: '#9A8E82' }}> · Hamidullah</span>
               </span>
@@ -451,9 +497,22 @@ export default function VersePanel({
               </p>
             </div>
           )}
+          {/* Mini-ornement ✦ entre les deux traductions — sépare visuellement les deux propositions */}
+          {analysis?.full_translation && analysis?.translation_arab && (
+            <div
+              aria-hidden="true"
+              className="flex items-center justify-center gap-2.5 my-2 mx-auto"
+              style={{ maxWidth: '100px' }}
+            >
+              <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+              <span style={{ color: '#B8962E', fontSize: '9px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+              <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+            </div>
+          )}
           {/* Arab — notre traduction */}
           <div className="text-center">
             <span className="uppercase block mb-1" style={{ fontSize: '10px', letterSpacing: '0.12em' }}>
+              <span aria-hidden="true" style={{ color: '#B8962E', marginRight: '5px', opacity: 0.85 }}>✦</span>
               <span style={{ color: '#B8962E', fontWeight: 600 }}>Arab</span>
               <span style={{ color: '#6B5E52' }}> · Une traduction éloquente</span>
             </span>

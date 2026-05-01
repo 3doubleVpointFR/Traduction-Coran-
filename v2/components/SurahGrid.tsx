@@ -13,6 +13,7 @@ interface Surah {
 
 export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
   const [search, setSearch] = useState('')
+  const [loadingId, setLoadingId] = useState<number | null>(null)
   const searchId = useId()
 
   const filtered = surahs.filter(s => {
@@ -99,7 +100,8 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
           <li key={s.id} className="m-0">
             <Link
               href={`/surah/${s.id}`}
-              className="surah-row flex items-center gap-3 sm:gap-4 transition-colors cursor-pointer relative"
+              onClick={() => setLoadingId(s.id)}
+              className={`surah-row flex items-center gap-3 sm:gap-4 transition-colors cursor-pointer relative${loadingId === s.id ? ' surah-row-loading' : ''}`}
               style={{
                 padding: '14px 16px',
                 background: '#FFFFFF',
@@ -107,7 +109,7 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
               }}
             >
               {/* Numéro — élégant en italique Cormorant */}
-              <span style={{
+              <span className="surah-num" style={{
                 width: '34px',
                 fontSize: 'clamp(18px, 4.5vw, 20px)',
                 color: '#8A7428',
@@ -117,6 +119,7 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
                 textAlign: 'center',
                 flexShrink: 0,
                 letterSpacing: '0.02em',
+                display: 'inline-block',
               }}>
                 {s.id}
               </span>
@@ -143,7 +146,7 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
               </span>
 
               {/* Arabe */}
-              <span className="font-arabic" lang="ar" dir="rtl" style={{ fontSize: 'clamp(20px, 5.5vw, 22px)', color: '#B8962E', flexShrink: 0, width: 'clamp(70px, 22vw, 90px)', textAlign: 'right', lineHeight: 1.4 }}>
+              <span className="font-arabic surah-ar" lang="ar" dir="rtl" style={{ fontSize: 'clamp(20px, 5.5vw, 22px)', color: '#B8962E', flexShrink: 0, width: 'clamp(70px, 22vw, 90px)', textAlign: 'right', lineHeight: 1.4, display: 'inline-block' }}>
                 {s.name_ar}
               </span>
             </Link>
@@ -163,10 +166,6 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
           border-color: #B8962E !important;
           box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15), 0 1px 3px rgba(184, 150, 46, 0.1) !important;
           outline: none !important;
-        }
-        .surah-row:hover,
-        .surah-row:focus-visible {
-          background: linear-gradient(to right, rgba(184, 150, 46, 0.07), rgba(184, 150, 46, 0.03)) !important;
         }
       `}</style>
     </div>

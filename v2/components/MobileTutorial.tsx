@@ -14,7 +14,7 @@ interface Card {
   title: string
   body: string
   highlight?: string  // mot/expression à mettre en valeur dans le body
-  illustration?: 'meditation' | 'surah-list' | 'word-tap' | 'concepts' | 'retenu' | 'sections' | 'final'
+  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'final'
 }
 
 const CARDS: Card[] = [
@@ -26,10 +26,24 @@ const CARDS: Card[] = [
     illustration: 'meditation',
   },
   {
-    emoji: '📖',
+    emoji: '✦',
     title: 'Choisir une sourate',
     body: "Sur la page d'accueil, fais défiler ou cherche dans la liste des sourates explorables. Pour ce tour on prend la sourate 3 (Āl ʿImrān) — clique « Suivant » et tu y seras direct.",
     illustration: 'surah-list',
+  },
+  {
+    emoji: '✦',
+    title: 'Voici un verset',
+    body: "En haut le texte arabe. En dessous, chaque mot est aligné avec sa phonétique et sa traduction française. C'est la base d'une analyse mot-par-mot, fidèle au texte original.",
+    highlight: 'mot-par-mot',
+    illustration: 'verse-layout',
+  },
+  {
+    emoji: '✦',
+    title: 'Le résumé du verset',
+    body: "Cet encadré or apparaît en haut de chaque verset analysé. Il résume en 1-2 phrases l'idée centrale et la portée du verset — une vue d'ensemble avant de plonger dans l'analyse.",
+    highlight: "l'idée centrale",
+    illustration: 'summary',
   },
   {
     emoji: '✦',
@@ -51,6 +65,20 @@ const CARDS: Card[] = [
     body: "Pour chaque verset, les regroupements sont classés selon 5 axes de cohérence : champ lexical, versets voisins, thème de la sourate, cohérence coranique d'ensemble, finalité du khalifa. Un seul est RETENU.",
     highlight: '5 axes de cohérence',
     illustration: 'retenu',
+  },
+  {
+    emoji: '✦',
+    title: "Le récap de l'analyse",
+    body: "Quand tu déplies le regroupement retenu, un encadré or explique en 1-2 phrases pourquoi ce sens a été choisi pour ce verset — la synthèse du raisonnement.",
+    highlight: 'pourquoi ce sens a été choisi',
+    illustration: 'proof-ctx',
+  },
+  {
+    emoji: '✦',
+    title: 'Les autres versets',
+    body: "Tu vois aussi la liste des versets analysés où la racine est utilisée avec le même sens. Tape sur une référence (ex. 3:42) pour ouvrir le verset et comparer.",
+    highlight: 'comparer',
+    illustration: 'verses-refs',
   },
   {
     emoji: '✦',
@@ -129,6 +157,49 @@ function Illustration({ kind }: { kind: Card['illustration'] }) {
             <span style={{ fontSize: 14, color: '#B8962E' }}>{r.ar}</span>
           </div>
         ))}
+      </div>
+    )
+  }
+
+  if (kind === 'verse-layout') {
+    const words = [
+      { phon: 'allāhu', fr: 'Dieu' },
+      { phon: 'lā', fr: 'pas de' },
+      { phon: 'ilāha', fr: 'divinité' },
+      { phon: 'illā', fr: 'sauf' },
+      { phon: 'huwa', fr: 'Lui' },
+    ]
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px', border: '2px solid #B8962E', boxShadow: '0 0 0 4px rgba(184,150,46,0.18), 0 6px 18px rgba(184,150,46,0.15)' }}>
+        <div style={{ textAlign: 'center' as const, fontSize: 22, color: '#8A7428', marginBottom: 12, lineHeight: 1.4, direction: 'rtl' as const, fontWeight: 400 }}>
+          ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 0, fontSize: 9, color: '#6B5E52' }}>
+          {words.map((w, i) => (
+            <div key={i} style={{ flex: 1, textAlign: 'center' as const, padding: '4px 2px', borderRight: i < words.length - 1 ? '1px solid rgba(184,150,46,0.15)' : 'none' }}>
+              <div style={{ fontStyle: 'italic' as const, color: '#9E9089', marginBottom: 3 }}>{w.phon}</div>
+              <div style={{ fontWeight: 600, color: '#1A1410' }}>{w.fr}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (kind === 'summary') {
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px' }}>
+        <div style={{ fontSize: 18, color: '#8A7428', textAlign: 'center' as const, direction: 'rtl' as const, marginBottom: 10, fontWeight: 400, opacity: 0.55 }}>
+          ٱللَّهُ لَآ إِلَـٰهَ
+        </div>
+        <div style={{ background: 'rgba(184,150,46,0.06)', borderLeft: '3px solid rgba(184,150,46,0.55)', borderRadius: '0 6px 6px 0', padding: '10px 12px' }}>
+          <div style={{ fontSize: 10, color: '#5A4E42', fontStyle: 'italic' as const, lineHeight: 1.6 }}>
+            Le verset proclame l&apos;<span style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' as const }}>unicité divine</span> et invite à méditer sur la Présence.
+          </div>
+        </div>
+        <div style={{ marginTop: 9, fontSize: 8, color: '#9E9089', fontStyle: 'italic' as const, textAlign: 'center' as const, letterSpacing: '0.06em' }}>
+          ↑ résumé du verset
+        </div>
       </div>
     )
   }
@@ -243,6 +314,61 @@ function Illustration({ kind }: { kind: Card['illustration'] }) {
     )
   }
 
+  if (kind === 'proof-ctx') {
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
+          <span style={{ fontSize: 10, color: '#1A1410', fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>Divinité</span>
+          <span style={{ fontSize: 7, color: '#B8962E', fontWeight: 700, letterSpacing: '0.08em', padding: '1px 6px', border: '1px solid rgba(184,150,46,0.4)', borderRadius: 3 }}>RETENU</span>
+        </div>
+        <div style={{ background: 'rgba(184,150,46,0.06)', border: '1px solid rgba(184,150,46,0.25)', borderRadius: 6, padding: '10px 12px' }}>
+          <div style={{ fontSize: 10, color: '#1A1410', fontStyle: 'italic' as const, lineHeight: 1.55, fontFamily: "'Cormorant Garamond', serif" }}>
+            Sens retenu car le verset proclame{' '}
+            <span style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' as const }}>l&apos;unicité absolue</span>{' '}
+            de l&apos;Être divin.
+          </div>
+        </div>
+        <div style={{ marginTop: 9, fontSize: 8, color: '#9E9089', fontStyle: 'italic' as const, textAlign: 'center' as const, letterSpacing: '0.06em' }}>
+          ↑ pourquoi ce sens a été choisi
+        </div>
+      </div>
+    )
+  }
+
+  if (kind === 'verses-refs') {
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px' }}>
+        <div style={{ fontSize: 9, color: '#8A7428', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: 9, textAlign: 'center' as const }}>
+          Autres versets · Divinité
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 6 }}>
+          {['2:163', '2:255', '3:2', '3:18', '3:62', '20:14'].map((ref, i) => (
+            <div
+              key={ref}
+              style={{
+                padding: '6px 8px',
+                border: i === 0 ? '1.5px solid #B8962E' : '1px solid rgba(184,150,46,0.3)',
+                borderRadius: 4,
+                background: i === 0 ? 'rgba(184,150,46,0.1)' : '#FFFFFF',
+                fontSize: 10,
+                fontWeight: 600,
+                color: '#B8962E',
+                textAlign: 'center' as const,
+                fontFamily: "'Cormorant Garamond', serif",
+                letterSpacing: '0.02em',
+              }}
+            >
+              {ref}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 9, fontSize: 8, color: '#9E9089', fontStyle: 'italic' as const, textAlign: 'center' as const, letterSpacing: '0.06em' }}>
+          ↑ tape pour comparer
+        </div>
+      </div>
+    )
+  }
+
   if (kind === 'sections') {
     const sections = [
       { label: 'DÉMARCHE DE LA TRADUCTION' },
@@ -305,11 +431,12 @@ export default function MobileTutorial({ onClose }: Props) {
   const isLast = step === CARDS.length - 1
   const card = CARDS[step]
 
-  // Bloque le scroll du body pendant le tuto
+  // Bloque le scroll du body pendant le tuto.
+  // Cleanup remet TOUJOURS overflow='' pour ne pas laisser le body bloqué
+  // si un autre composant verrouille entre-temps.
   useEffect(() => {
-    const original = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = original }
+    return () => { document.body.style.overflow = '' }
   }, [])
 
   const goNext = useCallback(() => {
@@ -376,6 +503,20 @@ export default function MobileTutorial({ onClose }: Props) {
           zIndex: 1,
         }}
       />
+      {/* Bandeau or décoratif en bas — symétrie / signature manuscrit */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          background: 'linear-gradient(to right, transparent 0%, rgba(184,150,46,0.45) 30%, rgba(184,150,46,0.7) 50%, rgba(184,150,46,0.45) 70%, transparent 100%)',
+          opacity: 0.8,
+          zIndex: 1,
+        }}
+      />
 
       {/* Subtil dégradé radial décoratif en haut/bas */}
       <div
@@ -412,6 +553,11 @@ export default function MobileTutorial({ onClose }: Props) {
         .mt-card-prev { animation: mtSlideInLeft 360ms cubic-bezier(0.16, 1, 0.3, 1); }
         .mt-fadein { animation: mtFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1); }
         .mt-overlay-enter { animation: mtOverlayIn 240ms ease-out; }
+        @keyframes mtStarSpin {
+          from { transform: rotate(-180deg); opacity: 0; }
+          to { transform: rotate(0deg); opacity: 1; }
+        }
+        .mt-card-star { animation: mtStarSpin 600ms cubic-bezier(0.16, 1, 0.3, 1) both; }
         .mt-step-dot {
           transition: width 360ms cubic-bezier(0.16, 1, 0.3, 1), background 320ms ease;
         }
@@ -438,7 +584,7 @@ export default function MobileTutorial({ onClose }: Props) {
           box-shadow: 0 6px 20px rgba(184, 150, 46, 0.42), 0 2px 6px rgba(184, 150, 46, 0.18) !important;
         }
         @media (prefers-reduced-motion: reduce) {
-          .mt-card-next, .mt-card-prev, .mt-fadein, .mt-overlay-enter {
+          .mt-card-next, .mt-card-prev, .mt-fadein, .mt-overlay-enter, .mt-card-star {
             animation: none !important;
           }
           .mt-step-dot, .mt-next-btn, .mt-prev-btn, .mt-quit-btn {
@@ -452,21 +598,36 @@ export default function MobileTutorial({ onClose }: Props) {
 
       {/* Header — step indicator + skip */}
       <div className="relative flex items-center justify-between px-5 pt-6 pb-3 mt-fadein" style={{ zIndex: 2 }}>
-        {/* Step dots */}
-        <div className="flex items-center gap-1.5">
-          {CARDS.map((_, i) => (
-            <div
-              key={i}
-              className="mt-step-dot rounded-full"
-              style={{
-                width: i === step ? 22 : 5,
-                height: 4,
-                background: i === step
-                  ? 'linear-gradient(to right, #C9A23A, #B8962E)'
-                  : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
-              }}
-            />
-          ))}
+        {/* Step dots + compteur */}
+        <div>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            {CARDS.map((_, i) => (
+              <div
+                key={i}
+                className="mt-step-dot rounded-full"
+                style={{
+                  width: i === step ? 22 : 5,
+                  height: 4,
+                  background: i === step
+                    ? 'linear-gradient(to right, #C9A23A, #B8962E)'
+                    : i < step ? 'rgba(184,150,46,0.45)' : 'rgba(184,150,46,0.18)',
+                }}
+              />
+            ))}
+          </div>
+          <p
+            className="italic"
+            style={{
+              color: '#8A7E72',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '10.5px',
+              letterSpacing: '0.06em',
+              margin: 0,
+              lineHeight: 1,
+            }}
+          >
+            Étape {step + 1} sur {CARDS.length}
+          </p>
         </div>
 
         {/* Skip button */}
@@ -520,14 +681,14 @@ export default function MobileTutorial({ onClose }: Props) {
             {card.title}
           </h2>
 
-          {/* Ornement décoratif — cohérent avec le verset Khalifa */}
+          {/* Ornement décoratif — cohérent avec le verset Khalifa, étoile pivote à chaque carte */}
           <div
             aria-hidden="true"
             className="flex items-center justify-center mx-auto mb-5"
-            style={{ color: '#B8962E', opacity: 0.55, gap: '10px' }}
+            style={{ color: '#B8962E', opacity: 0.65, gap: '10px' }}
           >
             <div className="h-px" style={{ width: '32px', background: 'rgba(184,150,46,0.4)' }} />
-            <span style={{ fontSize: '11px', opacity: 0.95 }}>✦</span>
+            <span key={`star-${step}`} className="mt-card-star" style={{ fontSize: '12px', display: 'inline-block' }}>✦</span>
             <div className="h-px" style={{ width: '32px', background: 'rgba(184,150,46,0.4)' }} />
           </div>
 

@@ -1,6 +1,5 @@
 import { getSupabaseAdmin } from '@/lib/supabase'
 import SurahGrid from '@/components/SurahGrid'
-import TutorialModal from '@/components/TutorialModal'
 import HomeMethodology from '@/components/HomeMethodology'
 
 export const dynamic = 'force-dynamic'
@@ -44,6 +43,7 @@ export default async function HomePage() {
       {/* ═══ HERO ═══ */}
       <section className="text-center pt-4 sm:pt-5">
         <h1
+          className="hero-title"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
             color: '#B8962E',
@@ -58,7 +58,7 @@ export default async function HomePage() {
           UN CORAN ARAB
         </h1>
         <div
-          className="flex items-center justify-center gap-5 mt-2 mb-1 mx-auto"
+          className="hero-ornament flex items-center justify-center gap-5 mt-2 mb-1 mx-auto"
           style={{ maxWidth: '340px' }}
           aria-hidden="true"
         >
@@ -67,6 +67,7 @@ export default async function HomePage() {
           <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.45))' }} />
         </div>
         <p
+          className="hero-tagline"
           style={{
             fontFamily: "'Cormorant Garamond', serif",
             color: '#6B5E52',
@@ -82,7 +83,7 @@ export default async function HomePage() {
       </section>
 
       {/* ═══ VERSET KHALĪFA — invitation spirituelle avant l'action ═══ */}
-      <section className="max-w-2xl mx-auto text-center px-4 sm:px-3 py-3 sm:py-0" aria-label="Verset d'introduction">
+      <section className="page-section-anim max-w-2xl mx-auto text-center px-4 sm:px-3 py-3 sm:py-0" style={{ animationDelay: '500ms' }} aria-label="Verset d'introduction">
         <figure className="m-0 relative">
 
           <blockquote className="m-0">
@@ -98,7 +99,9 @@ export default async function HomePage() {
                 fontWeight: 400,
               }}
             >
-              إِنِّى جَاعِلٌ فِى ٱلْأَرْضِ خَلِيفَةً
+              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '0.88em' }}>﴾</span>
+              {' '}إِنِّى جَاعِلٌ فِى ٱلْأَرْضِ خَلِيفَةً{' '}
+              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '0.88em' }}>﴿</span>
             </p>
             <figcaption
               className="italic mt-2 px-2"
@@ -116,16 +119,21 @@ export default async function HomePage() {
             </figcaption>
           </blockquote>
         </figure>
-
-        {/* CTA Visite guidée — directement sous la référence du verset */}
-        <div className="flex justify-center mt-6 sm:mt-7">
-          <TutorialModal />
-        </div>
       </section>
 
       {/* ═══ SOURATES — l'action principale ═══ */}
-      <section className="max-w-4xl mx-auto px-1 sm:px-0" data-tour-surah-grid="1" aria-labelledby="surahs-heading">
-        <div className="mb-5 sm:mb-5">
+      <section className="page-section-anim max-w-4xl mx-auto px-1 sm:px-0 !mt-5 sm:!mt-6" style={{ animationDelay: '650ms' }} data-tour-surah-grid="1" aria-labelledby="surahs-heading">
+        <div className="mb-5 sm:mb-5 text-center">
+          {/* Mini-ornement de section — version réduite du hero */}
+          <div
+            className="flex items-center justify-center gap-3 mb-2.5 mx-auto"
+            style={{ maxWidth: '160px' }}
+            aria-hidden="true"
+          >
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+            <span style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+          </div>
           <h2
             id="surahs-heading"
             style={{
@@ -149,19 +157,31 @@ export default async function HomePage() {
       </section>
 
       {/* ═══ MÉTHODOLOGIE — repliable, pour ceux qui veulent comprendre ═══ */}
-      <HomeMethodology />
+      <div className="page-section-anim" style={{ animationDelay: '800ms' }}>
+        <HomeMethodology />
+      </div>
 
       {/* ═══ MANIFESTE — réflexion de clôture, discrète et intégrée au flux ═══ */}
-      <section className="max-w-xl mx-auto text-center px-4 sm:px-3 pt-4">
+      <section className="page-section-anim max-w-xl mx-auto text-center px-4 sm:px-3 pt-4" style={{ animationDelay: '950ms' }}>
+        {/* Mini-ornement ✦ — annonce la dernière idée du manifeste */}
+        <div
+          className="flex items-center justify-center gap-3 mb-4 mx-auto"
+          style={{ maxWidth: '140px' }}
+          aria-hidden="true"
+        >
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+          <span style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+        </div>
         <p
-          className="italic mb-3"
+          className="italic mb-5"
           style={{
-            color: '#5A4E42',
-            lineHeight: 1.55,
-            fontSize: 'clamp(0.95rem, 2.2vw, 1.05rem)',
+            color: '#3D3228',
+            lineHeight: 1.4,
+            fontSize: 'clamp(1.15rem, 3vw, 1.4rem)',
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 500,
-            letterSpacing: '0.01em',
+            letterSpacing: '0.015em',
           }}
         >
           Ce site n&apos;est pas une traduction de plus.
@@ -197,7 +217,17 @@ export default async function HomePage() {
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer className="max-w-2xl mx-auto text-center pt-8" style={{ borderTop: '1px solid rgba(184,150,46,0.18)' }}>
+      <footer className="page-section-anim max-w-2xl mx-auto text-center pt-10" style={{ animationDelay: '1100ms' }}>
+        {/* Ornement de clôture — écho du hero, signe la page comme un manuscrit */}
+        <div
+          className="flex items-center justify-center gap-5 mb-6 mx-auto"
+          style={{ maxWidth: '340px' }}
+          aria-hidden="true"
+        >
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.45))' }} />
+          <span style={{ color: '#B8962E', fontSize: '12px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+          <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.45))' }} />
+        </div>
         <p style={{ color: '#6B5E52', fontSize: '12.5px', lineHeight: 1.6 }}>
           Un Coran Arab · Outil de méditation et d&apos;analyse étymologique du Coran
         </p>

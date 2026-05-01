@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import TutorialGuide from '@/components/TutorialGuide'
+import TutorialModal from '@/components/TutorialModal'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -33,16 +34,58 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} font-sans`}>
         <a href="#main" className="skip-link">Aller au contenu</a>
-        <header className="sticky top-0 z-40" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(184,150,46,0.2)' }}>
-          <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 transition-colors cursor-pointer hover:text-gold-700" aria-label="Retour à l'accueil — Un Coran Arab">
-              <span className="font-arabic" lang="ar" style={{ fontSize: '18px', color: '#B8962E' }}>قُرْآناً عَرَبِيًّا</span>
-              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '8px' }}>✦</span>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '14px', color: '#3D3228', letterSpacing: '0.15em', fontWeight: 500 }}>
+        <header
+          className="sticky top-0 z-40"
+          style={{
+            background: '#FFFFFF',
+            boxShadow: '0 1px 2px rgba(61,50,40,0.04), 0 4px 12px -8px rgba(184,150,46,0.18)',
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between">
+            <Link
+              href="/"
+              title="Cliquer pour revenir à l'accueil"
+              className="logo-link group inline-flex items-center gap-2.5 sm:gap-3.5 cursor-pointer transition-opacity duration-300 hover:opacity-90"
+              aria-label="Retour à l'accueil — Un Coran Arab"
+            >
+              <span
+                className="font-arabic"
+                lang="ar"
+                style={{ fontSize: 'clamp(16px, 2.4vw, 19px)', color: '#B8962E', lineHeight: 1 }}
+              >
+                قُرْآناً عَرَبِيًّا
+              </span>
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-500 ease-out group-hover:rotate-180"
+                style={{ color: '#B8962E', fontSize: '8px', display: 'inline-block' }}
+              >
+                ✦
+              </span>
+              <span
+                className="logo-text-latin"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: 'clamp(11px, 1.6vw, 14px)',
+                  color: '#3D3228',
+                  letterSpacing: '0.18em',
+                  fontWeight: 500,
+                  lineHeight: 1,
+                }}
+              >
                 UN CORAN ARAB
               </span>
             </Link>
+            <TutorialModal />
           </div>
+          <div
+            aria-hidden="true"
+            className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+            style={{
+              background:
+                'linear-gradient(90deg, transparent 0%, rgba(184,150,46,0.35) 20%, rgba(184,150,46,0.55) 50%, rgba(184,150,46,0.35) 80%, transparent 100%)',
+            }}
+          />
         </header>
         <main id="main" className="max-w-7xl mx-auto px-4 pt-2 pb-6">
           {children}

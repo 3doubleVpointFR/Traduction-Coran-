@@ -42,11 +42,13 @@ export default function HomeMethodology() {
         <span className="flex items-center gap-3 min-w-0">
           <span
             aria-hidden="true"
+            className="methodo-star"
             style={{
               color: '#B8962E',
               fontSize: '16px',
               flexShrink: 0,
               opacity: 0.85,
+              display: 'inline-block',
             }}
           >
             ✦
@@ -90,23 +92,40 @@ export default function HomeMethodology() {
         >
           {/* Pipeline 4 étapes — version condensée */}
           <div className="mb-7">
-            <h3
-              className="uppercase mb-4 text-center"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                color: '#8A7428',
-                fontSize: '12.5px',
-                letterSpacing: '0.18em',
-                fontWeight: 600,
-              }}
-            >
-              4 étapes de l&apos;analyse
-            </h3>
+            <div className="text-center mb-4">
+              {/* Mini-ornement ✦ */}
+              <div
+                className="flex items-center justify-center gap-2.5 mb-1.5 mx-auto"
+                style={{ maxWidth: '120px' }}
+                aria-hidden="true"
+              >
+                <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+                <span style={{ color: '#B8962E', fontSize: '9px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+                <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+              </div>
+              <h3
+                className="uppercase"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  color: '#8A7428',
+                  fontSize: '12.5px',
+                  letterSpacing: '0.18em',
+                  fontWeight: 600,
+                  margin: 0,
+                }}
+              >
+                4 étapes de l&apos;analyse
+              </h3>
+            </div>
 
             {/* Desktop : ligne horizontale */}
             <ol className="hidden md:flex items-stretch justify-between gap-2 list-none p-0 m-0">
               {PIPELINE.map((p, i) => (
-                <li key={p.title} className="flex items-stretch flex-1">
+                <li
+                  key={p.title}
+                  className="methodo-item flex items-stretch flex-1"
+                  style={{ animationDelay: `${80 + i * 60}ms` }}
+                >
                   <div className="flex-1 text-center px-2">
                     <div
                       className="mx-auto mb-2 flex items-center justify-center rounded-full"
@@ -140,7 +159,11 @@ export default function HomeMethodology() {
             {/* Mobile : liste verticale */}
             <ol className="md:hidden list-none p-0 m-0">
               {PIPELINE.map((p, i) => (
-                <li key={p.title} className="flex items-start gap-3 pb-4 last:pb-0 relative">
+                <li
+                  key={p.title}
+                  className="methodo-item flex items-start gap-3 pb-4 last:pb-0 relative"
+                  style={{ animationDelay: `${80 + i * 60}ms` }}
+                >
                   <div className="relative flex-shrink-0" style={{ width: 32 }}>
                     <div
                       className="flex items-center justify-center rounded-full"
@@ -187,28 +210,57 @@ export default function HomeMethodology() {
 
           {/* 5 Axes */}
           <div>
-            <h3
-              className="uppercase mb-4 text-center"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                color: '#8A7428',
-                fontSize: '12.5px',
-                letterSpacing: '0.18em',
-                fontWeight: 600,
-              }}
-            >
-              5 éclairages pour méditer un sens
-            </h3>
+            <div className="text-center mb-4">
+              {/* Mini-ornement ✦ */}
+              <div
+                className="flex items-center justify-center gap-2.5 mb-1.5 mx-auto"
+                style={{ maxWidth: '120px' }}
+                aria-hidden="true"
+              >
+                <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+                <span style={{ color: '#B8962E', fontSize: '9px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+                <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+              </div>
+              <h3
+                className="uppercase"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  color: '#8A7428',
+                  fontSize: '12.5px',
+                  letterSpacing: '0.18em',
+                  fontWeight: 600,
+                  margin: 0,
+                }}
+              >
+                5 éclairages pour méditer un sens
+              </h3>
+            </div>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 list-none p-0 m-0">
-              {AXES.map((axe) => (
+              {AXES.map((axe, i) => (
                 <li
                   key={axe.num}
-                  className="rounded-xl p-4 flex flex-col"
+                  className="methodo-item methodo-axis-card rounded-xl p-4 flex flex-col relative"
                   style={{
                     background: axe.highlight ? '#F3EDD8' : '#FAF7F2',
                     border: `1px solid rgba(184,150,46,${axe.highlight ? '0.5' : '0.22'})`,
+                    animationDelay: `${340 + i * 60}ms`,
                   }}
                 >
+                  {axe.highlight && (
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        position: 'absolute',
+                        top: '8px',
+                        right: '10px',
+                        color: 'rgba(184,150,46,0.45)',
+                        fontSize: '13px',
+                        lineHeight: 1,
+                      }}
+                    >
+                      ✦
+                    </span>
+                  )}
                   <span className="font-light" style={{ color: '#B8962E', fontSize: '1.75rem', lineHeight: 1, fontFamily: "'Cormorant Garamond', serif" }}>
                     {axe.num}
                   </span>

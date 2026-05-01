@@ -365,7 +365,7 @@ export default function WordPanel({
       {/* Header */}
       <div className="space-y-3">
         {/* Racine + close */}
-        <div className="flex items-start justify-between">
+        <div className="wp-section wp-section-header flex items-start justify-between">
           <div>
             <div className="flex items-baseline gap-3" style={{ marginTop: '6px' }}>
               <span className="font-arabic" style={{ fontSize: '36px', color: '#B8962E', lineHeight: 1 }}>{analysis.root_ar}</span>
@@ -386,10 +386,13 @@ export default function WordPanel({
         </div>
 
         {/* Sens retenu */}
-        <div className="flex items-center gap-3 py-2" style={{ borderBottom: '1px solid rgba(184,150,46,0.3)' }}>
+        <div className="wp-section wp-section-retenu flex items-center gap-3 py-2" style={{ borderBottom: '1px solid rgba(184,150,46,0.3)' }}>
           <div style={{ width: '4px', height: '36px', borderRadius: '2px', background: '#B8962E' }} />
           <div>
-            <span style={{ fontSize: '10px', letterSpacing: '0.1em', color: '#B8962E', fontWeight: 600, textTransform: 'uppercase' as const }}>Sens retenu</span>
+            <span style={{ fontSize: '10px', letterSpacing: '0.1em', color: '#B8962E', fontWeight: 600, textTransform: 'uppercase' as const }}>
+              <span aria-hidden="true" style={{ marginRight: '4px' }}>✦</span>
+              Sens retenu
+            </span>
             <div style={{ fontSize: '22px', fontWeight: 700, color: '#1A1410', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.05em', lineHeight: 1.2 }}>{analysis.concept_chosen || analysis.retenu}</div>
           </div>
         </div>
@@ -412,7 +415,7 @@ export default function WordPanel({
               }
             }
             return (
-              <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end" style={{ marginTop: '8px' }}>
+              <div className="wp-section wp-section-tabs flex flex-wrap gap-x-3 gap-y-2 justify-start items-end" style={{ marginTop: '8px' }}>
                 {[...conceptMap.entries()].map(([concept, conceptSenses], i) => {
                   const isActive = conceptRetenu.has(concept)
                   const isOpen = openTooltip === concept
@@ -546,9 +549,9 @@ export default function WordPanel({
                             }}
                           />
 
-                          {/* Titre avec ✦ */}
+                          {/* Titre avec ✦ qui pivote à l'apparition */}
                           <div className="flex items-center gap-1.5 mb-2.5" style={{ marginTop: '2px' }}>
-                            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.85, lineHeight: 1 }}>✦</span>
+                            <span aria-hidden="true" className="wp-tooltip-star" style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1 }}>✦</span>
                             <span
                               style={{
                                 fontFamily: "'Cormorant Garamond', serif",
@@ -639,7 +642,7 @@ export default function WordPanel({
       {/* ═══ SENS ÉTYMOLOGIQUES ═══ */}
       {senses.length > 0 && (
         <div>
-          <h4 className="uppercase mb-2" style={{ fontSize: '11px', letterSpacing: '0.1em', color: '#3D3228', fontWeight: 700 }}>
+          <h4 className="wp-section wp-section-senses uppercase mb-2" style={{ fontSize: '11px', letterSpacing: '0.1em', color: '#3D3228', fontWeight: 700 }}>
             {totalAnalyzed === 0
               ? 'Sens étymologiques'
               : <><span>Sens étymologiques</span> <span style={{ color: '#B8962E', fontWeight: 600 }}>· {totalAnalyzed} verset{totalAnalyzed > 1 ? 's' : ''} analysé{totalAnalyzed > 1 ? 's' : ''}</span></>}
@@ -683,7 +686,7 @@ export default function WordPanel({
                   const bCount = counts.by_concept?.[cB] ?? sensesB.reduce((sum, s) => sum + (counts.by_sense[s.sense] ?? 0), 0)
                   return bCount - aCount
                 })
-                return sorted.map(([conceptName, conceptSenses]) => {
+                return sorted.map(([conceptName, conceptSenses], blockIdx) => {
                   const conceptHasRetenu = analysis.concept_chosen ? conceptName === analysis.concept_chosen : conceptSenses.some(s => s.sense === analysis.retenu)
                   const conceptIsExpanded = expandedMeanings.has(conceptSenses[0]?.id ?? 0)
                   // Determine concept status from concept_chosen or from individual senses
@@ -728,7 +731,7 @@ export default function WordPanel({
                   const bestSense = conceptSenses.find(s => s.sense === analysis.retenu) || conceptSenses.find(s => s.status === 'retenu') || conceptSenses[0]
 
                   return (
-                    <div key={conceptName} data-tour-concept-block={conceptStatus} className="pl-3" style={{ borderLeft: `3px solid ${borderColor}` }}>
+                    <div key={conceptName} data-tour-concept-block={conceptStatus} className="wp-section wp-concept-block pl-3" style={{ borderLeft: `3px solid ${borderColor}`, animationDelay: `${440 + blockIdx * 70}ms` }}>
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
                           <button
@@ -740,7 +743,10 @@ export default function WordPanel({
                           >
                             <span style={{ color: '#B8962E', fontSize: '12px', marginRight: '2px', transition: 'transform 0.2s', transform: conceptIsExpanded ? 'rotate(90deg)' : 'rotate(0deg)', display: 'inline-block', lineHeight: 1, fontFamily: 'Arial, sans-serif' }}>{'▸'}</span>
                             <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{conceptName}</span>
-                            <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: tag.color, fontStyle: 'italic' }}>{tag.label}</span>
+                            <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: tag.color, fontStyle: 'italic' }}>
+                              {conceptStatus === 'retenu' && <span aria-hidden="true" style={{ fontStyle: 'normal', marginRight: '3px' }}>✦</span>}
+                              {tag.label}
+                            </span>
                             <span style={{ fontSize: '10px', color: '#9E9089' }}>({conceptSenses.length} sens)</span>
                             <span style={{ color: '#B8962E', fontSize: '10px', marginLeft: '2px' }}>{conceptIsExpanded ? '▾' : '▸'}</span>
                           </button>
@@ -748,7 +754,7 @@ export default function WordPanel({
                           {totalAnalyzed > 0 ? (
                             <div data-tour-concept-bar={conceptStatus === 'retenu' ? '1' : undefined} className="flex items-center gap-2 mt-1">
                               <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: '#E8DFCC' }}>
-                                <div className="h-full rounded-full" style={{ width: `${conceptPct}%`, background: conceptHasRetenu ? '#B8962E' : '#7A2E2E' }} />
+                                <div className="wp-freq-bar h-full rounded-full" style={{ width: `${conceptPct}%`, background: conceptHasRetenu ? '#B8962E' : '#7A2E2E', animationDelay: `${440 + blockIdx * 70 + 300}ms` }} />
                               </div>
                               <span className="text-[10px] shrink-0 px-1.5 py-0.5 tabular-nums" style={{ color: conceptOccCount > 0 ? '#B8962E' : '#9E9089', fontWeight: conceptOccCount > 0 ? 600 : 400 }}>
                                 {conceptOccCount}/{totalAnalyzed} ({conceptPct}%)
@@ -792,9 +798,8 @@ export default function WordPanel({
                                       key={ri}
                                       href={`/surah/${surahId}#verse-${surahId}-${verseNum}`}
                                       target="_blank"
+                                      className="wp-verse-ref"
                                       style={{ fontSize: '12px', color: '#B8962E', fontWeight: 600, textDecoration: 'none', padding: '1px 6px', borderRadius: '4px', background: 'rgba(184,150,46,0.08)' }}
-                                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(184,150,46,0.18)' }}
-                                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(184,150,46,0.08)' }}
                                     >{ref}</a>
                                   )
                                 })}
@@ -824,7 +829,14 @@ export default function WordPanel({
                                     borderLeftWidth: '4px',
                                     padding: '12px 14px',
                                     lineHeight: 1.55,
-                                  }}>{renderMarkdown(proofText)}</div>
+                                  }}>
+                                    {conceptHasRetenu ? (
+                                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                                        <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '13px', flexShrink: 0, lineHeight: '1.55em', marginTop: '1px' }}>✦</span>
+                                        <div style={{ flex: 1, minWidth: 0 }}>{renderMarkdown(proofText)}</div>
+                                      </div>
+                                    ) : renderMarkdown(proofText)}
+                                  </div>
                                 )}
                                 {(a1 || a2 || a3 || a4 || a5) && (
                                   <div className="space-y-1 mt-1">
@@ -855,7 +867,7 @@ export default function WordPanel({
               const aCount = counts.by_sense[a.sense] ?? 0
               const bCount = counts.by_sense[b.sense] ?? 0
               return bCount - aCount
-            }).map((m) => {
+            }).map((m, blockIdx) => {
               const isExpanded = expandedMeanings.has(m.id)
               const senseCount = counts.by_sense[m.sense] ?? 0
               const pct = totalAnalyzed > 0 ? Math.round((senseCount / totalAnalyzed) * 100) : 0
@@ -890,7 +902,7 @@ export default function WordPanel({
               const borderColor = borderColors[senseClassif] || borderColors.nul
 
               return (
-                <div key={m.id} className="pl-3" style={{ borderLeft: `3px solid ${borderColor}` }}>
+                <div key={m.id} className="wp-section wp-concept-block pl-3" style={{ borderLeft: `3px solid ${borderColor}`, animationDelay: `${440 + blockIdx * 70}ms` }}>
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex-1 min-w-0">
                       <button
@@ -934,10 +946,11 @@ export default function WordPanel({
                         <div className="flex items-center gap-2 mt-1">
                           <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: '#E8DFCC' }}>
                             <div
-                              className="h-full rounded-full"
+                              className="wp-freq-bar h-full rounded-full"
                               style={{
                                 width: `${pct}%`,
                                 background: isRetenu ? '#B8962E' : m.status === 'maybe' ? '#B8962E' : '#7A2E2E',
+                                animationDelay: `${440 + blockIdx * 70 + 300}ms`,
                               }}
                             />
                           </div>
@@ -1081,7 +1094,7 @@ export default function WordPanel({
         }
 
         return (
-          <div>
+          <div className="wp-section" style={{ animationDelay: '780ms' }}>
             <h4 className="uppercase mb-3" style={{ fontSize: '11px', letterSpacing: '0.1em', color: '#3D3228', fontWeight: 700 }}>
               Expressions du quotidien
             </h4>

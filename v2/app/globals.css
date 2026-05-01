@@ -120,6 +120,346 @@
   position: relative;
 }
 
+/* ═══ Bouton "Traduire ce signe" — gradient or + lift au hover ═══ */
+.verse-translate-btn {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
+}
+.verse-translate-btn:hover,
+.verse-translate-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(184, 150, 46, 0.40), 0 2px 6px rgba(184, 150, 46, 0.18) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .verse-translate-btn {
+    transition: none !important;
+  }
+  .verse-translate-btn:hover,
+  .verse-translate-btn:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* ═══ Logo header — ombre dorée subtile au hover (signal cliquable) ═══ */
+.logo-link {
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: -6px -10px;
+  transition: background 240ms ease, box-shadow 240ms ease;
+}
+@media (hover: hover) {
+  .logo-link:hover {
+    background: rgba(184, 150, 46, 0.07);
+    box-shadow: 0 2px 10px rgba(184, 150, 46, 0.20), 0 1px 2px rgba(184, 150, 46, 0.10);
+  }
+}
+
+/* ═══ Bouton de section verset (Démarche/Justif/Critique) — hover seulement sur souris ═══ */
+.verse-section-btn {
+  transition: background 200ms ease;
+}
+@media (hover: hover) {
+  .verse-section-btn:hover {
+    background: var(--section-hover-bg, rgba(184, 150, 46, 0.10)) !important;
+  }
+}
+
+/* ═══ Verse jumper — focus sur le pill + hover sur le bouton ═══ */
+.verse-jumper:focus-within {
+  border-color: #B8962E !important;
+  box-shadow: 0 0 0 3px rgba(184,150,46,0.15), 0 1px 3px rgba(184,150,46,0.08), inset 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+.verse-jumper-btn:hover,
+.verse-jumper-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184,150,46,0.45), inset 0 1px 0 rgba(255,255,255,0.25) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .verse-jumper-btn:hover,
+  .verse-jumper-btn:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* ═══ Flash or sur le verset cible quand l'utilisateur saute via "Aller au signe" ═══ */
+@keyframes verseJumpFlash {
+  0%   { box-shadow: 0 0 0 0 rgba(184,150,46,0.0), 0 2px 12px rgba(184,150,46,0.12); }
+  20%  { box-shadow: 0 0 0 6px rgba(184,150,46,0.35), 0 8px 28px rgba(184,150,46,0.30); }
+  100% { box-shadow: 0 0 0 0 rgba(184,150,46,0.0), 0 2px 12px rgba(184,150,46,0.12); }
+}
+.verse-jump-flash {
+  animation: verseJumpFlash 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .verse-jump-flash {
+    animation: none !important;
+  }
+}
+
+/* ═══ VersePanel — hover lift uniquement (animation au mount retirée pour fix scroll mobile) ═══ */
+.verse-card {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 240ms ease,
+              border-color 240ms ease;
+}
+.verse-card:hover {
+  box-shadow: 0 10px 28px rgba(184, 150, 46, 0.30), 0 3px 8px rgba(184, 150, 46, 0.14) !important;
+  border-color: rgba(184, 150, 46, 0.55) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .verse-card {
+    transition: none !important;
+  }
+}
+
+/* ═══ WordPanel — entrée séquentielle au mount ═══ */
+@keyframes wpSectionIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.wp-section {
+  animation: wpSectionIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.wp-section-header  { animation-delay:   0ms; }
+.wp-section-retenu  { animation-delay: 120ms; }
+.wp-section-tabs    { animation-delay: 240ms; }
+.wp-section-senses  { animation-delay: 380ms; }
+
+/* Barres de fréquence — remplissage progressif gauche → droite */
+@keyframes wpBarFill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.wp-freq-bar {
+  transform-origin: left;
+  animation: wpBarFill 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Bloc concept (retenu/probable/exclu) — hover lift discret */
+.wp-concept-block {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
+  border-radius: 4px;
+}
+.wp-concept-block:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(184, 150, 46, 0.10);
+}
+
+/* Référence de verset cliquable — lift + couleur plus dense */
+.wp-verse-ref {
+  display: inline-block;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), background 220ms ease;
+}
+.wp-verse-ref:hover {
+  transform: translateY(-1px);
+  background: rgba(184, 150, 46, 0.22) !important;
+}
+
+/* Étoile ✦ du tooltip de concept — tour complet à l'apparition (visible) */
+@keyframes wpTooltipStarSpin {
+  from { transform: rotate(-360deg) scale(0.5); opacity: 0; }
+  to   { transform: rotate(0deg) scale(1); opacity: 0.85; }
+}
+.wp-tooltip-star {
+  display: inline-block;
+  transform-origin: center;
+  animation: wpTooltipStarSpin 1100ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-section,
+  .wp-freq-bar,
+  .wp-concept-block,
+  .wp-verse-ref,
+  .wp-tooltip-star {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ═══ Méthodologie (home) — étoile, cascade, hover cartes ═══ */
+.methodo-star {
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.methodo-toggle:hover .methodo-star,
+.methodo-toggle:focus-visible .methodo-star {
+  transform: rotate(180deg);
+}
+.methodo-toggle:hover,
+.methodo-toggle:focus-visible {
+  transform: translateY(-1px);
+}
+@keyframes methodoItemIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.methodo-item {
+  animation: methodoItemIn 380ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.methodo-axis-card {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
+}
+.methodo-axis-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 150, 46, 0.15), 0 2px 6px rgba(184, 150, 46, 0.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .methodo-star,
+  .methodo-axis-card,
+  .methodo-item {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* ═══ Sections de page — fade-up au chargement (cascade) ═══ */
+@keyframes pageFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-section-anim {
+  animation: pageFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-section-anim {
+    animation: none !important;
+  }
+}
+
+/* ═══ Hero home — entrée séquentielle au chargement ═══ */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-title {
+  animation: heroFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-ornament {
+  animation: heroFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both;
+}
+.hero-tagline {
+  animation: heroFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-ornament,
+  .hero-tagline {
+    animation: none !important;
+  }
+}
+
+/* ═══ Bouton Tutoriel (header) — shimmer + flèche + étoile ═══ */
+.tuto-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.38) 50%, transparent 70%);
+  transform: translateX(-100%);
+  pointer-events: none;
+  animation: tutoShimmer 4.5s linear infinite;
+  animation-delay: 1.2s;
+}
+@keyframes tutoShimmer {
+  0%   { transform: translateX(-100%); }
+  35%  { transform: translateX(200%); }
+  100% { transform: translateX(200%); }
+}
+.tuto-cta-star {
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tuto-cta-arrow {
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tuto-cta-btn:hover .tuto-cta-star,
+.tuto-cta-btn:focus-visible .tuto-cta-star {
+  transform: rotate(360deg);
+}
+.tuto-cta-btn:hover .tuto-cta-arrow,
+.tuto-cta-btn:focus-visible .tuto-cta-arrow {
+  transform: translateX(4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tuto-cta-btn::before {
+    animation: none !important;
+  }
+  .tuto-cta-star,
+  .tuto-cta-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ═══ Lignes de la grille des sourates (home) — hover raffiné ═══ */
+.surah-row {
+  background: linear-gradient(to right, rgba(184, 150, 46, 0), rgba(184, 150, 46, 0));
+  transition: background 220ms ease;
+}
+.surah-row::before {
+  content: '✦';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  font-size: 13px;
+  color: #B8962E;
+  opacity: 0;
+  transform: translateY(-50%) rotate(0deg) scale(0.5);
+  transition: opacity 280ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  line-height: 1;
+}
+.surah-row:hover,
+.surah-row:focus-visible {
+  background: linear-gradient(to right, rgba(184, 150, 46, 0.07), rgba(184, 150, 46, 0.03)) !important;
+}
+/* Feedback tactile immédiat au tap (mobile) */
+.surah-row:active {
+  background: rgba(184, 150, 46, 0.18) !important;
+}
+/* État de chargement après tap : pulse doré pour signaler "en cours de navigation" */
+.surah-row-loading {
+  background: rgba(184, 150, 46, 0.14) !important;
+  animation: surahRowLoadingPulse 1.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes surahRowLoadingPulse {
+  0%, 100% { background: rgba(184, 150, 46, 0.14); }
+  50% { background: rgba(184, 150, 46, 0.24); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .surah-row-loading {
+    animation: none !important;
+  }
+}
+.surah-row:hover::before,
+.surah-row:focus-visible::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(360deg) scale(1);
+}
+.surah-num,
+.surah-ar {
+  transition: color 240ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surah-row:hover .surah-num,
+.surah-row:focus-visible .surah-num {
+  color: #B8962E !important;
+  transform: scale(1.08);
+}
+.surah-row:hover .surah-ar,
+.surah-row:focus-visible .surah-ar {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .surah-row::before,
+  .surah-num,
+  .surah-ar {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 /* Hover de boutons/cartes/références — feedback tactile subtil */
 .lift-hover {
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease, background-color 200ms ease;
