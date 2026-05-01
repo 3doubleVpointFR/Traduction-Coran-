@@ -54,16 +54,25 @@ export default async function SurahPage({ params, searchParams }: Props) {
   }
 
   // Filtre : on ne garde que les versets effectivement analysés (translation_arab non-null).
+  // Les chunks de 100 IDs sont fired EN PARALLÈLE (Promise.all) pour éviter
+  // 3 round-trips séquentiels sur les sourates longues (ex: sourate 2 = 260 versets).
   const allVerses = versesRes.data ?? []
   const allVerseIds = allVerses.map(v => v.id)
-  const doneVerseIds = new Set<number>()
+  const chunks: number[][] = []
   for (let i = 0; i < allVerseIds.length; i += 100) {
-    const chunk = allVerseIds.slice(i, i + 100)
-    const { data: doneRows } = await db
-      .from('verse_analyses')
-      .select('verse_id')
-      .in('verse_id', chunk)
-      .not('translation_arab', 'is', null)
+    chunks.push(allVerseIds.slice(i, i + 100))
+  }
+  const chunkResults = await Promise.all(
+    chunks.map(chunk =>
+      db
+        .from('verse_analyses')
+        .select('verse_id')
+        .in('verse_id', chunk)
+        .not('translation_arab', 'is', null)
+    )
+  )
+  const doneVerseIds = new Set<number>()
+  for (const { data: doneRows } of chunkResults) {
     for (const r of doneRows ?? []) doneVerseIds.add(r.verse_id)
   }
   const filteredVerses = allVerses.filter(v => doneVerseIds.has(v.id))
@@ -98,42 +107,35 @@ export default async function SurahPage({ params, searchParams }: Props) {
   // sur quelle page se trouve un verset cible)
   const allDoneVerseNums = filteredVerses.map(v => v.verse_num)
 
-  // Get words for CURRENT PAGE verses only
+  // Get words + analyses pour la page courante EN PARALLÈLE.
+  // pageVerseIds = max PAGE_SIZE (10) → un seul fetch, pas de chunking par 100.
+  // Pour 10 versets ≈ 300-500 mots → tient largement dans la limite Supabase de 1000.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const wordsByVerse: Record<number, any[]> = {}
+  const analysesByVerse: Record<number, unknown> = {}
   if (pageVerseIds.length > 0) {
-    for (let offset = 0; ; offset += 1000) {
-      const { data: batch } = await db
+    const [wordsRes, analysesRes] = await Promise.all([
+      db
         .from('words')
         .select('*')
         .in('verse_id', pageVerseIds)
         .order('position')
-        .range(offset, offset + 999)
-
-      if (!batch || batch.length === 0) break
-      for (const w of batch) {
-        if (!wordsByVerse[w.verse_id]) wordsByVerse[w.verse_id] = []
-        wordsByVerse[w.verse_id]!.push(w)
-      }
-      if (batch.length < 1000) break
+        .range(0, 999),
+      db
+        .from('verse_analyses')
+        .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, model_used, prompt_version, generated_at')
+        .in('verse_id', pageVerseIds)
+        .not('translation_arab', 'is', null)
+        .order('generated_at', { ascending: false }),
+    ])
+    for (const w of wordsRes.data ?? []) {
+      if (!wordsByVerse[w.verse_id]) wordsByVerse[w.verse_id] = []
+      wordsByVerse[w.verse_id]!.push(w)
     }
-  }
-
-  // Get analyses for CURRENT PAGE verses only.
-  // IMPORTANT : on filtre sur translation_arab non-null + on prend la plus récente,
-  // sinon une vieille ligne sans traduction peut écraser la bonne dans la map et
-  // faire apparaître le bouton "Traduire ce signe" sur un verset déjà traduit.
-  const analysesByVerse: Record<number, unknown> = {}
-  if (pageVerseIds.length > 0) {
-    const { data: analyses } = await db
-      .from('verse_analyses')
-      .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, model_used, prompt_version, generated_at')
-      .in('verse_id', pageVerseIds)
-      .not('translation_arab', 'is', null)
-      .order('generated_at', { ascending: false })
-
-    for (const a of analyses ?? []) {
-      // Première itération = ligne la plus récente (ordre desc) → on ne l'écrase pas
+    // Filtre sur translation_arab + ordre desc + dedup → on garde la plus récente
+    // ligne avec traduction par verse_id (évite le bouton "Traduire ce signe" sur
+    // un verset pourtant déjà traduit quand plusieurs lignes verse_analyses existent).
+    for (const a of analysesRes.data ?? []) {
       if (!analysesByVerse[a.verse_id]) analysesByVerse[a.verse_id] = a
     }
   }

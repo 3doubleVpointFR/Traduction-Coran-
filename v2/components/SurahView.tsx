@@ -424,17 +424,22 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     tryScroll()
   }
 
-  // Si l'URL contient un hash #verse-X-Y, scroll vers ce verset au mount
-  // (utilisé après une navigation vers une autre page via le verse jumper)
+  // Sur changement de page : si hash → scroll vers verset (verse jumper).
+  // Sinon (clic pagination) → scroll fluide vers le top.
+  // On utilise scroll: false sur router.push pour éviter le saut brutal de Next.js.
   useEffect(() => {
     if (typeof window === 'undefined') return
     const hash = window.location.hash
-    if (!hash || !hash.startsWith(`#verse-${surah.id}-`)) return
-    const verseNum = parseInt(hash.replace(`#verse-${surah.id}-`, ''), 10)
-    if (!Number.isFinite(verseNum)) return
-    scrollAndFlash(verseNum)
-    // Nettoie le hash de l'URL pour éviter de re-scroller sur les futurs renders
-    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+    if (hash && hash.startsWith(`#verse-${surah.id}-`)) {
+      const verseNum = parseInt(hash.replace(`#verse-${surah.id}-`, ''), 10)
+      if (Number.isFinite(verseNum)) {
+        scrollAndFlash(verseNum)
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+      }
+      return
+    }
+    // Pas de hash → scroll fluide vers le top (pagination classique).
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage])
 
@@ -876,6 +881,18 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         ` }} />
       </header>
 
+      {/* Pagination en HAUT — hors du grid pour être centrée full-width comme
+          le titre de la sourate, et pour ne pas décaler verset 1 vs panneau droit. */}
+      {totalPages > 1 && (
+        <Pagination
+          current={currentPage}
+          total={totalPages}
+          onChange={(p) => {
+            router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
+          }}
+        />
+      )}
+
       {/* Grid: verses + panel (aligned).
           lg:min-h sur la grille → garantit que la rangée a une hauteur suffisante
           pour que le panneau droit (sticky) reste collé au scroll même sur les
@@ -883,18 +900,6 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       <div className="page-section-anim grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,520px)] gap-6 lg:min-h-[calc(100vh-90px)]" style={{ animationDelay: '650ms' }}>
       {/* Left column: verses */}
       <div className="space-y-4">
-        {/* Pagination en haut (toutes plateformes — pagination serveur) */}
-        {totalPages > 1 && (
-          <Pagination
-            current={currentPage}
-            total={totalPages}
-            onChange={(p) => {
-              router.push(`/surah/${surah.id}?page=${p}`)
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
-          />
-        )}
-
         {/* Verse list */}
         {verses.map((verse) => (
           <VersePanel
@@ -909,18 +914,6 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             onAnalyze={() => handleAnalyzeVerse(verse.id, verse.surah_id, verse.verse_num)}
           />
         ))}
-
-        {/* Pagination en bas */}
-        {totalPages > 1 && (
-          <Pagination
-            current={currentPage}
-            total={totalPages}
-            onChange={(p) => {
-              router.push(`/surah/${surah.id}?page=${p}`)
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
-          />
-        )}
       </div>
 
       {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}
@@ -1067,6 +1060,17 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         ` }} />
       </div>
     </div>
+
+    {/* Pagination en BAS — hors du grid pour être centrée full-width. */}
+    {totalPages > 1 && (
+      <Pagination
+        current={currentPage}
+        total={totalPages}
+        onChange={(p) => {
+          router.push(`/surah/${surah.id}?page=${p}`, { scroll: false })
+        }}
+      />
+    )}
 
     {/* ═══ MOBILE BOTTOM SHEET (< 1024px) ═══ */}
     {activeWordKey && (
