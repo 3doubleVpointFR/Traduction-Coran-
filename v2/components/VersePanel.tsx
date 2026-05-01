@@ -72,6 +72,10 @@ export default function VersePanel({
   const [showJustification, setShowJustification] = useState(false)
   const [showCritique, setShowCritique] = useState(false)
   const [showExplanation, setShowExplanation] = useState(false)
+  // Toggles d'affichage par verset (override local du global)
+  const [verseHideArabic, setVerseHideArabic] = useState(false)
+  const [verseHidePhon, setVerseHidePhon] = useState(false)
+  const [verseHideSections, setVerseHideSections] = useState(false)
   const segments = analysis?.segments
 
   // Extract §DEMARCHE§ intro paragraph (résumé) to display under the verse header.
@@ -100,13 +104,22 @@ export default function VersePanel({
   }
 
   return (
-    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className="verse-card rounded-lg p-5" style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '110px' }}>
+    <div id={`verse-${verse.surah_id}-${verse.verse_num}`} data-tour-verse-num={verse.verse_num} className={`verse-card rounded-lg p-5${verseHideArabic ? ' verse-hide-arabic' : ''}${verseHidePhon ? ' verse-hide-phon' : ''}${verseHideSections ? ' verse-hide-sections' : ''}`} style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', boxShadow: '0 2px 12px rgba(184,150,46,0.12)', marginBottom: '16px', scrollMarginTop: '110px' }}>
       {/* Verse header */}
-      <div className="flex items-center justify-between mb-4">
-        <span style={{ fontSize: '16px', color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, letterSpacing: '0.05em' }}>
+      <div className="flex items-center justify-between mb-4 gap-2">
+        <span className="verse-header-label" style={{ color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
           <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '12px', marginRight: '6px', opacity: 0.85 }}>✦</span>
           Sourate {verse.surah_id}, Signe {verse.verse_num}
         </span>
+
+        {/* Toggles d'affichage par verset — visibles seulement si analysé */}
+        {analysis && (
+          <div data-tour-verse-toggles={verse.verse_num === 2 ? '1' : undefined} className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0" aria-label="Afficher / cacher pour ce verset">
+            <VerseToggle label="Arabe" active={!verseHideArabic} onToggle={() => setVerseHideArabic(v => !v)} />
+            <VerseToggle label="Phon" active={!verseHidePhon} onToggle={() => setVerseHidePhon(v => !v)} />
+            <VerseToggle label="Sections" active={!verseHideSections} onToggle={() => setVerseHideSections(v => !v)} />
+          </div>
+        )}
         {!analysis && !isAnalyzing && (
           <button
             onClick={onAnalyze}
@@ -244,7 +257,7 @@ export default function VersePanel({
 
       {/* Synchronized reading — aligned grid */}
       {segments && segments.length > 0 && (
-        <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
+        <div className="wf-words-grid mt-4 pt-4" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
           <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-end">
             {segments.map((seg, i) => {
               const isKey = !seg.is_particle && seg.word_key
@@ -266,7 +279,7 @@ export default function VersePanel({
                       seg.word_key && onWordClick(seg.word_key, `${seg.word_key}:${i}`, segSenseVal, verse.id, segPosition)
                     }}
                   >
-                    <span className="italic text-center" style={{ fontSize: '11px', color: isActive ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
+                    <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isActive ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
                       {seg.phon}
                     </span>
                     <span
@@ -289,7 +302,7 @@ export default function VersePanel({
 
               return (
                 <div key={i} className="flex flex-col items-center" style={{ padding: '2px 2px' }}>
-                  <span className="italic text-center" style={{ fontSize: '11px', color: '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
+                  <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
                     {seg.phon}
                   </span>
                   <span className="text-center" style={{ color: '#6B5E52', fontSize: '14px', whiteSpace: 'nowrap', paddingBottom: '6px' }}>
@@ -523,5 +536,61 @@ export default function VersePanel({
         </div>
       )}
     </div>
+  )
+}
+
+// Petit pill avec label + switch (style identique au popover global)
+function VerseToggle({ label, active, onToggle }: { label: string; active: boolean; onToggle: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-pressed={active}
+      title={`${active ? 'Cacher' : 'Afficher'} : ${label}`}
+      className="verse-toggle inline-flex items-center gap-1 sm:gap-2"
+      style={{
+        background: 'transparent',
+        border: '1px solid rgba(184,150,46,0.22)',
+        borderRadius: '999px',
+        cursor: 'pointer',
+        fontFamily: "'Cormorant Garamond', serif",
+        fontWeight: 500,
+        color: active ? '#5A4E42' : '#9E9089',
+        letterSpacing: '0.03em',
+        transition: 'background 200ms ease, border-color 200ms ease, color 200ms ease',
+      }}
+    >
+      <span style={{ whiteSpace: 'nowrap' }}>{label}</span>
+      <span
+        aria-hidden="true"
+        style={{
+          width: '24px',
+          height: '14px',
+          borderRadius: '7px',
+          background: active ? 'linear-gradient(135deg, #C9A23A, #B8962E)' : 'rgba(184,150,46,0.20)',
+          position: 'relative',
+          flexShrink: 0,
+          display: 'inline-block',
+          transition: 'background 320ms cubic-bezier(0.16, 1, 0.3, 1)',
+          boxShadow: active ? 'inset 0 1px 0 rgba(255,255,255,0.25)' : 'inset 0 1px 2px rgba(120,90,30,0.06)',
+        }}
+      >
+        <span
+          style={{
+            position: 'absolute',
+            top: '2px',
+            left: '2px',
+            width: '10px',
+            height: '10px',
+            borderRadius: '50%',
+            background: '#FFFFFF',
+            transform: active ? 'translateX(10px)' : 'translateX(0)',
+            transition: 'transform 380ms cubic-bezier(0.34, 1.4, 0.64, 1)',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.18)',
+            willChange: 'transform',
+          }}
+        />
+      </span>
+    </button>
   )
 }

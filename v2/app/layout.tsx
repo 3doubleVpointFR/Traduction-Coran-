@@ -4,6 +4,7 @@ import Link from 'next/link'
 import './globals.css'
 import TutorialGuide from '@/components/TutorialGuide'
 import TutorialModal from '@/components/TutorialModal'
+import DisplaySettings from '@/components/DisplaySettings'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -76,7 +77,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 UN CORAN ARAB
               </span>
             </Link>
-            <TutorialModal />
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <DisplaySettings />
+              <TutorialModal />
+            </div>
           </div>
           <div
             aria-hidden="true"

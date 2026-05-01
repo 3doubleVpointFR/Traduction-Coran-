@@ -177,6 +177,44 @@ const STEPS: TourStep[] = [
     scrollIntoView: true,
   },
   {
+    selector: '[data-tour-verse-toggles="1"]',
+    position: 'left',
+    title: 'Cacher / afficher par verset',
+    desc: 'Sur chaque verset analysé, ces 3 petits toggles te permettent de cacher l\'arabe, la phonétique (et les mots français) ou les sections explicatives — uniquement pour ce verset. Pratique pour épurer la lecture quand tu veux te concentrer sur la traduction.',
+    waitForSelector: 1500,
+    scrollIntoView: true,
+    fullHeight: true,
+  },
+  {
+    selector: '[data-tour-display-btn="1"]',
+    position: 'left',
+    title: 'Affichage global',
+    desc: 'Ce bouton dans la barre du haut ouvre un panneau avec les mêmes options, mais qui s\'appliquent à TOUS les versets en même temps. Active le « Mode lecture compact » pour cacher d\'un coup l\'arabe, la phonétique et les sections — utile pour lire vite la traduction française.',
+    waitForSelector: 1500,
+    scrollIntoView: false,
+    forceCorner: true,
+    alsoHighlight: '[data-tour-display-popover="1"]',
+    triggerAction: () => {
+      // Ouvre le popover automatiquement pour montrer son contenu
+      const tryOpen = (attempt = 0) => {
+        if (document.querySelector('[data-tour-display-popover="1"]')) return
+        const btn = document.querySelector('[data-tour-display-btn="1"]') as HTMLButtonElement | null
+        if (btn) {
+          btn.click()
+          // Vérifie que le popover s'est ouvert ; sinon retry
+          setTimeout(() => {
+            if (!document.querySelector('[data-tour-display-popover="1"]') && attempt < 5) {
+              tryOpen(attempt + 1)
+            }
+          }, 200)
+        } else if (attempt < 10) {
+          setTimeout(() => tryOpen(attempt + 1), 150)
+        }
+      }
+      setTimeout(tryOpen, 100)
+    },
+  },
+  {
     selector: 'body',
     position: 'center',
     title: 'À toi de méditer ✦',
@@ -351,9 +389,18 @@ export default function TutorialGuide() {
       }
       // 1) Surbrillance IMMÉDIATE (position actuelle, avant scroll) → pas d'attente visible
       setRects(computeRects(el, current))
-      // 2) Si on a effectivement scrollé, recalculer après que le smooth scroll soit fini
+      // 2) Si on a scrollé, polling rAF pendant 1.2s pour suivre le smooth scroll en temps réel
+      //    (le smooth scroll prend 300-700ms selon le navigateur — on update à chaque frame
+      //    pour que la bulle suive en continu, plutôt qu'attendre la fin)
       if (didScroll) {
-        setTimeout(() => setRects(computeRects(el, current)), 600)
+        const start = Date.now()
+        const tick = () => {
+          if (Date.now() - start > 1200) return
+          const elNow = document.querySelector(current.selector) as HTMLElement | null
+          if (elNow) setRects(computeRects(elNow, current))
+          requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
       }
       // 3) Re-capture systématique 500ms plus tard (couvre les animations CSS/transitions
       //    comme le slide-up du bottom sheet sur mobile, qui décalent la position après coup)

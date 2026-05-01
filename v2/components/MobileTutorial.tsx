@@ -14,7 +14,7 @@ interface Card {
   title: string
   body: string
   highlight?: string  // mot/expression à mettre en valeur dans le body
-  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'final'
+  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'display-settings' | 'verse-toggles' | 'final'
 }
 
 const CARDS: Card[] = [
@@ -86,6 +86,20 @@ const CARDS: Card[] = [
     body: "Sous chaque verset, déplie les 3 sections : Démarche (analyse grammaticale), Justification (choix des mots), Critique (comparaison avec Hamidullah). À toi de juger ce qui te paraît le plus fidèle.",
     highlight: 'À toi de juger',
     illustration: 'sections',
+  },
+  {
+    emoji: '✦',
+    title: 'Personnaliser l\'affichage',
+    body: "En haut à droite, le bouton avec 3 lignes ouvre un panneau pour cacher l'arabe, la phonétique ou les sections — pour TOUS les versets d'un coup. Active le « Mode lecture compact » pour ne garder que l'essentiel : résumé + traduction française.",
+    highlight: 'Mode lecture compact',
+    illustration: 'display-settings',
+  },
+  {
+    emoji: '✦',
+    title: "Options d'affichage par verset",
+    body: "Sur chaque verset analysé, 3 petites options à droite te permettent de cacher l'arabe, la phonétique ou les sections — uniquement pour ce verset. Pratique pour épurer la lecture quand tu veux te concentrer.",
+    highlight: 'uniquement pour ce verset',
+    illustration: 'verse-toggles',
   },
   {
     emoji: '✦',
@@ -397,6 +411,75 @@ function Illustration({ kind }: { kind: Card['illustration'] }) {
         <div style={{ padding: '8px 14px', background: 'rgba(184,150,46,0.04)', fontSize: 9, color: '#5A4E42', fontStyle: 'italic' as const, borderTop: '1px solid rgba(184,150,46,0.12)' }}>
           Hamidullah : « Allah! Pas de divinité que Lui... »
         </div>
+      </div>
+    )
+  }
+
+  if (kind === 'display-settings') {
+    return (
+      <div style={{ ...cardStyle, padding: '12px 12px' }}>
+        {/* Header mockup avec le bouton ≡ */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 8px', background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.2)', borderRadius: '8px', marginBottom: 8 }}>
+          <div style={{ fontSize: 9, color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.1em' }}>UN CORAN ARAB</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            {/* Le bouton ≡ — entouré pour le mettre en avant */}
+            <div style={{ width: 22, height: 22, borderRadius: '50%', border: '1.5px solid #B8962E', background: 'rgba(184,150,46,0.10)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#B8962E', boxShadow: '0 0 0 3px rgba(184,150,46,0.20)' }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="14" y2="12" />
+                <line x1="4" y1="18" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div style={{ fontSize: 8, color: '#B8962E', padding: '2px 6px', border: '1px solid rgba(184,150,46,0.3)', borderRadius: 999 }}>Tutoriel</div>
+          </div>
+        </div>
+        {/* Flèche vers le panneau */}
+        <div style={{ textAlign: 'center' as const, fontSize: 10, color: '#B8962E', marginBottom: 4 }}>↓</div>
+        {/* Mini popover style */}
+        <div style={{ background: '#FFFCF6', border: '1px solid rgba(184,150,46,0.32)', borderRadius: '10px', padding: '10px 12px', boxShadow: '0 4px 12px rgba(184,150,46,0.12)' }}>
+          <div style={{ height: '2px', background: 'linear-gradient(to right, transparent, #B8962E, transparent)', marginBottom: '6px', borderRadius: '1px' }} />
+          <div style={{ fontSize: 9, fontWeight: 700, color: '#8A7428', letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginBottom: 6, fontStyle: 'italic' as const }}>✦ Affichage</div>
+          {[
+            { label: 'Texte arabe', on: true },
+            { label: 'Phonétique', on: false },
+            { label: 'Sections', on: true },
+          ].map((row, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '3px 0', fontSize: 10, color: '#3D3228', fontFamily: "'Cormorant Garamond', serif" }}>
+              <span>{row.label}</span>
+              <span style={{ width: 22, height: 12, borderRadius: 6, background: row.on ? 'linear-gradient(135deg, #C9A23A, #B8962E)' : 'rgba(184,150,46,0.20)', position: 'relative' as const }}>
+                <span style={{ position: 'absolute' as const, top: 2, left: row.on ? 12 : 2, width: 8, height: 8, borderRadius: '50%', background: '#FFFFFF', boxShadow: '0 1px 2px rgba(0,0,0,0.18)' }} />
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (kind === 'verse-toggles') {
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, gap: 6 }}>
+          <span style={{ fontSize: 11, color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}>
+            <span style={{ color: '#B8962E', marginRight: 4 }}>✦</span>Sourate 3, Signe 2
+          </span>
+          <div style={{ display: 'flex', gap: 4 }}>
+            {[
+              { label: 'Arabe', on: true },
+              { label: 'Phon', on: false },
+              { label: 'Sect', on: true },
+            ].map((row, i) => (
+              <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 3, padding: '2px 6px', border: '1px solid rgba(184,150,46,0.22)', borderRadius: 999, fontSize: 8, color: row.on ? '#5A4E42' : '#9E9089', fontFamily: "'Cormorant Garamond', serif" }}>
+                <span>{row.label}</span>
+                <span style={{ width: 16, height: 9, borderRadius: 4.5, background: row.on ? 'linear-gradient(135deg, #C9A23A, #B8962E)' : 'rgba(184,150,46,0.20)', position: 'relative' as const, display: 'inline-block' }}>
+                  <span style={{ position: 'absolute' as const, top: 1.5, left: row.on ? 8.5 : 1.5, width: 6, height: 6, borderRadius: '50%', background: '#FFFFFF' }} />
+                </span>
+              </span>
+            ))}
+          </div>
+        </div>
+        <div style={{ height: 1, background: 'rgba(184,150,46,0.2)', marginBottom: 8 }} />
+        <div style={{ fontSize: 9, color: '#6B5E52', fontStyle: 'italic' as const, textAlign: 'center' as const }}>↑ uniquement pour ce verset</div>
       </div>
     )
   }
