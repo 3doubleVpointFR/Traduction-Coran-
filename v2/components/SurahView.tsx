@@ -458,6 +458,14 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   )
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
+  // Sync state avec les props quand on change de page (?page=N).
+  // Sans ça, useState garde les analyses de la page de mount initial et
+  // les versets des pages suivantes apparaissent comme non-traduits
+  // (avec le bouton "Traduire ce signe").
+  useEffect(() => {
+    setVerseAnalyses(analysesByVerse as Record<number, VerseAnalysis>)
+  }, [analysesByVerse])
+
   // Force fresh data from server on mount (bypass Next.js router cache)
   useEffect(() => {
     router.refresh()
