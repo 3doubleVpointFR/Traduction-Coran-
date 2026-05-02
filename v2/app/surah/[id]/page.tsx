@@ -66,16 +66,22 @@ export default async function SurahPage({ params, searchParams }: Props) {
     chunks.map(chunk =>
       db
         .from('verse_analyses')
-        .select('verse_id')
+        .select('verse_id, verification_done')
         .in('verse_id', chunk)
         .not('translation_arab', 'is', null)
     )
   )
   const doneVerseIds = new Set<number>()
+  const verifiedVerseIds = new Set<number>()
   for (const { data: doneRows } of chunkResults) {
-    for (const r of doneRows ?? []) doneVerseIds.add(r.verse_id)
+    for (const r of (doneRows ?? []) as Array<{ verse_id: number; verification_done?: boolean }>) {
+      doneVerseIds.add(r.verse_id)
+      if (r.verification_done === true) verifiedVerseIds.add(r.verse_id)
+    }
   }
-  const filteredVerses = allVerses.filter(v => doneVerseIds.has(v.id))
+  const filteredVerses = allVerses
+    .filter(v => doneVerseIds.has(v.id))
+    .map(v => ({ ...v, verification_done: verifiedVerseIds.has(v.id) }))
 
   // Si aucun verset analysé : afficher un message et ne pas surcharger.
   if (filteredVerses.length === 0) {
