@@ -9,6 +9,7 @@ interface Verse {
   surah_id: number
   verse_num: number
   arabic_text: string
+  verification_done?: boolean
 }
 
 interface Word {
@@ -112,6 +113,21 @@ export default function VersePanel({
         <span className="verse-header-label" style={{ color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
           <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '12px', marginRight: '6px', opacity: 0.85 }}>✦</span>
           Sourate {verse.surah_id}, Signe {verse.verse_num}
+          {verse.verification_done && (
+            <span
+              aria-label="Vérifié — prêt pour prod"
+              title="Verset vérifié (cohérence + proof_ctx + relecture francophone) — prêt pour prod"
+              style={{
+                color: '#B8962E',
+                fontSize: '11px',
+                marginLeft: '8px',
+                opacity: 1,
+                fontWeight: 700,
+              }}
+            >
+              ★
+            </span>
+          )}
         </span>
 
         {/* Toggles d'affichage par verset — visibles seulement si analysé */}

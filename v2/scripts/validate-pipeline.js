@@ -1327,6 +1327,12 @@ async function run() {
   console.log('  ℹ️  Test à effectuer manuellement : RELIRE LA TRADUCTION À VOIX HAUTE comme un francophone naïf, et vérifier 3 niveaux : (1) lexical — chaque mot est univoque sans contexte ; (2) grammatical — la construction française tient indépendamment de l\'arabe ; (3) fluidité — pas de subordonnées enchâssées ni périphrases empilées.')
 
   // ================================================================
+  // 38. Couverture des 5 axes dans le proof_ctx du retenu — vérification manuelle
+  // ================================================================
+  section(38, 'Couverture des 5 axes dans le proof_ctx du retenu')
+  console.log('  ℹ️  Test à effectuer manuellement : pour CHAQUE racine importante du verset, le proof_ctx du concept retenu doit pouvoir traiter (implicitement ou explicitement) les 5 axes : (1) champ lexical du verset, (2) versets voisins, (3) thème de la sourate, (4) cohérence coranique [via distinctions vs probables], (5) finalité khalifa. Plus le test grammatical (nature philosophique compatible avec la structure du mot). Si un proof_ctx semble générique ou applicable hors-contexte, demander : « comment as-tu couvert l\'axe X dans ce proof_ctx ? ». Claude doit pouvoir pointer une phrase précise ou reconnaître honnêtement l\'oubli.')
+
+  // ================================================================
   // RÉSUMÉ FINAL
   // ================================================================
   console.log('\n╔══════════════════════════════════════════════════╗')

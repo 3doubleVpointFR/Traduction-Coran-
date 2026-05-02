@@ -91,7 +91,9 @@ CREATE TABLE IF NOT EXISTS verse_analyses (
   model_used TEXT,
   prompt_version TEXT,
   generated_at TIMESTAMPTZ DEFAULT NOW(),
-  validated BOOLEAN DEFAULT FALSE
+  validated BOOLEAN DEFAULT FALSE,
+  verification_done BOOLEAN DEFAULT FALSE,  -- Indique si les 3 vérifs ont été passées et le verset est prêt pour prod
+  verification_done_at TIMESTAMPTZ           -- Date de la mise en prod
 );
 
 -- Jobs d'analyse avec suivi par étape

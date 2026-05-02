@@ -30,20 +30,24 @@ export async function GET(
     .eq('surah_id', surahId)
     .order('verse_num')
 
-  // Check which verses have analyses
+  // Check which verses have analyses + which are verified
   const verseIds = verses?.map(v => v.id) ?? []
   const { data: analyses } = verseIds.length
     ? await db
         .from('verse_analyses')
-        .select('verse_id')
+        .select('verse_id, verification_done')
         .in('verse_id', verseIds)
     : { data: [] }
 
   const analyzedVerseIds = new Set(analyses?.map(a => a.verse_id) ?? [])
+  const verifiedVerseIds = new Set(
+    (analyses ?? []).filter((a: { verification_done?: boolean }) => a.verification_done === true).map(a => a.verse_id)
+  )
 
   const enrichedVerses = verses?.map(v => ({
     ...v,
     has_analysis: analyzedVerseIds.has(v.id),
+    verification_done: verifiedVerseIds.has(v.id),
   }))
 
   return NextResponse.json({ surah, verses: enrichedVerses })
