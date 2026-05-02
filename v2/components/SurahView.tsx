@@ -316,6 +316,7 @@ interface Verse {
   surah_id: number
   verse_num: number
   arabic_text: string
+  verification_done?: boolean
 }
 
 interface Word {
