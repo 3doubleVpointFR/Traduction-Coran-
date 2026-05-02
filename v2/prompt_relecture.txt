@@ -1,0 +1,13 @@
+Relis la traduction du verset que tu viens de produire à voix haute, en mode francophone naïf strict. Teste rigoureusement les 3 niveaux pour CHAQUE expression française du verset, pas globalement.
+ 
+
+Procédure obligatoire en liaison avec le contexte du verset precedent et de la sourate en cours : 
+1. Niveau LEXICAL — Pour CHAQUE mot/locution non-trivial du verset, le sortir du contexte et le tester ISOLEMENT. Lister les mots à risque (calques, faux amis, expressions ambiguës) et écrire ce qu'un francophone comprendrait 
+Surveiller spécialement : les structures arabes calquées (réfléchi arabe → réfléchi français inadapté, adjectif intensif → faux ami, taqdim → inversion littéraire).
+2. Niveau GRAMMATICAL — Tester chaque construction française indépendamment de l'arabe : « après que » + temps, « pour que » + subjonctif, « si » + temps, accords en genre/nombre, prépositions. Identifier les calques de prépositions arabes (fī → dans/sur/à propos de).
+
+
+
+POUR CHAQUE point de friction détecté : (a) le quoter exactement, (b) expliquer pourquoi il accroche le francophone naïf, (c) proposer 2-3 alternatives idiomatiques. Ne PAS valider la phrase globalement sans avoir testé chaque mot/locution séparément. Souviens-toi des leçons V20 : « voyant des serviteurs » (calque adjectif intensif), « à toi n'incombe que » (calque taqdim), « ils se sont guidés » (calque réfléchi forme VIII) — tous ratés en relecture globale parce qu'ils étaient « validés ensemble » sans test isolé.
+
+À la fin, demander à l'utilisateur lesquels des points relevés méritent correction effective et me donner un tableau avec des couleurs rouge , orange etc, qui recapitule bien ton analyse, tes changement que tu veux faire avant apres et avec les cause et les proposition .

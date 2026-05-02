@@ -1047,6 +1047,38 @@ VÉRIFICATION OBLIGATOIRE avant de finaliser :
 Relis ta traduction Arab. Si un mot correspond à un sens non retenu → remplace-le immédiatement par le sens retenu.
 
 ═══════════════════════════════════════════
+RELECTURE FINALE — TEST DE FLUIDITÉ FRANÇAISE
+═══════════════════════════════════════════
+
+AVANT de finaliser, relis ta traduction Arab à voix haute (mentalement avec accent francophone) comme un francophone naïf qui ne connaît ni l'arabe ni la racine, ni le complément implicite. Tester TROIS niveaux :
+
+NIVEAU 1 — LEXICAL : le mot choisi sans contexte est-il univoque ?
+- ❌ "se remettre" sans complément = guérir/convalescence en français contemporain
+- ✅ "s'en remettre à Dieu" = confier sa cause à Dieu (idiomatique)
+
+NIVEAU 2 — GRAMMATICAL : la construction française est-elle correcte indépendamment de la structure arabe ?
+- ❌ "après que" + présent ("après que vous êtes")
+- ✅ "après que" + passé composé OU "après" + infinitif passé ("après vous être remis")
+- ❌ "ordonner que vous fassiez" (lourd)
+- ✅ "ordonner de faire" (naturel après ordonner/recommander/demander/proposer)
+- Subordonnées qui prennent le subjonctif : avant que, sans que, bien que
+- Subordonnées qui prennent l'indicatif/passé : après que, dès que, lorsque
+
+NIVEAU 3 — FLUIDITÉ : pas de subordonnées enchâssées, pas de périphrases empilées. Si la traduction française a beaucoup plus de mots que le verset arabe, c'est un signal d'alerte. Fidélité ≠ lourdeur.
+
+PROCÉDURE :
+1. Relis la traduction d'un seul jet, en oubliant l'arabe et la racine
+2. Teste les trois niveaux ci-dessus
+3. Si bancal, reformule SANS changer le sens retenu — choisis juste une autre expression française qui le rend
+4. Si l'expression naturelle n'existe pas dans les sens disponibles, indique-le dans translation_explanation (l'opérateur humain l'ajoutera au concept)
+
+EXEMPLES DE FIXES (S3 avril 2026) :
+- ❌ "qu'il ne vous ordonne pas que vous adoptiez les anges et les prophètes pour seigneurs"
+- ✅ "qu'il ne vous ordonne pas d'adopter les anges et les prophètes pour seigneurs"
+- ❌ "vous ordonnerait-il le rejet après que vous êtes de ceux qui s'en remettent à Dieu ?"
+- ✅ "vous ordonnerait-il le rejet après vous être remis à Dieu ?"
+
+═══════════════════════════════════════════
 EXEMPLES DE BONNES TRADUCTIONS
 ═══════════════════════════════════════════
 

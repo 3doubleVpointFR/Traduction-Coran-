@@ -1,0 +1,9 @@
+Vérifie la cohérence textuelle de la §DEMARCHE§ et §JUSTIFICATION§ et de critique  pour le verset que tu viens de produire.
+je veux que tout les mots de la traduction francaise soit listé dans la demarche et dans la justification des mots(mot et particule).
+Procédure obligatoire :
+1. Pour CHAQUE paragraphe **phon** (fr) de §DEMARCHE§ : vérifier que le `(fr)` entre parenthèses est EXACTEMENT égal à `segments[i].fr` du segment correspondant. Si fr est une concaténation artificielle ou ne correspond à aucun segment réel → corriger.
+2. Pour CHAQUE entrée **fr** — de §JUSTIFICATION§ : vérifier que `fr` est exactement égal à un `segments[i].fr` 
+3. Pas de paragraphe meta dans §DEMARCHE§ qui groupe 2+ mots arabes (ex: « lā rayba », « a-lam tara »). Une particule + un verbe doivent être traités séparément, OU la formule complète française portée sur le mot porteur (le verbe/nom) avec la particule en simple marqueur.
+4. Pour les négations françaises « ne...pas » qui enveloppent le verbe en un bloc : appliquer le pattern V23 — la formule complète française (« ne...pas X ») est portée par le segment du mot porteur, pas répartie artificiellement.
+
+Exécute le script `scripts/_check_demarche_coherence.js` (et `_check_v25_demarche_full.js` si plus détaillé), corrige les incohérences détectées, et affiche un tableau récapitulatif des corrections appliquées (segment touché → ancienne valeur → nouvelle valeur). Re-lance la validation (validate-pipeline.js) à la fin.

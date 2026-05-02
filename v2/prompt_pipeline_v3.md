@@ -52,7 +52,7 @@ Claude réfléchit à ces 5 axes dans sa tête AVANT de choisir le concept reten
 4. **Cohérence coranique** : ce concept contredit-il un autre verset du Coran ?
 5. **Finalité du khalifa** : ce concept contribue-t-il à la mission de l'être humain de justice et de civilisation et empêcher la corruption ? Analyser le concept TEL QU'IL EST UTILISÉ DANS LE VERSET (avec la structure grammaticale), pas isolé.
 
-La réflexion sur ces 5 axes est OBLIGATOIRE mais le résultat est synthétisé en 1-2 phrases dans le proof_ctx — pas de rédaction détaillée axe par axe.
+La réflexion sur ces 5 axes est OBLIGATOIRE mais le résultat est synthétisé en 4  phrases minimum dans le proof_ctx — pas de rédaction détaillée axe par axe.
 
 ### Ordre de réflexion (OBLIGATOIRE)
 1. D'abord réfléchir aux 5 axes pour TOUS les concepts non-nul (en interne)
@@ -188,6 +188,49 @@ Exemple :
 3. **Pas de mot "concept"** : ne JAMAIS utiliser le mot "concept" dans la démarche ni la justification. Toujours dire "sens". Le mot "concept" est notre méthode interne, l'utilisateur ne doit jamais le voir.
 4. **3 phrases du quotidien** pour chaque sens retenu uniquement. **SKIP si des phrases existent déjà** pour cette racine dans `word_daily` : vérifier `SELECT count(*) FROM word_daily WHERE analysis_id = X`. Si count > 0 → ne PAS en ajouter. Les phrases sont permanentes par racine comme les sens.
 5. **Segments d'affichage** : créer les segments avec le format { fr, pos, phon, arabic, word_key, is_particle, sense_retenu, **position** }. Le champ position est OBLIGATOIRE — il correspond à la position du mot dans les segments de l'étape 1.
+
+### 4d. RELECTURE FINALE OBLIGATOIRE — TEST DE FLUIDITÉ FRANÇAISE
+
+**Avant de marquer un verset comme « fait », relire la traduction complète à voix haute (ou mentalement avec accent francophone) comme un francophone naïf qui ne connaît ni l'arabe ni la racine ni le complément implicite du contexte.**
+
+Tester **3 niveaux** :
+
+**Niveau 1 — LEXICAL** : le mot choisi sans contexte est-il univoque ?
+- ❌ « se remettre » sans complément = guérir / convalescence en français contemporain
+- ✅ « s'en remettre [à quelqu'un] » = confier sa cause (idiomatique). Le « en » est intrinsèque au verbe, pas un complément ajouté
+- ❌ « se rendre » sans contexte = aller à un lieu (mouvement)
+- ✅ Si on veut le sens « capituler » → préférer « se livrer » ou « capituler » directement
+
+**Niveau 2 — GRAMMATICAL** : la construction française est-elle correcte indépendamment de l'arabe ?
+- ❌ « après que » + présent (« après que vous êtes ») — incorrect en français moderne
+- ✅ « après que » + passé composé (« après que vous vous êtes remis »)
+- ✅ « après » + infinitif passé (« après vous être remis »)
+- ❌ « ordonner que vous fassiez » — lourd
+- ✅ « ordonner de faire » — naturel après *ordonner / recommander / demander / proposer*
+- Subordonnées qui prennent le subjonctif : *avant que / sans que / bien que*
+- Subordonnées qui prennent l'indicatif/passé : *après que / dès que / lorsque*
+
+**Niveau 3 — FLUIDITÉ (phrase entière)** : pas de subordonnées enchâssées, pas de périphrases empilées. Si la traduction française a beaucoup plus de mots que le verset arabe, c'est un signal d'alerte. Fidélité ≠ lourdeur.
+
+**Procédure** :
+1. Une fois la traduction écrite, la relire **d'un seul jet à voix haute**, en oubliant l'arabe et la racine
+2. Tester les 3 niveaux ci-dessus
+3. Si bancal, reformuler **sans changer le sens retenu** — choisir une autre expression française qui le rend
+4. Vérifier que l'expression existe dans `word_meanings` du concept retenu, sinon l'ajouter d'abord
+
+**Cas vus en avril 2026 (sourate 3)** :
+- ❌ V52/V64/V67/V80 : *muslimūn* traduit *« qui se remettent »* → ambigu (convalescence). Corrigé en *« qui s'en remettent »* (idiome français correct, sans ajouter de complément étranger au texte)
+- ❌ V80 : *« qu'il ne vous ordonne pas que vous adoptiez »* → lourd. Corrigé en *« qu'il ne vous ordonne pas d'adopter »*
+- ❌ V80 : *« après que vous êtes remis »* → grammaticalement incorrect. Corrigé en *« après que vous vous en êtes remis »* (passé composé) ou *« après vous être remis »* (infinitif passé)
+
+**RÈGLE — Toute modification de traduction PROPAGE automatiquement à §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§ / proof_ctx**. Quand on change `translation_arab` ou un `segments[].fr`, on DOIT immédiatement mettre à jour :
+- Les parenthèses `**phon** (fr)` dans §DEMARCHE§
+- Les titres `**fr** —` dans §JUSTIFICATION§
+- Les blocs `**X vs « Y »**` dans §CRITIQUE§ (X = notre version)
+- Les arguments du §CRITIQUE§ qui deviendraient caducs (par alignement involontaire avec Hamidullah)
+- Les mentions de la traduction dans la phrase d'introduction (résumé) et §FINALITE§
+- Le `proof_ctx` du retenu si la formulation y est citée
+Ne pas attendre que l'utilisateur le demande — c'est implicite dans toute modification de traduction.
 
 ### 4c. Stockage
 - `verse_analyses` : translation_arab, translation_explanation, segments, **full_translation** (traduction classique Hamidullah pour comparaison dans l'UI)

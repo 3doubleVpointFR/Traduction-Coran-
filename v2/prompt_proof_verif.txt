@@ -1,0 +1,17 @@
+Cette verification consiste a vérifié le proof dans le fond et dans la forme:
+Vérifie la qualité de tous les `proof_ctx` des VWA pour le verset que tu viens de produire.
+Et verifie bien qu'il y'a bien 3 phrase du quotidient qui correspond au sens retenu de chaque racine . 
+et verifie bien que dans le proof y'a bien un résumé de ta flexion de la pipeliine sur les 5 axes qui concerne ce mot inscrit dans ce verset precis pas un proof generique il doit justifié dans le contexte du verset, et si tu vois que en relisant ton explication sur les 5 axes tu t'aperçois que en faite c'est pas le bon sens tu peux peux le changer 
+
+
+Procédure obligatoire :
+0. dans chaque proof je ne veux pas de phonetic ni d'arabe ni de terme technique, une Français clair et fluide qu'un enfant de 12 ans peut comprendre. 
+1. Pour CHAQUE concept retenu : vérifier que `proof_ctx` contient (a) la formule "***Sens retenu :***" alignée sur `sense_chosen` (pas un autre verbe/forme qui n'est pas dans word_meanings), le mot juste après "Sens retenu :" doit correspondre à sense_chosen », (b) ≥4 phrases avec analyse de la forme grammaticale, racine, contexte, et nature philosophique.
+2. Pour CHAQUE concept "probable" : vérifier que le proof_ctx du retenu mentionne ce probable PAR SON NOM et fait une distinction philosophique substantielle vs lui (≥80 chars de discussion philosophique, pas juste « sans rapport »). La distinction doit identifier la nature spécifique de chaque concept (acte directionnel, état intérieur, processus biologique, sujet moral, etc.) et expliquer pourquoi le contexte du verset exclut le probable. (comparaison que entre retenu et probable les autre ont leurs propre proof)
+Aussi pour toute les comparaison retenu avec probable, tu met un tiret devant chaque probable pour que sa se voit bien
+3. Pour les "peu_probable" : 1-2 phrases avec distinction philosophique vs le retenu (pas juste « sans rapport »).
+4. Pour les "nul" : 1 phrase courte est OK, MAIS deux concepts nul ne doivent PAS avoir le même proof_ctx mot-pour-mot (différencier au minimum).
+5. Vérifier l'absence de : mot « concept » (utiliser « sens »), lettres arabes, phrases en anglais, anthropomorphisme, jargon linguistique non expliqué.
+6. Vérifier que `sense_chosen` correspond exactement à `segment.sense_retenu` (les deux doivent être un sens présent dans `word_meanings` du concept retenu).
+
+Exécute le script `scripts/_check_proof_distinctions.js <verseId>` pour la vérification automatique des distinctions vs probables. Liste TOUTES les anomalies détectées avant de proposer des corrections. Ne pas se contenter d'un compte de longueur — analyser la substance philosophique de chaque distinction.
