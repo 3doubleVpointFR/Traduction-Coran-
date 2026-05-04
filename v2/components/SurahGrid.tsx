@@ -9,15 +9,19 @@ interface Surah {
   name_latin: string
   name_fr: string
   verse_count: number
+  validated_count: number
 }
 
 export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
   const [search, setSearch] = useState('')
+  const [showAll, setShowAll] = useState(false)
   const [loadingId, setLoadingId] = useState<number | null>(null)
   const searchId = useId()
 
-  const filtered = surahs.filter(s => {
-    if (!search.trim()) return true
+  const isSearching = !!search.trim()
+
+  const matchesSearch = (s: Surah) => {
+    if (!isSearching) return true
     const q = search.trim().toLowerCase()
     if (/^\d+$/.test(q)) return s.id.toString().startsWith(q)
     return (
@@ -25,7 +29,18 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
       s.name_fr.toLowerCase().includes(q) ||
       s.name_ar.includes(q)
     )
+  }
+
+  // Quand on cherche, afficher toutes les sourates qui matchent (peu importe showAll).
+  // Sinon, afficher uniquement les sourates commencées (validated_count > 0) sauf si showAll est activé.
+  const visible = surahs.filter(s => {
+    if (!matchesSearch(s)) return false
+    if (isSearching || showAll) return true
+    return s.validated_count > 0
   })
+
+  const hiddenCount = surahs.filter(s => s.validated_count === 0).length
+  const filtered = visible
 
   return (
     <div>
@@ -140,10 +155,70 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
                 </span>
               </div>
 
-              {/* Signes */}
-              <span style={{ fontSize: '13px', color: '#6B5E52', flexShrink: 0, fontFamily: "'Cormorant Garamond', serif", fontWeight: 500 }}>
-                {s.verse_count} <span style={{ fontSize: '11.5px', color: '#8A7E72', letterSpacing: '0.04em' }}>signes</span>
-              </span>
+              {/* Progression — versets validés ★ / total signes */}
+              <div
+                aria-label={`${s.validated_count} verset${s.validated_count > 1 ? 's' : ''} validé${s.validated_count > 1 ? 's' : ''} sur ${s.verse_count}`}
+                style={{
+                  flexShrink: 0,
+                  width: 'clamp(80px, 20vw, 110px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-end',
+                  gap: '4px',
+                }}
+              >
+                {/* Ratio chiffré */}
+                <span
+                  style={{
+                    fontSize: '12.5px',
+                    color: '#6B5E52',
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 500,
+                    letterSpacing: '0.02em',
+                    lineHeight: 1,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {s.validated_count > 0 && (
+                    <span style={{ color: '#B8962E', fontStyle: 'italic', marginRight: '3px' }}>
+                      {s.validated_count}
+                    </span>
+                  )}
+                  {s.validated_count > 0 && (
+                    <span style={{ color: '#8A7E72', margin: '0 2px' }}>/</span>
+                  )}
+                  <span>{s.verse_count}</span>
+                  <span style={{ fontSize: '11px', color: '#8A7E72', letterSpacing: '0.04em', marginLeft: '4px' }}>
+                    signes
+                  </span>
+                </span>
+                {/* Barre de progression — palette or, plus visible */}
+                <div
+                  style={{
+                    width: '100%',
+                    height: '6px',
+                    background: 'rgba(184,150,46,0.18)',
+                    borderRadius: '3px',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    boxShadow: 'inset 0 1px 1px rgba(120,90,30,0.08)',
+                    border: '1px solid rgba(184,150,46,0.18)',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${Math.min(100, (s.validated_count / Math.max(1, s.verse_count)) * 100)}%`,
+                      height: '100%',
+                      background: s.validated_count >= s.verse_count
+                        ? 'linear-gradient(90deg, #B8962E 0%, #D4AF3F 50%, #B8962E 100%)'
+                        : 'linear-gradient(90deg, #B8962E 0%, #D4AF3F 100%)',
+                      borderRadius: '2px',
+                      transition: 'width 0.3s ease',
+                      boxShadow: s.validated_count > 0 ? '0 0 4px rgba(184,150,46,0.45)' : 'none',
+                    }}
+                  />
+                </div>
+              </div>
 
               {/* Arabe */}
               <span className="font-arabic surah-ar" lang="ar" dir="rtl" style={{ fontSize: 'clamp(20px, 5.5vw, 22px)', color: '#B8962E', flexShrink: 0, width: 'clamp(70px, 22vw, 90px)', textAlign: 'right', lineHeight: 1.4, display: 'inline-block' }}>
@@ -160,12 +235,51 @@ export default function SurahGrid({ surahs }: { surahs: Surah[] }) {
         </p>
       )}
 
+      {/* Toggle « Voir les autres sourates » — visible seulement quand on n'est pas en recherche */}
+      {!isSearching && hiddenCount > 0 && (
+        <div className="text-center mt-5">
+          <button
+            type="button"
+            onClick={() => setShowAll(v => !v)}
+            className="surah-toggle"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              color: '#8A7428',
+              fontSize: '14px',
+              fontStyle: 'italic',
+              letterSpacing: '0.04em',
+              padding: '10px 22px',
+              background: '#FFFFFF',
+              border: '1px solid rgba(184,150,46,0.28)',
+              borderRadius: '999px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 1px 2px rgba(184,150,46,0.06)',
+            }}
+            aria-expanded={showAll}
+          >
+            {showAll
+              ? '↑ Replier — n\'afficher que les sourates commencées'
+              : `Voir les ${hiddenCount} autres sourates ↓`}
+          </button>
+        </div>
+      )}
+
       <style jsx>{`
         .surah-search:focus,
         .surah-search:focus-visible {
           border-color: #B8962E !important;
           box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15), 0 1px 3px rgba(184, 150, 46, 0.1) !important;
           outline: none !important;
+        }
+        .surah-toggle:hover {
+          background: #FFFCF6 !important;
+          border-color: rgba(184, 150, 46, 0.5) !important;
+          color: #B8962E !important;
+          box-shadow: 0 2px 6px rgba(184, 150, 46, 0.12) !important;
+        }
+        .surah-toggle:active {
+          transform: translateY(1px);
         }
       `}</style>
     </div>

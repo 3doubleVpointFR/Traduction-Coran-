@@ -10,27 +10,31 @@ async function getData() {
   const db = getSupabaseAdmin()
   const surahsRes = await db.from('surahs').select('id, name_ar, name_latin, name_fr, verse_count').order('id')
 
-  // Récupère les surah_id qui possèdent au moins un verset analysé.
-  const doneSurahIds = new Set<number>()
+  // Compte les versets validés ★ (verification_done = true) par sourate
+  const validatedBySurah = new Map<number, number>()
   let offset = 0
   while (true) {
     const { data: chunk } = await db
       .from('verse_analyses')
-      .select('verse_id, verses!inner(surah_id)')
-      .not('translation_arab', 'is', null)
+      .select('verses!inner(surah_id)')
+      .eq('verification_done', true)
       .range(offset, offset + 999)
     if (!chunk || chunk.length === 0) break
     for (const row of chunk) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const sid = (row as any).verses?.surah_id
-      if (sid) doneSurahIds.add(sid)
+      if (sid) validatedBySurah.set(sid, (validatedBySurah.get(sid) || 0) + 1)
     }
     if (chunk.length < 1000) break
     offset += 1000
   }
 
   const allSurahs = surahsRes.data ?? []
-  const surahs = allSurahs.filter(s => doneSurahIds.has(s.id))
+  // Affiche TOUTES les sourates, triées par nb de versets étoilés décroissant.
+  // En cas d'égalité (souvent à 0), tri par n° de sourate croissant pour garder l'ordre canonique.
+  const surahs = allSurahs
+    .map(s => ({ ...s, validated_count: validatedBySurah.get(s.id) ?? 0 }))
+    .sort((a, b) => (b.validated_count - a.validated_count) || (a.id - b.id))
 
   return { surahs }
 }
