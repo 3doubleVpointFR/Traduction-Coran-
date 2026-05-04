@@ -239,7 +239,7 @@ function MobileSheet({
 function Pagination({ current, total, onChange, delayMs }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number }) {
   return (
     <div
-      className="surah-pagination page-section-anim flex items-center justify-center gap-3 py-3"
+      className="surah-pagination page-section-anim flex items-center justify-center gap-4 py-4"
       style={delayMs != null ? { animationDelay: `${delayMs}ms` } : undefined}
     >
       <button
@@ -249,7 +249,7 @@ function Pagination({ current, total, onChange, delayMs }: { current: number; to
         aria-label="Page précédente"
         className="surah-page-arrow"
       >
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </button>
@@ -261,17 +261,18 @@ function Pagination({ current, total, onChange, delayMs }: { current: number; to
         className="italic surah-page-counter"
         style={{
           fontFamily: "'Cormorant Garamond', serif",
-          fontSize: '12px',
-          color: '#8A7E72',
-          letterSpacing: '0.10em',
+          fontSize: '15px',
+          color: '#5A4A30',
+          letterSpacing: '0.08em',
           textTransform: 'uppercase',
           margin: 0,
           lineHeight: 1,
-          minWidth: '110px',
+          minWidth: '130px',
           textAlign: 'center',
+          fontWeight: 500,
         }}
       >
-        Page <strong style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>{current}</strong> sur {total}
+        Page <strong style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>{current}</strong> sur <strong style={{ color: '#5A4A30', fontWeight: 700, fontStyle: 'normal' }}>{total}</strong>
       </p>
 
       <button
@@ -281,7 +282,7 @@ function Pagination({ current, total, onChange, delayMs }: { current: number; to
         aria-label="Page suivante"
         className="surah-page-arrow"
       >
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
@@ -381,6 +382,69 @@ interface Props {
   allDoneVerseNums: number[]
 }
 
+// ═══════════════════════════════════════════════════════════════
+// HiddenVerseCard — placeholder pour les versets non vérifiés
+// ═══════════════════════════════════════════════════════════════
+// Affiché par défaut pour tout verset dont verification_done !== true.
+// L'utilisateur peut cliquer « Voir quand même » pour révéler le verset
+// (analyse incomplète, peut contenir de fausses informations).
+function HiddenVerseCard({
+  verseNum,
+  onReveal,
+}: {
+  verseNum: number
+  onReveal: () => void
+}) {
+  return (
+    <div
+      className="rounded-2xl px-6 py-7 flex flex-col items-center justify-center gap-3 text-center"
+      style={{
+        background: 'linear-gradient(180deg, rgba(255,253,247,0.85) 0%, rgba(252,247,235,0.7) 100%)',
+        border: '1px dashed rgba(184,150,46,0.35)',
+      }}
+    >
+      {/* Numéro du verset (style cohérent avec VersePanel) */}
+      <div
+        className="font-serif tracking-wide"
+        style={{
+          fontFamily: '"Cormorant Garamond", serif',
+          fontSize: '1.05rem',
+          color: '#7a6420',
+          opacity: 0.85,
+          letterSpacing: '0.02em',
+        }}
+      >
+        Verset {verseNum}
+      </div>
+      <p
+        className="text-sm"
+        style={{
+          color: '#8a7437',
+          fontFamily: '"Inter", system-ui, sans-serif',
+          maxWidth: '360px',
+          lineHeight: 1.5,
+        }}
+      >
+        Verset pas encore fini d'être analysé.
+      </p>
+      <button
+        onClick={onReveal}
+        className="text-sm rounded-full transition-all hover:scale-105"
+        style={{
+          padding: '7px 18px',
+          background: 'rgba(184,150,46,0.08)',
+          border: '1px solid rgba(184,150,46,0.4)',
+          color: '#8a7437',
+          fontFamily: '"Inter", system-ui, sans-serif',
+          letterSpacing: '0.01em',
+        }}
+      >
+        Voir quand même
+      </button>
+    </div>
+  )
+}
+
 export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse, currentPage, totalPages, pageSize, allDoneVerseNums }: Props) {
   const router = useRouter()
   const [activeWordKey, setActiveWordKey] = useState<string | null>(null)
@@ -389,6 +453,9 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   const [analyzingVerse, setAnalyzingVerse] = useState<number | null>(null)
   const [jobProgress, setJobProgress] = useState<JobProgress | null>(null)
   const [jumpInput, setJumpInput] = useState('')
+  // Versets non vérifiés cachés par défaut — l'utilisateur peut les révéler
+  // un par un via le bouton « Voir quand même ».
+  const [revealedVerses, setRevealedVerses] = useState<Set<number>>(new Set())
   // useTransition garde l'ancien contenu visible pendant que Next.js fetch la
   // nouvelle page → plus de flash skeleton entre les pages. isPending sert à
   // dimmer subtilement les versets pendant la transition.
@@ -917,19 +984,66 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         }}
       >
         {/* Verse list */}
-        {verses.map((verse) => (
-          <VersePanel
-            key={verse.id}
-            verse={verse}
-            words={wordsByVerse[verse.id] ?? []}
-            analysis={verseAnalyses[verse.id] as VerseAnalysis | undefined}
-            isAnalyzing={analyzingVerse === verse.id}
-            jobProgress={analyzingVerse === verse.id ? jobProgress : null}
-            activeWordKey={activeWordKey}
-            onWordClick={handleWordClick}
-            onAnalyze={() => handleAnalyzeVerse(verse.id, verse.surah_id, verse.verse_num)}
-          />
-        ))}
+        {verses.map((verse) => {
+          // Versets non vérifiés cachés par défaut, sauf si l'utilisateur a
+          // cliqué « Voir quand même ». Quand on pose verification_done=true
+          // en BDD, le verset apparaît automatiquement (plus dans le placeholder).
+          const isHidden = !verse.verification_done && !revealedVerses.has(verse.id)
+          // Si l'utilisateur a manuellement révélé un verset non vérifié,
+          // on lui propose de le re-cacher via un petit bouton en haut.
+          const isManuallyRevealed = !verse.verification_done && revealedVerses.has(verse.id)
+          if (isHidden) {
+            return (
+              <HiddenVerseCard
+                key={verse.id}
+                verseNum={verse.verse_num}
+                onReveal={() => setRevealedVerses(prev => {
+                  const next = new Set(prev)
+                  next.add(verse.id)
+                  return next
+                })}
+              />
+            )
+          }
+          return (
+            <div key={verse.id} className="space-y-1">
+              {isManuallyRevealed && (
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setRevealedVerses(prev => {
+                      const next = new Set(prev)
+                      next.delete(verse.id)
+                      return next
+                    })}
+                    className="text-xs rounded-full transition-all hover:scale-105 inline-flex items-center gap-1.5"
+                    style={{
+                      padding: '4px 12px',
+                      background: 'rgba(184,150,46,0.06)',
+                      border: '1px solid rgba(184,150,46,0.3)',
+                      color: '#8a7437',
+                      fontFamily: '"Inter", system-ui, sans-serif',
+                      letterSpacing: '0.01em',
+                    }}
+                    title="Verset non vérifié — peut contenir des informations provisoires"
+                  >
+                    <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>⚠</span>
+                    Cacher à nouveau
+                  </button>
+                </div>
+              )}
+              <VersePanel
+                verse={verse}
+                words={wordsByVerse[verse.id] ?? []}
+                analysis={verseAnalyses[verse.id] as VerseAnalysis | undefined}
+                isAnalyzing={analyzingVerse === verse.id}
+                jobProgress={analyzingVerse === verse.id ? jobProgress : null}
+                activeWordKey={activeWordKey}
+                onWordClick={handleWordClick}
+                onAnalyze={() => handleAnalyzeVerse(verse.id, verse.surah_id, verse.verse_num)}
+              />
+            </div>
+          )
+        })}
       </div>
 
       {/* Right column: word panel — DESKTOP UNIQUEMENT (≥ 1024px) */}
