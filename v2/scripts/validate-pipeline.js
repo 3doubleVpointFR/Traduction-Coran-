@@ -1071,16 +1071,15 @@ async function run() {
       err('V' + v.verse_num + ': segments utilisent "ar" au lieu de "arabic" (ancien schéma)')
       segSchemaOk = false
     }
-    // Vérifier qu'aucun segment NON-PARTICULE n'a fr vide
-    // (les particules peuvent avoir fr vide légitimement si absorbées dans segments adjacents)
-    const emptyFrNonParticle = segs.filter(s => (!s.fr || s.fr === '') && !s.is_particle).map(s => 'pos=' + (s.position || s.pos) + '(phon=' + s.phon + ')')
-    if (emptyFrNonParticle.length > 0) {
-      err('V' + v.verse_num + ': segments non-particule avec fr vide: ' + emptyFrNonParticle.join(', '))
+    // Vérifier qu'AUCUN segment n'a fr vide — particules incluses
+    // Règle V23/V24 (04/05/2026) : toutes les particules doivent avoir une fr,
+    // même courte ("ne... pas", "à", "et eux"), pour qu'elles soient visibles dans l'UI.
+    // Pattern V23 strict (vidage de particule + formule complète sur le verbe) ABANDONNÉ.
+    const emptyFrAll = segs.filter(s => !s.fr || s.fr === '').map(s => 'pos=' + (s.position || s.pos) + '(phon=' + s.phon + (s.is_particle ? ',particule' : '') + ')')
+    if (emptyFrAll.length > 0) {
+      err('V' + v.verse_num + ': segments avec fr vide: ' + emptyFrAll.join(', '))
       segSchemaOk = false
     }
-    // Particules avec fr vide : info seulement (pas même warning)
-    const emptyFrParticle = segs.filter(s => (!s.fr || s.fr === '') && s.is_particle).length
-    // (silencieux — particules absorbées OK)
   }
   if (segSchemaOk) ok('Tous les segments ont le schéma complet')
 
