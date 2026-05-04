@@ -759,7 +759,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           dir="rtl"
           style={{
             color: '#B8962E',
-            fontSize: 'clamp(2rem, 4vw, 2.75rem)',
+            fontSize: 'clamp(2.4rem, 4.8vw, 3.25rem)',
             lineHeight: 1.1,
             margin: 0,
             textShadow: '0 1px 0 rgba(184,150,46,0.06)',
@@ -850,10 +850,10 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             <label
               htmlFor="verse-jump-input"
               style={{
-                color: '#8A7E72',
+                color: '#6B5E52',
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: 'italic',
-                fontSize: '12.5px',
+                fontSize: '14.5px',
                 letterSpacing: '0.04em',
                 whiteSpace: 'nowrap',
               }}
@@ -870,11 +870,11 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
               onChange={(e) => setJumpInput(e.target.value)}
               placeholder={`1–${surah.verse_count}`}
               style={{
-                width: '64px',
+                width: '70px',
                 padding: '4px 0',
                 border: 'none',
                 background: 'transparent',
-                fontSize: '13.5px',
+                fontSize: '15px',
                 color: '#1A1410',
                 textAlign: 'center',
                 fontFamily: "'Cormorant Garamond', serif",
@@ -887,8 +887,8 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
               aria-label="Aller au verset"
               className="verse-jumper-btn"
               style={{
-                width: '30px',
-                height: '30px',
+                width: '34px',
+                height: '34px',
                 borderRadius: '50%',
                 border: '1px solid rgba(158,126,31,0.4)',
                 background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
@@ -897,7 +897,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '14px',
+                fontSize: '16px',
                 fontWeight: 700,
                 lineHeight: 1,
                 flexShrink: 0,
@@ -917,11 +917,11 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             lang="ar"
             dir="rtl"
             style={{
-              color: '#8A7E72',
-              fontSize: 'clamp(18px, 2.5vw, 22px)',
+              color: '#7a6a52',
+              fontSize: 'clamp(22px, 3.2vw, 28px)',
               lineHeight: 1.6,
-              opacity: 0.85,
-              margin: '16px 0 0 0',
+              opacity: 0.92,
+              margin: '18px 0 0 0',
             }}
           >
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
