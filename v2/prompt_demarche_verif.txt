@@ -7,4 +7,5 @@ Procédure obligatoire :
 4. Pour les négations françaises « ne...pas » qui enveloppent le verbe en un bloc : appliquer le pattern V23 — la formule complète française (« ne...pas X ») est portée par le segment du mot porteur, pas répartie artificiellement.
 
 Verifie aussi que dans l'ui toute les particule etc on bien une traduction affiché en dessous de la phonetic  . 
+ Aucun segment ne doit avoir fr vide — même les particules.
 Exécute le script `scripts/_check_demarche_coherence.js` (et `_check_v25_demarche_full.js` si plus détaillé), corrige les incohérences détectées, et affiche un tableau récapitulatif des corrections appliquées (segment touché → ancienne valeur → nouvelle valeur). Re-lance la validation (validate-pipeline.js) à la fin.

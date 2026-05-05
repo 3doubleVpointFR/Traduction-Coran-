@@ -12,15 +12,15 @@ Trad : « Il y avait déjà pour vous un signe dans ces deux troupes qui s'affro
 
 Vérification anti-tafsir : le mot Badr n'apparaît pas dans les segments V13 (aucune position ne le nomme). Identification tafsirique exclue.
 
-MACRO(doit montré en quoi ce verset s'insere dans le discours de la sourate) :
+MACRO(doit montré en quoi ce verset s'insere dans le discours de la sourate vue plus verset / sourate) :
 
 Le V13 clôt la séquence sur ceux qui ont rejeté (V10-V13) dans la sourate « la famille de ʿImrān » par un second précédent — la rencontre entre deux troupes. Contrairement au V11 qui nommait le précédent (Pharaon), le V13 décrit l'événement sans nommer ses protagonistes. La séquence se ferme ainsi sur deux types de précédents : un nommé et historique (Pharaon), un décrit et anonyme (les deux troupes).
 
-MICRO(doit montré en quoi ce verset s'insere dans le discours des verset voisin) :
+MICRO(doit montré en quoi ce verset s'insere dans le discours des verset voisin vue verset/verset voisin) :
 
 Le V11 venait de citer le précédent historique de la famille de Pharaon. Le V12 annonçait que ceux qui ont rejeté seraient vaincus et rassemblés vers la Géhenne. Le V13 fournit un second précédent à l'appui de cette annonce : une rencontre entre deux troupes, l'une combattant dans la voie de Dieu, l'autre dans le rejet. Le verset oppose les deux camps, puis rapporte ce que ceux qui rejettent ont perçu — les croyants leur paraissaient deux fois leur nombre, vus directement de leurs yeux. Il se clôt par une affirmation générale sur le secours divin (Dieu renforce de Son secours qui Il veut) et présente l'épisode comme une leçon pour les détenteurs de clairvoyance.
 
-ITALIQUE :
+ITALIQUE (analyse analytic global) :
 
 Les V11 et V13 fournissent deux précédents pour appuyer l'annonce du V12 : le premier est nommé et historique (Pharaon), le second est décrit sans être nommé (les deux troupes). Au lecteur, l'écriture donne deux types d'appui — un cas reconnu par son nom propre, un cas reconnu par sa configuration (deux camps qui s'affrontent, un dans la voie de Dieu, un dans le rejet).
 
