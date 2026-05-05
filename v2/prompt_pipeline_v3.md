@@ -185,6 +185,31 @@ Exemple :
    - **Pas de titre, pas de balise, pas de "Ce verset..."** — juste la phrase.
    - **Référents**: les trois axes-clés de la mission khalifa sont **(1) vivifier la terre, (2) établir la justice, (3) accomplir l'adoration**. Évoquer un ou plusieurs de ces axes selon ce qui est pertinent au verset, ne pas les forcer tous.
 
+### 4b-bis. Rédaction des deux résumés (depuis 2026-05-05)
+
+**Important** : depuis 2026-05-05, le résumé est séparé en deux champs BDD distincts sur `verse_analyses` (`summary_short` et `summary_long`), et n'apparaît plus dans `translation_explanation`. Le §DEMARCHE§ commence directement par le premier paragraphe `**phon** (fr) — explication`.
+
+**`summary_short`** (résumé court, affiché par défaut dans l'UI)
+- 3-4 phrases max
+- Doit paraphraser et vulgariser le verset
+- Doit permettre à une personne **qui tombe sur ce verset isolé** (sans avoir lu V-1, V-2, etc.) de comprendre rapidement de quoi il parle
+- Si le verset fait référence à un personnage déjà nommé ou à un événement antérieur, **citer brièvement les éléments cruciaux** (ex: « Faisant suite au V33 qui venait de nommer Adam, Noé, la famille d'Abraham et la famille d'Imrān parmi les élus de Dieu, … »)
+- Style : français courant, vulgarisé, lecture rapide
+- Pas de jargon grammatical, pas de phonétique, pas d'arabe brut
+
+**`summary_long`** (note contextuelle longue, repliée par défaut dans l'UI)
+3 blocs séparés par double saut de ligne, dans cet ordre :
+1. **MACRO** — verset ↔ sourate (1 paragraphe situationnel)
+2. **MICRO** — verset ↔ V-1 (1 paragraphe relationnel)
+3. **ITALIQUE** — fait textuel marquant (1 paragraphe en italique avec `*…*`)
+
+Éviter les redits entre MACRO/MICRO/ITALIQUE : chaque bloc apporte un angle différent.
+
+**Mots interdits dans les DEUX champs** :
+- ❌ « rejetants », « rejetant », « rejetantes » → utiliser **« ceux qui ont rejeté »** (cohérence trad maison)
+- ❌ « mécréants », « mécréant », « infidèles », « hypocrites » (post-islamiques)
+- ❌ « islam » au sens confessionnel (post-islamique) → utiliser **« remise de soi »**
+
 3. **Pas de mot "concept"** : ne JAMAIS utiliser le mot "concept" dans la démarche ni la justification. Toujours dire "sens". Le mot "concept" est notre méthode interne, l'utilisateur ne doit jamais le voir.
 4. **3 phrases du quotidien** pour chaque sens retenu uniquement. **SKIP si des phrases existent déjà** pour cette racine dans `word_daily` : vérifier `SELECT count(*) FROM word_daily WHERE analysis_id = X`. Si count > 0 → ne PAS en ajouter. Les phrases sont permanentes par racine comme les sens.
 5. **Segments d'affichage** : créer les segments avec le format { fr, pos, phon, arabic, word_key, is_particle, sense_retenu, **position** }. Le champ position est OBLIGATOIRE — il correspond à la position du mot dans les segments de l'étape 1.

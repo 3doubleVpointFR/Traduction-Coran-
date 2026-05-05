@@ -36,6 +36,8 @@ interface VerseAnalysis {
   full_translation?: string
   translation_arab?: string
   translation_explanation?: string
+  summary_short?: string
+  summary_long?: string
 }
 
 interface Props {
@@ -77,30 +79,30 @@ export default function VersePanel({
   const [verseHideArabic, setVerseHideArabic] = useState(false)
   const [verseHidePhon, setVerseHidePhon] = useState(false)
   const [verseHideSections, setVerseHideSections] = useState(false)
-  // Résumé : par défaut entièrement visible, bouton "Réduire" pour le replier après lecture
+  // Résumé court : par défaut entièrement visible, bouton "Réduire" pour le replier après lecture
   const [resumeExpanded, setResumeExpanded] = useState(true)
+  // Note contextuelle (ancienne intro MACRO/MICRO/ITALIQUE) : repliée par défaut
+  const [noteExpanded, setNoteExpanded] = useState(false)
   const segments = analysis?.segments
 
-  // Extract §DEMARCHE§ intro paragraph (résumé) to display under the verse header.
-  // The intro is everything in §DEMARCHE§ before the first **word** paragraph.
-  let demarcheIntro = ''
-  const explText = analysis?.translation_explanation || ''
-  if (explText.includes('§DEMARCHE§')) {
-    const parts = explText.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE|FINALITE)§/)
-    for (let i = 0; i < parts.length; i++) {
-      if (parts[i] === 'DEMARCHE') {
-        const dem = (parts[i + 1] || '').trim()
-        // Try double-newline + ** first (standard format)
-        let firstMark = dem.indexOf('\n\n**')
-        // Fallback : if no double-newline, look for ` **` (space + bold) which is
-        // typically where a word analysis starts even without proper line breaks
-        if (firstMark < 0) firstMark = dem.indexOf(' **')
-        if (firstMark > 0) {
-          demarcheIntro = dem.substring(0, firstMark).trim()
-        } else {
-          // Last fallback : take the first sentence (up to first period followed by space+capital)
-          const sentenceMatch = dem.match(/^[^.!?]{20,}[.!?](?=\s)/)
-          if (sentenceMatch) demarcheIntro = sentenceMatch[0].trim()
+  // Résumé court (3-4 phrases) — nouveau champ dédié
+  const summaryShort = (analysis?.summary_short || '').trim()
+  // Note contextuelle longue (ancien MACRO/MICRO/ITALIQUE) — nouveau champ dédié
+  const summaryLong = (analysis?.summary_long || '').trim()
+
+  // Fallback rétrocompatible : si summary_short est vide mais qu'une vieille intro
+  // est encore dans §DEMARCHE§ (versets pas encore migrés), l'extraire pour l'afficher.
+  let demarcheIntro = summaryLong
+  if (!demarcheIntro) {
+    const explText = analysis?.translation_explanation || ''
+    if (explText.includes('§DEMARCHE§')) {
+      const parts = explText.split(/§(DEMARCHE|JUSTIFICATION|CRITIQUE|FINALITE)§/)
+      for (let i = 0; i < parts.length; i++) {
+        if (parts[i] === 'DEMARCHE') {
+          const dem = (parts[i + 1] || '').trim()
+          let firstMark = dem.indexOf('\n\n**')
+          if (firstMark < 0) firstMark = dem.indexOf(' **')
+          if (firstMark > 0) demarcheIntro = dem.substring(0, firstMark).trim()
         }
       }
     }
@@ -169,80 +171,142 @@ export default function VersePanel({
         )}
       </div>
 
-      {/* Résumé du verset (intro de §DEMARCHE§) */}
-      {demarcheIntro && (() => {
-        const paragraphs = demarcheIntro.split('\n\n').filter(s => s.trim())
+      {/* Helper inline pour rendre les paragraphes avec **bold** et *italic* */}
+      {(() => {
+        const renderParagraphs = (text: string) => {
+          const paragraphs = text.split('\n\n').filter(s => s.trim())
+          return paragraphs.map((para, i) => {
+            const boldChunks = para.split(/(\*\*[^*]+\*\*)/g)
+            return (
+              <p key={i} style={{ marginBottom: i < paragraphs.length - 1 ? '6px' : 0, fontStyle: 'italic' }}>
+                {boldChunks.map((chunk, k) => {
+                  if (chunk.startsWith('**') && chunk.endsWith('**')) {
+                    return (
+                      <span key={k} style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>
+                        {chunk.slice(2, -2)}
+                      </span>
+                    )
+                  }
+                  const italicParts = chunk.split(/(\*[^*]+\*)/g)
+                  return italicParts.map((part, m) => {
+                    if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
+                      return (
+                        <span key={`${k}-${m}`} style={{ color: '#8B6914', fontWeight: 500 }}>
+                          {part.slice(1, -1)}
+                        </span>
+                      )
+                    }
+                    return <React.Fragment key={`${k}-${m}`}>{part}</React.Fragment>
+                  })
+                })}
+              </p>
+            )
+          })
+        }
+
         return (
-          <div
-            data-tour-summary="1"
-            className="resume-box"
-            style={{
-              margin: '0 0 14px 0',
-              background: 'rgba(184,150,46,0.13)',
-              border: '1px solid rgba(184,150,46,0.32)',
-              borderLeft: '5px solid rgba(184,150,46,0.85)',
-              borderRadius: '0 10px 10px 0',
-              color: '#1A1410',
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 500,
-              boxShadow: '0 2px 6px rgba(120,90,30,0.10), inset 0 1px 0 rgba(255,255,255,0.4)',
-            }}
-          >
-            <div
-              className="italic uppercase resume-label"
-              style={{
-                letterSpacing: '0.16em',
-                color: '#8A7428',
-                fontWeight: 700,
-                fontFamily: "'Cormorant Garamond', serif",
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-              }}
-            >
-              <span aria-hidden="true">✦</span>
-              Résumé
-            </div>
-            <div className={`resume-content${resumeExpanded ? '' : ' is-collapsed'}`}>
-              {paragraphs.map((para, i) => {
-                // Process **bold** then *italic* inside each paragraph.
-                const boldChunks = para.split(/(\*\*[^*]+\*\*)/g)
-                return (
-                  <p key={i} style={{ marginBottom: i < paragraphs.length - 1 ? '6px' : 0, fontStyle: 'italic' }}>
-                    {boldChunks.map((chunk, k) => {
-                      if (chunk.startsWith('**') && chunk.endsWith('**')) {
-                        return (
-                          <span key={k} style={{ color: '#B8962E', fontWeight: 700, fontStyle: 'normal' }}>
-                            {chunk.slice(2, -2)}
-                          </span>
-                        )
-                      }
-                      // *italic* nested inside (single asterisks) — render in lighter accent.
-                      const italicParts = chunk.split(/(\*[^*]+\*)/g)
-                      return italicParts.map((part, m) => {
-                        if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
-                          return (
-                            <span key={`${k}-${m}`} style={{ color: '#8B6914', fontWeight: 500 }}>
-                              {part.slice(1, -1)}
-                            </span>
-                          )
-                        }
-                        return <React.Fragment key={`${k}-${m}`}>{part}</React.Fragment>
-                      })
-                    })}
-                  </p>
-                )
-              })}
-            </div>
-            <button
-              type="button"
-              onClick={() => setResumeExpanded(e => !e)}
-              className="resume-toggle-btn"
-              aria-expanded={resumeExpanded}
-            >
-              {resumeExpanded ? 'Réduire ↑' : 'Voir le résumé ↓'}
-            </button>
-          </div>
+          <>
+            {/* Résumé court — affiché par défaut, repliable */}
+            {summaryShort && (
+              <div
+                data-tour-summary="1"
+                className="resume-box"
+                style={{
+                  margin: '0 0 12px 0',
+                  background: 'rgba(184,150,46,0.13)',
+                  border: '1px solid rgba(184,150,46,0.32)',
+                  borderLeft: '5px solid rgba(184,150,46,0.85)',
+                  borderRadius: '0 10px 10px 0',
+                  color: '#1A1410',
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 500,
+                  boxShadow: '0 2px 6px rgba(120,90,30,0.10), inset 0 1px 0 rgba(255,255,255,0.4)',
+                }}
+              >
+                <div
+                  className="italic uppercase resume-label"
+                  style={{
+                    letterSpacing: '0.16em',
+                    color: '#8A7428',
+                    fontWeight: 700,
+                    fontFamily: "'Cormorant Garamond', serif",
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                  }}
+                >
+                  <span aria-hidden="true">✦</span>
+                  Résumé
+                </div>
+                <div className={`resume-content${resumeExpanded ? '' : ' is-collapsed'}`}>
+                  {renderParagraphs(summaryShort)}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setResumeExpanded(e => !e)}
+                  className="resume-toggle-btn"
+                  aria-expanded={resumeExpanded}
+                >
+                  {resumeExpanded ? 'Réduire ↑' : 'Voir le résumé ↓'}
+                </button>
+              </div>
+            )}
+
+            {/* Note contextuelle longue — repliée par défaut */}
+            {demarcheIntro && (
+              <div
+                data-tour-note="1"
+                className="note-box"
+                style={{
+                  margin: '0 0 14px 0',
+                  background: 'rgba(180,165,120,0.10)',
+                  border: '1px solid rgba(180,165,120,0.30)',
+                  borderLeft: '4px solid rgba(180,165,120,0.65)',
+                  borderRadius: '0 10px 10px 0',
+                  color: '#1A1410',
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 500,
+                  boxShadow: '0 1px 4px rgba(120,90,30,0.06), inset 0 1px 0 rgba(255,255,255,0.3)',
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setNoteExpanded(e => !e)}
+                  aria-expanded={noteExpanded}
+                  className="note-toggle-header"
+                  style={{
+                    width: '100%',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '8px',
+                    padding: '8px 14px',
+                    textAlign: 'left',
+                    color: '#7A6A38',
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 700,
+                    fontSize: '12px',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <span aria-hidden="true" style={{ color: '#A8902E', fontSize: '11px' }}>✦</span>
+                    Note contextuelle
+                  </span>
+                  <span aria-hidden="true" style={{ fontSize: '11px', opacity: 0.85, transition: 'transform 0.2s ease', transform: noteExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
+                </button>
+                {noteExpanded && (
+                  <div style={{ padding: '0 14px 12px 14px', borderTop: '1px dashed rgba(180,165,120,0.30)' }}>
+                    {renderParagraphs(demarcheIntro)}
+                  </div>
+                )}
+              </div>
+            )}
+          </>
         )
       })()}
 
@@ -356,16 +420,22 @@ export default function VersePanel({
             }
             // FINALITE : ignoré ici, déjà rendu en haut
           }
-          // Strip §DEMARCHE§ intro (already displayed under the header) — keep only **word** paragraphs.
+          // Strip §DEMARCHE§ intro (already extracted to summary_long) — keep only **word** paragraphs.
+          // Cas 1 : déjà migré → dem commence directement par '**' (rien à stripper).
+          // Cas 2 : legacy non migré → il y a une intro avant le premier **word**, on la coupe.
           if (sectionMap['DEMARCHE']) {
             const dem = sectionMap['DEMARCHE']
-            const firstMark = dem.indexOf('\n\n**')
-            if (firstMark > 0) {
-              sectionMap['DEMARCHE'] = dem.substring(firstMark).trim()
-            } else if (dem.startsWith('**') === false) {
-              // Pas de paragraphe **mot** : tout le contenu était l'intro, rien à afficher dans la section.
-              sectionMap['DEMARCHE'] = ''
+            if (!dem.startsWith('**')) {
+              // Legacy : il y a une intro à stripper
+              const firstMark = dem.indexOf('\n\n**')
+              if (firstMark > 0) {
+                sectionMap['DEMARCHE'] = dem.substring(firstMark).trim()
+              } else {
+                // Pas de paragraphe **mot** : rien à afficher
+                sectionMap['DEMARCHE'] = ''
+              }
             }
+            // Sinon (cas 1, migré) : on garde dem tel quel
           }
 
           const renderChunk = (text: string, accentColor: string, baseKey: string) => {

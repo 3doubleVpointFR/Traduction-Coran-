@@ -75,7 +75,7 @@ async function run() {
 
   // Load all data upfront
   const allVwa = await fetchAll('verse_word_analyses', 'id,verse_id,word_key,sense_chosen,analysis_axes,position,reason', q => q.in('verse_id', vids))
-  const allVa = await fetchAll('verse_analyses', 'id,verse_id,segments,full_translation,translation_arab,translation_explanation', q => q.in('verse_id', vids))
+  const allVa = await fetchAll('verse_analyses', 'id,verse_id,segments,full_translation,translation_arab,translation_explanation,summary_short,summary_long,verification_done', q => q.in('verse_id', vids))
   const allWords = await fetchAll('words', 'verse_id,position,arabic,root,transliteration,pos_tag', q => q.in('verse_id', vids))
 
   // Build lookups
@@ -1324,6 +1324,91 @@ async function run() {
   if (fluidOk) ok('Aucun pattern de fluidité française suspect détecté')
   // Note pédagogique pour l'opérateur
   console.log('  ℹ️  Test à effectuer manuellement : RELIRE LA TRADUCTION À VOIX HAUTE comme un francophone naïf, et vérifier 3 niveaux : (1) lexical — chaque mot est univoque sans contexte ; (2) grammatical — la construction française tient indépendamment de l\'arabe ; (3) fluidité — pas de subordonnées enchâssées ni périphrases empilées.')
+
+  // ================================================================
+  // 39. summary_short présent et bien formé (versets validés ★)
+  // ================================================================
+  section(39, 'summary_short présent + format respecté (versets ★)')
+  {
+    const FORBIDDEN = /\b(rejetants?|rejetantes?|mécréants?|mécréantes?|infidèles?|hypocrites?)\b/i
+    let nbMissing = 0
+    let nbForbidden = 0
+    let nbTooLong = 0
+    for (const va of allVa) {
+      if (!va.verification_done) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      if (!va.summary_short || !va.summary_short.trim()) {
+        err(`${verseLabel} : summary_short vide alors que verset validé ★`)
+        nbMissing++
+        continue
+      }
+      const m = va.summary_short.match(FORBIDDEN)
+      if (m) {
+        err(`${verseLabel} : summary_short contient « ${m[0]} » (mot post-islamique interdit — utiliser « ceux qui ont rejeté »)`)
+        nbForbidden++
+      }
+      // 4 phrases max — détection grossière par compte de phrases (point + espace + capitale, ou point final)
+      const sentenceCount = (va.summary_short.match(/[.!?](\s+[A-ZÀÂÉÈÊÎÏÔÙÛŸ«]|$)/g) || []).length
+      if (sentenceCount > 5) {
+        warn(`${verseLabel} : summary_short fait ${sentenceCount} phrases — la règle est 3-4 max (vulgarisation)`)
+        nbTooLong++
+      }
+    }
+    if (nbMissing === 0 && nbForbidden === 0 && nbTooLong === 0) ok('summary_short présent et bien formé pour tous les versets ★')
+  }
+
+  // ================================================================
+  // 40. summary_long présent et structuré (3 blocs)
+  // ================================================================
+  section(40, 'summary_long présent et structuré (versets ★)')
+  {
+    const FORBIDDEN = /\b(rejetants?|rejetantes?|mécréants?|mécréantes?|infidèles?|hypocrites?)\b/i
+    let nbMissing = 0
+    let nbForbidden = 0
+    let nbStructIssue = 0
+    for (const va of allVa) {
+      if (!va.verification_done) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      if (!va.summary_long || !va.summary_long.trim()) {
+        err(`${verseLabel} : summary_long vide alors que verset validé ★`)
+        nbMissing++
+        continue
+      }
+      const m = va.summary_long.match(FORBIDDEN)
+      if (m) {
+        err(`${verseLabel} : summary_long contient « ${m[0]} » (mot post-islamique interdit)`)
+        nbForbidden++
+      }
+      // Vérifier qu'il y a au moins 2 paragraphes (séparés par double saut) — souple : MACRO + MICRO minimum
+      const paragraphs = va.summary_long.split(/\n\n+/).filter(s => s.trim().length > 30)
+      if (paragraphs.length < 2) {
+        warn(`${verseLabel} : summary_long n'a que ${paragraphs.length} paragraphe(s) — attendu 3 (MACRO + MICRO + ITALIQUE)`)
+        nbStructIssue++
+      }
+    }
+    if (nbMissing === 0 && nbForbidden === 0 && nbStructIssue === 0) ok('summary_long présent, structuré, sans mot interdit')
+  }
+
+  // ================================================================
+  // 41. translation_explanation §DEMARCHE§ sans intro (commence par **word**)
+  // ================================================================
+  section(41, '§DEMARCHE§ sans intro (intro déplacée dans summary_long)')
+  {
+    let nbWithIntro = 0
+    for (const va of allVa) {
+      if (!va.translation_explanation || !va.translation_explanation.includes('§DEMARCHE§')) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const dem = va.translation_explanation.split('§DEMARCHE§')[1]?.split('§JUSTIFICATION§')[0]?.trim() || ''
+      if (dem && !dem.startsWith('**')) {
+        warn(`${verseLabel} : §DEMARCHE§ commence par autre chose que **word** — intro à migrer vers summary_long`)
+        nbWithIntro++
+      }
+    }
+    if (nbWithIntro === 0) ok('Toutes les §DEMARCHE§ commencent directement par **word** (intros migrées)')
+  }
 
   // ================================================================
   // 38. Couverture des 5 axes dans le proof_ctx du retenu — vérification manuelle

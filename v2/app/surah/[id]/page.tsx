@@ -129,7 +129,7 @@ export default async function SurahPage({ params, searchParams }: Props) {
         .range(0, 999),
       db
         .from('verse_analyses')
-        .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, model_used, prompt_version, generated_at')
+        .select('id, verse_id, segments, full_translation, translation_arab, translation_explanation, summary_short, summary_long, model_used, prompt_version, generated_at')
         .in('verse_id', pageVerseIds)
         .not('translation_arab', 'is', null)
         .order('generated_at', { ascending: false }),

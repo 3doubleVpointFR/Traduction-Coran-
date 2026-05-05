@@ -342,6 +342,38 @@
   }
 }
 
+/* ═══ Note contextuelle (ancien MACRO/MICRO/ITALIQUE) — repliée par défaut ═══ */
+.note-box {
+  font-size: 14px;
+  line-height: 1.55;
+}
+.note-box .note-toggle-header {
+  font-family: 'Cormorant Garamond', serif;
+  transition: background 180ms ease, color 180ms ease;
+}
+@media (hover: hover) {
+  .note-box .note-toggle-header:hover {
+    background: rgba(180,165,120,0.10);
+    color: #5E4F1A;
+  }
+}
+.note-box > div:not(.note-toggle-header) {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #2A211A;
+  padding-top: 10px !important;
+}
+@media (max-width: 640px) {
+  .note-box > div:not(.note-toggle-header) {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .note-box .note-toggle-header {
+    font-size: 11px !important;
+    padding: 7px 12px !important;
+  }
+}
+
 /* ═══ Transitions de page (changement de pagination) ═══
    Sortie : conteneur dim + blur léger + slide-up subtil (homogène).
    Entrée : chaque verset fade-up INDIVIDUELLEMENT avec stagger (cascade).
