@@ -1,17 +1,175 @@
-Cette verification consiste a vérifié le proof dans le fond et dans la forme:
-Vérifie la qualité de tous les `proof_ctx` des VWA pour le verset que tu viens de produire.
-Et verifie bien qu'il y'a bien 3 phrase du quotidient qui correspond au sens retenu de chaque racine . 
-et verifie bien que dans le proof y'a bien un résumé de ta flexion de la pipeliine sur les 5 axes qui concerne ce mot inscrit dans ce verset precis pas un proof generique il doit justifié dans le contexte du verset, et si tu vois que en relisant ton explication sur les 5 axes tu t'aperçois que en faite c'est pas le bon sens tu peux peux le changer 
+PROMPT VÉRIFICATION PROOF_CTX — verset [X:Y]
+Cette vérification porte sur le fond et la forme des proof_ctx de chaque VWA. Vérifie aussi les phrases du quotidien et la richesse des racines.
+
+ÉTAPE 0 — RICHESSE DES RACINES (préalable)
+Pour CHAQUE racine du verset :
+
+Compter les sens en BDD (word_meanings)
+Si ≤5 sens → la racine est suspecte. Aurait dû être enrichie en amont. Refaire l'analyse :
+Consulter Lane's SQLite (lanes_data/lexicon.sqlite)
+Si Lane's donne plus de sens → enrichir word_meanings puis re-vérifier que les nouveaux sens ne correspondent pas mieux au mot traduit (auquel cas changer le sense_chosen / concept_chosen)
+Si Lane's confirme que la racine est pauvre → ne pas forcer pour rajouter des sens venant d'autre part. Laisser tel quel.
+
+Pour chaque racine verifie que les sens que tu a mis retenu,probable, etc sont bien classé par rapport au 5 axe, si tu reclasse des racine je veux que tu refasse le proof et que tu fasse les modification en cascade.
+Et si c'est un sens retenu que tu change et que tu coup tu dois changer le sens choosen il faut refaire la traduction avec le sens choosen . 
 
 
-Procédure obligatoire :
-0. dans chaque proof je ne veux pas de phonetic ni d'arabe ni de terme technique, une Français clair et fluide qu'un enfant de 12 ans peut comprendre. 
-1. Pour CHAQUE concept retenu : vérifier que `proof_ctx` contient (a) la formule "***Sens retenu :***" alignée sur `sense_chosen` (pas un autre verbe/forme qui n'est pas dans word_meanings), le mot juste après "Sens retenu :" doit correspondre à sense_chosen », (b) ≥4 phrases avec analyse de la forme grammaticale, racine, contexte, et nature philosophique.
-2. Pour CHAQUE concept "probable" : vérifier que le proof_ctx du retenu mentionne ce probable PAR SON NOM et fait une distinction philosophique substantielle vs lui (≥80 chars de discussion philosophique, pas juste « sans rapport »). La distinction doit identifier la nature spécifique de chaque concept (acte directionnel, état intérieur, processus biologique, sujet moral, etc.) et expliquer pourquoi le contexte du verset exclut le probable. (comparaison que entre retenu et probable les autre ont leurs propre proof)
-Aussi pour toute les comparaison retenu avec probable, tu met un tiret devant chaque probable pour que sa se voit bien
-3. Pour les "peu_probable" : 1-2 phrases avec distinction philosophique vs le retenu (pas juste « sans rapport »).
-4. Pour les "nul" : 1 phrase courte est OK, MAIS deux concepts nul ne doivent PAS avoir le même proof_ctx mot-pour-mot (différencier au minimum).
-5. Vérifier l'absence de : mot « concept » (utiliser « sens »), lettres arabes, phrases en anglais, anthropomorphisme, jargon linguistique non expliqué.
-6. Vérifier que `sense_chosen` correspond exactement à `segment.sense_retenu` (les deux doivent être un sens présent dans `word_meanings` du concept retenu).
+ÉTAPE 1 — PHRASES DU QUOTIDIEN
+Pour CHAQUE racine importante du verset :
 
-Exécute le script `scripts/_check_proof_distinctions.js <verseId>` pour la vérification automatique des distinctions vs probables. Liste TOUTES les anomalies détectées avant de proposer des corrections. Ne pas se contenter d'un compte de longueur — analyser la substance philosophique de chaque distinction.
+Vérifier qu'il y a 3 phrases dans word_daily qui correspondent au sense_chosen de la VWA
+Si manquantes → en ajouter 3 (arabic, phon, french)
+Si déjà présentes pour un AUTRE sens de la même racine → SKIP (les phrases sont permanentes par racine)
+ÉTAPE 2 — RÈGLES DE FORME ET DE FOND DES PROOF_CTX
+R0. Style — français simple
+Dans CHAQUE proof_ctx, interdiction stricte de :
+
+phonétique arabe (taqab~ala, hādhā, etc.)
+lettres arabes
+jargon linguistique non expliqué (« copule », « accusatif », « idāfa », « participe passif », « schème »…)
+mots anglais résiduels
+anthropomorphisme (attribuer à Dieu un attribut qu'Il ne s'attribue pas Lui-même)
+Test : un enfant de 12 ans francophone doit pouvoir comprendre. Si jargon nécessaire, expliquer en clair (« forme qui dit que la personne fait l'action activement »).
+
+R1. Concept retenu — substance + 5 axes contextualisés RELIS CHAQUE PROOF MANUELLEMENT PAS DE SCRITPT 
+Le proof_ctx du concept retenu doit :
+
+(a) commencer par ***Sens retenu :*** mot_français où mot_français correspond exactement au sense_chosen (pas un autre verbe/forme absent de word_meanings)
+(b) contenir ≥4 phrases avec :
+analyse de la forme grammaticale (en français simple)
+mention de la racine et de son champ
+contexte précis du verset (pas générique)
+nature philosophique (acte directionnel / état intérieur / processus / position relationnelle / etc.)
+(c) synthétiser la réflexion sur les 5 axes appliquée à CE mot dans CE verset précis :
+champ lexical du verset (autres mots qui éclairent celui-ci)
+versets voisins (ce qui précède / ce qui suit)
+thème de la sourate
+cohérence coranique (via les distinctions vs probables)
+finalité khalifa (vivifier la terre / établir la justice / accomplir l'adoration)
+Le proof_ctx ne doit PAS être générique (applicable à tout verset où la racine apparaît). Il doit ancrer son argument dans le verset analysé. Si tu lis le proof_ctx et qu'il pourrait coller à un autre verset → l'enrichir avec le contexte spécifique.
+
+R6. Bloc « Analyse 5 axes » — encart déroulant en début de proof_ctx du concept retenu
+
+Le bloc 5 axes DOIT être présent UNIQUEMENT sur le concept retenu de chaque VWA porteur.
+Pas de bloc sur les probable / peu_probable / nul.
+
+R6.1 — Format markdown
+Au TOUT DÉBUT du proof_ctx du concept retenu, AVANT ***Sens retenu :*** :
+
+<details>
+<summary>Analyse 5 axes</summary>
+
+**Champ lexical du verset** : [phrase ≤2 lignes]
+
+**Versets voisins** : [phrase ≤2 lignes]
+
+**Thème de la sourate** : [phrase ≤2 lignes]
+
+**Cohérence coranique** : [phrase ≤2 lignes OU « pas encore d'occurrence dans les versets traités ★ »]
+
+**Finalité khalifa** : [phrase ≤2 lignes]
+
+</details>
+
+***Sens retenu :*** [reste du proof_ctx existant…]
+
+R6.2 — Vérifications systématiques (sur chaque retenu uniquement)
+- (a) Le bloc <details>...</details> commence le proof_ctx avant ***Sens retenu :***
+- (b) Le summary contient exactement « Analyse 5 axes » (pas de variante)
+- (c) Les 5 axes sont présents et dans cet ordre exact : Champ lexical du verset → Versets voisins → Thème de la sourate → Cohérence coranique → Finalité khalifa
+- (d) Chaque axe est en gras simple (`**Axe**`), pas en italique (`*Axe*`)
+- (e) Séparateur entre titre et phrase = ` : ` (deux-points entouré d'espaces). JAMAIS le tiret long `—` ni le tiret simple `-`
+- (f) Chaque axe fait 2 lignes maximum (~250 chars max par axe)
+- (g) Aucun axe n'est inventé. Si rien à dire sur l'axe 4 (cohérence coranique), la phrase est explicitement « pas encore d'occurrence dans les versets traités ★ »
+- (h) Cohérence coranique (axe 4) ne référence QUE des versets validés ★ (verse_analyses.validated=true). Pas de référenc
+⚠️ Auto-correction du sens : si en relisant ta réflexion sur les 5 axes tu t'aperçois que le sense_chosen n'est pas le bon → changer sense_chosen / concept_chosen et propager (segment.sense_retenu, segment.fr, translation_arab, §DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§).
+
+R2bis — mise en forme du bloc Comparaison)
+Le proof_ctx du concept retenu doit présenter sa section « Comparaison » avec sauts de ligne explicites pour la lisibilité UI :
+
+[paragraphe retenu : Sens retenu + analyse + nature philosophique].
+Comparaison avec les sens probables :
+— NomProbable1 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte du verset] désigne un *Y philosophique*, [pourquoi exclu].
+— NomProbable2 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte], [pourquoi exclu].
+Détails de format obligatoires :
+
+Double saut de ligne \n\n avant Comparaison avec les sens probables :
+Double saut de ligne \n\n après le header Comparaison avec les sens probables (en gras):
+Double saut de ligne \n\n entre chaque entrée — NomProbable
+Nom du probable PAS en italique (juste — NomProbable :, sans *…* ; en gras )
+Italiques *…* sur les descripteurs philosophiques (ex: *processus physique graduel*, *sujet souverain*, *acte directionnel d'acceptation*)
+Conjonction « Tandis qu'ici » (pas « alors qu'ici » ni « alors que ici »)
+Phrase type : Sa nature est celle d'un *X*. Tandis qu'ici [verset context] [opération précise], [exclusion explicite].
+Test automatique : le script _check_proof_distinctions.js peut être étendu pour vérifier qu'après Comparaison avec les sens probables : chaque — est précédé de \n\n (pas inline).
+
+Tableau des règles implicites de mise en forme du proof_ctx :
+Scanner TOUS les proof_ctx de TOUS les concepts (retenu + probable + peu_probable + nul), pas seulement le retenu
+Élément	Markdown	Rendu	Exemple
+En-tête « Sens retenu »	***Sens retenu :***	bold italic	***Sens retenu :***
+Header bloc Comparaison	**Comparaison avec les sens probables :**	bold	**Comparaison avec les sens probables :**
+Nom du concept probable (après — )	**Nom**	bold	— **Éducation/Accompagnement** :
+Descripteur philosophique	***X***	bold italic	position relationnelle permanente, processus continu d'éducation, statut permanent
+Marqueur phonétique / grammatical / mention de mot	*X*	italic	-hā, son, yā, fa-, bi-, kullamā
+Mention de versets / racines en clair	plain	normal	« Comme au V35-36 », « racine n-b-t »
+Texte courant	plain	normal	reste du proof_ctx
+Structure complète d'un proof_ctx retenu :
+
+***Sens retenu :*** [mot français = sense_chosen], [analyse grammaticale]. Le mot est ici [forme]. [Contexte précis du verset, ancrage au V−1 / sourate]. La nature philosophique du sens retenu est celle d'une ***[descripteur philo]***.
+**Comparaison avec les sens probables :**
+— **NomProbable1** : [senses listés]. Sa nature est celle d'un ***[descripteur philo X]***. Tandis qu'ici [contexte], [exclusion explicite].
+— **NomProbable2** : [senses listés]. Sa nature est celle d'un ***[descripteur philo Y]***. Tandis qu'ici [contexte], [exclusion explicite].
+Sauts de ligne obligatoires :
+
+\n\n avant **Comparaison avec les sens probables :**
+\n\n après le header
+\n\n entre chaque entrée — **NomProbable**
+R2. Concepts « probable » — distinction philosophique ≥80 chars
+Le proof_ctx du concept retenu doit :
+
+mentionner CHAQUE concept probable par son nom exact
+précédé d'un tiret « — » (pour visualiser la liste : — *Nom probable* (mot-clé) : ...)
+distinction philosophique substantielle (≥80 chars de discussion), pas un « sans rapport » sec
+identifier la nature spécifique de chaque concept (acte directionnel / état intérieur / processus biologique / sujet moral / position relationnelle / etc.)
+expliquer pourquoi le contexte du verset exclut ce probable (pas une raison abstraite)
+⚠️ La comparaison se fait uniquement entre retenu et probables. Les peu_probable et nul ont leur PROPRE proof_ctx, ne pas les commenter dans celui du retenu.
+
+⚠️ Si 0 probable → pas de section « Comparaison… » dans le proof_ctx du retenu (interdit, parasite).
+
+R3. Concepts « peu_probable » — 1-2 phrases substantielles
+Le proof_ctx de chaque peu_probable :
+
+1-2 phrases
+distinction philosophique vs le retenu (pas juste « sans rapport ici »)
+ancrage minimal dans le verset
+R4. Concepts « nul » — 1 phrase, mais pas de duplicat
+1 phrase courte est OK
+Interdit : deux concepts nul avec exactement le même proof_ctx mot-pour-mot. Différencier au minimum la formulation.
+R5. Triple alignement sense_chosen ↔ word_meanings ↔ segment
+Pour chaque VWA :
+
+sense_chosen (au niveau VWA) = analysis_axes.sense_chosen = un sens listé dans word_meanings du concept retenu
+segment.sense_retenu (du segment correspondant) = même sens exact
+Le mot juste après ***Sens retenu :*** dans le proof_ctx = ce même sens
+Si désalignement → corriger pour aligner les trois.
+
+PROCÉDURE
+Exécuter :
+DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_proof_distinctions.js [verseId]
+Si un script manque, le créer puis le relancer.
+Lister TOUTES les anomalies détectées AVANT de proposer des corrections. Ne pas se contenter d'un compte de longueur — analyser la substance philosophique de chaque distinction.
+Pour chaque anomalie, classer :
+A. Sens à changer : la réflexion 5 axes montre que le sense_chosen n'est pas bon → corriger sense_chosen + propager
+B. Distinction insuffisante : probable mentionné mais distinction <80 chars ou générique → enrichir
+C. Probable non mentionné : ajouter au proof_ctx du retenu avec tiret « — »
+D. Section parasite : « Comparaison » sans probable, peu_probable/nul commenté dans retenu → retirer
+E. Forme : phonétique/arabe/anglais/jargon/anthropomorphisme dans proof_ctx → réécrire
+F. Duplicat nul : deux nuls mot-pour-mot → différencier
+G. Triple alignement cassé : sense_chosen ≠ segment.sense_retenu ≠ word_meanings → aligner
+H. Phrases du quotidien : <3 phrases manquantes pour le sens retenu → en ajouter
+Tableau récapitulatif des corrections :
+| racine | classe | ancienne valeur     | nouvelle valeur     | raison           |
+|--------|--------|---------------------|---------------------|------------------|
+| nbt    | A      | sense_chosen=pousser| sense_chosen=élever | 5 axes : Marie humaine, pas plante |
+| qbl    | B      | "sans rapport ici"  | "L'orientation marque un mouvement spatial alors qu'ici..." | distinction <80 chars |
+| rzq    | H      | 0 phrases           | +3 phrases ajoutées | manque pour sense "pourvoir" |
+Re-lancer le script à la fin pour confirmer 0 anomalie.

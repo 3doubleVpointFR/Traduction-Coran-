@@ -1,15 +1,80 @@
-Relis la traduction du verset que tu viens de produire à voix haute, en mode francophone naïf strict. Teste rigoureusement les 3 niveaux pour CHAQUE expression française du verset, pas globalement.
- 
-et la regle est que lorsque tu change un mot de la traduction tu explique pourquoi dans les démarche etc surtout tu n'ajoute pas un sens dans le concept du mot, tu peux changer le sens choosen si un autre mot est plus adequate mais ne rajoute pas un mot qui n'etais pas dedans dans la liste des sens . 
-Procédure obligatoire en liaison avec le contexte du verset precedent et de la sourate en cours : 
-1. Niveau LEXICAL — Pour CHAQUE mot/locution non-trivial du verset, le sortir du contexte et le tester ISOLEMENT. Lister les mots à risque (calques, faux amis, expressions ambiguës) et écrire ce qu'un francophone comprendrait 
-Surveiller spécialement : les structures arabes calquées (réfléchi arabe → réfléchi français inadapté, adjectif intensif → faux ami, taqdim → inversion littéraire).
-2. Niveau GRAMMATICAL — Tester chaque construction française indépendamment de l'arabe : « après que » + temps, « pour que » + subjonctif, « si » + temps, accords en genre/nombre, prépositions. Identifier les calques de prépositions arabes (fī → dans/sur/à propos de).
 
+🔍 PROMPT RELECTURE FRANCOPHONE NAÏF — verset [X:Y]
+Relis la translation_arab du verset que tu viens de produire à voix haute, en mode francophone naïf strict. Tu joues un lecteur francophone qui ne connaît ni l'arabe, ni la racine, ni le verset précédent — il découvre la phrase en lecture directe.
 
+Teste rigoureusement les 3 niveaux pour CHAQUE expression, jamais globalement.
 
-POUR CHAQUE point de friction détecté : (a) le quoter exactement, (b) expliquer pourquoi il accroche le francophone naïf, (c) proposer 2-3 alternatives idiomatiques. Ne PAS valider la phrase globalement sans avoir testé chaque mot/locution séparément. Souviens-toi des leçons V20 : « voyant des serviteurs » (calque adjectif intensif), « à toi n'incombe que » (calque taqdim), « ils se sont guidés » (calque réfléchi forme VIII) — tous ratés en relecture globale parce qu'ils étaient « validés ensemble » sans test isolé.
+RÈGLE CRITIQUE — pas d'ajout de sens
+Quand tu corriges un mot de la traduction :
 
-À la fin, demander à l'utilisateur lesquels des points relevés méritent correction effective et me donner un tableau avec des couleurs rouge , orange etc, qui recapitule bien ton analyse, tes changement que tu veux faire avant apres et avec les cause et les proposition .
+❌ NE JAMAIS ajouter un mot dans la liste des senses du concept pour justifier ton choix après coup
+✅ Tu peux changer sense_chosen si un autre mot déjà présent dans la liste est plus adéquat
+✅ Si vraiment aucun mot existant ne colle, le problème est ailleurs (mauvais concept retenu, mauvais test grammatical) — revoir l'étape 3, pas enrichir l'étape 2
+Toute correction de mot DOIT être expliquée dans §DEMARCHE§ (et propagée à §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§ / proof_ctx)
+CONTEXTE D'ANCRAGE
+La relecture se fait en liaison avec le verset précédent et le thème de la sourate. Une expression peut sembler bizarre isolée mais juste dans la séquence narrative — le naïf doit néanmoins comprendre.
 
-et  Aucun segment ne doit avoir fr vide — même les particules.
+NIVEAU 1 — LEXICAL (chaque mot isolé)
+Pour CHAQUE mot ou locution non-triviale du verset :
+
+Le sortir du contexte et tester son sens en isolement
+Écrire ce qu'un francophone comprendrait sans le verset autour
+Identifier les mots à risque :
+Calques structurels : réfléchi arabe (forme V/VIII) rendu par un réfléchi français inadapté
+Faux amis : adjectif intensif (fa''āl, fa'īl) → mot français qui sonne mais glisse de sens
+Expressions ambiguës : un mot qui a plusieurs sens en français contemporain et dont le mauvais sens prime hors contexte
+Taqdim (mise en avant arabe) → inversion française qui sonne littéraire/poétique au lieu de naturel
+Cas de référence à connaître (V20) :
+
+❌ « voyant des serviteurs » → calque de l'adjectif intensif baṣīr (fa'īl) ; le naïf comprend « serviteur qui voit ».
+❌ « à toi n'incombe que » → calque du taqdim (mise en avant) ; lourd et littéraire.
+❌ « ils se sont guidés » → calque du réfléchi VIII ihtadā ; en français « se guider » est intransitif d'orientation, pas réception de la guidance.
+NIVEAU 2 — GRAMMATICAL (chaque construction)
+Pour CHAQUE construction française du verset, tester son intégrité indépendamment de l'arabe :
+
+« après que » + indicatif passé (jamais subjonctif) : « après qu'il est venu » ✅, pas « après qu'il soit venu » ❌
+« avant que » + subjonctif : « avant qu'il vienne » ✅
+« pour que / afin que » + subjonctif
+« si » + indicatif (jamais conditionnel) : « s'il vient », jamais « s'il viendrait »
+Accords en genre/nombre (adjectifs, participes passés)
+Prépositions sélectionnées par les verbes français : « s'en remettre à », « accepter de » + infinitif, « obéir à », « pourvoir à » (ne pas calquer la préposition arabe : fī ≠ « dans » dans tous les cas ; bi- n'est pas systématiquement « avec »)
+Mode après les conjonctions : « bien que » subj, « parce que » indic, « tandis que » indic
+NIVEAU 3 — FLUIDITÉ (phrase entière)
+Pas de subordonnées enchâssées (3+ niveaux)
+Pas de périphrases empilées
+Si la traduction française a beaucoup plus de mots que le verset arabe → signal d'alerte (fidélité ≠ lourdeur)
+Test : la phrase peut-elle se lire d'un seul jet sans relecture ?
+CONTRAINTE — segments[].fr non vides
+Aucun segment ne doit avoir fr vide — même les particules. Si après tes corrections un segment se retrouve vide, donner sa traduction littérale (ne... pas, à, vers, et, certes…). Pattern V23 (vider la particule) est ABANDONNÉ.
+
+PROCÉDURE OBLIGATOIRE
+Pour CHAQUE point de friction détecté :
+
+(a) Quoter exactement le passage problématique (avec ses voisins immédiats)
+(b) Expliquer pourquoi il accroche le francophone naïf (calque ? faux ami ? grammaire bancale ? subordonnée enchâssée ?)
+(c) Proposer 2-3 alternatives idiomatiques qui restent fidèles au sens retenu existant (pas d'ajout de sens dans word_meanings)
+⚠️ Ne PAS valider globalement sans avoir testé chaque mot/locution séparément. La relecture globale est précisément ce qui a laissé passer V20.
+
+LIVRABLE — TABLEAU RÉCAPITULATIF COLORISÉ
+À la fin, présenter un tableau avec codes couleur :
+
+🔴 rouge = problème grave (calque visible, grammaire fausse, sens compris à l'envers)
+🟠 orange = problème mineur (lourdeur, ambiguïté contextuelle, cas borderline)
+🟢 vert = OK après vérification (point testé et validé)
+Format :
+
+🎨	passage quoté	niveau	cause	propositions (2-3)	suggestion
+🔴	« voyant des serviteurs »	LEX	calque adjectif intensif (faʿīl baṣīr) — le naïf comprend « serviteur qui voit »	« clairvoyant envers ses serviteurs » / « attentif à ses serviteurs » / « qui voit ses serviteurs »	« clairvoyant envers ses serviteurs »
+🟠	« il s'en est remis »	LEX	hors contexte évoque guérison plutôt que confier sa cause	« il a remis sa cause » / « il a confié son sort »	conserver — l'idiome existe
+🟢	« pourvoit qui Il veut sans compter »	FLU	testé naturel et fluide	—	OK
+Demander explicitement : « Lesquels de ces points souhaites-tu que je corrige effectivement ? » — pour que tu valides un par un avant que les corrections soient appliquées.
+
+APRÈS CORRECTION
+Toute correction de translation_arab ou de segments[].fr DOIT être propagée à :
+
+§DEMARCHE§ : mettre à jour le (fr) dans le paragraphe correspondant
+§JUSTIFICATION§ : mettre à jour **fr** — et l'argumentation
+§CRITIQUE§ : mettre à jour **X vs « Y »** (X = nouvelle version)
+§FINALITE§ : si un mot corrigé y est cité
+proof_ctx du retenu : si le mot corrigé y est cité
+Cette propagation est automatique et obligatoire — ne pas attendre que l'utilisateur le rappelle.

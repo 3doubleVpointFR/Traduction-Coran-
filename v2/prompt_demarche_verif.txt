@@ -1,11 +1,43 @@
-Vérifie la cohérence textuelle de la §DEMARCHE§ et §JUSTIFICATION§ et de critique  pour le verset que tu viens de produire.
-je veux que tout les mots de la traduction francaise soit listé dans la demarche et dans la justification des mots(mot et particule).
-Procédure obligatoire :
-1. Pour CHAQUE paragraphe **phon** (fr) de §DEMARCHE§ : vérifier que le `(fr)` entre parenthèses est EXACTEMENT égal à `segments[i].fr` du segment correspondant. Si fr est une concaténation artificielle ou ne correspond à aucun segment réel → corriger.
-2. Pour CHAQUE entrée **fr** — de §JUSTIFICATION§ : vérifier que `fr` est exactement égal à un `segments[i].fr` 
-3. Pas de paragraphe meta dans §DEMARCHE§ qui groupe 2+ mots arabes (ex: « lā rayba », « a-lam tara »). Une particule + un verbe doivent être traités séparément, OU la formule complète française portée sur le mot porteur (le verbe/nom) avec la particule en simple marqueur.
-4. Pour les négations françaises « ne...pas » qui enveloppent le verbe en un bloc : appliquer le pattern V23 — la formule complète française (« ne...pas X ») est portée par le segment du mot porteur, pas répartie artificiellement.
+ PROMPT VÉRIFICATION COHÉRENCE §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§
+Pour le verset que tu viens de produire, vérifie la cohérence textuelle des trois sections par rapport à segments[].fr et translation_arab. Tous les mots de la traduction française doivent être listés dans §DEMARCHE§ et §JUSTIFICATION§ — mots ET particules.
 
-Verifie aussi que dans l'ui toute les particule etc on bien une traduction affiché en dessous de la phonetic  . 
- Aucun segment ne doit avoir fr vide — même les particules.
-Exécute le script `scripts/_check_demarche_coherence.js` (et `_check_v25_demarche_full.js` si plus détaillé), corrige les incohérences détectées, et affiche un tableau récapitulatif des corrections appliquées (segment touché → ancienne valeur → nouvelle valeur). Re-lance la validation (validate-pipeline.js) à la fin.
+RÈGLES À VÉRIFIER
+R1. §DEMARCHE§ ↔ segments[]
+Pour rappel la démarche est un analayse grammatical des mots dans la verset pourquoi ce mot(grammaticalement) la dans le verset
+Pour CHAQUE paragraphe **phon** (fr) — explication :
+
+Le (fr) entre parenthèses doit être exactement égal au segments[i].fr du segment correspondant
+Si (fr) est une concaténation artificielle ou ne correspond à aucun segment réel → corriger
+Pas de paragraphe meta qui regroupe 2+ mots arabes (ex: **lā rayba** (sans doute), **a-lam tara** (n'as-tu pas vu)). Une particule + un verbe doivent être traités séparément, OU la formule complète française portée sur le mot porteur (le verbe/nom) avec la particule en simple marqueur.
+R2. §JUSTIFICATION§ ↔ segments[]
+Pour rappel justification  est un analayse lexical(pourquoi ce mot(lexicalement) la dans le verset) des mots dans la verset 
+Pour CHAQUE entrée **fr** — Le sens retenu est... :
+
+Le **fr** doit être exactement égal à un segments[i].fr
+Si un mot français apparaît plusieurs fois dans segments (ex: « Dieu » 2×), il faut soit une entrée par occurrence, soit une entrée unique qui couvre explicitement les deux occurrences
+R3. Pattern V23 ABANDONNÉ — aucun segment.fr vide
+Particules incluses : lā → « ne », mā → « pas »/« ce qui », bi- → « avec »/« par », wa- → « et », inna → « certes », etc.
+Pour les négations françaises « ne...pas » qui enveloppent le verbe : appliquer le pattern V24 — la particule porte « ne », le verbe porte « ...pas X ». Les deux fr sont visibles, aucun n'est vide.
+La concaténation segments[].fr n'est PAS la traduction finale (translation_arab l'est) ; c'est juste un repère interne
+R4. §CRITIQUE§ — ordre du verset + cohérence
+Ordre obligatoire : suivre l'ordre des mots du verset arabe (gauche→droite). Pas d'ordre thématique.
+Cohérence interne : la JUSTIFICATION (pourquoi notre mot) et la CRITIQUE (pourquoi le mot Hami est moins bon) doivent se renforcer, pas se contredire.
+Cohérence avec le contexte : l'argument doit tenir dans le contexte précis du verset (ex: ne pas critiquer « punir » comme « trop négatif » dans un verset de châtiment).
+R5. UI — particules avec traduction visible
+Toute particule (et ses fr) DOIT avoir sa traduction affichée en dessous de la phonétique dans l'UI. Aucun segment ne doit avoir fr vide — même les particules.
+
+PROCÉDURE
+Exécuter :
+DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_demarche_coherence.js [verseId]
+DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_v25_demarche_full.js [verseId]
+DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_no_empty_fr.js [verseId]
+(Si un script manque, le créer puis le relancer.)
+Corriger les incohérences détectées (§DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§, segments[].fr).
+Afficher un tableau récapitulatif des corrections appliquées :
+| segment / section | champ touché      | ancienne valeur | nouvelle valeur | raison         |
+|-------------------|-------------------|-----------------|-----------------|----------------|
+| pos=5             | segments[].fr     | "(vide)"        | "et la fit..." | particule séparée |
+| pos=20            | §JUSTIFICATION§   | absent          | "**d'où** —..." | mot manquant   |
+| pos=14            | §DEMARCHE§ (fr)   | "le sanctuaire" | "dans le sanctuaire" | aligné segment.fr |
+Si aucune correction nécessaire : afficher aucune correction.
+Re-lancer les 3 scripts à la fin pour confirmer 0 erreur.

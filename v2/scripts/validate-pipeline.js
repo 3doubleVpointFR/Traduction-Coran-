@@ -649,20 +649,20 @@ async function run() {
     const step = fullWa ? fullWa.analysis_step : '?'
 
     let suspect = false
-    if (totalSenses < 5) { suspect = true }
+    if (totalSenses <= 5) { suspect = true }
 
     if (suspect) {
-      warn(key + ' (occ=' + occ + '): étape 2 suspecte — seulement ' + totalSenses + ' sens (minimum 5 quand possible)')
+      warn(key + ' (occ=' + occ + '): étape 2 suspecte — seulement ' + totalSenses + ' sens (seuil strict : > 5 sens, sinon consulter Lane\'s)')
       richOk = false
     }
   }
   if (richOk) ok('Toutes les racines ont une étape 2 suffisamment riche')
 
   // ================================================================
-  // 20. PHRASE D'INTRODUCTION DANS LA §DEMARCHE§
-  // (Résumé du verset + lien avec le verset précédent)
+  // 20. §DEMARCHE§ commence directement par **word** (depuis 2026-05-05)
+  // L'intro a été déplacée dans summary_short / summary_long
   // ================================================================
-  section(20, 'Phrase d\'introduction dans la §DEMARCHE§')
+  section(20, '§DEMARCHE§ commence par **word** (intro déplacée dans summary)')
   let introOk = true
   for (const v of verses) {
     const va = vaByVid[v.id]
@@ -671,14 +671,14 @@ async function run() {
     const demarcheStart = te.indexOf('§DEMARCHE§')
     if (demarcheStart === -1) continue
     const afterDemarche = te.substring(demarcheStart + 10).trim()
-    // The demarche should NOT start directly with ** (bold word analysis)
-    // It should start with a contextual sentence linking to previous verse(s)
-    if (afterDemarche.startsWith('**')) {
-      warn('V' + v.verse_num + ': §DEMARCHE§ commence directement par l\'analyse d\'un mot — il manque la phrase d\'introduction (résumé + lien verset précédent)')
+    // NOUVEAU comportement (2026-05-05) : §DEMARCHE§ DOIT commencer par **word**.
+    // Si elle commence par autre chose, c'est qu'une intro résiduelle traîne.
+    if (!afterDemarche.startsWith('**')) {
+      warn('V' + v.verse_num + ': §DEMARCHE§ ne commence pas par **word** — intro résiduelle à migrer dans summary_long')
       introOk = false
     }
   }
-  if (introOk) ok('Toutes les §DEMARCHE§ ont une phrase d\'introduction')
+  if (introOk) ok('Toutes les §DEMARCHE§ commencent directement par **word** (intro déjà migrée vers summary_long)')
 
   // ================================================================
   // 21. UN MOT PAR PARAGRAPHE DANS LA §DEMARCHE§
@@ -896,11 +896,12 @@ async function run() {
   if (critCoherOk) ok('§CRITIQUE§ et translation_arab cohérents (notre traduction respecte ce qu\'on critique)')
 
   // ================================================================
-  // 24a. RÉSUMÉ DE LA §DEMARCHE§ — agréable à lire (pas de jargon)
+  // 24a. RÉSUMÉS (summary_short / summary_long) — agréable à lire (pas de jargon)
+  // Depuis 2026-05-05 : les résumés sont dans summary_short / summary_long, plus dans §DEMARCHE§
   // ================================================================
-  section('24a', 'Résumé de §DEMARCHE§ agréable à lire (pas de jargon)')
+  section('24a', 'Résumés summary_short / summary_long agréables à lire (pas de jargon)')
   let resumeOk = true
-  // Marqueurs de jargon grammatical / méta-discours / phonétique brute
+  // Marqueurs de jargon grammatical / méta-discours
   const TECH_JARGON = [
     /négation modale/i,
     /subjonctif régi/i,
@@ -911,28 +912,26 @@ async function run() {
     /l'analyse mot par mot/i,
     /ci-dessous éclaire/i,
     /choix lexicaux retenus/i,
+    /participe (passif|actif)/i,
+    /idāfa/i,
+    /forme renforcée/i,
   ]
-  // Détection phonétique brute longue (≥ 3 mots phonétiques d'affilée)
-  const PHON_PATTERN = /[a-zāīūʿʾḏḥḍṣṭẓšġ]+(-[a-zāīūʿʾḏḥḍṣṭẓšġ]+)?\s+[a-zāīūʿʾḏḥḍṣṭẓšġ]+(-[a-zāīūʿʾḏḥḍṣṭẓšġ]+)?\s+[a-zāīūʿʾḏḥḍṣṭẓšġ]+/i
-  for (const v of verses) {
-    const va = vaByVid[v.id]
-    if (!va || !va.translation_explanation) continue
-    const expl = va.translation_explanation
-    const demStart = expl.indexOf('§DEMARCHE§')
-    const justStart = expl.indexOf('§JUSTIFICATION§')
-    if (demStart < 0 || justStart < 0) continue
-    const dem = expl.slice(demStart + 11, justStart).trim()
-    const firstWord = dem.indexOf('\n\n**')
-    if (firstWord <= 0) continue
-    const intro = dem.slice(0, firstWord).trim()
-    for (const re of TECH_JARGON) {
-      if (re.test(intro)) {
-        warn('V' + v.verse_num + `: résumé contient un terme technique : ${re.source}`)
-        resumeOk = false
+  for (const va of allVa) {
+    const v = verses.find(x => x.id === va.verse_id)
+    if (!v) continue
+    const verseLabel = `S${v.surah_id}:V${v.verse_num}`
+    for (const [field, label] of [['summary_short', 'résumé court'], ['summary_long', 'note contextuelle']]) {
+      const text = va[field] || ''
+      if (!text) continue
+      for (const re of TECH_JARGON) {
+        if (re.test(text)) {
+          warn(`${verseLabel}: ${label} contient un terme technique : ${re.source}`)
+          resumeOk = false
+        }
       }
     }
   }
-  if (resumeOk) ok('Résumés de §DEMARCHE§ : pas de jargon technique détecté')
+  if (resumeOk) ok('summary_short et summary_long : pas de jargon technique détecté')
 
   // ================================================================
   // 24b. RACINES À DUALITÉ PHYSIQUE/ABSTRAIT — vérifier le concept retenu

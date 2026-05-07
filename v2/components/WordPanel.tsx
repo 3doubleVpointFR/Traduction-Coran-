@@ -84,6 +84,94 @@ function renderMarkdown(text: string): React.ReactNode {
   })
 }
 
+/**
+ * Encart déroulant style "Note contextuelle" (or léger, header gold uppercase, chevron pivotant).
+ * Utilisé pour le bloc "Analyse 5 axes" en début de proof_ctx.
+ */
+function ProofCollapsible({ summary, body }: { summary: string; body: string }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div
+      style={{
+        margin: '0 0 10px 0',
+        background: 'rgba(80,110,140,0.06)',
+        border: '1px solid rgba(80,110,140,0.22)',
+        borderLeft: '3px solid rgba(80,110,140,0.55)',
+        borderRadius: '0 8px 8px 0',
+        color: '#1A1410',
+        boxShadow: '0 1px 3px rgba(50,80,110,0.05), inset 0 1px 0 rgba(255,255,255,0.25)',
+      }}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+        style={{
+          width: '100%',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '8px',
+          padding: '6px 12px',
+          textAlign: 'left',
+          color: '#3E5970',
+          fontFamily: "'Cormorant Garamond', serif",
+          fontWeight: 700,
+          fontSize: '11px',
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+        }}
+      >
+        <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+          <span aria-hidden="true" style={{ color: '#5276A0', fontSize: '10px' }}>✦</span>
+          {summary}
+        </span>
+        <span aria-hidden="true" style={{ fontSize: '10px', opacity: 0.85, transition: 'transform 0.2s ease', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
+      </button>
+      {open && (
+        <div className="proof-collapsible-body" style={{ padding: '8px 12px 10px 12px', borderTop: '1px dashed rgba(80,110,140,0.25)', fontSize: '0.92em' }}>
+          <style>{`.proof-collapsible-body strong { font-weight: 600; } .proof-collapsible-body .gold-axis { color: #9C7C2E; background: rgba(184,150,46,0.08); padding: 4px 8px; border-radius: 4px; border-left: 2px solid #B8962E; }`}</style>
+          {body.split(/\n\s*\n/).map((para, i) => {
+            const isGold = para.trimStart().startsWith('★ ')
+            const cleaned = isGold ? para.replace(/^\s*★\s+/, '') : para
+            return (
+              <div key={i} className={isGold ? 'gold-axis' : undefined} style={{ marginTop: i > 0 ? '0.6em' : 0 }}>
+                {renderMarkdown(cleaned)}
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
+/**
+ * Rend un proof_ctx avec support des blocs <details><summary>...</summary>...</details>.
+ * Le bloc devient un encart déroulant style "Note contextuelle" (fermé par défaut).
+ * Le reste du texte (avant/après le bloc) passe par renderMarkdown normal.
+ */
+function renderProofCtx(text: string): React.ReactNode {
+  if (!text) return null
+  const re = /<details>\s*<summary>([\s\S]+?)<\/summary>([\s\S]+?)<\/details>/
+  const m = text.match(re)
+  if (!m || m.index === undefined) return renderMarkdown(text)
+  const before = text.slice(0, m.index).trim()
+  const summary = m[1].trim()
+  const body = m[2].trim()
+  const after = text.slice(m.index + m[0].length).trim()
+  return (
+    <>
+      {before && renderMarkdown(before)}
+      <ProofCollapsible summary={summary} body={body} />
+      {after && renderMarkdown(after)}
+    </>
+  )
+}
+
 interface EtymologyEntry {
   id: number
   sense: string
@@ -837,9 +925,9 @@ export default function WordPanel({
                                     {conceptHasRetenu ? (
                                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                                         <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '13px', flexShrink: 0, lineHeight: '1.55em', marginTop: '1px' }}>✦</span>
-                                        <div style={{ flex: 1, minWidth: 0 }}>{renderMarkdown(proofText)}</div>
+                                        <div style={{ flex: 1, minWidth: 0 }}>{renderProofCtx(proofText)}</div>
                                       </div>
-                                    ) : renderMarkdown(proofText)}
+                                    ) : renderProofCtx(proofText)}
                                   </div>
                                 )}
                                 {(a1 || a2 || a3 || a4 || a5) && (

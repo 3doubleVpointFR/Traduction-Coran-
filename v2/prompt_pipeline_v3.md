@@ -1,467 +1,343 @@
-En prenant les donnée de la BDD (concepte,racine,caracteristique,etc) Lance la pipeline maison sur la sourate [X] et avant de finir relis bien a la fin si tu a bien respecté toutes les regles c'est important, tu peux t'inspirer de la sourate 1 qui a été bien faite par tes ancien toi . quand tu fini lance la pipeline de validation
+📜 PROMPT PIPELINE MAISON — Sourate [3], verset [37]
+CONTEXTE
+Tu lances la pipeline maison V3 sur le verset [X:Y]. La BDD Supabase est pré-enrichie pour la sourate : toutes les racines ont ≥6 sens regroupés en 4-7 concepts avec descriptions philosophiques. Tu n'as donc plus besoin d'enrichir une racine en cours de route (cette dette a été soldée par la Phase 2 d'enrichissement préventif). Tu peux te concentrer sur le travail d'analyse et de traduction.
 
-## RÈGLE PRIORITAIRE — VÉRIFICATION DE RICHESSE DES RACINES
-Avant l'étape 3, vérifier CHAQUE racine importante du verset :
-1. Compter le nombre de **sens** en BDD (`word_meanings`)
-2. Une racine est **suspecte** si elle a **moins de 5 sens** au total
-3. Si suspecte → consulter le Lane's SQLite pour vérifier. Si le Lane's donne plus de sens → **REFAIRE l'étape 2** complète (regrouper en 4-7 concepts, etc.). Si le Lane's confirme que la racine n'a que peu de sens (racine très simple/rare) → OK, passer.
-4. Si 5 sens ou plus → SKIP l'étape 2
+Inspire-toi du rendu de la sourate 1 et des V1-V36 de la sourate 3 déjà validés ★. Quand tu as fini → lance node scripts/validate-pipeline.js [verseId] et corrige tout warning.
 
-**Pourquoi** : L'étape 2 originale a été faite par GPT-4.1-mini avec un tagging rapide. 2315 racines sur 2355 n'ont que 2-3 sens devinés sans consultation du Lane's. Il faut compléter au fil de l'eau.
+ÉTAPE 0 — PRÉPARATION (lecture BDD)
+Récupérer le verset arabe (verses.arabic_text), verses.id, verses.surah_id, verses.verse_num.
+Récupérer les words (position, arabic, root, transliteration, pos_tag) du verset.
+Récupérer la traduction Hamidullah (verse_analyses.full_translation) si déjà présente.
+Pour CHAQUE racine non-particule du verset :
+SELECT * FROM word_analyses WHERE id = ? (id obtenu via root → root_ar match)
+SELECT * FROM word_meanings WHERE analysis_id = ? ORDER BY display_order
+Vérification doublons : si la racine a une entrée stub (≤2 sens) ET une entrée riche (>5 sens) avec mêmes lettres permutées, utiliser l'entrée riche systématiquement.
+⚠️ Anti-doublons obligatoire — chercher TOUJOURS par root_ar avant word_key :
 
-## ÉTAPE 2 — Si une racine est suspecte ou n'existe pas en base
+SELECT * FROM word_analyses
+WHERE root_ar = '<racine>' OR root_ar = '<racine sans espaces>'
+ORDER BY (SELECT count(*) FROM word_meanings WHERE analysis_id = word_analyses.id) DESC
+ÉTAPE 1 — SEGMENTATION + TAGGING (résultat LLM existant)
+Récupérer les segments de l'étape 1 (verse_analyses.segments_step1) déjà produits par LLM. Si absents, les générer. Ne jamais modifier l'ordre des positions.
 
-### 🚨 RÈGLE ANTI-DOUBLONS — OBLIGATOIRE
-Avant de créer une nouvelle entrée dans `word_analyses`, **TOUJOURS chercher par `root_ar` (la racine arabe), pas seulement par `word_key`**. La BDD a accumulé de nombreux doublons à cause de variations de translittération (ex: `zyg`/`zygh`, `jme`/`jmE`/`jma`, `wed`/`waed`/`wEd`). Une même racine arabe peut donc avoir plusieurs `word_key` dans la BDD.
+ÉTAPE 2 — RICHESSE DES RACINES (déjà soldée pour S3)
+Pour S3, la pré-enrichissement Phase 2 a porté toutes les racines à ≥6 sens. Skip cette étape sauf si tu détectes une racine inattendue (créée tardivement) si tu skip je veux que tu me dise que toute les racine ont deja des sens dans les log. Si oui :
 
-Procédure obligatoire :
-1. Lire `root_ar` du mot dans la table `words` (ex: `ز ي غ`)
-2. Faire `SELECT * FROM word_analyses WHERE root_ar = 'ز ي غ' OR root_ar = 'زيغ'` (avec et sans espaces)
-3. Si **aucune entrée** → créer la nouvelle racine
-4. Si **une seule entrée** → utiliser celle-ci (ne JAMAIS créer un doublon avec un word_key différent)
-5. Si **plusieurs entrées** (doublons existants) → utiliser celle qui a le plus de sens / le step le plus avancé (`senses_done` > `etymology` > `tagged`) et signaler le doublon
+Consulter Lane's SQLite (lanes_data/lexicon.sqlite).
+Regrouper en 4-7 concepts avec description philosophique 2-3 phrases par concept (état intérieur vs acte extérieur, directionnel, ponctuel/permanent, etc.).
+Insérer dans word_meanings : description du concept sur la première sens du concept, descriptions individuelles pour les suivants.
+Vérifier total_occurrences via corpus.quran.com.
+ÉTAPE 3 — CHOIX DU CONCEPT RETENU (par mot important)
+Réflexion interne sur les 5 axes (NON écrits)
+Avant de choisir, réfléchir mentalement aux 5 axes pour CHAQUE concept non-nul :
 
-### Procédure étape 2
-Avant de commencer l'étape 3, vérifier que TOUTES les racines des mots importants du verset existent dans `word_analyses` et ont des concepts SUFFISAMMENT RICHES dans `word_meanings`. Si une racine est suspecte (critères ci-dessus) ou n'existe pas (après vérification anti-doublons) :
+Champ lexical du verset
+Versets voisins
+Thème de la sourate
+Cohérence coranique globale
+Finalité khalifa (vivifier la terre / établir la justice / accomplir l'adoration)
+⚠️ NE JAMAIS prendre le 1er sens listé par défaut. Faire les 5 axes AVANT de décider.
 
-1. **Créer l'entrée** dans `word_analyses` (word_key, root_ar, root_transliteration)
-2. **Consulter le Lane's SQLite** (`lanes_data/lexicon.sqlite`) — chercher la racine dans les tables `entry` ou `root`. Extraire TOUS les sens attestés, y compris les sens physiques obscurs.
-3. **Regrouper en 4-7 concepts** : chaque concept a un nom (ex: "Frappe/Coup") et regroupe les sens qui partagent la même nature philosophique.
-4. **Description philosophique par CONCEPT** : chaque concept porte une description riche de 2-3 phrases qui répond à : est-ce un état intérieur ou un acte extérieur ? Directionnel ou non ? Ponctuel ou permanent ? Émotion ou jugement rationnel ? Ça sort de qui et ça atteint qui ? Les autres sens du même concept ont juste une courte précision.
-5. **Insérer dans `word_meanings`** : chaque sens avec son concept, sa description, meaning_type='etymology', display_order.
-6. **Vérifier les occurrences** : immédiatement après la création, vérifier `total_occurrences` via corpus.quran.com. Ne JAMAIS laisser à 0.
-7. **Pas de biais religieux** : sens étymologiques purs. Pas d'anthropomorphisme.
+Test de compatibilité grammaticale — PHILOSOPHIQUE, pas linguistique
+Tester si la réalité philosophique du concept (sa description) est compatible avec la structure du mot dans le verset :
 
-Ceci est OBLIGATOIRE avant de passer à l'étape 3 pour cette racine.
+Participe passif appliqué à un objet : la réalité doit pouvoir SORTIR d'un agent et ATTEINDRE l'objet. Si l'objet ne peut pas physiquement subir l'action, le sens premier échoue → chercher le sens dérivé compatible.
+Cas V36 : al-rajīm (participe passif de rjm = lapider) appliqué à un être spirituel invisible. Lapider physiquement échoue → retenir « maudire » (sens dérivé).
+Verbe accompli/inaccompli : événement achevé vs en cours.
+Forme IV : intègre l'idée de « faire faire / accorder ».
+Idāfa (X de Y) : Y détermine X.
+Test de naturalité sémantique
+Le sens retenu + préposition + objet du verset doit former une expression naturelle en français (test francophone naïf).
 
-## ÉTAPE 3 — Choix du concept retenu (V3 — réflexion interne)
+Classification des concepts (analysis_axes.concepts)
+nul — proof_ctx 1 phrase
+peu_probable — proof_ctx 1-2 phrases avec distinction philosophique vs retenu
+probable — proof_ctx 1-2 phrases avec distinction philosophique vs retenu
+retenu — proof_ctx 4 phrases minimum avec distinction vs CHAQUE probable
+⚠️ Règle proof_ctx retenu = SEUL probables (V35)
+Le proof_ctx du concept retenu mentionne UNIQUEMENT les concepts probable de la même racine, chacun précédé d'un tiret « — ». Ne JAMAIS y commenter les peu_probable ni les nul (ils ont leur propre proof_ctx). Si 0 probable → pas de section « Comparaison… ».
 
-Pour CHAQUE mot important du verset, analyser les CONCEPTS de sa racine (pas les sens individuels) :
-
-### Classification des concepts
-- **nul** : concept hors sujet — proof_ctx court (1 phrase)
-- **peu_probable** : concept possible mais inadapté — proof_ctx 1-2 phrases avec distinction philosophique vs le retenu
-- **probable** : concept cohérent mais moins précis — proof_ctx 1-2 phrases avec distinction philosophique vs le retenu
-- **retenu** : le seul meilleur concept — proof_ctx 4 phrases MINIMUM avec distinction philosophique vs CHAQUE concept probable
-
-### Les 5 axes — RÉFLEXION INTERNE (pas écrits) le plus important 
-Claude réfléchit à ces 5 axes dans sa tête AVANT de choisir le concept retenu, mais ne les écrit PAS dans les données :
-1. **Champ lexical du verset** : ce concept est-il en accord avec les autres mots du verset ?
-2. **Contexte des versets voisins** : ce concept correspond-il au sujet du passage ?
-3. **Thème de la sourate** : ce concept s'inscrit-il dans le thème général ?
-4. **Cohérence coranique** : ce concept contredit-il un autre verset du Coran ?
-5. **Finalité du khalifa** : ce concept contribue-t-il à la mission de l'être humain de justice et de civilisation et empêcher la corruption ? Analyser le concept TEL QU'IL EST UTILISÉ DANS LE VERSET (avec la structure grammaticale), pas isolé.
-
-La réflexion sur ces 5 axes est OBLIGATOIRE mais le résultat est synthétisé en 4  phrases minimum dans le proof_ctx — pas de rédaction détaillée axe par axe.
-
-### Ordre de réflexion (OBLIGATOIRE)
-1. D'abord réfléchir aux 5 axes pour TOUS les concepts non-nul (en interne)
-2. PUIS vérifier la compatibilité grammaticale
-3. PUIS choisir le concept retenu
-NE JAMAIS décider avant d'avoir terminé la réflexion complète.
-
-### Test de compatibilité grammaticale — PHILOSOPHIQUE, pas linguistique
-Le test porte sur la NATURE PHILOSOPHIQUE du concept (sa description), PAS sur la forme des mots qui le composent.
-Question : **la réalité philosophique de ce concept est-elle compatible avec la structure grammaticale du mot dans le verset ?**
-- **Participe passif** : est-ce que cette réalité SORT de celui qui l'émet et ATTEINT celui qui la reçoit ? Un état intérieur (émotion) reste chez celui qui le ressent → pas compatible. Un acte dirigé vers l'extérieur (jugement, décision) atteint l'autre → compatible.
-- **Participe actif** : est-ce une action que la personne FAIT activement et en continu, ou un état passif ?
-- **Verbe accompli** : est-ce que ça peut avoir eu lieu comme événement achevé ?
-- **Verbe inaccompli** : est-ce que ça peut être en cours ou habituel ?
-- **Nom défini (al-)** : est-ce que ça peut être identifié comme une réalité connue ?
-- **Nom en idafa** : est-ce que ça peut être rattaché au mot suivant ?
-- **Forme IV** : est-ce que ça intègre l'idée de "accorder/faire faire" ?
-Un concept dont la nature philosophique n'est pas compatible avec la structure grammaticale ne peut PAS être retenu, même s'il est le meilleur sur les 5 axes.
-
-### Test de naturalité sémantique (préposition + objet)
-Quand le mot analysé est utilisé avec une préposition et un objet précis dans le verset, le sens retenu DOIT former une expression naturelle en français avec cet objet. Ne pas choisir un sens uniquement parce qu'il est le plus physique/premier — vérifier qu'il fonctionne dans la phrase complète du verset.
-Exemple : racine a-m-n, forme IV + bi (à/envers) + al-ghayb (l'invisible) :
-- "accorder la sécurité à l'invisible" ❌ — l'invisible n'a pas besoin de sécurité, la phrase est absurde
-- "accorder confiance à l'invisible" ✅ — expression naturelle et courante
-
-### Règles de rédaction du proof_ctx
-- Pas d'arabe — uniquement français et phonétique.
-- Pas de répétition.
-- Pas d'interprétation — décrire ce que la grammaire et les mots disent, point.
-- Pas de jargon technique ("pipeline", "concept", etc.). Dire "sens" au lieu de "concept".
-- Mots non analysés : si on fait référence à un mot d'une autre racine, on ne se prononce PAS sur son sens sauf s'il a déjà été analysé. On cite le Lane's sans affirmer.
-- Quand le test grammatical élimine un concept, expliquer la réalité philosophique qui le rend incompatible.
-- Pas d'anthropomorphisme : si Dieu ne dit pas explicitement qu'il possède un attribut, on ne le lui attribue pas.
-- **Pas d'anglais** : les citations du Lane's doivent être traduites en français. Le Lane's est en anglais mais le lecteur ne parle pas anglais. Traduire systématiquement.
-
-### Stockage (V3 — format simplifié)
-Stocker dans `verse_word_analyses.analysis_axes` avec le format :
-```json
+Format de stockage
 {
-  "sense_chosen": "le_mot_français_choisi_étape_4",
-  "concept_chosen": "Nom du concept retenu",
+  "sense_chosen": "mot français choisi étape 4",
+  "concept_chosen": "Nom exact du concept retenu (copié de word_meanings)",
   "concepts": {
-    "Nom/Identification": {
-      "status": "retenu",
-      "senses": ["nom", "nommer", "renommée", "prononcer le nom de Dieu", "..."],
-      "proof_ctx": "1-2 phrases de justification synthétique"
-    },
-    "Hauteur/Élévation": {
-      "status": "nul",
-      "senses": ["être haut", "noble", "aspirer", "..."],
-      "proof_ctx": "1 phrase courte"
+    "Nom Concept 1": {
+      "status": "retenu|probable|peu_probable|nul",
+      "senses": ["sens1", "sens2", ...],
+      "proof_ctx": "..."
     }
   }
 }
-```
-**PAS de champs axe1_verset...axe5_frequence** — la réflexion sur les axes est interne, seul le proof_ctx est écrit.
 
-## ÉTAPE 4 — Traduction
+R2bis — mise en forme du bloc Comparaison)
+Le proof_ctx du concept retenu doit présenter sa section « Comparaison » avec sauts de ligne explicites pour la lisibilité UI :
 
-### 4a. Choix du mot français — Deux étapes distinctes
+[paragraphe retenu : Sens retenu + analyse + nature philosophique].
+Comparaison avec les sens probables :
+— NomProbable1 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte du verset] désigne un *Y philosophique*, [pourquoi exclu].
+— NomProbable2 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte], [pourquoi exclu].
+Détails de format obligatoires :
 
-#### Étape 3 (déjà faite) — choix du SENS retenu
-Le sens retenu (`sense_chosen` de la VWA, et `sense_retenu` du segment affiché sous la phonétique) est **obligatoirement un des sens listés dans le concept** (dans `word_meanings`). Pas de mot inventé ici. Si aucun sens dans la liste ne correspond bien, c'est qu'il faut enrichir `word_meanings` avant.
+Double saut de ligne \n\n avant Comparaison avec les sens probables :
+Double saut de ligne \n\n après le header Comparaison avec les sens probables (en gras):
+Double saut de ligne \n\n entre chaque entrée — NomProbable
+Nom du probable PAS en italique (juste — NomProbable :, sans *…*, nom en gras)
+Italiques *…* sur les descripteurs philosophiques (ex: *processus physique graduel*, *sujet souverain*, *acte directionnel d'acceptation*)
+Conjonction « Tandis qu'ici » (pas « alors qu'ici » ni « alors que ici »)
+Phrase type : Sa nature est celle d'un *X*. Tandis qu'ici [verset context] [opération précise], [exclusion explicite].
+Test automatique : le script _check_proof_distinctions.js peut être étendu pour vérifier qu'après Comparaison avec les sens probables : chaque — est précédé de \n\n (pas inline).
+Tableau des règles implicites de mise en forme du proof_ctx :
 
-Exemple : pour bi-l-kufri en V80, le sens retenu est « dissimuler » → ce mot DOIT exister dans les sens du concept `Couverture/Dissimulation`. Si initialement il n'y était pas, on l'a ajouté à `word_meanings`.
+Élément	Markdown	Rendu	Exemple
+En-tête « Sens retenu »	***Sens retenu :***	bold italic	***Sens retenu :***
+Header bloc Comparaison	**Comparaison avec les sens probables :**	bold	**Comparaison avec les sens probables :**
+Nom du concept probable (après — )	**Nom**	bold	— **Éducation/Accompagnement** :
+Descripteur philosophique	***X***	bold italic	position relationnelle permanente, processus continu d'éducation, statut permanent
+Marqueur phonétique / grammatical / mention de mot	*X*	italic	-hā, son, yā, fa-, bi-, kullamā
+Mention de versets / racines en clair	plain	normal	« Comme au V35-36 », « racine n-b-t »
+Texte courant	plain	normal	reste du proof_ctx
+Structure complète d'un proof_ctx retenu :
 
-#### Étape 4 — choix du MOT dans la traduction (translation_arab)
-Une fois le sens retenu, à l'étape 4 (rédaction de la phrase complète française), tu as la liberté de choisir un mot ou une tournure **qui n'est pas forcément dans la liste des sens**, tant qu'il **se rapproche le plus du sens retenu** et **sonne naturel en français**.
+***Sens retenu :*** [mot français = sense_chosen], [analyse grammaticale]. Le mot est ici [forme]. [Contexte précis du verset, ancrage au V−1 / sourate]. La nature philosophique du sens retenu est celle d'une ***[descripteur philo]***.
+**Comparaison avec les sens probables :**
+— **NomProbable1** : [senses listés]. Sa nature est celle d'un ***[descripteur philo X]***. Tandis qu'ici [contexte], [exclusion explicite].
+— **NomProbable2** : [senses listés]. Sa nature est celle d'un ***[descripteur philo Y]***. Tandis qu'ici [contexte], [exclusion explicite].
+Sauts de ligne obligatoires :
 
-Cette liberté concerne UNIQUEMENT la phrase de traduction (`translation_arab`) — pas le mot affiché sous la phonétique (qui reste le sens retenu).
+\n\n avant **Comparaison avec les sens probables :**
+\n\n après le header
+\n\n entre chaque entrée — **NomProbable**
 
-Exemple :
-- Sens retenu (étape 3) : « dissimuler » (du concept Couverture/Dissimulation)
-- Mot sous phonétique (étape 3-4) : « dissimuler » ← exactement le sens retenu
-- Phrase de traduction (étape 4) : « vous ordonnerait-il **la dissimulation** [de la vérité] » ← variante nominale du verbe, libre choix
-- Ou autre exemple : si sens retenu = « ordonner », phrase peut écrire « il ne va pas vous **commander** » (synonyme proche, plus naturel dans le contexte) — tant que c'est fidèle.
+ÉTAPE 4 — TRADUCTION
+4a. Choix du mot français — DEUX niveaux distincts
+Niveau A — sense_chosen et segment.sense_retenu : OBLIGATOIREMENT un mot exact de la liste senses du concept retenu dans word_meanings. Si aucun ne colle, enrichir word_meanings AVANT.
 
-**Critères pour la phrase de traduction** :
-1. Le mot doit rester dans le champ sémantique du sens retenu (synonyme proche, variante grammaticale, reformulation idiomatique). Pas de glissement vers un autre concept ou une autre racine.
-2. **Le mot choisi NE DOIT PAS être l'un des sens des AUTRES concepts** (ceux qui ne sont pas retenus pour ce mot). S'applique à la fois au segment sous phonétique ET à la phrase de traduction. Sinon on confond les concepts entre eux dans l'esprit du lecteur.
+Niveau B — translation_arab (phrase complète) : liberté de variante grammaticale ou idiomatique tant que :
 
-#### Critères généraux pour le choix
-1. S'aligner avec la description philosophique du concept retenu
-2. Être compatible avec la structure grammaticale du mot dans le verset
-3. **Sonner naturel en français contemporain** — pas de calque bizarre, pas de tournure forcée. Tester : « est-ce que ça se dit naturellement en français ? » (Ex : préférer « la dissimulation [de la vérité] » à « la couverture [de la vérité] » qui sonne forcé.)
-4. Ne pas être du vocabulaire religieux chrétien ("grâce" → "bienfait"), pas de vocabulaire lié aux exégèses.
-5. Pas le droit de choisir un mot qui est exactement un mot d'un des sens des autres concepts.
+Reste dans le champ sémantique du concept retenu
+N'est PAS un mot d'un autre concept (sinon on confond les concepts)
+Sonne naturel en français contemporain
+⚠️ Triple alignement à vérifier (V23/V35) :
 
-### 4b. Traduction
-1. **Français courant** : vocabulaire du quotidien. Pas de registre littéraire. Allah → "Dieu".
-2. **Démarche explicative — STRUCTURE OBLIGATOIRE en 4 sections** :
-   Le champ `translation_explanation` doit TOUJOURS contenir QUATRE sections séparées par les marqueurs §DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§ et §FINALITE§ :
+concept_chosen ↔ concepts.X.status='retenu'
+sense_chosen ↔ existe dans senses du concept retenu
+segment.fr ↔ segment.sense_retenu ↔ mot du concept retenu
+Si segment.fr = "Livre" et que « livre » est dans senses → sense_retenu = "livre" (pas un sens voisin)
+4b. translation_explanation — STRUCTURE 4 SECTIONS
+Marqueurs OBLIGATOIRES : §DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§
 
-   **§DEMARCHE§** — Explication pédagogique de la grammaire arabe en français simple.
-   - **Phrase d'introduction obligatoire** : la §DEMARCHE§ DOIT commencer par 1-2 phrases qui résument le sens du verset et font le lien avec le(s) verset(s) précédent(s). Ex: "Le verset continue la description des muttaqīn commencée au verset 3." ou "Ce verset est une invocation prononcée par ceux qui sont « enracinés dans le savoir » (verset 7)."
-   Pour chaque mot important du verset :
-   - **Format obligatoire** : chaque mot phonétique DOIT être suivi de sa traduction française entre parenthèses. Ex: **Muḥkamātun** (fermement établis) est un participe passif... — JAMAIS de mot phonétique sans sa traduction française.
-   - Nommer la forme grammaticale et l'expliquer entre parenthèses (ex: "un participe actif, une forme qui dit que la personne FAIT l'action activement")
-   - Expliquer ce que cette forme implique pour le sens
-   - Citer les sources étymologiques (Lane's Lexicon) si pertinent
-   - Ne JAMAIS citer dans la démarche un sens qui n'est pas dans nos données BDD (word_meanings). Si un sens pertinent manque → d'abord l'ajouter via l'étape 2.
-   - Expliquer les constructions arabes (idafa, taqdim, phrase nominale, etc.) comme si on parlait à quelqu'un qui découvre l'arabe
-   - Montrer les nuances entre les versets (changements de temps, de personne, de forme)
-   - Pas d'interprétation. Si le texte ne précise pas quelque chose, dire "le texte ne précise pas"
+§DEMARCHE§ — commence DIRECTEMENT par le 1er paragraphe **phon** (fr) — explication. Plus d'intro de résumé (le résumé est dans summary_short/summary_long).
 
-   **§JUSTIFICATION§** — Pour chaque mot important traduit :
-   - Nommer le sens retenu entre guillemets
-   - Expliquer pourquoi CE mot français précis a été choisi
-   - Lister les alternatives écartées avec la raison pour chacune
-   - Ne PAS comparer avec les autres sens/concepts (ça c'est le travail du proof_ctx)
-   - Exemple : **louange** — Le sens retenu est « Louange/Éloge ». Le mot « louange » est choisi car... L'alternative « éloge » est écartée car...
+1 mot = 1 paragraphe (séparés par \n\n)
+Format : **Mot phonétique** (traduction française) — analyse grammaticale en français simple
+Pas de jargon : « participe passif » → « forme qui dit que la personne subit l'action »
+Pas le mot « concept » (utiliser « sens »)
+Pas d'arabe brut, pas d'anglais (Lane's traduit)
+Aucun sens cité qui n'existe pas en word_meanings
+§JUSTIFICATION§ — pour chaque mot important :
 
-   **§CRITIQUE§** — Critique des traductions classiques **EXHAUSTIVE et DANS L'ORDRE DU VERSET**. Couvrir **toutes les divergences substantielles** mot-à-mot avec Hamidullah (`full_translation`), de gauche à droite du verset. Une divergence est substantielle quand elle change la nuance sémantique, l'aspect verbal, l'image, l'agentivité ou la structure. Sont exclues : ponctuation pure, articles définis sans impact, conjonctions équivalentes.
+**mot français** — Le sens retenu est « ... ». Le mot est choisi car... L'alternative « ... » est écartée car...
+NE PAS comparer aux autres concepts (c'est le rôle du proof_ctx)
+⚠️ Une entry par occurrence — si « Dieu » apparaît 3× en segments, il faut 3 entries (ou une entry qui couvre les 3 explicitement) — pas de sous-couverture
+§CRITIQUE§ — exhaustive et dans l'ordre du verset, mot par mot :
 
-   - **Ordre obligatoire** : suivre l'ordre des mots du verset arabe — pas d'ordre thématique.
-   - **PAS de bloc dédié à « Allah vs Dieu »** : ce choix systématique (Allah → Dieu) est documenté ailleurs, ne pas le critiquer dans chaque verset, c'est répétitif. Si Hamidullah utilise « Allah » dans son texte, mentionner « Dieu » dans le titre du bloc critique pour ne pas évoquer la distinction.
-   - **PAS de fausses critiques sur la grammaire** : certains verbes arabes prennent leurs objets via une préposition fixe (`amara bi-`, `qaḍā ʿalā`, `ḥakama bi-`, etc.). Cette préposition est **partie intégrante du verbe** — pas un marqueur d'instrument, de moyen ou de lieu. Ne JAMAIS l'analyser comme « instrumental » alors qu'elle est juste « la préposition que ce verbe sélectionne ». Tester : si l'argument repose sur « la préposition X marque tel sens » alors que le verbe arabe sélectionne cette préposition par convention, l'argument est faux et à supprimer.
-   - Format standard : `**X vs « Y »** : Hamidullah rend [mot arabe] par « Y ». [Étymologie/contexte de la racine]. « X » conserve [aspect préservé] ; « Y » glisse vers [glissement].`
-   - Citer le mot et sa traduction courante vs la nôtre
-   - Expliquer en quoi ça change le sens du verset (pas juste du mot)
-   - Identifier la source du biais (exégèse, contexte historique, vocabulaire chrétien, ajout invisible)
-   - Montrer pourquoi l'étymologie pure donne un résultat différent
-   - **Précision et honnêteté** : ne JAMAIS simplifier à l'excès pour défendre notre traduction. Si Lane's donne des sens qui incluent partiellement ce que la traduction courante dit, le reconnaître honnêtement, puis montrer où est la vraie nuance. La critique doit être intellectuellement honnête pour être crédible — sinon on fait la même chose que les exégètes qu'on critique.
+Format : **X vs « Y »** : Hamidullah rend [phon arabe] par « Y ». [étymologie/contexte]. « X » conserve [aspect] ; « Y » glisse vers [glissement].
+Pas de bloc « Allah vs Dieu »
+Pas de fausses critiques sur prépositions sélectionnées par le verbe (amara bi-, qaḍā ʿalā...)
+Honnêteté : si Lane's donne partiellement raison à Hamidullah, le reconnaître puis montrer la nuance
+Mise en forme : un point = un saut de ligne (script _format_critique_aere.js)
+4c. Résumés (champs séparés verse_analyses.summary_short et summary_long)
+summary_short (3-4 phrases, affiché par défaut) :
 
-   **§FINALITE§** — 1-2 phrases maximum qui répondent à : « En quoi ce verset aide-t-il l'humain à réaliser sa mission de khalifa — c'est-à-dire vivifier la terre, établir la justice, et accomplir son adoration (qui est la finalité de l'être humain) ? »
-   - **1-2 phrases STRICT**, pas plus.
-   - **Honnêteté absolue** : si le verset n'apporte pas de contenu identifiable sur la mission khalifa (ex: lettres mystérieuses, narration historique sans implication directe, miracle propre à un prophète), DIRE EXPLICITEMENT « Ce verset n'apporte pas de contenu identifiable sur la mission de khalifa de l'humain. Il [contextualise/raconte/etc.] sans porter d'enseignement direct sur la justice, la vivification de la terre ou l'adoration. » NE JAMAIS forcer un lien artificiel.
-   - **Pas de jargon religieux** : pas de "tawhid", "iman", "hidayah". Parler naturellement.
-   - **Style** : phrase fluide, légèrement contemplative, en français standard. Italique sera appliqué côté UI.
-   - **Pas de titre, pas de balise, pas de "Ce verset..."** — juste la phrase.
-   - **Référents**: les trois axes-clés de la mission khalifa sont **(1) vivifier la terre, (2) établir la justice, (3) accomplir l'adoration**. Évoquer un ou plusieurs de ces axes selon ce qui est pertinent au verset, ne pas les forcer tous.
+Paraphrase vulgarisée, pas un rephrase mot à mot du verset
+Doit permettre la lecture isolée → citer brièvement les éléments cruciaux du contexte (ex: « faisant suite au V33 qui venait de nommer Adam, Noé… »)
+Style : français courant, vulgarisé
+Pas de phonétique, pas d'arabe brut
+summary_long (replié, 3 blocs séparés par \n\n) :
 
-### 4b-bis. Rédaction des deux résumés (depuis 2026-05-05)
+MACRO — où ce verset s'insère dans la sourate (purement situationnel, pas d'analyse)
+MICRO — relation Verset avec ses verset contextuelle proche . 
+ITALIQUE — fait textuel marquant en *…*
+⚠️ Mots interdits dans les 2 résumés :
 
-**Important** : depuis 2026-05-05, le résumé est séparé en deux champs BDD distincts sur `verse_analyses` (`summary_short` et `summary_long`), et n'apparaît plus dans `translation_explanation`. Le §DEMARCHE§ commence directement par le premier paragraphe `**phon** (fr) — explication`.
+❌ « rejetants » → ✅ « ceux qui ont rejeté »
+❌ « mécréants », « infidèles ».
+❌ « islam » au sens confessionnel → ✅ « remise de soi »
+⚠️ Anti-tafsir résumés (V36) : ne JAMAIS importer dans les résumés des hypothèses tafsiriques classiques même bien connues. Si le verset NE DIT PAS « X », ne pas glisser X. Vérifier 3× les claims « première occurrence » (sourate vs Coran).
 
-**`summary_short`** (résumé court, affiché par défaut dans l'UI)
-- 3-4 phrases max
-- Doit paraphraser et vulgariser le verset
-- Doit permettre à une personne **qui tombe sur ce verset isolé** (sans avoir lu V-1, V-2, etc.) de comprendre rapidement de quoi il parle
-- Si le verset fait référence à un personnage déjà nommé ou à un événement antérieur, **citer brièvement les éléments cruciaux** (ex: « Faisant suite au V33 qui venait de nommer Adam, Noé, la famille d'Abraham et la famille d'Imrān parmi les élus de Dieu, … »)
-- Style : français courant, vulgarisé, lecture rapide
-- Pas de jargon grammatical, pas de phonétique, pas d'arabe brut
+⚠️ Anti-anticipation : ne pas anticiper sur les versets non encore traités (ex: ne pas mentionner Jésus dans le résumé d'un verset sur Marie qui ne le nomme pas).
 
-**`summary_long`** (note contextuelle longue, repliée par défaut dans l'UI)
-3 blocs séparés par double saut de ligne, dans cet ordre :
-1. **MACRO** — verset ↔ sourate (1 paragraphe situationnel)
-2. **MICRO** — verset ↔ V-1 (1 paragraphe relationnel)
-3. **ITALIQUE** — fait textuel marquant (1 paragraphe en italique avec `*…*`)
+4d. Phrases du quotidien (word_daily)
+Pour chaque sens retenu : 3 phrases du quotidien.
 
-Éviter les redits entre MACRO/MICRO/ITALIQUE : chaque bloc apporte un angle différent.
+Vérifier d'abord SELECT count(*) FROM word_daily WHERE analysis_id = X → si > 0, SKIP.
+Phrases permanentes par racine (jamais ré-insérées).
+4e. Segments d'affichage
+Format obligatoire { fr, pos, phon, arabic, word_key, is_particle, sense_retenu, position }.
 
-**Mots interdits dans les DEUX champs** :
-- ❌ « rejetants », « rejetant », « rejetantes » → utiliser **« ceux qui ont rejeté »** (cohérence trad maison)
-- ❌ « mécréants », « mécréant », « infidèles », « hypocrites » (post-islamiques)
-- ❌ « islam » au sens confessionnel (post-islamique) → utiliser **« remise de soi »**
+Champ position OBLIGATOIRE (correspondance avec étape 1)
+⚠️ Aucun segment ne doit avoir fr vide — particules incluses (donner traduction littérale ne... pas, à, vers...)
+Pattern V23 (vider la particule) ABANDONNÉ
+⚠️ RÈGLES TRANSVERSALES À NE JAMAIS OUBLIER
+R1. Racines à dualité physique/abstrait (k-f-r, ḍ-r-b, ʿ-q-d, ḥ-k-m)
+Test obligatoire : l'objet est-il caché (concept passif) ou rejeté ouvertement (concept actif) ? Pour k-f-r dans 95% des contextes coraniques → Rejet/Ingratitude, pas Couverture.
 
-3. **Pas de mot "concept"** : ne JAMAIS utiliser le mot "concept" dans la démarche ni la justification. Toujours dire "sens". Le mot "concept" est notre méthode interne, l'utilisateur ne doit jamais le voir.
-4. **3 phrases du quotidien** pour chaque sens retenu uniquement. **SKIP si des phrases existent déjà** pour cette racine dans `word_daily` : vérifier `SELECT count(*) FROM word_daily WHERE analysis_id = X`. Si count > 0 → ne PAS en ajouter. Les phrases sont permanentes par racine comme les sens.
-5. **Segments d'affichage** : créer les segments avec le format { fr, pos, phon, arabic, word_key, is_particle, sense_retenu, **position** }. Le champ position est OBLIGATOIRE — il correspond à la position du mot dans les segments de l'étape 1.
+R2. Sens post-islamiques (dīn, slm, kfr, mnfq)
+Toujours privilégier le sens primaire étymologique. dīn ≠ « religion », islam ≠ label confessionnel, kāfir ≠ « mécréant », munāfiq ≠ « hypocrite ».
 
-### 4d. RELECTURE FINALE OBLIGATOIRE — TEST DE FLUIDITÉ FRANÇAISE
+R3. malak ≠ rasūl
+mlk → « ange » (catégorie d'être)
+rsl → « messager » (rôle/fonction)
+Q 22:75 prouve la distinction.
+R4. Allah → Dieu, ne jamais l'inverser
+R5. translation_arab DOIT être en français (jamais en phonétique brute)
+R6. Cohérence interne JUSTIFICATION ↔ CRITIQUE
+Test 1 : la JUSTIFICATION et la CRITIQUE pour le même mot doivent se renforcer, pas se contredire.
+Test 2 : l'argument de la CRITIQUE doit tenir dans le contexte précis du verset (ex: ne pas critiquer « punir » comme « trop négatif » dans un verset de châtiment).
 
-**Avant de marquer un verset comme « fait », relire la traduction complète à voix haute (ou mentalement avec accent francophone) comme un francophone naïf qui ne connaît ni l'arabe ni la racine ni le complément implicite du contexte.**
+R7. Em-dash (—) pour ḥāl arabe
+Quand l'arabe a un ḥāl (état) qui crée une proximité française ambiguë, utiliser « — » à la place de la virgule (équivalent typographique du marquage casuel -an).
+Ex V35 : « ce qui est dans mon ventre — consacré exclusivement »
 
-Tester **3 niveaux** :
+R8. Pas d'anthropomorphisme
+Si Dieu ne dit pas explicitement qu'il possède un attribut, ne pas le lui attribuer.
 
-**Niveau 1 — LEXICAL** : le mot choisi sans contexte est-il univoque ?
-- ❌ « se remettre » sans complément = guérir / convalescence en français contemporain
-- ✅ « s'en remettre [à quelqu'un] » = confier sa cause (idiomatique). Le « en » est intrinsèque au verbe, pas un complément ajouté
-- ❌ « se rendre » sans contexte = aller à un lieu (mouvement)
-- ✅ Si on veut le sens « capituler » → préférer « se livrer » ou « capituler » directement
+R9. Lecture manuelle indispensable
+Les scripts d'audit (validate-pipeline.js, _check_no_empty_fr.js, etc.) ont des angles morts. APRÈS automation, relire MANUELLEMENT chaque proof_ctx, chaque §DEMARCHE§ paragraphe, chaque §JUSTIFICATION§. Détecter :
 
-**Niveau 2 — GRAMMATICAL** : la construction française est-elle correcte indépendamment de l'arabe ?
-- ❌ « après que » + présent (« après que vous êtes ») — incorrect en français moderne
-- ✅ « après que » + passé composé (« après que vous vous êtes remis »)
-- ✅ « après » + infinitif passé (« après vous être remis »)
-- ❌ « ordonner que vous fassiez » — lourd
-- ✅ « ordonner de faire » — naturel après *ordonner / recommander / demander / proposer*
-- Subordonnées qui prennent le subjonctif : *avant que / sans que / bien que*
-- Subordonnées qui prennent l'indicatif/passé : *après que / dès que / lorsque*
+Leaks « pos=N », « concept(s) au pluriel »
+Claims devenus obsolètes après enrichissement
+Parenthèses vides « () »
+Phonétique italique sur noms propres déjà traduits (« Maryam » → « Marie »)
+Sections « Comparaison avec les sens probables » parasites quand 0 probable
+R10. Incohérence option A délibérée
+Pour une même racine, on PEUT utiliser deux mots français différents selon le contexte (ex: anth = « fille » humain spécifique vs « femelle » biologique générique). Cette incohérence doit être explicitée dans la JUSTIFICATION.
 
-**Niveau 3 — FLUIDITÉ (phrase entière)** : pas de subordonnées enchâssées, pas de périphrases empilées. Si la traduction française a beaucoup plus de mots que le verset arabe, c'est un signal d'alerte. Fidélité ≠ lourdeur.
+R11. Pas de jargon technique linguistique visible
+❌	✅
+copule	verbe « être »
+participe actif	celui qui fait l'action
+participe passif	celui qui subit l'action
+idāfa	structure « X de Y »
+accusatif/nominatif	(à éviter, expliquer en clair)
+schème	forme du mot
+✅ CHECKLIST FINALE OBLIGATOIRE (avant validation)
+Données BDD
 
-**Procédure** :
-1. Une fois la traduction écrite, la relire **d'un seul jet à voix haute**, en oubliant l'arabe et la racine
-2. Tester les 3 niveaux ci-dessus
-3. Si bancal, reformuler **sans changer le sens retenu** — choisir une autre expression française qui le rend
-4. Vérifier que l'expression existe dans `word_meanings` du concept retenu, sinon l'ajouter d'abord
+Toutes les racines lues depuis BDD (pas de mémoire)
 
-**Cas vus en avril 2026 (sourate 3)** :
-- ❌ V52/V64/V67/V80 : *muslimūn* traduit *« qui se remettent »* → ambigu (convalescence). Corrigé en *« qui s'en remettent »* (idiome français correct, sans ajouter de complément étranger au texte)
-- ❌ V80 : *« qu'il ne vous ordonne pas que vous adoptiez »* → lourd. Corrigé en *« qu'il ne vous ordonne pas d'adopter »*
-- ❌ V80 : *« après que vous êtes remis »* → grammaticalement incorrect. Corrigé en *« après que vous vous en êtes remis »* (passé composé) ou *« après vous être remis »* (infinitif passé)
+Doublons-stubs : utilisé l'entrée riche (>5 sens)
 
-**RÈGLE — Toute modification de traduction PROPAGE automatiquement à §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§ / proof_ctx**. Quand on change `translation_arab` ou un `segments[].fr`, on DOIT immédiatement mettre à jour :
-- Les parenthèses `**phon** (fr)` dans §DEMARCHE§
-- Les titres `**fr** —` dans §JUSTIFICATION§
-- Les blocs `**X vs « Y »**` dans §CRITIQUE§ (X = notre version)
-- Les arguments du §CRITIQUE§ qui deviendraient caducs (par alignement involontaire avec Hamidullah)
-- Les mentions de la traduction dans la phrase d'introduction (résumé) et §FINALITE§
-- Le `proof_ctx` du retenu si la formulation y est citée
-Ne pas attendre que l'utilisateur le demande — c'est implicite dans toute modification de traduction.
+concept_chosen copié-collé exactement de word_meanings
+Triple alignement
 
-### 4c. Stockage
-- `verse_analyses` : translation_arab, translation_explanation, segments, **full_translation** (traduction classique Hamidullah pour comparaison dans l'UI)
-- `word_daily` : analysis_id, sense, arabic, phon, french
+sense_chosen existe dans senses du concept retenu
 
-## RÈGLE CRITIQUE — Racines à dualité physique/abstrait
+segment.sense_retenu existe dans senses du concept retenu
 
-Certaines racines arabes ont un sens étymologique premier **physique** (couvrir, frapper, lier, etc.) qui dérive ensuite un sens **actif/abstrait** (nier, juger, contracter, etc.). Quand une racine présente cette dualité dans `word_meanings`, l'étape 3 DOIT systématiquement **confronter le contexte grammatical au sens physique avant de le retenir**.
+segment.fr ↔ sense_retenu cohérents (pas de mot d'un autre concept)
 
-### Test obligatoire — Structure grammaticale du verset
-Pour chaque verset utilisant une racine à dualité physique/abstraite, répondre AVANT de choisir le concept :
-1. **Qui fait l'action ?** — sujet
-2. **Sur quoi/qui ?** — objet
-3. **L'objet est-il caché (concept passif) ou refusé/rejeté ouvertement (concept actif) ?**
+Concat des segments[].fr ↔ translation_arab (mot pour mot)
+Segments
 
-Si l'objet n'est pas effectivement « caché » mais « rejeté en pleine lumière », le concept actif/abstrait l'emporte sur le concept physique, peu importe l'antériorité étymologique.
+Aucun segment.fr vide (particules incluses)
 
-### Cas k-f-r (couvrir / rejeter)
-- Sens premier (Lane's) : **couvrir** (le cultivateur couvre la graine, la nuit couvre le jour)
-- Usage coranique **massivement majoritaire** : **rejet / ingratitude** (refuser de reconnaître les signes, les bienfaits)
-- Test grammatical : si le contexte parle de signes/preuves/bienfaits visibles que les acteurs **refusent** ou **dénient** → concept retenu = **Rejet/Ingratitude**, **jamais Couverture/Dissimulation**
-- Le concept Couverture/Dissimulation ne s'applique pour k-f-r que dans des contextes rares où le sens physique premier est explicitement activé (ex: cultivateur, nuit qui couvre)
+Champ position présent partout
 
-### Autres racines à risque (à confronter au contexte)
-- **k-f-r** (couvrir → rejeter / être ingrat)
-- **ḍ-r-b** (frapper → fixer une règle, parcourir, frapper monnaie)
-- **ʿ-q-d** (nouer → conclure un contrat, prendre une résolution)
-- **ḥ-k-m** (empêcher de bouger → juger, gouverner)
+Si Hamidullah utilise « Allah », notre titre §CRITIQUE§ utilise « Dieu »
+Proof_ctx
 
-### Pourquoi cette règle existe
-La pipeline tend à retenir le sens étymologique premier par défaut, parce qu'il est listé en premier dans `word_meanings`. Mais le Coran utilise massivement les sens dérivés actifs. Sans cette règle, on classe systématiquement les contextes de rejet en « couverture », ce qui est **anachronique**.
+Retenu : 4 phrases min, distinction vs CHAQUE probable, tiret « — » devant chaque nom
 
-Exemple cassé identifié : S3:V52 (Jésus face aux Enfants d'Israël) classé en « Couverture/Dissimulation » alors que c'est clairement un contexte de **rejet actif** des signes — corrigé manuellement en « Rejet/Ingratitude ».
+Retenu ne mentionne QUE les probable (jamais peu_probable/nul)
 
-### Application des 5 axes — Renforcement
-Les 5 axes existants doivent être appliqués **rigoureusement** AVANT de retenir un concept :
-- **Axe 1 (champ lexical)** : si le verset cite des signes/preuves/bienfaits, le sens « couvrir » physique est exclu sauf cas explicite
-- **Axe 2 (versets voisins)** : si les voisins parlent de rejet/refus, c'est le concept Rejet
-- **Axe 4 (cohérence coranique)** : k-f-r dans le Coran = rejet dans 95% des occurrences
+0 probable → pas de section « Comparaison »
 
-## RÈGLE — SENS POST-ISLAMIQUES
-⚠️ Certains sens listés dans les dictionnaires (y compris le Lane's) sont des extensions tardives, post-islamiques. Exemples connus :
-- **dīn** (د ي ن) → "religion" est post-islamique. Le sens primaire est "dette/obligation/rétribution". Choisir selon le contexte (dette, devoir, rétribution...).
-- **islām** (س ل م) → "islam" comme label confessionnel est post-islamique. Le sens primaire est "remise entière/soumission".
-- **kāfir** (ك ف ر) → "mécréant/infidèle" est post-islamique. Le sens primaire est "celui qui recouvre/rejette".
-- **munāfiq** (ن ف ق) → "hypocrite" est post-islamique. Le sens primaire est lié au tunnel/passage souterrain.
+Pas de leak « pos=N », « concept au pluriel »
 
-Quand un de ces mots apparaît, TOUJOURS vérifier le sens primaire étymologique dans le Lane's et ne pas se fier au sens communément admis. Le contexte du verset détermine quel sens primaire est activé — ne jamais figer un sens sur une racine.
+Pas d'anglais
+§DEMARCHE§
 
-## RÈGLE — Résumé / phrase d'introduction agréable à lire
+Commence directement par **phon** (fr) — (pas d'intro résumé)
 
-L'intro de la §DEMARCHE§ est le RÉSUMÉ visible en haut du verset (encadré or). Il est lu en premier, par tous les utilisateurs — y compris ceux qui ne déplieront jamais l'analyse mot à mot. Il doit donc être :
+1 mot par paragraphe
 
-1. **Agréable à lire** — phrases courtes, français simple, ton fluide.
-2. **PAS de jargon technique grammatical** : ne JAMAIS écrire « négation modale », « particule conjonctive », « subjonctif régi par », « phrase nominale taqdim », etc. dans le résumé. Ces analyses sont réservées aux paragraphes mot à mot.
-3. **PAS de méta-discours sur l'analyse** : ne JAMAIS écrire « l'analyse mot par mot ci-dessous éclaire les choix lexicaux retenus », « voir l'analyse », ou similaire. Le lecteur sait qu'il y a une analyse plus bas.
-4. **PAS de phonétique arabe brute** dans le résumé, sauf 1-2 mots-clés essentiels (ex: nom propre, racine emblématique). Ne JAMAIS écrire des phrases entières en phonétique (« mā kāna li-bashar an... »).
-5. **Dire ce que le verset DIT**, pas comment il est construit grammaticalement. Le contenu, pas la forme.
-6. **Lien avec verset précédent** : recommandé quand pertinent — mais en français simple (« Ce verset prolonge le V79 », pas « V79 répond par la négative à V78 selon la structure mā... »).
+Chaque mot phon suivi de (fr) entre parenthèses
 
-Exemple cassé (V80 avant correction) :
-> ❌ « Le verset 80 prolonge directement l'argumentation du verset 79 — la phrase mā kāna li-bashar an... s'étend par wa-lā yaʾmurakum (« et qu'il ne vous ordonne pas »), reliant la même négation modale à un nouveau scénario [...] L'analyse mot par mot ci-dessous éclaire les choix lexicaux retenus. »
+Aucun sens cité absent de word_meanings
 
-Exemple corrigé :
-> ✅ « Ce verset prolonge le verset 79 sur la fonction du prophète. Le texte rappelle qu'aucun envoyé de Dieu (prophète ou ange) ne peut être pris pour seigneur — seul Dieu l'est. Le verset se termine par une question rhétorique : Dieu n'irait pas vous demander de rejeter la foi après que vous l'avez embrassée. »
+Pas le mot « concept » (utiliser « sens »)
 
-## RÈGLE — UN MOT PAR PARAGRAPHE DANS LA §DEMARCHE§
-Chaque mot important DOIT avoir son propre paragraphe dédié dans la §DEMARCHE§. Ne JAMAIS regrouper 2 mots ou plus dans le même paragraphe. Chaque paragraphe commence par le mot en gras (**Mot**) suivi de sa traduction entre parenthèses, puis l'analyse grammaticale. Séparer chaque mot par un double saut de ligne (\n\n).
+Pas de jargon linguistique non expliqué
+§JUSTIFICATION§
 
-## VÉRIFICATIONS OBLIGATOIRES AVANT VALIDATION
-Avant de valider chaque racine :
-- [ ] Lane's SQLite consulté (pas de mémoire)
-- [ ] TOUS les sens listés (aucun raccourci)
-- [ ] Sens regroupés par concepts (4-7 concepts par racine)
-- [ ] Descriptions philosophiques des concepts (pas juste une liste)
-- [ ] Chaque concept garde la liste complète de ses sens
-- [ ] Réflexion interne sur les 5 axes faite pour TOUS les concepts non-nul
-- [ ] Compatibilité grammaticale vérifiée sur le CONCEPT (test philosophique)
-- [ ] Concept retenu choisi APRÈS la réflexion complète
-- [ ] Proof_ctx contient 1-2 phrases de justification avec distinction philosophique vs chaque concept probable
-- [ ] Mot français choisi dans le concept retenu à l'étape 4
-- [ ] Pas d'anthropomorphisme
-- [ ] Pas d'interprétation
-- [ ] Tout en français (pas d'anglais dans les proof_ctx)
-- [ ] Si nouvelle racine créée → `total_occurrences` vérifié immédiatement via corpus.quran.com (ne jamais laisser à 0 sans vérification)
-- [ ] Les noms des concepts dans `verse_word_analyses.analysis_axes` sont LUES depuis `word_meanings` en base (SELECT avant INSERT), jamais écrits de mémoire
-- [ ] Le `sense_retenu` dans chaque segment d'affichage est un mot qui EXISTE dans les sens du concept retenu dans `word_meanings` (pas un mot inventé, pas le mot de la traduction)
-- [ ] **Test de naturalité sémantique** : le sens retenu + préposition + objet du verset forme une expression naturelle en français
-- [ ] Le mot français dans la traduction (`fr`) est du français courant et naturel (pas de calque bizarre)
-- [ ] **Phrases du quotidien** : vérifier si des phrases existent déjà pour cette racine avant d'en insérer. Si oui → SKIP.
-- [ ] **Richesse des racines** : chaque racine utilisée a au moins 6 sens. Si non → refaire l'étape 2 avant de continuer.
-- [ ] **Démarche — phrase d'introduction** : la §DEMARCHE§ commence par 1-2 phrases qui résument le verset et font le lien avec le verset précédent.
-- [ ] **Démarche — français obligatoire** : chaque mot phonétique dans la §DEMARCHE§ est suivi de sa traduction française entre parenthèses.
-- [ ] **Démarche — cohérence BDD** : aucun sens cité dans la §DEMARCHE§ qui n'existe pas dans word_meanings.
-- [ ] **Démarche — un mot par paragraphe** : chaque mot important a son propre paragraphe dans la §DEMARCHE§. Aucun paragraphe ne regroupe 2+ mots.
-- [ ] **Sens post-islamiques** : vérifier que les racines dyn, slm, kfr, mnfq n'utilisent pas un sens post-islamique. Toujours privilégier le sens primaire étymologique.
+Une entry par occurrence (pas de sous-couverture)
 
-## LOGS
-Après chaque racine, afficher :
-```
-[RACINE] XX sens extraits → Y concepts
-  Concept 1 (N sens) → NUL : "1 phrase justification"
-  Concept 2 (N sens) → PROBABLE : "1-2 phrases justification"
-  Concept 3 (N sens) → RETENU : "1-2 phrases justification + distinctions"
-  ...
-```
-Après chaque verset, afficher :
-```
+Format **fr** — Le sens retenu est « ... »
+
+Pas de comparaison avec autres concepts (rôle du proof_ctx)
+§CRITIQUE§
+
+Ordre des mots du verset (gauche→droite)
+
+Aucune fausse critique sur préposition sélectionnée
+
+Pas de bloc Allah/Dieu
+
+Honnêteté intellectuelle (reconnaître si Lane's donne partiellement raison)
+
+Cohérence avec JUSTIFICATION et contexte du verset
+
+Mise en forme aérée (un point = un saut de ligne)
+§FINALITE§
+
+1-2 phrases STRICT
+
+Honnêteté absolue : si rien à dire → le dire explicitement
+
+Pas de jargon religieux
+
+Pas de « Ce verset… » au début
+Résumés
+
+summary_short : paraphrase vulgarisée, lecture isolée possible
+
+summary_long : 3 blocs MACRO/MICRO/ITALIQUE, pas de redits
+
+Aucun mot interdit (rejetants, mécréants, infidèles, hypocrites, islam)
+
+Pas de tafsir importé, pas d'anticipation sur versets non traités
+
+Claims « première occurrence » vérifiés 3× (sourate vs Coran)
+Test final francophone naïf
+
+Lire translation_arab à voix haute sans contexte
+
+Niveau 1 LEXICAL : chaque mot univoque sans contexte ?
+
+Niveau 2 GRAMMATICAL : « après que » + passé composé, etc.
+
+Niveau 3 FLUIDITÉ : pas de subordonnées enchâssées
+word_daily
+
+3 phrases par sens retenu, OU SKIP si déjà présent
+Test final
+
+node scripts/validate-pipeline.js [verseId] → 0 erreur
+
+node scripts/_check_no_empty_fr.js [verseId] → 0 segment vide
+
+node scripts/_format_critique_aere.js [verseId] → §CRITIQUE§ aérée
+
+Si modification de translation_arab après coup → propagation auto à §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§ / proof_ctx
+LOGS À PRODUIRE
+[RACINE] XX sens disponibles → Y concepts
+  Concept 1 (N sens) → NUL : "1 phrase"
+  Concept 2 (N sens) → PROBABLE : "1-2 phrases + distinction philosophique"
+  Concept 3 (N sens) → RETENU : "4 phrases + distinctions vs probables"
 VERSET X:Y — TERMINÉ
-  mot1 (racine) → sens "Nom" → mot français "nom"
-  mot2 (racine) → sens "Divinité" → mot français "divinité"
+  mot1 (racine) → sens "Concept" → fr "mot français"
+  mot2 (racine) → sens "Concept" → fr "mot français"
   Traduction : "..."
-```
-
-## RÈGLE — Distinction malak / rasūl (sens lexicalisés)
-
-Le Coran utilise **deux mots distincts** pour deux réalités différentes :
-
-- **malak** (mlk) = **catégorie d'être** : créature céleste, agent de Dieu → traduire **« ange »**
-- **rasūl** (rsl) = **rôle/fonction** : humain envoyé en mission → traduire **« messager »**
-
-Ne JAMAIS traduire malak par "messager" même si l'étymologie de la racine archaïque l-ʾ-k = "envoyer" donne au malak la trace étymologique d'un « envoyé ». La distinction est prouvée explicitement par **Q 22:75** : *« Dieu choisit des messagers (rusul) parmi les anges (al-malāʾika) et parmi les humains »* — ce verset serait tautologique si malak = rasūl.
-
-**Concepts BDD** :
-- racine `rsl` → concept `Messager/Porteur`
-- racine `mlk` → concept `Ange/Messager`
-
-Le double titre `Ange/Messager` pour mlk garde la trace étymologique sans confondre avec rsl (différencié par le mot **Porteur**, qui marque le rôle humain).
-
-## RÈGLE — Vérifier translation_arab après génération
-
-Avant de valider un verset :
-- `translation_arab` doit être **en français**, pas en phonétique arabe ni en script arabe.
-- Si la pipeline LLM dérape (génère la phonétique au lieu du français), régénérer cette section.
-- Cas vus en sourate 3 : V65, V66, V67, V68, V75 (corrigés a posteriori).
-
-## RÈGLE — Cohérence coranique = réflexion interne uniquement
-
-Les 5 axes (verset, voisins, sourate, cohérence coranique, finalité khalifa) sont des **outils de raisonnement INTERNE** pour converger vers le bon sens. Ce qui est **AFFICHÉ** au lecteur dans le `proof_ctx` doit rester **spécifique au verset analysé** (1-2 phrases sur pourquoi CE sens dans CE verset).
-
-Ne PAS dumper dans le `proof_ctx` :
-- Les statistiques globales de fréquence ("La racine X apparaît N fois dans le Coran...")
-- Les listes d'événements liés à la racine ("Le mot accompagne tel ou tel événement majeur...")
-
-Ces données globales sont stockées dans `word_meanings.axe4_coherence` et restent accessibles via la liste des occurrences à droite.
-
-## RÈGLE — concept_chosen doit exister en base
-
-Le `analysis_axes.concept_chosen` de chaque VWA doit être un copier-coller exact d'un concept de `word_meanings` pour la même racine. Avant insertion :
-- `SELECT DISTINCT concept FROM word_meanings WHERE analysis_id = ?` pour récupérer la liste valide.
-- Choisir parmi cette liste — jamais inventer un nom de concept.
-- Si aucun concept ne convient, c'est qu'il faut enrichir `word_meanings` AVANT de remplir la VWA.
-
-## RÈGLE — Langage simple et accessible (pas de jargon linguistique)
-
-**Le lecteur visé n'est ni linguiste ni arabisant.** Tout le contenu visible (DEMARCHE, JUSTIFICATION, CRITIQUE, proof_ctx) doit être rédigé en **français simple et accessible**. Le jargon technique est interdit ou doit être systématiquement expliqué entre parenthèses.
-
-### Termes à éviter ou expliquer
-
-| ❌ Jargon | ✅ Alternative simple |
-|---|---|
-| copule | verbe « être » |
-| construction elliptique | tournure sans verbe |
-| forme intensive (fa'yyūl) | forme renforcée qui dit que l'action est faite tout le temps |
-| forme nominale agentive | forme qui désigne celui qui agit |
-| participe actif | celui qui fait l'action |
-| participe passif | celui qui subit l'action |
-| périphrase explicative | explication en plusieurs mots |
-| idiomatiquement | naturellement |
-| accusatif/nominatif/génitif | (à éviter ou expliquer : « cas du complément », « cas du sujet », « cas du complément du nom ») |
-| idāfa | structure « X de Y » |
-| taqdim | mise en avant d'un mot |
-| schème | forme du mot |
-
-### Principe
-Si un concept linguistique est nécessaire pour comprendre le verset, l'expliquer en termes simples plutôt que d'utiliser le terme technique. Ex : au lieu de « participe actif », dire « forme du mot qui dit que la personne fait activement l'action ».
-
-Test : un lecteur sans formation linguistique pourrait-il comprendre ce paragraphe ? Si non, simplifier.
-
-## RÈGLE — Cohérence interne entre JUSTIFICATION et CRITIQUE + cohérence avec le contexte
-
-Une critique peut être logiquement vraie en général mais **fausse dans le contexte du verset** ou **incohérente avec ce que dit la justification**. Ne JAMAIS écrire une critique sans la tester sur 2 plans :
-
-### Test 1 : Cohérence interne
-La JUSTIFICATION dit pourquoi on retient le mot X. La CRITIQUE dit pourquoi le mot Hami Y est moins bon. Ces deux arguments doivent se renforcer, pas se contredire.
-
-❌ **Exemple d'incohérence (V4 intiqām)** :
-- Justification : « Rétribution » est meilleur car il rend la justice rétributive (rendre ce qui est dû)
-- Critique : « Punir » est trop négatif
-- Problème : la justification accepte la dimension de justice rétributive (qui peut être négative) tandis que la critique accuse Hamidullah d'être négatif. Contradiction.
-
-✅ **Cohérence correcte** :
-- Justification : « Rétribution » rend l'acte exercé (intiqām est un nom d'action)
-- Critique : « Pouvoir de punir » introduit le mot « pouvoir » qui transforme un acte en capacité abstraite
-
-### Test 2 : Cohérence avec le contexte du verset
-Un argument peut être vrai dans l'absolu mais faux dans le contexte. Toujours tester l'argument **dans la phrase du verset**.
-
-❌ **Exemple de critique hors contexte (V4 intiqām)** :
-- Argument : « Punir » est trop négatif, alors que rétribution couvre récompense ET sanction
-- Problème : V4 parle du châtiment des dissimulateurs — le contexte EST négatif. Dire que « punir » est « trop négatif » dans un contexte de châtiment n'a aucun sens.
-
-✅ **Cohérence correcte** :
-- L'argument doit tenir compte du contexte spécifique. Si le contexte est négatif, ne pas critiquer un mot pour être négatif. Chercher une autre dimension (étymologie, structure, ajout de mots).
-
-### Procédure obligatoire avant chaque bloc CRITIQUE
-1. **Relire la justification** pour le même mot — l'argument de la critique est-il cohérent ?
-2. **Relire le verset entier** — l'argument tient-il dans CE contexte précis ?
-3. Si l'une des deux questions répond non → **réécrire ou supprimer la critique**.
+  validate-pipeline : 0 erreur
