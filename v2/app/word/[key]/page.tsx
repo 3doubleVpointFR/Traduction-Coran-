@@ -71,7 +71,11 @@ async function getWordData(key: string) {
 }
 
 export default async function WordPage({ params }: { params: { key: string } }) {
-  const data = await getWordData(params.key)
+  // Next.js décode déjà les params en général mais certaines clés (espaces, ḏ, š…) ne le sont pas.
+  // On applique un decodeURIComponent défensif pour couvrir les deux cas.
+  let key = params.key
+  try { key = decodeURIComponent(params.key) } catch { /* déjà décodé */ }
+  const data = await getWordData(key)
   if (!data) notFound()
 
   return (

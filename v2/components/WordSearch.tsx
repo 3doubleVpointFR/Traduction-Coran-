@@ -163,7 +163,7 @@ export default function WordSearch() {
                 {results.map((r, i) => (
                   <li key={r.word_key} className="m-0">
                     <Link
-                      href={`/word/${r.word_key}`}
+                      href={`/word/${encodeURIComponent(r.word_key)}`}
                       onClick={() => setOpen(false)}
                       className="word-result-row block px-4 py-3 transition-colors"
                       style={{
