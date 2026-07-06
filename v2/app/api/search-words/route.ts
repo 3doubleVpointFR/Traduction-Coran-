@@ -20,18 +20,33 @@ function normalize(s: string): string {
     .replace(/[ʿʾʼʽ']/g, '')               // apostrophes translittérées
 }
 
-// Buckwalter → lettres latines. F=fatḥatan, K=kasratan, N=ḍammatan, Y=alef maqṣūra,
-// A=alif, w=wāw, ` = ā long, ~=shadda, {}<>|=alifs, etc. On les strip ou on convertit.
+// Buckwalter → lettres latines. Case-sensitive (H=ح, h=ه ; $=ش ; x=خ ; etc.)
+// On mappe AVANT le lowercase pour préserver la distinction.
 function normalizeBuckwalter(s: string): string {
   if (!s) return ''
   return s
+    // Consonnes Buckwalter uppercase → digraphes latins (avant lowercase)
+    .replace(/\$/g, 'sh')      // ش
+    .replace(/H/g, 'h')        // ح (emphatic h)
+    .replace(/x/g, 'kh')       // خ
+    .replace(/v/g, 'th')       // ث
+    .replace(/\*/g, 'dh')      // ذ
+    .replace(/g/g, 'gh')       // غ
+    .replace(/S/g, 's')        // ص
+    .replace(/D/g, 'd')        // ض
+    .replace(/T/g, 't')        // ط
+    .replace(/Z/g, 'z')        // ظ
+    .replace(/E/g, 'a')        // ع (approximation)
+    .replace(/q/g, 'q')
+    // Voyelles brèves de fin (tanwīn / case markers)
+    .replace(/[FKN]/g, 'a')    // fatḥatan, kasratan, ḍammatan
+    .replace(/Y/g, 'y')        // alef maqṣūra (le lowercase suivant l'ignorerait)
+    .replace(/A/g, 'a')        // alif
+    .replace(/w/g, 'w')        // wāw (déjà OK)
+    // Diacritiques et marqueurs
+    .replace(/[`~^]/g, '')     // shadda, sukun, longueurs
+    .replace(/[{}<>|]/g, 'a')  // alifs modifiés
     .toLowerCase()
-    // Voyelles brèves de fin (tanwīn/case marker)
-    .replace(/[fkn]/g, 'a')  // F/K/N → a (approximation phonétique)
-    // Lettres longues et diacritiques
-    .replace(/[`~^]/g, '')   // shadda, sukun, marqueurs
-    .replace(/[{}<>|]/g, 'a')
-    .replace(/y/g, 'y')      // alef maqṣūra → y
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .replace(/[\s\-_.]/g, '')
@@ -147,10 +162,26 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // Prédicat : une racine est « vraiment analysée » si utilisée dans un verset
-  // OU si elle contient au moins 5 sens (racine enrichie mais pas encore rencontrée en verset)
-  const isReallyAnalyzed = (a: { id: number; word_key: string }) =>
-    usedKeys.has(a.word_key) || (richness.get(a.id) || 0) >= 5
+  // Racines arabes utilisées : si hšr a été utilisée en verset, alors hshr
+  // (même root_ar) l'est aussi implicitement (doublon d'entrée dans word_analyses)
+  const usedRootArs = new Set<string>()
+  for (const a of analyses) {
+    if (usedKeys.has(a.word_key) && a.root_ar) {
+      usedRootArs.add(a.root_ar.replace(/\s+/g, ''))
+    }
+  }
+
+  // Prédicat : une racine est « vraiment analysée » si :
+  // - utilisée dans un verset (word_key en VWA)
+  // - OU partage sa racine arabe avec une racine utilisée (doublons)
+  // - OU contient au moins 5 sens (enrichie manuellement)
+  const isReallyAnalyzed = (a: { id: number; word_key: string; root_ar?: string | null }) => {
+    if (usedKeys.has(a.word_key)) return true
+    if ((richness.get(a.id) || 0) >= 5) return true
+    const rootKey = (a.root_ar || '').replace(/\s+/g, '')
+    if (rootKey && usedRootArs.has(rootKey)) return true
+    return false
+  }
 
   // 3) Mots du Coran matchant la requête (formes réelles → racine)
   //    Filtre serré + filtre large (préfixe 3 chars) pour attraper les formes fléchies
@@ -327,7 +358,8 @@ export async function GET(req: NextRequest) {
 
   // 6bis) Fallback squelette consonantique — ne cible QUE les vraies racines riches
   //       (rich >= 4) pour éviter le bruit des stubs. Capture les patterns arabes
-  //       où la voyelle initiale du mot n'est pas dans la racine (« iman » → amn).
+  //       où la voyelle initiale du mot n'est pas dans la racine (« iman » → amn)
+  //       ET les formes conjuguées où la racine est enfouie (« tuhsharuna » → hshr).
   if (qSkel.length >= 2) {
     for (const a of analyses) {
       if (scores.has(a.word_key)) continue
@@ -335,10 +367,30 @@ export async function GET(req: NextRequest) {
       if (rich < 4) continue   // racines pauvres écartées pour éviter le bruit
       const rootPhonSkel = normalize(a.root_phon || '').replace(/[aeiouy]/g, '').replace(/(.)\1+/g, '$1')
       const wordKeySkel = normalize(a.word_key || '').replace(/[aeiouy]/g, '').replace(/(.)\1+/g, '$1')
+
+      // Match exact du squelette
       if (rootPhonSkel === qSkel && rootPhonSkel.length >= 2) {
         push(a, 'racine', a.root_phon || '', 76)
-      } else if (wordKeySkel === qSkel && wordKeySkel.length >= 2) {
+        continue
+      }
+      if (wordKeySkel === qSkel && wordKeySkel.length >= 2) {
         push(a, 'racine', a.word_key, 72)
+        continue
+      }
+      // Substring : la racine apparaît dans le squelette de la query.
+      // Score proportionnel à la longueur de la racine matchée : hshr (4) > shr (3).
+      // Bonus supplémentaire si la racine occupe une grande part de la query.
+      if (rootPhonSkel.length >= 3 && qSkel.includes(rootPhonSkel)) {
+        const coverage = rootPhonSkel.length / qSkel.length
+        const base = 70 + rootPhonSkel.length * 3 + Math.round(coverage * 8)
+        push(a, 'racine', a.root_phon || '', Math.min(94, base))
+        continue
+      }
+      if (wordKeySkel.length >= 3 && qSkel.includes(wordKeySkel)) {
+        const coverage = wordKeySkel.length / qSkel.length
+        const base = 68 + wordKeySkel.length * 3 + Math.round(coverage * 8)
+        push(a, 'racine', a.word_key, Math.min(90, base))
+        continue
       }
     }
   }
