@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 type Meaning = {
   id: number
@@ -66,6 +67,11 @@ export default function RootAnalysisView({ data }: Props) {
 
   const [activeTab, setActiveTab] = useState<string>(conceptGroups[0]?.[0] || '')
   const [expandedBlocks, setExpandedBlocks] = useState<Set<string>>(() => new Set([conceptGroups[0]?.[0] || '']))
+  const [hoveredConcept, setHoveredConcept] = useState<string | null>(null)
+  const [tooltipPos, setTooltipPos] = useState<{ left: number; top: number; width: number } | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
 
   const toggleBlock = (name: string) => {
     setExpandedBlocks(prev => {
@@ -136,6 +142,16 @@ export default function RootAnalysisView({ data }: Props) {
                   key={name}
                   type="button"
                   onClick={() => { setActiveTab(name); setExpandedBlocks(new Set([name])) }}
+                  onMouseEnter={e => {
+                    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
+                    const vpW = window.innerWidth
+                    const desiredW = 280
+                    let left = rect.left
+                    if (left + desiredW + 12 > vpW) left = Math.max(12, vpW - desiredW - 12)
+                    setTooltipPos({ left, top: rect.bottom + 6, width: desiredW })
+                    setHoveredConcept(name)
+                  }}
+                  onMouseLeave={() => setHoveredConcept(null)}
                   className="concept-tab-btn"
                   style={{
                     padding: '2px 0',
@@ -421,6 +437,70 @@ export default function RootAnalysisView({ data }: Props) {
             ))}
           </ul>
         </section>
+      )}
+
+      {/* Tooltip concept (hover) — via portal pour dépasser tout overflow parent */}
+      {mounted && hoveredConcept && tooltipPos && createPortal(
+        <div
+          style={{
+            position: 'fixed',
+            left: tooltipPos.left,
+            top: tooltipPos.top,
+            width: tooltipPos.width,
+            background: '#FDFAF3',
+            border: '1px solid rgba(184,150,46,0.35)',
+            borderRadius: '10px',
+            boxShadow: '0 4px 20px rgba(120,90,30,0.12), 0 2px 6px rgba(120,90,30,0.06)',
+            padding: '12px 14px',
+            zIndex: 9999,
+            pointerEvents: 'none',
+          }}
+        >
+          {(() => {
+            const list = conceptGroups.find(([n]) => n === hoveredConcept)?.[1] || []
+            return (
+              <>
+                <div
+                  className="uppercase"
+                  style={{
+                    fontSize: '11px',
+                    letterSpacing: '0.08em',
+                    color: '#B8962E',
+                    fontWeight: 700,
+                    marginBottom: '8px',
+                  }}
+                >
+                  <span aria-hidden="true" style={{ marginRight: '4px' }}>✦</span>
+                  {hoveredConcept}
+                  <span style={{ color: '#8A7E72', fontWeight: 500, fontStyle: 'italic', marginLeft: '6px', textTransform: 'none', letterSpacing: 'normal' }}>
+                    {list.length} sens
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {list.map(s => (
+                    <span
+                      key={s.id}
+                      style={{
+                        fontSize: '12px',
+                        color: '#4A3F35',
+                        background: '#FFFFFF',
+                        border: '1px solid rgba(184,150,46,0.28)',
+                        borderRadius: '999px',
+                        padding: '3px 9px',
+                        whiteSpace: 'nowrap',
+                        fontFamily: "'Cormorant Garamond', serif",
+                      }}
+                    >
+                      <span aria-hidden="true" style={{ color: '#B8962E', opacity: 0.7, marginRight: '4px', fontSize: '10px' }}>▸</span>
+                      {s.sense}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )
+          })()}
+        </div>,
+        document.body
       )}
 
       <style jsx>{`
