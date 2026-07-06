@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 type Meaning = {
   id: number
@@ -47,37 +47,47 @@ type Props = {
 export default function RootAnalysisView({ data }: Props) {
   const { analysis, meanings, daily, totalQac, totalAnalyzed, refsBySense, refsByConcept, senseCounts, conceptCounts } = data
 
-  // Grouper les sens par concept
-  const conceptMap = new Map<string, Meaning[]>()
-  for (const m of meanings) {
-    const c = m.concept || 'Sans concept'
-    if (!conceptMap.has(c)) conceptMap.set(c, [])
-    conceptMap.get(c)!.push(m)
-  }
+  // Grouper les sens par concept (ordre stable = display_order de word_meanings)
+  const conceptGroups = useMemo(() => {
+    const m = new Map<string, Meaning[]>()
+    for (const s of meanings) {
+      const c = s.concept || 'Sans concept'
+      if (!m.has(c)) m.set(c, [])
+      m.get(c)!.push(s)
+    }
+    // Trier les concepts par occurrences décroissantes puis alphabétique
+    return [...m.entries()].sort(([nA, sA], [nB, sB]) => {
+      const cA = conceptCounts[nA] || 0
+      const cB = conceptCounts[nB] || 0
+      if (cA !== cB) return cB - cA
+      return nA.localeCompare(nB, 'fr')
+    })
+  }, [meanings, conceptCounts])
 
-  const conceptEntries = [...conceptMap.entries()]
+  const [activeTab, setActiveTab] = useState<string>(conceptGroups[0]?.[0] || '')
+  const [expandedBlocks, setExpandedBlocks] = useState<Set<string>>(() => new Set([conceptGroups[0]?.[0] || '']))
 
-  // Concept le plus retenu (si présent en analyses)
-  let mainConcept: string | null = null
-  let mainCount = 0
-  for (const [c, n] of Object.entries(conceptCounts)) {
-    if (n > mainCount) { mainCount = n; mainConcept = c }
-  }
-
-  const [openConcept, setOpenConcept] = useState<string | null>(mainConcept || (conceptEntries[0]?.[0] || null))
-  const [expandedSense, setExpandedSense] = useState<Set<number>>(new Set())
-
-  const toggleSense = (id: number) => {
-    setExpandedSense(prev => {
+  const toggleBlock = (name: string) => {
+    setExpandedBlocks(prev => {
       const next = new Set(prev)
-      if (next.has(id)) next.delete(id); else next.add(id)
+      if (next.has(name)) next.delete(name); else next.add(name)
       return next
     })
   }
 
+  // Phrases du quotidien groupées par sens
+  const dailyBySense = useMemo(() => {
+    const m = new Map<string, Daily[]>()
+    for (const d of daily) {
+      if (!m.has(d.sense)) m.set(d.sense, [])
+      m.get(d.sense)!.push(d)
+    }
+    return m
+  }, [daily])
+
   return (
     <article className="space-y-6">
-      {/* Header racine */}
+      {/* ═══ HEADER RACINE ═══ */}
       <header
         className="rounded-2xl p-5 sm:p-6"
         style={{
@@ -109,8 +119,8 @@ export default function RootAnalysisView({ data }: Props) {
               {analysis.root_phon || analysis.word_key}
             </div>
             <div className="flex items-baseline gap-1.5 mt-1.5">
-              <span style={{ fontSize: '20px', color: '#B8962E', fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>{totalQac}</span>
-              <span style={{ fontSize: '14.5px', color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic' }}>
+              <span style={{ fontSize: '18px', color: '#B8962E', fontWeight: 700, fontFamily: "'Cormorant Garamond', serif" }}>{totalQac}</span>
+              <span style={{ fontSize: '15px', color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic' }}>
                 occurrence{totalQac > 1 ? 's' : ''} dans le Coran
               </span>
               {totalAnalyzed > 0 && (
@@ -140,302 +150,345 @@ export default function RootAnalysisView({ data }: Props) {
             {analysis.root_meaning}
           </p>
         )}
-      </header>
 
-      {/* Onglets Concepts */}
-      {conceptEntries.length > 0 && (
-        <section aria-labelledby="concepts-heading">
-          <div className="flex items-center gap-3 mb-4">
-            <h2
-              id="concepts-heading"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                color: '#1A1410',
-                fontSize: 'clamp(18px, 4vw, 22px)',
-                letterSpacing: '0.03em',
-                fontWeight: 600,
-                margin: 0,
-              }}
-            >
-              Champs sémantiques
-            </h2>
-            <span style={{ fontSize: '12.5px', color: '#8A7428', letterSpacing: '0.06em', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
-              {conceptEntries.length} concept{conceptEntries.length > 1 ? 's' : ''}
-            </span>
-          </div>
-
-          {/* Tabs */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {conceptEntries.map(([concept, ms]) => {
-              const isActive = openConcept === concept
-              const nRef = refsByConcept[concept]?.length || 0
+        {/* ═══ ONGLETS CONCEPTS ═══ */}
+        {conceptGroups.length > 1 && (
+          <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end mt-4" style={{ paddingTop: '14px', borderTop: '1px solid rgba(184,150,46,0.16)' }}>
+            {conceptGroups.map(([name, ss]) => {
+              const isActive = activeTab === name
+              const nRefs = refsByConcept[name]?.length || 0
               return (
                 <button
-                  key={concept}
+                  key={name}
                   type="button"
-                  onClick={() => setOpenConcept(concept)}
-                  className="concept-tab"
+                  onClick={() => { setActiveTab(name); setExpandedBlocks(new Set([name])) }}
+                  className="concept-tab-btn"
                   style={{
-                    padding: '8px 14px',
-                    borderRadius: '999px',
-                    border: isActive ? '1px solid #B8962E' : '1px solid rgba(184,150,46,0.28)',
-                    background: isActive ? '#FDF6E4' : '#FFFFFF',
-                    color: isActive ? '#B8962E' : '#3D3228',
-                    fontSize: '13px',
-                    fontWeight: isActive ? 700 : 500,
-                    fontFamily: "'Cormorant Garamond', serif",
-                    letterSpacing: '0.02em',
+                    padding: '2px 0',
+                    background: 'none',
+                    border: 'none',
                     cursor: 'pointer',
-                    transition: 'all 0.15s ease',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
                   }}
                 >
-                  <span>{concept}</span>
-                  <span style={{ fontSize: '11px', color: isActive ? '#B8962E' : '#8A7E72', fontStyle: 'italic', opacity: 0.85 }}>
-                    {ms.length}
-                    {nRef > 0 && ` · ${nRef} versets`}
+                  <span
+                    style={{
+                      color: isActive ? '#B8962E' : '#1A1410',
+                      fontSize: isActive ? '14px' : '13px',
+                      fontWeight: isActive ? 700 : 500,
+                      whiteSpace: 'nowrap',
+                      paddingBottom: '4px',
+                      borderBottom: isActive ? '3px solid #B8962E' : '2px solid rgba(184,150,46,0.4)',
+                      display: 'inline-block',
+                    }}
+                  >
+                    {name}
+                    {nRefs > 0 && (
+                      <span style={{ fontSize: '10px', color: '#8A7E72', fontStyle: 'italic', marginLeft: '5px' }}>
+                        {nRefs}{isActive ? ` versets` : ''}
+                      </span>
+                    )}
                   </span>
                 </button>
               )
             })}
           </div>
+        )}
+      </header>
 
-          {/* Contenu du concept ouvert */}
-          {openConcept && conceptMap.has(openConcept) && (
-            <div
-              className="rounded-xl p-4 sm:p-5"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid rgba(184,150,46,0.18)',
-                boxShadow: '0 1px 3px rgba(120,90,30,0.04)',
-              }}
-            >
-              {(() => {
-                const list = conceptMap.get(openConcept)!
-                const description = list.find(m => m.description)?.description
-                return (
-                  <>
-                    {description && (
-                      <p
+      {/* ═══ SENS ÉTYMOLOGIQUES ═══ */}
+      {conceptGroups.length > 0 && (
+        <section aria-labelledby="senses-heading">
+          <h2
+            id="senses-heading"
+            className="uppercase mb-3"
+            style={{
+              fontSize: '11px',
+              letterSpacing: '0.1em',
+              color: '#3D3228',
+              fontWeight: 700,
+            }}
+          >
+            Sens étymologiques
+            {totalAnalyzed > 0 && (
+              <span style={{ color: '#B8962E', fontWeight: 600, marginLeft: '6px' }}>
+                · {totalAnalyzed} verset{totalAnalyzed > 1 ? 's' : ''} analysé{totalAnalyzed > 1 ? 's' : ''}
+              </span>
+            )}
+          </h2>
+
+          <div className="space-y-3">
+            {conceptGroups.map(([conceptName, conceptSenses]) => {
+              const isExpanded = expandedBlocks.has(conceptName)
+              const conceptOcc = conceptCounts[conceptName] || 0
+              const pct = totalAnalyzed > 0 ? Math.round((conceptOcc / totalAnalyzed) * 100) : 0
+              const description = conceptSenses.find(s => s.description)?.description
+              const refs = refsByConcept[conceptName] || []
+              const sortedRefs = [...refs].sort((a, b) => {
+                const [sa, va] = a.split(':').map(Number)
+                const [sb, vb] = b.split(':').map(Number)
+                return sa - sb || va - vb
+              })
+
+              return (
+                <div
+                  key={conceptName}
+                  className="pl-3"
+                  style={{
+                    borderLeft: `3px solid ${conceptOcc > 0 ? '#B8962E' : '#C8BCAD'}`,
+                  }}
+                >
+                  {/* Header cliquable */}
+                  <button
+                    onClick={() => toggleBlock(conceptName)}
+                    className="flex items-center gap-1.5 flex-wrap cursor-pointer text-left w-full"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: '4px 0',
+                      borderRadius: '4px',
+                      transition: 'background 0.15s',
+                    }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(184,150,46,0.05)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'none' }}
+                  >
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        color: '#B8962E',
+                        fontSize: '12px',
+                        marginRight: '2px',
+                        transition: 'transform 0.2s',
+                        transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                        display: 'inline-block',
+                        lineHeight: 1,
+                      }}
+                    >
+                      ▸
+                    </span>
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{conceptName}</span>
+                    <span style={{ fontSize: '10px', color: '#9E9089' }}>
+                      ({conceptSenses.length} sens)
+                    </span>
+                  </button>
+
+                  {/* Barre de progression */}
+                  {totalAnalyzed > 0 ? (
+                    <div className="flex items-center gap-2 mt-1">
+                      <div
+                        className="flex-1 h-1 rounded-full overflow-hidden"
+                        style={{ background: '#E8DFCC' }}
+                      >
+                        <div
+                          className="h-full rounded-full"
+                          style={{
+                            width: `${pct}%`,
+                            background: conceptOcc > 0 ? '#B8962E' : 'transparent',
+                            transition: 'width 0.4s ease',
+                          }}
+                        />
+                      </div>
+                      <span
+                        className="text-[10px] shrink-0 px-1.5 py-0.5 tabular-nums"
                         style={{
-                          fontSize: '13.5px',
-                          color: '#4A3F35',
-                          lineHeight: 1.65,
-                          margin: '0 0 14px 0',
-                          paddingBottom: '12px',
-                          borderBottom: '1px dashed rgba(184,150,46,0.24)',
-                          fontStyle: 'italic',
-                          fontFamily: "'Cormorant Garamond', serif",
+                          color: conceptOcc > 0 ? '#B8962E' : '#9E9089',
+                          fontWeight: conceptOcc > 0 ? 600 : 400,
                         }}
                       >
-                        {description}
-                      </p>
-                    )}
-                    <ul className="list-none p-0 m-0 space-y-2">
-                      {list.map(m => {
-                        const nOcc = senseCounts[m.sense] || 0
-                        const refs = refsBySense[m.sense] || []
-                        const isOpen = expandedSense.has(m.id)
-                        return (
-                          <li key={m.id} className="m-0">
-                            <button
-                              type="button"
-                              onClick={() => refs.length > 0 && toggleSense(m.id)}
-                              disabled={refs.length === 0}
-                              className="w-full text-left flex items-baseline gap-2.5 py-1.5"
+                        {conceptOcc}/{totalAnalyzed} ({pct}%)
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-[10px] mt-0.5 inline-block" style={{ color: '#9E9089' }}>
+                      en attente d&apos;analyses
+                    </span>
+                  )}
+
+                  {/* Contenu déplié */}
+                  {isExpanded && (
+                    <div className="mt-3 space-y-3" style={{ paddingBottom: '10px' }}>
+                      {/* Refs versets cliquables */}
+                      {sortedRefs.length > 0 && (
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                            versets ·
+                          </span>
+                          {sortedRefs.map((ref, i) => (
+                            <a
+                              key={i}
+                              href={`/surah/${ref.split(':')[0]}#verse-${ref.replace(':', '-')}`}
+                              className="verse-ref"
                               style={{
-                                background: 'transparent',
-                                border: 'none',
-                                cursor: refs.length > 0 ? 'pointer' : 'default',
-                                padding: '4px 0',
+                                fontSize: '12px',
+                                color: '#B8962E',
+                                fontWeight: 600,
+                                textDecoration: 'none',
+                                padding: '1px 6px',
+                                borderRadius: '4px',
+                                background: 'rgba(184,150,46,0.08)',
+                                transition: 'background 0.15s ease',
                               }}
                             >
-                              <span
-                                aria-hidden="true"
-                                style={{
-                                  color: '#B8962E',
-                                  fontSize: '11px',
-                                  opacity: refs.length > 0 ? 1 : 0.3,
-                                  transform: isOpen ? 'rotate(90deg)' : 'rotate(0)',
-                                  transition: 'transform 0.15s ease',
-                                  display: 'inline-block',
-                                  width: '10px',
-                                }}
-                              >
-                                ▸
+                              {ref}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Description du concept */}
+                      {description && (
+                        <p
+                          className="rounded"
+                          style={{
+                            color: '#1A1410',
+                            background: conceptOcc > 0 ? '#FDF6E8' : '#F5F5F5',
+                            borderLeft: `4px solid ${conceptOcc > 0 ? '#B8962E' : '#C8BCAD'}`,
+                            padding: '10px 12px',
+                            fontSize: '13px',
+                            lineHeight: 1.6,
+                            fontStyle: 'italic',
+                            fontFamily: "'Cormorant Garamond', serif",
+                            margin: 0,
+                          }}
+                        >
+                          {description}
+                        </p>
+                      )}
+
+                      {/* Liste des sens individuels */}
+                      <ul className="list-none p-0 m-0 space-y-1">
+                        {conceptSenses.map(s => {
+                          const nOcc = senseCounts[s.sense] || 0
+                          return (
+                            <li key={s.id} className="m-0 flex items-baseline gap-2" style={{ padding: '2px 0' }}>
+                              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.7 }}>▸</span>
+                              <span style={{ fontSize: '14px', color: '#1A1410', fontFamily: "'Cormorant Garamond', serif" }}>
+                                {s.sense}
                               </span>
-                              <span
-                                style={{
-                                  fontSize: '15px',
-                                  color: '#1A1410',
-                                  fontWeight: 500,
-                                  fontFamily: "'Cormorant Garamond', serif",
-                                  letterSpacing: '0.01em',
-                                }}
-                              >
-                                {m.sense}
-                              </span>
-                              {m.sense_ar && (
+                              {s.sense_ar && (
                                 <span
                                   className="font-arabic"
                                   lang="ar"
                                   dir="rtl"
-                                  style={{ fontSize: '15px', color: '#B8962E', marginLeft: '4px' }}
+                                  style={{ fontSize: '14px', color: '#B8962E' }}
                                 >
-                                  {m.sense_ar}
+                                  {s.sense_ar}
                                 </span>
                               )}
                               {nOcc > 0 && (
                                 <span
                                   className="ml-auto"
                                   style={{
-                                    fontSize: '11.5px',
+                                    fontSize: '11px',
                                     color: '#8A7428',
                                     fontStyle: 'italic',
                                     fontFamily: "'Cormorant Garamond', serif",
-                                    flexShrink: 0,
                                   }}
                                 >
                                   {nOcc} occ.
                                 </span>
                               )}
-                            </button>
-                            {isOpen && refs.length > 0 && (
-                              <div
-                                className="ml-6 mt-1 mb-2 flex flex-wrap gap-1.5"
-                                style={{ paddingBottom: '6px' }}
-                              >
-                                {refs.map(ref => {
-                                  const [surah, verse] = ref.split(':')
-                                  return (
-                                    <a
-                                      key={ref}
-                                      href={`/surah/${surah}#v${verse}`}
-                                      className="verse-chip"
-                                      style={{
-                                        fontSize: '11.5px',
-                                        color: '#8A7428',
-                                        background: '#FDF6E4',
-                                        border: '1px solid rgba(184,150,46,0.28)',
-                                        borderRadius: '4px',
-                                        padding: '2px 7px',
-                                        letterSpacing: '0.02em',
-                                        fontFamily: "'Cormorant Garamond', serif",
-                                        textDecoration: 'none',
-                                        transition: 'all 0.15s ease',
-                                      }}
-                                    >
-                                      {ref}
-                                    </a>
-                                  )
-                                })}
-                              </div>
-                            )}
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </>
-                )
-              })()}
-            </div>
-          )}
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </section>
       )}
 
-      {/* Phrases du quotidien */}
+      {/* ═══ EXPRESSIONS DU QUOTIDIEN ═══ */}
       {daily.length > 0 && (
         <section aria-labelledby="daily-heading">
-          <div className="flex items-center gap-3 mb-4">
-            <h2
-              id="daily-heading"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                color: '#1A1410',
-                fontSize: 'clamp(18px, 4vw, 22px)',
-                letterSpacing: '0.03em',
-                fontWeight: 600,
-                margin: 0,
-              }}
-            >
-              Phrases du quotidien
-            </h2>
-            <span style={{ fontSize: '12.5px', color: '#8A7428', letterSpacing: '0.06em', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
-              {daily.length}
-            </span>
-          </div>
+          <h2
+            id="daily-heading"
+            className="uppercase mb-3"
+            style={{
+              fontSize: '11px',
+              letterSpacing: '0.1em',
+              color: '#3D3228',
+              fontWeight: 700,
+            }}
+          >
+            Expressions du quotidien
+            <span style={{ color: '#B8962E', fontWeight: 600, marginLeft: '6px' }}>· {daily.length}</span>
+          </h2>
 
           <ul className="list-none p-0 m-0 space-y-3">
-            {(() => {
-              // Grouper par sens
-              const bySense = new Map<string, Daily[]>()
-              for (const d of daily) {
-                if (!bySense.has(d.sense)) bySense.set(d.sense, [])
-                bySense.get(d.sense)!.push(d)
-              }
-              return [...bySense.entries()].map(([sense, list]) => (
-                <li
-                  key={sense}
-                  className="rounded-xl p-4"
-                  style={{
-                    background: '#FFFFFF',
-                    border: '1px solid rgba(184,150,46,0.18)',
-                    boxShadow: '0 1px 3px rgba(120,90,30,0.04)',
-                  }}
-                >
-                  <div className="flex items-baseline gap-2 mb-2.5">
-                    <span
-                      aria-hidden="true"
-                      style={{ color: '#B8962E', fontSize: '10px', opacity: 0.85 }}
-                    >
-                      ✦
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '11px',
-                        color: '#B8962E',
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        fontWeight: 700,
-                      }}
-                    >
-                      Sens : {sense}
-                    </span>
-                  </div>
-                  <ul className="list-none p-0 m-0 space-y-2">
-                    {list.map(d => (
-                      <li key={d.id} className="m-0">
-                        <p
-                          style={{
-                            fontSize: '13.5px',
-                            color: '#4A3F35',
-                            lineHeight: 1.6,
-                            margin: 0,
-                            fontStyle: 'italic',
-                            fontFamily: "'Cormorant Garamond', serif",
-                          }}
-                        >
-                          « {d.french} »
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))
-            })()}
+            {[...dailyBySense.entries()].map(([sense, list]) => (
+              <li
+                key={sense}
+                className="rounded-xl p-4"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(184,150,46,0.18)',
+                  boxShadow: '0 1px 3px rgba(120,90,30,0.04)',
+                }}
+              >
+                <div className="flex items-baseline gap-2 mb-2.5">
+                  <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.85 }}>
+                    ✦
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      color: '#B8962E',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      fontWeight: 700,
+                    }}
+                  >
+                    Sens : {sense}
+                  </span>
+                </div>
+                <ul className="list-none p-0 m-0 space-y-2">
+                  {list.map(d => (
+                    <li key={d.id} className="m-0">
+                      <div className="flex items-baseline gap-2">
+                        {d.phon && (
+                          <span style={{ fontSize: '11px', color: '#8A7E72', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", flexShrink: 0 }}>
+                            {d.phon}
+                          </span>
+                        )}
+                        {d.arabic && (
+                          <span
+                            className="font-arabic ml-auto"
+                            lang="ar"
+                            dir="rtl"
+                            style={{ fontSize: '15px', color: '#B8962E' }}
+                          >
+                            {d.arabic}
+                          </span>
+                        )}
+                      </div>
+                      <p
+                        style={{
+                          fontSize: '13.5px',
+                          color: '#4A3F35',
+                          lineHeight: 1.6,
+                          margin: '3px 0 0 0',
+                          fontFamily: "'Cormorant Garamond', serif",
+                        }}
+                      >
+                        {d.french}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
         </section>
       )}
 
       <style jsx>{`
-        .concept-tab:hover {
-          background: #FDF6E4 !important;
-          border-color: rgba(184,150,46,0.5) !important;
+        .verse-ref:hover {
+          background: rgba(184, 150, 46, 0.18) !important;
         }
-        .verse-chip:hover {
-          background: #F9E8B6 !important;
+        .concept-tab-btn:hover span {
           color: #B8962E !important;
         }
       `}</style>
