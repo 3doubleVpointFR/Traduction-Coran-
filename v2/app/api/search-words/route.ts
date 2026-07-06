@@ -103,12 +103,49 @@ export async function GET(req: NextRequest) {
     meaningsByAnalysis.get(m.analysis_id)!.push({ sense: m.sense, sense_ar: m.sense_ar, concept: m.concept })
   }
 
-  // 2bis) Racines réellement utilisées dans un verset analysé (verse_word_analyses)
-  const usedInVerses = await fetchAll<{ word_key: string }>((f, t) =>
-    db.from('verse_word_analyses').select('word_key').range(f, t)
+  // 2bis) Traductions RÉELLEMENT CHOISIES dans les versets analysés
+  //       Source #1 : verse_word_analyses.sense_chosen (le sens retenu au niveau A)
+  //       Source #2 : verse_analyses.segments[].fr (le mot français mis dans la traduction)
+  const chosenSenses = await fetchAll<{ word_key: string; sense_chosen: string | null }>((f, t) =>
+    db.from('verse_word_analyses').select('word_key, sense_chosen').range(f, t)
   )
   const usedKeys = new Set<string>()
-  for (const v of usedInVerses) if (v.word_key) usedKeys.add(v.word_key)
+  // Map: expression normalisée (sense_chosen ou segment.fr) → Map<word_key, count>
+  const chosenIndex = new Map<string, Map<string, number>>()
+  const addChosen = (expr: string | null | undefined, word_key: string) => {
+    if (!expr || !word_key) return
+    const nk = normalize(expr)
+    if (!nk || nk.length < 2) return
+    if (!chosenIndex.has(nk)) chosenIndex.set(nk, new Map())
+    const wk = chosenIndex.get(nk)!
+    wk.set(word_key, (wk.get(word_key) || 0) + 1)
+    // Aussi indexer chaque mot individuel du sens (« faire entrer » → « faire », « entrer »)
+    for (const tok of nk.split(/\s+/).filter(t => t.length >= 3)) {
+      if (tok === nk) continue
+      if (!chosenIndex.has(tok)) chosenIndex.set(tok, new Map())
+      const wt = chosenIndex.get(tok)!
+      wt.set(word_key, (wt.get(word_key) || 0) + 1)
+    }
+  }
+  for (const v of chosenSenses) {
+    if (!v.word_key) continue
+    usedKeys.add(v.word_key)
+    addChosen(v.sense_chosen, v.word_key)
+  }
+
+  // Segments : parcourir tous les verse_analyses.segments[] et indexer fr → word_key
+  const segRows = await fetchAll<{ segments: Array<{ fr?: string; word_key?: string | null }> | null }>((f, t) =>
+    db.from('verse_analyses').select('segments').range(f, t)
+  )
+  for (const row of segRows) {
+    const segs = row.segments || []
+    for (const s of segs) {
+      if (!s || !s.word_key || !s.fr) continue
+      // On retire les ponctuations extrêmes et guillemets/quotes
+      const cleanFr = s.fr.replace(/^[«»"'\s(,]+|[«»"'\s.,;:!?)]+$/g, '').trim()
+      addChosen(cleanFr, s.word_key)
+    }
+  }
 
   // Prédicat : une racine est « vraiment analysée » si utilisée dans un verset
   // OU si elle contient au moins 5 sens (racine enrichie mais pas encore rencontrée en verset)
@@ -126,9 +163,11 @@ export async function GET(req: NextRequest) {
   const directWords = [...(directRes.data || []), ...(prefixRes.data || [])]
 
   const analysisByRootAr = new Map<string, typeof analyses[number]>()
+  const analysisByKeyLite = new Map<string, typeof analyses[number]>()
   for (const a of analyses) {
     const key = (a.root_ar || '').replace(/\s+/g, '')
     if (key) analysisByRootAr.set(key, a)
+    analysisByKeyLite.set(a.word_key, a)
   }
 
   type Match = {
@@ -246,25 +285,42 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // 5bis) Match via sens (français, arabe, concept)
-  //       Le sens doit MATCHER de façon exacte ou prefix — évite le bruit (« roi » dans « protéger »)
+  // 5bis) Match via traductions RÉELLEMENT choisies (sense_chosen + segments[].fr)
+  //       C'est la source de vérité : "quelles racines ont-elles été traduites par X ?"
+  //       On matche exact ou préfixe pour éviter le bruit
+  const chosenExactHits = new Set<string>()   // word_keys matchés par sens choisi
+  for (const [nk, wkMap] of chosenIndex.entries()) {
+    let matched = false
+    let score = 0
+    if (nk === qNorm) { matched = true; score = 100 }
+    else if (nk.startsWith(qNorm + ' ')) { matched = true; score = 90 }
+    else if (qNorm.length >= 3 && nk.startsWith(qNorm)) { matched = true; score = 84 }
+    else if (qNorm.length >= 4 && nk.includes(qNorm)) { matched = true; score = 74 }
+    if (!matched) continue
+    for (const [wk, count] of wkMap.entries()) {
+      const a = analysisByKeyLite.get(wk)
+      if (!a) continue
+      // Petit bonus proportionnel au nombre d'occurrences dans le Coran
+      // Bonus proportionnel aux occurrences — une racine avec 60 usages écrase celle avec 1
+      const occBonus = Math.min(15, Math.floor(Math.log2(count + 1) * 2.5))
+      push(a, 'traduction', nk === qNorm ? 'utilisée dans le Coran' : nk, score + occBonus)
+      chosenExactHits.add(wk)
+    }
+  }
+
+  // 5ter) Fallback sur word_meanings.sense (sens définis mais pas forcément choisis)
+  //       Rank plus bas car ce n'est qu'une possibilité, pas une traduction effective
   for (const a of analyses) {
+    if (chosenExactHits.has(a.word_key)) continue   // déjà couvert par la traduction effective
     const senses = meaningsByAnalysis.get(a.id) || []
     for (const m of senses) {
       const senseNorm = normalize(m.sense)
-      if (senseNorm && (senseNorm === qNorm || senseNorm.startsWith(qNorm + ' ') || senseNorm.startsWith(qNorm))) {
-        const s = senseNorm === qNorm ? 90 : senseNorm.startsWith(qNorm + ' ') ? 82 : 76
-        push(a, 'sens', m.sense, s)
-      } else if (senseNorm && qNorm.length >= 4 && senseNorm.includes(qNorm)) {
-        push(a, 'sens', m.sense, 68)
+      if (senseNorm === qNorm) {
+        push(a, 'sens possible', m.sense, 74)
       }
       const senseArNorm = normalize(m.sense_ar || '')
       if (senseArNorm && senseArNorm === qNorm) {
-        push(a, 'sens arabe', m.sense_ar || '', 82)
-      }
-      const conceptNorm = normalize(m.concept || '')
-      if (conceptNorm && (conceptNorm === qNorm || conceptNorm.startsWith(qNorm))) {
-        push(a, 'concept', m.concept || '', conceptNorm === qNorm ? 80 : 72)
+        push(a, 'sens arabe', m.sense_ar || '', 74)
       }
     }
   }
@@ -306,8 +362,6 @@ export async function GET(req: NextRequest) {
 
   // Filtre final : ne garder que les racines réellement analysées
   // (utilisées dans un verset OU contenant au moins 5 sens)
-  const analysisByKey = new Map<string, typeof analyses[number]>()
-  for (const a of analyses) analysisByKey.set(a.word_key, a)
 
   // Seuil minimal + tri
   const MIN_SCORE = 68
@@ -315,7 +369,7 @@ export async function GET(req: NextRequest) {
     .filter(m => m.score >= MIN_SCORE)
     .filter(m => m.root_ar && m.root_ar.trim().length > 0)   // écarte les entrées sans racine arabe
     .filter(m => {
-      const a = analysisByKey.get(m.word_key)
+      const a = analysisByKeyLite.get(m.word_key)
       return a ? isReallyAnalyzed(a) : false
     })
     .sort((a, b) => b.score - a.score || b._rich - a._rich)
@@ -333,6 +387,7 @@ export async function GET(req: NextRequest) {
     if (seenSorted.has(letters)) continue
 
     // Pour sens/concept/sens arabe : dédup par snippet identique
+    // (les concepts sont des identifiants uniques ; deux racines ne peuvent pas avoir « exactement le même concept »)
     if (m.matched_field === 'sens' || m.matched_field === 'concept' || m.matched_field === 'sens arabe') {
       const snippetKey = m.matched_field + '::' + m.matched_snippet.toLowerCase().trim()
       if (seenSnippet.has(snippetKey)) continue
