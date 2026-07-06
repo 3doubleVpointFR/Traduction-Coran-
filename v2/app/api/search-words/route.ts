@@ -103,6 +103,18 @@ export async function GET(req: NextRequest) {
     meaningsByAnalysis.get(m.analysis_id)!.push({ sense: m.sense, sense_ar: m.sense_ar, concept: m.concept })
   }
 
+  // 2bis) Racines réellement utilisées dans un verset analysé (verse_word_analyses)
+  const usedInVerses = await fetchAll<{ word_key: string }>((f, t) =>
+    db.from('verse_word_analyses').select('word_key').range(f, t)
+  )
+  const usedKeys = new Set<string>()
+  for (const v of usedInVerses) if (v.word_key) usedKeys.add(v.word_key)
+
+  // Prédicat : une racine est « vraiment analysée » si utilisée dans un verset
+  // OU si elle contient au moins 5 sens (racine enrichie mais pas encore rencontrée en verset)
+  const isReallyAnalyzed = (a: { id: number; word_key: string }) =>
+    usedKeys.has(a.word_key) || (richness.get(a.id) || 0) >= 5
+
   // 3) Mots du Coran matchant la requête (formes réelles → racine)
   //    Filtre serré + filtre large (préfixe 3 chars) pour attraper les formes fléchies
   //    avec case markers (hudan → hudFY nécessite un match par préfixe)
@@ -292,11 +304,20 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // Filtre final : ne garder que les racines réellement analysées
+  // (utilisées dans un verset OU contenant au moins 5 sens)
+  const analysisByKey = new Map<string, typeof analyses[number]>()
+  for (const a of analyses) analysisByKey.set(a.word_key, a)
+
   // Seuil minimal + tri
   const MIN_SCORE = 68
   const sorted = [...scores.values()]
     .filter(m => m.score >= MIN_SCORE)
-    .filter(m => m.root_ar && m.root_ar.trim().length > 0)   // écarte les entrées sans racine arabe (stubs)
+    .filter(m => m.root_ar && m.root_ar.trim().length > 0)   // écarte les entrées sans racine arabe
+    .filter(m => {
+      const a = analysisByKey.get(m.word_key)
+      return a ? isReallyAnalyzed(a) : false
+    })
     .sort((a, b) => b.score - a.score || b._rich - a._rich)
 
   // Déduplication : une seule entrée par racine arabe (normalisée sans espaces)
