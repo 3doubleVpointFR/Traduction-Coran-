@@ -320,14 +320,26 @@ export async function GET(req: NextRequest) {
     })
     .sort((a, b) => b.score - a.score || b._rich - a._rich)
 
-  // Déduplication : une seule entrée par racine arabe (normalisée sans espaces)
-  // On garde la plus riche/mieux scorée, sinon on aurait 5 variantes de a-l-h pour « allah »
-  const seen = new Set<string>()
+  // Déduplication multi-passes :
+  // 1) Par racine arabe (lettres triées) : yhd = h-d-y = permutation → collapse
+  // 2) Par sens ou concept identique : si deux racines matchent via le même sens/concept,
+  //    on ne garde que la plus riche (les stubs comme yhd/htd disparaissent au profit de h-d-y)
+  const seenSorted = new Set<string>()
+  const seenSnippet = new Map<string, number>()   // snippet → best score
   const deduped: typeof sorted = []
   for (const m of sorted) {
-    const key = m.root_ar.replace(/\s+/g, '')
-    if (seen.has(key)) continue
-    seen.add(key)
+    // Clé par lettres triées (permutations collapse)
+    const letters = m.root_ar.replace(/\s+/g, '').split('').sort().join('')
+    if (seenSorted.has(letters)) continue
+
+    // Pour sens/concept/sens arabe : dédup par snippet identique
+    if (m.matched_field === 'sens' || m.matched_field === 'concept' || m.matched_field === 'sens arabe') {
+      const snippetKey = m.matched_field + '::' + m.matched_snippet.toLowerCase().trim()
+      if (seenSnippet.has(snippetKey)) continue
+      seenSnippet.set(snippetKey, m.score)
+    }
+
+    seenSorted.add(letters)
     deduped.push(m)
     if (deduped.length >= 8) break
   }
