@@ -206,7 +206,7 @@ export default function WordSearch() {
                           {r.matched_field}
                         </span>
                       </div>
-                      {r.matched_snippet && r.matched_field !== 'racine phonétique' && r.matched_field !== 'racine arabe' && (
+                      {r.matched_snippet && (r.matched_field === 'mot du Coran' || r.matched_field === 'description') && (
                         <p style={{ fontSize: '13px', color: '#6B5E52', marginTop: '4px', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
                           « {r.matched_snippet} »
                         </p>
