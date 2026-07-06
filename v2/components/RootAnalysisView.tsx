@@ -135,22 +135,6 @@ export default function RootAnalysisView({ data }: Props) {
           </div>
         </div>
 
-        {analysis.root_meaning && (
-          <p
-            style={{
-              marginTop: '18px',
-              fontSize: '14.5px',
-              color: '#4A3F35',
-              lineHeight: 1.65,
-              fontFamily: "'Cormorant Garamond', serif",
-              paddingTop: '14px',
-              borderTop: '1px solid rgba(184,150,46,0.16)',
-            }}
-          >
-            {analysis.root_meaning}
-          </p>
-        )}
-
         {/* ═══ ONGLETS CONCEPTS ═══ */}
         {conceptGroups.length > 1 && (
           <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end mt-4" style={{ paddingTop: '14px', borderTop: '1px solid rgba(184,150,46,0.16)' }}>
