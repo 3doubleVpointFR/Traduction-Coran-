@@ -331,43 +331,6 @@ export default function RootAnalysisView({ data }: Props) {
                         </div>
                       )}
 
-                      {/* Liste des sens individuels */}
-                      <ul className="list-none p-0 m-0 space-y-1">
-                        {conceptSenses.map(s => {
-                          const nOcc = senseCounts[s.sense] || 0
-                          return (
-                            <li key={s.id} className="m-0 flex items-baseline gap-2" style={{ padding: '2px 0' }}>
-                              <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.7 }}>▸</span>
-                              <span style={{ fontSize: '14px', color: '#1A1410', fontFamily: "'Cormorant Garamond', serif" }}>
-                                {s.sense}
-                              </span>
-                              {s.sense_ar && (
-                                <span
-                                  className="font-arabic"
-                                  lang="ar"
-                                  dir="rtl"
-                                  style={{ fontSize: '14px', color: '#B8962E' }}
-                                >
-                                  {s.sense_ar}
-                                </span>
-                              )}
-                              {nOcc > 0 && (
-                                <span
-                                  className="ml-auto"
-                                  style={{
-                                    fontSize: '11px',
-                                    color: '#8A7428',
-                                    fontStyle: 'italic',
-                                    fontFamily: "'Cormorant Garamond', serif",
-                                  }}
-                                >
-                                  {nOcc} occ.
-                                </span>
-                              )}
-                            </li>
-                          )
-                        })}
-                      </ul>
                     </div>
                   )}
                 </div>
