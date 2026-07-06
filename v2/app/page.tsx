@@ -126,41 +126,8 @@ export default async function HomePage() {
         </figure>
       </section>
 
-      {/* ═══ RECHERCHE MOTS/RACINES ═══ */}
-      <section className="page-section-anim max-w-2xl mx-auto px-3 sm:px-0 !mt-5 sm:!mt-6" style={{ animationDelay: '600ms' }} aria-labelledby="word-search-heading">
-        <div className="mb-4 text-center">
-          <div
-            className="flex items-center justify-center gap-3 mb-2.5 mx-auto"
-            style={{ maxWidth: '160px' }}
-            aria-hidden="true"
-          >
-            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
-            <span style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1, opacity: 0.85 }}>✦</span>
-            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
-          </div>
-          <h2
-            id="word-search-heading"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              color: '#1A1410',
-              fontSize: 'clamp(1.25rem, 4.5vw, 1.6rem)',
-              letterSpacing: '0.04em',
-              fontWeight: 600,
-              margin: 0,
-              lineHeight: 1.2,
-            }}
-          >
-            Explorer un mot, une racine
-          </h2>
-          <p className="italic mt-1.5" style={{ color: '#6B5E52', fontSize: 'clamp(12.5px, 3vw, 13.5px)', lineHeight: 1.5 }}>
-            Cherche en français, en arabe, ou en phonétique
-          </p>
-        </div>
-        <WordSearch />
-      </section>
-
       {/* ═══ SOURATES — l'action principale ═══ */}
-      <section className="page-section-anim max-w-4xl mx-auto px-1 sm:px-0 !mt-5 sm:!mt-6" style={{ animationDelay: '750ms' }} data-tour-surah-grid="1" aria-labelledby="surahs-heading">
+      <section className="page-section-anim max-w-4xl mx-auto px-1 sm:px-0 !mt-5 sm:!mt-6" style={{ animationDelay: '600ms' }} data-tour-surah-grid="1" aria-labelledby="surahs-heading">
         <div className="mb-5 sm:mb-5 text-center">
           {/* Mini-ornement de section — version réduite du hero */}
           <div
@@ -194,8 +161,41 @@ export default async function HomePage() {
         <SurahGrid surahs={surahs} />
       </section>
 
+      {/* ═══ RECHERCHE MOTS/RACINES ═══ */}
+      <section className="page-section-anim max-w-2xl mx-auto px-3 sm:px-0 !mt-5 sm:!mt-6" style={{ animationDelay: '750ms' }} aria-labelledby="word-search-heading">
+        <div className="mb-4 text-center">
+          <div
+            className="flex items-center justify-center gap-3 mb-2.5 mx-auto"
+            style={{ maxWidth: '160px' }}
+            aria-hidden="true"
+          >
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.4))' }} />
+            <span style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1, opacity: 0.85 }}>✦</span>
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, rgba(184,150,46,0.4))' }} />
+          </div>
+          <h2
+            id="word-search-heading"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              color: '#1A1410',
+              fontSize: 'clamp(1.25rem, 4.5vw, 1.6rem)',
+              letterSpacing: '0.04em',
+              fontWeight: 600,
+              margin: 0,
+              lineHeight: 1.2,
+            }}
+          >
+            Explorer un mot, une racine
+          </h2>
+          <p className="italic mt-1.5" style={{ color: '#6B5E52', fontSize: 'clamp(12.5px, 3vw, 13.5px)', lineHeight: 1.5 }}>
+            Cherche en français, en arabe, ou en phonétique
+          </p>
+        </div>
+        <WordSearch />
+      </section>
+
       {/* ═══ MÉTHODOLOGIE — repliable, pour ceux qui veulent comprendre ═══ */}
-      <div className="page-section-anim" style={{ animationDelay: '800ms' }}>
+      <div className="page-section-anim" style={{ animationDelay: '900ms' }}>
         <HomeMethodology />
       </div>
 
