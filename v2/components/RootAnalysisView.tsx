@@ -132,7 +132,7 @@ export default function RootAnalysisView({ data }: Props) {
         </div>
 
         {/* ═══ ONGLETS CONCEPTS ═══ */}
-        {conceptGroups.length > 1 && (
+        {conceptGroups.length > 0 && (
           <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end mt-4" style={{ paddingTop: '14px', borderTop: '1px solid rgba(184,150,46,0.16)' }}>
             {conceptGroups.map(([name, ss]) => {
               const isActive = activeTab === name
