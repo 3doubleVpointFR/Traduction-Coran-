@@ -75,16 +75,6 @@ export default function RootAnalysisView({ data }: Props) {
     })
   }
 
-  // Phrases du quotidien groupées par sens
-  const dailyBySense = useMemo(() => {
-    const m = new Map<string, Daily[]>()
-    for (const d of daily) {
-      if (!m.has(d.sense)) m.set(d.sense, [])
-      m.get(d.sense)!.push(d)
-    }
-    return m
-  }, [daily])
-
   return (
     <article className="space-y-6">
       {/* ═══ HEADER RACINE ═══ */}
@@ -397,64 +387,36 @@ export default function RootAnalysisView({ data }: Props) {
           </h2>
 
           <ul className="list-none p-0 m-0 space-y-3">
-            {[...dailyBySense.entries()].map(([sense, list]) => (
-              <li
-                key={sense}
-                style={{
-                  paddingBottom: '10px',
-                  borderBottom: '1px dashed rgba(184,150,46,0.18)',
-                }}
-              >
-                <div className="flex items-baseline gap-2 mb-2.5">
-                  <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', opacity: 0.85 }}>
-                    ✦
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '11px',
-                      color: '#B8962E',
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      fontWeight: 700,
-                    }}
-                  >
-                    Sens : {sense}
-                  </span>
+            {daily.map(d => (
+              <li key={d.id} className="m-0" style={{ paddingBottom: '10px', borderBottom: '1px dashed rgba(184,150,46,0.14)' }}>
+                <div className="flex items-baseline gap-2">
+                  {d.phon && (
+                    <span style={{ fontSize: '11px', color: '#8A7E72', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", flexShrink: 0 }}>
+                      {d.phon}
+                    </span>
+                  )}
+                  {d.arabic && (
+                    <span
+                      className="font-arabic ml-auto"
+                      lang="ar"
+                      dir="rtl"
+                      style={{ fontSize: '15px', color: '#B8962E' }}
+                    >
+                      {d.arabic}
+                    </span>
+                  )}
                 </div>
-                <ul className="list-none p-0 m-0 space-y-2">
-                  {list.map(d => (
-                    <li key={d.id} className="m-0">
-                      <div className="flex items-baseline gap-2">
-                        {d.phon && (
-                          <span style={{ fontSize: '11px', color: '#8A7E72', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", flexShrink: 0 }}>
-                            {d.phon}
-                          </span>
-                        )}
-                        {d.arabic && (
-                          <span
-                            className="font-arabic ml-auto"
-                            lang="ar"
-                            dir="rtl"
-                            style={{ fontSize: '15px', color: '#B8962E' }}
-                          >
-                            {d.arabic}
-                          </span>
-                        )}
-                      </div>
-                      <p
-                        style={{
-                          fontSize: '13.5px',
-                          color: '#4A3F35',
-                          lineHeight: 1.6,
-                          margin: '3px 0 0 0',
-                          fontFamily: "'Cormorant Garamond', serif",
-                        }}
-                      >
-                        {d.french}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+                <p
+                  style={{
+                    fontSize: '13.5px',
+                    color: '#4A3F35',
+                    lineHeight: 1.6,
+                    margin: '3px 0 0 0',
+                    fontFamily: "'Cormorant Garamond', serif",
+                  }}
+                >
+                  {d.french}
+                </p>
               </li>
             ))}
           </ul>
