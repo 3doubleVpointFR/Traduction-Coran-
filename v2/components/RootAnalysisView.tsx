@@ -229,7 +229,6 @@ export default function RootAnalysisView({ data }: Props) {
               const isExpanded = expandedBlocks.has(conceptName)
               const conceptOcc = conceptCounts[conceptName] || 0
               const pct = totalAnalyzed > 0 ? Math.round((conceptOcc / totalAnalyzed) * 100) : 0
-              const description = conceptSenses.find(s => s.description)?.description
               const refs = refsByConcept[conceptName] || []
               const sortedRefs = [...refs].sort((a, b) => {
                 const [sa, va] = a.split(':').map(Number)
@@ -340,26 +339,6 @@ export default function RootAnalysisView({ data }: Props) {
                             </a>
                           ))}
                         </div>
-                      )}
-
-                      {/* Description du concept */}
-                      {description && (
-                        <p
-                          className="rounded"
-                          style={{
-                            color: '#1A1410',
-                            background: conceptOcc > 0 ? '#FDF6E8' : '#F5F5F5',
-                            borderLeft: `4px solid ${conceptOcc > 0 ? '#B8962E' : '#C8BCAD'}`,
-                            padding: '10px 12px',
-                            fontSize: '13px',
-                            lineHeight: 1.6,
-                            fontStyle: 'italic',
-                            fontFamily: "'Cormorant Garamond', serif",
-                            margin: 0,
-                          }}
-                        >
-                          {description}
-                        </p>
                       )}
 
                       {/* Liste des sens individuels */}
