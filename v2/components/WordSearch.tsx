@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useId, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 
 type Result = {
@@ -18,8 +19,32 @@ export default function WordSearch() {
   const [results, setResults] = useState<Result[]>([])
   const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false)
+  const [pos, setPos] = useState<{ left: number; top: number; width: number } | null>(null)
+  const [mounted, setMounted] = useState(false)
   const searchId = useId()
   const wrapperRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => { setMounted(true) }, [])
+
+  const updatePos = () => {
+    const el = inputRef.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    setPos({ left: r.left, top: r.bottom + 6, width: r.width })
+  }
+
+  useEffect(() => {
+    if (!open) return
+    updatePos()
+    window.addEventListener('scroll', updatePos, true)
+    window.addEventListener('resize', updatePos)
+    return () => {
+      window.removeEventListener('scroll', updatePos, true)
+      window.removeEventListener('resize', updatePos)
+    }
+  }, [open])
 
   useEffect(() => {
     const q = query.trim()
@@ -45,10 +70,13 @@ export default function WordSearch() {
     return () => clearTimeout(t)
   }, [query])
 
-  // Ferme la liste au clic extérieur
+  // Ferme la liste au clic extérieur (wrapper OU dropdown portalée)
   useEffect(() => {
     const h = (e: MouseEvent) => {
-      if (!wrapperRef.current?.contains(e.target as Node)) setOpen(false)
+      const t = e.target as Node
+      if (wrapperRef.current?.contains(t)) return
+      if (dropdownRef.current?.contains(t)) return
+      setOpen(false)
     }
     document.addEventListener('mousedown', h)
     return () => document.removeEventListener('mousedown', h)
@@ -72,6 +100,7 @@ export default function WordSearch() {
         </span>
         <input
           id={searchId}
+          ref={inputRef}
           type="search"
           value={query}
           onChange={e => { setQuery(e.target.value); setOpen(true) }}
@@ -96,15 +125,20 @@ export default function WordSearch() {
         />
       </div>
 
-      {/* Dropdown résultats */}
-      {open && isSearching && (
+      {/* Dropdown résultats — via portal pour ignorer les contextes d'empilement parents */}
+      {mounted && open && isSearching && pos && createPortal(
         <div
-          className="absolute left-0 right-0 mt-2 rounded-xl overflow-hidden"
+          ref={dropdownRef}
+          className="rounded-xl overflow-hidden"
           style={{
+            position: 'fixed',
+            left: pos.left,
+            top: pos.top,
+            width: pos.width,
             background: '#FFFFFF',
             border: '1px solid rgba(184,150,46,0.28)',
             boxShadow: '0 4px 20px rgba(120,90,30,0.12), 0 2px 6px rgba(120,90,30,0.06)',
-            zIndex: 40,
+            zIndex: 9999,
             maxHeight: '440px',
             overflowY: 'auto',
           }}
@@ -183,7 +217,8 @@ export default function WordSearch() {
               </ul>
             </>
           )}
-        </div>
+        </div>,
+        document.body
       )}
 
       <style jsx>{`
