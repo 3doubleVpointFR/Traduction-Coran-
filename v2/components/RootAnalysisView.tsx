@@ -197,7 +197,15 @@ export default function RootAnalysisView({ data }: Props) {
 
       {/* ═══ SENS ÉTYMOLOGIQUES ═══ */}
       {conceptGroups.length > 0 && (
-        <section aria-labelledby="senses-heading">
+        <section
+          aria-labelledby="senses-heading"
+          className="rounded-2xl p-5 sm:p-6"
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid rgba(184,150,46,0.22)',
+            boxShadow: '0 1px 3px rgba(120,90,30,0.04), 0 4px 14px rgba(120,90,30,0.04)',
+          }}
+        >
           <h2
             id="senses-heading"
             className="uppercase mb-3"
@@ -402,7 +410,15 @@ export default function RootAnalysisView({ data }: Props) {
 
       {/* ═══ EXPRESSIONS DU QUOTIDIEN ═══ */}
       {daily.length > 0 && (
-        <section aria-labelledby="daily-heading">
+        <section
+          aria-labelledby="daily-heading"
+          className="rounded-2xl p-5 sm:p-6"
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid rgba(184,150,46,0.22)',
+            boxShadow: '0 1px 3px rgba(120,90,30,0.04), 0 4px 14px rgba(120,90,30,0.04)',
+          }}
+        >
           <h2
             id="daily-heading"
             className="uppercase mb-3"
@@ -421,11 +437,9 @@ export default function RootAnalysisView({ data }: Props) {
             {[...dailyBySense.entries()].map(([sense, list]) => (
               <li
                 key={sense}
-                className="rounded-xl p-4"
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid rgba(184,150,46,0.18)',
-                  boxShadow: '0 1px 3px rgba(120,90,30,0.04)',
+                  paddingBottom: '10px',
+                  borderBottom: '1px dashed rgba(184,150,46,0.18)',
                 }}
               >
                 <div className="flex items-baseline gap-2 mb-2.5">
