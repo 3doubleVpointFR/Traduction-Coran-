@@ -3,7 +3,7 @@ import { getSupabaseAdmin } from '@/lib/supabase'
 
 export const dynamic = 'force-dynamic'
 
-// Normalise : lowercase, retire diacritiques latins et arabes, retire séparateurs
+// Normalise : lowercase, retire diacritiques latins et arabes, unifie lettres arabes proches
 function normalize(s: string): string {
   if (!s) return ''
   return s
@@ -11,8 +11,31 @@ function normalize(s: string): string {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')       // diacritiques latins (é → e)
     .replace(/[ً-ٰٟ]/g, '') // diacritiques arabes
+    .replace(/[أإآٱ]/g, 'ا')            // alifs modifiés → alif simple
+    .replace(/ى/g, 'ي')                    // alif maqsura → yaa
+    .replace(/ة/g, 'ه')                    // taa marbuta → haa
+    .replace(/ؤ/g, 'و')                    // waw + hamza → waw
+    .replace(/ئ/g, 'ي')                    // yaa + hamza → yaa
     .replace(/[\s\-_.]/g, '')              // espaces et séparateurs
     .replace(/[ʿʾʼʽ']/g, '')               // apostrophes translittérées
+}
+
+// Buckwalter → lettres latines. F=fatḥatan, K=kasratan, N=ḍammatan, Y=alef maqṣūra,
+// A=alif, w=wāw, ` = ā long, ~=shadda, {}<>|=alifs, etc. On les strip ou on convertit.
+function normalizeBuckwalter(s: string): string {
+  if (!s) return ''
+  return s
+    .toLowerCase()
+    // Voyelles brèves de fin (tanwīn/case marker)
+    .replace(/[fkn]/g, 'a')  // F/K/N → a (approximation phonétique)
+    // Lettres longues et diacritiques
+    .replace(/[`~^]/g, '')   // shadda, sukun, marqueurs
+    .replace(/[{}<>|]/g, 'a')
+    .replace(/y/g, 'y')      // alef maqṣūra → y
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\s\-_.]/g, '')
+    .replace(/[ʿʾʼʽ']/g, '')
 }
 
 // Levenshtein distance avec cutoff (retourne cap+1 si distance dépasse)
@@ -68,19 +91,27 @@ export async function GET(req: NextRequest) {
   )
   if (!analyses.length) return NextResponse.json({ results: [] })
 
-  // 2) Richesse par racine (nombre de sens) — sert de bonus de ranking
-  const meaningCounts = await fetchAll<{ analysis_id: number }>((f, t) =>
-    db.from('word_meanings').select('analysis_id').range(f, t)
+  // 2) Sens + richesse par racine
+  const allMeanings = await fetchAll<{ analysis_id: number; sense: string; sense_ar: string | null; concept: string | null }>((f, t) =>
+    db.from('word_meanings').select('analysis_id, sense, sense_ar, concept').range(f, t)
   )
   const richness = new Map<number, number>()
-  for (const m of meaningCounts) richness.set(m.analysis_id, (richness.get(m.analysis_id) || 0) + 1)
+  const meaningsByAnalysis = new Map<number, Array<{ sense: string; sense_ar: string | null; concept: string | null }>>()
+  for (const m of allMeanings) {
+    richness.set(m.analysis_id, (richness.get(m.analysis_id) || 0) + 1)
+    if (!meaningsByAnalysis.has(m.analysis_id)) meaningsByAnalysis.set(m.analysis_id, [])
+    meaningsByAnalysis.get(m.analysis_id)!.push({ sense: m.sense, sense_ar: m.sense_ar, concept: m.concept })
+  }
 
   // 3) Mots du Coran matchant la requête (formes réelles → racine)
-  const { data: directWords } = await db
-    .from('words')
-    .select('root, transliteration, arabic')
-    .or(`transliteration.ilike.%${qNorm}%,arabic.ilike.%${q}%`)
-    .limit(300)
+  //    Filtre serré + filtre large (préfixe 3 chars) pour attraper les formes fléchies
+  //    avec case markers (hudan → hudFY nécessite un match par préfixe)
+  const qPrefix = qNorm.slice(0, 3)
+  const [directRes, prefixRes] = await Promise.all([
+    db.from('words').select('root, transliteration, arabic').or(`transliteration.ilike.%${qNorm}%,arabic.ilike.%${q}%`).limit(200),
+    qPrefix.length >= 3 ? db.from('words').select('root, transliteration, arabic').ilike('transliteration', `%${qPrefix}%`).limit(400) : Promise.resolve({ data: [] }),
+  ])
+  const directWords = [...(directRes.data || []), ...(prefixRes.data || [])]
 
   const analysisByRootAr = new Map<string, typeof analyses[number]>()
   for (const a of analyses) {
@@ -126,11 +157,10 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // Distance max autorisée selon longueur (queries courtes = tolérance faible)
+  // Distance max autorisée selon longueur (tolérance faible pour queries courtes)
   const maxDist = qNorm.length <= 3 ? 0 : qNorm.length <= 5 ? 1 : 2
 
-  // Squelette consonantique — utilisé UNIQUEMENT si aucun match direct/Lev :
-  // ex. « iman » → skel « mn », « amn » → skel « mn » (match)
+  // Squelette consonantique — pour capturer les patterns du type « iman » → « amn »
   const qSkel = qNorm.replace(/[aeiouy]/g, '').replace(/(.)\1+/g, '$1')
 
   // 4) Match direct + Levenshtein sur racines
@@ -161,11 +191,11 @@ export async function GET(req: NextRequest) {
       push(a, 'racine', a.word_key, s)
       continue
     }
-    // Levenshtein fuzzy — pour tolérer voyelles ajoutées/oubliées (alah → alh, nissa → nsw)
+    // Levenshtein fuzzy — pour tolérer voyelles ajoutées/oubliées (allah → alh, alah → alh)
     if (maxDist > 0 && rootPhonNorm && rootPhonNorm.length >= 2) {
       const d = levenshtein(qNorm, rootPhonNorm, maxDist)
       if (d <= maxDist) {
-        const s = d === 0 ? 100 : d === 1 ? 82 : 68
+        const s = d === 0 ? 100 : d === 1 ? 82 : 72
         push(a, 'racine', a.root_phon || '', s)
         continue
       }
@@ -173,7 +203,7 @@ export async function GET(req: NextRequest) {
     if (maxDist > 0 && wordKeyNorm && wordKeyNorm.length >= 2) {
       const d = levenshtein(qNorm, wordKeyNorm, maxDist)
       if (d <= maxDist) {
-        const s = d === 0 ? 96 : d === 1 ? 78 : 64
+        const s = d === 0 ? 96 : d === 1 ? 78 : 68
         push(a, 'racine', a.word_key, s)
         continue
       }
@@ -181,26 +211,60 @@ export async function GET(req: NextRequest) {
   }
 
   // 5) Match via formes coraniques : chaque mot trouvé pointe vers sa racine
+  //    On normalise avec Buckwalter en plus (hudFY → huday) pour capter des queries comme « hudan »
   for (const w of directWords || []) {
     const rootKey = (w.root || '').replace(/\s+/g, '')
     if (!rootKey) continue
     const a = analysisByRootAr.get(rootKey)
     if (!a) continue
     const translitNorm = normalize(w.transliteration || '')
+    const translitBk = normalizeBuckwalter(w.transliteration || '')
     const arabicNorm = normalize(w.arabic || '')
     if (translitNorm && translitNorm.includes(qNorm)) {
-      push(a, 'mot du Coran', w.transliteration || '', translitNorm === qNorm ? 92 : 74)
+      push(a, 'mot du Coran', w.transliteration || '', translitNorm === qNorm ? 92 : 76)
+    } else if (translitBk && translitBk.includes(qNorm)) {
+      push(a, 'mot du Coran', w.transliteration || '', translitBk === qNorm ? 88 : 76)
     } else if (arabicNorm && arabicNorm.includes(qNorm)) {
-      push(a, 'mot du Coran', w.arabic || '', 72)
+      push(a, 'mot du Coran', w.arabic || '', 74)
+    } else if (translitBk) {
+      // Tolérance plus large sur les formes fléchies (case markers arabes ajoutent 1-2 lettres)
+      const capBk = Math.max(2, maxDist)
+      const d = levenshtein(qNorm, translitBk, capBk)
+      if (d <= capBk) push(a, 'mot du Coran', w.transliteration || '', d === 0 ? 84 : d === 1 ? 78 : 70)
     }
   }
 
-  // 6bis) Fallback squelette consonantique — pour capturer les cas comme « iman » → amn
-  //       Applique uniquement une égalité stricte du squelette pour éviter le bruit,
-  //       avec bonus fort de richesse. Le tri final poussera les racines réelles au top.
-  if (scores.size < 5 && qSkel.length >= 2) {
+  // 5bis) Match via sens (français, arabe, concept)
+  //       Le sens doit MATCHER de façon exacte ou prefix — évite le bruit (« roi » dans « protéger »)
+  for (const a of analyses) {
+    const senses = meaningsByAnalysis.get(a.id) || []
+    for (const m of senses) {
+      const senseNorm = normalize(m.sense)
+      if (senseNorm && (senseNorm === qNorm || senseNorm.startsWith(qNorm + ' ') || senseNorm.startsWith(qNorm))) {
+        const s = senseNorm === qNorm ? 90 : senseNorm.startsWith(qNorm + ' ') ? 82 : 76
+        push(a, 'sens', m.sense, s)
+      } else if (senseNorm && qNorm.length >= 4 && senseNorm.includes(qNorm)) {
+        push(a, 'sens', m.sense, 68)
+      }
+      const senseArNorm = normalize(m.sense_ar || '')
+      if (senseArNorm && senseArNorm === qNorm) {
+        push(a, 'sens arabe', m.sense_ar || '', 82)
+      }
+      const conceptNorm = normalize(m.concept || '')
+      if (conceptNorm && (conceptNorm === qNorm || conceptNorm.startsWith(qNorm))) {
+        push(a, 'concept', m.concept || '', conceptNorm === qNorm ? 80 : 72)
+      }
+    }
+  }
+
+  // 6bis) Fallback squelette consonantique — ne cible QUE les vraies racines riches
+  //       (rich >= 4) pour éviter le bruit des stubs. Capture les patterns arabes
+  //       où la voyelle initiale du mot n'est pas dans la racine (« iman » → amn).
+  if (qSkel.length >= 2) {
     for (const a of analyses) {
       if (scores.has(a.word_key)) continue
+      const rich = richness.get(a.id) || 0
+      if (rich < 4) continue   // racines pauvres écartées pour éviter le bruit
       const rootPhonSkel = normalize(a.root_phon || '').replace(/[aeiouy]/g, '').replace(/(.)\1+/g, '$1')
       const wordKeySkel = normalize(a.word_key || '').replace(/[aeiouy]/g, '').replace(/(.)\1+/g, '$1')
       if (rootPhonSkel === qSkel && rootPhonSkel.length >= 2) {
@@ -228,13 +292,26 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // Seuil minimal + limite finale
-  const MIN_SCORE = 62
-  const results = [...scores.values()]
+  // Seuil minimal + tri
+  const MIN_SCORE = 68
+  const sorted = [...scores.values()]
     .filter(m => m.score >= MIN_SCORE)
+    .filter(m => m.root_ar && m.root_ar.trim().length > 0)   // écarte les entrées sans racine arabe (stubs)
     .sort((a, b) => b.score - a.score || b._rich - a._rich)
-    .slice(0, 15)
-    .map(({ _rich, ...rest }) => rest)  // eslint-disable-line @typescript-eslint/no-unused-vars
+
+  // Déduplication : une seule entrée par racine arabe (normalisée sans espaces)
+  // On garde la plus riche/mieux scorée, sinon on aurait 5 variantes de a-l-h pour « allah »
+  const seen = new Set<string>()
+  const deduped: typeof sorted = []
+  for (const m of sorted) {
+    const key = m.root_ar.replace(/\s+/g, '')
+    if (seen.has(key)) continue
+    seen.add(key)
+    deduped.push(m)
+    if (deduped.length >= 8) break
+  }
+
+  const results = deduped.map(({ _rich, ...rest }) => rest)  // eslint-disable-line @typescript-eslint/no-unused-vars
 
   return NextResponse.json({ results })
 }
