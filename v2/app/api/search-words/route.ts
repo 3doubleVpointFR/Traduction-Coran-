@@ -12,6 +12,7 @@ function normalize(s: string): string {
     .replace(/[̀-ͯ]/g, '')       // diacritiques latins (é → e)
     .replace(/[ً-ٰٟ]/g, '') // diacritiques arabes
     .replace(/[أإآٱ]/g, 'ا')            // alifs modifiés → alif simple
+    .replace(/ء/g, 'ا')                    // hamza isolé → alif
     .replace(/ى/g, 'ي')                    // alif maqsura → yaa
     .replace(/ة/g, 'ه')                    // taa marbuta → haa
     .replace(/ؤ/g, 'و')                    // waw + hamza → waw

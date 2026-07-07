@@ -274,24 +274,26 @@ export default function WordSearch() {
                           </p>
                         )
                       })()}
-                      {/* Concepts de la racine — visible sur tous les matches pour aider à identifier */}
+                      {/* Concepts de la racine — pastilles en gras pour identifier vite */}
                       {r.concepts && r.concepts.length > 0 && (
-                        <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
-                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        <div className="flex items-center gap-1.5 flex-wrap mt-2">
+                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                             Concepts ·
                           </span>
                           {r.concepts.slice(0, 5).map((c, ci) => (
                             <span
                               key={ci}
                               style={{
-                                fontSize: '11px',
-                                color: '#6B5E52',
-                                background: '#FFFFFF',
-                                border: '1px solid rgba(184,150,46,0.22)',
-                                padding: '1px 7px',
+                                fontSize: '12px',
+                                fontWeight: 600,
+                                color: '#1A1410',
+                                background: '#FDF6E4',
+                                border: '1px solid rgba(184,150,46,0.42)',
+                                padding: '2px 9px',
                                 borderRadius: '999px',
-                                fontFamily: "'Cormorant Garamond', serif",
+                                letterSpacing: '0.01em',
                                 whiteSpace: 'nowrap',
+                                lineHeight: 1.3,
                               }}
                             >
                               {c}

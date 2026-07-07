@@ -24,11 +24,20 @@ async function getWordData(key: string) {
       .eq('word_key', key),
   ])
 
-  const rootNorm = (analysis.root_ar ?? '').replace(/\s+/g, '')
+  // Normalise root_ar pour matcher words.root — les alifs/hamzas peuvent varier :
+  //   « أ ك ل » (word_analyses) vs « اكل » (words)
+  //   « س و ء » vs « سوا »
+  const rootRaw = (analysis.root_ar ?? '').replace(/\s+/g, '')
+  const rootFlat = rootRaw
+    .replace(/[أإآٱ]/g, 'ا')
+    .replace(/ء/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة/g, 'ه')
+  const rootVariants = Array.from(new Set([rootRaw, rootFlat]))
   const { count: totalQac } = await db
     .from('words')
     .select('id', { count: 'exact', head: true })
-    .eq('root', rootNorm)
+    .in('root', rootVariants)
 
   const meanings = meaningsRes.data ?? []
   const daily = dailyRes.data ?? []
