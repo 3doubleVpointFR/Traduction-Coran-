@@ -13,6 +13,7 @@ type Result = {
   matched_snippet: string
   concepts?: string[]
   translations?: string[]
+  verse_refs?: string[]
   score: number
 }
 
@@ -209,47 +210,9 @@ export default function WordSearch() {
                         </span>
                       </div>
                       {r.matched_snippet && r.matched_field !== 'racine' && r.matched_field !== 'racine arabe' && (() => {
-                        // Détecte si le snippet est une liste de refs versets (ex: « 3:35 » ou « 3:14, 3:61 »)
+                        // Snippet = liste de refs versets ? on la déplace vers le bloc verse_refs unifié
                         const isVerseRefs = /^\d+:\d+(\s*,\s*\d+:\d+)*$/.test(r.matched_snippet.trim())
-                        if (isVerseRefs) {
-                          const refs = r.matched_snippet.split(',').map(s => s.trim()).filter(Boolean)
-                          return (
-                            <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
-                              <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                                Versets ·
-                              </span>
-                              {refs.map((ref, ri) => {
-                                const [sr, vs] = ref.split(':')
-                                return (
-                                  <a
-                                    key={ri}
-                                    href={`/surah/${sr}#verse-${sr}-${vs}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                    className="verse-chip-link"
-                                    style={{
-                                      fontSize: '12px',
-                                      fontWeight: 600,
-                                      color: '#B8962E',
-                                      background: 'rgba(184,150,46,0.12)',
-                                      border: '1px solid rgba(184,150,46,0.28)',
-                                      padding: '2px 8px',
-                                      borderRadius: '4px',
-                                      letterSpacing: '0.02em',
-                                      fontFamily: "'Cormorant Garamond', serif",
-                                      lineHeight: 1.2,
-                                      textDecoration: 'none',
-                                      transition: 'background 0.15s ease',
-                                    }}
-                                  >
-                                    {ref}
-                                  </a>
-                                )
-                              })}
-                            </div>
-                          )
-                        }
+                        if (isVerseRefs) return null
                         // Match phonétique : phon en italique + traductions FR en jaune
                         if (r.matched_field === 'phonétique') {
                           return (
@@ -274,6 +237,43 @@ export default function WordSearch() {
                           </p>
                         )
                       })()}
+                      {/* Versets liés à la racine — affiché sur TOUS les matches (pas uniquement traduction) */}
+                      {r.verse_refs && r.verse_refs.length > 0 && (
+                        <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
+                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                            Versets ·
+                          </span>
+                          {r.verse_refs.map((ref, ri) => {
+                            const [sr, vs] = ref.split(':')
+                            return (
+                              <a
+                                key={ri}
+                                href={`/surah/${sr}#verse-${sr}-${vs}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={e => e.stopPropagation()}
+                                className="verse-chip-link"
+                                style={{
+                                  fontSize: '12px',
+                                  fontWeight: 600,
+                                  color: '#B8962E',
+                                  background: 'rgba(184,150,46,0.12)',
+                                  border: '1px solid rgba(184,150,46,0.28)',
+                                  padding: '2px 8px',
+                                  borderRadius: '4px',
+                                  letterSpacing: '0.02em',
+                                  fontFamily: "'Cormorant Garamond', serif",
+                                  lineHeight: 1.2,
+                                  textDecoration: 'none',
+                                  transition: 'background 0.15s ease',
+                                }}
+                              >
+                                {ref}
+                              </a>
+                            )
+                          })}
+                        </div>
+                      )}
                       {/* Concepts de la racine — pastilles en gras pour identifier vite */}
                       {r.concepts && r.concepts.length > 0 && (
                         <div className="flex items-center gap-1.5 flex-wrap mt-2">
