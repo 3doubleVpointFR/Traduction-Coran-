@@ -367,6 +367,13 @@ export async function GET(req: NextRequest) {
 
   // 5) Match via formes coraniques : chaque mot trouvé pointe vers sa racine
   //    On normalise avec Buckwalter en plus (hudFY → huday) pour capter des queries comme « hudan »
+  // Détecte les queries qui ont une correspondance exacte de traduction française
+  // (ex: « bon » → une racine a été traduite « bon » quelque part).
+  // Dans ce cas on skip le matching phonétique/Buckwalter qui génère du bruit
+  // (« bon » matche « {bon » = ٱبْن = ibn = fils, faux positif).
+  const hasExactFrTraduction = !isArabicQuery && chosenIndex.has(qNorm) && (chosenIndex.get(qNorm)!.size > 0)
+  const looksFrench = hasExactFrTraduction
+
   for (const w of directWords || []) {
     const rootKey = (w.root || '').replace(/\s+/g, '')
     if (!rootKey) continue
@@ -377,10 +384,11 @@ export async function GET(req: NextRequest) {
     const arabicNorm = normalize(w.arabic || '')
     // Version consonantique — le Coran remplace souvent ا par le dagger-alef ٰ
     // qui disparaît au normalize, donc « صالح » ne matche pas via arabicNorm direct.
-    // On compare la squelette consonantique (sans ا/و/ي faibles) des deux côtés.
     const stripWeak = (s: string) => s.replace(/[اويى]/g, '')
     const qCons = stripWeak(qNorm)
     const arabicCons = stripWeak(arabicNorm)
+    // Query française courte : on skip le matching Buckwalter (bruit fréquent : {bon → ibn)
+    if (looksFrench) continue
     if (translitNorm && translitNorm.includes(qNorm)) {
       push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), translitNorm === qNorm ? 92 : 76)
     } else if (translitBk && translitBk.includes(qNorm)) {
@@ -449,11 +457,11 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // 6bis) Fallback squelette consonantique — ne cible QUE les vraies racines riches
-  //       (rich >= 4) pour éviter le bruit des stubs. Capture les patterns arabes
-  //       où la voyelle initiale du mot n'est pas dans la racine (« iman » → amn)
-  //       ET les formes conjuguées où la racine est enfouie (« tuhsharuna » → hshr).
-  if (qSkel.length >= 2) {
+  // 6bis) Fallback squelette consonantique — pour les patterns arabes
+  //       (« iman » → amn, « tuhsharuna » → hshr).
+  //       Désactivé pour les queries qui ressemblent à des mots français
+  //       (« bon » skel « bn » matcherait bny, ce qui est du bruit).
+  if (qSkel.length >= 2 && !looksFrench) {
     for (const a of analyses) {
       if (scores.has(a.word_key)) continue
       const rich = richness.get(a.id) || 0
