@@ -447,6 +447,9 @@ function HiddenVerseCard({
 
 export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse, currentPage, totalPages, pageSize, allDoneVerseNums }: Props) {
   const router = useRouter()
+  // Verset cible à scroller quand on arrive sur la bonne page
+  // (le hash étant perdu par router.push, on le mémorise ici)
+  const pendingVerseJump = useRef<number | null>(null)
   const [activeWordKey, setActiveWordKey] = useState<string | null>(null)
   const [wordAnalysis, setWordAnalysis] = useState<WordAnalysis | null>(null)
   const [loadingWord, setLoadingWord] = useState(false)
@@ -498,21 +501,46 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     tryScroll()
   }
 
-  // Sur changement de page : si hash → scroll vers verset (verse jumper).
+  // Sur changement de page : si hash OU pendingVerseJump → scroll vers verset.
   // Sinon (clic pagination) → scroll fluide vers le top.
   // On utilise scroll: false sur router.push pour éviter le saut brutal de Next.js.
   useEffect(() => {
     if (typeof window === 'undefined') return
+    // 1) Vérifier si on a un verset en attente de navigation (hash perdu par router.push)
+    if (pendingVerseJump.current !== null) {
+      const verseNum = pendingVerseJump.current
+      pendingVerseJump.current = null
+      // On lance scrollAndFlash qui a déjà sa propre logique de retry (30 tentatives)
+      scrollAndFlash(verseNum)
+      return
+    }
     const hash = window.location.hash
     if (hash && hash.startsWith(`#verse-${surah.id}-`)) {
       const verseNum = parseInt(hash.replace(`#verse-${surah.id}-`, ''), 10)
       if (Number.isFinite(verseNum)) {
-        scrollAndFlash(verseNum)
-        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+        const el = document.getElementById(`verse-${surah.id}-${verseNum}`)
+        if (el) {
+          scrollAndFlash(verseNum)
+          window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+        } else {
+          // Verset sur une autre page : on mémorise dans le ref pour le re-render
+          const idxInDone = allDoneVerseNums.indexOf(verseNum)
+          if (idxInDone >= 0) {
+            const targetPage = Math.floor(idxInDone / pageSize) + 1
+            if (targetPage !== currentPage) {
+              pendingVerseJump.current = verseNum
+              // On efface le hash pour ne pas boucler quand la page cible se charge
+              window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+              router.push(`/surah/${surah.id}?page=${targetPage}`, { scroll: false })
+              return
+            }
+          }
+          scrollAndFlash(verseNum)
+        }
       }
       return
     }
-    // Pas de hash → scroll fluide vers le top (pagination classique).
+    // Pas de hash ni de pending → scroll fluide vers le top (pagination classique).
     window.scrollTo({ top: 0, behavior: 'smooth' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage])
