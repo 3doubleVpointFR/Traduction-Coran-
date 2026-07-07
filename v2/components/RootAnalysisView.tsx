@@ -313,6 +313,8 @@ export default function RootAnalysisView({ data }: Props) {
                             <a
                               key={i}
                               href={`/surah/${ref.split(':')[0]}#verse-${ref.replace(':', '-')}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="verse-ref"
                               style={{
                                 fontSize: '12px',

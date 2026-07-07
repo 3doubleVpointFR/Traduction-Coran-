@@ -216,25 +216,35 @@ export default function WordSearch() {
                               <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                                 Versets ·
                               </span>
-                              {refs.map((ref, ri) => (
-                                <span
-                                  key={ri}
-                                  style={{
-                                    fontSize: '12px',
-                                    fontWeight: 600,
-                                    color: '#B8962E',
-                                    background: 'rgba(184,150,46,0.12)',
-                                    border: '1px solid rgba(184,150,46,0.28)',
-                                    padding: '2px 8px',
-                                    borderRadius: '4px',
-                                    letterSpacing: '0.02em',
-                                    fontFamily: "'Cormorant Garamond', serif",
-                                    lineHeight: 1.2,
-                                  }}
-                                >
-                                  {ref}
-                                </span>
-                              ))}
+                              {refs.map((ref, ri) => {
+                                const [sr, vs] = ref.split(':')
+                                return (
+                                  <a
+                                    key={ri}
+                                    href={`/surah/${sr}#verse-${sr}-${vs}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={e => e.stopPropagation()}
+                                    className="verse-chip-link"
+                                    style={{
+                                      fontSize: '12px',
+                                      fontWeight: 600,
+                                      color: '#B8962E',
+                                      background: 'rgba(184,150,46,0.12)',
+                                      border: '1px solid rgba(184,150,46,0.28)',
+                                      padding: '2px 8px',
+                                      borderRadius: '4px',
+                                      letterSpacing: '0.02em',
+                                      fontFamily: "'Cormorant Garamond', serif",
+                                      lineHeight: 1.2,
+                                      textDecoration: 'none',
+                                      transition: 'background 0.15s ease',
+                                    }}
+                                  >
+                                    {ref}
+                                  </a>
+                                )
+                              })}
                             </div>
                           )
                         }
@@ -263,6 +273,10 @@ export default function WordSearch() {
         }
         .word-result-row:hover {
           background: #FDFAF3 !important;
+        }
+        :global(.verse-chip-link:hover) {
+          background: rgba(184,150,46,0.24) !important;
+          color: #8A7428 !important;
         }
       `}</style>
     </div>
