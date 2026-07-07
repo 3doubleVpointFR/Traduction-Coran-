@@ -238,8 +238,11 @@ export async function GET(req: NextRequest) {
   //       (ex: query « سيئة » → pattern %س%ي%ئ%ة% matche « ٱلسَّيِّئَةَ »)
   const qPrefix = qNorm.slice(0, 3)
   const isArabicQuery = /[؀-ۿ]/.test(q)
+  // Pour les queries arabes, on garde uniquement les consonnes fortes dans le pattern :
+  // les ا/و/ي peuvent être remplacés par des dagger-alef ٰ ou d'autres diacritiques
+  // dans le Coran. Ex: « صالح » → pattern « %ص%ل%ح% » matche « ٱلصَّٰلِحَٰتِ ».
   const arabicPattern = isArabicQuery
-    ? '%' + q.replace(/\s+/g, '').split('').join('%') + '%'
+    ? '%' + q.replace(/\s+/g, '').split('').filter(c => !/[اويٱأإآىة]/.test(c)).join('%') + '%'
     : `%${q}%`
   const [directRes, prefixRes] = await Promise.all([
     db.from('words').select('root, transliteration, arabic').or(`transliteration.ilike.%${qNorm}%,arabic.ilike.${arabicPattern}`).limit(200),
@@ -372,11 +375,19 @@ export async function GET(req: NextRequest) {
     const translitNorm = normalize(w.transliteration || '')
     const translitBk = normalizeBuckwalter(w.transliteration || '')
     const arabicNorm = normalize(w.arabic || '')
+    // Version consonantique — le Coran remplace souvent ا par le dagger-alef ٰ
+    // qui disparaît au normalize, donc « صالح » ne matche pas via arabicNorm direct.
+    // On compare la squelette consonantique (sans ا/و/ي faibles) des deux côtés.
+    const stripWeak = (s: string) => s.replace(/[اويى]/g, '')
+    const qCons = stripWeak(qNorm)
+    const arabicCons = stripWeak(arabicNorm)
     if (translitNorm && translitNorm.includes(qNorm)) {
       push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), translitNorm === qNorm ? 92 : 76)
     } else if (translitBk && translitBk.includes(qNorm)) {
       push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), translitBk === qNorm ? 88 : 76)
     } else if (arabicNorm && arabicNorm.includes(qNorm)) {
+      push(a, 'phonétique', prettifyBuckwalter(w.transliteration || w.arabic || ''), 74)
+    } else if (qCons.length >= 3 && arabicCons && arabicCons.includes(qCons)) {
       push(a, 'phonétique', prettifyBuckwalter(w.transliteration || w.arabic || ''), 74)
     } else if (translitBk) {
       const capBk = Math.max(2, maxDist)
