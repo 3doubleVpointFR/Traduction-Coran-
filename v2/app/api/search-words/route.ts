@@ -121,44 +121,53 @@ export async function GET(req: NextRequest) {
   // 2bis) Traductions RÉELLEMENT CHOISIES dans les versets analysés
   //       Source #1 : verse_word_analyses.sense_chosen (le sens retenu au niveau A)
   //       Source #2 : verse_analyses.segments[].fr (le mot français mis dans la traduction)
-  const chosenSenses = await fetchAll<{ word_key: string; sense_chosen: string | null }>((f, t) =>
-    db.from('verse_word_analyses').select('word_key, sense_chosen').range(f, t)
+  const chosenSenses = await fetchAll<{ word_key: string; sense_chosen: string | null; verse_id: number; verses: { surah_id: number; verse_num: number } | null }>((f, t) =>
+    db.from('verse_word_analyses').select('word_key, sense_chosen, verse_id, verses!inner(surah_id, verse_num)').range(f, t)
   )
   const usedKeys = new Set<string>()
-  // Map: expression normalisée (sense_chosen ou segment.fr) → Map<word_key, count>
-  const chosenIndex = new Map<string, Map<string, number>>()
-  const addChosen = (expr: string | null | undefined, word_key: string) => {
+  // Map: expression normalisée → Map<word_key, { count, refs: string[] }>
+  type ChosenEntry = { count: number; refs: string[] }
+  const chosenIndex = new Map<string, Map<string, ChosenEntry>>()
+  const addChosen = (expr: string | null | undefined, word_key: string, ref: string | null = null) => {
     if (!expr || !word_key) return
-    const nk = normalize(expr)
-    if (!nk || nk.length < 2) return
-    if (!chosenIndex.has(nk)) chosenIndex.set(nk, new Map())
-    const wk = chosenIndex.get(nk)!
-    wk.set(word_key, (wk.get(word_key) || 0) + 1)
-    // Aussi indexer chaque mot individuel du sens (« faire entrer » → « faire », « entrer »)
-    for (const tok of nk.split(/\s+/).filter(t => t.length >= 3)) {
-      if (tok === nk) continue
-      if (!chosenIndex.has(tok)) chosenIndex.set(tok, new Map())
-      const wt = chosenIndex.get(tok)!
-      wt.set(word_key, (wt.get(word_key) || 0) + 1)
+    const rawTrim = expr.trim()
+    if (!rawTrim) return
+    const addOne = (key: string) => {
+      if (!key || key.length < 2) return
+      if (!chosenIndex.has(key)) chosenIndex.set(key, new Map())
+      const wk = chosenIndex.get(key)!
+      const entry = wk.get(word_key) || { count: 0, refs: [] }
+      entry.count += 1
+      if (ref && entry.refs.length < 6 && !entry.refs.includes(ref)) entry.refs.push(ref)
+      wk.set(word_key, entry)
+    }
+    // Expression complète normalisée (« faire entrer »)
+    addOne(normalize(rawTrim))
+    // Chaque token individuel du sens (split AVANT normalize pour préserver les mots)
+    const tokens = rawTrim.split(/\s+/).filter(t => t.length >= 2)
+    for (const tok of tokens) {
+      const ntok = normalize(tok)
+      addOne(ntok)
     }
   }
   for (const v of chosenSenses) {
     if (!v.word_key) continue
     usedKeys.add(v.word_key)
-    addChosen(v.sense_chosen, v.word_key)
+    const ref = v.verses ? `${v.verses.surah_id}:${v.verses.verse_num}` : null
+    addChosen(v.sense_chosen, v.word_key, ref)
   }
 
   // Segments : parcourir tous les verse_analyses.segments[] et indexer fr → word_key
-  const segRows = await fetchAll<{ segments: Array<{ fr?: string; word_key?: string | null }> | null }>((f, t) =>
-    db.from('verse_analyses').select('segments').range(f, t)
+  const segRows = await fetchAll<{ verse_id: number; verses: { surah_id: number; verse_num: number } | null; segments: Array<{ fr?: string; word_key?: string | null }> | null }>((f, t) =>
+    db.from('verse_analyses').select('verse_id, verses!inner(surah_id, verse_num), segments').range(f, t)
   )
   for (const row of segRows) {
     const segs = row.segments || []
+    const ref = row.verses ? `${row.verses.surah_id}:${row.verses.verse_num}` : null
     for (const s of segs) {
       if (!s || !s.word_key || !s.fr) continue
-      // On retire les ponctuations extrêmes et guillemets/quotes
       const cleanFr = s.fr.replace(/^[«»"'\s(,]+|[«»"'\s.,;:!?)]+$/g, '').trim()
-      addChosen(cleanFr, s.word_key)
+      addChosen(cleanFr, s.word_key, ref)
     }
   }
 
@@ -317,32 +326,34 @@ export async function GET(req: NextRequest) {
   }
 
   // 5bis) Match via traductions RÉELLEMENT choisies (sense_chosen + segments[].fr)
-  //       C'est la source de vérité : "quelles racines ont-elles été traduites par X ?"
-  //       On matche exact ou préfixe pour éviter le bruit
-  const chosenExactHits = new Set<string>()   // word_keys matchés par sens choisi
+  //       Le snippet contient les refs de versets réels au lieu de "utilisée dans le Coran"
+  const chosenExactHits = new Set<string>()
   for (const [nk, wkMap] of chosenIndex.entries()) {
     let matched = false
     let score = 0
+    // Match uniquement exact ou en tête (évite « dieu » qui matche dans « dieuneleurparlerapas »)
     if (nk === qNorm) { matched = true; score = 100 }
-    else if (nk.startsWith(qNorm + ' ')) { matched = true; score = 90 }
-    else if (qNorm.length >= 3 && nk.startsWith(qNorm)) { matched = true; score = 84 }
-    else if (qNorm.length >= 4 && nk.includes(qNorm)) { matched = true; score = 74 }
+    else if (nk.startsWith(qNorm + ' ')) { matched = true; score = 88 }
+    else if (qNorm.length >= 4 && nk.startsWith(qNorm)) { matched = true; score = 78 }
     if (!matched) continue
-    for (const [wk, count] of wkMap.entries()) {
+    for (const [wk, entry] of wkMap.entries()) {
       const a = analysisByKeyLite.get(wk)
       if (!a) continue
-      // Petit bonus proportionnel au nombre d'occurrences dans le Coran
-      // Bonus proportionnel aux occurrences — une racine avec 60 usages écrase celle avec 1
-      const occBonus = Math.min(15, Math.floor(Math.log2(count + 1) * 2.5))
-      push(a, 'traduction', nk === qNorm ? 'utilisée dans le Coran' : nk, score + occBonus)
+      // Bonus proportionnel au nombre d'occurrences
+      const occBonus = Math.min(15, Math.floor(Math.log2(entry.count + 1) * 2.5))
+      // Pénalité pour les traductions à 1 seule occurrence (anomalies de données)
+      const rarityPenalty = entry.count === 1 ? 12 : entry.count === 2 ? 5 : 0
+      const refsList = entry.refs.slice(0, 5).join(', ')
+      const snippet = refsList || nk
+      push(a, 'traduction', snippet, score + occBonus - rarityPenalty)
       chosenExactHits.add(wk)
     }
   }
 
-  // 5ter) Fallback sur word_meanings.sense (sens définis mais pas forcément choisis)
+  // 5ter) Fallback sens définis (word_meanings.sense) + concepts (word_meanings.concept)
   //       Rank plus bas car ce n'est qu'une possibilité, pas une traduction effective
   for (const a of analyses) {
-    if (chosenExactHits.has(a.word_key)) continue   // déjà couvert par la traduction effective
+    if (chosenExactHits.has(a.word_key)) continue
     const senses = meaningsByAnalysis.get(a.id) || []
     for (const m of senses) {
       const senseNorm = normalize(m.sense)
@@ -352,6 +363,17 @@ export async function GET(req: NextRequest) {
       const senseArNorm = normalize(m.sense_ar || '')
       if (senseArNorm && senseArNorm === qNorm) {
         push(a, 'sens arabe', m.sense_ar || '', 74)
+      }
+      const conceptNorm = normalize(m.concept || '')
+      // Concept : match exact, préfixe strict, ou substring pour queries longues (4+)
+      if (conceptNorm) {
+        if (conceptNorm === qNorm) {
+          push(a, 'concept', m.concept || '', 80)
+        } else if (qNorm.length >= 4 && (conceptNorm.startsWith(qNorm) || conceptNorm.startsWith(qNorm + '/') || conceptNorm.startsWith(qNorm + ' '))) {
+          push(a, 'concept', m.concept || '', 74)
+        } else if (qNorm.length >= 5 && conceptNorm.includes('/' + qNorm)) {
+          push(a, 'concept', m.concept || '', 72)
+        }
       }
     }
   }
@@ -417,12 +439,36 @@ export async function GET(req: NextRequest) {
 
   // Seuil minimal + tri
   const MIN_SCORE = 68
+  // Détection d'une racine « dominante » pour cette traduction (count >= 20 = mot très fréquent)
+  // Quand une racine écrase largement, on écarte les traductions à 1 seule occurrence (bruit)
+  let hasDominantTraduction = false
+  for (const [nk, wkMap] of chosenIndex.entries()) {
+    if (nk !== qNorm) continue
+    for (const entry of wkMap.values()) {
+      if (entry.count >= 20) { hasDominantTraduction = true; break }
+    }
+    if (hasDominantTraduction) break
+  }
+
+  // Compte d'occurrences pour chaque word_key sur la traduction exactement recherchée
+  const countByWk = new Map<string, number>()
+  if (chosenIndex.has(qNorm)) {
+    for (const [wk, entry] of chosenIndex.get(qNorm)!.entries()) countByWk.set(wk, entry.count)
+  }
+
   const sorted = [...scores.values()]
     .filter(m => m.score >= MIN_SCORE)
-    .filter(m => m.root_ar && m.root_ar.trim().length > 0)   // écarte les entrées sans racine arabe
+    .filter(m => m.root_ar && m.root_ar.trim().length > 0)
     .filter(m => {
       const a = analysisByKeyLite.get(m.word_key)
       return a ? isReallyAnalyzed(a) : false
+    })
+    // Écarte les traductions rares (count=1) quand une racine dominante existe déjà
+    .filter(m => {
+      if (!hasDominantTraduction) return true
+      if (m.matched_field !== 'traduction') return true
+      const count = countByWk.get(m.word_key) || 0
+      return count >= 3
     })
     .sort((a, b) => b.score - a.score || b._rich - a._rich)
 
