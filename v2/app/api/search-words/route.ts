@@ -76,6 +76,44 @@ function levenshtein(a: string, b: string, cap: number = 3): number {
   return prev[n]
 }
 
+// Nettoie une transliteration Buckwalter pour l'affichage humain :
+// « {EotabiruW » → « iʿtabirū », « musotaboSiriyn » → « mustabsirīn »
+function prettifyBuckwalter(s: string): string {
+  if (!s) return ''
+  return s
+    // Voyelles longues
+    .replace(/A/g, 'ā')       // alif long
+    .replace(/Y/g, 'ā')       // alif maqsūra → ā
+    .replace(/w`/g, 'ū')      // waw + ā = ū long
+    .replace(/y`/g, 'ī')      // ya + ā = ī long
+    // Consonnes emphatiques et digraphes
+    .replace(/\$/g, 'sh')
+    .replace(/H/g, 'ḥ')
+    .replace(/x/g, 'kh')
+    .replace(/v/g, 'th')
+    .replace(/\*/g, 'dh')
+    .replace(/g/g, 'gh')
+    .replace(/S/g, 'ṣ')
+    .replace(/D/g, 'ḍ')
+    .replace(/T/g, 'ṭ')
+    .replace(/Z/g, 'ẓ')
+    .replace(/E/g, 'ʿ')       // ʿayn
+    // Case markers finaux (fatḥatan/kasratan/ḍammatan)
+    .replace(/F/g, 'an')
+    .replace(/K/g, 'in')
+    .replace(/N/g, 'un')
+    // Hamza et alifs modifiés
+    .replace(/[{}<>|]/g, 'a')
+    .replace(/[`~^]/g, '')    // shadda, sukun, marqueurs
+    .replace(/W/g, 'ū')       // waw isolé en fin de forme verbale (approximation)
+    .replace(/p/g, 'a')       // taa marbuta
+    .replace(/o/g, '')        // sukun explicite
+    .replace(/'/g, 'ʾ')       // hamza
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 // Pagination Supabase (limite de 1000 par requête)
 async function fetchAll<T>(fn: (from: number, to: number) => Promise<{ data: T[] | null }>): Promise<T[]> {
   const out: T[] = []
@@ -217,6 +255,8 @@ export async function GET(req: NextRequest) {
     root_meaning: string | null
     matched_field: string
     matched_snippet: string
+    concepts: string[]        // concepts du sens (pour aider à identifier la racine)
+    translations: string[]    // traductions françaises rencontrées pour cette racine
     score: number
     _rich: number
   }
@@ -242,6 +282,8 @@ export async function GET(req: NextRequest) {
         root_meaning: a.root_meaning,
         matched_field: field,
         matched_snippet: snippet,
+        concepts: [],
+        translations: [],
         score: finalScore,
         _rich: rich,
       })
@@ -312,16 +354,15 @@ export async function GET(req: NextRequest) {
     const translitBk = normalizeBuckwalter(w.transliteration || '')
     const arabicNorm = normalize(w.arabic || '')
     if (translitNorm && translitNorm.includes(qNorm)) {
-      push(a, 'mot du Coran', w.transliteration || '', translitNorm === qNorm ? 92 : 76)
+      push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), translitNorm === qNorm ? 92 : 76)
     } else if (translitBk && translitBk.includes(qNorm)) {
-      push(a, 'mot du Coran', w.transliteration || '', translitBk === qNorm ? 88 : 76)
+      push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), translitBk === qNorm ? 88 : 76)
     } else if (arabicNorm && arabicNorm.includes(qNorm)) {
-      push(a, 'mot du Coran', w.arabic || '', 74)
+      push(a, 'phonétique', prettifyBuckwalter(w.transliteration || w.arabic || ''), 74)
     } else if (translitBk) {
-      // Tolérance plus large sur les formes fléchies (case markers arabes ajoutent 1-2 lettres)
       const capBk = Math.max(2, maxDist)
       const d = levenshtein(qNorm, translitBk, capBk)
-      if (d <= capBk) push(a, 'mot du Coran', w.transliteration || '', d === 0 ? 84 : d === 1 ? 78 : 70)
+      if (d <= capBk) push(a, 'phonétique', prettifyBuckwalter(w.transliteration || ''), d === 0 ? 84 : d === 1 ? 78 : 70)
     }
   }
 
@@ -497,7 +538,37 @@ export async function GET(req: NextRequest) {
     if (deduped.length >= 8) break
   }
 
-  const results = deduped.map(({ _rich, ...rest }) => rest)  // eslint-disable-line @typescript-eslint/no-unused-vars
+  // Enrichit chaque résultat avec les concepts de la racine + les traductions rencontrées
+  const results = deduped.map(({ _rich, ...rest }) => {  // eslint-disable-line @typescript-eslint/no-unused-vars
+    const a = analysisByKeyLite.get(rest.word_key)
+    // Concepts uniques de la racine (préserve l'ordre d'apparition)
+    const concepts: string[] = []
+    if (a) {
+      const seen = new Set<string>()
+      for (const m of meaningsByAnalysis.get(a.id) || []) {
+        if (m.concept && !seen.has(m.concept)) {
+          seen.add(m.concept)
+          concepts.push(m.concept)
+        }
+      }
+    }
+    // Traductions françaises effectivement utilisées pour cette racine
+    const trSet = new Set<string>()
+    if (a) {
+      const senses = meaningsByAnalysis.get(a.id) || []
+      // On collecte les sens qui ont vraiment été choisis
+      for (const [nk, wkMap] of chosenIndex.entries()) {
+        if (!wkMap.has(rest.word_key)) continue
+        // On ne veut que les expressions complètes (pas les tokens split)
+        // Un token est complet s'il correspond à un sens listé OU s'il s'agit du sense_chosen complet
+        if (senses.some(s => normalize(s.sense) === nk)) {
+          const sense = senses.find(s => normalize(s.sense) === nk)?.sense
+          if (sense) trSet.add(sense)
+        }
+      }
+    }
+    return { ...rest, concepts: concepts.slice(0, 6), translations: [...trSet].slice(0, 8) }
+  })
 
   return NextResponse.json({ results })
 }

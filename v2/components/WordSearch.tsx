@@ -11,6 +11,8 @@ type Result = {
   root_meaning: string | null
   matched_field: string
   matched_snippet: string
+  concepts?: string[]
+  translations?: string[]
   score: number
 }
 
@@ -248,12 +250,55 @@ export default function WordSearch() {
                             </div>
                           )
                         }
+                        // Match phonétique : phon en italique + traductions FR en jaune
+                        if (r.matched_field === 'phonétique') {
+                          return (
+                            <div className="flex items-baseline gap-2 flex-wrap mt-1.5">
+                              <span style={{ fontSize: '13.5px', color: '#3D3228', fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', letterSpacing: '0.02em' }}>
+                                {r.matched_snippet}
+                              </span>
+                              {r.translations && r.translations.length > 0 && (
+                                <>
+                                  <span aria-hidden="true" style={{ color: '#8A7E72', fontSize: '11px' }}>·</span>
+                                  <span style={{ fontSize: '12.5px', color: '#B8962E', fontStyle: 'italic', fontWeight: 600, fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.02em' }}>
+                                    {r.translations.slice(0, 4).join(', ')}
+                                  </span>
+                                </>
+                              )}
+                            </div>
+                          )
+                        }
                         return (
                           <p style={{ fontSize: '13px', color: '#6B5E52', marginTop: '4px', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
                             « {r.matched_snippet} »
                           </p>
                         )
                       })()}
+                      {/* Concepts de la racine — visible sur tous les matches pour aider à identifier */}
+                      {r.concepts && r.concepts.length > 0 && (
+                        <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
+                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                            Concepts ·
+                          </span>
+                          {r.concepts.slice(0, 5).map((c, ci) => (
+                            <span
+                              key={ci}
+                              style={{
+                                fontSize: '11px',
+                                color: '#6B5E52',
+                                background: '#FFFFFF',
+                                border: '1px solid rgba(184,150,46,0.22)',
+                                padding: '1px 7px',
+                                borderRadius: '999px',
+                                fontFamily: "'Cormorant Garamond', serif",
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </Link>
                   </li>
                 ))}
