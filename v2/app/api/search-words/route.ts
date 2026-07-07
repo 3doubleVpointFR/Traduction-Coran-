@@ -232,20 +232,38 @@ export async function GET(req: NextRequest) {
   }
 
   // 3) Mots du Coran matchant la requête (formes réelles → racine)
-  //    Filtre serré + filtre large (préfixe 3 chars) pour attraper les formes fléchies
-  //    avec case markers (hudan → hudFY nécessite un match par préfixe)
+  //    a) filtre serré sur transliteration
+  //    b) filtre large avec préfixe 3 chars (formes fléchies)
+  //    c) match Arabe avec wildcards entre lettres pour ignorer les diacritiques
+  //       (ex: query « سيئة » → pattern %س%ي%ئ%ة% matche « ٱلسَّيِّئَةَ »)
   const qPrefix = qNorm.slice(0, 3)
+  const isArabicQuery = /[؀-ۿ]/.test(q)
+  const arabicPattern = isArabicQuery
+    ? '%' + q.replace(/\s+/g, '').split('').join('%') + '%'
+    : `%${q}%`
   const [directRes, prefixRes] = await Promise.all([
-    db.from('words').select('root, transliteration, arabic').or(`transliteration.ilike.%${qNorm}%,arabic.ilike.%${q}%`).limit(200),
+    db.from('words').select('root, transliteration, arabic').or(`transliteration.ilike.%${qNorm}%,arabic.ilike.${arabicPattern}`).limit(200),
     qPrefix.length >= 3 ? db.from('words').select('root, transliteration, arabic').ilike('transliteration', `%${qPrefix}%`).limit(400) : Promise.resolve({ data: [] }),
   ])
   const directWords = [...(directRes.data || []), ...(prefixRes.data || [])]
 
+  // Aplatit une racine arabe pour matcher les variantes hamza/alif entre
+  // word_analyses.root_ar (« س و ء ») et words.root (« سوا »)
+  const flattenRoot = (s: string): string => (s || '')
+    .replace(/\s+/g, '')
+    .replace(/[أإآٱ]/g, 'ا')
+    .replace(/ء/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة/g, 'ه')
+
   const analysisByRootAr = new Map<string, typeof analyses[number]>()
   const analysisByKeyLite = new Map<string, typeof analyses[number]>()
   for (const a of analyses) {
-    const key = (a.root_ar || '').replace(/\s+/g, '')
-    if (key) analysisByRootAr.set(key, a)
+    const raw = (a.root_ar || '').replace(/\s+/g, '')
+    const flat = flattenRoot(a.root_ar || '')
+    // Indexe les deux variantes pour que .get() par la variante words.root fonctionne
+    if (raw) analysisByRootAr.set(raw, a)
+    if (flat && flat !== raw) analysisByRootAr.set(flat, a)
     analysisByKeyLite.set(a.word_key, a)
   }
 
