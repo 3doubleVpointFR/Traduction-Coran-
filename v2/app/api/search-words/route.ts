@@ -177,7 +177,8 @@ export async function GET(req: NextRequest) {
       if (!existing.fr && fr) existing.fr = fr
       return
     }
-    if (arr.length < 8) arr.push({ ref, fr: fr || '' })
+    // On stocke jusqu'à 40 refs — le tri/priorité + slice à 8 se fera au final
+    if (arr.length < 40) arr.push({ ref, fr: fr || '' })
   }
   // Map: expression normalisée → Map<word_key, { count, refs: string[] }>
   type ChosenEntry = { count: number; refs: string[] }
@@ -624,9 +625,20 @@ export async function GET(req: NextRequest) {
         }
       }
     }
-    // Refs versets par racine — trié par (surah, verse) et limité à 8
+    // Refs versets par racine — priorité aux versets où le mot FR matche la query,
+    // puis tri (surah, verse). Limite à 8.
     const refs = (refsByKey.get(rest.word_key) || []).slice()
+    const matchesQuery = (fr: string): boolean => {
+      if (!fr) return false
+      const nfr = normalize(fr)
+      if (nfr === qNorm) return true
+      // Match token (« revenir » dans « faire revenir »)
+      return fr.split(/\s+/).some(t => normalize(t) === qNorm)
+    }
     refs.sort((a, b) => {
+      const ma = matchesQuery(a.fr) ? 0 : 1
+      const mb = matchesQuery(b.fr) ? 0 : 1
+      if (ma !== mb) return ma - mb
       const [sa, va] = a.ref.split(':').map(Number)
       const [sb, vb] = b.ref.split(':').map(Number)
       return sa - sb || va - vb
