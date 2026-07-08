@@ -226,6 +226,7 @@ interface WordAnalysis {
   occurrence_axes?: Record<string, string> | null
   concept_chosen?: string | null
   occurrence_reason?: string
+  etymological_concept?: string | null
 }
 
 interface VerseText {
@@ -576,6 +577,22 @@ export default function WordPanel({
                         }}
                       >
                         {concept}
+                        {analysis.etymological_concept === concept && (
+                          <span
+                            title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                            style={{
+                              fontSize: '9px',
+                              color: '#B8962E',
+                              fontStyle: 'italic',
+                              marginLeft: '5px',
+                              fontWeight: 700,
+                              letterSpacing: '0.05em',
+                              textTransform: 'uppercase',
+                            }}
+                          >
+                            ✦ sens premier
+                          </span>
+                        )}
                       </span>
                       {/* Tooltip desktop fallback (au cas où le portal ne se monte pas) — caché */}
                       <div className="hidden">
@@ -831,6 +848,21 @@ export default function WordPanel({
                           >
                             <span style={{ color: '#B8962E', fontSize: '12px', marginRight: '2px', transition: 'transform 0.2s', transform: conceptIsExpanded ? 'rotate(90deg)' : 'rotate(0deg)', display: 'inline-block', lineHeight: 1, fontFamily: 'Arial, sans-serif' }}>{'▸'}</span>
                             <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{conceptName}</span>
+                            {analysis.etymological_concept === conceptName && (
+                              <span
+                                title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                                style={{
+                                  fontSize: '9px',
+                                  color: '#B8962E',
+                                  fontStyle: 'italic',
+                                  fontWeight: 700,
+                                  letterSpacing: '0.05em',
+                                  textTransform: 'uppercase',
+                                }}
+                              >
+                                ✦ sens premier
+                              </span>
+                            )}
                             <span style={{ fontSize: '10px', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: tag.color, fontStyle: 'italic' }}>
                               {conceptStatus === 'retenu' && <span aria-hidden="true" style={{ fontStyle: 'normal', marginRight: '3px' }}>✦</span>}
                               {tag.label}
