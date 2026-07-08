@@ -13,7 +13,7 @@ type Result = {
   matched_snippet: string
   concepts?: string[]
   translations?: string[]
-  verse_refs?: string[]
+  verse_refs?: { ref: string; fr: string }[]
   score: number
 }
 
@@ -167,6 +167,8 @@ export default function WordSearch() {
                   <li key={r.word_key} className="m-0">
                     <Link
                       href={`/word/${encodeURIComponent(r.word_key)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setOpen(false)}
                       className="word-result-row block px-4 py-3 transition-colors"
                       style={{
@@ -237,39 +239,46 @@ export default function WordSearch() {
                           </p>
                         )
                       })()}
-                      {/* Versets liés à la racine — affiché sur TOUS les matches (pas uniquement traduction) */}
+                      {/* Versets liés à la racine — affiché sur TOUS les matches, avec le mot FR sous chaque ref */}
                       {r.verse_refs && r.verse_refs.length > 0 && (
-                        <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
-                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        <div className="flex items-start gap-1.5 flex-wrap mt-1.5">
+                          <span style={{ fontSize: '10px', color: '#9E9089', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', paddingTop: '3px' }}>
                             Versets ·
                           </span>
-                          {r.verse_refs.map((ref, ri) => {
-                            const [sr, vs] = ref.split(':')
+                          {r.verse_refs.map((entry, ri) => {
+                            const [sr, vs] = entry.ref.split(':')
                             return (
-                              <a
-                                key={ri}
-                                href={`/surah/${sr}#verse-${sr}-${vs}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={e => e.stopPropagation()}
-                                className="verse-chip-link"
-                                style={{
-                                  fontSize: '12px',
-                                  fontWeight: 600,
-                                  color: '#B8962E',
-                                  background: 'rgba(184,150,46,0.12)',
-                                  border: '1px solid rgba(184,150,46,0.28)',
-                                  padding: '2px 8px',
-                                  borderRadius: '4px',
-                                  letterSpacing: '0.02em',
-                                  fontFamily: "'Cormorant Garamond', serif",
-                                  lineHeight: 1.2,
-                                  textDecoration: 'none',
-                                  transition: 'background 0.15s ease',
-                                }}
-                              >
-                                {ref}
-                              </a>
+                              <div key={ri} className="flex flex-col items-center" style={{ gap: '2px' }}>
+                                <a
+                                  href={`/surah/${sr}#verse-${sr}-${vs}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={e => e.stopPropagation()}
+                                  className="verse-chip-link"
+                                  style={{
+                                    fontSize: '12px',
+                                    fontWeight: 600,
+                                    color: '#B8962E',
+                                    background: 'rgba(184,150,46,0.12)',
+                                    border: '1px solid rgba(184,150,46,0.28)',
+                                    padding: '2px 8px',
+                                    borderRadius: '4px',
+                                    letterSpacing: '0.02em',
+                                    fontFamily: "'Cormorant Garamond', serif",
+                                    lineHeight: 1.2,
+                                    textDecoration: 'none',
+                                    transition: 'background 0.15s ease',
+                                    whiteSpace: 'nowrap',
+                                  }}
+                                >
+                                  {entry.ref}
+                                </a>
+                                {entry.fr && (
+                                  <span style={{ fontSize: '10.5px', color: '#8A7428', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.02em', whiteSpace: 'nowrap' }}>
+                                    {entry.fr}
+                                  </span>
+                                )}
+                              </div>
                             )
                           })}
                         </div>

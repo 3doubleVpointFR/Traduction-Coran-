@@ -164,13 +164,20 @@ export async function GET(req: NextRequest) {
     db.from('verse_word_analyses').select('word_key, sense_chosen, verse_id, verses!inner(surah_id, verse_num)').range(f, t)
   )
   const usedKeys = new Set<string>()
-  // Refs versets par word_key (toutes utilisations confondues)
-  const refsByKey = new Map<string, string[]>()
-  const addRef = (word_key: string, ref: string | null) => {
+  // Refs versets par word_key avec le mot français utilisé dans chaque verset
+  type RefEntry = { ref: string; fr: string }
+  const refsByKey = new Map<string, RefEntry[]>()
+  const addRef = (word_key: string, ref: string | null, fr: string | null = null) => {
     if (!word_key || !ref) return
     if (!refsByKey.has(word_key)) refsByKey.set(word_key, [])
     const arr = refsByKey.get(word_key)!
-    if (!arr.includes(ref) && arr.length < 8) arr.push(ref)
+    const existing = arr.find(e => e.ref === ref)
+    if (existing) {
+      // Complète le fr si absent
+      if (!existing.fr && fr) existing.fr = fr
+      return
+    }
+    if (arr.length < 8) arr.push({ ref, fr: fr || '' })
   }
   // Map: expression normalisée → Map<word_key, { count, refs: string[] }>
   type ChosenEntry = { count: number; refs: string[] }
@@ -202,7 +209,7 @@ export async function GET(req: NextRequest) {
     usedKeys.add(v.word_key)
     const ref = v.verses ? `${v.verses.surah_id}:${v.verses.verse_num}` : null
     addChosen(v.sense_chosen, v.word_key, ref)
-    addRef(v.word_key, ref)
+    addRef(v.word_key, ref, v.sense_chosen)
   }
 
   // Segments : parcourir tous les verse_analyses.segments[] et indexer fr → word_key
@@ -216,7 +223,7 @@ export async function GET(req: NextRequest) {
       if (!s || !s.word_key || !s.fr) continue
       const cleanFr = s.fr.replace(/^[«»"'\s(,]+|[«»"'\s.,;:!?)]+$/g, '').trim()
       addChosen(cleanFr, s.word_key, ref)
-      addRef(s.word_key, ref)
+      addRef(s.word_key, ref, cleanFr)
     }
   }
 
@@ -289,7 +296,7 @@ export async function GET(req: NextRequest) {
     matched_snippet: string
     concepts: string[]        // concepts du sens (pour aider à identifier la racine)
     translations: string[]    // traductions françaises rencontrées pour cette racine
-    verse_refs: string[]      // versets où la racine a été utilisée
+    verse_refs: { ref: string; fr: string }[]  // versets où la racine a été utilisée + mot FR
     score: number
     _rich: number
   }
@@ -620,8 +627,8 @@ export async function GET(req: NextRequest) {
     // Refs versets par racine — trié par (surah, verse) et limité à 8
     const refs = (refsByKey.get(rest.word_key) || []).slice()
     refs.sort((a, b) => {
-      const [sa, va] = a.split(':').map(Number)
-      const [sb, vb] = b.split(':').map(Number)
+      const [sa, va] = a.ref.split(':').map(Number)
+      const [sb, vb] = b.ref.split(':').map(Number)
       return sa - sb || va - vb
     })
     return { ...rest, concepts: concepts.slice(0, 6), translations: [...trSet].slice(0, 8), verse_refs: refs.slice(0, 8) }
