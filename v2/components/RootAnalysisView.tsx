@@ -33,6 +33,7 @@ type Props = {
       root_phon: string
       root_meaning: string | null
       retenu: string | null
+      etymological_concept: string | null
     }
     meanings: Meaning[]
     daily: Daily[]
@@ -172,6 +173,22 @@ export default function RootAnalysisView({ data }: Props) {
                     }}
                   >
                     {name}
+                    {analysis.etymological_concept === name && (
+                      <span
+                        title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                        style={{
+                          fontSize: '9px',
+                          color: '#B8962E',
+                          fontStyle: 'italic',
+                          marginLeft: '5px',
+                          fontWeight: 700,
+                          letterSpacing: '0.05em',
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        ✦ sens premier
+                      </span>
+                    )}
                     {nRefs > 0 && (
                       <span style={{ fontSize: '10px', color: '#8A7E72', fontStyle: 'italic', marginLeft: '5px' }}>
                         {nRefs}{isActive ? ` versets` : ''}
@@ -266,6 +283,22 @@ export default function RootAnalysisView({ data }: Props) {
                     <span style={{ fontSize: '10px', color: '#9E9089' }}>
                       ({conceptSenses.length} sens)
                     </span>
+                    {analysis.etymological_concept === conceptName && (
+                      <span
+                        title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                        style={{
+                          fontSize: '9px',
+                          color: '#B8962E',
+                          fontStyle: 'italic',
+                          fontWeight: 700,
+                          letterSpacing: '0.05em',
+                          textTransform: 'uppercase',
+                          marginLeft: '4px',
+                        }}
+                      >
+                        ✦ sens premier
+                      </span>
+                    )}
                   </button>
 
                   {/* Barre de progression */}
