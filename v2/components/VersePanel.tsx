@@ -38,6 +38,7 @@ interface VerseAnalysis {
   translation_explanation?: string
   summary_short?: string
   summary_long?: string
+  surah_conclusion?: string
 }
 
 interface Props {
@@ -643,6 +644,70 @@ export default function VersePanel({
             </p>
           </div>
         </div>
+      )}
+
+      {/* Encart Conclusion de sourate — apparaît uniquement sur le dernier verset qui a le champ rempli */}
+      {analysis?.surah_conclusion && (
+        <section
+          aria-labelledby={`conclusion-${verse.surah_id}-${verse.verse_num}`}
+          className="mt-6 rounded-2xl p-5 sm:p-6"
+          style={{
+            background: 'linear-gradient(135deg, #FFFCF6 0%, #FAF7F2 100%)',
+            border: '1px solid rgba(184,150,46,0.32)',
+            boxShadow: '0 1px 3px rgba(120,90,30,0.06), 0 4px 14px rgba(120,90,30,0.06), inset 0 1px 0 rgba(255,255,255,0.5)',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Bandeau or en haut, signature visuelle */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2px',
+              background: 'linear-gradient(to right, transparent 0%, #C9A23A 30%, #B8962E 50%, #C9A23A 70%, transparent 100%)',
+              opacity: 0.85,
+            }}
+          />
+          <div className="flex items-center gap-1.5 mb-3" style={{ marginTop: '2px' }}>
+            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1 }}>✦</span>
+            <h3
+              id={`conclusion-${verse.surah_id}-${verse.verse_num}`}
+              className="uppercase"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#8A7428',
+                letterSpacing: '0.14em',
+                margin: 0,
+              }}
+            >
+              Conclusion de la sourate
+            </h3>
+            <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1 }}>✦</span>
+          </div>
+          <div
+            className="verse-conclusion-body"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '16px',
+              lineHeight: 1.7,
+              color: '#3D3228',
+              whiteSpace: 'pre-wrap',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: analysis.surah_conclusion
+                .replace(/\*\*(.+?)\*\*/g, '<strong style="color:#8A7428;font-weight:700">$1</strong>')
+                .replace(/\n\n/g, '</p><p style="margin-top:12px">')
+                .replace(/^/, '<p>')
+                .replace(/$/, '</p>'),
+            }}
+          />
+        </section>
       )}
     </div>
   )
