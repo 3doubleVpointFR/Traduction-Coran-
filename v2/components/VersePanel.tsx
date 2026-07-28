@@ -441,18 +441,18 @@ export default function VersePanel({
 
           const renderChunk = (text: string, accentColor: string, baseKey: string) => {
             // Split par deux motifs :
-            //  1) *phon*        → italique arabe (typiquement en §DEMARCHE§ : *wa-*, *mādhā*)
+            //  1) *italique*    → phon arabe en §DEMARCHE§ (*wa-*, *mādhā*), ou sens
+            //                     écrits en italique dans §JUSTIFICATION§/§CRITIQUE§ (rare)
             //  2) « citation »  → mots/sens/phrases cités
-            // Rendu :
-            //  - *phon*        → toujours jaune or #B8962E italique (couleur arabe transversale)
-            //  - « citation »  → couleur d'accent de la section + italique (même teinte que les titres)
-            //      · §DEMARCHE§       → or   #B8962E
-            //      · §JUSTIFICATION§  → teal #1A5F5F
-            //      · §CRITIQUE§       → brun #8B4513
+            // Rendu — la couleur est celle de la section (accentColor), pour cohérence
+            // avec les titres en gras :
+            //   · §DEMARCHE§       → or   #B8962E (phon en jaune)
+            //   · §JUSTIFICATION§  → teal #1A5F5F (sens retenu / citations)
+            //   · §CRITIQUE§       → brun #8B4513 (citations Notre/Hamidullah)
             const parts = text.split(/(\*[^*]+\*|«[^»]+»)/g)
             return parts.map((part: string, i: number) => {
               if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
-                return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: '#B8962E', fontWeight: 500, opacity: 0.85 }}>{part.slice(1, -1)}</span>
+                return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 500, opacity: 0.9 }}>{part.slice(1, -1)}</span>
               }
               if (part.startsWith('«') && part.endsWith('»')) {
                 return <span key={baseKey + '-q' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 600 }}>{part}</span>
