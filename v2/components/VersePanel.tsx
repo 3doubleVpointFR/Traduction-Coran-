@@ -439,28 +439,23 @@ export default function VersePanel({
             // Sinon (cas 1, migré) : on garde dem tel quel
           }
 
-          // Couleurs distinctes et vives pour les CITATIONS « … » (indépendantes
-          // de l'accentColor de la section, qui reste plus sombre pour bordures/titres).
-          //   · §DEMARCHE§       → jaune or  #B8962E (phonétique arabe)
-          //   · §JUSTIFICATION§  → bleu franc #1E5FBF (sens retenu / mots cités)
-          //   · §CRITIQUE§       → rouge      #B8352E (citations Notre/Hamidullah)
-          const CITATION_COLOR: Record<string, string> = {
-            '#B8962E': '#B8962E',  // Démarche : accent = citation (or)
-            '#1A5F5F': '#1E5FBF',  // Justification : accent teal → citations bleu franc
-            '#8B4513': '#B8352E',  // Critique : accent brun → citations rouge franc
-          }
           const renderChunk = (text: string, accentColor: string, baseKey: string) => {
-            const quotColor = CITATION_COLOR[accentColor] || accentColor
             // Split par deux motifs :
             //  1) *phon*        → italique arabe (typiquement en §DEMARCHE§ : *wa-*, *mādhā*)
             //  2) « citation »  → mots/sens/phrases cités
+            // Rendu :
+            //  - *phon*        → toujours jaune or #B8962E italique (couleur arabe transversale)
+            //  - « citation »  → couleur d'accent de la section + italique (même teinte que les titres)
+            //      · §DEMARCHE§       → or   #B8962E
+            //      · §JUSTIFICATION§  → teal #1A5F5F
+            //      · §CRITIQUE§       → brun #8B4513
             const parts = text.split(/(\*[^*]+\*|«[^»]+»)/g)
             return parts.map((part: string, i: number) => {
               if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
                 return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: '#B8962E', fontWeight: 500, opacity: 0.85 }}>{part.slice(1, -1)}</span>
               }
               if (part.startsWith('«') && part.endsWith('»')) {
-                return <span key={baseKey + '-q' + i} style={{ fontStyle: 'italic', color: quotColor, fontWeight: 600 }}>{part}</span>
+                return <span key={baseKey + '-q' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 600 }}>{part}</span>
               }
               return <span key={baseKey + '-t' + i}>{part}</span>
             })
