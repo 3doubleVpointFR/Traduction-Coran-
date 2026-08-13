@@ -84,6 +84,8 @@ export default function VersePanel({
   const [resumeExpanded, setResumeExpanded] = useState(true)
   // Note contextuelle (ancienne intro MACRO/MICRO/ITALIQUE) : repliée par défaut
   const [noteExpanded, setNoteExpanded] = useState(false)
+  // Segment.fr actif — highlight bidirectionnel entre le rendu segmenté et la trad française éloquente
+  const [activeSegmentFr, setActiveSegmentFr] = useState<string | null>(null)
   const segments = analysis?.segments
 
   // Résumé court (3-4 phrases) — nouveau champ dédié
@@ -351,6 +353,7 @@ export default function VersePanel({
             {segments.map((seg, i) => {
               const isKey = !seg.is_particle && seg.word_key
               const isActive = activeWordKey !== null && activeWordKey === `${seg.word_key}:${i}`
+              const isSegHighlighted = activeSegmentFr !== null && activeSegmentFr === seg.fr
 
               if (isKey) {
                 const segSense = (seg as unknown as Record<string, unknown>).sense_retenu as string | undefined
@@ -366,20 +369,21 @@ export default function VersePanel({
                       const segSenseVal = (seg as unknown as Record<string, unknown>).sense_retenu as string | undefined
                       const segPosition = (seg as unknown as Record<string, unknown>).position as number | undefined
                       seg.word_key && onWordClick(seg.word_key, `${seg.word_key}:${i}`, segSenseVal, verse.id, segPosition)
+                      setActiveSegmentFr(prev => prev === seg.fr ? null : seg.fr)
                     }}
                   >
-                    <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isActive ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
+                    <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isActive || isSegHighlighted ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
                       {seg.phon}
                     </span>
                     <span
                       className="text-center"
                       style={{
-                        color: isActive ? '#B8962E' : '#1A1410',
+                        color: isActive || isSegHighlighted ? '#B8962E' : '#1A1410',
                         fontSize: '16px',
                         fontWeight: 600,
                         whiteSpace: 'nowrap',
                         paddingBottom: '4px',
-                        borderBottom: isActive ? '3px solid #B8962E' : '2px solid rgba(184,150,46,0.6)',
+                        borderBottom: isActive || isSegHighlighted ? '3px solid #B8962E' : '2px solid rgba(184,150,46,0.6)',
                         transition: 'color 0.2s ease, border-color 0.2s ease',
                       }}
                     >
@@ -390,11 +394,26 @@ export default function VersePanel({
               }
 
               return (
-                <div key={i} className="flex flex-col items-center" style={{ padding: '2px 2px' }}>
-                  <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
+                <div
+                  key={i}
+                  className="flex flex-col items-center cursor-pointer"
+                  style={{ padding: '2px 2px' }}
+                  onClick={() => setActiveSegmentFr(prev => prev === seg.fr ? null : seg.fr)}
+                >
+                  <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isSegHighlighted ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
                     {seg.phon}
                   </span>
-                  <span className="text-center" style={{ color: '#6B5E52', fontSize: '14px', whiteSpace: 'nowrap', paddingBottom: '6px' }}>
+                  <span
+                    className="text-center"
+                    style={{
+                      color: isSegHighlighted ? '#B8962E' : '#6B5E52',
+                      fontSize: '14px',
+                      whiteSpace: 'nowrap',
+                      paddingBottom: '6px',
+                      borderBottom: isSegHighlighted ? '2px solid #B8962E' : 'none',
+                      transition: 'color 0.2s ease, border-color 0.2s ease',
+                    }}
+                  >
                     {seg.fr}
                   </span>
                 </div>
@@ -651,7 +670,18 @@ export default function VersePanel({
               <span style={{ color: '#6B5E52' }}> · Une traduction éloquente</span>
             </span>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 600, color: '#1A1410' }}>
-              {analysis.translation_arab}
+              {(() => {
+                const trad = analysis.translation_arab || ''
+                if (!activeSegmentFr) return trad
+                // Split par le segment.fr actif (recherche insensible aux limites de mots pour capter les adaptations)
+                const escaped = activeSegmentFr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                const parts = trad.split(new RegExp(`(${escaped})`, 'g'))
+                return parts.map((part, idx) => (
+                  part === activeSegmentFr
+                    ? <span key={idx} style={{ color: '#B8962E', borderBottom: '2px solid #B8962E', paddingBottom: '2px' }}>{part}</span>
+                    : <React.Fragment key={idx}>{part}</React.Fragment>
+                ))
+              })()}
             </p>
           </div>
         </div>
