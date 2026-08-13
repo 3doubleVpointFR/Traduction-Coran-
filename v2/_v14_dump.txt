@@ -1,0 +1,456 @@
+[dotenv@17.3.1] injecting env (10) from .env.local -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=1 zyn | sense_chosen="embellir" | concept_chosen="Beauté/Ornement"
+segment.sense_retenu="embellir" | segment.fr="on a embelli"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Beauté/Ornement
+              senses: ["embellir","orner","ornement","beauté"]
+              proof : ***Sens retenu :*** rendre beau, parer d'ornements. La forme du verbe ici (passive intensive) dit que *quelque chose a été embelli pour quelqu'un* — sans préciser qui embellit. Ce flou volontaire invite à interroger l'opération elle-même : qui rend ces choses attirantes aux yeux des humains ? La racine z-y-n désigne un embellissement *extérieur* — un ajout d'ornements qui rend une chose attirante au regard, sans préjuger de sa valeur réelle.
+
+**Comparaison avec les sens probables :**
+
+**— Séduction/Illusion** : sens dérivé qui ajoute un *jugement* sur la fausseté de l'apparence — comme si l'embellissement cachait quelque chose. Ici, la racine est employée plus neutre : c'est l'embellissement qui est constaté, sans qualification morale ajoutée. La nuance différencie un fait (l'embellissement) d'un jugement (la tromperie).
+
+[PROBABLE     ] Séduction/Illusion
+              senses: ["faire paraître beau"]
+              proof : Sens dérivé qui ajoute un *jugement* sur la fausseté de l'apparence (faire paraître beau pour tromper). C'est une lecture morale possible. Mais ici, la racine est employée plus neutre : on constate seulement l'embellissement, sans le qualifier de trompeur. La nuance philosophique est entre l'observation factuelle et le jugement moral.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=2 nws | sense_chosen="gens" | concept_chosen="Humanité/Peuple"
+segment.sense_retenu="gens" | segment.fr="pour les gens"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Humanité/Peuple
+              senses: ["gens","êtres humains","peuple"]
+              proof : ***Sens retenu :*** les gens, l'humanité comme ensemble. Le mot *al-nās* désigne les humains pris *collectivement* comme catégorie générale, sans distinction de groupe ou de qualité. Préfixé ici par *li-* (« pour »), il introduit le bénéficiaire de l'embellissement : c'est *aux humains* en général que les choses sont rendues attirantes — pas à un groupe particulier. La nature philosophique est celle d'un destinataire universel.
+
+[NUL          ] Sens isolé/Être
+              senses: ["être agité"]
+              proof : Sens dérivé sur l'agitation. Sans rapport avec le mot d'humanité collective.
+
+[NUL          ] Sens isolé/Oublier
+              senses: ["oublier"]
+              proof : Sens dérivé sur l'oubli. Étranger au mot collectif *al-nās* mobilisé ici.
+
+[NUL          ] Perception/Visibilité
+              senses: ["voir de loin","être visible"]
+              proof : Sens verbal dérivé sur la perception (*voir de loin*). Sans rapport avec le nom collectif des humains mobilisé ici.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=3 hbb | sense_chosen="aimer" | concept_chosen="Amour/Affection"
+segment.sense_retenu="aimer" | segment.fr="l'amour"
+──────────────────────────────────────────────────────────────────────────────────────────
+[NUL          ] Lien
+              senses: ["corde"]
+              proof : Sens isolé désignant la corde. Aucun rapport sémantique avec l'amour ici.
+
+[NUL          ] Graine/Semence
+              senses: ["graine","grain"]
+              proof : Sens concret dérivé désignant les graines (*ḥabb* = grain). Sans rapport avec l'attachement affectif mobilisé ici.
+
+[RETENU       ] Amour/Affection
+              senses: ["aimer","affection","préférer","approuver"]
+              proof : ***Sens retenu :*** amour, attachement affectif. Le mot *ḥubb* est un nom verbal qui désigne l'*attirance qui pousse à s'approcher*, à préférer. C'est ce qui est *embelli* dans le verset — non pas les choses elles-mêmes, mais l'amour qu'on leur porte. C'est une distinction philosophique forte : l'objet du verbe précédent (*zuyyina*) n'est pas la richesse en soi, c'est notre attachement à elle.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=4 shhw | sense_chosen="chose désirée" | concept_chosen="Désir/Convoitise"
+segment.sense_retenu="chose désirée" | segment.fr="des choses désirées"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Désir/Convoitise
+              senses: ["désirer","convoiter","passion (shahwa)","chose désirée","aimer","appétit","désir ardent"]
+              proof : ***Sens retenu :*** choses désirées, objets de convoitise. Le mot *shahawāt* est le pluriel de *shahwa* — il désigne *ce qui suscite le désir*, l'*objet* de la convoitise plus précisément que l'acte de désirer. Le pluriel défini introduit la liste qui suit (femmes, fils, trésors, etc.) comme la *catégorie générale* des objets désirés. La distinction philosophique est centrale : on parle d'*objets* extérieurs qui attirent, pas de l'affect intérieur qui les vise.
+
+[NUL          ] Ressemblance/Imitation
+              senses: ["ressembler","plaisanter"]
+              proof : Sens dérivé sur la ressemblance ou l'imitation. Sans rapport avec les objets de désir mobilisés ici.
+
+[NUL          ] Sens isolé/Mauvais œil
+              senses: ["frapper du mauvais œil"]
+              proof : Sens marginal sur le regard maléfique. Étranger au registre du désir convoité ici.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=6 nsw | sense_chosen="femmes" | concept_chosen="Féminin/Épouses"
+segment.sense_retenu="femmes" | segment.fr="les femmes"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Féminin/Épouses
+              senses: ["femmes","épouses","genre féminin"]
+              proof : ***Sens retenu :*** femmes (catégorie féminine). Le mot *al-nisāʾ* est un pluriel particulier — un mot pris à une racine distincte n-s-w pour désigner *le pluriel féminin*. Il désigne ici les femmes comme *catégorie* d'objets désirés, du point de vue masculin de l'époque. C'est l'angle adopté par le verset, qui s'adresse à un public majoritairement masculin sans pour autant porter un jugement sur la dignité féminine — il décrit une réalité culturelle, pas une norme.
+
+**Comparaison avec les sens probables :**
+
+**— Oubli/Négligence** : sens *verbal* dérivé d'une autre racine homographe (*nasiya* = oublier). Même graphie, mais sens totalement différent. Sans rapport avec le pluriel féminin nominal mobilisé ici.
+
+[PROBABLE     ] Oubli/Négligence
+              senses: ["oublier","négliger"]
+              proof : *Oubli/Négligence* est un sens *verbal* dérivé d'une racine *homographe* (n-s-y = oublier). Même apparence graphique mais autre racine sémantique de fond. Le lien est purement orthographique, pas étymologique. La nuance philosophique sépare *racine homographe* (graphie commune, sens distinct) et *racine homologue* (sens et forme partagés) — n-s-w (femmes) et n-s-y (oublier) sont étrangères.
+
+[NUL          ] Anatomie/Sciatique
+              senses: ["veine sciatique"]
+              proof : Sens isolé désignant la veine sciatique. Étranger au mot mobilisé ici.
+
+[NUL          ] Faiblesse/Oubli prolongé
+              senses: ["feindre d'oublier"]
+              proof : Sens dérivé sur la faiblesse ou l'oubli prolongé. Sans rapport ici avec le pluriel féminin.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=7 bny | sense_chosen="fils" | concept_chosen="Filiation"
+segment.sense_retenu="fils" | segment.fr="et les fils"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Filiation
+              senses: ["fils"]
+              proof : ***Sens retenu :*** fils, enfants mâles. Le mot *al-banīna* est le pluriel masculin de *ibn* (fils) — il désigne *spécifiquement les enfants mâles*, pas l'ensemble des enfants. Le pluriel féminin correspondant (*banāt*) existe et est employé ailleurs. Dans la culture arabe ancienne, les fils mâles étaient l'objet d'une *fierté particulière* — ils prolongeaient le nom du clan et apportaient force aux affaires. C'est cette spécification culturelle que le mot capture.
+
+**Comparaison avec les sens probables :**
+
+**— Construction/Édification** : c'est le sens *verbal* premier de la racine — *construire, bâtir*. C'est l'origine étymologique : le fils est ce qui *bâtit* la lignée, la prolonge. Mais ici l'usage est strictement nominal, désignant les enfants mâles concrets. La nuance est entre l'acte de construire et le résultat humain qui en est l'image.
+
+[PROBABLE     ] Construction/Édification
+              senses: ["construire","bâtir","édifier","donner une maison"]
+              proof : Sens verbal premier de la racine — *construire, bâtir*. C'est l'origine étymologique du nom *fils* : le fils est ce qui bâtit la lignée. Mais ici l'usage est strictement nominal, désignant les enfants mâles concrets. La nuance est entre l'acte de construire et le résultat humain.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=8 qntṛ | sense_chosen="trésor" | concept_chosen="Richesse/Abondance"
+segment.sense_retenu="trésor" | segment.fr="et les trésors"
+──────────────────────────────────────────────────────────────────────────────────────────
+[PROBABLE     ] Construction/Pont
+              senses: ["pont","arche","construire solidement"]
+              proof : Sens dérivé concret désignant un pont ou une construction solide. C'est une autre application de l'image fondamentale de la racine (*solidité, masse*). Mais ici on parle de richesse accumulée, pas d'ouvrage de construction. La cible philosophique change : matière physique contre matière monétaire.
+
+[RETENU       ] Richesse/Abondance
+              senses: ["grande quantité (qintar)","trésor","fortune","richesse immense","poids considérable"]
+              proof : ***Sens retenu :*** trésors, richesses accumulées. Le mot *al-qanāṭīr* est le pluriel de *qinṭār* — il désigne une *grande quantité de richesse*, particulièrement de métal précieux thésaurisé. À l'origine, *qinṭār* était une unité de poids considérable d'or ou d'argent. Le pluriel marque l'accumulation de tels trésors — non pas une richesse répartie, mais une *masse* concentrée. C'est l'image du capital matériel sous sa forme la plus dense.
+
+**Comparaison avec les sens probables :**
+
+**— Construction/Pont** : sens dérivé concret désignant un pont ou une construction solide. C'est l'image fondamentale de la racine (*solidité, masse*). Mais ici on parle de richesse accumulée, pas de construction physique. La nuance est entre une masse de matière et une masse de valeur.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=9 qntṛ | sense_chosen="grande quantité (qintar)" | concept_chosen="Richesse/Abondance"
+segment.sense_retenu="grande quantité (qintar)" | segment.fr="thésaurisés"
+──────────────────────────────────────────────────────────────────────────────────────────
+[PROBABLE     ] Construction/Pont
+              senses: ["pont","arche","construire solidement"]
+              proof : *Construction/Pont* est un sens dérivé concret de q-n-ṭ-r — *qantarah* désigne *un pont, une construction solide*. Le lien étymologique passe par l'idée de quantité accumulée. Mais ici la *forme renforcée* du mot dit *l'intensification de l'accumulation* (quintaux entassés sur quintaux), pas une structure architecturale. La nuance philosophique distingue *structure physique* (pont) et *masse accumulée* (richesse entassée) — le verset utilise la seconde image.
+
+[RETENU       ] Richesse/Abondance
+              senses: ["grande quantité (qintar)","trésor","fortune","richesse immense","poids considérable"]
+              proof : ***Sens retenu :*** thésaurisés, accumulés en quintaux. La forme du mot ici (qui dit que l'action a été faite *sur* la chose) est dérivée par *Forme renforcée* de la même racine que le mot précédent — ce qui *intensifie* la dimension d'accumulation. Il ne s'agit pas seulement de quintaux, mais de quintaux *entassés sur quintaux*. La répétition de la racine sert d'amplificateur : on insiste sur la masse à son extrême, comme une accumulation portée jusqu'à l'image démesurée.
+
+**Comparaison avec les sens probables :**
+
+**— Construction/Pont** : sens dérivé concret désignant un pont. Sans rapport avec l'intensification de la richesse ici. La nuance est entre solidité d'un ouvrage matériel et accumulation de valeur monétaire.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=11 dhb | sense_chosen="or" | concept_chosen="Or/Richesse"
+segment.sense_retenu="or" | segment.fr="or"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Or/Richesse
+              senses: ["or","dorer"]
+              proof : ***Sens retenu :*** or, métal précieux par excellence. Le mot *al-dhahab* désigne le métal précieux comme *sens lexicalisé* — un nom propre du métal, indépendamment du sens verbal premier de la racine. Étrangement, la racine porte aussi le sens *« partir, s'en aller »* (sens premier verbal). On suppose que le métal est nommé ainsi à cause de son éclat qui *paraît s'en aller au loin*. Ici, en construction « X de Y » avec les trésors qui précèdent, le mot précise la *matière* de ces trésors.
+
+**Comparaison avec les sens probables :**
+
+**— Départ/Mouvement** : c'est le sens *verbal* premier de la racine (*aller, partir, passer*). C'est l'origine étymologique probable du nom du métal (l'éclat qui « s'en va »). Mais ici l'usage est strictement nominal et désigne le métal concret. La nuance est entre le mouvement physique et le métal solide.
+
+[NUL          ] Doctrine/Voie
+              senses: ["école de pensée","suivre une doctrine"]
+              proof : Sens dérivé très abstrait sur l'école de pensée (*madhhab*). Sans rapport avec le métal précieux mobilisé ici.
+
+[PROBABLE     ] Départ/Mouvement
+              senses: ["aller","partir","passer","disparaître"]
+              proof : Sens verbal premier de la racine (*aller, partir, passer, disparaître*). C'est l'origine étymologique probable du nom du métal — l'éclat qui « s'en va » au loin. Mais ici l'usage est strictement nominal pour désigner le métal lui-même. La nuance est entre l'action de départ et le métal qui reste.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=12 fdd | sense_chosen="argent" | concept_chosen="Métal/Valeur"
+segment.sense_retenu="argent" | segment.fr="et d'argent"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Métal/Valeur
+              senses: ["argent (fiddha)","argenterie","orner d'argent"]
+              proof : ***Sens retenu :*** argent, métal précieux. Le mot *al-fiḍḍa* désigne le second métal précieux après l'or — il est *lexicalisé* pour cet usage, indépendamment du sens verbal premier de la racine. La racine porte aussi le sens *« disperser, briser »* (sens premier). On suppose que le métal est nommé ainsi à cause de l'argent qui *se fragmente* en pièces de monnaie. Ici, le mot complète la paire avec l'or qui précède — la richesse matérielle sous ses deux formes monétaires classiques.
+
+**Comparaison avec les sens probables :**
+
+**— Dispersion/Rupture** : c'est le sens *verbal* premier de la racine (*disperser, briser, séparer*). C'est l'origine étymologique probable du nom du métal — l'argent qui se fragmente en pièces. Mais ici l'usage est strictement nominal pour désigner le métal lui-même. La nuance est entre l'acte de fragmenter et la matière fragmentée.
+
+[PROBABLE     ] Dispersion/Rupture
+              senses: ["disperser","rompre un rassemblement","briser","rompre un sceau","séparer"]
+              proof : Sens verbal premier de la racine (*disperser, rompre, briser, séparer*). C'est l'origine étymologique probable du nom du métal argent (qui se fragmente en pièces). Mais ici l'usage est strictement nominal pour le métal. La nuance est entre l'acte de fragmenter et la matière qui en résulte.
+
+[NUL          ] Sens isolé/Générosité
+              senses: ["don généreux"]
+              proof : Sens dérivé abstrait sur la générosité. Sans rapport avec le métal précieux mobilisé ici.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=13 khyl | sense_chosen="cheval" | concept_chosen="Cheval/Cavalerie"
+segment.sense_retenu="cheval" | segment.fr="et les chevaux"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Cheval/Cavalerie
+              senses: ["cheval","cavalerie","cavalier","jument"]
+              proof : ***Sens retenu :*** chevaux, monture de prestige. Le mot *al-khayl* désigne les chevaux pris *collectivement* — valeur économique et militaire majeure dans la société arabe ancienne. Les chevaux étaient *montures pour la guerre*, pour les *déplacements rapides*, et *symbole de prestige social*. La nature philosophique du sens est celle d'un animal domestiqué qui combine utilité fonctionnelle et capital social — pas seulement un animal, mais un *bien à statut*.
+
+**Comparaison avec les sens probables :**
+
+**— Imagination/Apparence** : sens *verbal homographe* qui désigne le fait d'imaginer ou de supposer (*khayāl* = imagination). Même apparence graphique mais autre dérivation sémantique. Sans rapport avec les chevaux concrets mobilisés ici.
+
+[NUL          ] Orgueil/Prétention
+              senses: ["orgueil","se vanter"]
+              proof : Sens dérivé moral sur l'orgueil ou la vanité. Étranger au sens concret de l'animal mobilisé ici.
+
+[PROBABLE     ] Imagination/Apparence
+              senses: ["imaginer","supposer","apparence","illusion"]
+              proof : *Imagination/Apparence* est un sens *verbal homographe* d'une racine voisine — *khayāl* désigne l'image mentale. Même graphie pour *al-khayl* (chevaux) mais autre dérivation. Le lien est orthographique, pas sémantique. La nuance philosophique sépare *racine homographe* et *racine homologue* — kh-y-l a deux pôles distincts.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=14 swm | sense_chosen="signe distinctif" | concept_chosen="Marque/Signe"
+segment.sense_retenu="signe distinctif" | segment.fr="marqués"
+──────────────────────────────────────────────────────────────────────────────────────────
+[PROBABLE     ] Pâturage
+              senses: ["faire paître","laisser en liberté","envoyer paître"]
+              proof : *Pâturage* est un sens *verbal* d'une racine voisine — *sāma* peut désigner *l'action de mener au pâturage*. Le lien est par homonymie partielle. Mais ici la *forme renforcée passive* indique que les chevaux ont reçu *une marque distinctive* — sens fixé par la racine s-w-m dans son pôle de marquage. La nuance philosophique sépare *acte agricole* (faire paître) et *qualification par marquage* (recevoir un signe) — le verset utilise le second sens.
+
+[NUL          ] Affliction
+              senses: ["livrer au mal"]
+              proof : Sens dérivé moral sur l'épreuve infligée (*livrer au mal*). Sans rapport avec le marquage des chevaux ici.
+
+[RETENU       ] Marque/Signe
+              senses: ["marquer","signe distinctif","mettre un signe distinctif"]
+              proof : ***Sens retenu :*** marqués d'un signe distinctif. La forme du mot (qui dit que l'action a été faite *sur* la chose) désigne les chevaux qui ont reçu une *marque distinctive* — un signe qui les identifie comme appartenant à une lignée ou à un propriétaire particulier. La nature philosophique est celle d'une *qualification par marquage* : la chose porte un signe qui la distingue des autres et la rattache à une catégorie. Pour les chevaux, c'est une marque de prestige — le cheval marqué était plus prisé que l'anonyme.
+
+**Comparaison avec les sens probables :**
+
+**— Pâturage** : sens *verbal* sur l'action de mener au pâturage (*faire paître, laisser en liberté*). C'est une autre acception de la racine, sans rapport avec le marquage. La nuance philosophique est totale : conduire vers la nourriture contre identifier par un signe.
+
+[NUL          ] Commerce/Marchandage
+              senses: ["marchander","fixer un prix","négocier"]
+              proof : Sens dérivé sur la fixation des prix (*marchander, négocier*). Étranger au marquage distinctif mobilisé ici.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=15 nem | sense_chosen="bétail" | concept_chosen="Bétail/Animaux"
+segment.sense_retenu="bétail" | segment.fr="et les bestiaux"
+──────────────────────────────────────────────────────────────────────────────────────────
+[NUL          ] Affirmation
+              senses: ["oui","certes","excellent"]
+              proof : Sens grammatical d'affirmation (*oui, certes*). Sans rapport avec le sens nominal de bétail mobilisé ici.
+
+[NUL          ] Souffle/Vent
+              senses: ["étoiles de Sagittaire"]
+              proof : Sens isolé astronomique. Étranger au sens nominal du verset.
+
+[NUL          ] Corps/Anatomie
+              senses: ["os de la jambe"]
+              proof : Sens isolé désignant l'os de la jambe. Sans rapport ici.
+
+[PROBABLE     ] Bienfait/Faveur
+              senses: ["bienfait","faveur","bénédiction","richesse","accorder un bienfait","nourrir bien","combler"]
+              proof : *Bienfait/Faveur* est un sens dérivé abstrait de n-ʿ-m désignant *les bienfaits divins* (niʿma). Le bétail est implicitement compté parmi ces bienfaits. Mais ici le mot désigne *concrètement les animaux* comme bien possédé, pas la faveur abstraite. La nuance philosophique distingue *abstraction du don* (faveur) et *matérialité du bien donné* (bétail concret) — le verset énumère le bétail dans la liste des biens, pas la faveur.
+
+[RETENU       ] Bétail/Animaux
+              senses: ["bétail","troupeau","chameaux","autruche"]
+              proof : ***Sens retenu :*** bétail, capital vivant. Le mot *al-anʿām* est le pluriel de *naʿam* — il désigne le *bétail au sens large* (chameaux, bovins, ovins, caprins) qui constituait le capital vivant des familles arabes anciennes. C'était la *source principale de viande, de lait, de cuir et de transport*. La nature philosophique du sens est celle d'un capital animal vivant — un bien qui se renouvelle, qui produit, qui se déplace avec le possesseur.
+
+**Comparaison avec les sens probables :**
+
+**— Bienfait/Faveur** : sens dérivé abstrait sur les bienfaits divins (*niʿma*). C'est une dérivation : le bétail est implicitement compté parmi les bienfaits. Mais ici, le mot désigne *concrètement* les animaux comme bien possédé, pas la faveur en tant que telle.
+
+**— Douceur/Aisance** : sens dérivé sur la vie agréable (*aisance, confort*). Même image fondamentale (la prospérité), mais ici concrète. La nuance est entre l'abstraction (la vie douce) et le matériel (les animaux qui produisent cette vie douce).
+
+[PROBABLE     ] Douceur/Aisance
+              senses: ["douceur","tendresse","souplesse","délicatesse","vie agréable","confort","aisance","fraîcheur","floraison"]
+              proof : *Douceur/Aisance* est un sens dérivé de n-ʿ-m sur la *vie agréable* — confort, fraîcheur. Même image fondamentale (la prospérité). Mais ici le mot pointe *les animaux concrets* qui produisent cette aisance, pas l'aisance comme état vécu. La nuance philosophique sépare *biens matériels* (cause de l'aisance) et *aisance comme état* (effet vécu) — le verset énumère les biens.
+
+[NUL          ] Sens isolé/Veine
+              senses: ["veine"]
+              proof : Sens isolé sans rapport avec le bétail mobilisé.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=16 hrṯ | sense_chosen="champ (harth)" | concept_chosen="Labour/Culture"
+segment.sense_retenu="champ (harth)" | segment.fr="et les champs"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Labour/Culture
+              senses: ["labourer","cultiver","champ (harth)","récolte"]
+              proof : ***Sens retenu :*** champs cultivés, terre arable. Le mot *al-ḥarth* désigne le *labourage* et, par extension, le *champ cultivé*, la terre arable. Avec les bestiaux qui précèdent, il complète l'image de la richesse agricole — *le sol et ses fruits*. La nature philosophique est celle d'une terre *travaillée* pour produire — non pas une étendue sauvage, mais un espace mis en valeur par le labeur humain. C'est la richesse de l'effort, pas la richesse trouvée.
+
+[NUL          ] Sens isolé/Femme
+              senses: ["femme (métaphore)"]
+              proof : Sens métaphorique présent ailleurs dans le Coran, où la femme est comparée à un champ à ensemencer. Mais ici, l'usage est strictement agricole et concret. La nuance différencie l'image littérale de l'image métaphorique.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=18 mtae | sense_chosen="jouir" | concept_chosen="Jouissance/Profit"
+segment.sense_retenu="jouir" | segment.fr="est la jouissance"
+──────────────────────────────────────────────────────────────────────────────────────────
+[PROBABLE     ] Bien/Provision
+              senses: ["provision","bien temporel"]
+              proof : Sens nominal proche désignant l'objet possédé (*provision, bien temporel*). C'est la chose elle-même qu'on a en réserve. Ici, on insiste plutôt sur l'acte de jouir et son caractère temporel, pas sur la possession statique. La nuance est entre avoir un bien et en jouir.
+
+[NUL          ] Durée/Extension
+              senses: ["prolonger","sursis"]
+              proof : Sens dérivé verbal sur l'extension du temps (*prolonger, sursis*). Sans rapport avec la jouissance comme consommation mobilisée ici.
+
+[RETENU       ] Jouissance/Profit
+              senses: ["jouir","profiter","faire profiter"]
+              proof : ***Sens retenu :*** jouissance, profit qu'on consomme. Le mot *matāʿ* désigne *ce dont on tire jouissance* — ce qu'on consomme ou utilise pour son plaisir. Le mot est en construction « X de Y » avec ce qui suit (*de la vie d'ici-bas*), précisant *à quelle vie* cette jouissance appartient. La nature philosophique du sens est celle d'une *consommation passagère* — on jouit d'une chose pour un temps, puis cela passe. Ce n'est pas un bien permanent, c'est un usage temporaire.
+
+**Comparaison avec les sens probables :**
+
+**— Bien/Provision** : sens nominal proche désignant *ce qu'on possède* (*provision, bien temporel*). C'est la chose elle-même, pas son usage. Ici on insiste sur l'acte de jouir et son caractère temporel, pas sur l'objet possédé.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=19 hyy | sense_chosen="vie" | concept_chosen="Vie/Vivant"
+segment.sense_retenu="vie" | segment.fr="de la vie"
+──────────────────────────────────────────────────────────────────────────────────────────
+[NUL          ] Nom propre
+              senses: ["Yaḥyā"]
+              proof : Nom propre (Yaḥyā = Jean-Baptiste). Sans rapport avec le nom commun *al-ḥayāt* mobilisé ici.
+
+[RETENU       ] Vie/Vivant
+              senses: ["vivre","vie","vivant","donner la vie"]
+              proof : ***Sens retenu :*** vie, état du vivant. Le mot *al-ḥayāt* désigne la *vie* — l'état du vivant par opposition à la mort, dans son acception générale. Suivi de l'adjectif *al-dunyā* (« d'ici-bas »), il prend une *qualification précise* — la vie présente, par opposition à la vie dernière (*al-ākhira*). La nature philosophique est celle de l'existence animée, soumise au temps qui passe et qui finit.
+
+[NUL          ] Eau/Liquide
+              senses: ["pluie"]
+              proof : Sens dérivé concret désignant la pluie. Étranger au sens d'existence animée mobilisé ici.
+
+[NUL          ] Salutation/Pudeur
+              senses: ["saluer","pudeur"]
+              proof : Sens dérivé sur la salutation rituelle (*saluer*). Sans rapport avec l'existence animée mobilisée ici.
+
+[NUL          ] Sens isolé/Serpent
+              senses: ["serpent"]
+              proof : Sens isolé désignant le serpent. Aucun rapport sémantique avec la vie comme état d'être.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=20 dnw | sense_chosen="ici-bas" | concept_chosen="Proximité/Monde d'ici-bas"
+segment.sense_retenu="ici-bas" | segment.fr="d'ici-bas"
+──────────────────────────────────────────────────────────────────────────────────────────
+[NUL          ] Parenté/Lien
+              senses: ["parenté","parent proche"]
+              proof : Sens dérivé sur les liens familiaux proches. Sans rapport avec la qualification cosmologique d'ici-bas mobilisée ici.
+
+[NUL          ] Bassesse/Médiocrité
+              senses: ["poursuivre les choses basses","être faible","vivre une vie étroite"]
+              proof : Sens dérivé moral sur la bassesse. Ici *al-dunyā* est une qualification cosmologique neutre, pas un jugement moral. La nuance philosophique est entre une localisation (proche) et un jugement (bas).
+
+[NUL          ] Abaissement/Couverture
+              senses: ["abaisser un vêtement"]
+              proof : Sens isolé sur l'abaissement d'un vêtement. Étranger à la qualification d'ici-bas mobilisée ici.
+
+[PROBABLE     ] Proximité/Rapprochement
+              senses: ["s'approcher peu à peu","s'approcher mutuellement","être sur le point de"]
+              proof : Sens verbal processuel sur l'action de s'approcher (*s'approcher peu à peu, être sur le point de*). C'est la dimension dynamique de la racine. Mais ici, le mot est un adjectif fixe qui qualifie une réalité — la vie présente — pas un mouvement en cours. La nuance est entre un processus et un état.
+
+[RETENU       ] Proximité/Monde d'ici-bas
+              senses: ["être proche","proche","ici-bas","approcher"]
+              proof : ***Sens retenu :*** d'ici-bas, la plus proche. Le mot *al-dunyā* signifie *littéralement « la plus proche »* — c'est un superlatif féminin. Par convention coranique, il qualifie *cette vie-ci* comme la plus proche, par opposition à la vie dernière (*al-ākhira* = la plus lointaine, ou la dernière). C'est une qualification *cosmologique neutre*, pas un jugement moral. La nature philosophique du sens est celle d'une *proximité spatiale-temporelle* qui qualifie la vie sous nos yeux comme l'horizon immédiat — pas la vie ultime, mais celle qui est là, devant nous.
+
+**Comparaison avec les sens probables :**
+
+**— Proximité/Rapprochement** : sens *verbal* sur l'acte de s'approcher peu à peu. C'est l'origine de la racine. Mais ici le mot est un *adjectif fixe* qui qualifie une réalité (la vie présente), pas un mouvement en cours. La nuance est entre une dynamique de rapprochement et une qualification statique de proximité.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=21 alh | sense_chosen="Dieu" | concept_chosen="Divinité"
+segment.sense_retenu="Dieu" | segment.fr="et Dieu"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Divinité
+              senses: ["divinité","divinité (concept)","Dieu","théologie","exclamation divine","oui certes"]
+              proof : ***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran — pas un nom commun parmi d'autres dieux, mais un nom propre désignant un être unique. La proposition « et Dieu, auprès de Lui... » contraste avec ce qui précède : la jouissance d'ici-bas (passagère) opposée à ce qui se trouve auprès de Dieu (permanent). La nature philosophique du sens est celle d'un nom propre qui pointe une réalité unique, par opposition à un nom commun qui désignerait une catégorie d'êtres.
+
+**Comparaison avec les sens probables :**
+
+**— Adoration/Dévotion** : sens *verbal* sur l'acte humain dirigé vers le divin (*adorer, se dévouer au culte*). Ici au contraire, le mot désigne le *sujet divin* lui-même, pas l'acte qui se tourne vers Lui. La nuance est entre Dieu (sujet) et l'adoration de Dieu (acte humain).
+
+[NUL          ] Détresse
+              senses: ["être perplexe","se lamenter"]
+              proof : Sens dérivé psychologique sur la perplexité ou la lamentation. Sans rapport avec le nom propre divin ici.
+
+[NUL          ] Domination
+              senses: ["asservir"]
+              proof : Sens dérivé sur l'asservissement. Sans rapport avec le nom divin ici.
+
+[NUL          ] Refuge/Protection
+              senses: ["chercher refuge","protéger","demeurer"]
+              proof : Sens d'action sur la recherche de refuge. Étranger au nom propre divin mobilisé ici.
+
+[PROBABLE     ] Adoration/Dévotion
+              senses: ["adorer","faire adorer","se dévouer au culte","diviniser"]
+              proof : *Adoration/Dévotion* est un sens *verbal* sur l'acte humain. Mais ici le mot désigne *le sujet divin* dans la formule *« Et Dieu, auprès de Lui... »* — le contraste avec la jouissance d'ici-bas met en jeu *Dieu comme dépositaire* du bien permanent, pas l'acte qui se tourne vers Lui. La nuance philosophique oppose *Dieu sujet (gardien du bien)* et *Dieu objet (du culte)* — le verset utilise le premier rôle.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=22 end | sense_chosen="auprès de" | concept_chosen="Proximité/Présence"
+segment.sense_retenu="auprès de" | segment.fr="auprès de Lui"
+──────────────────────────────────────────────────────────────────────────────────────────
+[PROBABLE     ] Opinion/Jugement
+              senses: ["selon"]
+              proof : *Opinion/Jugement* est un sens dérivé abstrait de ʿ-n-d pour exprimer un point de vue (*selon, d'après*). Le lien existe : ce qui est chez moi reflète mon avis. Mais ici l'usage est *strictement spatial-localisateur* — *ʿindahu* dit *« auprès de Lui »*, pas *« selon Son avis »*. La nuance philosophique distingue *référence mentale* (selon) et *localisation symbolique* (auprès de) — la formule eschatologique fixe la seconde lecture.
+
+[RETENU       ] Proximité/Présence
+              senses: ["auprès de","chez","près de"]
+              proof : ***Sens retenu :*** auprès de, dans la sphère de. Le mot *ʿinda* en arabe ne désigne pas la *simple proximité spatiale* — il dit *« auprès de »*, *« chez »*, *« dans la sphère de »*, avec une dimension d'*appartenance* à celui qu'on désigne. Comme quand on dit « chez moi » : ce qui est chez nous nous appartient en propre. Avec le suffixe « lui » qui renvoie à Dieu, l'expression localise *du côté de Dieu* — non pas physiquement mais comme appartenant à Sa réserve.
+
+**Comparaison avec les sens probables :**
+
+**— Opinion/Jugement** : sens dérivé abstrait pour exprimer un point de vue (*selon, d'après*). Ici l'usage est strictement spatial-localisateur (*auprès de*), sans aucune référence à un avis. La nuance est entre une référence mentale et une appartenance physique-symbolique.
+
+[NUL          ] Déviation/Obstination
+              senses: ["dévier","s'obstiner","aller à l'encontre","s'éloigner"]
+              proof : Sens dérivé verbal sur l'écart ou l'obstination. Sans rapport avec le mot de localisation mobilisé ici.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=23 hsn | sense_chosen="bon" | concept_chosen="Beauté/Bonté"
+segment.sense_retenu="bon" | segment.fr="le bon"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Beauté/Bonté
+              senses: ["être beau","bon","excellent"]
+              proof : ***Sens retenu :*** ce qui est bon, qualité positive. Le mot *ḥusn* désigne une *qualité positive globale* — à la fois la *beauté visuelle* et la *bonté morale*, sans préjuger de l'une ou l'autre dimension. C'est cette ambiguïté volontaire qui en fait un mot riche : il pointe une excellence générale, non spécialisée. En construction « X de Y » avec ce qui suit (*lieu de retour*), l'expression dit la *qualité positive* qui caractérise ce lieu — sans encore préciser laquelle.
+
+**Comparaison avec les sens probables :**
+
+**— Excellence morale** : sens *verbal* restreint à la conduite (*bien faire, bienfaisance*). Ici le mot est nominal et qualifie la nature même du lieu de retour, pas un acte de conduite morale. La nuance différencie une qualité d'être d'un acte d'agir.
+
+[PROBABLE     ] Excellence morale
+              senses: ["bien faire","bienfaisance"]
+              proof : *Excellence morale* est un sens *verbal* restreint de la racine ḥ-s-n à *la conduite humaine* — bien faire, agir bien. Le lien est sémantique : la beauté morale est une forme de l'excellence. Mais ici le mot est *nominal* et qualifie *la nature même du lieu de retour* (le paradis), pas un acte de bienfaisance humaine. La nuance philosophique sépare *qualité d'une chose* (le lieu beau) et *acte d'une personne* (la bienfaisance) — le verset utilise la première lecture.
+
+══════════════════════════════════════════════════════════════════════════════════════════
+pos=24 awb | sense_chosen="lieu de retour" | concept_chosen="Retour/Repentir"
+segment.sense_retenu="lieu de retour" | segment.fr="lieu de retour"
+──────────────────────────────────────────────────────────────────────────────────────────
+[RETENU       ] Retour/Repentir
+              senses: ["revenir","se repentir","retourner","lieu de retour","refuge","destination finale"]
+              proof : ***Sens retenu :*** lieu de retour, destination finale. Le mot *al-maʾāb* est un *nom de lieu* dérivé de la racine ʾ-w-b — il désigne *l'endroit vers lequel on retourne*, le point d'aboutissement après un parcours. Dans l'usage coranique, il évoque particulièrement le *terme de la vie*, l'aboutissement vers lequel l'humain est ramené après sa traversée d'ici-bas. La nature philosophique du sens est celle d'un *point fixe d'aboutissement* — non pas l'acte de retourner, mais l'endroit où l'on retourne. C'est l'image d'un voyage qui a une destination.
+
+**Comparaison avec les sens probables :**
+
+**— Louange/Répétition** : sens dérivé sur la répétition (*répéter les louanges, faire écho*). C'est une autre acception de la racine sur l'idée de retour (la louange revient à Dieu en boucle). Mais ici le mot est un nom de lieu, pas un acte de répétition. La nuance différencie une localisation d'un mouvement répété.
+
+[PROBABLE     ] Louange/Répétition
+              senses: ["répéter les louanges","faire écho"]
+              proof : Sens dérivé sur la répétition (*répéter les louanges, faire écho*). C'est une autre acception de la racine appliquée à un acte de retour répété (la louange qui revient à Dieu). Mais ici le mot est un *nom de lieu*, pas un acte de répétition. La nuance est entre une destination spatiale et un mouvement répétitif.
+
+[NUL          ] Sens isolé/Mouvement
+              senses: ["mouvement régulier (des bras)"]
+              proof : Sens dérivé concret sur les mouvements répétitifs (du bras, par exemple). Sans rapport avec le nom de lieu mobilisé ici.
+
+
+
+═══ word_daily — 3 phrases du quotidien par sens retenu ═══
+
+❌ pos=1 zyn sense="embellir" : 0 phrase(s) du quotidien
+❌ pos=2 nws sense="gens" : 0 phrase(s) du quotidien
+❌ pos=3 hbb sense="aimer" : 0 phrase(s) du quotidien
+❌ pos=4 shhw sense="chose désirée" : 0 phrase(s) du quotidien
+❌ pos=6 nsw sense="femmes" : 0 phrase(s) du quotidien
+❌ pos=7 bny sense="fils" : 0 phrase(s) du quotidien
+❌ pos=8 qntṛ sense="trésor" : 0 phrase(s) du quotidien
+❌ pos=9 qntṛ sense="grande quantité (qintar)" : 0 phrase(s) du quotidien
+❌ pos=11 dhb sense="or" : 0 phrase(s) du quotidien
+pos=12 fdd : sense_chosen "argent" introuvable dans word_meanings
+❌ pos=13 khyl sense="cheval" : 0 phrase(s) du quotidien
+❌ pos=14 swm sense="signe distinctif" : 0 phrase(s) du quotidien
+❌ pos=15 nem sense="bétail" : 0 phrase(s) du quotidien
+❌ pos=16 hrṯ sense="champ (harth)" : 0 phrase(s) du quotidien
+❌ pos=18 mtae sense="jouir" : 0 phrase(s) du quotidien
+❌ pos=19 hyy sense="vie" : 0 phrase(s) du quotidien
+❌ pos=20 dnw sense="ici-bas" : 0 phrase(s) du quotidien
+❌ pos=21 alh sense="Dieu" : 0 phrase(s) du quotidien
+❌ pos=22 end sense="auprès de" : 0 phrase(s) du quotidien
+❌ pos=23 hsn sense="bon" : 0 phrase(s) du quotidien
+❌ pos=24 awb sense="lieu de retour" : 0 phrase(s) du quotidien

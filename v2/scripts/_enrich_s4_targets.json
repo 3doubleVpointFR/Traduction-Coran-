@@ -1,0 +1,1442 @@
+[
+  {
+    "word_key": "Hjr",
+    "root_ar": "ح ج ر",
+    "versets_a_venir": [],
+    "candidates": [
+      {
+        "id": 376,
+        "root_ar": "ح ج ر",
+        "etym": "Pierre/Matériau",
+        "nb_sens": 12,
+        "concepts": {
+          "Interdit/Enclos": [
+            "sanctuaire",
+            "interdit"
+          ],
+          "Sens isolé/Giron": [
+            "giron",
+            "chambre intérieure"
+          ],
+          "Raison/Intelligence": [
+            "jugement retenu",
+            "raison",
+            "intelligence",
+            "discernement"
+          ],
+          "Pierre/Matériau": [
+            "roche",
+            "pierre"
+          ],
+          "Migration/Séparation": [
+            "émigrer",
+            "abandonner"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 5998,
+        "pos": 6,
+        "sense_chosen": "raison",
+        "concept_chosen": "Raison/Intelligence",
+        "concepts_probable_actuels": [
+          "Interdit/Enclos"
+        ]
+      },
+      {
+        "vid": 488,
+        "pos": 18,
+        "sense_chosen": "émigrer",
+        "concept_chosen": "Migration/Séparation",
+        "concepts_probable_actuels": [
+          "Interdit/Enclos",
+          "Pierre/Matériau"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "ajl",
+    "root_ar": "ا ج ل",
+    "versets_a_venir": [
+      77
+    ],
+    "candidates": [
+      {
+        "id": 1047,
+        "root_ar": "أ ج ل",
+        "etym": null,
+        "nb_sens": 5,
+        "concepts": {
+          "Terme/Échéance": [
+            "délai",
+            "échéance",
+            "terme"
+          ],
+          "Causalité": [
+            "à cause de"
+          ],
+          "Sens isolé/Oui": [
+            "oui (ajal)"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "avm",
+    "root_ar": "ا ث م",
+    "versets_a_venir": [
+      48,
+      50,
+      107,
+      111,
+      112
+    ],
+    "candidates": [],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "ax",
+    "root_ar": "ا خ",
+    "versets_a_venir": [
+      71,
+      89,
+      91,
+      102,
+      118,
+      139,
+      144,
+      154,
+      161
+    ],
+    "candidates": [],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "axr",
+    "root_ar": "ا خ ر",
+    "versets_a_venir": [
+      38,
+      39,
+      59,
+      77,
+      91,
+      102,
+      134,
+      162
+    ],
+    "candidates": [
+      {
+        "id": 292,
+        "root_ar": "ء خ ر",
+        "etym": null,
+        "nb_sens": 9,
+        "concepts": {
+          "Sens isolé/Derrière": [
+            "derrière"
+          ],
+          "Postériorité/Retard": [
+            "fin",
+            "dernier",
+            "l'au-delà",
+            "retarder",
+            "reporter",
+            "reculer",
+            "après"
+          ],
+          "Sens isolé/Arrière": [
+            "arrière"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 378,
+        "pos": 11,
+        "sense_chosen": "l'au-delà",
+        "concept_chosen": "Postériorité/Retard",
+        "concepts_probable_actuels": []
+      },
+      {
+        "vid": 338,
+        "pos": 18,
+        "sense_chosen": "l'au-delà",
+        "concept_chosen": "Postériorité/Retard",
+        "concepts_probable_actuels": []
+      },
+      {
+        "vid": 315,
+        "pos": 7,
+        "sense_chosen": "l'au-delà",
+        "concept_chosen": "Postériorité/Retard",
+        "concepts_probable_actuels": []
+      }
+    ]
+  },
+  {
+    "word_key": "axw",
+    "root_ar": "ا خ و",
+    "versets_a_venir": [
+      23,
+      176
+    ],
+    "candidates": [
+      {
+        "id": 1024,
+        "root_ar": "أ خ و",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Fraternité/Lien": [
+            "frère",
+            "semblable",
+            "ami"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "bht",
+    "root_ar": "ب ه ت",
+    "versets_a_venir": [
+      112,
+      156
+    ],
+    "candidates": [
+      {
+        "id": 1118,
+        "root_ar": "ب ه ت",
+        "etym": "Stupeur/Ébahissement",
+        "nb_sens": 5,
+        "concepts": {
+          "Stupeur/Ébahissement": [
+            "être stupéfait",
+            "être confondu",
+            "stupéfaction"
+          ],
+          "Calomnie/Fausse accusation": [
+            "calomnier",
+            "fausse accusation"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 513,
+        "pos": 15,
+        "sense_chosen": "fausse accusation",
+        "concept_chosen": "Calomnie/Fausse accusation",
+        "concepts_probable_actuels": [
+          "Stupeur/Ébahissement"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "brhn",
+    "root_ar": "ب ر ه ن",
+    "versets_a_venir": [
+      174
+    ],
+    "candidates": [
+      {
+        "id": 742,
+        "root_ar": "ب ر ه ن",
+        "etym": "Preuve/Démonstration",
+        "nb_sens": 5,
+        "concepts": {
+          "Démonstration/Évidence": [
+            "preuve",
+            "démonstration",
+            "argument"
+          ],
+          "Preuve/Démonstration": [
+            "établir par preuve",
+            "preuve évidente (burhān)"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "dbr",
+    "root_ar": "د ب ر",
+    "versets_a_venir": [
+      47,
+      82
+    ],
+    "candidates": [
+      {
+        "id": 1323,
+        "root_ar": "د ب ر",
+        "etym": "Arrière/Postériorité",
+        "nb_sens": 5,
+        "concepts": {
+          "Arrière/Postériorité": [
+            "derrière",
+            "dos"
+          ],
+          "Méditation/Réflexion": [
+            "réfléchir (tadabbur)",
+            "méditer"
+          ],
+          "Souffle/Vent": [
+            "gérer les affaires"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 404,
+        "pos": 8,
+        "sense_chosen": "dos",
+        "concept_chosen": "Arrière/Postériorité",
+        "concepts_probable_actuels": []
+      }
+    ]
+  },
+  {
+    "word_key": "emm",
+    "root_ar": "ع م م",
+    "versets_a_venir": [
+      23
+    ],
+    "candidates": [
+      {
+        "id": 643,
+        "root_ar": "ع م م",
+        "etym": "Généralité/Parenté",
+        "nb_sens": 6,
+        "concepts": {
+          "Généralité/Parenté": [
+            "oncle paternel",
+            "englober",
+            "général",
+            "généraliser",
+            "être général"
+          ],
+          "Oncle paternel": [
+            "oncle paternel (ʿamm)"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "eqd",
+    "root_ar": "ع ق د",
+    "versets_a_venir": [
+      33
+    ],
+    "candidates": [
+      {
+        "id": 1069,
+        "root_ar": "ع ق د",
+        "etym": "Nœud/Contrat",
+        "nb_sens": 5,
+        "concepts": {
+          "Détermination": [
+            "résolution ferme"
+          ],
+          "Nœud/Contrat": [
+            "nouer",
+            "contracter",
+            "pacte"
+          ],
+          "Sens isolé/Nœud": [
+            "nœud de magie"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "fay",
+    "root_ar": "ف ا ي",
+    "versets_a_venir": [
+      88
+    ],
+    "candidates": [],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "fty",
+    "root_ar": "ف ت ي",
+    "versets_a_venir": [
+      127,
+      176
+    ],
+    "candidates": [
+      {
+        "id": 1461,
+        "root_ar": "ف ت ي",
+        "etym": "Jeunesse/Vigueur",
+        "nb_sens": 5,
+        "concepts": {
+          "Jeunesse/Vigueur": [
+            "jeune homme",
+            "serviteur",
+            "esclave"
+          ],
+          "Consultation/Décision": [
+            "avis juridique",
+            "consulter"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "gnm",
+    "root_ar": "غ ن م",
+    "versets_a_venir": [
+      94
+    ],
+    "candidates": [
+      {
+        "id": 2015,
+        "root_ar": "غ ن م",
+        "etym": null,
+        "nb_sens": 2,
+        "concepts": {
+          "Bétail": [
+            "mouton"
+          ],
+          "Butin/Capture": [
+            "butin"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "hfz",
+    "root_ar": "ح ف ظ",
+    "versets_a_venir": [
+      34,
+      80
+    ],
+    "candidates": [
+      {
+        "id": 1060,
+        "root_ar": "ح ف ظ",
+        "etym": "Préservation/Protection",
+        "nb_sens": 5,
+        "concepts": {
+          "Préservation/Protection": [
+            "garder",
+            "préserver",
+            "protéger",
+            "surveiller"
+          ],
+          "Mémorisation": [
+            "mémoriser"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "hml",
+    "root_ar": "ح م ل",
+    "versets_a_venir": [
+      112
+    ],
+    "candidates": [
+      {
+        "id": 1082,
+        "root_ar": "ح م ل",
+        "etym": "Portage/Transport",
+        "nb_sens": 5,
+        "concepts": {
+          "Portage/Transport": [
+            "porter",
+            "supporter un fardeau",
+            "transporter"
+          ],
+          "Grossesse/Gestation": [
+            "être enceinte"
+          ],
+          "Sens isolé/Charger": [
+            "charger"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "hrs",
+    "root_ar": "ح ر ص",
+    "versets_a_venir": [
+      129
+    ],
+    "candidates": [
+      {
+        "id": 701,
+        "root_ar": "ح ر ص",
+        "etym": "Avidité/Désir intense",
+        "nb_sens": 5,
+        "concepts": {
+          "Avidité/Désir intense": [
+            "convoiter",
+            "être avide",
+            "désirer ardemment",
+            "zèle",
+            "aspirer avec ardeur"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "hsd",
+    "root_ar": "ح س د",
+    "versets_a_venir": [
+      54
+    ],
+    "candidates": [
+      {
+        "id": 744,
+        "root_ar": "ح س د",
+        "etym": "Envie/Jalousie",
+        "nb_sens": 5,
+        "concepts": {
+          "Envie/Jalousie": [
+            "envier",
+            "convoitise",
+            "jalousie",
+            "jalouser",
+            "convoiter le bien d'autrui"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "hw",
+    "root_ar": "ح و",
+    "versets_a_venir": [
+      141
+    ],
+    "candidates": [
+      {
+        "id": 1085,
+        "root_ar": "ه و",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Pronom/Troisième personne": [
+            "lui",
+            "c'est",
+            "il"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "jdl",
+    "root_ar": "ج د ل",
+    "versets_a_venir": [
+      107
+    ],
+    "candidates": [
+      {
+        "id": 985,
+        "root_ar": "ج د ل",
+        "etym": "Torsion/Tressage",
+        "nb_sens": 5,
+        "concepts": {
+          "Torsion/Tressage": [
+            "tresser"
+          ],
+          "Sens isolé/Être": [
+            "être obstiné"
+          ],
+          "Argumentation/Dispute": [
+            "disputer",
+            "argumenter",
+            "débattre"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "jhr",
+    "root_ar": "ج ه ر",
+    "versets_a_venir": [
+      148
+    ],
+    "candidates": [
+      {
+        "id": 553,
+        "root_ar": "ج ه ر",
+        "etym": "Manifestation/Publicité",
+        "nb_sens": 5,
+        "concepts": {
+          "Manifestation/Publicité": [
+            "manifester",
+            "déclarer",
+            "crier",
+            "élever la voix",
+            "public"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "jnh",
+    "root_ar": "ج ن ح",
+    "versets_a_venir": [
+      23,
+      101,
+      102,
+      128
+    ],
+    "candidates": [
+      {
+        "id": 924,
+        "root_ar": "ج ن ح",
+        "etym": "Aile/Côté",
+        "nb_sens": 5,
+        "concepts": {
+          "Aile/Côté": [
+            "aile",
+            "côté"
+          ],
+          "Inclinaison/Penchant": [
+            "pencher",
+            "incliner vers"
+          ],
+          "Sens isolé/Péché": [
+            "péché (junah)"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "jya",
+    "root_ar": "ج ي ا",
+    "versets_a_venir": [
+      41,
+      43,
+      90,
+      170,
+      174
+    ],
+    "candidates": [
+      {
+        "id": 662,
+        "root_ar": "ج ي ء",
+        "etym": null,
+        "nb_sens": 11,
+        "concepts": {
+          "Venue": [
+            "venir"
+          ],
+          "Venue/Arrivée": [
+            "arriver",
+            "advenir",
+            "se produire",
+            "survenir"
+          ],
+          "Apport/Causalité": [
+            "apporter",
+            "amener",
+            "faire venir",
+            "contraindre à se rendre"
+          ],
+          "Confrontation": [
+            "faire face",
+            "coïncider en venant"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 374,
+        "pos": 12,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue",
+        "concepts_probable_actuels": [
+          "Confrontation",
+          "Venue/Arrivée",
+          "Apport/Causalité"
+        ]
+      },
+      {
+        "vid": 312,
+        "pos": 15,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue/Arrivée",
+        "concepts_probable_actuels": [
+          "Apport/Causalité"
+        ]
+      },
+      {
+        "vid": 379,
+        "pos": 12,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue",
+        "concepts_probable_actuels": [
+          "Venue/Arrivée",
+          "Apport/Causalité"
+        ]
+      },
+      {
+        "vid": 398,
+        "pos": 9,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue",
+        "concepts_probable_actuels": [
+          "Venue/Arrivée",
+          "Apport/Causalité"
+        ]
+      },
+      {
+        "vid": 476,
+        "pos": 17,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue",
+        "concepts_probable_actuels": [
+          "Confrontation",
+          "Venue/Arrivée",
+          "Apport/Causalité"
+        ]
+      },
+      {
+        "vid": 477,
+        "pos": 8,
+        "sense_chosen": "venir",
+        "concept_chosen": "Venue",
+        "concepts_probable_actuels": [
+          "Confrontation"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "kff",
+    "root_ar": "ك ف ف",
+    "versets_a_venir": [
+      77,
+      84,
+      91
+    ],
+    "candidates": [
+      {
+        "id": 1004,
+        "root_ar": "ك ف ف",
+        "etym": "Main/Contenance",
+        "nb_sens": 5,
+        "concepts": {
+          "Arrêt/Abstention": [
+            "s'abstenir",
+            "cesser",
+            "retenir"
+          ],
+          "Main/Contenance": [
+            "paume de la main"
+          ],
+          "Sens isolé/Suffire": [
+            "suffire"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "ksl",
+    "root_ar": "ك س ل",
+    "versets_a_venir": [
+      142
+    ],
+    "candidates": [
+      {
+        "id": 1572,
+        "root_ar": "ك س ل",
+        "etym": "Paresse/Nonchalance",
+        "nb_sens": 5,
+        "concepts": {
+          "Paresse/Nonchalance": [
+            "être nonchalant",
+            "être paresseux",
+            "sans entrain",
+            "nonchalance",
+            "paresse"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "lsn",
+    "root_ar": "ل س ن",
+    "versets_a_venir": [
+      46
+    ],
+    "candidates": [
+      {
+        "id": 1298,
+        "root_ar": "ل س ن",
+        "etym": null,
+        "nb_sens": 10,
+        "concepts": {
+          "Langue/Organe": [
+            "langue",
+            "organe de la parole"
+          ],
+          "Parole/Discours": [
+            "parole",
+            "propos tenus"
+          ],
+          "Langage/Mode d'expression": [
+            "langage",
+            "idiome"
+          ],
+          "Éloquence/Clarté": [
+            "éloquence",
+            "clarté du discours"
+          ],
+          "Renommée/Rumeur": [
+            "renommée",
+            "message transmis"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 371,
+        "pos": 8,
+        "sense_chosen": "langue",
+        "concept_chosen": "Langue/Organe",
+        "concepts_probable_actuels": [
+          "Parole/Discours",
+          "Éloquence/Clarté",
+          "Langage/Mode d'expression"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "mne",
+    "root_ar": "م ن ع",
+    "versets_a_venir": [
+      141
+    ],
+    "candidates": [
+      {
+        "id": 1574,
+        "root_ar": "م ن ع",
+        "etym": "Empêchement/Interdiction",
+        "nb_sens": 5,
+        "concepts": {
+          "Empêchement/Interdiction": [
+            "interdire",
+            "refuser",
+            "empêcher",
+            "interdire l'accès"
+          ],
+          "Protection/Défense": [
+            "protéger"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "msh",
+    "root_ar": "م س ح",
+    "versets_a_venir": [
+      43
+    ],
+    "candidates": [
+      {
+        "id": 1271,
+        "root_ar": "م س ح",
+        "etym": "Essuyage/Onction",
+        "nb_sens": 5,
+        "concepts": {
+          "Essuyage/Onction": [
+            "passer la main sur",
+            "oindre",
+            "essuyer"
+          ],
+          "Titre/Nom": [
+            "Messie (masih)"
+          ],
+          "Sens isolé/Voyager": [
+            "voyager"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 338,
+        "pos": 11,
+        "sense_chosen": "oindre",
+        "concept_chosen": "Essuyage/Onction",
+        "concepts_probable_actuels": [
+          "Titre/Nom"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "mwh",
+    "root_ar": "م و ه",
+    "versets_a_venir": [
+      43
+    ],
+    "candidates": [
+      {
+        "id": 1885,
+        "root_ar": "م و ه",
+        "etym": "Eau/Liquide",
+        "nb_sens": 4,
+        "concepts": {
+          "Eau/Liquide": [
+            "eau",
+            "humidité"
+          ],
+          "Camouflage/Trompe-l'œil": [
+            "plaquer d'or trompeur",
+            "travestir la vérité"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "qry",
+    "root_ar": "ق ر ي",
+    "versets_a_venir": [
+      75
+    ],
+    "candidates": [
+      {
+        "id": 568,
+        "root_ar": "ق ر ي",
+        "etym": "Établissement humain",
+        "nb_sens": 5,
+        "concepts": {
+          "Lecture/Récitation": [
+            "lire",
+            "réciter"
+          ],
+          "Établissement humain": [
+            "village",
+            "cité"
+          ],
+          "Hospitalité": [
+            "accueillir"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "qsr",
+    "root_ar": "ق ص ر",
+    "versets_a_venir": [
+      101
+    ],
+    "candidates": [
+      {
+        "id": 1550,
+        "root_ar": "ق ص ر",
+        "etym": "Brièveté/Réduction",
+        "nb_sens": 5,
+        "concepts": {
+          "Édifice/Forteresse": [
+            "palais (qasr)",
+            "palais (qaṣr)"
+          ],
+          "Brièveté/Réduction": [
+            "raccourcir",
+            "confiner",
+            "être court"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "rde",
+    "root_ar": "ر ض ع",
+    "versets_a_venir": [
+      23
+    ],
+    "candidates": [
+      {
+        "id": 1460,
+        "root_ar": "ر ض ع",
+        "etym": null,
+        "nb_sens": 4,
+        "concepts": {
+          "Allaitement/Nourriture": [
+            "allaiter",
+            "téter",
+            "nourrice",
+            "lait maternel"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "rey",
+    "root_ar": "ر ع ي",
+    "versets_a_venir": [
+      46
+    ],
+    "candidates": [
+      {
+        "id": 1618,
+        "root_ar": "ر ع ي",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Pâturage/Protection": [
+            "paître",
+            "garder",
+            "veiller sur"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "rjl",
+    "root_ar": "ر ج ل",
+    "versets_a_venir": [
+      32,
+      34,
+      75,
+      98,
+      176
+    ],
+    "candidates": [
+      {
+        "id": 1064,
+        "root_ar": "ر ج ل",
+        "etym": "Homme/Piéton",
+        "nb_sens": 5,
+        "concepts": {
+          "Homme/Piéton": [
+            "homme",
+            "pied",
+            "piéton"
+          ],
+          "Sens isolé/Revenir": [
+            "revenir"
+          ],
+          "Sens isolé/Improviser": [
+            "improviser"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 494,
+        "pos": 15,
+        "sense_chosen": "homme",
+        "concept_chosen": "Homme/Piéton",
+        "concepts_probable_actuels": []
+      },
+      {
+        "vid": 500,
+        "pos": 1,
+        "sense_chosen": "homme",
+        "concept_chosen": "Homme/Piéton",
+        "concepts_probable_actuels": []
+      },
+      {
+        "vid": 505,
+        "pos": 52,
+        "sense_chosen": "homme",
+        "concept_chosen": "Homme/Piéton",
+        "concepts_probable_actuels": []
+      }
+    ]
+  },
+  {
+    "word_key": "rjw",
+    "root_ar": "ر ج و",
+    "versets_a_venir": [
+      104
+    ],
+    "candidates": [
+      {
+        "id": 1015,
+        "root_ar": "ر ج و",
+        "etym": "Espoir/Attente",
+        "nb_sens": 5,
+        "concepts": {
+          "Côté/Bord": [
+            "bord",
+            "côté d'un lieu"
+          ],
+          "Espoir/Attente": [
+            "craindre",
+            "attendre avec espoir",
+            "espérer"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "rmy",
+    "root_ar": "ر م ي",
+    "versets_a_venir": [
+      112
+    ],
+    "candidates": [
+      {
+        "id": 1554,
+        "root_ar": "ر م ي",
+        "etym": "Lancement/Jet",
+        "nb_sens": 5,
+        "concepts": {
+          "Lancement/Jet": [
+            "jeter",
+            "lancer",
+            "tirer (flèche)",
+            "accuser"
+          ],
+          "Accusation/Imputation": [
+            "accuser injustement"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "sal",
+    "root_ar": "س ا ل",
+    "versets_a_venir": [
+      32
+    ],
+    "candidates": [
+      {
+        "id": 739,
+        "root_ar": "س أ ل",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Requête/Interrogation": [
+            "interroger",
+            "demander",
+            "questionner"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "sfr",
+    "root_ar": "س ف ر",
+    "versets_a_venir": [
+      43
+    ],
+    "candidates": [
+      {
+        "id": 614,
+        "root_ar": "ص ف ر",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Couleur/Éclat": [
+            "jaune",
+            "doré",
+            "pâle"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "slf",
+    "root_ar": "س ل ف",
+    "versets_a_venir": [
+      23
+    ],
+    "candidates": [
+      {
+        "id": 1202,
+        "root_ar": "س ل ف",
+        "etym": "Antériorité/Ancêtres",
+        "nb_sens": 4,
+        "concepts": {
+          "Antériorité/Ancêtres": [
+            "ancêtres (salaf)",
+            "précéder"
+          ],
+          "Transaction/Avance": [
+            "avance (paiement)",
+            "prêt"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 515,
+        "pos": 11,
+        "sense_chosen": "précéder",
+        "concept_chosen": "Antériorité/Ancêtres",
+        "concepts_probable_actuels": [
+          "Transaction/Avance"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "trq",
+    "root_ar": "ط ر ق",
+    "versets_a_venir": [
+      168,
+      169
+    ],
+    "candidates": [
+      {
+        "id": 1583,
+        "root_ar": "ط ر ق",
+        "etym": "Frappe/Percussion",
+        "nb_sens": 5,
+        "concepts": {
+          "Frappe/Percussion": [
+            "frapper",
+            "percussion"
+          ],
+          "Voie/Passage": [
+            "chemin",
+            "voie"
+          ],
+          "Lumière perçante": [
+            "astre nocturne"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "wfq",
+    "root_ar": "و ف ق",
+    "versets_a_venir": [
+      35
+    ],
+    "candidates": [
+      {
+        "id": 1472,
+        "root_ar": "و ف ق",
+        "etym": "Réussite/Concordance",
+        "nb_sens": 5,
+        "concepts": {
+          "Réussite/Concordance": [
+            "réussir",
+            "accorder",
+            "conformer",
+            "concorder",
+            "assistance divine"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "wse",
+    "root_ar": "و س ع",
+    "versets_a_venir": [
+      97,
+      100,
+      130
+    ],
+    "candidates": [
+      {
+        "id": 1061,
+        "root_ar": "و س ع",
+        "etym": "Vastitude/Ampleur",
+        "nb_sens": 5,
+        "concepts": {
+          "Vastitude/Ampleur": [
+            "contenir",
+            "être vaste",
+            "englober",
+            "aisance"
+          ],
+          "Sens isolé/Élargir": [
+            "élargir"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 366,
+        "pos": 35,
+        "sense_chosen": "être large",
+        "concept_chosen": "Largeur/Capacité",
+        "concepts_probable_actuels": []
+      }
+    ]
+  },
+  {
+    "word_key": "xff",
+    "root_ar": "خ ف ف",
+    "versets_a_venir": [
+      28
+    ],
+    "candidates": [
+      {
+        "id": 928,
+        "root_ar": "خ ف ف",
+        "etym": "Légèreté/Allègement",
+        "nb_sens": 5,
+        "concepts": {
+          "Légèreté/Allègement": [
+            "diminuer un fardeau",
+            "être léger",
+            "alléger"
+          ],
+          "Vitesse/Empressement": [
+            "se hâter",
+            "être rapide"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": [
+      {
+        "vid": 381,
+        "pos": 4,
+        "sense_chosen": "alléger",
+        "concept_chosen": "Légèreté/Allègement",
+        "concepts_probable_actuels": [
+          "Vitesse/Empressement"
+        ]
+      }
+    ]
+  },
+  {
+    "word_key": "xta",
+    "root_ar": "خ ط ا",
+    "versets_a_venir": [
+      92,
+      112
+    ],
+    "candidates": [
+      {
+        "id": 572,
+        "root_ar": "خ ط أ",
+        "etym": "Erreur/Faute",
+        "nb_sens": 5,
+        "concepts": {
+          "Erreur/Faute": [
+            "pécher",
+            "erreur",
+            "faute",
+            "manquer",
+            "se tromper"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "xwl",
+    "root_ar": "خ و ل",
+    "versets_a_venir": [
+      23
+    ],
+    "candidates": [
+      {
+        "id": 1793,
+        "root_ar": "خ و ل",
+        "etym": null,
+        "nb_sens": 3,
+        "concepts": {
+          "Don/Service": [
+            "accorder",
+            "gratifier",
+            "serviteur"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  },
+  {
+    "word_key": "ysr",
+    "root_ar": "ي س ر",
+    "versets_a_venir": [
+      30,
+      169
+    ],
+    "candidates": [
+      {
+        "id": 968,
+        "root_ar": "ي س ر",
+        "etym": "Facilité/Aisance",
+        "nb_sens": 5,
+        "concepts": {
+          "Facilité/Aisance": [
+            "être facile",
+            "faciliter",
+            "aisance",
+            "richesse"
+          ],
+          "Sens isolé/Côté": [
+            "côté gauche"
+          ]
+        }
+      }
+    ],
+    "vwas_anciens": []
+  }
+]

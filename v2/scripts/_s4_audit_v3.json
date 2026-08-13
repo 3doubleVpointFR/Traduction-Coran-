@@ -1,0 +1,3619 @@
+{
+  "missing": [
+    "طمن",
+    "فاي"
+  ],
+  "poor": [
+    {
+      "root": "حيث",
+      "wk": "hyth",
+      "id": 465,
+      "senses": 4,
+      "concepts": 2,
+      "etym": "Lieu/Espace"
+    },
+    {
+      "root": "عسي",
+      "wk": "esa",
+      "id": 1456,
+      "senses": 2,
+      "concepts": 1,
+      "etym": "Possibilité/Espoir"
+    },
+    {
+      "root": "موه",
+      "wk": "mwh",
+      "id": 1885,
+      "senses": 4,
+      "concepts": 2,
+      "etym": "Eau/Liquide"
+    }
+  ],
+  "noEtym": [],
+  "ok": [
+    {
+      "root": "ابد",
+      "wk": "abd",
+      "id": 697,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Perpétuité/Durée"
+    },
+    {
+      "root": "ابو",
+      "wk": "abw",
+      "id": 1447,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Paternité/Filiation"
+    },
+    {
+      "root": "اتي",
+      "wk": "aty",
+      "id": 379,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Venue/Arrivée"
+    },
+    {
+      "root": "اثم",
+      "wk": "athm",
+      "id": 952,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Retard/Lenteur"
+    },
+    {
+      "root": "اجر",
+      "wk": "ajr",
+      "id": 609,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Rétribution/Salaire"
+    },
+    {
+      "root": "اجل",
+      "wk": "a j l",
+      "id": 1716,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Terme/Délai"
+    },
+    {
+      "root": "احد",
+      "wk": "ahd",
+      "id": 2574,
+      "senses": 15,
+      "concepts": 7,
+      "etym": "Unicité/Indivisibilité"
+    },
+    {
+      "root": "اخذ",
+      "wk": "axdh",
+      "id": 2660,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Prise/Saisie"
+    },
+    {
+      "root": "اخر",
+      "wk": "akhr",
+      "id": 653,
+      "senses": 12,
+      "concepts": 4,
+      "etym": "Postériorité/Fin"
+    },
+    {
+      "root": "اخو",
+      "wk": "akhw",
+      "id": 961,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Fraternité/Lien"
+    },
+    {
+      "root": "ادي",
+      "wk": "ady",
+      "id": 1208,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Transmission/Acheminement"
+    },
+    {
+      "root": "اذن",
+      "wk": "adn",
+      "id": 722,
+      "senses": 12,
+      "concepts": 4,
+      "etym": "Écoute/Oreille"
+    },
+    {
+      "root": "اذي",
+      "wk": "adhy",
+      "id": 1451,
+      "senses": 11,
+      "concepts": 4,
+      "etym": "Nuisance/Offense"
+    },
+    {
+      "root": "ارض",
+      "wk": "ArD",
+      "id": 2650,
+      "senses": 13,
+      "concepts": 4,
+      "etym": "Terre/Sol"
+    },
+    {
+      "root": "اكل",
+      "wk": "akl",
+      "id": 947,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Alimentation/Consommation"
+    },
+    {
+      "root": "الم",
+      "wk": "alm",
+      "id": 315,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Douleur/Souffrance"
+    },
+    {
+      "root": "اله",
+      "wk": "alh",
+      "id": 250,
+      "senses": 15,
+      "concepts": 5,
+      "etym": "Adoration/Dévotion"
+    },
+    {
+      "root": "امر",
+      "wk": "amr",
+      "id": 428,
+      "senses": 8,
+      "concepts": 5,
+      "etym": "Commandement/Autorité"
+    },
+    {
+      "root": "امم",
+      "wk": "amm",
+      "id": 785,
+      "senses": 23,
+      "concepts": 7,
+      "etym": "Direction/Intention"
+    },
+    {
+      "root": "امن",
+      "wk": "amn",
+      "id": 287,
+      "senses": 17,
+      "concepts": 4,
+      "etym": "Sécurité/Confiance"
+    },
+    {
+      "root": "انث",
+      "wk": "Anv",
+      "id": 2687,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Féminité"
+    },
+    {
+      "root": "انس",
+      "wk": "Ans",
+      "id": 2630,
+      "senses": 15,
+      "concepts": 4,
+      "etym": "Sociabilité/Familiarité"
+    },
+    {
+      "root": "اهل",
+      "wk": "ahl",
+      "id": 736,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Famille/Communauté"
+    },
+    {
+      "root": "اول",
+      "wk": "awl",
+      "id": 337,
+      "senses": 22,
+      "concepts": 7,
+      "etym": "Retour/Origine"
+    },
+    {
+      "root": "اوي",
+      "wk": "awy",
+      "id": 755,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Retrait vers un abri"
+    },
+    {
+      "root": "ايي",
+      "wk": "iyya",
+      "id": 494,
+      "senses": 6,
+      "concepts": 4,
+      "etym": "Exclusivité/Insistance"
+    },
+    {
+      "root": "باس",
+      "wk": "bas",
+      "id": 713,
+      "senses": 15,
+      "concepts": 3,
+      "etym": "Puissance/Malheur"
+    },
+    {
+      "root": "بتك",
+      "wk": "btk",
+      "id": 1556,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Coupure/Trancher"
+    },
+    {
+      "root": "بثث",
+      "wk": "bth",
+      "id": 934,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Dispersion/Diffusion"
+    },
+    {
+      "root": "بخل",
+      "wk": "bxl",
+      "id": 2068,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Avarice/Rétention"
+    },
+    {
+      "root": "بدر",
+      "wk": "bdr",
+      "id": 1341,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Astre/Pleine lune"
+    },
+    {
+      "root": "بدل",
+      "wk": "bdl",
+      "id": 562,
+      "senses": 10,
+      "concepts": 2,
+      "etym": "Changement/Substitution"
+    },
+    {
+      "root": "بدو",
+      "wk": "bdw",
+      "id": 470,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Apparition/Manifestation"
+    },
+    {
+      "root": "برا",
+      "wk": "bra",
+      "id": 555,
+      "senses": 12,
+      "concepts": 5,
+      "etym": "Innocence/Pureté"
+    },
+    {
+      "root": "برج",
+      "wk": "brj",
+      "id": 1525,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Édifice/Tour"
+    },
+    {
+      "root": "برز",
+      "wk": "brz",
+      "id": 1100,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Apparition/Manifestation"
+    },
+    {
+      "root": "برهن",
+      "wk": "brhn",
+      "id": 742,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Preuve/Démonstration"
+    },
+    {
+      "root": "بشر",
+      "wk": "bshr",
+      "id": 392,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Surface/Contact"
+    },
+    {
+      "root": "بصر",
+      "wk": "bsr",
+      "id": 304,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Vision/Perception"
+    },
+    {
+      "root": "بطا",
+      "wk": "bta",
+      "id": 1518,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Lenteur/Retard"
+    },
+    {
+      "root": "بطل",
+      "wk": "btl",
+      "id": 507,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Vanité/Inanité"
+    },
+    {
+      "root": "بعث",
+      "wk": "beth",
+      "id": 545,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Résurrection/Envoi"
+    },
+    {
+      "root": "بعد",
+      "wk": "baed",
+      "id": 926,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Éloignement/Distance"
+    },
+    {
+      "root": "بعض",
+      "wk": "bed",
+      "id": 406,
+      "senses": 13,
+      "concepts": 3,
+      "etym": "Partie/Division"
+    },
+    {
+      "root": "بعل",
+      "wk": "bel",
+      "id": 1044,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Postériorité/Continuation"
+    },
+    {
+      "root": "بغي",
+      "wk": "bgh",
+      "id": 683,
+      "senses": 17,
+      "concepts": 5,
+      "etym": "Quête/Transgression"
+    },
+    {
+      "root": "بلغ",
+      "wk": "blgh",
+      "id": 987,
+      "senses": 18,
+      "concepts": 5,
+      "etym": "Atteinte/Accomplissement"
+    },
+    {
+      "root": "بلو",
+      "wk": "blw",
+      "id": 918,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Épreuve/Test"
+    },
+    {
+      "root": "بني",
+      "wk": "bny",
+      "id": 386,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Construction/Édification"
+    },
+    {
+      "root": "بهت",
+      "wk": "bht",
+      "id": 1118,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Stupeur/Ébahissement"
+    },
+    {
+      "root": "بوب",
+      "wk": "bwb",
+      "id": 569,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Ouverture/Accès"
+    },
+    {
+      "root": "بيت",
+      "wk": "byt",
+      "id": 788,
+      "senses": 11,
+      "concepts": 4,
+      "etym": "Habitation/Demeure"
+    },
+    {
+      "root": "بين",
+      "wk": "byn",
+      "id": 596,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Séparation/Distance"
+    },
+    {
+      "root": "تبع",
+      "wk": "tba",
+      "id": 729,
+      "senses": 15,
+      "concepts": 5,
+      "etym": "Suivre/Accompagner"
+    },
+    {
+      "root": "تجر",
+      "wk": "tjr",
+      "id": 340,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Commerce/Négoce"
+    },
+    {
+      "root": "تحت",
+      "wk": "tht",
+      "id": 396,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Position basse"
+    },
+    {
+      "root": "ترك",
+      "wk": "trk",
+      "id": 353,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Abandon/Renoncement"
+    },
+    {
+      "root": "تلو",
+      "wk": "tlw",
+      "id": 730,
+      "senses": 13,
+      "concepts": 6,
+      "etym": "Suite/Succession"
+    },
+    {
+      "root": "توب",
+      "wk": "twb",
+      "id": 479,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Repentir/Retour à Dieu"
+    },
+    {
+      "root": "ثبت",
+      "wk": "thbt",
+      "id": 1103,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Fermeté/Stabilité"
+    },
+    {
+      "root": "ثبي",
+      "wk": "thby",
+      "id": 2688,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Groupe/Fraction"
+    },
+    {
+      "root": "ثقف",
+      "wk": "thqf",
+      "id": 980,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Habileté"
+    },
+    {
+      "root": "ثقل",
+      "wk": "thql",
+      "id": 1476,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Poids/Gravité"
+    },
+    {
+      "root": "ثلث",
+      "wk": "thlth",
+      "id": 734,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Nombre/Trinité"
+    },
+    {
+      "root": "ثمن",
+      "wk": "thmn",
+      "id": 492,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Nombre"
+    },
+    {
+      "root": "ثني",
+      "wk": "thny",
+      "id": 588,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Dualité/Répétition"
+    },
+    {
+      "root": "ثوب",
+      "wk": "vwb",
+      "id": 2684,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Retour/Reflux"
+    },
+    {
+      "root": "جبت",
+      "wk": "jbt",
+      "id": 1493,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Idolâtrie/Sortilège"
+    },
+    {
+      "root": "جدل",
+      "wk": "jdl",
+      "id": 985,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Torsion/Tressage"
+    },
+    {
+      "root": "جري",
+      "wk": "jry",
+      "id": 395,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Course/Flux"
+    },
+    {
+      "root": "جزي",
+      "wk": "jzy",
+      "id": 531,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Rétribution/Justice"
+    },
+    {
+      "root": "جعل",
+      "wk": "jel",
+      "id": 359,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Action/Réalisation"
+    },
+    {
+      "root": "جلد",
+      "wk": "jld",
+      "id": 1497,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Peau/Cuir"
+    },
+    {
+      "root": "جمع",
+      "wk": "jme",
+      "id": 422,
+      "senses": 10,
+      "concepts": 1,
+      "etym": "Rassemblement/Union"
+    },
+    {
+      "root": "جنب",
+      "wk": "jnb",
+      "id": 1412,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Côté/Flanc"
+    },
+    {
+      "root": "جنح",
+      "wk": "jnh",
+      "id": 924,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Aile/Côté"
+    },
+    {
+      "root": "جنن",
+      "wk": "jnn",
+      "id": 394,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Dissimulation/Couverture"
+    },
+    {
+      "root": "جهد",
+      "wk": "jhd",
+      "id": 1014,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Effort/Lutte"
+    },
+    {
+      "root": "جهر",
+      "wk": "jhr",
+      "id": 553,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Manifestation/Publicité"
+    },
+    {
+      "root": "جهل",
+      "wk": "j h l",
+      "id": 1184,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Ignorance/Méconnaissance"
+    },
+    {
+      "root": "جور",
+      "wk": "jwr",
+      "id": 1285,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Injustice/Déviation"
+    },
+    {
+      "root": "جيا",
+      "wk": "jyA",
+      "id": 2685,
+      "senses": 11,
+      "concepts": 3,
+      "etym": "Venue/Arrivée"
+    },
+    {
+      "root": "حبب",
+      "wk": "hbb",
+      "id": 930,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Graine/Semence"
+    },
+    {
+      "root": "حجج",
+      "wk": "hjj",
+      "id": 637,
+      "senses": 17,
+      "concepts": 5,
+      "etym": "Direction/Destination"
+    },
+    {
+      "root": "حدث",
+      "wk": "hdth",
+      "id": 1649,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Nouveauté"
+    },
+    {
+      "root": "حدد",
+      "wk": "hdd",
+      "id": 977,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Fer/Dureté"
+    },
+    {
+      "root": "حذر",
+      "wk": "hðr",
+      "id": 1304,
+      "senses": 19,
+      "concepts": 5,
+      "etym": "Prudence/Méfiance"
+    },
+    {
+      "root": "حرج",
+      "wk": "hrj",
+      "id": 1499,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Gêne/Difficulté"
+    },
+    {
+      "root": "حرر",
+      "wk": "hrr",
+      "id": 959,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Chaleur/Ardeur"
+    },
+    {
+      "root": "حرص",
+      "wk": "hrs",
+      "id": 701,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Avidité/Désir intense"
+    },
+    {
+      "root": "حرض",
+      "wk": "hrd",
+      "id": 1531,
+      "senses": 8,
+      "concepts": 5,
+      "etym": "Dépérissement/Malade mourant"
+    },
+    {
+      "root": "حرف",
+      "wk": "hrf",
+      "id": 634,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Élément/Bord"
+    },
+    {
+      "root": "حرم",
+      "wk": "hrm",
+      "id": 671,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Interdiction/Sacré"
+    },
+    {
+      "root": "حسب",
+      "wk": "hsb",
+      "id": 996,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Calcul/Évaluation"
+    },
+    {
+      "root": "حسد",
+      "wk": "hsd",
+      "id": 744,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Envie/Jalousie"
+    },
+    {
+      "root": "حسن",
+      "wk": "hsn",
+      "id": 574,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Beauté/Bonté"
+    },
+    {
+      "root": "حشر",
+      "wk": "hšr",
+      "id": 1585,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Rassemblement/Résurrection"
+    },
+    {
+      "root": "حصر",
+      "wk": "h s r",
+      "id": 1178,
+      "senses": 11,
+      "concepts": 4,
+      "etym": "Siège/Confinement"
+    },
+    {
+      "root": "حصن",
+      "wk": "HSn",
+      "id": 2690,
+      "senses": 14,
+      "concepts": 4,
+      "etym": "Fortification/Protection"
+    },
+    {
+      "root": "حضر",
+      "wk": "hdr",
+      "id": 815,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Présence/Témoignage"
+    },
+    {
+      "root": "حظظ",
+      "wk": "hzz",
+      "id": 1395,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Part/Chance"
+    },
+    {
+      "root": "حفظ",
+      "wk": "hfz",
+      "id": 1060,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Préservation/Protection"
+    },
+    {
+      "root": "حقق",
+      "wk": "hqq",
+      "id": 409,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Vérité/Réalité"
+    },
+    {
+      "root": "حكم",
+      "wk": "hkm",
+      "id": 447,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Sens isolé/Empêcher"
+    },
+    {
+      "root": "حلف",
+      "wk": "hlf",
+      "id": 1498,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Serment/Alliance"
+    },
+    {
+      "root": "حلل",
+      "wk": "hll",
+      "id": 939,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Dissolution/Libération"
+    },
+    {
+      "root": "حلم",
+      "wk": "hlm",
+      "id": 1029,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Rêve/Songe"
+    },
+    {
+      "root": "حمد",
+      "wk": "hmd",
+      "id": 252,
+      "senses": 14,
+      "concepts": 4,
+      "etym": "Louange/Éloge"
+    },
+    {
+      "root": "حمل",
+      "wk": "hml",
+      "id": 1082,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Portage/Transport"
+    },
+    {
+      "root": "حنف",
+      "wk": "hnf",
+      "id": 811,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Déviation/Courbure"
+    },
+    {
+      "root": "حوب",
+      "wk": "hwb",
+      "id": 1427,
+      "senses": 9,
+      "concepts": 2,
+      "etym": "Péché/Faute grave"
+    },
+    {
+      "root": "حوذ",
+      "wk": "hwḏ",
+      "id": 1573,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Contrôle/Domination"
+    },
+    {
+      "root": "حوط",
+      "wk": "hwt",
+      "id": 365,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Protection/Encerclement"
+    },
+    {
+      "root": "حول",
+      "wk": "hwl",
+      "id": 351,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Changement/Transformation"
+    },
+    {
+      "root": "حيص",
+      "wk": "hys",
+      "id": 1557,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Fuite/Esquive"
+    },
+    {
+      "root": "حيي",
+      "wk": "hyy",
+      "id": 404,
+      "senses": 9,
+      "concepts": 5,
+      "etym": "Vie/Vivant"
+    },
+    {
+      "root": "خبث",
+      "wk": "khbth",
+      "id": 1162,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Impureté/Vilenie"
+    },
+    {
+      "root": "خبر",
+      "wk": "khbr",
+      "id": 1564,
+      "senses": 11,
+      "concepts": 3,
+      "etym": "Connaissance/Expérience"
+    },
+    {
+      "root": "خدع",
+      "wk": "xde",
+      "id": 297,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Tromperie/Ruse"
+    },
+    {
+      "root": "خدن",
+      "wk": "khdn",
+      "id": 1463,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Amant/Compagnon caché"
+    },
+    {
+      "root": "خرج",
+      "wk": "xrj",
+      "id": 388,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Sortie/Émergence"
+    },
+    {
+      "root": "خسر",
+      "wk": "khsr",
+      "id": 431,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Perte/Diminution"
+    },
+    {
+      "root": "خشي",
+      "wk": "kšy",
+      "id": 1610,
+      "senses": 8,
+      "concepts": 1,
+      "etym": "Crainte révérencielle"
+    },
+    {
+      "root": "خصم",
+      "wk": "xsm",
+      "id": 2310,
+      "senses": 10,
+      "concepts": 2,
+      "etym": "Conflit/Adversité"
+    },
+    {
+      "root": "خطا",
+      "wk": "xta",
+      "id": 572,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Erreur/Faute"
+    },
+    {
+      "root": "خفف",
+      "wk": "xff",
+      "id": 928,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Légèreté/Allègement"
+    },
+    {
+      "root": "خفي",
+      "wk": "khfy",
+      "id": 1216,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Dissimulation/Secret"
+    },
+    {
+      "root": "خلد",
+      "wk": "khd",
+      "id": 403,
+      "senses": 8,
+      "concepts": 5,
+      "etym": "Permanence/Éternité"
+    },
+    {
+      "root": "خلص",
+      "wk": "khls",
+      "id": 822,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Extraction/Délivrance"
+    },
+    {
+      "root": "خلف",
+      "wk": "khlf",
+      "id": 651,
+      "senses": 15,
+      "concepts": 4,
+      "etym": "Succession/Différence"
+    },
+    {
+      "root": "خلق",
+      "wk": "xlq",
+      "id": 344,
+      "senses": 21,
+      "concepts": 6,
+      "etym": "Mesure"
+    },
+    {
+      "root": "خلل",
+      "wk": "khll",
+      "id": 1109,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Pénétration/Intervalle"
+    },
+    {
+      "root": "خوض",
+      "wk": "xwd",
+      "id": 1796,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Immersion/Engagement superficiel"
+    },
+    {
+      "root": "خوف",
+      "wk": "khw f",
+      "id": 482,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Crainte/Peur"
+    },
+    {
+      "root": "خون",
+      "wk": "xwn",
+      "id": 973,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Trahison/Perfidie"
+    },
+    {
+      "root": "خير",
+      "wk": "khyr",
+      "id": 727,
+      "senses": 14,
+      "concepts": 5,
+      "etym": "Bien/Bonté"
+    },
+    {
+      "root": "خيل",
+      "wk": "khyl",
+      "id": 1292,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Imagination/Apparence"
+    },
+    {
+      "root": "دبر",
+      "wk": "dbr",
+      "id": 1323,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Arrière/Postériorité"
+    },
+    {
+      "root": "دخل",
+      "wk": "dxl",
+      "id": 567,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Entrée/Pénétration"
+    },
+    {
+      "root": "درج",
+      "wk": "drj",
+      "id": 1043,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Gradation/Progression"
+    },
+    {
+      "root": "درك",
+      "wk": "drk",
+      "id": 1524,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Atteinte/Compréhension"
+    },
+    {
+      "root": "دري",
+      "wk": "dry",
+      "id": 2098,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Connaissance/Perception"
+    },
+    {
+      "root": "دعو",
+      "wk": "dew",
+      "id": 381,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Appel/Invocation"
+    },
+    {
+      "root": "دفع",
+      "wk": "dfe",
+      "id": 1106,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Repoussement/Défense"
+    },
+    {
+      "root": "دنو",
+      "wk": "dnw",
+      "id": 656,
+      "senses": 13,
+      "concepts": 5,
+      "etym": "Proximité/Monde d'ici-bas"
+    },
+    {
+      "root": "دور",
+      "wk": "dwr",
+      "id": 631,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Cycle/Rotation"
+    },
+    {
+      "root": "دون",
+      "wk": "dwn",
+      "id": 383,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Infériorité/En-dessous"
+    },
+    {
+      "root": "دين",
+      "wk": "dyn",
+      "id": 258,
+      "senses": 22,
+      "concepts": 6,
+      "etym": "Obéissance/Soumission"
+    },
+    {
+      "root": "ذبذب",
+      "wk": "dhdhb",
+      "id": 1571,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Oscillation/Hésitation"
+    },
+    {
+      "root": "ذرر",
+      "wk": "ḏrr",
+      "id": 2614,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Particule/Infime"
+    },
+    {
+      "root": "ذكر",
+      "wk": "dhkr",
+      "id": 485,
+      "senses": 21,
+      "concepts": 6,
+      "etym": "Souvenir/Mémoire"
+    },
+    {
+      "root": "ذهب",
+      "wk": "dhb",
+      "id": 352,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Départ/Mouvement"
+    },
+    {
+      "root": "ذوق",
+      "wk": "ðwq",
+      "id": 1769,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Goût/Saveur"
+    },
+    {
+      "root": "ذيع",
+      "wk": "dhye",
+      "id": 2691,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Diffusion/Propagation"
+    },
+    {
+      "root": "راي",
+      "wk": "ray",
+      "id": 552,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Vision/Perception"
+    },
+    {
+      "root": "ربب",
+      "wk": "rbb",
+      "id": 253,
+      "senses": 28,
+      "concepts": 5,
+      "etym": "Éducation/Accompagnement"
+    },
+    {
+      "root": "ربص",
+      "wk": "rbs",
+      "id": 1035,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Attente/Guet"
+    },
+    {
+      "root": "ربع",
+      "wk": "rbe",
+      "id": 1429,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Nombre/Quaternité"
+    },
+    {
+      "root": "ربو",
+      "wk": "rbw",
+      "id": 1164,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Croissance/Augmentation"
+    },
+    {
+      "root": "رجل",
+      "wk": "rjl",
+      "id": 1064,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Homme/Piéton"
+    },
+    {
+      "root": "رجو",
+      "wk": "rjw",
+      "id": 1015,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Espoir/Attente"
+    },
+    {
+      "root": "رحم",
+      "wk": "rhm",
+      "id": 251,
+      "senses": 30,
+      "concepts": 7,
+      "etym": "Miséricorde/Tendresse"
+    },
+    {
+      "root": "ردد",
+      "wk": "rdd",
+      "id": 674,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Retour/Rejet"
+    },
+    {
+      "root": "رزق",
+      "wk": "rzq",
+      "id": 284,
+      "senses": 8,
+      "concepts": 1,
+      "etym": "Subsistance/Provision"
+    },
+    {
+      "root": "رسخ",
+      "wk": "rsx",
+      "id": 1582,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Fermeté/Enracinement"
+    },
+    {
+      "root": "رسل",
+      "wk": "rsl",
+      "id": 688,
+      "senses": 17,
+      "concepts": 7,
+      "etym": "Douceur/Aisance"
+    },
+    {
+      "root": "رشد",
+      "wk": "rshd",
+      "id": 964,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Droiture/Maturité"
+    },
+    {
+      "root": "رضو",
+      "wk": "rdw",
+      "id": 812,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Satisfaction/Agrément"
+    },
+    {
+      "root": "رغب",
+      "wk": "rghb",
+      "id": 799,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Désir/Aspiration"
+    },
+    {
+      "root": "رغم",
+      "wk": "rghm",
+      "id": 1546,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Contrainte/Humiliation"
+    },
+    {
+      "root": "رفع",
+      "wk": "rfa",
+      "id": 604,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Élévation/Exaltation"
+    },
+    {
+      "root": "رفق",
+      "wk": "rfq",
+      "id": 1501,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Douceur/Compagnonnage"
+    },
+    {
+      "root": "رقب",
+      "wk": "rqb",
+      "id": 955,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Surveillance/Vigilance"
+    },
+    {
+      "root": "ركس",
+      "wk": "rks",
+      "id": 1536,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Renversement/Régression"
+    },
+    {
+      "root": "رمي",
+      "wk": "rmy",
+      "id": 1554,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Lancement/Jet"
+    },
+    {
+      "root": "روح",
+      "wk": "ruh",
+      "id": 1587,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Sens isolé/Vent"
+    },
+    {
+      "root": "رود",
+      "wk": "rwd",
+      "id": 411,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Recherche/Quête"
+    },
+    {
+      "root": "ريب",
+      "wk": "ryb",
+      "id": 276,
+      "senses": 8,
+      "concepts": 4,
+      "etym": "Doute/Suspicion"
+    },
+    {
+      "root": "زبر",
+      "wk": "zbr",
+      "id": 1403,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Construction/Pierre"
+    },
+    {
+      "root": "زعم",
+      "wk": "zem",
+      "id": 1738,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Affirmation douteuse"
+    },
+    {
+      "root": "زكو",
+      "wk": "zkw",
+      "id": 504,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Purification/Croissance"
+    },
+    {
+      "root": "زوج",
+      "wk": "zwj",
+      "id": 401,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Paire/Membre du couple"
+    },
+    {
+      "root": "زيد",
+      "wk": "zyd",
+      "id": 573,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Augmentation/Surplus"
+    },
+    {
+      "root": "سال",
+      "wk": "s a l",
+      "id": 1189,
+      "senses": 10,
+      "concepts": 2,
+      "etym": "Demande/Question"
+    },
+    {
+      "root": "سبت",
+      "wk": "sbt",
+      "id": 601,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Sabbat/Repos"
+    },
+    {
+      "root": "سبح",
+      "wk": "sbh",
+      "id": 440,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Mouvement/Flottement"
+    },
+    {
+      "root": "سبط",
+      "wk": "sbT",
+      "id": 2692,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Étirement/Extension"
+    },
+    {
+      "root": "سبل",
+      "wk": "sbl",
+      "id": 743,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Pluie/Abondance"
+    },
+    {
+      "root": "سجد",
+      "wk": "sjd",
+      "id": 448,
+      "senses": 14,
+      "concepts": 6,
+      "etym": "Humilité/Soumission"
+    },
+    {
+      "root": "سدد",
+      "wk": "sdd_s",
+      "id": 2686,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Rectitude/Justesse"
+    },
+    {
+      "root": "سدس",
+      "wk": "sds",
+      "id": 1446,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Fraction/Sixième"
+    },
+    {
+      "root": "سرف",
+      "wk": "srf2",
+      "id": 2671,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Excès/Gaspillage"
+    },
+    {
+      "root": "سعر",
+      "wk": "ser",
+      "id": 1430,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Embrasement/Intensité"
+    },
+    {
+      "root": "سفح",
+      "wk": "sfH",
+      "id": 2693,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Effusion/Écoulement"
+    },
+    {
+      "root": "سفل",
+      "wk": "sfl",
+      "id": 1570,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Bas/Inférieur"
+    },
+    {
+      "root": "سفه",
+      "wk": "sfh",
+      "id": 332,
+      "senses": 8,
+      "concepts": 4,
+      "etym": "Légèreté/Stupidité"
+    },
+    {
+      "root": "سكر",
+      "wk": "skr",
+      "id": 1485,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Altération/Trouble"
+    },
+    {
+      "root": "سكن",
+      "wk": "skn",
+      "id": 462,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Calme/Repos"
+    },
+    {
+      "root": "سلح",
+      "wk": "slH",
+      "id": 2694,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Armement/Arme"
+    },
+    {
+      "root": "سلط",
+      "wk": "slt",
+      "id": 1363,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Domination/Autorité"
+    },
+    {
+      "root": "سلم",
+      "wk": "slm",
+      "id": 627,
+      "senses": 21,
+      "concepts": 7,
+      "etym": "Intégrité/Préservation"
+    },
+    {
+      "root": "سمع",
+      "wk": "sme",
+      "id": 302,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Audition/Écoute"
+    },
+    {
+      "root": "سمو",
+      "wk": "smw",
+      "id": 249,
+      "senses": 50,
+      "concepts": 12,
+      "etym": "Hauteur/Élévation"
+    },
+    {
+      "root": "سنن",
+      "wk": "snn",
+      "id": 1120,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Aiguisement"
+    },
+    {
+      "root": "سوا",
+      "wk": "swa",
+      "id": 539,
+      "senses": 11,
+      "concepts": 4,
+      "etym": "Mal/Mauvais"
+    },
+    {
+      "root": "سوي",
+      "wk": "swy",
+      "id": 295,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Égalité/Équivalence"
+    },
+    {
+      "root": "شبه",
+      "wk": "shbh",
+      "id": 399,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Ressemblance/Similitude"
+    },
+    {
+      "root": "شجر",
+      "wk": "shjr",
+      "id": 469,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Arbre/Végétation"
+    },
+    {
+      "root": "شحح",
+      "wk": "shhh",
+      "id": 1560,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Avarice/Rétention"
+    },
+    {
+      "root": "شدد",
+      "wk": "shdd",
+      "id": 675,
+      "senses": 13,
+      "concepts": 6,
+      "etym": "Force/Solidité"
+    },
+    {
+      "root": "شرك",
+      "wk": "shrk",
+      "id": 737,
+      "senses": 11,
+      "concepts": 4,
+      "etym": "Partage/Copartenariat"
+    },
+    {
+      "root": "شري",
+      "wk": "šry",
+      "id": 338,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Commerce/Échange"
+    },
+    {
+      "root": "شطن",
+      "wk": "stn",
+      "id": 329,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Éloignement/Distance"
+    },
+    {
+      "root": "شفع",
+      "wk": "shfe",
+      "id": 533,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Parité/Couple"
+    },
+    {
+      "root": "شقق",
+      "wk": "šqq",
+      "id": 640,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Fente/Fracture"
+    },
+    {
+      "root": "شكر",
+      "wk": "škr",
+      "id": 546,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Gratitude/Reconnaissance"
+    },
+    {
+      "root": "شكك",
+      "wk": "škk",
+      "id": 1578,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Doute/Incertitude"
+    },
+    {
+      "root": "شهد",
+      "wk": "shhd",
+      "id": 382,
+      "senses": 17,
+      "concepts": 7,
+      "etym": "Témoignage/Déclaration"
+    },
+    {
+      "root": "شهر",
+      "wk": "shhr",
+      "id": 2023,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Mois/Cycle lunaire"
+    },
+    {
+      "root": "شهو",
+      "wk": "shhw",
+      "id": 1233,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Désir/Convoitise"
+    },
+    {
+      "root": "شيا",
+      "wk": "shy",
+      "id": 466,
+      "senses": 15,
+      "concepts": 6,
+      "etym": "Volonté"
+    },
+    {
+      "root": "شيد",
+      "wk": "shyd",
+      "id": 1526,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Édification/Construction"
+    },
+    {
+      "root": "صبر",
+      "wk": "sbr",
+      "id": 502,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Patience/Endurance"
+    },
+    {
+      "root": "صحب",
+      "wk": "shb",
+      "id": 476,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Compagnonnage/Association"
+    },
+    {
+      "root": "صدد",
+      "wk": "sdd",
+      "id": 1018,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Empêchement/Obstruction"
+    },
+    {
+      "root": "صدر",
+      "wk": "sdr",
+      "id": 1245,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Sens isolé/Retour"
+    },
+    {
+      "root": "صدق",
+      "wk": "sdq",
+      "id": 384,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Vérité/Sincérité"
+    },
+    {
+      "root": "صرط",
+      "wk": "srt",
+      "id": 262,
+      "senses": 8,
+      "concepts": 6,
+      "etym": "Chemin/Voie"
+    },
+    {
+      "root": "صعد",
+      "wk": "sed",
+      "id": 1365,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Ascension/Élévation"
+    },
+    {
+      "root": "صعق",
+      "wk": "seq",
+      "id": 554,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Foudre/Éclair"
+    },
+    {
+      "root": "صلب",
+      "wk": "slb",
+      "id": 1462,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Solidité/Reins"
+    },
+    {
+      "root": "صلح",
+      "wk": "slh",
+      "id": 326,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Bonté/Rectitude"
+    },
+    {
+      "root": "صلو",
+      "wk": "slw",
+      "id": 283,
+      "senses": 8,
+      "concepts": 4,
+      "etym": "Corps/Anatomie"
+    },
+    {
+      "root": "صلي",
+      "wk": "sly",
+      "id": 1469,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Combustion/Châtiment"
+    },
+    {
+      "root": "صوب",
+      "wk": "swb",
+      "id": 917,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Atteinte/Affliction"
+    },
+    {
+      "root": "صوم",
+      "wk": "Swm",
+      "id": 2695,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Silence/Abstention"
+    },
+    {
+      "root": "صير",
+      "wk": "syr",
+      "id": 796,
+      "senses": 16,
+      "concepts": 4,
+      "etym": "Devenir/Destination"
+    },
+    {
+      "root": "ضجع",
+      "wk": "dje",
+      "id": 1444,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Couchage/Repos"
+    },
+    {
+      "root": "ضرب",
+      "wk": "drb",
+      "id": 405,
+      "senses": 8,
+      "concepts": 4,
+      "etym": "Frappe/Coup"
+    },
+    {
+      "root": "ضرر",
+      "wk": "drr",
+      "id": 795,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Nuisance/Mal"
+    },
+    {
+      "root": "ضعف",
+      "wk": "def",
+      "id": 1076,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Faiblesse/Fragilité"
+    },
+    {
+      "root": "ضلل",
+      "wk": "dll",
+      "id": 268,
+      "senses": 35,
+      "concepts": 9,
+      "etym": "Égarement/Déviation"
+    },
+    {
+      "root": "طبع",
+      "wk": "TbE",
+      "id": 2696,
+      "senses": 11,
+      "concepts": 3,
+      "etym": "Scellage/Empreinte"
+    },
+    {
+      "root": "طرق",
+      "wk": "trq",
+      "id": 1583,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Frappe/Percussion"
+    },
+    {
+      "root": "طعن",
+      "wk": "ten",
+      "id": 1491,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Perçage/Attaque"
+    },
+    {
+      "root": "طغي",
+      "wk": "tgy",
+      "id": 2598,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Inondation/Débordement"
+    },
+    {
+      "root": "طمس",
+      "wk": "tms",
+      "id": 1490,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Effacement/Oblitération"
+    },
+    {
+      "root": "طهر",
+      "wk": "thr",
+      "id": 402,
+      "senses": 12,
+      "concepts": 4,
+      "etym": "Pureté/Purification"
+    },
+    {
+      "root": "طور",
+      "wk": "twr",
+      "id": 605,
+      "senses": 19,
+      "concepts": 7,
+      "etym": "Cour/Abords"
+    },
+    {
+      "root": "طوع",
+      "wk": "twa",
+      "id": 1251,
+      "senses": 17,
+      "concepts": 5,
+      "etym": "Obéissance/Soumission volontaire"
+    },
+    {
+      "root": "طوف",
+      "wk": "twf",
+      "id": 790,
+      "senses": 18,
+      "concepts": 6,
+      "etym": "Patrouille/Ronde"
+    },
+    {
+      "root": "طول",
+      "wk": "twl",
+      "id": 1084,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Longueur/Extension"
+    },
+    {
+      "root": "طيب",
+      "wk": "tyb",
+      "id": 564,
+      "senses": 12,
+      "concepts": 4,
+      "etym": "Bonté/Pureté"
+    },
+    {
+      "root": "ظلل",
+      "wk": "z l l",
+      "id": 2335,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Ombre/Ombrage"
+    },
+    {
+      "root": "ظلم",
+      "wk": "zlm",
+      "id": 354,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Injustice/Oppression"
+    },
+    {
+      "root": "ظنن",
+      "wk": "znn",
+      "id": 501,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Pensée/Supposition"
+    },
+    {
+      "root": "عبد",
+      "wk": "ebd",
+      "id": 259,
+      "senses": 15,
+      "concepts": 5,
+      "etym": "Adoration/Dévotion"
+    },
+    {
+      "root": "عبر",
+      "wk": "ebr",
+      "id": 1238,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Traversée/Passage"
+    },
+    {
+      "root": "عتد",
+      "wk": "etd",
+      "id": 600,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Préparation/Prêt"
+    },
+    {
+      "root": "عجل",
+      "wk": "ejl",
+      "id": 530,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Hâte/Précipitation"
+    },
+    {
+      "root": "عدد",
+      "wk": "edd",
+      "id": 377,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Dénombrement/Calcul"
+    },
+    {
+      "root": "عدل",
+      "wk": "edl",
+      "id": 535,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Justice/Équité"
+    },
+    {
+      "root": "عدو",
+      "wk": "edw",
+      "id": 457,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Course/Vitesse"
+    },
+    {
+      "root": "عذب",
+      "wk": "edb",
+      "id": 314,
+      "senses": 13,
+      "concepts": 5,
+      "etym": "Douceur"
+    },
+    {
+      "root": "عرض",
+      "wk": "erd",
+      "id": 417,
+      "senses": 12,
+      "concepts": 5,
+      "etym": "Largeur/Étendue"
+    },
+    {
+      "root": "عرف",
+      "wk": "erf",
+      "id": 682,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Connaissance/Reconnaissance"
+    },
+    {
+      "root": "عزز",
+      "wk": "ezz",
+      "id": 807,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Puissance/Gloire"
+    },
+    {
+      "root": "عزل",
+      "wk": "ezl",
+      "id": 1021,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Isolement/Écart"
+    },
+    {
+      "root": "عشر",
+      "wk": "eshr",
+      "id": 589,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Nombre/Complétude"
+    },
+    {
+      "root": "عصم",
+      "wk": "esm",
+      "id": 1314,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Protection/Préservation"
+    },
+    {
+      "root": "عصي",
+      "wk": "esy",
+      "id": 594,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Bâton/Verge"
+    },
+    {
+      "root": "عضل",
+      "wk": "EDl",
+      "id": 2697,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Anatomie/Muscle"
+    },
+    {
+      "root": "عظم",
+      "wk": "ezm",
+      "id": 310,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Structure/Ossature"
+    },
+    {
+      "root": "عفف",
+      "wk": "e f f",
+      "id": 1186,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Chasteté/Retenue"
+    },
+    {
+      "root": "عفو",
+      "wk": "efw",
+      "id": 547,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Pardon/Effacement"
+    },
+    {
+      "root": "عقد",
+      "wk": "eqd",
+      "id": 1069,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Nœud/Contrat"
+    },
+    {
+      "root": "علق",
+      "wk": "elq",
+      "id": 1558,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Accrochage/Attachement"
+    },
+    {
+      "root": "علم",
+      "wk": "elm",
+      "id": 254,
+      "senses": 22,
+      "concepts": 6,
+      "etym": "Savoir/Connaissance"
+    },
+    {
+      "root": "علو",
+      "wk": "elw",
+      "id": 371,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Hauteur/Élévation"
+    },
+    {
+      "root": "عمد",
+      "wk": "emd",
+      "id": 1541,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Support/Pilier"
+    },
+    {
+      "root": "عمل",
+      "wk": "eml",
+      "id": 393,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Action/Oeuvre"
+    },
+    {
+      "root": "عمم",
+      "wk": "emm",
+      "id": 643,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Généralité/Parenté"
+    },
+    {
+      "root": "عنت",
+      "wk": "ent",
+      "id": 1025,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Difficulté/Souffrance"
+    },
+    {
+      "root": "عند",
+      "wk": "end",
+      "id": 566,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Déviation/Obstination"
+    },
+    {
+      "root": "عول",
+      "wk": "ewl",
+      "id": 1040,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Déviation/Injustice"
+    },
+    {
+      "root": "غرر",
+      "wk": "grr",
+      "id": 1301,
+      "senses": 20,
+      "concepts": 6,
+      "etym": "Tromperie/Illusion"
+    },
+    {
+      "root": "غسل",
+      "wk": "ghsl",
+      "id": 1486,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Lavage/Purification"
+    },
+    {
+      "root": "غضب",
+      "wk": "ghdb",
+      "id": 267,
+      "senses": 39,
+      "concepts": 10,
+      "etym": "Contraire de al-rida"
+    },
+    {
+      "root": "غفر",
+      "wk": "ghf",
+      "id": 571,
+      "senses": 11,
+      "concepts": 3,
+      "etym": "Pardon/Couverture"
+    },
+    {
+      "root": "غفل",
+      "wk": "ghfl",
+      "id": 642,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Insouciance/Négligence"
+    },
+    {
+      "root": "غلب",
+      "wk": "ghlb",
+      "id": 1099,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Victoire/Domination"
+    },
+    {
+      "root": "غلظ",
+      "wk": "ghlz",
+      "id": 1382,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Dureté/Sévérité"
+    },
+    {
+      "root": "غلف",
+      "wk": "ghl f",
+      "id": 1577,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Enveloppe/Recouvrement"
+    },
+    {
+      "root": "غلو",
+      "wk": "ghlw",
+      "id": 1586,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Excès/Exagération"
+    },
+    {
+      "root": "غنم",
+      "wk": "ghn",
+      "id": 1544,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Butin/Capture"
+    },
+    {
+      "root": "غني",
+      "wk": "gny",
+      "id": 2584,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Richesse/Autosuffisance"
+    },
+    {
+      "root": "غوط",
+      "wk": "ghwt",
+      "id": 1487,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Fosse/Dépression"
+    },
+    {
+      "root": "غيب",
+      "wk": "gyb",
+      "id": 2605,
+      "senses": 16,
+      "concepts": 5,
+      "etym": "Absence/Invisibilité"
+    },
+    {
+      "root": "غير",
+      "wk": "ghyr",
+      "id": 266,
+      "senses": 27,
+      "concepts": 8,
+      "etym": "Provision/Subsistance"
+    },
+    {
+      "root": "فتح",
+      "wk": "fth",
+      "id": 636,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Ouverture/Victoire"
+    },
+    {
+      "root": "فتل",
+      "wk": "ftl",
+      "id": 1489,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Torsion/Filage"
+    },
+    {
+      "root": "فتن",
+      "wk": "ftn",
+      "id": 879,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Épreuve/Tentation"
+    },
+    {
+      "root": "فتي",
+      "wk": "fty",
+      "id": 1461,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Jeunesse/Vigueur"
+    },
+    {
+      "root": "فحش",
+      "wk": "fhš",
+      "id": 944,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Indécence/Turpitude"
+    },
+    {
+      "root": "فخر",
+      "wk": "fḫr",
+      "id": 1479,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Poterie/Terre cuite"
+    },
+    {
+      "root": "فرض",
+      "wk": "frd",
+      "id": 618,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Sens isolé/Entaille"
+    },
+    {
+      "root": "فرق",
+      "wk": "frq",
+      "id": 515,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Séparation/Distinction"
+    },
+    {
+      "root": "فري",
+      "wk": "fry",
+      "id": 2482,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Coupure/Fente"
+    },
+    {
+      "root": "فضل",
+      "wk": "fdl",
+      "id": 524,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Reste/Surplus"
+    },
+    {
+      "root": "فضو",
+      "wk": "fdw",
+      "id": 983,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Extension/Diffusion"
+    },
+    {
+      "root": "فعل",
+      "wk": "fel",
+      "id": 374,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Action/Acte"
+    },
+    {
+      "root": "فقر",
+      "wk": "fqr",
+      "id": 1721,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Pauvreté/Besoin"
+    },
+    {
+      "root": "فقه",
+      "wk": "fqh",
+      "id": 1529,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Compréhension/Discernement"
+    },
+    {
+      "root": "فوز",
+      "wk": "fwz",
+      "id": 1405,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Succès/Salut"
+    },
+    {
+      "root": "فوق",
+      "wk": "fwq",
+      "id": 407,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Supériorité/Dessus"
+    },
+    {
+      "root": "قبل",
+      "wk": "qbl",
+      "id": 291,
+      "senses": 13,
+      "concepts": 6,
+      "etym": "Réception/Accueil"
+    },
+    {
+      "root": "قتل",
+      "wk": "qtl",
+      "id": 556,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Meurtre/Combat"
+    },
+    {
+      "root": "قدر",
+      "wk": "qdr",
+      "id": 373,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Mesure/Détermination"
+    },
+    {
+      "root": "قدم",
+      "wk": "qdm",
+      "id": 698,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Pied/Marche"
+    },
+    {
+      "root": "قرا",
+      "wk": "qra",
+      "id": 512,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Lecture/Récitation"
+    },
+    {
+      "root": "قرب",
+      "wk": "qrb",
+      "id": 467,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Proximité/Rapprochement"
+    },
+    {
+      "root": "قرن",
+      "wk": "qrn",
+      "id": 1477,
+      "senses": 9,
+      "concepts": 5,
+      "etym": "Corne/Excroissance"
+    },
+    {
+      "root": "قري",
+      "wk": "qry",
+      "id": 568,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Établissement humain"
+    },
+    {
+      "root": "قسط",
+      "wk": "qst",
+      "id": 1240,
+      "senses": 20,
+      "concepts": 7,
+      "etym": "Justice/Équité"
+    },
+    {
+      "root": "قسم",
+      "wk": "qsm",
+      "id": 1433,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Partage/Division"
+    },
+    {
+      "root": "قصر",
+      "wk": "qsr",
+      "id": 1550,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Brièveté/Réduction"
+    },
+    {
+      "root": "قصص",
+      "wk": "qss",
+      "id": 956,
+      "senses": 17,
+      "concepts": 6,
+      "etym": "Suivi/Pistage"
+    },
+    {
+      "root": "قضي",
+      "wk": "qdy",
+      "id": 768,
+      "senses": 13,
+      "concepts": 4,
+      "etym": "Jugement/Décret"
+    },
+    {
+      "root": "قعد",
+      "wk": "qed",
+      "id": 1340,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Position assise/Immobilité"
+    },
+    {
+      "root": "قلب",
+      "wk": "qlb",
+      "id": 301,
+      "senses": 14,
+      "concepts": 4,
+      "etym": "Retournement/Changement"
+    },
+    {
+      "root": "قلل",
+      "wk": "qll",
+      "id": 493,
+      "senses": 10,
+      "concepts": 2,
+      "etym": "Quantité/Rareté"
+    },
+    {
+      "root": "قنت",
+      "wk": "qnt",
+      "id": 753,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Dévotion/Humilité"
+    },
+    {
+      "root": "قنطر",
+      "wk": "qntṛ",
+      "id": 1291,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Richesse/Abondance"
+    },
+    {
+      "root": "قوت",
+      "wk": "qwt",
+      "id": 1532,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Subsistance/Nourriture"
+    },
+    {
+      "root": "قول",
+      "wk": "qwl",
+      "id": 307,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Parole/Énonciation"
+    },
+    {
+      "root": "قوم",
+      "wk": "qwm",
+      "id": 263,
+      "senses": 30,
+      "concepts": 8,
+      "etym": "Verticalité/Droiture"
+    },
+    {
+      "root": "كبر",
+      "wk": "kbr",
+      "id": 451,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Grandeur/Importance"
+    },
+    {
+      "root": "كتب",
+      "wk": "ktb",
+      "id": 275,
+      "senses": 36,
+      "concepts": 5,
+      "etym": "Écriture/Inscription"
+    },
+    {
+      "root": "كتم",
+      "wk": "ktm",
+      "id": 471,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Dissimulation/Secret"
+    },
+    {
+      "root": "كثر",
+      "wk": "kṯr",
+      "id": 413,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Abondance/Multiplicité"
+    },
+    {
+      "root": "كذب",
+      "wk": "kḏb",
+      "id": 317,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Mensonge/Fausseté"
+    },
+    {
+      "root": "كرم",
+      "wk": "krm",
+      "id": 1470,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Générosité/Noblesse"
+    },
+    {
+      "root": "كره",
+      "wk": "krh",
+      "id": 1010,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Aversion/Répugnance"
+    },
+    {
+      "root": "كسب",
+      "wk": "ksb",
+      "id": 647,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Acquisition/Rétribution"
+    },
+    {
+      "root": "كسل",
+      "wk": "ksl",
+      "id": 1572,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Paresse/Nonchalance"
+    },
+    {
+      "root": "كسو",
+      "wk": "ksw",
+      "id": 1137,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Vêtement/Couverture"
+    },
+    {
+      "root": "كفر",
+      "wk": "kfr",
+      "id": 294,
+      "senses": 16,
+      "concepts": 6,
+      "etym": "Couverture/Dissimulation"
+    },
+    {
+      "root": "كفف",
+      "wk": "kff",
+      "id": 1004,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Main/Contenance"
+    },
+    {
+      "root": "كفل",
+      "wk": "kfl",
+      "id": 1266,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Tutelle/Garantie"
+    },
+    {
+      "root": "كفي",
+      "wk": "kfa",
+      "id": 1523,
+      "senses": 29,
+      "concepts": 11,
+      "etym": "Retournement/Inversion"
+    },
+    {
+      "root": "كلف",
+      "wk": "klf",
+      "id": 1210,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Charge/Obligation"
+    },
+    {
+      "root": "كلل",
+      "wk": "kll",
+      "id": 372,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Corps/Anatomie"
+    },
+    {
+      "root": "كلم",
+      "wk": "klm",
+      "id": 478,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Blessure"
+    },
+    {
+      "root": "كود",
+      "wk": "kwd",
+      "id": 630,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Imminence/Presque"
+    },
+    {
+      "root": "كون",
+      "wk": "knw",
+      "id": 2117,
+      "senses": 12,
+      "concepts": 3,
+      "etym": "Existence/Devenir"
+    },
+    {
+      "root": "كيد",
+      "wk": "kyd",
+      "id": 1329,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Ruse/Stratagème"
+    },
+    {
+      "root": "كيف",
+      "wk": "kyf",
+      "id": 1135,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Interrogation/Manière"
+    },
+    {
+      "root": "لدن",
+      "wk": "ldn",
+      "id": 1223,
+      "senses": 9,
+      "concepts": 2,
+      "etym": "Souplesse/Flexibilité"
+    },
+    {
+      "root": "لعن",
+      "wk": "len",
+      "id": 680,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Malédiction/Exclusion"
+    },
+    {
+      "root": "لقي",
+      "wk": "lqy",
+      "id": 327,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Rencontre/Face à face"
+    },
+    {
+      "root": "لمس",
+      "wk": "lms",
+      "id": 1488,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Toucher/Contact"
+    },
+    {
+      "root": "لوي",
+      "wk": "lwy",
+      "id": 499,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Torsion/Déviation"
+    },
+    {
+      "root": "ليس",
+      "wk": "lys",
+      "id": 761,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Négation/Non-existence"
+    },
+    {
+      "root": "متع",
+      "wk": "mtae",
+      "id": 853,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Durée/Extension"
+    },
+    {
+      "root": "مثل",
+      "wk": "mvl",
+      "id": 2599,
+      "senses": 12,
+      "concepts": 3,
+      "etym": "Ressemblance/Identité"
+    },
+    {
+      "root": "مرا",
+      "wk": "mraa",
+      "id": 2470,
+      "senses": 8,
+      "concepts": 4,
+      "etym": "Personne/Individu"
+    },
+    {
+      "root": "مرد",
+      "wk": "mrd",
+      "id": 2698,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Absence de poils/Glabreté"
+    },
+    {
+      "root": "مرض",
+      "wk": "mrD",
+      "id": 311,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Maladie/Faiblesse"
+    },
+    {
+      "root": "مسح",
+      "wk": "msh",
+      "id": 1271,
+      "senses": 5,
+      "concepts": 3,
+      "etym": "Essuyage/Onction"
+    },
+    {
+      "root": "مسك",
+      "wk": "msk",
+      "id": 1053,
+      "senses": 14,
+      "concepts": 4,
+      "etym": "Saisie/Rétention"
+    },
+    {
+      "root": "مطر",
+      "wk": "mTr",
+      "id": 2699,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Pluie"
+    },
+    {
+      "root": "ملك",
+      "wk": "mlk",
+      "id": 256,
+      "senses": 19,
+      "concepts": 6,
+      "etym": "Possession/Autorité"
+    },
+    {
+      "root": "ملل",
+      "wk": "mll",
+      "id": 773,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Lassitude/Ennui"
+    },
+    {
+      "root": "منع",
+      "wk": "mne",
+      "id": 1574,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Empêchement/Interdiction"
+    },
+    {
+      "root": "منن",
+      "wk": "mnn",
+      "id": 561,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Faveur/Rappel"
+    },
+    {
+      "root": "مني",
+      "wk": "mny",
+      "id": 608,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Semence"
+    },
+    {
+      "root": "موت",
+      "wk": "mwt",
+      "id": 364,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Mort/Cessation"
+    },
+    {
+      "root": "مول",
+      "wk": "mwl",
+      "id": 1148,
+      "senses": 7,
+      "concepts": 1,
+      "etym": "Richesse/Biens"
+    },
+    {
+      "root": "ميل",
+      "wk": "myl",
+      "id": 1467,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Inclinaison/Pencher"
+    },
+    {
+      "root": "نبا",
+      "wk": "nbaa",
+      "id": 2185,
+      "senses": 10,
+      "concepts": 4,
+      "etym": "Annonce/Information grave"
+    },
+    {
+      "root": "نبط",
+      "wk": "nbT",
+      "id": 2700,
+      "senses": 9,
+      "concepts": 2,
+      "etym": "Jaillissement/Extraction"
+    },
+    {
+      "root": "نجو",
+      "wk": "njw",
+      "id": 518,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Salut/Délivrance"
+    },
+    {
+      "root": "نحل",
+      "wk": "nhl",
+      "id": 1423,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Don/Cadeau nuptial"
+    },
+    {
+      "root": "نذر",
+      "wk": "nðr",
+      "id": 1254,
+      "senses": 11,
+      "concepts": 3,
+      "etym": "Vœu/Consécration"
+    },
+    {
+      "root": "نزع",
+      "wk": "nza",
+      "id": 1248,
+      "senses": 18,
+      "concepts": 6,
+      "etym": "Aspiration/Nostalgie"
+    },
+    {
+      "root": "نزل",
+      "wk": "nzl",
+      "id": 289,
+      "senses": 13,
+      "concepts": 3,
+      "etym": "Descente/Révélation"
+    },
+    {
+      "root": "نسو",
+      "wk": "nsw",
+      "id": 2198,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Féminin/Épouses"
+    },
+    {
+      "root": "نشز",
+      "wk": "nshz",
+      "id": 1136,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Élévation/Rébellion"
+    },
+    {
+      "root": "نصب",
+      "wk": "nsb",
+      "id": 994,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Érection/Installation"
+    },
+    {
+      "root": "نصر",
+      "wk": "nsr",
+      "id": 537,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Secours/Victoire"
+    },
+    {
+      "root": "نصف",
+      "wk": "nsf",
+      "id": 1067,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Moitié/Milieu"
+    },
+    {
+      "root": "نضج",
+      "wk": "ndj",
+      "id": 1496,
+      "senses": 8,
+      "concepts": 1,
+      "etym": "Maturation/Cuisson"
+    },
+    {
+      "root": "نظر",
+      "wk": "nzr",
+      "id": 522,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Regard/Contemplation"
+    },
+    {
+      "root": "نعم",
+      "wk": "nem",
+      "id": 264,
+      "senses": 23,
+      "concepts": 4,
+      "etym": "Douceur/Aisance"
+    },
+    {
+      "root": "نفر",
+      "wk": "nfr",
+      "id": 1517,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Fuite/Aversion"
+    },
+    {
+      "root": "نفس",
+      "wk": "nfs",
+      "id": 298,
+      "senses": 11,
+      "concepts": 5,
+      "etym": "Âme/Être"
+    },
+    {
+      "root": "نفع",
+      "wk": "nfa",
+      "id": 933,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Utilité/Profit"
+    },
+    {
+      "root": "نفق",
+      "wk": "nfq",
+      "id": 285,
+      "senses": 11,
+      "concepts": 5,
+      "etym": "Dépense/Distribution"
+    },
+    {
+      "root": "نقر",
+      "wk": "nqr",
+      "id": 1492,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Perforation/Creusement"
+    },
+    {
+      "root": "نقض",
+      "wk": "nqd",
+      "id": 424,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Rupture/Défaction"
+    },
+    {
+      "root": "نكح",
+      "wk": "nkh",
+      "id": 1026,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Mariage/Union"
+    },
+    {
+      "root": "نكف",
+      "wk": "nkf",
+      "id": 1584,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Dédain/Refus altier"
+    },
+    {
+      "root": "نكل",
+      "wk": "nkl",
+      "id": 595,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Liens/Chaînes"
+    },
+    {
+      "root": "نهر",
+      "wk": "nhr",
+      "id": 397,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Eau/Cours d'eau"
+    },
+    {
+      "root": "نهي",
+      "wk": "nthy",
+      "id": 1588,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Terminus/Limite"
+    },
+    {
+      "root": "نور",
+      "wk": "nwr",
+      "id": 349,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Lumière/Clarté"
+    },
+    {
+      "root": "نوس",
+      "wk": "nws",
+      "id": 303,
+      "senses": 7,
+      "concepts": 4,
+      "etym": "Humanité/Peuple"
+    },
+    {
+      "root": "هجر",
+      "wk": "hjr",
+      "id": 2701,
+      "senses": 14,
+      "concepts": 4,
+      "etym": "Abandon/Séparation"
+    },
+    {
+      "root": "هدي",
+      "wk": "hdy",
+      "id": 261,
+      "senses": 14,
+      "concepts": 5,
+      "etym": "Guidance/Direction"
+    },
+    {
+      "root": "هزا",
+      "wk": "hza",
+      "id": 320,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Moquerie/Dérision"
+    },
+    {
+      "root": "هلك",
+      "wk": "hlk",
+      "id": 982,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Destruction/Anéantissement"
+    },
+    {
+      "root": "همم",
+      "wk": "hmm",
+      "id": 279,
+      "senses": 10,
+      "concepts": 5,
+      "etym": "Souci/Inquiétude"
+    },
+    {
+      "root": "هنا",
+      "wk": "hna",
+      "id": 1425,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Agrément/Bienfaisance"
+    },
+    {
+      "root": "هود",
+      "wk": "hwd",
+      "id": 740,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Judaïsme/Juifs"
+    },
+    {
+      "root": "هون",
+      "wk": "hwn",
+      "id": 1303,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Humiliation/Mépris"
+    },
+    {
+      "root": "هوي",
+      "wk": "hwy",
+      "id": 398,
+      "senses": 6,
+      "concepts": 4,
+      "etym": "Chute/Descente"
+    },
+    {
+      "root": "وثق",
+      "wk": "wthq",
+      "id": 426,
+      "senses": 10,
+      "concepts": 1,
+      "etym": "Fermeté/Confiance"
+    },
+    {
+      "root": "وجد",
+      "wk": "wjd",
+      "id": 700,
+      "senses": 19,
+      "concepts": 5,
+      "etym": "Découverte/Existence"
+    },
+    {
+      "root": "وجه",
+      "wk": "wjh",
+      "id": 747,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Visage/Direction"
+    },
+    {
+      "root": "وحد",
+      "wk": "wahd",
+      "id": 2218,
+      "senses": 8,
+      "concepts": 3,
+      "etym": "Unicité/Unité"
+    },
+    {
+      "root": "وحي",
+      "wk": "why",
+      "id": 1579,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Signal/Indication"
+    },
+    {
+      "root": "ودد",
+      "wk": "wdd",
+      "id": 703,
+      "senses": 12,
+      "concepts": 3,
+      "etym": "Amour/Affection"
+    },
+    {
+      "root": "ودي",
+      "wk": "wdy_v",
+      "id": 2637,
+      "senses": 9,
+      "concepts": 3,
+      "etym": "Vallée/Cours d'eau"
+    },
+    {
+      "root": "وذر",
+      "wk": "wdhr",
+      "id": 2679,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Abandon/Délaissement"
+    },
+    {
+      "root": "ورث",
+      "wk": "wrṯ",
+      "id": 1480,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Héritage/Succession"
+    },
+    {
+      "root": "وري",
+      "wk": "wry",
+      "id": 685,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Dissimulation"
+    },
+    {
+      "root": "وسع",
+      "wk": "wsa",
+      "id": 1711,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Largeur/Capacité"
+    },
+    {
+      "root": "وصل",
+      "wk": "wsl",
+      "id": 429,
+      "senses": 6,
+      "concepts": 1,
+      "etym": "Liaison/Connexion"
+    },
+    {
+      "root": "وصي",
+      "wk": "wsy",
+      "id": 813,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Liaison/Connexion"
+    },
+    {
+      "root": "وضع",
+      "wk": "wde",
+      "id": 1262,
+      "senses": 12,
+      "concepts": 4,
+      "etym": "Dépôt/Placement"
+    },
+    {
+      "root": "وعد",
+      "wk": "wed",
+      "id": 525,
+      "senses": 9,
+      "concepts": 4,
+      "etym": "Promesse/Engagement"
+    },
+    {
+      "root": "وعظ",
+      "wk": "wez",
+      "id": 598,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Exhortation/Conseil"
+    },
+    {
+      "root": "وفق",
+      "wk": "wfq",
+      "id": 1472,
+      "senses": 5,
+      "concepts": 1,
+      "etym": "Réussite/Concordance"
+    },
+    {
+      "root": "وفي",
+      "wk": "wfy",
+      "id": 487,
+      "senses": 13,
+      "concepts": 4,
+      "etym": "Fidélité/Accomplissement"
+    },
+    {
+      "root": "وقت",
+      "wk": "wqt",
+      "id": 971,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Temps fixé/Rendez-vous"
+    },
+    {
+      "root": "وقع",
+      "wk": "wqa",
+      "id": 1547,
+      "senses": 6,
+      "concepts": 2,
+      "etym": "Chute/Occurrence"
+    },
+    {
+      "root": "وقي",
+      "wk": "wqy",
+      "id": 277,
+      "senses": 10,
+      "concepts": 2,
+      "etym": "Protection/Préservation"
+    },
+    {
+      "root": "وكل",
+      "wk": "wkl",
+      "id": 1343,
+      "senses": 9,
+      "concepts": 2,
+      "etym": "Délégation/Remise"
+    },
+    {
+      "root": "ولد",
+      "wk": "wld",
+      "id": 2576,
+      "senses": 35,
+      "concepts": 11,
+      "etym": "Engendrer/Naissance"
+    },
+    {
+      "root": "ولي",
+      "wk": "wly",
+      "id": 599,
+      "senses": 26,
+      "concepts": 6,
+      "etym": "Proximité/Protection"
+    },
+    {
+      "root": "وهن",
+      "wk": "whn",
+      "id": 1361,
+      "senses": 7,
+      "concepts": 2,
+      "etym": "Faiblesse/Fragilité"
+    },
+    {
+      "root": "يتم",
+      "wk": "ytm",
+      "id": 664,
+      "senses": 8,
+      "concepts": 2,
+      "etym": "Orphelinat/Solitude"
+    },
+    {
+      "root": "يدي",
+      "wk": "ydy",
+      "id": 597,
+      "senses": 18,
+      "concepts": 6,
+      "etym": "Main/Corps"
+    },
+    {
+      "root": "يسر",
+      "wk": "ysr",
+      "id": 968,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Facilité/Aisance"
+    },
+    {
+      "root": "يقن",
+      "wk": "yqn",
+      "id": 293,
+      "senses": 5,
+      "concepts": 2,
+      "etym": "Certitude/Conviction"
+    },
+    {
+      "root": "يمم",
+      "wk": "ymm",
+      "id": 1161,
+      "senses": 7,
+      "concepts": 3,
+      "etym": "Direction/Orientation"
+    },
+    {
+      "root": "يمن",
+      "wk": "ymn",
+      "id": 1028,
+      "senses": 6,
+      "concepts": 3,
+      "etym": "Droite/Serment"
+    },
+    {
+      "root": "يوم",
+      "wk": "ywm",
+      "id": 257,
+      "senses": 10,
+      "concepts": 3,
+      "etym": "Temps/Période"
+    }
+  ]
+}

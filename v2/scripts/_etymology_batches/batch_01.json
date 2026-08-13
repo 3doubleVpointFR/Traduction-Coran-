@@ -1,0 +1,2285 @@
+[
+  {
+    "aid": 352,
+    "word_key": "dhb",
+    "root_ar": "ذ ه ب",
+    "root_phon": "dhb",
+    "concepts": {
+      "Départ/Mouvement": [
+        "aller",
+        "partir",
+        "passer",
+        "disparaître"
+      ],
+      "Or/Richesse": [
+        "or",
+        "dorer"
+      ],
+      "Doctrine/Voie": [
+        "école de pensée",
+        "suivre une doctrine"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "ذَهَبَ",
+        "itype": "1",
+        "defs": [
+          "went",
+          "in any manner,",
+          "any pace"
+        ]
+      },
+      {
+        "word": "أَذْهَبَ",
+        "itype": "4",
+        "defs": [
+          "He gilded it; did it over with gold."
+        ]
+      },
+      {
+        "word": "تَمَذْهَبَ",
+        "itype": "Q. Q. 2",
+        "defs": [
+          "He followed,",
+          "adopted, a certain religious persuasion",
+          "the like."
+        ]
+      },
+      {
+        "word": "ذَهَبٌ",
+        "itype": "",
+        "defs": [
+          "Gold;",
+          "a certain thing well known;",
+          "i. q."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 354,
+    "word_key": "zlm",
+    "root_ar": "ظ ل م",
+    "root_phon": "zlm",
+    "concepts": {
+      "Injustice/Oppression": [
+        "opprimer",
+        "être injuste",
+        "injustice",
+        "oppresseur"
+      ],
+      "Obscurité/Ténèbres": [
+        "obscurité",
+        "ténèbres"
+      ],
+      "Souffle/Vent": [
+        "se faire du tort"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "ظَلَمَ",
+        "itype": "1",
+        "defs": [
+          "He did wrong;",
+          "acted wrongfully, unjustly, injuriously,",
+          "tyrannically:"
+        ]
+      },
+      {
+        "word": "ظلّمهُ",
+        "itype": "2",
+        "defs": [
+          "He told him that he was",
+          "doing wrong",
+          "acting wrongfully"
+        ]
+      },
+      {
+        "word": "اظلم",
+        "itype": "4",
+        "defs": [
+          "It became dark;",
+          "it became black;",
+          "it came with its darkness."
+        ]
+      },
+      {
+        "word": "تَظَلَّمَ",
+        "itype": "5",
+        "defs": [
+          "He complained of his",
+          "wrongdoing,",
+          "to the judge"
+        ]
+      },
+      {
+        "word": "تظالم القَوْمُ",
+        "itype": "6",
+        "defs": [
+          "The people,",
+          "company of men, treated,",
+          "used, one another wrongfully, unjustly, injuriously,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 363,
+    "word_key": "hḏr",
+    "root_ar": "ح ذ ر",
+    "root_phon": "hḏr",
+    "concepts": {
+      "Prudence/Vigilance": [
+        "être prudent",
+        "se méfier",
+        "craindre",
+        "avertir",
+        "se prémunir mutuellement",
+        "précaution"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "حَذِرَ",
+        "itype": "1",
+        "defs": [
+          "He was cautious, wary,",
+          "vigilant; was on his guard; took care;",
+          "was in a state of preparation;"
+        ]
+      },
+      {
+        "word": "تَحْذِيرٌ",
+        "itype": "2",
+        "defs": [
+          "cautioning",
+          "putting",
+          "on his guard; making"
+        ]
+      },
+      {
+        "word": "حَاذَرَا",
+        "itype": "3",
+        "defs": [
+          "They two were cautious,",
+          "in fear, each of the other; were on their guard,",
+          "in a state of preparation, each against the other."
+        ]
+      },
+      {
+        "word": "احدارّ",
+        "itype": "11",
+        "defs": [
+          "He was angry,",
+          "and prepared himself to do mischief,",
+          "and drew himself together"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 249,
+    "word_key": "smw",
+    "root_ar": "س م و",
+    "root_phon": "s-m-w",
+    "concepts": {
+      "Hauteur/Élévation": [
+        "être haut",
+        "se dresser",
+        "monter",
+        "lever le regard",
+        "aspirer",
+        "noble",
+        "hautain",
+        "rivaliser en éminence",
+        "élever quelqu'un",
+        "dépasser en nombre",
+        "étalon qui bondit",
+        "forme vue de loin",
+        "lune qui se dresse",
+        "surpasser",
+        "éminent"
+      ],
+      "Ciel/Ce qui couvre": [
+        "ciel",
+        "toit",
+        "nuage",
+        "pluie",
+        "herbage",
+        "dos",
+        "semelle supérieure",
+        "pièce de tissu supérieure",
+        "céleste",
+        "bounty"
+      ],
+      "Nom/Identification": [
+        "nom",
+        "nommer",
+        "prononcer le nom de Dieu",
+        "se nommer",
+        "s'appeler mutuellement",
+        "demander le nom",
+        "renommée",
+        "nommé",
+        "homonyme",
+        "nominal",
+        "qualité de nom",
+        "revendiquer une parenté"
+      ],
+      "Chasse": [
+        "chasser",
+        "chasseurs",
+        "chaussettes de chasseur",
+        "inciter à chasser",
+        "tester une chamelle"
+      ],
+      "Sens isolé/Égal": [
+        "égal"
+      ],
+      "Sens isolé/Choisir": [
+        "choisir"
+      ],
+      "Sens isolé/Visiter": [
+        "visiter"
+      ],
+      "Sens isolé/Se": [
+        "se diriger vers Es-Semaweh"
+      ],
+      "Souffle/Vent": [
+        "faire partir"
+      ],
+      "Animal/Faune": [
+        "monter à cheval"
+      ],
+      "Sens isolé/Regarder": [
+        "regarder la silhouette"
+      ],
+      "Sens isolé/Désir": [
+        "désir qui resurgit"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "سَمَا",
+        "itype": "1",
+        "defs": [
+          "He,",
+          "it,",
+          "was,"
+        ]
+      },
+      {
+        "word": "سمّاهُ فُلَانًا",
+        "itype": "2",
+        "defs": [
+          "He named him,",
+          "called him, Such a one;",
+          "He pronounced the name of God, saying"
+        ]
+      },
+      {
+        "word": "ساماهُ",
+        "itype": "3",
+        "defs": [
+          "He vied, competed,",
+          "contended for superiority, in highness, loftiness,",
+          "eminence,"
+        ]
+      },
+      {
+        "word": "اسماهُ",
+        "itype": "4",
+        "defs": [
+          "He raised, upraised, uplifted, upreared, exalted,",
+          "elevated, him,",
+          "it;"
+        ]
+      },
+      {
+        "word": "تسمّى",
+        "itype": "5",
+        "defs": [
+          "Altus fuit, eminuit;",
+          "He named himself.",
+          "He was named Zeyd:"
+        ]
+      },
+      {
+        "word": "تَسَاْمَوَ",
+        "itype": "6",
+        "defs": [
+          "They mounted upon the horses.",
+          "They vied, competed,",
+          "contended for superiority,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 251,
+    "word_key": "rhm",
+    "root_ar": "ر ح م",
+    "root_phon": "r-ḥ-m",
+    "concepts": {
+      "Utérus/Reproduction": [
+        "utérus",
+        "vulve",
+        "maladie de l'utérus",
+        "utérus gonflé",
+        "chamelle malade post-partum",
+        "sortie de l'utérus"
+      ],
+      "Parenté/Lien familial": [
+        "lien de parenté",
+        "parents par les femmes",
+        "parent interdit au mariage",
+        "sentiment de parenté",
+        "connecté par parenté"
+      ],
+      "Miséricorde/Tendresse": [
+        "miséricorde",
+        "pardon",
+        "traiter avec compassion",
+        "dire \"que Dieu te fasse miséricorde\"",
+        "se forcer à la compassion",
+        "miséricorde réciproque",
+        "demander la miséricorde",
+        "le Compatissant",
+        "plus miséricordieux",
+        "objet de miséricorde",
+        "traité avec beaucoup de compassion"
+      ],
+      "Provision/Bienfait matériel": [
+        "subsistance",
+        "pluie",
+        "abondance",
+        "prophétie"
+      ],
+      "Lieu/Géographie": [
+        "La Mecque",
+        "Médine"
+      ],
+      "Sens isolé/Outre": [
+        "outre abîmée"
+      ],
+      "Sens isolé/La": [
+        "la crainte vaut mieux que la pitié"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "رَحِمَهُ",
+        "itype": "1",
+        "defs": [
+          "He had mercy,",
+          "pity,",
+          "compassion, on him;"
+        ]
+      },
+      {
+        "word": "رحّم عَلَيْهِ",
+        "itype": "2",
+        "defs": [
+          "He said to him,",
+          "May God have mercy on thee;"
+        ]
+      },
+      {
+        "word": "ترحّم عَلَيْهِ",
+        "itype": "5",
+        "defs": [
+          "He had mercy,",
+          "pity,",
+          "compassion, on him;"
+        ]
+      },
+      {
+        "word": "تراحموا",
+        "itype": "6",
+        "defs": [
+          "They had mercy,",
+          "pity,",
+          "compassion, one on another;"
+        ]
+      },
+      {
+        "word": "استرحمهُ",
+        "itype": "10",
+        "defs": [
+          "He asked,",
+          "demanded, of him",
+          "mercy,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 256,
+    "word_key": "mlk",
+    "root_ar": "م ل ك",
+    "root_phon": "m-l-k",
+    "concepts": {
+      "Possession/Autorité": [
+        "posséder",
+        "maître",
+        "possesseur",
+        "propriété",
+        "biens",
+        "esclave",
+        "asservir"
+      ],
+      "Royauté/Souveraineté": [
+        "roi",
+        "royaume",
+        "règne",
+        "souverain",
+        "couronnement",
+        "trône"
+      ],
+      "Ange/Messager": [
+        "ange",
+        "messager",
+        "message"
+      ],
+      "Sens isolé/Pâte": [
+        "pâte"
+      ],
+      "Sens isolé/Maîtriser": [
+        "maîtriser soi-même"
+      ],
+      "Eau/Liquide": [
+        "eau stagnante"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "مَلَكَهُ",
+        "itype": "1",
+        "defs": [
+          "He possessed it,",
+          "owned it,",
+          "with ability to have it to himself exclusively:"
+        ]
+      },
+      {
+        "word": "مَلَّكَهُ",
+        "itype": "2",
+        "defs": [
+          "He made him to possess",
+          "He made him king;",
+          "made him to have dominion, kingship,"
+        ]
+      },
+      {
+        "word": "العَجِينَ",
+        "itype": "4",
+        "defs": [
+          "He kneaded well the dough."
+        ]
+      },
+      {
+        "word": "تَمَلَّكَ",
+        "itype": "5",
+        "defs": [
+          "He took possession of",
+          "absolutely",
+          "by force."
+        ]
+      },
+      {
+        "word": "مَا تَمَالَكَ أَنْ فَعَلَ",
+        "itype": "6",
+        "defs": [
+          "He could not restrain himself from doing;"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 258,
+    "word_key": "dyn",
+    "root_ar": "د ي ن",
+    "root_phon": "d-y-n",
+    "concepts": {
+      "Obéissance/Soumission": [
+        "obéir",
+        "se soumettre",
+        "soumission",
+        "assujettissement",
+        "voie"
+      ],
+      "Religion/Système": [
+        "religion",
+        "système de croyances",
+        "pratique",
+        "coutume",
+        "habitude"
+      ],
+      "Rétribution/Compte": [
+        "rétribution",
+        "récompense",
+        "punition",
+        "compensation",
+        "rendre ce qui est dû",
+        "jugement"
+      ],
+      "Dette/Obligation": [
+        "dette",
+        "créance",
+        "obligation financière",
+        "prêt"
+      ],
+      "Sens isolé/Maladie": [
+        "maladie"
+      ],
+      "Eau/Liquide": [
+        "pluie continue"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "دَانَ",
+        "itype": "1",
+        "defs": [
+          "He was,",
+          "became, obedient; he obeyed:",
+          "he was,"
+        ]
+      },
+      {
+        "word": "ديّنهُ",
+        "itype": "2",
+        "defs": [
+          "He left him to his religion;",
+          "left him and his religion, not opposing him in that which he held allowable in his belief.",
+          "He believed him:"
+        ]
+      },
+      {
+        "word": "دَايَنْتُهُ",
+        "itype": "3",
+        "defs": [
+          "I dealt,",
+          "bought and sold, with him upon credit;",
+          "I dealt,"
+        ]
+      },
+      {
+        "word": "تَدَايَنُوا",
+        "itype": "6",
+        "defs": [
+          "They sold and bought, one with another, upon credit;",
+          "they took,",
+          "received,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 263,
+    "word_key": "qwm",
+    "root_ar": "ق و م",
+    "root_phon": "q-w-m",
+    "concepts": {
+      "Verticalité/Droiture": [
+        "se lever",
+        "se dresser",
+        "droit",
+        "rectitude",
+        "redresser",
+        "corriger",
+        "se tenir debout",
+        "subsister",
+        "résurrection"
+      ],
+      "Peuple/Communauté": [
+        "peuple",
+        "communauté",
+        "tribu",
+        "nation",
+        "groupe"
+      ],
+      "Gestion/Administration": [
+        "gérer",
+        "administrer",
+        "prendre en charge",
+        "diriger",
+        "veiller sur"
+      ],
+      "Valeur/Mesure": [
+        "valeur",
+        "prix",
+        "estimation",
+        "stature",
+        "taille"
+      ],
+      "Subsistance": [
+        "subsistance",
+        "nourriture",
+        "ce qui fait vivre"
+      ],
+      "Lieu/Géographie": [
+        "lieu"
+      ],
+      "Sens isolé/Résidence": [
+        "résidence"
+      ],
+      "Sens isolé/Station": [
+        "station"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "قَامَ",
+        "itype": "1",
+        "defs": [
+          "He stood still",
+          "in his place.",
+          "The beast stopped"
+        ]
+      },
+      {
+        "word": "قَوَّمَهُ",
+        "itype": "2",
+        "defs": [
+          "He made it straight,",
+          "even;",
+          "made it right,"
+        ]
+      },
+      {
+        "word": "قَاوَمَهُ",
+        "itype": "3",
+        "defs": [
+          "He rose against him, and withstood him,",
+          "opposed him, in contention;",
+          "It was equal,"
+        ]
+      },
+      {
+        "word": "أَقَامَ",
+        "itype": "4",
+        "defs": [
+          "He set up, put up, set upright,",
+          "It sustained him, supported him",
+          "He stood to a bet, wager,"
+        ]
+      },
+      {
+        "word": "تَقَوَّمَ",
+        "itype": "5",
+        "defs": [
+          "It subsisted:",
+          "It had a price; was valued."
+        ]
+      },
+      {
+        "word": "تَقَاوَمُوهُ فِيمَا بَيْنَهُمْ",
+        "itype": "6",
+        "defs": [
+          "They valued it,",
+          "estimated its price, among them."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 283,
+    "word_key": "slw",
+    "root_ar": "ص ل و",
+    "root_phon": "slw",
+    "concepts": {
+      "Prière/Invocation": [
+        "prier",
+        "prière rituelle",
+        "invoquer",
+        "bénir",
+        "lieu de prière"
+      ],
+      "Proximité/Attachement": [
+        "suivre de près"
+      ],
+      "Lieu/Géographie": [
+        "milieu"
+      ],
+      "Corps/Anatomie": [
+        "deuxième dans une course"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "صَلَوْتُهُ",
+        "itype": "1",
+        "defs": [
+          "I struck,",
+          "beat, that part,",
+          "of him,"
+        ]
+      },
+      {
+        "word": "صلّى",
+        "itype": "2",
+        "defs": [
+          "He prayed, supplicated,",
+          "petitioned:",
+          "he performed the divinely-appointed act"
+        ]
+      },
+      {
+        "word": "أَصْلَتْ",
+        "itype": "4",
+        "defs": [
+          "The parts on the right and left of her tail,",
+          "the part on either side of her tail,",
+          "became relaxed, she being near to bringing forth:"
+        ]
+      },
+      {
+        "word": "صَلًا",
+        "itype": "",
+        "defs": [
+          "middle of the back",
+          "part that slopes down from the hips,",
+          "haunches:"
+        ]
+      },
+      {
+        "word": "صَلَاةٌ",
+        "itype": "",
+        "defs": [
+          "Prayer, supplication,",
+          "petition:",
+          "A certain well-known mode,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 284,
+    "word_key": "rzq",
+    "root_ar": "ر ز ق",
+    "root_phon": "rzq",
+    "concepts": {
+      "Subsistance/Provision": [
+        "pourvoir",
+        "nourrir",
+        "subsistance",
+        "moyens de vivre",
+        "part"
+      ],
+      "Sens isolé/Gratitude": [
+        "gratitude pour la subsistance"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "رَزَقَهُ ٱللّٰهُ",
+        "itype": "1",
+        "defs": [
+          "God caused what is termed",
+          "to come to him:",
+          "God gave him."
+        ]
+      },
+      {
+        "word": "ارتزقوا",
+        "itype": "8",
+        "defs": [
+          "They took,",
+          "received, their",
+          "portions of subsistence-money, pay,"
+        ]
+      },
+      {
+        "word": "استرزقهُ",
+        "itype": "10",
+        "defs": [
+          "He asked,",
+          "demanded, of him what is termed",
+          "means of subsistence,"
+        ]
+      },
+      {
+        "word": "رِزْقٌ",
+        "itype": "",
+        "defs": [
+          "A thing whereby one profits,",
+          "from which one derives advantage;",
+          "a gift;"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 291,
+    "word_key": "qbl",
+    "root_ar": "ق ب ل",
+    "root_phon": "qbl",
+    "concepts": {
+      "Réception/Accueil": [
+        "recevoir",
+        "accepter",
+        "agréer"
+      ],
+      "Orientation/Direction": [
+        "se tourner vers",
+        "faire face",
+        "venir vers"
+      ],
+      "Antériorité/Passé": [
+        "avant",
+        "auparavant",
+        "ancien",
+        "devant"
+      ],
+      "Sens isolé/Tribu": [
+        "tribu"
+      ],
+      "Sens isolé/Embrasser": [
+        "embrasser"
+      ],
+      "Sens isolé/Garantie": [
+        "garantie"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "قَبَلَ",
+        "itype": "1",
+        "defs": [
+          "He took, received,",
+          "admitted, willingly,",
+          "with approbation; he accepted."
+        ]
+      },
+      {
+        "word": "قَابَلَهُ",
+        "itype": "3",
+        "defs": [
+          "He faced,",
+          "fronted,",
+          "was opposite to"
+        ]
+      },
+      {
+        "word": "أَقْبَلْتُهُ الشَّىْءَ",
+        "itype": "4",
+        "defs": [
+          "I made it to face the thing:",
+          "He turned it forward; contr. of",
+          "He came, facing;"
+        ]
+      },
+      {
+        "word": "تَقَابَلُوا",
+        "itype": "6",
+        "defs": [
+          "They faced,",
+          "confronted, one another:"
+        ]
+      },
+      {
+        "word": "اِقْتَبَلَهُ",
+        "itype": "8",
+        "defs": [
+          "He began it,",
+          "commenced it;"
+        ]
+      },
+      {
+        "word": "اِسْتَقْبَلَهُ",
+        "itype": "10",
+        "defs": [
+          "He faced him,",
+          "it.",
+          "He turned his face towards him,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 296,
+    "word_key": "ndh r",
+    "root_ar": "ن ذ ر",
+    "root_phon": "ndh r",
+    "concepts": {
+      "Avertissement/Mise en garde": [
+        "avertir",
+        "prévenir",
+        "mettre en garde",
+        "avertisseur"
+      ],
+      "Voeu/Engagement": [
+        "voeu",
+        "promettre",
+        "consacrer"
+      ],
+      "Sens isolé/Crainte": [
+        "crainte"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "نَذَرَ عَلَى نَفْسِهِ",
+        "itype": "1",
+        "defs": [
+          "He made a vow; imposed upon himself a vow;",
+          "that he would do such a thing;",
+          "absolutely,"
+        ]
+      },
+      {
+        "word": "أَنْذَرْتُهُ بِالأَمْرِ",
+        "itype": "4",
+        "defs": [
+          "I informed him,",
+          "advised him, of the thing:",
+          "and"
+        ]
+      },
+      {
+        "word": "تناذر القَوْمُ",
+        "itype": "6",
+        "defs": [
+          "The people warned,",
+          "cautioned, one another,",
+          "put one another in fear,"
+        ]
+      },
+      {
+        "word": "استنذر إِلَيْهِ",
+        "itype": "10",
+        "defs": [
+          "He offered warning to him"
+        ]
+      },
+      {
+        "word": "نَذْرٌ",
+        "itype": "",
+        "defs": [
+          "A vow, which a man makes to be binding,",
+          "obligatory, on himself;",
+          "absolutely,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 301,
+    "word_key": "qlb",
+    "root_ar": "ق ل ب",
+    "root_phon": "qlb",
+    "concepts": {
+      "Retournement/Changement": [
+        "retourner",
+        "renverser",
+        "transformer",
+        "changer d'état",
+        "revenir",
+        "va-et-vient",
+        "mobilité",
+        "déplacements"
+      ],
+      "Coeur/Centre": [
+        "coeur",
+        "esprit",
+        "intelligence",
+        "milieu"
+      ],
+      "Sens isolé/Moule": [
+        "moule"
+      ],
+      "Sens isolé/Bracelet": [
+        "bracelet"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "قَلَبَهُ",
+        "itype": "1",
+        "defs": [
+          "He altered,",
+          "changed, its,",
+          "his, mode,"
+        ]
+      },
+      {
+        "word": "قَلَّبَ",
+        "itype": "2",
+        "defs": [
+          "I turned it over and over with my hand",
+          "And he began to turn his hands upside-down,",
+          "repeatedly,"
+        ]
+      },
+      {
+        "word": "أَقْلَبَ",
+        "itype": "4",
+        "defs": [
+          "He made him to return",
+          "Restore us to our family in safety,",
+          "It became fit to be turned over"
+        ]
+      },
+      {
+        "word": "تقلّب الشَّىْءُ ظَهْرًا لبِطْنٍ",
+        "itype": "5",
+        "defs": [
+          "The thing turned over and over,",
+          "upside-down",
+          "so that the upper side became the under side,"
+        ]
+      },
+      {
+        "word": "انقلب",
+        "itype": "7",
+        "defs": [
+          "It,",
+          "he, was,",
+          "became, altered,"
+        ]
+      },
+      {
+        "word": "قَلْبٌ",
+        "itype": "",
+        "defs": [
+          "heart;",
+          "a lump of flesh, pertaining to the",
+          "suspended to the"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 303,
+    "word_key": "nws",
+    "root_ar": "ن و س",
+    "root_phon": "nws",
+    "concepts": {
+      "Humanité/Peuple": [
+        "gens",
+        "êtres humains",
+        "peuple"
+      ],
+      "Perception/Visibilité": [
+        "voir de loin",
+        "être visible"
+      ],
+      "Sens isolé/Oublier": [
+        "oublier"
+      ],
+      "Sens isolé/Être": [
+        "être agité"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "نَاسَ",
+        "itype": "1",
+        "defs": [
+          "moved to and fro;",
+          "it was in a state of commotion, and moved to and fro,",
+          "hanging down;"
+        ]
+      },
+      {
+        "word": "اناسهُ",
+        "itype": "4",
+        "defs": [
+          "He made it to move to and fro;",
+          "he made it to be in a state of commotion.",
+          "and to move to and fro,"
+        ]
+      },
+      {
+        "word": "تنوّس",
+        "itype": "5",
+        "defs": [
+          "It,",
+          "being blown by the wind, became shaken thereby, so that it moved much to and fro;"
+        ]
+      },
+      {
+        "word": "نَاسٌ",
+        "itype": "",
+        "defs": [
+          "Men,",
+          "jinn,",
+          "genii;"
+        ]
+      },
+      {
+        "word": "نَاسُوتٌ",
+        "itype": "",
+        "defs": [
+          "Human nature; humanity;"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 310,
+    "word_key": "ezm",
+    "root_ar": "ع ظ م",
+    "root_phon": "ezm",
+    "concepts": {
+      "Grandeur/Importance": [
+        "être grand",
+        "grandir",
+        "immense",
+        "magnifier"
+      ],
+      "Structure/Ossature": [
+        "os",
+        "squelette"
+      ],
+      "Sens isolé/Châtiment": [
+        "châtiment terrible"
+      ],
+      "Résolution/Détermination": [
+        "résolution",
+        "détermination",
+        "fermeté"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "عَظُمَ",
+        "itype": "1",
+        "defs": [
+          "He was,",
+          "became, great in his bone:",
+          "i. q."
+        ]
+      },
+      {
+        "word": "عظّمهُ",
+        "itype": "2",
+        "defs": [
+          "He made it great, big,",
+          "large:",
+          "He magnified, honoured,"
+        ]
+      },
+      {
+        "word": "اعظم",
+        "itype": "4",
+        "defs": [
+          "What thou saidst frightened me,",
+          "terrified me, and was grievous,",
+          "distressing, in its effect upon me"
+        ]
+      },
+      {
+        "word": "تعظّم",
+        "itype": "5",
+        "defs": [
+          "He made himself to appear great, big,",
+          "large:",
+          "He magnified himself;"
+        ]
+      },
+      {
+        "word": "تعاظم",
+        "itype": "6",
+        "defs": [
+          "It was,",
+          "became,",
+          "great,"
+        ]
+      },
+      {
+        "word": "استعظم",
+        "itype": "10",
+        "defs": [
+          "He reckoned it,",
+          "he saw it,",
+          "judged it, to be,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 315,
+    "word_key": "alm",
+    "root_ar": "أ ل م",
+    "root_phon": "alm",
+    "concepts": {
+      "Douleur/Souffrance": [
+        "douleur",
+        "souffrir",
+        "faire souffrir",
+        "douloureux",
+        "affliger",
+        "blesser"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "أَلِمَ",
+        "itype": "1",
+        "defs": [
+          "It,",
+          "he,",
+          "was in pain; had,"
+        ]
+      },
+      {
+        "word": "آلَمْتُهُ",
+        "itype": "4",
+        "defs": [
+          "I caused him pain",
+          "aching."
+        ]
+      },
+      {
+        "word": "تألّم",
+        "itype": "5",
+        "defs": [
+          "He was,",
+          "became, pained:",
+          "he expressed pain, grief,"
+        ]
+      },
+      {
+        "word": "أَلَمٌ",
+        "itype": "",
+        "defs": [
+          "Pain; ache;",
+          "I do not find pain nor ache;",
+          "I will assuredly bring upon thee"
+        ]
+      },
+      {
+        "word": "أَلِمٌ",
+        "itype": "",
+        "defs": [
+          "Being in pain; having,",
+          "suffering, pain; aching."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 324,
+    "word_key": "ard",
+    "root_ar": "أ ر ض",
+    "root_phon": "ard",
+    "concepts": {
+      "Terre/Sol": [
+        "terre",
+        "sol",
+        "pays",
+        "bas"
+      ],
+      "Sens isolé/Rhume": [
+        "rhume"
+      ],
+      "Sens isolé/Tremblement": [
+        "tremblement"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "أَرُضَتِ الأَرْضُ",
+        "itype": "1",
+        "defs": [
+          "The land became thriving,",
+          "productive;",
+          "it became pleasing to the eye, and disposed by nature to yield good produce;"
+        ]
+      },
+      {
+        "word": "ارّض",
+        "itype": "2",
+        "defs": [
+          "He depastured the herbage of the earth,",
+          "land:",
+          "he sought after it:"
+        ]
+      },
+      {
+        "word": "آرض",
+        "itype": "4",
+        "defs": [
+          "How abundant is the herbage",
+          "of this place!",
+          "How level,"
+        ]
+      },
+      {
+        "word": "تارّض",
+        "itype": "5",
+        "defs": [
+          "became in such a state that it might be cut.",
+          "He clave,",
+          "kept, to the ground, not quitting it:"
+        ]
+      },
+      {
+        "word": "إِسْتَاْرَضَ",
+        "itype": "10",
+        "defs": [
+          "The clouds expanded,",
+          "spread:",
+          "became fixed,"
+        ]
+      },
+      {
+        "word": "الأَرْضُ",
+        "itype": "",
+        "defs": [
+          "The earth;",
+          "that whereon are mankind:",
+          "earth, as opposed to heaven:"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 326,
+    "word_key": "slh",
+    "root_ar": "ص ل ح",
+    "root_phon": "slh",
+    "concepts": {
+      "Bonté/Rectitude": [
+        "être bon",
+        "rectitude",
+        "réparer",
+        "réconcilier",
+        "oeuvre bonne",
+        "vertueux",
+        "réformer"
+      ],
+      "Sens isolé/Paix": [
+        "paix"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "صَلَحَ",
+        "itype": "1",
+        "defs": [
+          "It,",
+          "he, was,",
+          "became, good, incorrupt, right, just, righteous, virtuous,"
+        ]
+      },
+      {
+        "word": "صالحهُ",
+        "itype": "3",
+        "defs": [
+          "He made peace,",
+          "became at peace",
+          "reconciled, with him;"
+        ]
+      },
+      {
+        "word": "اصلحهُ",
+        "itype": "4",
+        "defs": [
+          "He,",
+          "it, made,",
+          "rendered, it,"
+        ]
+      },
+      {
+        "word": "انصلح",
+        "itype": "7",
+        "defs": [
+          "It became rectified,"
+        ]
+      },
+      {
+        "word": "اصطلحا",
+        "itype": "8",
+        "defs": [
+          "They two,",
+          "the people,",
+          "party, made peace,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 337,
+    "word_key": "awl",
+    "root_ar": "أ و ل",
+    "root_phon": "awl",
+    "concepts": {
+      "Retour/Origine": [
+        "retourner",
+        "retourner",
+        "revenir",
+        "faire retourner",
+        "ramener à l'origine",
+        "aboutissement",
+        "interpréter",
+        "interprétation"
+      ],
+      "Famille/Appartenance": [
+        "famille",
+        "parenté",
+        "détenteurs"
+      ],
+      "Instrument/Outil": [
+        "instrument",
+        "outil"
+      ],
+      "Gouvernance": [
+        "gouverner"
+      ],
+      "Possession/Appartenance": [
+        "détenteurs de",
+        "ceux qui possèdent",
+        "famille",
+        "maisonnée",
+        "partisans"
+      ],
+      "Corps/Anatomie": [
+        "découvrir le bien en quelqu'un"
+      ],
+      "Antériorité": [
+        "premier",
+        "première fois",
+        "anciens"
+      ],
+      "Interprétation": [
+        "interpréter",
+        "interprétation"
+      ],
+      "Refuge/Aboutissement": [
+        "refuge",
+        "aboutissement"
+      ],
+      "Sens isolé/Instrument": [
+        "instrument",
+        "outil"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "آلَ",
+        "itype": "1",
+        "defs": [
+          "He,",
+          "it, returned;",
+          "he resorted;"
+        ]
+      },
+      {
+        "word": "أوّلهُ إِلَيْهِ",
+        "itype": "2",
+        "defs": [
+          "He returned it",
+          "to him,",
+          "it; he made it,"
+        ]
+      },
+      {
+        "word": "تَاَوَّلَ",
+        "itype": "5",
+        "defs": [
+          "He discovered in him the existence of good,",
+          "goodness, from its outward signs:",
+          "he sought,"
+        ]
+      },
+      {
+        "word": "استآل الرُّؤْيَا",
+        "itype": "10",
+        "defs": [
+          "He sought the interpretation of the dream, by consideration."
+        ]
+      },
+      {
+        "word": "آلٌ",
+        "itype": "",
+        "defs": [
+          "family",
+          "relations:",
+          "kinsfolk;"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 344,
+    "word_key": "xlq",
+    "root_ar": "خ ل ق",
+    "root_phon": "xlq",
+    "concepts": {
+      "Création/Production": [
+        "créer",
+        "création",
+        "créature",
+        "façonner",
+        "nature",
+        "caractère"
+      ],
+      "Sens isolé/Lisse": [
+        "lisse"
+      ],
+      "Sens isolé/Mensonge": [
+        "mensonge"
+      ],
+      "Part/Portion méritée": [
+        "portion",
+        "portion",
+        "part",
+        "part",
+        "lot",
+        "lot",
+        "part méritée",
+        "part méritée"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "خَلْقٌ",
+        "itype": "1",
+        "defs": [
+          "measuring;",
+          "determining the measure, proportion,",
+          "the like,"
+        ]
+      },
+      {
+        "word": "خلّقهُ",
+        "itype": "2",
+        "defs": [
+          "He rubbed him over with",
+          "he perfumed him:",
+          "he perfumed him with"
+        ]
+      },
+      {
+        "word": "خَالَقَهُمْ",
+        "itype": "3",
+        "defs": [
+          "He consorted",
+          "comported himself",
+          "with them"
+        ]
+      },
+      {
+        "word": "اخلق",
+        "itype": "4",
+        "defs": [
+          "He had old and worn-out garments.",
+          "He wore it out;",
+          "Time wore out,"
+        ]
+      },
+      {
+        "word": "تَخَلَّقَ",
+        "itype": "5",
+        "defs": [
+          "He affected a",
+          "nature,",
+          "that was not his own."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 347,
+    "word_key": "mthl",
+    "root_ar": "م ث ل",
+    "root_phon": "mthl",
+    "concepts": {
+      "Station/Présence": [
+        "se tenir debout",
+        "dresser"
+      ],
+      "Ressemblance/Exemple": [
+        "ressembler",
+        "imiter",
+        "exemple",
+        "proverbe",
+        "parabole",
+        "semblable"
+      ],
+      "Sens isolé/Mutiler": [
+        "mutiler"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "مَثَلَ",
+        "itype": "1",
+        "defs": [
+          "He stood erect;",
+          "before him.",
+          "He mutilated him; castrated him;"
+        ]
+      },
+      {
+        "word": "مَاثَلَهُ",
+        "itype": "3",
+        "defs": [
+          "i. q."
+        ]
+      },
+      {
+        "word": "أَمْثَلَهُ",
+        "itype": "4",
+        "defs": [
+          "He set it up:",
+          "He set up"
+        ]
+      },
+      {
+        "word": "تَمَثَّلَ بِكَذَا",
+        "itype": "5",
+        "defs": [
+          "He affected to be like, or imitated, such a thing;",
+          "i. q.",
+          "He used,"
+        ]
+      },
+      {
+        "word": "تَمَاثَلَ",
+        "itype": "6",
+        "defs": [
+          "He became nearly in a sound,",
+          "healthy, state;",
+          "near to convalescence:"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 348,
+    "word_key": "wqd",
+    "root_ar": "و ق د",
+    "root_phon": "wqd",
+    "concepts": {
+      "Feu/Combustion": [
+        "allumer",
+        "brûler",
+        "feu",
+        "combustible",
+        "flamber",
+        "embraser"
+      ],
+      "Chaleur/Intensité": [
+        "chaleur intense",
+        "ardeur"
+      ],
+      "Éclat/Brillance": [
+        "briller",
+        "étinceler"
+      ],
+      "Vivacité/Pénétration": [
+        "esprit vif",
+        "pénétrant"
+      ],
+      "Lieu/Foyer": [
+        "foyer"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "وَقَدَتِ النَّارُ",
+        "itype": "1",
+        "defs": [
+          "The fire burned; burned up; burned brightly",
+          "fiercely; blazed;",
+          "flamed;"
+        ]
+      },
+      {
+        "word": "أَوْقَدَ",
+        "itype": "4",
+        "defs": [
+          "He lighted,",
+          "kindled, the fire; made it to burn, to burn up, to burn brightly",
+          "fiercely, to blaze,"
+        ]
+      },
+      {
+        "word": "تَوَقَّدَ",
+        "itype": "5",
+        "defs": [
+          "It was,",
+          "became, hot"
+        ]
+      },
+      {
+        "word": "إِوْتَقَدَ",
+        "itype": "8",
+        "defs": [
+          "The sun was,",
+          "became, burning,",
+          "fiercely burning"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 364,
+    "word_key": "mwt",
+    "root_ar": "م و ت",
+    "root_phon": "mwt",
+    "concepts": {
+      "Mort/Cessation": [
+        "mourir",
+        "mort",
+        "tuer",
+        "mortel",
+        "terre morte"
+      ],
+      "Sens isolé/Immobile": [
+        "immobile"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "مَاتَ",
+        "itype": "1",
+        "defs": [
+          "He died;",
+          "He died having passed away from,",
+          "leaving behind him, sons and daughters."
+        ]
+      },
+      {
+        "word": "مَوَّتَتِ الدَّوَابُّ",
+        "itype": "2",
+        "defs": [
+          "The beasts of carriage died in great numbers;",
+          "deaths amongst them were frequent."
+        ]
+      },
+      {
+        "word": "مَاْوَتَ",
+        "itype": "3",
+        "defs": [
+          "He vied with him in patience,",
+          "and in firmness,",
+          "steadiness,"
+        ]
+      },
+      {
+        "word": "اماتهُ",
+        "itype": "4",
+        "defs": [
+          "caused him to die; put him to death; killed him.",
+          "lost a son,",
+          "sons, by death."
+        ]
+      },
+      {
+        "word": "ضَرَبْتُهُ فَتَمَاوَتَ",
+        "itype": "6",
+        "defs": [
+          "I beat him and he feigned himself dead,",
+          "He pretended to be weak and motionless by reason of acts of devotion and fasting:"
+        ]
+      },
+      {
+        "word": "استمات",
+        "itype": "10",
+        "defs": [
+          "He sought death: &c.:",
+          "Wait until ye ascertain that your game, and your beast of carriage, has died.",
+          "He sought,"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 388,
+    "word_key": "xrj",
+    "root_ar": "خ ر ج",
+    "root_phon": "xrj",
+    "concepts": {
+      "Sortie/Émergence": [
+        "sortir",
+        "faire sortir",
+        "expulser",
+        "émerger",
+        "produire"
+      ],
+      "Tribut/Revenu": [
+        "impôt",
+        "revenu"
+      ],
+      "Sens isolé/Résoudre": [
+        "résoudre"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "خَرَجَ",
+        "itype": "1",
+        "defs": [
+          "He,",
+          "it, went, came, passed,",
+          "got, out,"
+        ]
+      },
+      {
+        "word": "خرّج",
+        "itype": "2",
+        "defs": [
+          "He resolved, explained,",
+          "rendered,",
+          "According to this"
+        ]
+      },
+      {
+        "word": "المُخَارَجَةُ",
+        "itype": "3",
+        "defs": [
+          "i. q.",
+          "One person's putting forth as many of his fingers as he pleases, and the other's doing the like:",
+          "the playing at the game called morra; micare digitis:"
+        ]
+      },
+      {
+        "word": "اخرجهُ",
+        "itype": "4",
+        "defs": [
+          "He made,",
+          "caused, him,",
+          "it, to go, come, pass,"
+        ]
+      },
+      {
+        "word": "تخرّج",
+        "itype": "5",
+        "defs": [
+          "was resolved, explained,",
+          "rendered.",
+          "According to this"
+        ]
+      },
+      {
+        "word": "تَخَارُجٌ",
+        "itype": "6",
+        "defs": [
+          "i. q.",
+          "similar to",
+          "with the fingers, as explained above."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 392,
+    "word_key": "bshr",
+    "root_ar": "ب ش ر",
+    "root_phon": "bshr",
+    "concepts": {
+      "Annonce/Réjouissance": [
+        "annoncer une bonne nouvelle",
+        "réjouir",
+        "beau visage"
+      ],
+      "Surface/Contact": [
+        "peau",
+        "contact peau à peau",
+        "peler"
+      ],
+      "Corps/Anatomie": [
+        "être humain"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "بَشَرَ",
+        "itype": "1",
+        "defs": [
+          "He pared",
+          "removing its",
+          "face,"
+        ]
+      },
+      {
+        "word": "بشّرهُ",
+        "itype": "2",
+        "defs": [
+          "He announced to him an event which produced a change in his",
+          "complexion",
+          "he announced to him an event which rejoiced him:"
+        ]
+      },
+      {
+        "word": "باشر المَرْأَةَ",
+        "itype": "3",
+        "defs": [
+          "He was,",
+          "became, in contact with the woman, skin to skin:",
+          "he enjoyed"
+        ]
+      },
+      {
+        "word": "ابشر",
+        "itype": "4",
+        "defs": [
+          "The affair made his countenance beautiful and bright:",
+          "That is it with which God will make beautiful and bright",
+          "his servants:"
+        ]
+      },
+      {
+        "word": "تباشر القَوْمُ",
+        "itype": "6",
+        "defs": [
+          "The people,",
+          "company of men, announced, one to another, a joyful event,",
+          "joyful events."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 397,
+    "word_key": "nhr",
+    "root_ar": "ن ه ر",
+    "root_phon": "nhr",
+    "concepts": {
+      "Eau/Cours d'eau": [
+        "rivière",
+        "fleuve",
+        "couler",
+        "abondance"
+      ],
+      "Clarté/Jour": [
+        "jour",
+        "clarté"
+      ],
+      "Sens isolé/Interdire": [
+        "interdire"
+      ],
+      "Sens isolé/Creuser": [
+        "creuser"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "نَهَرَ",
+        "itype": "1",
+        "defs": [
+          "ran upon,",
+          "along, the ground,",
+          "and made for itself a"
+        ]
+      },
+      {
+        "word": "انهر",
+        "itype": "4",
+        "defs": [
+          "He made",
+          "to flow:",
+          "to appear and flow:"
+        ]
+      },
+      {
+        "word": "إِسْتَنْهَرَ",
+        "itype": "10",
+        "defs": [
+          "took a place,",
+          "a settle place,",
+          "for its channel."
+        ]
+      },
+      {
+        "word": "نَهْرٌ",
+        "itype": "",
+        "defs": [
+          "A channel in which water runs:",
+          "water itself",
+          "that runs therein;"
+        ]
+      },
+      {
+        "word": "نَهَرٌ",
+        "itype": "",
+        "defs": [
+          "Amplitude:",
+          "light and amplitude:"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 1250,
+    "word_key": "amd",
+    "root_ar": "أ م د",
+    "root_phon": "amd",
+    "concepts": {
+      "Durée/Limite": [
+        "terme",
+        "durée",
+        "période",
+        "limite ultime",
+        "échéance",
+        "distance temporelle"
+      ],
+      "Colère": [
+        "être en colère",
+        "irritation"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "أَمِدَ عَلَيْهِ",
+        "itype": "1",
+        "defs": [
+          "He was angry with him:"
+        ]
+      },
+      {
+        "word": "أمّد",
+        "itype": "2",
+        "defs": [
+          "He declared the time, considered with regard to its end;",
+          "the utmost,",
+          "extreme, extent, term, limit, point,"
+        ]
+      },
+      {
+        "word": "أَمَدٌ",
+        "itype": "",
+        "defs": [
+          "Time, considered with regard to its end:",
+          "utmost,",
+          "extreme, extent, term, limit, point,"
+        ]
+      },
+      {
+        "word": "أُمْدَةٌ",
+        "itype": "",
+        "defs": [
+          "A remainder,",
+          "what remains,"
+        ]
+      },
+      {
+        "word": "سِقَآءٍ مُؤَمَّدٌ",
+        "itype": "",
+        "defs": [
+          "A skin",
+          "exhausted;",
+          "in which there remains not a gulp,"
+        ]
+      },
+      {
+        "word": "أَمَرَهُ",
+        "itype": "",
+        "defs": [
+          "An extreme term, limit,",
+          "point, reached,",
+          "attained."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 302,
+    "word_key": "sme",
+    "root_ar": "س م ع",
+    "root_phon": "sme",
+    "concepts": {
+      "Audition/Écoute": [
+        "entendre",
+        "écouter",
+        "ouïe",
+        "obéir",
+        "exaucer"
+      ],
+      "Renommée/Bruit": [
+        "réputation",
+        "bruit",
+        "faire entendre"
+      ],
+      "Corps/Anatomie": [
+        "oreille"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "سَمِعَهُ",
+        "itype": "1",
+        "defs": [
+          "He heard it,",
+          "him;",
+          "he gave ear, hearkened,"
+        ]
+      },
+      {
+        "word": "تَسْمِيعٌ",
+        "itype": "2",
+        "defs": [
+          "syn. with",
+          "making",
+          "to hear"
+        ]
+      },
+      {
+        "word": "اسمعهُ",
+        "itype": "4",
+        "defs": [
+          "He told him",
+          "He made him to understand:",
+          "Had God known any good in them, He had made them to understand"
+        ]
+      },
+      {
+        "word": "تسامع بِهِ النَّاسُ",
+        "itype": "6",
+        "defs": [
+          "The people heard of it,",
+          "him,",
+          "one from another:"
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 314,
+    "word_key": "edb",
+    "root_ar": "ع ذ ب",
+    "root_phon": "edb",
+    "concepts": {
+      "Douceur": [
+        "doux",
+        "sucré",
+        "eau douce",
+        "agréable"
+      ],
+      "Châtiment/Punition": [
+        "punir",
+        "châtier",
+        "tourmenter",
+        "châtiment",
+        "tourment"
+      ],
+      "Abstention": [
+        "s'abstenir",
+        "quitter"
+      ],
+      "Eau/Liquide": [
+        "poussières flottant sur l'eau"
+      ],
+      "Végétation/Plante": [
+        "arbre vénéneux"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "عَذُبَ",
+        "itype": "1",
+        "defs": [
+          "It was,",
+          "became, sweet:",
+          "it was,"
+        ]
+      },
+      {
+        "word": "عذّبهُ",
+        "itype": "2",
+        "defs": [
+          "He punished, castigated,",
+          "chastised, him:",
+          "he,"
+        ]
+      },
+      {
+        "word": "اعذب القَوْمُ",
+        "itype": "4",
+        "defs": [
+          "The people,",
+          "party, became in the condition of having sweet water.",
+          "He abstained,"
+        ]
+      },
+      {
+        "word": "اعتذب",
+        "itype": "8",
+        "defs": [
+          "He made",
+          "the",
+          "two ends"
+        ]
+      },
+      {
+        "word": "استعذب المَآءَ",
+        "itype": "10",
+        "defs": [
+          "He reckoned,",
+          "esteemed, the water sweet.",
+          "He sought sweet water:"
+        ]
+      },
+      {
+        "word": "اعذوذب",
+        "itype": "12",
+        "defs": [
+          "It was,",
+          "became, sweet,",
+          "very sweet."
+        ]
+      }
+    ]
+  },
+  {
+    "aid": 318,
+    "word_key": "fsd",
+    "root_ar": "ف س د",
+    "root_phon": "fsd",
+    "concepts": {
+      "Corruption/Désordre": [
+        "corrompre",
+        "gâter",
+        "désordre",
+        "corrupteur",
+        "corruption",
+        "détériorer"
+      ]
+    },
+    "lane_entries": [
+      {
+        "word": "فَسَدَ",
+        "itype": "1",
+        "defs": [
+          "was,",
+          "became, bad, evil, corrupt, unsound, wrong, wrongful, improper, unrighteous, wicked, vitious, depraved,",
+          "dishonest; devoid of virtue,"
+        ]
+      },
+      {
+        "word": "فاسدهُ",
+        "itype": "3",
+        "defs": [
+          "He became at variance with him; he cut, severed,",
+          "broke, the tie of friendship",
+          "kindred"
+        ]
+      },
+      {
+        "word": "افسد",
+        "itype": "4",
+        "defs": [
+          "He,",
+          "it, made,",
+          "rendered, bad, evil, corrupt, unsound, wrong, wrongful, improper, unrighteous, wicked, vitious, depraved,"
+        ]
+      },
+      {
+        "word": "تفاسدوا",
+        "itype": "6",
+        "defs": [
+          "They became at variance, one with another;",
+          "they cut, severed,",
+          "broke, the tie of kindred,"
+        ]
+      }
+    ]
+  }
+]

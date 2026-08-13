@@ -64,8 +64,8 @@ export async function GET(
   }
 
   const allMeanings = meaningsRes.data ?? []
-  // Include all meaning types (etymology + quranic enrichments from Lane's)
-  const etymology = allMeanings.filter((m: Record<string, unknown>) => m.meaning_type === 'etymology' || m.meaning_type === 'quranic')
+  // Include all meaning types (etymology + quranic + lexicographic enrichments from Lane's)
+  const etymology = allMeanings.filter((m: Record<string, unknown>) => m.meaning_type === 'etymology' || m.meaning_type === 'quranic' || m.meaning_type === 'lexicographic')
 
   // Build analysis counts + refs from verse_word_analyses
   const vwaEntries = vwaRes.data ?? []

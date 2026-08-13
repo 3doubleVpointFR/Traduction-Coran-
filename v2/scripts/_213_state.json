@@ -1,0 +1,5354 @@
+[
+  {
+    "wk": "athm",
+    "id": 952,
+    "concepts": {
+      "Péché/Faute": [
+        "augmenter en péché",
+        "transgression",
+        "pécher",
+        "commettre une faute",
+        "péché (ithm)"
+      ],
+      "Retard/Lenteur": [
+        "être en retard"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "a j l",
+    "id": 1716,
+    "concepts": {
+      "Limite/Échéance": [
+        "délai",
+        "échéance",
+        "terme"
+      ],
+      "Cause": [
+        "à cause de"
+      ],
+      "Terme/Délai": [
+        "terme fixé",
+        "durée déterminée"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ahd",
+    "id": 2574,
+    "concepts": {
+      "Minéral/Terre": [
+        "tradition isolée"
+      ],
+      "Unicité/Indivisibilité": [
+        "un (premier des nombres)",
+        "unité",
+        "l'Indivisible",
+        "déclarer l'unicité"
+      ],
+      "Sens isolé/Dimanche": [
+        "dimanche"
+      ],
+      "Solitude/Isolement": [
+        "ne pas connaître",
+        "être seul"
+      ],
+      "Quiconque/Indéfini": [
+        "quiconque",
+        "quelque chose",
+        "personne"
+      ],
+      "Nombre/Quantification": [
+        "rendre onze",
+        "un des plusieurs",
+        "un par un"
+      ],
+      "Sens isolé/Calamité": [
+        "calamité"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "axdh",
+    "id": 2660,
+    "concepts": {
+      "Prise/Saisie": [
+        "prendre",
+        "saisir",
+        "s'emparer",
+        "recevoir",
+        "accepter"
+      ],
+      "Appropriation/Adoption": [
+        "se prendre pour",
+        "faire de (X) un (Y)",
+        "adopter"
+      ],
+      "Châtiment/Sanction": [
+        "châtier"
+      ],
+      "Captivité": [
+        "capturer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "akhr",
+    "id": 653,
+    "concepts": {
+      "Altérité/Délai": [
+        "au-delà",
+        "différer",
+        "reculer",
+        "accorder un délai",
+        "dernier",
+        "retarder",
+        "autre"
+      ],
+      "Autre/Alternative": [
+        "un parmi deux"
+      ],
+      "Monde à venir/Vie dernière": [
+        "al-ākhirah",
+        "la vie dernière"
+      ],
+      "Postériorité/Fin": [
+        "fin d'une durée",
+        "arrière (d'une chose)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "akhw",
+    "id": 961,
+    "concepts": {
+      "Fraternité/Lien": [
+        "fraternité",
+        "semblable",
+        "ami proche",
+        "frère",
+        "frères",
+        "fraterniser"
+      ],
+      "Sens isolé/Compagnon": [
+        "compagnon"
+      ],
+      "Sens isolé/Sœur": [
+        "sœur"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "adhy",
+    "id": 1451,
+    "concepts": {
+      "Nuisance/Offense": [
+        "nuire",
+        "offenser",
+        "causer du tort",
+        "faire du mal"
+      ],
+      "Affliction/Souffrance": [
+        "affliction",
+        "souffrance"
+      ],
+      "Impureté/Souillure": [
+        "impureté rituelle"
+      ],
+      "Harcèlement/Persécution": [
+        "harceler",
+        "persécuter",
+        "maltraiter",
+        "être maltraité"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "alh",
+    "id": 250,
+    "concepts": {
+      "Domination": [
+        "asservir"
+      ],
+      "Refuge/Protection": [
+        "demeurer",
+        "chercher refuge",
+        "protéger"
+      ],
+      "Adoration/Dévotion": [
+        "adorer",
+        "diviniser",
+        "se dévouer au culte",
+        "faire adorer"
+      ],
+      "Divinité": [
+        "oui certes",
+        "théologie",
+        "exclamation divine",
+        "Dieu",
+        "divinité"
+      ],
+      "Détresse": [
+        "être perplexe",
+        "se lamenter"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "amr",
+    "id": 428,
+    "concepts": {
+      "Affaire/Chose": [
+        "affaire",
+        "chose"
+      ],
+      "Consultation": [
+        "consulter"
+      ],
+      "Commandement/Autorité": [
+        "nommer gouverneur",
+        "ordonner",
+        "commander"
+      ],
+      "Sens isolé/Multiplier": [
+        "multiplier"
+      ],
+      "Sens isolé/Signe": [
+        "signe"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "awl",
+    "id": 337,
+    "concepts": {
+      "Famille/Appartenance": [
+        "maisonnée",
+        "ceux qui possèdent",
+        "partisans",
+        "détenteurs",
+        "détenteurs de",
+        "famille",
+        "parenté"
+      ],
+      "Instrument/Outil": [
+        "instrument",
+        "outil"
+      ],
+      "Corps/Anatomie": [
+        "découvrir le bien en quelqu'un"
+      ],
+      "Retour/Origine": [
+        "interprétation",
+        "revenir",
+        "ramener à l'origine",
+        "interpréter",
+        "retourner",
+        "faire retourner"
+      ],
+      "Antériorité": [
+        "première fois",
+        "anciens",
+        "premier"
+      ],
+      "Refuge/Aboutissement": [
+        "refuge",
+        "aboutissement"
+      ],
+      "Gouvernance": [
+        "gouverner"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "iyya",
+    "id": 494,
+    "concepts": {
+      "Exclusivité/Insistance": [
+        "toi seul",
+        "c'est toi que",
+        "uniquement"
+      ],
+      "Sens isolé/Précédence": [
+        "préfixation"
+      ],
+      "Sens isolé/Marquage": [
+        "marquage emphatique"
+      ],
+      "Sens isolé/Démonstratif": [
+        "voici"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bdr",
+    "id": 1341,
+    "concepts": {
+      "Hâte/Devancement": [
+        "devancer",
+        "se hâter",
+        "devancer par la hâte",
+        "prendre au dépourvu"
+      ],
+      "Lieu/Géographie": [
+        "Badr (lieu)"
+      ],
+      "Astre/Pleine lune": [
+        "pleine lune (badr)"
+      ],
+      "Aire à battre": [
+        "aire de battage (bayḍar)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "brz",
+    "id": 1100,
+    "concepts": {
+      "Apparition/Manifestation": [
+        "sortir au grand jour",
+        "se montrer",
+        "apparaître"
+      ],
+      "Confrontation": [
+        "s'avancer pour combattre"
+      ],
+      "Exposition/Mise au jour": [
+        "rendre visible",
+        "exposer"
+      ],
+      "Sens isolé/Barzakh": [
+        "barrière"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bshr",
+    "id": 392,
+    "concepts": {
+      "Corps/Anatomie": [
+        "être humain"
+      ],
+      "Surface/Contact": [
+        "contact peau à peau",
+        "peler",
+        "peau"
+      ],
+      "Annonce/Réjouissance": [
+        "annoncer une bonne nouvelle",
+        "réjouir",
+        "beau visage"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bsr",
+    "id": 304,
+    "concepts": {
+      "Corps/Anatomie": [
+        "peau"
+      ],
+      "Vision/Perception": [
+        "voir",
+        "vue",
+        "regarder",
+        "clairvoyance",
+        "comprendre",
+        "preuve visible",
+        "voyant"
+      ],
+      "Sens isolé/Miroir": [
+        "miroir"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "btl",
+    "id": 507,
+    "concepts": {
+      "Vanité/Inanité": [
+        "être vain",
+        "faux",
+        "nul",
+        "vain",
+        "illusion",
+        "mensonge"
+      ],
+      "Annulation": [
+        "annuler",
+        "invalider"
+      ],
+      "Sens isolé/Héros": [
+        "héros"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "beth",
+    "id": 545,
+    "concepts": {
+      "Résurrection/Envoi": [
+        "réveiller",
+        "ressusciter",
+        "envoyer",
+        "susciter",
+        "éveiller",
+        "résurrection"
+      ],
+      "Mission prophétique": [
+        "prophète envoyé"
+      ],
+      "Sens isolé/Stimuler": [
+        "mettre en mouvement"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "baed",
+    "id": 926,
+    "concepts": {
+      "Éloignement/Distance": [
+        "s'éloigner",
+        "lointain",
+        "être loin",
+        "éloignement"
+      ],
+      "Postériorité": [
+        "après",
+        "ensuite"
+      ],
+      "Mort/Destruction": [
+        "périr"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bel",
+    "id": 1044,
+    "concepts": {
+      "Postériorité/Continuation": [
+        "après",
+        "ensuite",
+        "encore"
+      ],
+      "Opposition/Correction": [
+        "mais",
+        "au contraire"
+      ],
+      "Sens isolé/Loin": [
+        "loin"
+      ],
+      "Parenté/Famille": [
+        "mari"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bgh",
+    "id": 683,
+    "concepts": {
+      "Quête/Transgression": [
+        "chercher à atteindre",
+        "rechercher",
+        "rivalité agressive",
+        "transgression",
+        "transgresser",
+        "désirer",
+        "opprimer",
+        "chercher",
+        "désirer ardemment",
+        "jalousie envieuse",
+        "excès"
+      ],
+      "Injustice/Tyrannie": [
+        "se révolter",
+        "tyranniser",
+        "agir injustement"
+      ],
+      "Sens isolé/Femme infidèle": [
+        "femme infidèle"
+      ],
+      "Sens isolé/Pluie": [
+        "pluie abondante"
+      ],
+      "Sens isolé/Éclaireur": [
+        "éclaireur"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "blgh",
+    "id": 987,
+    "concepts": {
+      "Transmission/Communication": [
+        "annonce",
+        "transmission",
+        "transmettre",
+        "communiquer",
+        "transmettre un message",
+        "faire parvenir",
+        "communication"
+      ],
+      "Atteinte/Accomplissement": [
+        "arriver",
+        "atteindre un terme",
+        "atteindre",
+        "parvenir à",
+        "atteindre la maturité"
+      ],
+      "Sens isolé/Être": [
+        "être éloquent"
+      ],
+      "Excès/Effort intense": [
+        "redoubler d'efforts",
+        "faire avec excès",
+        "dépasser les bornes"
+      ],
+      "Éloquence": [
+        "persuasif",
+        "éloquent"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bny",
+    "id": 386,
+    "concepts": {
+      "Filiation": [
+        "fils de",
+        "fils",
+        "descendants"
+      ],
+      "Construction/Édification": [
+        "construire",
+        "bâtir",
+        "donner une maison",
+        "édifier"
+      ],
+      "Sens isolé/Tente": [
+        "tente vaste"
+      ],
+      "Sens isolé/Doigt": [
+        "phalange"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "bwb",
+    "id": 569,
+    "concepts": {
+      "Ouverture/Accès": [
+        "chapitre",
+        "passage",
+        "porte",
+        "entrée",
+        "accès"
+      ],
+      "Chapitre/Section": [
+        "chapitre (bāb)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "byt",
+    "id": 788,
+    "concepts": {
+      "Habitation/Demeure": [
+        "tente",
+        "chambre",
+        "construire",
+        "nourriture du foyer",
+        "demeure",
+        "maison"
+      ],
+      "Nuit/Repos": [
+        "passer la nuit",
+        "rassis"
+      ],
+      "Attaque/Complot": [
+        "attaque nocturne",
+        "machination de nuit"
+      ],
+      "Poésie": [
+        "vers de poésie"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "tlw",
+    "id": 730,
+    "concepts": {
+      "Récitation/Lecture suivie": [
+        "réciter",
+        "lire",
+        "succéder",
+        "réciter suivi",
+        "lire à haute voix"
+      ],
+      "Suite/Succession": [
+        "suivre",
+        "marcher derrière",
+        "venir après"
+      ],
+      "Consécutivité": [
+        "se succéder",
+        "venir consécutivement"
+      ],
+      "Prolongation/Complément": [
+        "compléter en chantant"
+      ],
+      "Engagement/Promesse": [
+        "responsabilité"
+      ],
+      "Restant/Reste": [
+        "restant"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "twb",
+    "id": 479,
+    "concepts": {
+      "Retour": [
+        "se repentir",
+        "revenir",
+        "repentir"
+      ],
+      "Repentir/Retour à Dieu": [
+        "accepter le repentir",
+        "Grand-Accueillant du repentir",
+        "agréer le repentir"
+      ],
+      "Sens isolé/Repentant": [
+        "repentant"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Retour",
+        "b": "Repentir/Retour à Dieu",
+        "shared": [
+          "retour"
+        ],
+        "jaccard": 0.3333333333333333
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "thbt",
+    "id": 1103,
+    "concepts": {
+      "Preuve établie": [
+        "confirmer",
+        "preuve établie",
+        "ferme conviction"
+      ],
+      "Fermeté/Stabilité": [
+        "être stable",
+        "être constant",
+        "affermir",
+        "être ferme"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "thqf",
+    "id": 980,
+    "concepts": {
+      "Saisie vive/Acuité": [
+        "attraper sur le fait",
+        "saisir vivement"
+      ],
+      "Habileté": [
+        "être habile"
+      ],
+      "Rencontre/Découverte": [
+        "trouver",
+        "rencontrer",
+        "saisir"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "thlth",
+    "id": 734,
+    "concepts": {
+      "Nombre/Trinité": [
+        "tiers",
+        "troisième",
+        "trois"
+      ],
+      "Action liée au nombre": [
+        "prendre le tiers",
+        "être le troisième",
+        "tripler",
+        "par groupes de trois"
+      ],
+      "Sens isolé/Objet": [
+        "corde à trois brins"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Nombre/Trinité",
+        "b": "Action liée au nombre",
+        "shared": [
+          "nombre"
+        ],
+        "jaccard": 0.25
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "thny",
+    "id": 588,
+    "concepts": {
+      "Sens isolé/Louer": [
+        "louer"
+      ],
+      "Dualité/Répétition": [
+        "plier",
+        "répéter",
+        "deux",
+        "deuxième"
+      ],
+      "Sens isolé/Exception": [
+        "exception"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "jdl",
+    "id": 985,
+    "concepts": {
+      "Torsion/Tressage": [
+        "tresser"
+      ],
+      "Sens isolé/Être": [
+        "être obstiné"
+      ],
+      "Argumentation/Dispute": [
+        "disputer",
+        "argumenter",
+        "débattre"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "jzy",
+    "id": 531,
+    "concepts": {
+      "Rétribution/Justice": [
+        "rétribuer",
+        "punir",
+        "rétribution",
+        "salaire",
+        "récompenser"
+      ],
+      "Suffisance": [
+        "suffire"
+      ],
+      "Sens isolé/Tribut": [
+        "tribut"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "jel",
+    "id": 359,
+    "concepts": {
+      "Action/Réalisation": [
+        "faire",
+        "établir",
+        "créer",
+        "commencer à",
+        "rendre",
+        "instituer",
+        "placer"
+      ],
+      "Sens isolé/Récompense": [
+        "récompense"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "jnh",
+    "id": 924,
+    "concepts": {
+      "Aile/Côté": [
+        "aile",
+        "côté"
+      ],
+      "Inclinaison/Penchant": [
+        "pencher",
+        "incliner vers"
+      ],
+      "Sens isolé/Péché": [
+        "péché (junah)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "jhd",
+    "id": 1014,
+    "concepts": {
+      "Effort/Lutte": [
+        "combattre dans le sentier de Dieu",
+        "lutter",
+        "s'efforcer"
+      ],
+      "Serment/Engagement": [
+        "serment solennel"
+      ],
+      "Sens isolé/Peine": [
+        "peine"
+      ],
+      "Terrain/Aridité": [
+        "terre dure",
+        "pâturage épuisé"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "j h l",
+    "id": 1184,
+    "concepts": {
+      "Ignorance/Méconnaissance": [
+        "ignorer",
+        "être ignorant",
+        "agir par ignorance",
+        "ignorance",
+        "jāhiliyya"
+      ],
+      "Sens isolé/Être": [
+        "être impétueux"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hdd",
+    "id": 977,
+    "concepts": {
+      "Fer/Dureté": [
+        "fer (hadid)",
+        "être tranchant"
+      ],
+      "Sens isolé/Interdire": [
+        "interdire"
+      ],
+      "Limite/Frontière": [
+        "limite",
+        "limiter",
+        "délimiter",
+        "frontières (hudud)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hrr",
+    "id": 959,
+    "concepts": {
+      "Chaleur/Ardeur": [
+        "chaleur",
+        "être chaud"
+      ],
+      "Vêtement/Couverture": [
+        "soie"
+      ],
+      "Liberté/Affranchissement": [
+        "consacré",
+        "être libre",
+        "libérer",
+        "affranchir un esclave"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hrd",
+    "id": 1531,
+    "concepts": {
+      "Incitation/Exhortation": [
+        "exhorter au combat",
+        "inciter",
+        "inciter fortement (ḥarraḍa)"
+      ],
+      "Sens isolé/Être": [
+        "être sur le point de mourir"
+      ],
+      "Dépérissement/Malade mourant": [
+        "malade en phase terminale (ḥarīḍ)",
+        "être à l'agonie (ḥariḍa)"
+      ],
+      "Plante/Détergent": [
+        "plante à saponine (ḥarḍ)"
+      ],
+      "Maladie extrême": [
+        "être proche de la mort"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hrm",
+    "id": 671,
+    "concepts": {
+      "Interdiction/Sacré": [
+        "respecter",
+        "priver",
+        "interdire",
+        "illicite",
+        "sacré",
+        "sanctuaire"
+      ],
+      "Sens isolé/Épouse": [
+        "épouse"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hsn",
+    "id": 574,
+    "concepts": {
+      "Excellence/Vertu": [
+        "bien faire",
+        "bienfaisance",
+        "excellence",
+        "iḥsān"
+      ],
+      "Beauté/Bonté": [
+        "bon",
+        "excellent",
+        "être beau"
+      ],
+      "Embellissement/Action de bien faire": [
+        "amélioration",
+        "embellir"
+      ],
+      "Sens isolé/Joue": [
+        "joue"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hšr",
+    "id": 1585,
+    "concepts": {
+      "Rassemblement/Résurrection": [
+        "rassembler",
+        "réunir",
+        "résurrection",
+        "regrouper",
+        "conduire (vers un lieu)"
+      ],
+      "Sens isolé/Expulser": [
+        "expulser"
+      ],
+      "Déplacement/Migration": [
+        "déplacer (d'un lieu vers un autre)",
+        "pousser (les gens)"
+      ],
+      "Sens isolé/Finesse": [
+        "mince, fin (oreille effilée)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "h s r",
+    "id": 1178,
+    "concepts": {
+      "Siège/Confinement": [
+        "retenir",
+        "assiéger",
+        "confiner",
+        "être bloqué",
+        "être empêché"
+      ],
+      "Abstinence/Retenue": [
+        "abstinent",
+        "chaste",
+        "ne pas désirer"
+      ],
+      "Parole/Incapacité": [
+        "être incapable de s'exprimer"
+      ],
+      "Lieu/Objet": [
+        "forteresse",
+        "natte"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hdr",
+    "id": 815,
+    "concepts": {
+      "Mort/Destruction": [
+        "mort (la mort se présente)"
+      ],
+      "Sédentarité/Civilisation": [
+        "sédentaire (vs. nomade)",
+        "zone habitée (hadar)"
+      ],
+      "Présence/Témoignage": [
+        "assister à",
+        "venir",
+        "présenter",
+        "être présent",
+        "se présenter",
+        "exposer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hfz",
+    "id": 1060,
+    "concepts": {
+      "Préservation/Protection": [
+        "garder",
+        "préserver",
+        "protéger",
+        "surveiller"
+      ],
+      "Mémorisation": [
+        "mémoriser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hqq",
+    "id": 409,
+    "concepts": {
+      "Vérité/Réalité": [
+        "être vrai",
+        "réalité",
+        "vérité",
+        "droit"
+      ],
+      "Obligation/Nécessité": [
+        "devoir",
+        "mériter",
+        "être obligatoire"
+      ],
+      "Sens isolé/Se": [
+        "se réaliser"
+      ],
+      "Sens isolé/Vérifier": [
+        "vérifier"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hkm",
+    "id": 447,
+    "concepts": {
+      "Sagesse": [
+        "sagesse",
+        "être sage",
+        "sage",
+        "fermement établi"
+      ],
+      "Sens isolé/Empêcher": [
+        "empêcher"
+      ],
+      "Jugement/Décision": [
+        "juger",
+        "décider",
+        "sentence"
+      ],
+      "Autorité/Pouvoir": [
+        "gouverner"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hlm",
+    "id": 1029,
+    "concepts": {
+      "Rêve/Songe": [
+        "songe",
+        "rêver"
+      ],
+      "Clémence/Retenue": [
+        "douceur",
+        "être clément"
+      ],
+      "Maturité": [
+        "puberté"
+      ],
+      "Songe vain/Chimère": [
+        "songe vain",
+        "chimère"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Rêve/Songe",
+        "b": "Songe vain/Chimère",
+        "shared": [
+          "songe"
+        ],
+        "jaccard": 0.25
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "hmd",
+    "id": 252,
+    "concepts": {
+      "Gratitude/Remerciement": [
+        "reconnaissance",
+        "satisfait de",
+        "remercier",
+        "gratitude"
+      ],
+      "Louange/Éloge": [
+        "louer",
+        "éloge",
+        "loué",
+        "digne de louange",
+        "lieu de louange",
+        "bannière de louange",
+        "louable",
+        "louange"
+      ],
+      "Feu/Chaleur": [
+        "chauffer"
+      ],
+      "Lieu/Géographie": [
+        "terre noire"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hml",
+    "id": 1082,
+    "concepts": {
+      "Portage/Transport": [
+        "porter",
+        "supporter un fardeau",
+        "transporter"
+      ],
+      "Grossesse/Gestation": [
+        "être enceinte"
+      ],
+      "Sens isolé/Charger": [
+        "charger"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hwt",
+    "id": 365,
+    "concepts": {
+      "Protection/Encerclement": [
+        "garder",
+        "protéger",
+        "entourer",
+        "encercler",
+        "mur",
+        "englober"
+      ],
+      "Sens isolé/Ruser": [
+        "ruser pour convaincre"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hwl",
+    "id": 351,
+    "concepts": {
+      "Changement/Transformation": [
+        "changer",
+        "transformer",
+        "déplacer",
+        "se détourner"
+      ],
+      "Ruse/Stratagème": [
+        "ruse",
+        "stratagème",
+        "force"
+      ],
+      "Temps/Cycle": [
+        "année"
+      ],
+      "Sens isolé/Louche": [
+        "louche"
+      ],
+      "Espace/Environnement": [
+        "autour de"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hyth",
+    "id": 465,
+    "concepts": {
+      "Lieu/Espace": [
+        "où",
+        "là où",
+        "partout où"
+      ],
+      "Manière": [
+        "de quelque façon"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hyy",
+    "id": 404,
+    "concepts": {
+      "Sens isolé/Serpent": [
+        "serpent"
+      ],
+      "Nom propre": [
+        "Yaḥyā"
+      ],
+      "Salutation/Pudeur": [
+        "pudeur",
+        "saluer"
+      ],
+      "Vie/Vivant": [
+        "vivre",
+        "vivant",
+        "donner la vie",
+        "vie"
+      ],
+      "Eau/Liquide": [
+        "pluie"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "khbr",
+    "id": 1564,
+    "concepts": {
+      "Connaissance/Expérience": [
+        "connaître en profondeur",
+        "informé",
+        "bien informé",
+        "informer",
+        "connaisseur",
+        "expert",
+        "expérience"
+      ],
+      "Information/Nouvelle": [
+        "récit",
+        "information",
+        "nouvelle"
+      ],
+      "Sens isolé/Tarir": [
+        "épuiser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "xde",
+    "id": 297,
+    "concepts": {
+      "Tromperie/Ruse": [
+        "tromper",
+        "duper",
+        "ruser",
+        "feindre",
+        "se croire malin"
+      ],
+      "Sens isolé/Corruption": [
+        "corruption cachée"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "xrj",
+    "id": 388,
+    "concepts": {
+      "Tribut/Revenu": [
+        "revenu",
+        "impôt"
+      ],
+      "Sortie/Émergence": [
+        "sortir",
+        "faire sortir",
+        "expulser",
+        "émerger",
+        "produire"
+      ],
+      "Sens isolé/Résoudre": [
+        "résoudre"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "khfy",
+    "id": 1216,
+    "concepts": {
+      "Dissimulation/Secret": [
+        "être secret",
+        "être invisible",
+        "cacher"
+      ],
+      "Caché/Dissimulé": [
+        "secret",
+        "dissimuler",
+        "invisible"
+      ],
+      "Sens isolé/Manifestation": [
+        "manifester"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "khd",
+    "id": 403,
+    "concepts": {
+      "Permanence/Éternité": [
+        "demeurer longtemps",
+        "demeurer",
+        "éternel",
+        "faire demeurer"
+      ],
+      "Sens isolé/Orner": [
+        "orner de bracelets"
+      ],
+      "Sens isolé/Boucle": [
+        "boucle d'oreille"
+      ],
+      "Sens isolé/Mulot": [
+        "mulot"
+      ],
+      "Sens isolé/Vieillesse": [
+        "longévité"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "khll",
+    "id": 1109,
+    "concepts": {
+      "Amitié intime": [
+        "ami intime",
+        "être ami intime (khalil)"
+      ],
+      "Pénétration/Intervalle": [
+        "percer",
+        "intervalle"
+      ],
+      "Sens isolé/Défaut": [
+        "défaut"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "xwd",
+    "id": 1796,
+    "concepts": {
+      "Immersion/Engagement superficiel": [
+        "patauger",
+        "discourir vainement",
+        "se lancer dans",
+        "s'engager profondément"
+      ],
+      "Discussion vaine": [
+        "converser légèrement"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "khw f",
+    "id": 482,
+    "concepts": {
+      "Crainte/Peur": [
+        "craindre",
+        "crainte",
+        "redouter",
+        "peur",
+        "avoir peur",
+        "effrayer"
+      ],
+      "Menace/Danger": [
+        "danger"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "xwn",
+    "id": 973,
+    "concepts": {
+      "Trahison/Perfidie": [
+        "être infidèle",
+        "tromper la confiance",
+        "infidélité",
+        "perfidie",
+        "trahir"
+      ],
+      "Diminution": [
+        "diminuer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dbr",
+    "id": 1323,
+    "concepts": {
+      "Arrière/Postériorité": [
+        "derrière",
+        "dos"
+      ],
+      "Méditation/Réflexion": [
+        "réfléchir (tadabbur)",
+        "méditer"
+      ],
+      "Souffle/Vent": [
+        "gérer les affaires"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dxl",
+    "id": 567,
+    "concepts": {
+      "Entrée/Pénétration": [
+        "s'introduire",
+        "faire entrer",
+        "entrer",
+        "pénétrer",
+        "accéder",
+        "introduire"
+      ],
+      "Sens isolé/Défaut caché": [
+        "défaut caché",
+        "duplicité"
+      ],
+      "Ressource": [
+        "revenu"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dew",
+    "id": 381,
+    "concepts": {
+      "Prétention/Revendication": [
+        "prétendre",
+        "revendiquer une filiation"
+      ],
+      "Appel/Invocation": [
+        "appeler",
+        "invoquer",
+        "prier",
+        "demander",
+        "inviter"
+      ],
+      "Sens isolé/Maudire": [
+        "maudire"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dfe",
+    "id": 1106,
+    "concepts": {
+      "Repoussement/Défense": [
+        "payer",
+        "éloigner",
+        "repousser",
+        "défendre",
+        "pousser"
+      ],
+      "Versement/Remise": [
+        "verser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dnw",
+    "id": 656,
+    "concepts": {
+      "Proximité/Rapprochement": [
+        "s'approcher peu à peu",
+        "s'approcher mutuellement",
+        "être sur le point de"
+      ],
+      "Parenté/Lien": [
+        "parenté",
+        "parent proche"
+      ],
+      "Bassesse/Médiocrité": [
+        "poursuivre les choses basses",
+        "être faible",
+        "vivre une vie étroite"
+      ],
+      "Abaissement/Couverture": [
+        "abaisser un vêtement"
+      ],
+      "Proximité/Monde d'ici-bas": [
+        "être proche",
+        "proche",
+        "approcher",
+        "ici-bas"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Proximité/Rapprochement",
+        "b": "Proximité/Monde d'ici-bas",
+        "shared": [
+          "proximite"
+        ],
+        "jaccard": 0.25
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "dwn",
+    "id": 383,
+    "concepts": {
+      "Infériorité/En-dessous": [
+        "plus bas",
+        "en dessous",
+        "inférieur",
+        "moindre"
+      ],
+      "Exclusion/Sauf": [
+        "à part",
+        "sauf",
+        "à l'exclusion de"
+      ],
+      "Sens isolé/Approche": [
+        "approcher"
+      ],
+      "Proximité/Moindre distance": [
+        "proche"
+      ],
+      "Sens isolé/Le": [
+        "le plus bas"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dyn",
+    "id": 258,
+    "concepts": {
+      "Religion/Système": [
+        "habitude",
+        "coutume",
+        "système de croyances",
+        "religion",
+        "pratique"
+      ],
+      "Rétribution/Compte": [
+        "compensation",
+        "récompense",
+        "jugement",
+        "rétribution",
+        "punition",
+        "rendre ce qui est dû"
+      ],
+      "Dette/Obligation": [
+        "obligation financière",
+        "créance",
+        "prêt",
+        "dette"
+      ],
+      "Obéissance/Soumission": [
+        "voie",
+        "se soumettre",
+        "soumission",
+        "assujettissement",
+        "obéir"
+      ],
+      "Eau/Liquide": [
+        "pluie continue"
+      ],
+      "Sens isolé/Maladie": [
+        "maladie"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ḏrr",
+    "id": 2614,
+    "concepts": {
+      "Descendance": [
+        "enfants",
+        "progéniture"
+      ],
+      "Particule/Infime": [
+        "plus petites fourmis",
+        "poussière dans un rayon de soleil",
+        "particule minuscule",
+        "particules d'or"
+      ],
+      "Dispersion/Saupoudrage": [
+        "saupoudrer",
+        "éparpiller",
+        "répandre finement"
+      ],
+      "Sens isolé/Parfum": [
+        "parfum aromatique"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ðwq",
+    "id": 1769,
+    "concepts": {
+      "Expérience sensorielle": [
+        "savourer",
+        "éprouver",
+        "goûter"
+      ],
+      "Goût/Saveur": [
+        "subir",
+        "saveur"
+      ],
+      "Sens isolé/Échantillon": [
+        "échantillon"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rjl",
+    "id": 1064,
+    "concepts": {
+      "Homme/Piéton": [
+        "homme",
+        "pied",
+        "piéton"
+      ],
+      "Sens isolé/Revenir": [
+        "revenir"
+      ],
+      "Sens isolé/Improviser": [
+        "improviser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rhm",
+    "id": 251,
+    "concepts": {
+      "Parenté/Lien familial": [
+        "sentiment de parenté",
+        "lien de parenté",
+        "parents par les femmes",
+        "parent interdit au mariage",
+        "connecté par parenté"
+      ],
+      "Provision/Bienfait matériel": [
+        "prophétie",
+        "subsistance",
+        "abondance",
+        "pluie"
+      ],
+      "Utérus/Reproduction": [
+        "utérus",
+        "sortie de l'utérus",
+        "maladie de l'utérus",
+        "vulve",
+        "utérus gonflé",
+        "chamelle malade post-partum"
+      ],
+      "Sens isolé/La": [
+        "la crainte vaut mieux que la pitié"
+      ],
+      "Miséricorde/Tendresse": [
+        "se forcer à la compassion",
+        "le Compatissant",
+        "traité avec beaucoup de compassion",
+        "miséricorde",
+        "dire \"que Dieu te fasse miséricorde\"",
+        "plus miséricordieux",
+        "pardon",
+        "demander la miséricorde",
+        "traiter avec compassion",
+        "miséricorde réciproque",
+        "objet de miséricorde"
+      ],
+      "Lieu/Géographie": [
+        "Médine",
+        "La Mecque"
+      ],
+      "Sens isolé/Outre": [
+        "outre abîmée"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rdd",
+    "id": 674,
+    "concepts": {
+      "Retour/Rejet": [
+        "rendre",
+        "repousser",
+        "renvoyer",
+        "rejeter",
+        "réfuter"
+      ],
+      "Sens isolé/Apostasie": [
+        "apostasier"
+      ],
+      "Restitution/Rendre": [
+        "retourner",
+        "restituer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rsl",
+    "id": 688,
+    "concepts": {
+      "Envoi/Transmission": [
+        "envoyer",
+        "envoyer un messager",
+        "echanger des messages",
+        "message"
+      ],
+      "Messager/Porteur": [
+        "envoye",
+        "messager"
+      ],
+      "Lacher/Liberer": [
+        "lacher",
+        "liberer",
+        "lancer"
+      ],
+      "Douceur/Aisance": [
+        "etre facile dans l'allure",
+        "agir avec douceur et calme",
+        "reciter posement"
+      ],
+      "Pendaison/Relachement": [
+        "cheveux pendants et lisses",
+        "pendre"
+      ],
+      "Troupeau/Groupe": [
+        "troupeau de chameaux",
+        "groupe de personnes"
+      ],
+      "Pluie/Eau": [
+        "pluie envoyee"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rfa",
+    "id": 604,
+    "concepts": {
+      "Élévation/Exaltation": [
+        "lever",
+        "hausser",
+        "exalter",
+        "élever",
+        "rang élevé",
+        "hisser",
+        "noble"
+      ],
+      "Sens isolé/Élever la voix": [
+        "élever la voix"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rmy",
+    "id": 1554,
+    "concepts": {
+      "Lancement/Jet": [
+        "jeter",
+        "lancer",
+        "tirer (flèche)",
+        "accuser"
+      ],
+      "Accusation/Imputation": [
+        "accuser injustement"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "rwd",
+    "id": 411,
+    "concepts": {
+      "Recherche/Quête": [
+        "aller et venir",
+        "chercher à convaincre",
+        "désirer",
+        "éclaireur",
+        "chercher",
+        "reconnaissance"
+      ],
+      "Sens isolé/Aller-retour": [
+        "va-et-vient"
+      ],
+      "Sens isolé/Pâturage": [
+        "pâturer",
+        "pâturage"
+      ],
+      "Douceur/Lenteur": [
+        "agir doucement"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ryb",
+    "id": 276,
+    "concepts": {
+      "Besoin/Manque": [
+        "avoir besoin de",
+        "besoin"
+      ],
+      "Doute/Suspicion": [
+        "douter",
+        "soupçonner",
+        "inquiétude",
+        "accusation"
+      ],
+      "Sens isolé/Abondance": [
+        "abondance d'herbage"
+      ],
+      "Lieu/Géographie": [
+        "terre fertile"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "zbr",
+    "id": 1403,
+    "concepts": {
+      "Écriture/Livre": [
+        "psaumes (zabur)",
+        "écriture",
+        "écrits",
+        "texte consigné",
+        "livre écrit"
+      ],
+      "Sens isolé/Fer": [
+        "fer"
+      ],
+      "Construction/Pierre": [
+        "pierre",
+        "casser un puits par des pierres"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "zem",
+    "id": 1738,
+    "concepts": {
+      "Affirmation douteuse": [
+        "affirmer",
+        "soutenir",
+        "alléguer",
+        "prétendre"
+      ],
+      "Autorité": [
+        "chef"
+      ],
+      "Responsabilité/Chef": [
+        "garant (zaʿīm)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sjd",
+    "id": 448,
+    "concepts": {
+      "Humilité/Soumission": [
+        "s'humilier",
+        "baisser la tête",
+        "se soumettre"
+      ],
+      "Salut/Hommage": [
+        "saluer",
+        "rendre hommage",
+        "honorer"
+      ],
+      "Inclinaison/Nature": [
+        "palmier qui s'incline sous les fruits",
+        "bateau qui s'incline sous le vent"
+      ],
+      "Sens isolé/Debout": [
+        "se tenir droit"
+      ],
+      "Prosternation/Adoration": [
+        "adorer",
+        "obéir",
+        "s'incliner",
+        "se prosterner"
+      ],
+      "Lieu de prosternation": [
+        "mosquée"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Prosternation/Adoration",
+        "b": "Lieu de prosternation",
+        "shared": [
+          "prosternation"
+        ],
+        "jaccard": 0.3333333333333333
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "srf2",
+    "id": 2671,
+    "concepts": {
+      "Excès/Gaspillage": [
+        "gaspiller",
+        "prodigalité",
+        "être excessif",
+        "celui qui excède",
+        "excès"
+      ],
+      "Sens isolé/Ignorance": [
+        "ignorant sans mesure"
+      ],
+      "Sens isolé/Mite": [
+        "mite"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ser",
+    "id": 1430,
+    "concepts": {
+      "Embrasement/Intensité": [
+        "brûler intensément",
+        "allumer un feu",
+        "attiser un feu"
+      ],
+      "Richesse/Valeur": [
+        "prix (sier)"
+      ],
+      "Folie/Insanité": [
+        "folie",
+        "être fou"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sfh",
+    "id": 332,
+    "concepts": {
+      "Légèreté/Stupidité": [
+        "être insensé",
+        "léger d'esprit",
+        "stupide",
+        "déclarer insensé",
+        "agir de manière insensée"
+      ],
+      "Agitation/Mouvement": [
+        "agitation"
+      ],
+      "Sens isolé/Soif": [
+        "soif violente"
+      ],
+      "Sens isolé/Se": [
+        "se quereller"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "skr",
+    "id": 1485,
+    "concepts": {
+      "Altération/Trouble": [
+        "ivresse",
+        "enivrer",
+        "boisson enivrante",
+        "enivré"
+      ],
+      "Douceur": [
+        "sucre"
+      ],
+      "Fermeture/Verrouillage": [
+        "boucher (une porte)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "slt",
+    "id": 1363,
+    "concepts": {
+      "Domination/Autorité": [
+        "avoir pouvoir sur",
+        "autorité (sultan)",
+        "dominer",
+        "argument",
+        "puissance"
+      ],
+      "Sens isolé/Preuve": [
+        "preuve (sultan)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "slm",
+    "id": 627,
+    "concepts": {
+      "Remise/Livraison": [
+        "se rendre",
+        "s'en remettre",
+        "livrer",
+        "payer d'avance",
+        "capituler",
+        "se remettre",
+        "remise",
+        "islam",
+        "soumission"
+      ],
+      "Salutation": [
+        "saluer"
+      ],
+      "Intégrité/Préservation": [
+        "sécurité",
+        "cœur sain",
+        "sain et sauf",
+        "être sauf",
+        "être préservé"
+      ],
+      "Sens isolé/Os": [
+        "os de doigt"
+      ],
+      "Sens isolé/Captif": [
+        "captif sans combat"
+      ],
+      "Paix": [
+        "réconciliation",
+        "paix",
+        "salut"
+      ],
+      "Sens isolé/Échelle": [
+        "échelle"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sme",
+    "id": 302,
+    "concepts": {
+      "Renommée/Bruit": [
+        "bruit",
+        "réputation",
+        "faire entendre"
+      ],
+      "Audition/Écoute": [
+        "obéir",
+        "écouter",
+        "entendre",
+        "ouïe",
+        "exaucer"
+      ],
+      "Corps/Anatomie": [
+        "oreille"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "smw",
+    "id": 249,
+    "concepts": {
+      "Hauteur/Élévation": [
+        "monter",
+        "élever quelqu'un",
+        "aspirer",
+        "dépasser en nombre",
+        "étalon qui bondit",
+        "se dresser",
+        "lever le regard",
+        "surpasser",
+        "forme vue de loin",
+        "être haut",
+        "éminent",
+        "lune qui se dresse",
+        "rivaliser en éminence",
+        "hautain",
+        "noble"
+      ],
+      "Chasse": [
+        "tester une chamelle",
+        "chasseurs",
+        "chaussettes de chasseur",
+        "chasser",
+        "inciter à chasser"
+      ],
+      "Nom/Identification": [
+        "nommer",
+        "se nommer",
+        "qualité de nom",
+        "prononcer le nom de Dieu",
+        "homonyme",
+        "nominal",
+        "s'appeler mutuellement",
+        "demander le nom",
+        "renommée",
+        "nommé",
+        "revendiquer une parenté",
+        "nom"
+      ],
+      "Sens isolé/Regarder": [
+        "regarder la silhouette"
+      ],
+      "Ciel/Ce qui couvre": [
+        "semelle supérieure",
+        "céleste",
+        "bounty",
+        "ciel",
+        "toit",
+        "nuage",
+        "pluie",
+        "pièce de tissu supérieure",
+        "herbage",
+        "dos"
+      ],
+      "Souffle/Vent": [
+        "faire partir"
+      ],
+      "Animal/Faune": [
+        "monter à cheval"
+      ],
+      "Sens isolé/Désir": [
+        "désir qui resurgit"
+      ],
+      "Sens isolé/Visiter": [
+        "visiter"
+      ],
+      "Sens isolé/Se": [
+        "se diriger vers Es-Semaweh"
+      ],
+      "Sens isolé/Choisir": [
+        "choisir"
+      ],
+      "Sens isolé/Égal": [
+        "égal"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "snn",
+    "id": 1120,
+    "concepts": {
+      "Voie/Loi": [
+        "chemin tracé",
+        "loi divine (sunna)",
+        "tradition"
+      ],
+      "Aiguisement": [
+        "aiguiser"
+      ],
+      "Sens isolé/Dent": [
+        "dent"
+      ],
+      "Modelage/Coulée": [
+        "verser sur",
+        "modeler"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "swa",
+    "id": 539,
+    "concepts": {
+      "Mal/Mauvais": [
+        "mal",
+        "mauvaise action",
+        "mauvais",
+        "nuisible",
+        "péché"
+      ],
+      "Action de nuire": [
+        "faire du mal",
+        "nuire",
+        "affliger"
+      ],
+      "Sens isolé/Partie honteuse": [
+        "cadavre repoussant",
+        "nudité"
+      ],
+      "Honte/Pudeur": [
+        "honte"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "swy",
+    "id": 295,
+    "concepts": {
+      "Achèvement/Perfection": [
+        "achever",
+        "rendre parfait"
+      ],
+      "Lieu/Géographie": [
+        "milieu"
+      ],
+      "Égalité/Équivalence": [
+        "être égal",
+        "équivalent",
+        "même chose",
+        "indifférent",
+        "égaliser",
+        "aplanir"
+      ],
+      "Sens isolé/Se": [
+        "se tenir droit"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "shjr",
+    "id": 469,
+    "concepts": {
+      "Arbre/Végétation": [
+        "arbre",
+        "plante"
+      ],
+      "Élévation": [
+        "s'élever"
+      ],
+      "Conflit/Querelle": [
+        "être emmêlé",
+        "dispute"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "shdd",
+    "id": 675,
+    "concepts": {
+      "Force/Solidité": [
+        "serrer",
+        "lier fortement",
+        "affermir"
+      ],
+      "Intensité/Sévérité": [
+        "sévère",
+        "rigoureux",
+        "intense"
+      ],
+      "Attaque/Assaut": [
+        "charger (en bataille)",
+        "assaillir"
+      ],
+      "Course/Hâte": [
+        "courir",
+        "se hâter"
+      ],
+      "Avarice/Tenacité": [
+        "avare"
+      ],
+      "Maturité/Plénitude": [
+        "âge de force",
+        "maturité"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "shrk",
+    "id": 737,
+    "concepts": {
+      "Association/Polythéisme": [
+        "associer",
+        "associateurs",
+        "polythéisme",
+        "partenaire"
+      ],
+      "Partage/Copartenariat": [
+        "partager",
+        "participer",
+        "être copartenaire",
+        "donner une part"
+      ],
+      "Enchevêtrement/Piège": [
+        "enlacer",
+        "piège"
+      ],
+      "Lanière": [
+        "lanière de sandale"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "šry",
+    "id": 338,
+    "concepts": {
+      "Mal/Méchanceté": [
+        "être mauvais",
+        "mal",
+        "méchanceté",
+        "rendre notoire en mal",
+        "traiter avec hostilité",
+        "semer la discorde"
+      ],
+      "Commerce/Échange": [
+        "vendre",
+        "acheter",
+        "échanger"
+      ],
+      "Sens isolé/Se": [
+        "se disperser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "stn",
+    "id": 329,
+    "concepts": {
+      "Éloignement/Distance": [
+        "éloigner",
+        "loin de la vérité",
+        "être distant",
+        "expédition lointaine"
+      ],
+      "Corde": [
+        "corde longue"
+      ],
+      "Diable/Satan": [
+        "diable",
+        "Satan",
+        "agir en diable"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "škr",
+    "id": 546,
+    "concepts": {
+      "Gratitude/Reconnaissance": [
+        "remercier",
+        "gratitude",
+        "reconnaissance",
+        "louange",
+        "reconnaissant"
+      ],
+      "Sens isolé/Bétail repu": [
+        "rassasié"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "shhw",
+    "id": 1233,
+    "concepts": {
+      "Désir/Convoitise": [
+        "convoiter",
+        "passion (shahwa)",
+        "chose désirée",
+        "désirer",
+        "aimer",
+        "appétit",
+        "désir ardent"
+      ],
+      "Ressemblance/Imitation": [
+        "ressembler",
+        "plaisanter"
+      ],
+      "Sens isolé/Mauvais œil": [
+        "frapper du mauvais œil"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "shy",
+    "id": 466,
+    "concepts": {
+      "Chose/Être": [
+        "chose",
+        "quelque chose",
+        "être",
+        "existence"
+      ],
+      "Volonté": [
+        "désirer",
+        "souhaiter",
+        "volonté (mashīʾa)",
+        "vouloir"
+      ],
+      "Incitation/Contrainte": [
+        "inciter",
+        "contraindre",
+        "forcer"
+      ],
+      "Difformité/Laideur": [
+        "rendre laid",
+        "être mal formé"
+      ],
+      "Apaisement": [
+        "s'apaiser"
+      ],
+      "Néant": [
+        "rien"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sdd",
+    "id": 1018,
+    "concepts": {
+      "Empêchement/Obstruction": [
+        "détourner",
+        "empêcher",
+        "se détourner",
+        "bloquer le chemin",
+        "obstruer",
+        "écarter"
+      ],
+      "Sens isolé/Face,": [
+        "face, côté"
+      ],
+      "Opposition/Rivalité": [
+        "s'opposer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sdr",
+    "id": 1245,
+    "concepts": {
+      "Poitrine/Intériorité": [
+        "cœur intérieur",
+        "poitrine",
+        "cœur (intérieur)",
+        "sein"
+      ],
+      "Émission/Sortie": [
+        "émettre",
+        "sortir"
+      ],
+      "Sens isolé/Retour": [
+        "retour"
+      ],
+      "Source/Émergence": [
+        "émerger",
+        "source"
+      ],
+      "Eau/Liquide": [
+        "source (début)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "sdq",
+    "id": 384,
+    "concepts": {
+      "Don/Aumône": [
+        "aumône",
+        "dot"
+      ],
+      "Vérité/Sincérité": [
+        "vrai",
+        "sincère",
+        "dire vrai",
+        "confirmer"
+      ],
+      "Amitié": [
+        "ami sincère"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "srt",
+    "id": 262,
+    "concepts": {
+      "Chemin/Voie": [
+        "voie",
+        "chemin",
+        "route"
+      ],
+      "Sens isolé/Avalement": [
+        "avaler"
+      ],
+      "Sens isolé/Gosier": [
+        "gosier"
+      ],
+      "Sens isolé/Chemin pavé": [
+        "route pavée"
+      ],
+      "Sens isolé/Pont": [
+        "pont de l'au-delà"
+      ],
+      "Arme/Combat": [
+        "épée longue"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Chemin/Voie",
+        "b": "Sens isolé/Chemin pavé",
+        "shared": [
+          "chemin"
+        ],
+        "jaccard": 0.3333333333333333
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "sed",
+    "id": 1365,
+    "concepts": {
+      "Ascension/Élévation": [
+        "s'élever",
+        "gravir",
+        "monter"
+      ],
+      "Sens isolé/Pente": [
+        "pente (saoud)"
+      ],
+      "Sens isolé/Surface du sol": [
+        "surface terrestre",
+        "sol pur"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "slb",
+    "id": 1462,
+    "concepts": {
+      "Crucifixion/Suspension": [
+        "croix",
+        "crucifier",
+        "suspendre pour châtier"
+      ],
+      "Dureté/Fermeté": [
+        "dur",
+        "ferme"
+      ],
+      "Solidité/Reins": [
+        "reins (ṣulb)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "slh",
+    "id": 326,
+    "concepts": {
+      "Bonté/Rectitude": [
+        "être bon",
+        "rectitude",
+        "réparer",
+        "réconcilier",
+        "oeuvre bonne",
+        "vertueux",
+        "réformer"
+      ],
+      "Sens isolé/Paix": [
+        "paix"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "slw",
+    "id": 283,
+    "concepts": {
+      "Proximité/Attachement": [
+        "suivre de près"
+      ],
+      "Lieu/Géographie": [
+        "milieu"
+      ],
+      "Prière/Invocation": [
+        "prière rituelle",
+        "invoquer",
+        "prier",
+        "bénir",
+        "lieu de prière"
+      ],
+      "Corps/Anatomie": [
+        "deuxième dans une course"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "swb",
+    "id": 917,
+    "concepts": {
+      "Endurance": [
+        "patience"
+      ],
+      "Atteinte/Affliction": [
+        "malheur",
+        "frapper (calamité)",
+        "atteindre",
+        "toucher",
+        "pluie abondante"
+      ],
+      "Justesse/Rectitude": [
+        "être juste",
+        "viser juste"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "drb",
+    "id": 405,
+    "concepts": {
+      "Lieu/Géographie": [
+        "semer la discorde"
+      ],
+      "Établissement/Institution": [
+        "frapper la monnaie",
+        "dresser une tente",
+        "établir",
+        "donner un exemple"
+      ],
+      "Frappe/Coup": [
+        "frapper",
+        "battre"
+      ],
+      "Déplacement": [
+        "voyager"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "drr",
+    "id": 795,
+    "concepts": {
+      "Nuisance/Mal": [
+        "préjudice",
+        "nuire",
+        "tort",
+        "dommage"
+      ],
+      "Détresse/Adversité": [
+        "adversité",
+        "misère",
+        "détresse"
+      ],
+      "Sens isolé/Femme jalouse": [
+        "co-épouse"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "dll",
+    "id": 268,
+    "concepts": {
+      "Oubli/Enterrement": [
+        "eau souterraine",
+        "restes d'eau",
+        "enterrer",
+        "cacher dans le sol",
+        "oublier"
+      ],
+      "Parenté/Famille": [
+        "fils illégitime"
+      ],
+      "Minéral/Terre": [
+        "pierres"
+      ],
+      "Égarement/Déviation": [
+        "égarement",
+        "feindre l'égarement",
+        "terre qui égare",
+        "perdre son chemin",
+        "s'égarer",
+        "errer",
+        "route qui égare",
+        "faire égarer",
+        "être égaré",
+        "confusion",
+        "perplexité",
+        "demander l'égarement",
+        "cause d'égarement",
+        "dévier"
+      ],
+      "Disparition/Perte": [
+        "disparaître",
+        "être enterré",
+        "futilité",
+        "périr",
+        "devenir poussière",
+        "mourir",
+        "perdre quelque chose",
+        "état de perdition",
+        "vain",
+        "se perdre"
+      ],
+      "Lieu/Géographie": [
+        "terre rugueuse"
+      ],
+      "Sens isolé/Suiveur": [
+        "suiveur de femmes"
+      ],
+      "Sens isolé/Guide": [
+        "guide habile"
+      ],
+      "Corps/Anatomie": [
+        "sang non vengé"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "trq",
+    "id": 1583,
+    "concepts": {
+      "Frappe/Percussion": [
+        "frapper",
+        "percussion"
+      ],
+      "Voie/Passage": [
+        "chemin",
+        "voie"
+      ],
+      "Lumière perçante": [
+        "astre nocturne"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "tyb",
+    "id": 564,
+    "concepts": {
+      "Bonté/Pureté": [
+        "terre fertile",
+        "bonne progéniture",
+        "bon",
+        "être bon",
+        "pur",
+        "licite",
+        "agréable",
+        "parfum"
+      ],
+      "Plaisanterie/Détente": [
+        "plaisanter",
+        "badiner"
+      ],
+      "Excellence/Choix": [
+        "le meilleur de"
+      ],
+      "Sens isolé/Vin": [
+        "vin"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "zlm",
+    "id": 354,
+    "concepts": {
+      "Souffle/Vent": [
+        "se faire du tort"
+      ],
+      "Injustice/Oppression": [
+        "oppresseur",
+        "injustice",
+        "être injuste",
+        "opprimer"
+      ],
+      "Obscurité/Ténèbres": [
+        "obscurité",
+        "ténèbres"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "znn",
+    "id": 501,
+    "concepts": {
+      "Pensée/Supposition": [
+        "conjecture",
+        "soupçonner",
+        "penser",
+        "supposer",
+        "croire",
+        "opinion",
+        "présomption"
+      ],
+      "Sens isolé/Soupçon": [
+        "soupçon"
+      ],
+      "Sens isolé/Lieu obscur": [
+        "ombre"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ebd",
+    "id": 259,
+    "concepts": {
+      "Servitude/Esclavage": [
+        "esclave",
+        "asservir",
+        "aplanir un chemin",
+        "être humain",
+        "serviteur",
+        "rendre soumis"
+      ],
+      "Adoration/Dévotion": [
+        "adoration",
+        "servir",
+        "vouer un culte",
+        "adorer",
+        "dévotion",
+        "se dévouer"
+      ],
+      "Sens isolé/Mépriser": [
+        "mépriser"
+      ],
+      "Sens isolé/Être": [
+        "être en colère"
+      ],
+      "Sens isolé/Colérique": [
+        "colérique"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ejl",
+    "id": 530,
+    "concepts": {
+      "Idolâtrie": [
+        "veau"
+      ],
+      "Hâte/Précipitation": [
+        "presser",
+        "précipiter",
+        "se hâter",
+        "précipitation"
+      ],
+      "Bovin/Jeune animal": [
+        "veau (ʿijl)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "edl",
+    "id": 535,
+    "concepts": {
+      "Justice/Équité": [
+        "justice",
+        "rançon",
+        "équité",
+        "équivalent",
+        "être juste"
+      ],
+      "Sens isolé/Dévier": [
+        "dévier"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "edw",
+    "id": 457,
+    "concepts": {
+      "Course/Vitesse": [
+        "courir"
+      ],
+      "Transgression/Excès": [
+        "transgresser",
+        "injustice"
+      ],
+      "Hostilité/Inimitié": [
+        "ennemi",
+        "hostilité",
+        "agression"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "edb",
+    "id": 314,
+    "concepts": {
+      "Eau/Liquide": [
+        "poussières flottant sur l'eau"
+      ],
+      "Abstention": [
+        "quitter",
+        "s'abstenir"
+      ],
+      "Châtiment/Punition": [
+        "tourment",
+        "tourmenter",
+        "châtier",
+        "punir",
+        "châtiment"
+      ],
+      "Végétation/Plante": [
+        "arbre vénéneux"
+      ],
+      "Douceur": [
+        "agréable",
+        "doux",
+        "eau douce",
+        "sucré"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "erd",
+    "id": 417,
+    "concepts": {
+      "Détournement/Refus": [
+        "se détourner",
+        "refuser",
+        "ignorer"
+      ],
+      "Présentation/Exposition": [
+        "montrer",
+        "proposer",
+        "exposer",
+        "parler indirectement"
+      ],
+      "Largeur/Étendue": [
+        "être large",
+        "large"
+      ],
+      "Accident/Éphémère": [
+        "accident",
+        "maladie"
+      ],
+      "Sens isolé/Rivaliser": [
+        "rivaliser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "erf",
+    "id": 682,
+    "concepts": {
+      "Connaissance/Reconnaissance": [
+        "identifier",
+        "connaître",
+        "reconnaître",
+        "bien reconnu",
+        "coutume"
+      ],
+      "Sens isolé/Crête": [
+        "crête"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ezz",
+    "id": 807,
+    "concepts": {
+      "Puissance/Gloire": [
+        "être glorieux",
+        "être invincible",
+        "puissant",
+        "être puissant"
+      ],
+      "Renforcement": [
+        "renforcer"
+      ],
+      "Rareté/Valeur": [
+        "être rare et précieux"
+      ],
+      "Lieu/Géographie": [
+        "aimer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ezl",
+    "id": 1021,
+    "concepts": {
+      "Isolement/Écart": [
+        "destituer",
+        "séparer",
+        "isoler",
+        "mettre à l'écart",
+        "écarter"
+      ],
+      "Sens isolé/Coït": [
+        "coït interrompu"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "esm",
+    "id": 1314,
+    "concepts": {
+      "Protection/Préservation": [
+        "préserver",
+        "empêcher de tomber",
+        "protéger"
+      ],
+      "Minéral/Terre": [
+        "s'accrocher à"
+      ],
+      "Lien/Allégeance": [
+        "infaillibilité",
+        "lien sacré",
+        "sauvegarde"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ezm",
+    "id": 310,
+    "concepts": {
+      "Structure/Ossature": [
+        "squelette",
+        "os"
+      ],
+      "Grandeur/Importance": [
+        "être grand",
+        "grandir",
+        "immense",
+        "magnifier"
+      ],
+      "Résolution/Détermination": [
+        "détermination",
+        "résolution",
+        "fermeté"
+      ],
+      "Sens isolé/Châtiment": [
+        "châtiment terrible"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "eqd",
+    "id": 1069,
+    "concepts": {
+      "Détermination": [
+        "résolution ferme"
+      ],
+      "Nœud/Contrat": [
+        "nouer",
+        "contracter",
+        "pacte"
+      ],
+      "Sens isolé/Nœud": [
+        "nœud de magie"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "elq",
+    "id": 1558,
+    "concepts": {
+      "Accrochage/Attachement": [
+        "attacher",
+        "être suspendu à",
+        "suspendre",
+        "caillot de sang (alaq)",
+        "s'attacher",
+        "s'accrocher"
+      ],
+      "Caillot/Attache biologique": [
+        "caillot (ʿalaqa)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "elm",
+    "id": 254,
+    "concepts": {
+      "Savoir/Connaissance": [
+        "enseignement",
+        "savant",
+        "certitude",
+        "science",
+        "savoir",
+        "être informé",
+        "connaître"
+      ],
+      "Marque/Signe": [
+        "drapeau",
+        "montagne",
+        "lèvre fendue",
+        "repère",
+        "étendard",
+        "marquer",
+        "signe"
+      ],
+      "Monde/Création": [
+        "les mondes",
+        "univers",
+        "ensemble des créatures",
+        "monde"
+      ],
+      "Sens isolé/Homonyme": [
+        "homonyme"
+      ],
+      "Lieu/Géographie": [
+        "informer",
+        "nommer"
+      ],
+      "Sens isolé/Enseigner": [
+        "enseigner"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "elw",
+    "id": 371,
+    "concepts": {
+      "Hauteur/Élévation": [
+        "élever",
+        "être haut",
+        "s'élever",
+        "supérieur",
+        "le Très-Haut",
+        "rivaliser en élévation",
+        "venir (taʿālaw)"
+      ],
+      "Animal/Faune": [
+        "charger sur un chameau"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "eml",
+    "id": 393,
+    "concepts": {
+      "Action/Oeuvre": [
+        "ouvrier",
+        "acte",
+        "agir",
+        "travailler",
+        "oeuvre"
+      ],
+      "Sens isolé/Gouverneur": [
+        "gouverneur"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "emm",
+    "id": 643,
+    "concepts": {
+      "Généralité/Parenté": [
+        "oncle paternel",
+        "englober",
+        "général",
+        "généraliser",
+        "être général"
+      ],
+      "Oncle paternel": [
+        "oncle paternel (ʿamm)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ent",
+    "id": 1025,
+    "concepts": {
+      "Difficulté/Souffrance": [
+        "être en difficulté",
+        "souffrir",
+        "pécher"
+      ],
+      "Sens isolé/Fornication": [
+        "fornication"
+      ],
+      "Épreuve pénible": [
+        "rigueur excessive",
+        "épreuve pénible",
+        "fauter par excès"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghdb",
+    "id": 267,
+    "concepts": {
+      "Dureté/Matériau": [
+        "peau de poisson",
+        "épais",
+        "peau de chèvre",
+        "bouclier en cuir",
+        "peau entre les cornes",
+        "peau de tête",
+        "rougeur intense",
+        "lion",
+        "taureau",
+        "cuir épais",
+        "éminence",
+        "roche ronde",
+        "pierre dure",
+        "cent chameaux",
+        "vêtement de combat"
+      ],
+      "Contraire de al-rida": [
+        "être en colère",
+        "se mettre mutuellement en colère",
+        "contraire de al-rida",
+        "excitation du sang du cœur",
+        "accès de colère",
+        "en colère rapidement",
+        "rendre en colère",
+        "devenir en colère progressivement",
+        "objet de colère",
+        "faculté irascible",
+        "perturbé dans les relations",
+        "colère"
+      ],
+      "Sens isolé/Serpent": [
+        "serpent malveillant"
+      ],
+      "Maladie/Corps": [
+        "protubérance de chair",
+        "éruption cutanée",
+        "variole",
+        "atteint de variole",
+        "motes dans l'œil"
+      ],
+      "Rupture/Séparation": [
+        "rompre avec quelqu'un par colère"
+      ],
+      "Sens isolé/Partie": [
+        "partie anatomique"
+      ],
+      "Sens isolé/Mordre": [
+        "mordre le mors"
+      ],
+      "Sens isolé/Marmite": [
+        "marmite qui bout"
+      ],
+      "Sens isolé/Austère": [
+        "austère du regard"
+      ],
+      "Sens isolé/Groupe": [
+        "groupe de femmes"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghfl",
+    "id": 642,
+    "concepts": {
+      "Insouciance/Négligence": [
+        "négliger",
+        "être insouciant",
+        "oublier",
+        "ignorer (par inattention)",
+        "être inattentif"
+      ],
+      "Sens isolé/Feinte": [
+        "feindre l'inattention"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghlb",
+    "id": 1099,
+    "concepts": {
+      "Victoire/Domination": [
+        "conquérir",
+        "être supérieur",
+        "prévaloir",
+        "l'emporter",
+        "surmonter",
+        "dominer",
+        "vaincre"
+      ],
+      "Effort/Lutte": [
+        "lutter pour la victoire",
+        "rivaliser"
+      ],
+      "Sens isolé/Intensité": [
+        "être intense (couleur)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghlz",
+    "id": 1382,
+    "concepts": {
+      "Dureté/Sévérité": [
+        "rudesse",
+        "dureté",
+        "rigueur",
+        "sévérité",
+        "être dur de cœur"
+      ],
+      "Sens isolé/Être": [
+        "être épais"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "gny",
+    "id": 2584,
+    "concepts": {
+      "Richesse/Autosuffisance": [
+        "être riche",
+        "se passer de",
+        "être autosuffisant",
+        "enrichir",
+        "indépendant"
+      ],
+      "Sens isolé/Chant": [
+        "chanter",
+        "chant"
+      ],
+      "Sens isolé/Habitation": [
+        "demeurer",
+        "habiter"
+      ],
+      "Sens isolé/Plante": [
+        "plante grasse"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghwt",
+    "id": 1487,
+    "concepts": {
+      "Engloutissement/Profondeur": [
+        "enfoncer",
+        "engloutir",
+        "abîme"
+      ],
+      "Besoin naturel/Latrines": [
+        "lieu d'aisance (ghāʾiṭ)"
+      ],
+      "Fosse/Dépression": [
+        "fosse profonde",
+        "dépression du sol"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ghyr",
+    "id": 266,
+    "concepts": {
+      "Changement/Altération": [
+        "échanger",
+        "transformer",
+        "changer",
+        "altérer",
+        "modifier",
+        "devenir autre",
+        "arracher les cheveux blancs"
+      ],
+      "Jalousie/Protection": [
+        "protéger ce qui est sien",
+        "plus jaloux",
+        "très jaloux",
+        "jalousie"
+      ],
+      "Provision/Subsistance": [
+        "pourvoir sa famille",
+        "provision de blé",
+        "obtenir un bénéfice"
+      ],
+      "Corps/Anatomie": [
+        "sang versé",
+        "discours"
+      ],
+      "Autre/Exclusion": [
+        "n'est pas",
+        "autre",
+        "excepté",
+        "pas",
+        "sauf",
+        "différent",
+        "exclusion",
+        "sans"
+      ],
+      "Sens isolé/Badge": [
+        "badge des non-musulmans"
+      ],
+      "Sens isolé/Mensonge": [
+        "mensonge"
+      ],
+      "Lieu/Géographie": [
+        "terre arrosée"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "fhš",
+    "id": 944,
+    "concepts": {
+      "Indécence/Turpitude": [
+        "être obscène",
+        "obscène",
+        "indécence",
+        "turpitude",
+        "acte immoral",
+        "excéder les limites",
+        "abomination"
+      ],
+      "Sens isolé/Avarice": [
+        "avarice"
+      ],
+      "Sens isolé/Être": [
+        "être avare"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "fḫr",
+    "id": 1479,
+    "concepts": {
+      "Excellence": [
+        "glorieux"
+      ],
+      "Orgueil/Vantardise": [
+        "fierté",
+        "orgueil",
+        "se vanter",
+        "s'enorgueillir"
+      ],
+      "Poterie/Terre cuite": [
+        "argile cuite (fakhkhār)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "frd",
+    "id": 618,
+    "concepts": {
+      "Obligation/Devoir": [
+        "fixer",
+        "assigner",
+        "obliger",
+        "prescrire",
+        "devoir"
+      ],
+      "Part déterminée": [
+        "part successorale",
+        "part obligatoire",
+        "part"
+      ],
+      "Sens isolé/Entaille": [
+        "encoche"
+      ],
+      "Sens isolé/Grand": [
+        "énorme"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "fry",
+    "id": 2482,
+    "concepts": {
+      "Extraordinaire": [
+        "merveilleux"
+      ],
+      "Fabrication/Mensonge": [
+        "fabriquer",
+        "inventer",
+        "forger",
+        "calomnier"
+      ],
+      "Coupure/Fente": [
+        "couper",
+        "fendre"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "fwq",
+    "id": 407,
+    "concepts": {
+      "Supériorité/Dessus": [
+        "au-dessus",
+        "surpasser",
+        "exceller"
+      ],
+      "Rétablissement": [
+        "se rétablir"
+      ],
+      "Sens isolé/Encoche": [
+        "encoche de flèche"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qbl",
+    "id": 291,
+    "concepts": {
+      "Sens isolé/Garantie": [
+        "garantie"
+      ],
+      "Antériorité/Passé": [
+        "auparavant",
+        "avant",
+        "ancien",
+        "devant"
+      ],
+      "Orientation/Direction": [
+        "se tourner vers",
+        "venir vers",
+        "faire face"
+      ],
+      "Réception/Accueil": [
+        "agréer",
+        "accepter",
+        "recevoir"
+      ],
+      "Sens isolé/Tribu": [
+        "tribu"
+      ],
+      "Sens isolé/Embrasser": [
+        "embrasser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qtl",
+    "id": 556,
+    "concepts": {
+      "Meurtre/Combat": [
+        "meurtre",
+        "assassiner",
+        "guerre",
+        "combattre",
+        "combat",
+        "tuer"
+      ],
+      "Sens isolé/Imprécation": [
+        "imprécation"
+      ],
+      "Sens isolé/Mélanger": [
+        "couper le vin"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qdm",
+    "id": 698,
+    "concepts": {
+      "Antériorité/Établissement": [
+        "antériorité",
+        "précéder",
+        "ancien",
+        "pied",
+        "avancer"
+      ],
+      "Pied/Marche": [
+        "pas"
+      ],
+      "Sens isolé/Présenter": [
+        "présenter",
+        "offrir"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qrn",
+    "id": 1477,
+    "concepts": {
+      "Temps/Génération": [
+        "siècle",
+        "génération"
+      ],
+      "Corne/Excroissance": [
+        "corne",
+        "à double corne (aqran)"
+      ],
+      "Association/Appairage": [
+        "accompagner",
+        "associer (aqrana)",
+        "compagnon (qarīn)",
+        "union (qirān)",
+        "joindre ensemble (qarana)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qry",
+    "id": 568,
+    "concepts": {
+      "Lecture/Récitation": [
+        "lire",
+        "réciter"
+      ],
+      "Établissement humain": [
+        "village",
+        "cité"
+      ],
+      "Hospitalité": [
+        "accueillir"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qst",
+    "id": 1240,
+    "concepts": {
+      "Justice/Équité": [
+        "équité",
+        "balance",
+        "être juste",
+        "agir équitablement",
+        "le plus équitable"
+      ],
+      "Sens isolé/Être": [
+        "être injuste (qasata)"
+      ],
+      "Injustice/Déviation": [
+        "dévier du droit chemin",
+        "tyranniser",
+        "agir injustement"
+      ],
+      "Distribution/Partage": [
+        "distribuer",
+        "répartir",
+        "part",
+        "portion",
+        "lot"
+      ],
+      "Mesure/Quantité": [
+        "mesure de grain",
+        "quantité",
+        "moyens de subsistance"
+      ],
+      "Sens isolé/Parcimonie": [
+        "être avare dans les dépenses"
+      ],
+      "Parfum/Fumigation": [
+        "substance parfumée",
+        "bois pour fumigation"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qss",
+    "id": 956,
+    "concepts": {
+      "Suivi/Pistage": [
+        "pister",
+        "traquer",
+        "suivre les traces"
+      ],
+      "Rétribution/Talion": [
+        "loi du talion",
+        "représailles équitables",
+        "rendre coup pour coup"
+      ],
+      "Coupe/Taille": [
+        "tailler",
+        "rogner",
+        "tondre"
+      ],
+      "Poitrine/Sternum": [
+        "sternum",
+        "milieu de la poitrine"
+      ],
+      "Narration/Récit": [
+        "narration",
+        "histoire",
+        "affaire",
+        "récit",
+        "raconter"
+      ],
+      "Corps/Anatomie": [
+        "couper"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qlb",
+    "id": 301,
+    "concepts": {
+      "Retournement/Changement": [
+        "renverser",
+        "revenir",
+        "va-et-vient",
+        "déplacements",
+        "mobilité",
+        "retourner",
+        "transformer",
+        "changer d'état"
+      ],
+      "Coeur/Centre": [
+        "intelligence",
+        "milieu",
+        "esprit",
+        "coeur"
+      ],
+      "Sens isolé/Bracelet": [
+        "bracelet"
+      ],
+      "Sens isolé/Moule": [
+        "moule"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qnt",
+    "id": 753,
+    "concepts": {
+      "Dévotion/Humilité": [
+        "obéir dévotement",
+        "se tenir debout (en prière)",
+        "prier longtemps",
+        "être humble",
+        "dévotion"
+      ],
+      "Silence/Soumission": [
+        "rester silencieux",
+        "se soumettre"
+      ],
+      "Sens isolé/Frugalité": [
+        "manger peu"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qwl",
+    "id": 307,
+    "concepts": {
+      "Pensée/Avis": [
+        "avis",
+        "doctrine",
+        "opinion"
+      ],
+      "Parole/Énonciation": [
+        "discours",
+        "parler",
+        "affirmer",
+        "dire",
+        "parole"
+      ],
+      "Corps/Anatomie": [
+        "troupeau"
+      ],
+      "Sens isolé/Puissance": [
+        "puissance"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "qwm",
+    "id": 263,
+    "concepts": {
+      "Gestion/Administration": [
+        "administrer",
+        "veiller sur",
+        "gérer",
+        "prendre en charge",
+        "diriger"
+      ],
+      "Valeur/Mesure": [
+        "valeur",
+        "estimation",
+        "prix",
+        "stature",
+        "taille"
+      ],
+      "Verticalité/Droiture": [
+        "résurrection",
+        "se tenir debout",
+        "droit",
+        "subsister",
+        "redresser",
+        "se lever",
+        "se dresser",
+        "corriger",
+        "rectitude"
+      ],
+      "Sens isolé/Station": [
+        "station"
+      ],
+      "Peuple/Communauté": [
+        "nation",
+        "peuple",
+        "groupe",
+        "communauté",
+        "tribu"
+      ],
+      "Subsistance": [
+        "subsistance",
+        "nourriture",
+        "ce qui fait vivre"
+      ],
+      "Sens isolé/Résidence": [
+        "résidence"
+      ],
+      "Lieu/Géographie": [
+        "lieu"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ktm",
+    "id": 471,
+    "concepts": {
+      "Répression/Étouffement": [
+        "étouffer",
+        "réprimer",
+        "retenir (son souffle)"
+      ],
+      "Sens isolé/Teinture": [
+        "teindre (les cheveux)"
+      ],
+      "Dissimulation/Secret": [
+        "cacher",
+        "taire",
+        "dissimuler",
+        "garder secret"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kḏb",
+    "id": 317,
+    "concepts": {
+      "Mensonge/Fausseté": [
+        "mentir",
+        "mensonge",
+        "démentir",
+        "nier la vérité",
+        "accuser de mensonge",
+        "menteur"
+      ],
+      "Sens isolé/Illusion": [
+        "illusion"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ksb",
+    "id": 647,
+    "concepts": {
+      "Acquisition/Rétribution": [
+        "commettre (un acte)",
+        "profit",
+        "mériter",
+        "acquérir",
+        "gagner"
+      ],
+      "Effort/Travail": [
+        "s'efforcer de gagner"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kfr",
+    "id": 294,
+    "concepts": {
+      "Rejet/Ingratitude": [
+        "renier un bienfait",
+        "mécréant",
+        "rejeter",
+        "être ingrat",
+        "nier"
+      ],
+      "Expiation/Réparation": [
+        "effacer",
+        "expier",
+        "effacer les péchés"
+      ],
+      "Couverture/Dissimulation": [
+        "dissimuler",
+        "dissimulation",
+        "cacher",
+        "la nuit qui couvre",
+        "couvrir"
+      ],
+      "Sens isolé/Village": [
+        "village"
+      ],
+      "Sens isolé/Cultivateur": [
+        "cultivateur"
+      ],
+      "Sens isolé/Goudron": [
+        "goudron"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kff",
+    "id": 1004,
+    "concepts": {
+      "Arrêt/Abstention": [
+        "s'abstenir",
+        "cesser",
+        "retenir"
+      ],
+      "Main/Contenance": [
+        "paume de la main"
+      ],
+      "Sens isolé/Suffire": [
+        "suffire"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kfl",
+    "id": 1266,
+    "concepts": {
+      "Tutelle/Garantie": [
+        "garant",
+        "responsabilité",
+        "garantir",
+        "tutelle",
+        "prendre en charge"
+      ],
+      "Corps/Anatomie": [
+        "postérieur"
+      ],
+      "Sens isolé/Part": [
+        "part"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kfa",
+    "id": 1523,
+    "concepts": {
+      "Retournement/Inversion": [
+        "incliner pencher",
+        "se balancer pencher",
+        "retourner inverser",
+        "être renversé défait",
+        "être retourné"
+      ],
+      "Animal/Faune": [
+        "bosse de chameau penchée",
+        "production annuelle des chameaux"
+      ],
+      "Détournement/Éloignement": [
+        "se détourner revenir",
+        "chasser",
+        "détourner repousser",
+        "dévier de sa route"
+      ],
+      "Égalité/Équivalence": [
+        "semblable égal (nom)",
+        "il n'y a personne de semblable",
+        "sang également rétribué",
+        "égalité de rang lignée",
+        "égalité",
+        "étant égal à",
+        "être égaux l'un l'autre",
+        "être semblable égal",
+        "moutons d'âge égal"
+      ],
+      "Compensation/Rétribution": [
+        "je n'ai pas le pouvoir de le rétribuer",
+        "compenser rétribuer",
+        "quantité égale à ce qui est dû"
+      ],
+      "Sens isolé/Poursuivre": [
+        "poursuivre"
+      ],
+      "Sens isolé/Sincère": [
+        "sincère dans sa profession de foi"
+      ],
+      "Corps/Anatomie": [
+        "couleur changée"
+      ],
+      "Sens isolé/Surveiller": [
+        "surveiller observer"
+      ],
+      "Écriture/Langage": [
+        "lettres proches en prononciation"
+      ],
+      "Eau/Liquide": [
+        "rideau de tente"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kll",
+    "id": 372,
+    "concepts": {
+      "Émoussement/Faiblesse": [
+        "s'émousser",
+        "être fatigué"
+      ],
+      "Charge/Dépendance": [
+        "fardeau",
+        "kalāla (défunt sans ascendant ni descendant)",
+        "personne à charge"
+      ],
+      "Totalité": [
+        "chaque",
+        "totalité",
+        "tout"
+      ],
+      "Corps/Anatomie": [
+        "couronner"
+      ],
+      "Sens isolé/Agacer": [
+        "agacer les dents"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kyd",
+    "id": 1329,
+    "concepts": {
+      "Ruse/Stratagème": [
+        "ruser",
+        "stratagème",
+        "comploter",
+        "manigancer"
+      ],
+      "Sens isolé/Lutte": [
+        "lutte"
+      ],
+      "Machination/Complot": [
+        "machination",
+        "complot"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "kyf",
+    "id": 1135,
+    "concepts": {
+      "Interrogation/Manière": [
+        "de quelle manière",
+        "comment",
+        "comment se fait-il"
+      ],
+      "Sens isolé/État": [
+        "manière",
+        "état",
+        "condition"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "len",
+    "id": 680,
+    "concepts": {
+      "Éloignement/Expulsion": [
+        "repousser loin",
+        "exclure",
+        "éloigner"
+      ],
+      "Vilipende/Blâme": [
+        "vilipender",
+        "réprouver"
+      ],
+      "Sens isolé/Base de palmier": [
+        "partie basse du régime"
+      ],
+      "Malédiction/Exclusion": [
+        "malédiction",
+        "maudit",
+        "maudire"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "lqy",
+    "id": 327,
+    "concepts": {
+      "Jeter/Lancer": [
+        "jeter",
+        "lancer"
+      ],
+      "Rencontre/Face à face": [
+        "se trouver face à face",
+        "conflit",
+        "faire face",
+        "rencontrer",
+        "trouver",
+        "recevoir"
+      ],
+      "Réception/Accueil": [
+        "accueillir"
+      ],
+      "Sens isolé/Inspirer": [
+        "inspirer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "lwy",
+    "id": 499,
+    "concepts": {
+      "Torsion/Déviation": [
+        "tordre",
+        "détourner",
+        "courber",
+        "nier sa dette",
+        "se retourner"
+      ],
+      "Drapeau/Étendard": [
+        "drapeau"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mraa",
+    "id": 2470,
+    "concepts": {
+      "Personne/Individu": [
+        "femme (imra'a)",
+        "homme (imru')"
+      ],
+      "Santé/Bienfaisance": [
+        "être sain",
+        "être digeste",
+        "être bienfaisant"
+      ],
+      "Sens isolé/Sain": [
+        "salutaire",
+        "sain"
+      ],
+      "Sens isolé/Bénéfice": [
+        "profitable"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mrD",
+    "id": 311,
+    "concepts": {
+      "Maladie/Faiblesse": [
+        "être malade",
+        "maladie",
+        "tomber malade",
+        "rendre malade",
+        "malade",
+        "doute dans le coeur"
+      ],
+      "Sens isolé/Défaut": [
+        "défaut"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "msh",
+    "id": 1271,
+    "concepts": {
+      "Essuyage/Onction": [
+        "passer la main sur",
+        "oindre",
+        "essuyer"
+      ],
+      "Titre/Nom": [
+        "Messie (masih)"
+      ],
+      "Sens isolé/Voyager": [
+        "voyager"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mlk",
+    "id": 256,
+    "concepts": {
+      "Possession/Autorité": [
+        "biens",
+        "esclave",
+        "posséder",
+        "propriété",
+        "asservir",
+        "maître",
+        "possesseur"
+      ],
+      "Sens isolé/Pâte": [
+        "pâte"
+      ],
+      "Royauté/Souveraineté": [
+        "règne",
+        "couronnement",
+        "trône",
+        "roi",
+        "royaume",
+        "souverain"
+      ],
+      "Eau/Liquide": [
+        "eau stagnante"
+      ],
+      "Sens isolé/Maîtriser": [
+        "maîtriser soi-même"
+      ],
+      "Ange/Messager": [
+        "messager",
+        "message",
+        "ange"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mne",
+    "id": 1574,
+    "concepts": {
+      "Empêchement/Interdiction": [
+        "interdire",
+        "refuser",
+        "empêcher",
+        "interdire l'accès"
+      ],
+      "Protection/Défense": [
+        "protéger"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mny",
+    "id": 608,
+    "concepts": {
+      "Désir/Espérance": [
+        "souhaiter",
+        "désirer",
+        "espérer"
+      ],
+      "Destin/Mort assignée": [
+        "destin assigné"
+      ],
+      "Vœu/Illusion": [
+        "vœu",
+        "fausses espérances"
+      ],
+      "Semence": [
+        "sperme"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "mwt",
+    "id": 364,
+    "concepts": {
+      "Mort/Cessation": [
+        "tuer",
+        "mortel",
+        "terre morte",
+        "mort",
+        "mourir"
+      ],
+      "Sens isolé/Immobile": [
+        "immobile"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nhl",
+    "id": 1423,
+    "concepts": {
+      "Abeille/Production": [
+        "abeille",
+        "miel"
+      ],
+      "Végétation/Plante": [
+        "palmier (nakhla)"
+      ],
+      "Don/Cadeau nuptial": [
+        "don (mahr)",
+        "don spontané",
+        "offrande"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nza",
+    "id": 1248,
+    "concepts": {
+      "Arrachement/Extraction": [
+        "retirer",
+        "ôter",
+        "arracher",
+        "extraire",
+        "dépouiller",
+        "enlever de force"
+      ],
+      "Ressemblance/Hérédité": [
+        "hériter d'un trait",
+        "ressembler à ses ancêtres"
+      ],
+      "Tir/Arc": [
+        "tirer l'arc"
+      ],
+      "Aspiration/Nostalgie": [
+        "aspirer à",
+        "languir",
+        "nostalgie",
+        "incliner vers"
+      ],
+      "Dispute/Contestation": [
+        "disputer",
+        "contester",
+        "arracher un droit"
+      ],
+      "Agonie/Mort": [
+        "agoniser",
+        "rendre l'âme"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nsw",
+    "id": 2198,
+    "concepts": {
+      "Féminin/Épouses": [
+        "épouses",
+        "genre féminin",
+        "femmes"
+      ],
+      "Anatomie/Sciatique": [
+        "veine sciatique"
+      ],
+      "Oubli/Négligence": [
+        "feindre d'oublier",
+        "oublier",
+        "négliger"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nshz",
+    "id": 1136,
+    "concepts": {
+      "Élévation/Rébellion": [
+        "se rebeller",
+        "désobéir (dans le couple)",
+        "se lever",
+        "se dresser",
+        "lieu élevé"
+      ],
+      "Rébellion conjugale": [
+        "nushūz (désobéissance conjugale)"
+      ],
+      "Sens isolé/Terrain": [
+        "terrain élevé"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Élévation/Rébellion",
+        "b": "Rébellion conjugale",
+        "shared": [
+          "rebellion"
+        ],
+        "jaccard": 0.3333333333333333
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "nsr",
+    "id": 537,
+    "concepts": {
+      "Secours/Victoire": [
+        "défendre",
+        "secoureur",
+        "aider",
+        "victoire",
+        "secourir"
+      ],
+      "Alliance/Soutien": [
+        "partisan"
+      ],
+      "Chrétien/Nazaréen": [
+        "chrétien",
+        "rendre chrétien",
+        "la religion chrétienne"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nfr",
+    "id": 1517,
+    "concepts": {
+      "Fuite/Aversion": [
+        "s'enfuir",
+        "aversion",
+        "fuir",
+        "fuir avec crainte",
+        "s'éloigner par aversion"
+      ],
+      "Détachement/Groupe": [
+        "petit groupe (nafar)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nfs",
+    "id": 298,
+    "concepts": {
+      "Souffle/Vie": [
+        "respirer",
+        "souffle",
+        "soulagement"
+      ],
+      "Corps/Anatomie": [
+        "sang"
+      ],
+      "Âme/Être": [
+        "personne",
+        "désir",
+        "soi-même",
+        "âme",
+        "esprit"
+      ],
+      "Sens isolé/Quantité": [
+        "quantité"
+      ],
+      "Sens isolé/Oeil": [
+        "oeil mauvais"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nfq",
+    "id": 285,
+    "concepts": {
+      "Dépense/Distribution": [
+        "dépenser",
+        "distribuer",
+        "s'épuiser"
+      ],
+      "Passage/Traversée": [
+        "passer à travers",
+        "tunnel",
+        "feindre l'observance",
+        "agir en double-face"
+      ],
+      "Sens isolé/Vendre": [
+        "vendre"
+      ],
+      "Sens isolé/Mourir": [
+        "mourir"
+      ],
+      "Hypocrisie": [
+        "hypocrite",
+        "hypocrisie"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nkl",
+    "id": 595,
+    "concepts": {
+      "Liens/Chaînes": [
+        "entraves"
+      ],
+      "Châtiment exemplaire": [
+        "exemple dissuasif",
+        "châtiment",
+        "reculer par peur",
+        "châtiment exemplaire (nakāl)",
+        "punir de manière dissuasive"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nthy",
+    "id": 1588,
+    "concepts": {
+      "Terminus/Limite": [
+        "fin",
+        "aboutir",
+        "limite",
+        "extrémité"
+      ],
+      "Prohibition": [
+        "interdire",
+        "empêcher",
+        "défendre de",
+        "interdiction"
+      ],
+      "Sens isolé/Sagesse": [
+        "sagesse"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nwr",
+    "id": 349,
+    "concepts": {
+      "Lumière/Clarté": [
+        "éclairer",
+        "lumière",
+        "feu",
+        "guider par la lumière"
+      ],
+      "Sens isolé/Fleur": [
+        "fleur"
+      ],
+      "Sens isolé/Fuir": [
+        "fuir"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "nws",
+    "id": 303,
+    "concepts": {
+      "Perception/Visibilité": [
+        "être visible",
+        "voir de loin"
+      ],
+      "Humanité/Peuple": [
+        "peuple",
+        "gens",
+        "êtres humains"
+      ],
+      "Sens isolé/Être": [
+        "être agité"
+      ],
+      "Sens isolé/Oublier": [
+        "oublier"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hdy",
+    "id": 261,
+    "concepts": {
+      "Conduite/Comportement": [
+        "conduite",
+        "manière d'agir",
+        "comportement calme"
+      ],
+      "Guidance/Direction": [
+        "guider",
+        "guidance",
+        "se guider soi-même",
+        "diriger vers la bonne voie",
+        "montrer le chemin"
+      ],
+      "Don/Offrande": [
+        "cadeau",
+        "sacrifice",
+        "offrande",
+        "présent"
+      ],
+      "Parenté/Famille": [
+        "conduire une mariée"
+      ],
+      "Sens isolé/Repentance": [
+        "repentance"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hza",
+    "id": 320,
+    "concepts": {
+      "Moquerie/Dérision": [
+        "se moquer",
+        "railler",
+        "ridiculiser",
+        "celui dont on se moque",
+        "moqueur"
+      ],
+      "Sens isolé/Froid": [
+        "froid intense"
+      ],
+      "Sens isolé/Briser": [
+        "briser"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hlk",
+    "id": 982,
+    "concepts": {
+      "Destruction/Anéantissement": [
+        "être détruit",
+        "être perdu",
+        "faire périr",
+        "périr",
+        "perdition",
+        "destruction",
+        "anéantir"
+      ],
+      "Sens isolé/Gaspiller": [
+        "gaspiller"
+      ],
+      "Sens isolé/Marécage": [
+        "lieu de perdition"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hmm",
+    "id": 279,
+    "concepts": {
+      "Intention/Résolution": [
+        "avoir l'intention",
+        "méditer",
+        "désirer",
+        "résolution"
+      ],
+      "Souci/Inquiétude": [
+        "chagriner",
+        "inquiéter",
+        "souci"
+      ],
+      "Grandeur/Noblesse": [
+        "roi noble"
+      ],
+      "Décrépitude": [
+        "vieux décrépit"
+      ],
+      "Sens isolé/Créature": [
+        "créature venimeuse"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hna",
+    "id": 1425,
+    "concepts": {
+      "Agrément/Bienfaisance": [
+        "digeste",
+        "être agréable",
+        "plaisant",
+        "savoureux"
+      ],
+      "Sens isolé/Féliciter": [
+        "féliciter",
+        "souhaiter bon appétit"
+      ],
+      "Sollicitation": [
+        "demander un cadeau"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "hwy",
+    "id": 398,
+    "concepts": {
+      "Corps/Anatomie": [
+        "tendre la main"
+      ],
+      "Passion/Désir": [
+        "désir",
+        "passion"
+      ],
+      "Chute/Descente": [
+        "tomber",
+        "faire tomber"
+      ],
+      "Souffle/Vent": [
+        "air"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wjh",
+    "id": 747,
+    "concepts": {
+      "Visage/Direction": [
+        "se diriger vers",
+        "face",
+        "direction",
+        "visage"
+      ],
+      "Sens isolé/Noble": [
+        "noble"
+      ],
+      "Sens isolé/Manière": [
+        "manière"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wahd",
+    "id": 2218,
+    "concepts": {
+      "Unicité/Unité": [
+        "unique",
+        "un",
+        "tawḥīd",
+        "un seul",
+        "unicité"
+      ],
+      "Sens isolé/Réunion": [
+        "unifier"
+      ],
+      "Sens isolé/Solitude": [
+        "isolé",
+        "solitaire"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "why",
+    "id": 1579,
+    "concepts": {
+      "Signal/Indication": [
+        "faire signe",
+        "indiquer par un geste"
+      ],
+      "Hâte/Vitesse": [
+        "rapide",
+        "se hâter",
+        "le plus bref"
+      ],
+      "Révélation/Inspiration": [
+        "inspirer",
+        "révélation",
+        "révéler"
+      ],
+      "Suggestion": [
+        "suggérer"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wdd",
+    "id": 703,
+    "concepts": {
+      "Amour/Affection": [
+        "aimant",
+        "s'aimer mutuellement",
+        "se faire aimer",
+        "affection",
+        "souhaiter",
+        "aimer",
+        "amour",
+        "ami",
+        "bien-aimé"
+      ],
+      "Souhait/Désir": [
+        "désirer",
+        "souhaiter ardemment"
+      ],
+      "Idolâtrie": [
+        "idole (Wadd)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wsa",
+    "id": 1711,
+    "concepts": {
+      "Largeur/Capacité": [
+        "être large",
+        "contenir",
+        "embrasser",
+        "capacité"
+      ],
+      "Aisance/Richesse": [
+        "aisance"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wed",
+    "id": 525,
+    "concepts": {
+      "Promesse/Engagement": [
+        "promettre",
+        "promesse",
+        "engagement",
+        "rendez-vous"
+      ],
+      "Menace/Promesse de châtiment": [
+        "menace",
+        "avertissement",
+        "menacer"
+      ],
+      "Rendez-vous/Lieu fixé": [
+        "lieu fixé"
+      ],
+      "Sens isolé/Vallée": [
+        "vallée"
+      ]
+    },
+    "suspects": [
+      {
+        "a": "Promesse/Engagement",
+        "b": "Menace/Promesse de châtiment",
+        "shared": [
+          "promesse"
+        ],
+        "jaccard": 0.25
+      }
+    ],
+    "dupSenses": []
+  },
+  {
+    "wk": "wez",
+    "id": 598,
+    "concepts": {
+      "Exhortation/Conseil": [
+        "admonester",
+        "exhortation",
+        "exhorter",
+        "prêcher",
+        "conseiller",
+        "sermon"
+      ],
+      "Sens isolé/Être touché": [
+        "être touché"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wfy",
+    "id": 487,
+    "concepts": {
+      "Mort/Fin": [
+        "mourir",
+        "prendre l'âme (acte divin)",
+        "faire mourir",
+        "rappeler à Dieu (acte divin)"
+      ],
+      "Fidélité/Accomplissement": [
+        "apporter, livrer",
+        "loyauté, fidélité à l'engagement (wafāʾ)",
+        "être fidèle",
+        "accomplir",
+        "tenir sa promesse",
+        "payer intégralement"
+      ],
+      "Surplomb/Vue": [
+        "surplomber, dominer par la vue",
+        "se percher en vue de, regarder depuis le dessus"
+      ],
+      "Réception totale": [
+        "recevoir entièrement, prélever en totalité"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "wld",
+    "id": 2576,
+    "concepts": {
+      "Enfant/Descendance": [
+        "lieu de naissance",
+        "moment de naissance",
+        "garçon serviteur",
+        "contemporain de naissance",
+        "nouveau-né",
+        "peuple tribu famille",
+        "enfance",
+        "père / mère / parents",
+        "enfant"
+      ],
+      "Production/Innovation": [
+        "esprit de parti engendré",
+        "forgé falsifié",
+        "innover produire",
+        "être engendré (chose)",
+        "post-classique innovant"
+      ],
+      "Parenté/Famille": [
+        "enfant mort en bas âge au paradis"
+      ],
+      "Sens isolé/Poule": [
+        "poule domestique"
+      ],
+      "Végétation/Plante": [
+        "herbe fraîche"
+      ],
+      "Engendrer/Naissance": [
+        "accoucher (aider)",
+        "mettre au monde",
+        "grossesse",
+        "engendrer",
+        "les nuits sont enceintes",
+        "rendre mère",
+        "approcher de l'accouchement",
+        "rendre enceinte",
+        "se multiplier par reproduction",
+        "prolifique",
+        "sage-femme",
+        "la terre produit"
+      ],
+      "Éducation/Croissance": [
+        "élever éduquer",
+        "rudesse illettrisme"
+      ],
+      "Temps/Cycle": [
+        "société productive"
+      ],
+      "Sens isolé/Homme": [
+        "homme sans lignée connue"
+      ],
+      "Sens isolé/Brebis": [
+        "brebis enceinte"
+      ],
+      "Sens isolé/Un": [
+        "un seul petit"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ysr",
+    "id": 968,
+    "concepts": {
+      "Facilité/Aisance": [
+        "être facile",
+        "faciliter",
+        "aisance",
+        "richesse"
+      ],
+      "Sens isolé/Côté": [
+        "côté gauche"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "yqn",
+    "id": 293,
+    "concepts": {
+      "Certitude/Conviction": [
+        "être certain",
+        "certitude",
+        "savoir avec certitude",
+        "conviction ferme"
+      ],
+      "Mort/Destruction": [
+        "mort"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ymm",
+    "id": 1161,
+    "concepts": {
+      "Direction/Orientation": [
+        "se tourner vers (tayammama)",
+        "viser",
+        "se diriger vers",
+        "viser (yamma)"
+      ],
+      "Mer/Océan": [
+        "mer (yamm)",
+        "grande étendue d'eau"
+      ],
+      "Purification": [
+        "ablution sèche (tayammum)"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ymn",
+    "id": 1028,
+    "concepts": {
+      "Droite/Serment": [
+        "serment",
+        "main droite",
+        "droite"
+      ],
+      "Sens isolé/Yémen": [
+        "Yémen"
+      ],
+      "Bénédiction/Prospérité": [
+        "prospérité",
+        "être béni"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  },
+  {
+    "wk": "ywm",
+    "id": 257,
+    "concepts": {
+      "Temps/Période": [
+        "journée",
+        "temps",
+        "jour",
+        "période",
+        "distance d'un jour de marche"
+      ],
+      "Événement/Moment marquant": [
+        "jour de combat",
+        "bataille",
+        "événement",
+        "jour marquant"
+      ],
+      "Sens isolé/Étape": [
+        "étape"
+      ]
+    },
+    "suspects": [],
+    "dupSenses": []
+  }
+]

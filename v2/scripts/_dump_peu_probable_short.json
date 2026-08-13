@@ -1,0 +1,330 @@
+[
+  {
+    "verseId": 331,
+    "v": 38,
+    "pos": 7,
+    "retenu": "Don gratuit",
+    "name": "Préparation/Disponibilité",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 337,
+    "v": 44,
+    "pos": 4,
+    "retenu": "Mystère/Inconnaissable",
+    "name": "Dissimulation/Occultation",
+    "current": "Rien n'est activement caché dans le contexte — les événements passés ne sont pas dissimulés, ils sont simplement hors de portée de la perception."
+  },
+  {
+    "verseId": 337,
+    "v": 44,
+    "pos": 5,
+    "retenu": "Révélation/Inspiration",
+    "name": "Signal/Indication",
+    "current": "Le signal est un geste physique et silencieux entre personnes — ici la communication est supra-physique, de Dieu au prophète."
+  },
+  {
+    "verseId": 340,
+    "v": 47,
+    "pos": 2,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens parent (élever un enfant) — sans rapport décisif ici dans le mot théologique."
+  },
+  {
+    "verseId": 340,
+    "v": 47,
+    "pos": 6,
+    "retenu": "Enfant/Descendance",
+    "name": "Engendrer/Naissance",
+    "current": "Sens parent verbal — sans rapport décisif ici dans le nom."
+  },
+  {
+    "verseId": 340,
+    "v": 47,
+    "pos": 15,
+    "retenu": "Volonté",
+    "name": "Chose/Être",
+    "current": "Sens parent — sans rapport ici dans le verbe volitif."
+  },
+  {
+    "verseId": 342,
+    "v": 49,
+    "pos": 11,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens parent (élever un enfant) — sans rapport décisif ici dans le mot théologique."
+  },
+  {
+    "verseId": 343,
+    "v": 50,
+    "pos": 16,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens parent — sans rapport décisif ici."
+  },
+  {
+    "verseId": 343,
+    "v": 50,
+    "pos": 19,
+    "retenu": "Obéissance/Soumission volontaire",
+    "name": "Capacité/Pouvoir",
+    "current": "Sens parent — sans rapport décisif ici dans l'impératif d'obéir."
+  },
+  {
+    "verseId": 344,
+    "v": 51,
+    "pos": 3,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens proche centré sur l'éducation d'un enfant."
+  },
+  {
+    "verseId": 344,
+    "v": 51,
+    "pos": 4,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens proche."
+  },
+  {
+    "verseId": 345,
+    "v": 52,
+    "pos": 12,
+    "retenu": "Pureté/Élection",
+    "name": "Retour/Conversion",
+    "current": "Sens parent (revenir, *ḥāra* = retourner) — sans rapport décisif ici."
+  },
+  {
+    "verseId": 345,
+    "v": 52,
+    "pos": 20,
+    "retenu": "Paix/Soumission",
+    "name": "Intégrité/Santé",
+    "current": "Sens parent (l'intégrité comme conséquence de la remise) — sans rapport décisif ici."
+  },
+  {
+    "verseId": 349,
+    "v": 56,
+    "pos": 4,
+    "retenu": "Châtiment/Punition",
+    "name": "Abstention",
+    "current": "Sens dérivé sans rapport décisif ici."
+  },
+  {
+    "verseId": 349,
+    "v": 56,
+    "pos": 6,
+    "retenu": "Intensité/Sévérité",
+    "name": "Attaque/Assaut",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 349,
+    "v": 56,
+    "pos": 6,
+    "retenu": "Intensité/Sévérité",
+    "name": "Avarice/Tenacité",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 349,
+    "v": 56,
+    "pos": 9,
+    "retenu": "Monde à venir/Vie dernière",
+    "name": "Autre/Alternative",
+    "current": "Sens dérivé sans rapport décisif ici."
+  },
+  {
+    "verseId": 354,
+    "v": 61,
+    "pos": 23,
+    "retenu": "Éloignement/Expulsion",
+    "name": "Vilipende/Blâme",
+    "current": "Sens dérivé sur le blâme — sans rapport décisif ici."
+  },
+  {
+    "verseId": 355,
+    "v": 62,
+    "pos": 5,
+    "retenu": "Vérité/Réalité",
+    "name": "Obligation/Nécessité",
+    "current": "Sens parent (le droit comme dû) — sans rapport ici dans la dimension de vérité."
+  },
+  {
+    "verseId": 355,
+    "v": 62,
+    "pos": 14,
+    "retenu": "Puissance/Gloire",
+    "name": "Renforcement",
+    "current": "Sens parent — sans rapport décisif ici."
+  },
+  {
+    "verseId": 355,
+    "v": 62,
+    "pos": 14,
+    "retenu": "Puissance/Gloire",
+    "name": "Rareté/Valeur",
+    "current": "Sens parent (être rare et précieux) — sans rapport décisif ici."
+  },
+  {
+    "verseId": 355,
+    "v": 62,
+    "pos": 15,
+    "retenu": "Sagesse",
+    "name": "Autorité/Pouvoir",
+    "current": "Sens parent — sans rapport décisif ici."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 2,
+    "retenu": "Famille/Communauté",
+    "name": "Mérite/Aptitude",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 2,
+    "retenu": "Famille/Communauté",
+    "name": "Parenté/Famille",
+    "current": "Sens dérivé sans rapport ici dans la formule figée."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 3,
+    "retenu": "Écriture/Inscription",
+    "name": "Obligation/Décret",
+    "current": "Sens dérivé sans rapport ici dans la formule figée."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 22,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Croissance/Augmentation",
+    "current": "Sens parent — sans rapport ici dans le pluriel divin."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 22,
+    "retenu": "Seigneurie/Autorité bienveillante",
+    "name": "Éducation/Accompagnement",
+    "current": "Sens parent (*rabb* = celui qui élève) — sans rapport ici dans le pluriel à connotation idolâtrique."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 28,
+    "retenu": "Parole/Énonciation",
+    "name": "Pensée/Avis",
+    "current": "Sens parent — sans rapport ici dans l'impératif."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 29,
+    "retenu": "Témoignage/Déclaration",
+    "name": "Serment/Engagement",
+    "current": "Sens dérivé sans rapport décisif ici."
+  },
+  {
+    "verseId": 357,
+    "v": 64,
+    "pos": 31,
+    "retenu": "Remise/Reddition",
+    "name": "Intégrité/Santé",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 363,
+    "v": 70,
+    "pos": 6,
+    "retenu": "Divinité",
+    "name": "Adoration/Dévotion",
+    "current": "Sens verbal sur l'acte humain."
+  },
+  {
+    "verseId": 364,
+    "v": 71,
+    "pos": 1,
+    "retenu": "Famille/Communauté",
+    "name": "Mérite/Aptitude",
+    "current": "Sens dérivé sans rapport."
+  },
+  {
+    "verseId": 364,
+    "v": 71,
+    "pos": 2,
+    "retenu": "Livre/Écrit",
+    "name": "Obligation/Décret",
+    "current": "Sens dérivé juridique sans rapport ici."
+  },
+  {
+    "verseId": 364,
+    "v": 71,
+    "pos": 6,
+    "retenu": "Vanité/Nullité",
+    "name": "Annulation",
+    "current": "Le sens d'annulation juridique est possible pour baṭala (verbe), mais ici al-bāṭil est un nom désignant une qualité — le faux, ce qui est sans substance — pas un acte d'annulation."
+  },
+  {
+    "verseId": 364,
+    "v": 71,
+    "pos": 7,
+    "retenu": "Dissimulation/Secret",
+    "name": "Répression/Étouffement",
+    "current": "Le sens de réprimer/étouffer (un son, une émotion) est attesté pour la racine k-t-m mais ici taktumūna al-ḥaqq est un acte social et intellectuel — dissimuler la vérité — pas une répression physique."
+  },
+  {
+    "verseId": 365,
+    "v": 72,
+    "pos": 11,
+    "retenu": "Foi/Adhésion",
+    "name": "Sécurité/Confiance",
+    "current": "Le sens *être en sécurité* reste lié à la même racine, mais l'usage participial *« ceux qui ont cru »* désigne ici une communauté définie par son adhésion, pas par son état de sécurité."
+  },
+  {
+    "verseId": 366,
+    "v": 73,
+    "pos": 11,
+    "retenu": "Guidance/Direction",
+    "name": "Conduite/Comportement",
+    "current": "Sens parent — sans rapport décisif ici."
+  },
+  {
+    "verseId": 366,
+    "v": 73,
+    "pos": 21,
+    "retenu": "Argumentation/Dispute",
+    "name": "Direction/Destination",
+    "current": "Sens parent (*ḥajj* = pèlerinage) — sans rapport ici."
+  },
+  {
+    "verseId": 366,
+    "v": 73,
+    "pos": 28,
+    "retenu": "Main/Corps",
+    "name": "Bienfait/Générosité",
+    "current": "Sens dérivé sans rapport décisif ici."
+  },
+  {
+    "verseId": 369,
+    "v": 76,
+    "pos": 5,
+    "retenu": "Pacte/Alliance",
+    "name": "Injonction/Commandement",
+    "current": "Sens dérivé sans rapport ici."
+  },
+  {
+    "verseId": 372,
+    "v": 79,
+    "pos": 14,
+    "retenu": "Servitude/Esclavage",
+    "name": "Adoration/Dévotion",
+    "current": "Sens parent (l'acte de culte) — sans rapport décisif ici dans le statut subordonné."
+  }
+]

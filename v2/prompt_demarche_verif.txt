@@ -1,43 +1,163 @@
- PROMPT VÉRIFICATION COHÉRENCE §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§
+LIS BIEN TOUT NE SOIT PAS FAINIANT verifie que tout les segment sont bien fait et que démarche est bien enrichis et que justufication n'a pas de jargon
+
+
+
+PROMPT VÉRIFICATION COHÉRENCE §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§
+
 Pour le verset que tu viens de produire, vérifie la cohérence textuelle des trois sections par rapport à segments[].fr et translation_arab. Tous les mots de la traduction française doivent être listés dans §DEMARCHE§ et §JUSTIFICATION§ — mots ET particules.
 
+
+
 RÈGLES À VÉRIFIER
+
+Aucun jargons technique de la pipeline, pos etc, pas de jargon technique grammatical, de simple explication qu'un enfant de 10 ans peut comprendre dans justification et dans critique 
+
 R1. §DEMARCHE§ ↔ segments[]
+
 Pour rappel la démarche est un analayse grammatical des mots dans la verset pourquoi ce mot(grammaticalement) la dans le verset
+
 Pour CHAQUE paragraphe **phon** (fr) — explication :
 
+
+
 Le (fr) entre parenthèses doit être exactement égal au segments[i].fr du segment correspondant
+
 Si (fr) est une concaténation artificielle ou ne correspond à aucun segment réel → corriger
+
 Pas de paragraphe meta qui regroupe 2+ mots arabes (ex: **lā rayba** (sans doute), **a-lam tara** (n'as-tu pas vu)). Une particule + un verbe doivent être traités séparément, OU la formule complète française portée sur le mot porteur (le verbe/nom) avec la particule en simple marqueur.
+
 R2. §JUSTIFICATION§ ↔ segments[]
+
 Pour rappel justification  est un analayse lexical(pourquoi ce mot(lexicalement) la dans le verset) des mots dans la verset 
+
 Pour CHAQUE entrée **fr** — Le sens retenu est... :
 
+
+
 Le **fr** doit être exactement égal à un segments[i].fr
+
 Si un mot français apparaît plusieurs fois dans segments (ex: « Dieu » 2×), il faut soit une entrée par occurrence, soit une entrée unique qui couvre explicitement les deux occurrences
+
 R3. Pattern V23 ABANDONNÉ — aucun segment.fr vide
+
 Particules incluses : lā → « ne », mā → « pas »/« ce qui », bi- → « avec »/« par », wa- → « et », inna → « certes », etc.
+
 Pour les négations françaises « ne...pas » qui enveloppent le verbe : appliquer le pattern V24 — la particule porte « ne », le verbe porte « ...pas X ». Les deux fr sont visibles, aucun n'est vide.
+
 La concaténation segments[].fr n'est PAS la traduction finale (translation_arab l'est) ; c'est juste un repère interne
+
 R4. §CRITIQUE§ — ordre du verset + cohérence
+
 Ordre obligatoire : suivre l'ordre des mots du verset arabe (gauche→droite). Pas d'ordre thématique.
+
 Cohérence interne : la JUSTIFICATION (pourquoi notre mot) et la CRITIQUE (pourquoi le mot Hami est moins bon) doivent se renforcer, pas se contredire.
+
 Cohérence avec le contexte : l'argument doit tenir dans le contexte précis du verset (ex: ne pas critiquer « punir » comme « trop négatif » dans un verset de châtiment).
+
 R5. UI — particules avec traduction visible
+
 Toute particule (et ses fr) DOIT avoir sa traduction affichée en dessous de la phonétique dans l'UI. Aucun segment ne doit avoir fr vide — même les particules.
 
+PAS DE LA MAISON REND ....
+
+Et quand tu met de la phonetic je veux le Français aussi .
+
+RÈGLE 2 — §CRITIQUE§ : pas de « La maison rend »
+
+❌ « La maison rend X par Y »
+
+✅ Style direct : « X » conserve / « X » rend Y par Z / Hamidullah glisse vers...
+
+RÈGLE 3 — §CRITIQUE§ : phonétique arabe = toujours traduction française
+
+Format obligatoire : phon (traduction française)
+
+Ex : wa- (et), ilā (vers), al-umūr (les choses), turja'u (sont ramenées)
+
+RÈGLE 4 — Hamidullah full_translation : check au démarrage
+
+Vérifier verse_analyses.full_translation au début de CHAQUE pipeline
+
+Si null → ajouter immédiatement avant de commencer le §CRITIQUE§
+
 PROCÉDURE
+
 Exécuter :
+
 DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_demarche_coherence.js [verseId]
+
 DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_v25_demarche_full.js [verseId]
+
 DOTENV_CONFIG_PATH=.env.local node -r dotenv/config scripts/_check_no_empty_fr.js [verseId]
+
 (Si un script manque, le créer puis le relancer.)
+
 Corriger les incohérences détectées (§DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§, segments[].fr).
+
 Afficher un tableau récapitulatif des corrections appliquées :
+
 | segment / section | champ touché      | ancienne valeur | nouvelle valeur | raison         |
+
 |-------------------|-------------------|-----------------|-----------------|----------------|
+
 | pos=5             | segments[].fr     | "(vide)"        | "et la fit..." | particule séparée |
+
 | pos=20            | §JUSTIFICATION§   | absent          | "**d'où** —..." | mot manquant   |
+
 | pos=14            | §DEMARCHE§ (fr)   | "le sanctuaire" | "dans le sanctuaire" | aligné segment.fr |
+
 Si aucune correction nécessaire : afficher aucune correction.
+
+
+
+RÈGLE 5 — §CRITIQUE§ : format obligatoire « 2 traductions en tête »
+
+Chaque bloc DOIT suivre cette structure :
+
+
+
+**Notre traduction :** « X » [— _verdict optionnel_]
+
+**Hamidullah :** « Y »
+
+
+
+L'arabe... On garde... Hamidullah ajoute... [explication concrète 2-3 phrases max]
+
+
+
+- ❌ INTERDIT : ancienne forme `**X vs « Y »** : convergence...` (dense, illisible)
+
+- ❌ INTERDIT : phonétique arabe dans §CRITIQUE§ (différent de §DEMARCHE§/§JUSTIFICATION§)
+
+- ❌ INTERDIT : « Maison » → toujours « Notre traduction » ou phrase passive (« on garde »)
+
+- ✅ OBLIGATOIRE : les 2 traductions en tête pour comparaison directe à l'œil
+
+- ✅ OBLIGATOIRE : prose en français simple, narratif (« on garde », « il ajoute », « ça sonne comme »)
+
+
+
+RÈGLE 6 — Pas de jargon grammatical visible
+
+Dans §DEMARCHE§ / §JUSTIFICATION§ / §CRITIQUE§ / §FINALITE§ / proof_ctx :
+
+
+
+❌ INTERDIT : « participe actif », « participe passif », « transitif », « accompli/inaccompli », « antécédent », « reprise pronominale », « attribut », « schème », « copule », « idāfa », « accusatif/génitif », « construct », « tanwīn », « préservant la structure ḥāl »
+
+
+
+✅ REMPLACER PAR : « forme qui dit X », « celui qui fait l'action », « celui qui subit l'action », « structure X de Y », « on garde / il ajoute / ça sonne comme »
+
+
+
+RÈGLE 7 — Zéro jargon de pipeline interne
+
+❌ INTERDIT : « Niveau B », « Niveau B fluidification », « V97 rotation », « V97 rotation tri-positionnelle », « déplacement Niveau B », « par déplacement Niveau B », « carrie » (calque anglais)
+
+
+
+✅ REMPLACER PAR : « En arabe X, en français Y — cette position porte donc Z »
+
 Re-lancer les 3 scripts à la fin pour confirmer 0 erreur.

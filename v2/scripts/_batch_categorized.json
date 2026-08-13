@@ -1,0 +1,574 @@
+{
+  "safe": [
+    {
+      "root": "م ت ع",
+      "canon_id": 853,
+      "canon_key": "mtae",
+      "canon_vwa": 3,
+      "canon_sens": 8,
+      "doublon_id": 460,
+      "doublon_key": "mte",
+      "doublon_vwa": 1,
+      "doublon_sens": 7,
+      "allConceptsMatch": true,
+      "uniqueSensesCount": 2,
+      "doublon_concepts_not_in_canon": []
+    },
+    {
+      "root": "ق ن ط ر",
+      "canon_id": 1291,
+      "canon_key": "qntṛ",
+      "canon_vwa": 3,
+      "canon_sens": 8,
+      "doublon_id": 1294,
+      "doublon_key": "qntr",
+      "doublon_vwa": 1,
+      "doublon_sens": 2,
+      "allConceptsMatch": true,
+      "uniqueSensesCount": 1,
+      "doublon_concepts_not_in_canon": []
+    },
+    {
+      "root": "خ ب ل",
+      "canon_id": 2052,
+      "canon_key": "xbl",
+      "canon_vwa": 1,
+      "canon_sens": 2,
+      "doublon_id": 1335,
+      "doublon_key": "khbl",
+      "doublon_vwa": 0,
+      "doublon_sens": 3,
+      "allConceptsMatch": true,
+      "uniqueSensesCount": 2,
+      "doublon_concepts_not_in_canon": []
+    }
+  ],
+  "mapNeeded": [
+    {
+      "root": "ك ذ ب",
+      "canon_id": 474,
+      "canon_key": "kdb",
+      "canon_vwa": 2,
+      "canon_sens": 5,
+      "doublon_id": 317,
+      "doublon_key": "kḏb",
+      "doublon_vwa": 5,
+      "doublon_sens": 7,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 4,
+      "doublon_concepts_not_in_canon": [
+        "Sens isolé/Illusion"
+      ]
+    },
+    {
+      "root": "ك ذ ب",
+      "canon_id": 854,
+      "canon_key": "kdhb",
+      "canon_vwa": 2,
+      "canon_sens": 6,
+      "doublon_id": 317,
+      "doublon_key": "kḏb",
+      "doublon_vwa": 5,
+      "doublon_sens": 7,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 6,
+      "doublon_concepts_not_in_canon": [
+        "Sens isolé/Illusion"
+      ]
+    },
+    {
+      "root": "ب ع ض",
+      "canon_id": 406,
+      "canon_key": "bed",
+      "canon_vwa": 15,
+      "canon_sens": 8,
+      "doublon_id": 2683,
+      "doublon_key": "beD",
+      "doublon_vwa": 2,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 8,
+      "doublon_concepts_not_in_canon": [
+        "Partie/Portion",
+        "Sens isolé/Moustique"
+      ]
+    },
+    {
+      "root": "ن ز ع",
+      "canon_id": 1248,
+      "canon_key": "nza",
+      "canon_vwa": 2,
+      "canon_sens": 18,
+      "doublon_id": 1369,
+      "doublon_key": "nze",
+      "doublon_vwa": 1,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 5,
+      "doublon_concepts_not_in_canon": [
+        "Querelle/Dispute",
+        "Aspiration/Inclination"
+      ]
+    },
+    {
+      "root": "خ ل د",
+      "canon_id": 403,
+      "canon_key": "khd",
+      "canon_vwa": 5,
+      "canon_sens": 8,
+      "doublon_id": 1419,
+      "doublon_key": "khld",
+      "doublon_vwa": 3,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 4,
+      "doublon_concepts_not_in_canon": [
+        "Sens isolé/Divers"
+      ]
+    },
+    {
+      "root": "خ ل د",
+      "canon_id": 403,
+      "canon_key": "khd",
+      "canon_vwa": 5,
+      "canon_sens": 8,
+      "doublon_id": 927,
+      "doublon_key": "xld",
+      "doublon_vwa": 1,
+      "doublon_sens": 3,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 3,
+      "doublon_concepts_not_in_canon": [
+        "Éternité/Permanence",
+        "Inclination"
+      ]
+    },
+    {
+      "root": "ذ ل ك",
+      "canon_id": 741,
+      "canon_key": "dlk",
+      "canon_vwa": 1,
+      "canon_sens": 3,
+      "doublon_id": 2315,
+      "doublon_key": "ð l k",
+      "doublon_vwa": 0,
+      "doublon_sens": 3,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 3,
+      "doublon_concepts_not_in_canon": [
+        "Démonstration éloignée"
+      ]
+    },
+    {
+      "root": "خ و ف",
+      "canon_id": 759,
+      "canon_key": "xwf",
+      "canon_vwa": 3,
+      "canon_sens": 6,
+      "doublon_id": 482,
+      "doublon_key": "khw f",
+      "doublon_vwa": 6,
+      "doublon_sens": 7,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 5,
+      "doublon_concepts_not_in_canon": [
+        "Menace/Danger"
+      ]
+    },
+    {
+      "root": "أ خ ذ",
+      "canon_id": 2660,
+      "canon_key": "axdh",
+      "canon_vwa": 11,
+      "canon_sens": 10,
+      "doublon_id": 1119,
+      "doublon_key": "akhdh",
+      "doublon_vwa": 2,
+      "doublon_sens": 6,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 3,
+      "doublon_concepts_not_in_canon": [
+        "Châtiment"
+      ]
+    },
+    {
+      "root": "أ خ ذ",
+      "canon_id": 2660,
+      "canon_key": "axdh",
+      "canon_vwa": 11,
+      "canon_sens": 10,
+      "doublon_id": 929,
+      "doublon_key": "akhz",
+      "doublon_vwa": 1,
+      "doublon_sens": 5,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 3,
+      "doublon_concepts_not_in_canon": [
+        "Châtiment"
+      ]
+    },
+    {
+      "root": "ر ف ع",
+      "canon_id": 711,
+      "canon_key": "rfe",
+      "canon_vwa": 1,
+      "canon_sens": 5,
+      "doublon_id": 604,
+      "doublon_key": "rfa",
+      "doublon_vwa": 0,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 4,
+      "doublon_concepts_not_in_canon": [
+        "Sens isolé/Élever la voix"
+      ]
+    },
+    {
+      "root": "ح ر ث",
+      "canon_id": 626,
+      "canon_key": "hrth",
+      "canon_vwa": 1,
+      "canon_sens": 7,
+      "doublon_id": 1030,
+      "doublon_key": "hrṯ",
+      "doublon_vwa": 1,
+      "doublon_sens": 5,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 5,
+      "doublon_concepts_not_in_canon": [
+        "Labour/Culture",
+        "Sens isolé/Femme"
+      ]
+    },
+    {
+      "root": "ب و ء",
+      "canon_id": 684,
+      "canon_key": "bwa",
+      "canon_vwa": 2,
+      "canon_sens": 3,
+      "doublon_id": 1453,
+      "doublon_key": "bwaa",
+      "doublon_vwa": 1,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 7,
+      "doublon_concepts_not_in_canon": [
+        "Lieu/Demeure"
+      ]
+    },
+    {
+      "root": "د و م",
+      "canon_id": 1295,
+      "canon_key": "dwm",
+      "canon_vwa": 1,
+      "canon_sens": 4,
+      "doublon_id": 2486,
+      "doublon_key": "dm",
+      "doublon_vwa": 0,
+      "doublon_sens": 12,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 8,
+      "doublon_concepts_not_in_canon": [
+        "Rotation/Cercle",
+        "Pluie persistante"
+      ]
+    },
+    {
+      "root": "ف ح ش",
+      "canon_id": 1432,
+      "canon_key": "fhsh",
+      "canon_vwa": 1,
+      "canon_sens": 3,
+      "doublon_id": 944,
+      "doublon_key": "fhš",
+      "doublon_vwa": 4,
+      "doublon_sens": 9,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 6,
+      "doublon_concepts_not_in_canon": [
+        "Avarice"
+      ]
+    },
+    {
+      "root": "أ ذ ي",
+      "canon_id": 1451,
+      "canon_key": "adhy",
+      "canon_vwa": 3,
+      "canon_sens": 11,
+      "doublon_id": 989,
+      "doublon_key": "aḏy",
+      "doublon_vwa": 1,
+      "doublon_sens": 5,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 5,
+      "doublon_concepts_not_in_canon": [
+        "Nuisance/Souffrance",
+        "Sens isolé/Impureté"
+      ]
+    }
+  ],
+  "complex": [
+    {
+      "root": "ح ذ ر",
+      "canon_id": 363,
+      "canon_key": "hḏr",
+      "canon_vwa": 2,
+      "canon_sens": 6,
+      "doublon_id": 1304,
+      "doublon_key": "hðr",
+      "doublon_vwa": 0,
+      "doublon_sens": 19,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 19,
+      "doublon_concepts_not_in_canon": [
+        "Prudence/Méfiance",
+        "Avertissement/Mise en garde",
+        "Danger/Calamité",
+        "Terrain/Rugosité",
+        "Fausseté/Vanité"
+      ]
+    },
+    {
+      "root": "ن ذ ر",
+      "canon_id": 296,
+      "canon_key": "ndh r",
+      "canon_vwa": 1,
+      "canon_sens": 8,
+      "doublon_id": 1254,
+      "doublon_key": "nðr",
+      "doublon_vwa": 0,
+      "doublon_sens": 11,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 11,
+      "doublon_concepts_not_in_canon": [
+        "Avertissement/Menace",
+        "Vœu/Consécration",
+        "Consécration/Offrande"
+      ]
+    },
+    {
+      "root": "م ث ل",
+      "canon_id": 2599,
+      "canon_key": "mvl",
+      "canon_vwa": 8,
+      "canon_sens": 12,
+      "doublon_id": 347,
+      "doublon_key": "mthl",
+      "doublon_vwa": 2,
+      "doublon_sens": 9,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 9,
+      "doublon_concepts_not_in_canon": [
+        "Station/Présence",
+        "Ressemblance/Exemple",
+        "Sens isolé/Mutiler"
+      ]
+    },
+    {
+      "root": "خ ل و",
+      "canon_id": 827,
+      "canon_key": "xlw",
+      "canon_vwa": 2,
+      "canon_sens": 7,
+      "doublon_id": 328,
+      "doublon_key": "khlw",
+      "doublon_vwa": 1,
+      "doublon_sens": 14,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 14,
+      "doublon_concepts_not_in_canon": [
+        "Vide/Vacuité",
+        "Sens isolé/Sauf",
+        "Liberté",
+        "Abandon/Séparation",
+        "Solitude/Retraite"
+      ]
+    },
+    {
+      "root": "أ ن ي",
+      "canon_id": 2642,
+      "canon_key": "ana2",
+      "canon_vwa": 2,
+      "canon_sens": 15,
+      "doublon_id": 444,
+      "doublon_key": "any",
+      "doublon_vwa": 1,
+      "doublon_sens": 10,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 10,
+      "doublon_concepts_not_in_canon": [
+        "Interrogation/Choix",
+        "Interrogation modale",
+        "Généralité spatiale",
+        "Moment/Heure",
+        "Sens isolé/Patience",
+        "Sens isolé/Récipient"
+      ]
+    },
+    {
+      "root": "ف ي ء",
+      "canon_id": 2689,
+      "canon_key": "fya",
+      "canon_vwa": 0,
+      "canon_sens": 9,
+      "doublon_id": 2334,
+      "doublon_key": "f y a",
+      "doublon_vwa": 2,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 8,
+      "doublon_concepts_not_in_canon": [
+        "Ombre/Retour",
+        "Retour",
+        "Groupe/Troupe"
+      ]
+    },
+    {
+      "root": "أ م م",
+      "canon_id": 785,
+      "canon_key": "amm",
+      "canon_vwa": 10,
+      "canon_sens": 23,
+      "doublon_id": 2352,
+      "doublon_key": "omm",
+      "doublon_vwa": 2,
+      "doublon_sens": 9,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 9,
+      "doublon_concepts_not_in_canon": [
+        "Origine/Maternité",
+        "Collectivité/Nation",
+        "Direction/Orientation",
+        "Sens isolé/Imam"
+      ]
+    },
+    {
+      "root": "ط ع م",
+      "canon_id": 577,
+      "canon_key": "tem",
+      "canon_vwa": 2,
+      "canon_sens": 4,
+      "doublon_id": 1726,
+      "doublon_key": "taem",
+      "doublon_vwa": 0,
+      "doublon_sens": 7,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 7,
+      "doublon_concepts_not_in_canon": [
+        "Gustation/Expérience",
+        "Nourriture/Aliment",
+        "Goûter/Manger"
+      ]
+    },
+    {
+      "root": "ن ه ي",
+      "canon_id": 1588,
+      "canon_key": "nthy",
+      "canon_vwa": 3,
+      "canon_sens": 9,
+      "doublon_id": 979,
+      "doublon_key": "nhy",
+      "doublon_vwa": 1,
+      "doublon_sens": 5,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 5,
+      "doublon_concepts_not_in_canon": [
+        "Intelligence/Discernement",
+        "Interdiction/Empêchement",
+        "Terme/Fin"
+      ]
+    },
+    {
+      "root": "ذ و ق",
+      "canon_id": 1321,
+      "canon_key": "dhwq",
+      "canon_vwa": 1,
+      "canon_sens": 3,
+      "doublon_id": 1769,
+      "doublon_key": "ðwq",
+      "doublon_vwa": 3,
+      "doublon_sens": 6,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 6,
+      "doublon_concepts_not_in_canon": [
+        "Expérience sensorielle",
+        "Goût/Saveur",
+        "Sens isolé/Échantillon"
+      ]
+    },
+    {
+      "root": "ب غ ي",
+      "canon_id": 683,
+      "canon_key": "bgh",
+      "canon_vwa": 6,
+      "canon_sens": 17,
+      "doublon_id": 950,
+      "doublon_key": "bghy",
+      "doublon_vwa": 2,
+      "doublon_sens": 6,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 6,
+      "doublon_concepts_not_in_canon": [
+        "Corps/Anatomie",
+        "Transgression/Injustice",
+        "Recherche/Quête"
+      ]
+    },
+    {
+      "root": "أ و ي",
+      "canon_id": 755,
+      "canon_key": "awy",
+      "canon_vwa": 1,
+      "canon_sens": 9,
+      "doublon_id": 1624,
+      "doublon_key": "a w y",
+      "doublon_vwa": 2,
+      "doublon_sens": 7,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 7,
+      "doublon_concepts_not_in_canon": [
+        "Refuge/Protection",
+        "Abri/Refuge",
+        "Sens isolé/Demeure"
+      ]
+    },
+    {
+      "root": "ض ي ع",
+      "canon_id": 837,
+      "canon_key": "dye",
+      "canon_vwa": 1,
+      "canon_sens": 6,
+      "doublon_id": 2682,
+      "doublon_key": "Dye",
+      "doublon_vwa": 1,
+      "doublon_sens": 8,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 8,
+      "doublon_concepts_not_in_canon": [
+        "Perte/Perdition",
+        "Sens isolé/Vallée",
+        "Négligence/Gaspillage"
+      ]
+    },
+    {
+      "root": "خ ف ى",
+      "canon_id": 1174,
+      "canon_key": "xfy",
+      "canon_vwa": 3,
+      "canon_sens": 5,
+      "doublon_id": 1206,
+      "doublon_key": "khf",
+      "doublon_vwa": 0,
+      "doublon_sens": 20,
+      "allConceptsMatch": false,
+      "uniqueSensesCount": 18,
+      "doublon_concepts_not_in_canon": [
+        "Apparition/Manifestation",
+        "Couverture/Voile",
+        "Extraction/Déterrement",
+        "Puits/Profondeur",
+        "Êtres invisibles"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10093 @@
+[
+  {
+    "n": 3,
+    "wk": "adhy",
+    "id": 1451,
+    "etym": "Nuisance/Offense",
+    "flags": [
+      "singleton [Impureté/Souillure] : \"impureté rituelle\""
+    ],
+    "concepts": {
+      "Nuisance/Offense": [
+        {
+          "do": 1,
+          "s": "nuire"
+        },
+        {
+          "do": 2,
+          "s": "offenser"
+        },
+        {
+          "do": 3,
+          "s": "causer du tort"
+        },
+        {
+          "do": 4,
+          "s": "faire du mal"
+        }
+      ],
+      "Harcèlement/Persécution": [
+        {
+          "do": 5,
+          "s": "harceler"
+        },
+        {
+          "do": 6,
+          "s": "persécuter"
+        },
+        {
+          "do": 7,
+          "s": "maltraiter"
+        },
+        {
+          "do": 8,
+          "s": "être maltraité"
+        }
+      ],
+      "Affliction/Souffrance": [
+        {
+          "do": 9,
+          "s": "affliction"
+        },
+        {
+          "do": 10,
+          "s": "souffrance"
+        }
+      ],
+      "Impureté/Souillure": [
+        {
+          "do": 11,
+          "s": "impureté rituelle"
+        }
+      ]
+    }
+  },
+  {
+    "n": 4,
+    "wk": "ahd",
+    "id": 2574,
+    "etym": "Unicité/Indivisibilité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Dimanche\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Calamité\" (1 sens)",
+      "singleton [Sens isolé/Dimanche] : \"dimanche\"",
+      "singleton [Sens isolé/Calamité] : \"calamité\"",
+      "singleton [Minéral/Terre] : \"tradition isolée\""
+    ],
+    "concepts": {
+      "Unicité/Indivisibilité": [
+        {
+          "do": 1,
+          "s": "déclarer l'unicité"
+        },
+        {
+          "do": 2,
+          "s": "un (premier des nombres)"
+        },
+        {
+          "do": 3,
+          "s": "l'Indivisible"
+        },
+        {
+          "do": 4,
+          "s": "unité"
+        }
+      ],
+      "Solitude/Isolement": [
+        {
+          "do": 5,
+          "s": "être seul"
+        },
+        {
+          "do": 6,
+          "s": "ne pas connaître"
+        }
+      ],
+      "Quiconque/Indéfini": [
+        {
+          "do": 7,
+          "s": "quiconque"
+        },
+        {
+          "do": 8,
+          "s": "personne"
+        },
+        {
+          "do": 9,
+          "s": "quelque chose"
+        }
+      ],
+      "Nombre/Quantification": [
+        {
+          "do": 10,
+          "s": "rendre onze"
+        },
+        {
+          "do": 11,
+          "s": "un des plusieurs"
+        },
+        {
+          "do": 12,
+          "s": "un par un"
+        }
+      ],
+      "Sens isolé/Dimanche": [
+        {
+          "do": 13,
+          "s": "dimanche"
+        }
+      ],
+      "Sens isolé/Calamité": [
+        {
+          "do": 14,
+          "s": "calamité"
+        }
+      ],
+      "Minéral/Terre": [
+        {
+          "do": 15,
+          "s": "tradition isolée"
+        }
+      ]
+    }
+  },
+  {
+    "n": 5,
+    "wk": "ahl",
+    "id": 736,
+    "etym": "Famille/Communauté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (3 sens)"
+    ],
+    "concepts": {
+      "Famille/Communauté": [
+        {
+          "do": 1,
+          "s": "famille"
+        },
+        {
+          "do": 2,
+          "s": "gens de"
+        },
+        {
+          "do": 3,
+          "s": "peuple"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 4,
+          "s": "digne de"
+        },
+        {
+          "do": 5,
+          "s": "accueillir"
+        },
+        {
+          "do": 6,
+          "s": "se marier"
+        }
+      ]
+    }
+  },
+  {
+    "n": 7,
+    "wk": "akhw",
+    "id": 961,
+    "etym": "Fraternité/Lien",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Compagnon\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Sœur\" (1 sens)",
+      "singleton [Sens isolé/Compagnon] : \"compagnon\"",
+      "singleton [Sens isolé/Sœur] : \"sœur\""
+    ],
+    "concepts": {
+      "Fraternité/Lien": [
+        {
+          "do": 1,
+          "s": "frère"
+        },
+        {
+          "do": 2,
+          "s": "fraternité"
+        },
+        {
+          "do": 3,
+          "s": "semblable"
+        },
+        {
+          "do": 4,
+          "s": "ami proche"
+        },
+        {
+          "do": 5,
+          "s": "fraterniser"
+        },
+        {
+          "do": 6,
+          "s": "frères"
+        }
+      ],
+      "Sens isolé/Compagnon": [
+        {
+          "do": 7,
+          "s": "compagnon"
+        }
+      ],
+      "Sens isolé/Sœur": [
+        {
+          "do": 8,
+          "s": "sœur"
+        }
+      ]
+    }
+  },
+  {
+    "n": 9,
+    "wk": "alh",
+    "id": 250,
+    "etym": "Adoration/Dévotion",
+    "flags": [
+      "singleton [Domination] : \"asservir\""
+    ],
+    "concepts": {
+      "Adoration/Dévotion": [
+        {
+          "do": 1,
+          "s": "adorer"
+        },
+        {
+          "do": 2,
+          "s": "faire adorer"
+        },
+        {
+          "do": 3,
+          "s": "se dévouer au culte"
+        },
+        {
+          "do": 4,
+          "s": "diviniser"
+        }
+      ],
+      "Divinité": [
+        {
+          "do": 5,
+          "s": "divinité"
+        },
+        {
+          "do": 7,
+          "s": "Dieu"
+        },
+        {
+          "do": 8,
+          "s": "théologie"
+        },
+        {
+          "do": 9,
+          "s": "exclamation divine"
+        },
+        {
+          "do": 10,
+          "s": "oui certes"
+        }
+      ],
+      "Détresse": [
+        {
+          "do": 11,
+          "s": "être perplexe"
+        },
+        {
+          "do": 12,
+          "s": "se lamenter"
+        }
+      ],
+      "Refuge/Protection": [
+        {
+          "do": 13,
+          "s": "chercher refuge"
+        },
+        {
+          "do": 14,
+          "s": "protéger"
+        },
+        {
+          "do": 15,
+          "s": "demeurer"
+        }
+      ],
+      "Domination": [
+        {
+          "do": 16,
+          "s": "asservir"
+        }
+      ]
+    }
+  },
+  {
+    "n": 12,
+    "wk": "amn",
+    "id": 287,
+    "etym": "Sécurité/Confiance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Amen\" (1 sens)",
+      "singleton [Sens isolé/Amen] : \"amen\""
+    ],
+    "concepts": {
+      "Sécurité/Confiance": [
+        {
+          "do": 1,
+          "s": "être en sécurité"
+        },
+        {
+          "do": 2,
+          "s": "se sentir en sécurité"
+        },
+        {
+          "do": 3,
+          "s": "faire confiance"
+        },
+        {
+          "do": 4,
+          "s": "confier"
+        },
+        {
+          "do": 5,
+          "s": "fidèle"
+        },
+        {
+          "do": 6,
+          "s": "lieu sûr"
+        }
+      ],
+      "Foi/Adhésion": [
+        {
+          "do": 7,
+          "s": "croire"
+        },
+        {
+          "do": 8,
+          "s": "avoir la foi"
+        },
+        {
+          "do": 9,
+          "s": "accepter comme vrai"
+        },
+        {
+          "do": 10,
+          "s": "croyant"
+        },
+        {
+          "do": 11,
+          "s": "confirmer"
+        }
+      ],
+      "Garantie/Protection": [
+        {
+          "do": 12,
+          "s": "protéger"
+        },
+        {
+          "do": 13,
+          "s": "accorder la sécurité"
+        }
+      ],
+      "Sens isolé/Amen": [
+        {
+          "do": 14,
+          "s": "amen"
+        }
+      ]
+    }
+  },
+  {
+    "n": 13,
+    "wk": "amr",
+    "id": 428,
+    "etym": "Commandement/Autorité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Multiplier\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Signe\" (1 sens)",
+      "singleton [Consultation] : \"consulter\"",
+      "singleton [Sens isolé/Multiplier] : \"multiplier\"",
+      "singleton [Sens isolé/Signe] : \"signe\""
+    ],
+    "concepts": {
+      "Commandement/Autorité": [
+        {
+          "do": 1,
+          "s": "ordonner"
+        },
+        {
+          "do": 2,
+          "s": "commander"
+        },
+        {
+          "do": 3,
+          "s": "nommer gouverneur"
+        }
+      ],
+      "Consultation": [
+        {
+          "do": 4,
+          "s": "consulter"
+        }
+      ],
+      "Affaire/Chose": [
+        {
+          "do": 5,
+          "s": "affaire"
+        },
+        {
+          "do": 6,
+          "s": "chose"
+        }
+      ],
+      "Sens isolé/Multiplier": [
+        {
+          "do": 7,
+          "s": "multiplier"
+        }
+      ],
+      "Sens isolé/Signe": [
+        {
+          "do": 8,
+          "s": "signe"
+        }
+      ]
+    }
+  },
+  {
+    "n": 15,
+    "wk": "Anv",
+    "id": 2687,
+    "etym": "Féminité",
+    "flags": [
+      "etym✦=\"Féminité\" ABSENT des concepts"
+    ],
+    "concepts": {}
+  },
+  {
+    "n": 17,
+    "wk": "athm",
+    "id": 952,
+    "etym": "Retard/Lenteur",
+    "flags": [
+      "singleton [Retard/Lenteur] : \"être en retard\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Péché/Faute": [
+        {
+          "do": 1,
+          "s": "pécher"
+        },
+        {
+          "do": 2,
+          "s": "commettre une faute"
+        },
+        {
+          "do": 3,
+          "s": "péché (ithm)"
+        },
+        {
+          "do": null,
+          "s": "transgression"
+        },
+        {
+          "do": null,
+          "s": "augmenter en péché"
+        }
+      ],
+      "Retard/Lenteur": [
+        {
+          "do": 4,
+          "s": "être en retard"
+        }
+      ]
+    }
+  },
+  {
+    "n": 19,
+    "wk": "awl",
+    "id": 337,
+    "etym": "Retour/Origine",
+    "flags": [
+      "singleton [Gouvernance] : \"gouverner\"",
+      "singleton [Corps/Anatomie] : \"découvrir le bien en quelqu'un\""
+    ],
+    "concepts": {
+      "Retour/Origine": [
+        {
+          "do": 1,
+          "s": "retourner"
+        },
+        {
+          "do": 2,
+          "s": "faire retourner"
+        },
+        {
+          "do": 2,
+          "s": "revenir"
+        },
+        {
+          "do": 3,
+          "s": "ramener à l'origine"
+        },
+        {
+          "do": 9,
+          "s": "interpréter"
+        }
+      ],
+      "Famille/Appartenance": [
+        {
+          "do": 4,
+          "s": "famille"
+        },
+        {
+          "do": 5,
+          "s": "parenté"
+        },
+        {
+          "do": 10,
+          "s": "détenteurs de"
+        },
+        {
+          "do": 11,
+          "s": "ceux qui possèdent"
+        },
+        {
+          "do": 13,
+          "s": "maisonnée"
+        },
+        {
+          "do": 14,
+          "s": "partisans"
+        }
+      ],
+      "Instrument/Outil": [
+        {
+          "do": 6,
+          "s": "instrument"
+        },
+        {
+          "do": 7,
+          "s": "outil"
+        }
+      ],
+      "Gouvernance": [
+        {
+          "do": 8,
+          "s": "gouverner"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 10,
+          "s": "découvrir le bien en quelqu'un"
+        }
+      ],
+      "Antériorité": [
+        {
+          "do": 20,
+          "s": "premier"
+        },
+        {
+          "do": 21,
+          "s": "première fois"
+        },
+        {
+          "do": 22,
+          "s": "anciens"
+        }
+      ],
+      "Refuge/Aboutissement": [
+        {
+          "do": 40,
+          "s": "refuge"
+        },
+        {
+          "do": 41,
+          "s": "aboutissement"
+        }
+      ]
+    }
+  },
+  {
+    "n": 20,
+    "wk": "axdh",
+    "id": 2660,
+    "etym": "Prise/Saisie",
+    "flags": [
+      "singleton [Châtiment/Sanction] : \"châtier\"",
+      "singleton [Captivité] : \"capturer\""
+    ],
+    "concepts": {
+      "Prise/Saisie": [
+        {
+          "do": 1,
+          "s": "prendre"
+        },
+        {
+          "do": 2,
+          "s": "saisir"
+        },
+        {
+          "do": 3,
+          "s": "s'emparer"
+        },
+        {
+          "do": 4,
+          "s": "recevoir"
+        },
+        {
+          "do": 5,
+          "s": "accepter"
+        }
+      ],
+      "Appropriation/Adoption": [
+        {
+          "do": 6,
+          "s": "se prendre pour"
+        },
+        {
+          "do": 7,
+          "s": "adopter"
+        },
+        {
+          "do": 8,
+          "s": "faire de (X) un (Y)"
+        }
+      ],
+      "Châtiment/Sanction": [
+        {
+          "do": 9,
+          "s": "châtier"
+        }
+      ],
+      "Captivité": [
+        {
+          "do": 10,
+          "s": "capturer"
+        }
+      ]
+    }
+  },
+  {
+    "n": 21,
+    "wk": "axr",
+    "id": 292,
+    "etym": "Postériorité/Retard",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Arrière\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Derrière\" (1 sens)",
+      "singleton [Sens isolé/Arrière] : \"arrière\"",
+      "singleton [Sens isolé/Derrière] : \"derrière\""
+    ],
+    "concepts": {
+      "Postériorité/Retard": [
+        {
+          "do": 1,
+          "s": "retarder"
+        },
+        {
+          "do": 2,
+          "s": "reporter"
+        },
+        {
+          "do": 3,
+          "s": "reculer"
+        },
+        {
+          "do": 4,
+          "s": "après"
+        },
+        {
+          "do": 5,
+          "s": "dernier"
+        },
+        {
+          "do": 6,
+          "s": "l'au-delà"
+        },
+        {
+          "do": 7,
+          "s": "fin"
+        }
+      ],
+      "Sens isolé/Arrière": [
+        {
+          "do": 8,
+          "s": "arrière"
+        }
+      ],
+      "Sens isolé/Derrière": [
+        {
+          "do": 9,
+          "s": "derrière"
+        }
+      ]
+    }
+  },
+  {
+    "n": 23,
+    "wk": "baed",
+    "id": 926,
+    "etym": "Éloignement/Distance",
+    "flags": [
+      "singleton [Mort/Destruction] : \"périr\""
+    ],
+    "concepts": {
+      "Éloignement/Distance": [
+        {
+          "do": 1,
+          "s": "être loin"
+        },
+        {
+          "do": 2,
+          "s": "éloignement"
+        },
+        {
+          "do": 4,
+          "s": "lointain"
+        },
+        {
+          "do": 6,
+          "s": "s'éloigner"
+        }
+      ],
+      "Postériorité": [
+        {
+          "do": 3,
+          "s": "après"
+        },
+        {
+          "do": 4,
+          "s": "ensuite"
+        }
+      ],
+      "Mort/Destruction": [
+        {
+          "do": 5,
+          "s": "périr"
+        }
+      ]
+    }
+  },
+  {
+    "n": 25,
+    "wk": "bdr",
+    "id": 1341,
+    "etym": "Astre/Pleine lune",
+    "flags": [
+      "singleton [Astre/Pleine lune] : \"pleine lune (badr)\"",
+      "singleton [Lieu/Géographie] : \"Badr (lieu)\"",
+      "singleton [Aire à battre] : \"aire de battage (bayḍar)\"",
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Hâte/Devancement": [
+        {
+          "do": 1,
+          "s": "se hâter"
+        },
+        {
+          "do": 2,
+          "s": "devancer"
+        },
+        {
+          "do": 5,
+          "s": "devancer par la hâte"
+        },
+        {
+          "do": 6,
+          "s": "prendre au dépourvu"
+        }
+      ],
+      "Astre/Pleine lune": [
+        {
+          "do": 3,
+          "s": "pleine lune (badr)"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 4,
+          "s": "Badr (lieu)"
+        }
+      ],
+      "Aire à battre": [
+        {
+          "do": 7,
+          "s": "aire de battage (bayḍar)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 26,
+    "wk": "bed",
+    "id": 406,
+    "etym": "Partie/Division",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Moustique\" (3 sens)"
+    ],
+    "concepts": {
+      "Partie/Division": [
+        {
+          "do": 1,
+          "s": "une partie"
+        },
+        {
+          "do": 2,
+          "s": "certains"
+        },
+        {
+          "do": 3,
+          "s": "diviser en parties"
+        },
+        {
+          "do": 5,
+          "s": "quelque chose de"
+        },
+        {
+          "do": 6,
+          "s": "démembrer"
+        }
+      ],
+      "Sens isolé/Moustique": [
+        {
+          "do": 4,
+          "s": "moustique"
+        },
+        {
+          "do": 7,
+          "s": "piquer"
+        },
+        {
+          "do": 8,
+          "s": "importuner"
+        }
+      ],
+      "Éloignement/Postériorité": [
+        {
+          "do": 13,
+          "s": "être éloigné"
+        },
+        {
+          "do": 14,
+          "s": "après"
+        },
+        {
+          "do": 15,
+          "s": "éloignement"
+        },
+        {
+          "do": 16,
+          "s": "lointain"
+        },
+        {
+          "do": 17,
+          "s": "postériorité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 27,
+    "wk": "beth",
+    "id": 545,
+    "etym": "Résurrection/Envoi",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Stimuler\" (1 sens)",
+      "singleton [Mission prophétique] : \"prophète envoyé\"",
+      "singleton [Sens isolé/Stimuler] : \"mettre en mouvement\""
+    ],
+    "concepts": {
+      "Résurrection/Envoi": [
+        {
+          "do": 1,
+          "s": "ressusciter"
+        },
+        {
+          "do": 2,
+          "s": "envoyer"
+        },
+        {
+          "do": 3,
+          "s": "susciter"
+        },
+        {
+          "do": 4,
+          "s": "éveiller"
+        },
+        {
+          "do": 6,
+          "s": "résurrection"
+        },
+        {
+          "do": 7,
+          "s": "réveiller"
+        }
+      ],
+      "Mission prophétique": [
+        {
+          "do": 5,
+          "s": "prophète envoyé"
+        }
+      ],
+      "Sens isolé/Stimuler": [
+        {
+          "do": 8,
+          "s": "mettre en mouvement"
+        }
+      ]
+    }
+  },
+  {
+    "n": 28,
+    "wk": "bgh",
+    "id": 683,
+    "etym": "Quête/Transgression",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Femme infidèle\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Pluie\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Éclaireur\" (1 sens)",
+      "singleton [Sens isolé/Femme infidèle] : \"femme infidèle\"",
+      "singleton [Sens isolé/Pluie] : \"pluie abondante\"",
+      "singleton [Sens isolé/Éclaireur] : \"éclaireur\""
+    ],
+    "concepts": {
+      "Quête/Transgression": [
+        {
+          "do": 1,
+          "s": "chercher"
+        },
+        {
+          "do": 1,
+          "s": "rechercher"
+        },
+        {
+          "do": 2,
+          "s": "désirer ardemment"
+        },
+        {
+          "do": 2,
+          "s": "transgresser"
+        },
+        {
+          "do": 3,
+          "s": "opprimer"
+        },
+        {
+          "do": 3,
+          "s": "chercher à atteindre"
+        },
+        {
+          "do": 4,
+          "s": "désirer"
+        },
+        {
+          "do": 10,
+          "s": "transgression"
+        },
+        {
+          "do": 11,
+          "s": "excès"
+        },
+        {
+          "do": 12,
+          "s": "jalousie envieuse"
+        },
+        {
+          "do": 13,
+          "s": "rivalité agressive"
+        }
+      ],
+      "Injustice/Tyrannie": [
+        {
+          "do": 20,
+          "s": "agir injustement"
+        },
+        {
+          "do": 21,
+          "s": "tyranniser"
+        },
+        {
+          "do": 22,
+          "s": "se révolter"
+        }
+      ],
+      "Sens isolé/Femme infidèle": [
+        {
+          "do": 30,
+          "s": "femme infidèle"
+        }
+      ],
+      "Sens isolé/Pluie": [
+        {
+          "do": 40,
+          "s": "pluie abondante"
+        }
+      ],
+      "Sens isolé/Éclaireur": [
+        {
+          "do": 50,
+          "s": "éclaireur"
+        }
+      ]
+    }
+  },
+  {
+    "n": 30,
+    "wk": "blgh",
+    "id": 987,
+    "etym": "Atteinte/Accomplissement",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "singleton [Sens isolé/Être] : \"être éloquent\""
+    ],
+    "concepts": {
+      "Atteinte/Accomplissement": [
+        {
+          "do": 1,
+          "s": "atteindre"
+        },
+        {
+          "do": 2,
+          "s": "parvenir à"
+        },
+        {
+          "do": 3,
+          "s": "arriver"
+        },
+        {
+          "do": 3,
+          "s": "atteindre la maturité"
+        },
+        {
+          "do": 4,
+          "s": "atteindre un terme"
+        }
+      ],
+      "Transmission/Communication": [
+        {
+          "do": 4,
+          "s": "transmettre un message"
+        },
+        {
+          "do": 5,
+          "s": "communiquer"
+        },
+        {
+          "do": 10,
+          "s": "transmission"
+        },
+        {
+          "do": 11,
+          "s": "communication"
+        },
+        {
+          "do": 12,
+          "s": "annonce"
+        },
+        {
+          "do": 13,
+          "s": "faire parvenir"
+        },
+        {
+          "do": 14,
+          "s": "transmettre"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 6,
+          "s": "être éloquent"
+        }
+      ],
+      "Excès/Effort intense": [
+        {
+          "do": 20,
+          "s": "dépasser les bornes"
+        },
+        {
+          "do": 21,
+          "s": "redoubler d'efforts"
+        },
+        {
+          "do": 22,
+          "s": "faire avec excès"
+        }
+      ],
+      "Éloquence": [
+        {
+          "do": 30,
+          "s": "éloquent"
+        },
+        {
+          "do": 31,
+          "s": "persuasif"
+        }
+      ]
+    }
+  },
+  {
+    "n": 32,
+    "wk": "bny",
+    "id": 386,
+    "etym": "Construction/Édification",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Doigt\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Tente\" (1 sens)",
+      "singleton [Sens isolé/Doigt] : \"phalange\"",
+      "singleton [Sens isolé/Tente] : \"tente vaste\""
+    ],
+    "concepts": {
+      "Construction/Édification": [
+        {
+          "do": 1,
+          "s": "construire"
+        },
+        {
+          "do": 2,
+          "s": "bâtir"
+        },
+        {
+          "do": 3,
+          "s": "édifier"
+        },
+        {
+          "do": 5,
+          "s": "donner une maison"
+        }
+      ],
+      "Filiation": [
+        {
+          "do": 4,
+          "s": "fils"
+        },
+        {
+          "do": 6,
+          "s": "fils de"
+        },
+        {
+          "do": 7,
+          "s": "descendants"
+        }
+      ],
+      "Sens isolé/Doigt": [
+        {
+          "do": 8,
+          "s": "phalange"
+        }
+      ],
+      "Sens isolé/Tente": [
+        {
+          "do": 9,
+          "s": "tente vaste"
+        }
+      ]
+    }
+  },
+  {
+    "n": 34,
+    "wk": "btl",
+    "id": 507,
+    "etym": "Vanité/Inanité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Héros\" (1 sens)",
+      "singleton [Sens isolé/Héros] : \"héros\""
+    ],
+    "concepts": {
+      "Vanité/Inanité": [
+        {
+          "do": 1,
+          "s": "être vain"
+        },
+        {
+          "do": 2,
+          "s": "faux"
+        },
+        {
+          "do": 3,
+          "s": "nul"
+        },
+        {
+          "do": 6,
+          "s": "vain"
+        },
+        {
+          "do": 7,
+          "s": "illusion"
+        },
+        {
+          "do": 8,
+          "s": "mensonge"
+        }
+      ],
+      "Annulation": [
+        {
+          "do": 4,
+          "s": "annuler"
+        },
+        {
+          "do": 5,
+          "s": "invalider"
+        }
+      ],
+      "Sens isolé/Héros": [
+        {
+          "do": 9,
+          "s": "héros"
+        }
+      ]
+    }
+  },
+  {
+    "n": 35,
+    "wk": "btn",
+    "id": 948,
+    "etym": "Intériorité/Profondeur",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Doublure\" (1 sens)",
+      "singleton [Lignée/Subdivision] : \"clan\"",
+      "singleton [Sens isolé/Doublure] : \"doublure\""
+    ],
+    "concepts": {
+      "Intériorité/Profondeur": [
+        {
+          "do": 1,
+          "s": "ventre"
+        },
+        {
+          "do": 2,
+          "s": "intérieur"
+        },
+        {
+          "do": 3,
+          "s": "caché"
+        },
+        {
+          "do": 4,
+          "s": "sens caché (batin)"
+        }
+      ],
+      "Lignée/Subdivision": [
+        {
+          "do": 5,
+          "s": "clan"
+        }
+      ],
+      "Sens isolé/Doublure": [
+        {
+          "do": 6,
+          "s": "doublure"
+        }
+      ]
+    }
+  },
+  {
+    "n": 37,
+    "wk": "byn",
+    "id": 596,
+    "etym": "Séparation/Distance",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Clarté/Évidence": [
+        {
+          "do": 1,
+          "s": "être clair"
+        },
+        {
+          "do": 2,
+          "s": "expliquer"
+        },
+        {
+          "do": 3,
+          "s": "évident"
+        },
+        {
+          "do": 4,
+          "s": "preuve"
+        }
+      ],
+      "Séparation/Distance": [
+        {
+          "do": 5,
+          "s": "séparer"
+        },
+        {
+          "do": 6,
+          "s": "entre"
+        },
+        {
+          "do": 7,
+          "s": "quitter"
+        }
+      ]
+    }
+  },
+  {
+    "n": 38,
+    "wk": "byt",
+    "id": 788,
+    "etym": "Habitation/Demeure",
+    "flags": [
+      "singleton [Poésie] : \"vers de poésie\""
+    ],
+    "concepts": {
+      "Habitation/Demeure": [
+        {
+          "do": 1,
+          "s": "maison"
+        },
+        {
+          "do": 2,
+          "s": "demeure"
+        },
+        {
+          "do": 4,
+          "s": "tente"
+        },
+        {
+          "do": 5,
+          "s": "chambre"
+        },
+        {
+          "do": 6,
+          "s": "construire"
+        },
+        {
+          "do": 12,
+          "s": "nourriture du foyer"
+        }
+      ],
+      "Nuit/Repos": [
+        {
+          "do": 7,
+          "s": "passer la nuit"
+        },
+        {
+          "do": 8,
+          "s": "rassis"
+        }
+      ],
+      "Attaque/Complot": [
+        {
+          "do": 9,
+          "s": "attaque nocturne"
+        },
+        {
+          "do": 10,
+          "s": "machination de nuit"
+        }
+      ],
+      "Poésie": [
+        {
+          "do": 11,
+          "s": "vers de poésie"
+        }
+      ]
+    }
+  },
+  {
+    "n": 40,
+    "wk": "dfe",
+    "id": 1106,
+    "etym": "Repoussement/Défense",
+    "flags": [
+      "singleton [Versement/Remise] : \"verser\""
+    ],
+    "concepts": {
+      "Repoussement/Défense": [
+        {
+          "do": 1,
+          "s": "repousser"
+        },
+        {
+          "do": 2,
+          "s": "défendre"
+        },
+        {
+          "do": 3,
+          "s": "payer"
+        },
+        {
+          "do": 4,
+          "s": "éloigner"
+        },
+        {
+          "do": null,
+          "s": "pousser"
+        }
+      ],
+      "Versement/Remise": [
+        {
+          "do": null,
+          "s": "verser"
+        }
+      ]
+    }
+  },
+  {
+    "n": 42,
+    "wk": "dhkr",
+    "id": 485,
+    "etym": "Souvenir/Mémoire",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=10)"
+    ],
+    "concepts": {
+      "Évocation/Mention": [
+        {
+          "do": 1,
+          "s": "évoquer"
+        },
+        {
+          "do": 2,
+          "s": "mentionner"
+        },
+        {
+          "do": 3,
+          "s": "nommer"
+        },
+        {
+          "do": 4,
+          "s": "prononcer le nom"
+        }
+      ],
+      "Rappel/Admonition": [
+        {
+          "do": 5,
+          "s": "rappeler à autrui"
+        },
+        {
+          "do": 6,
+          "s": "rappel"
+        },
+        {
+          "do": 7,
+          "s": "exhortation"
+        },
+        {
+          "do": 8,
+          "s": "avertissement"
+        },
+        {
+          "do": 9,
+          "s": "admonester"
+        }
+      ],
+      "Souvenir/Mémoire": [
+        {
+          "do": 10,
+          "s": "se souvenir"
+        },
+        {
+          "do": 11,
+          "s": "se rappeler"
+        },
+        {
+          "do": 12,
+          "s": "mémoire"
+        },
+        {
+          "do": 13,
+          "s": "souvenir"
+        }
+      ],
+      "Masculinité": [
+        {
+          "do": 14,
+          "s": "mâle"
+        },
+        {
+          "do": 15,
+          "s": "masculin"
+        },
+        {
+          "do": 21,
+          "s": "homme"
+        }
+      ],
+      "Renom/Réputation": [
+        {
+          "do": 16,
+          "s": "renom"
+        },
+        {
+          "do": 17,
+          "s": "réputation"
+        }
+      ],
+      "Étude/Discussion conjointe": [
+        {
+          "do": 18,
+          "s": "conférer"
+        },
+        {
+          "do": 19,
+          "s": "discuter"
+        },
+        {
+          "do": 20,
+          "s": "étudier ensemble"
+        }
+      ]
+    }
+  },
+  {
+    "n": 44,
+    "wk": "dll",
+    "id": 268,
+    "etym": "Égarement/Déviation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Guide\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Suiveur\" (1 sens)",
+      "singleton [Lieu/Géographie] : \"terre rugueuse\"",
+      "singleton [Minéral/Terre] : \"pierres\"",
+      "singleton [Sens isolé/Guide] : \"guide habile\"",
+      "singleton [Parenté/Famille] : \"fils illégitime\"",
+      "singleton [Corps/Anatomie] : \"sang non vengé\"",
+      "singleton [Sens isolé/Suiveur] : \"suiveur de femmes\""
+    ],
+    "concepts": {
+      "Égarement/Déviation": [
+        {
+          "do": 1,
+          "s": "s'égarer"
+        },
+        {
+          "do": 2,
+          "s": "dévier"
+        },
+        {
+          "do": 3,
+          "s": "errer"
+        },
+        {
+          "do": 4,
+          "s": "perdre son chemin"
+        },
+        {
+          "do": 5,
+          "s": "faire égarer"
+        },
+        {
+          "do": 6,
+          "s": "être égaré"
+        },
+        {
+          "do": 7,
+          "s": "confusion"
+        },
+        {
+          "do": 8,
+          "s": "perplexité"
+        },
+        {
+          "do": 9,
+          "s": "feindre l'égarement"
+        },
+        {
+          "do": 10,
+          "s": "demander l'égarement"
+        },
+        {
+          "do": 11,
+          "s": "route qui égare"
+        },
+        {
+          "do": 12,
+          "s": "terre qui égare"
+        },
+        {
+          "do": 13,
+          "s": "cause d'égarement"
+        }
+      ],
+      "Disparition/Perte": [
+        {
+          "do": 14,
+          "s": "disparaître"
+        },
+        {
+          "do": 15,
+          "s": "se perdre"
+        },
+        {
+          "do": 16,
+          "s": "périr"
+        },
+        {
+          "do": 17,
+          "s": "mourir"
+        },
+        {
+          "do": 18,
+          "s": "devenir poussière"
+        },
+        {
+          "do": 19,
+          "s": "être enterré"
+        },
+        {
+          "do": 20,
+          "s": "perdre quelque chose"
+        },
+        {
+          "do": 21,
+          "s": "état de perdition"
+        },
+        {
+          "do": 22,
+          "s": "futilité"
+        },
+        {
+          "do": 23,
+          "s": "vain"
+        }
+      ],
+      "Oubli/Enterrement": [
+        {
+          "do": 24,
+          "s": "oublier"
+        },
+        {
+          "do": 25,
+          "s": "enterrer"
+        },
+        {
+          "do": 26,
+          "s": "cacher dans le sol"
+        },
+        {
+          "do": 27,
+          "s": "eau souterraine"
+        },
+        {
+          "do": 28,
+          "s": "restes d'eau"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 29,
+          "s": "terre rugueuse"
+        }
+      ],
+      "Minéral/Terre": [
+        {
+          "do": 30,
+          "s": "pierres"
+        }
+      ],
+      "Sens isolé/Guide": [
+        {
+          "do": 31,
+          "s": "guide habile"
+        }
+      ],
+      "Parenté/Famille": [
+        {
+          "do": 32,
+          "s": "fils illégitime"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 33,
+          "s": "sang non vengé"
+        }
+      ],
+      "Sens isolé/Suiveur": [
+        {
+          "do": 34,
+          "s": "suiveur de femmes"
+        }
+      ]
+    }
+  },
+  {
+    "n": 45,
+    "wk": "dnw",
+    "id": 656,
+    "etym": "Proximité/Monde d'ici-bas",
+    "flags": [
+      "singleton [Abaissement/Couverture] : \"abaisser un vêtement\""
+    ],
+    "concepts": {
+      "Proximité/Monde d'ici-bas": [
+        {
+          "do": 1,
+          "s": "être proche"
+        },
+        {
+          "do": 2,
+          "s": "proche"
+        },
+        {
+          "do": 3,
+          "s": "ici-bas"
+        },
+        {
+          "do": 4,
+          "s": "approcher"
+        }
+      ],
+      "Proximité/Rapprochement": [
+        {
+          "do": 5,
+          "s": "s'approcher peu à peu"
+        },
+        {
+          "do": 6,
+          "s": "s'approcher mutuellement"
+        },
+        {
+          "do": 7,
+          "s": "être sur le point de"
+        }
+      ],
+      "Parenté/Lien": [
+        {
+          "do": 8,
+          "s": "parenté"
+        },
+        {
+          "do": 9,
+          "s": "parent proche"
+        }
+      ],
+      "Bassesse/Médiocrité": [
+        {
+          "do": 10,
+          "s": "poursuivre les choses basses"
+        },
+        {
+          "do": 11,
+          "s": "être faible"
+        },
+        {
+          "do": 12,
+          "s": "vivre une vie étroite"
+        }
+      ],
+      "Abaissement/Couverture": [
+        {
+          "do": 13,
+          "s": "abaisser un vêtement"
+        }
+      ]
+    }
+  },
+  {
+    "n": 46,
+    "wk": "drb",
+    "id": 405,
+    "etym": "Frappe/Coup",
+    "flags": [
+      "singleton [Déplacement] : \"voyager\"",
+      "singleton [Lieu/Géographie] : \"semer la discorde\""
+    ],
+    "concepts": {
+      "Frappe/Coup": [
+        {
+          "do": 1,
+          "s": "frapper"
+        },
+        {
+          "do": 2,
+          "s": "battre"
+        }
+      ],
+      "Établissement/Institution": [
+        {
+          "do": 3,
+          "s": "donner un exemple"
+        },
+        {
+          "do": 4,
+          "s": "établir"
+        },
+        {
+          "do": 6,
+          "s": "frapper la monnaie"
+        },
+        {
+          "do": 7,
+          "s": "dresser une tente"
+        }
+      ],
+      "Déplacement": [
+        {
+          "do": 5,
+          "s": "voyager"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 8,
+          "s": "semer la discorde"
+        }
+      ]
+    }
+  },
+  {
+    "n": 47,
+    "wk": "drr",
+    "id": 795,
+    "etym": "Nuisance/Mal",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Femme jalouse\" (1 sens)",
+      "singleton [Sens isolé/Femme jalouse] : \"co-épouse\""
+    ],
+    "concepts": {
+      "Nuisance/Mal": [
+        {
+          "do": 1,
+          "s": "nuire"
+        },
+        {
+          "do": 2,
+          "s": "tort"
+        },
+        {
+          "do": 3,
+          "s": "dommage"
+        },
+        {
+          "do": 4,
+          "s": "préjudice"
+        }
+      ],
+      "Détresse/Adversité": [
+        {
+          "do": 5,
+          "s": "détresse"
+        },
+        {
+          "do": 6,
+          "s": "adversité"
+        },
+        {
+          "do": 7,
+          "s": "misère"
+        }
+      ],
+      "Sens isolé/Femme jalouse": [
+        {
+          "do": 8,
+          "s": "co-épouse"
+        }
+      ]
+    }
+  },
+  {
+    "n": 48,
+    "wk": "ḏrr",
+    "id": 2614,
+    "etym": "Particule/Infime",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Parfum\" (1 sens)",
+      "singleton [Sens isolé/Parfum] : \"parfum aromatique\""
+    ],
+    "concepts": {
+      "Particule/Infime": [
+        {
+          "do": 1,
+          "s": "plus petites fourmis"
+        },
+        {
+          "do": 2,
+          "s": "poussière dans un rayon de soleil"
+        },
+        {
+          "do": 3,
+          "s": "particule minuscule"
+        },
+        {
+          "do": 4,
+          "s": "particules d'or"
+        }
+      ],
+      "Dispersion/Saupoudrage": [
+        {
+          "do": 5,
+          "s": "saupoudrer"
+        },
+        {
+          "do": 6,
+          "s": "répandre finement"
+        },
+        {
+          "do": 7,
+          "s": "éparpiller"
+        }
+      ],
+      "Descendance": [
+        {
+          "do": 8,
+          "s": "enfants"
+        },
+        {
+          "do": 9,
+          "s": "progéniture"
+        }
+      ],
+      "Sens isolé/Parfum": [
+        {
+          "do": 10,
+          "s": "parfum aromatique"
+        }
+      ]
+    }
+  },
+  {
+    "n": 50,
+    "wk": "dxl",
+    "id": 567,
+    "etym": "Entrée/Pénétration",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Défaut caché\" (2 sens)",
+      "singleton [Ressource] : \"revenu\""
+    ],
+    "concepts": {
+      "Entrée/Pénétration": [
+        {
+          "do": 1,
+          "s": "entrer"
+        },
+        {
+          "do": 2,
+          "s": "pénétrer"
+        },
+        {
+          "do": 3,
+          "s": "accéder"
+        },
+        {
+          "do": 4,
+          "s": "introduire"
+        },
+        {
+          "do": 6,
+          "s": "s'introduire"
+        },
+        {
+          "do": 9,
+          "s": "faire entrer"
+        }
+      ],
+      "Ressource": [
+        {
+          "do": 5,
+          "s": "revenu"
+        }
+      ],
+      "Sens isolé/Défaut caché": [
+        {
+          "do": 7,
+          "s": "défaut caché"
+        },
+        {
+          "do": 8,
+          "s": "duplicité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 51,
+    "wk": "dyn",
+    "id": 258,
+    "etym": "Obéissance/Soumission",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Maladie\" (1 sens)",
+      "singleton [Sens isolé/Maladie] : \"maladie\"",
+      "singleton [Eau/Liquide] : \"pluie continue\""
+    ],
+    "concepts": {
+      "Obéissance/Soumission": [
+        {
+          "do": 1,
+          "s": "obéir"
+        },
+        {
+          "do": 2,
+          "s": "se soumettre"
+        },
+        {
+          "do": 3,
+          "s": "soumission"
+        },
+        {
+          "do": 4,
+          "s": "assujettissement"
+        },
+        {
+          "do": 4,
+          "s": "voie"
+        }
+      ],
+      "Religion/Système": [
+        {
+          "do": 5,
+          "s": "religion"
+        },
+        {
+          "do": 6,
+          "s": "système de croyances"
+        },
+        {
+          "do": 7,
+          "s": "pratique"
+        },
+        {
+          "do": 8,
+          "s": "coutume"
+        },
+        {
+          "do": 9,
+          "s": "habitude"
+        }
+      ],
+      "Rétribution/Compte": [
+        {
+          "do": 10,
+          "s": "rétribution"
+        },
+        {
+          "do": 11,
+          "s": "récompense"
+        },
+        {
+          "do": 12,
+          "s": "punition"
+        },
+        {
+          "do": 13,
+          "s": "compensation"
+        },
+        {
+          "do": 14,
+          "s": "rendre ce qui est dû"
+        },
+        {
+          "do": 15,
+          "s": "jugement"
+        }
+      ],
+      "Dette/Obligation": [
+        {
+          "do": 16,
+          "s": "dette"
+        },
+        {
+          "do": 17,
+          "s": "créance"
+        },
+        {
+          "do": 18,
+          "s": "obligation financière"
+        },
+        {
+          "do": 19,
+          "s": "prêt"
+        }
+      ],
+      "Sens isolé/Maladie": [
+        {
+          "do": 20,
+          "s": "maladie"
+        }
+      ],
+      "Eau/Liquide": [
+        {
+          "do": 21,
+          "s": "pluie continue"
+        }
+      ]
+    }
+  },
+  {
+    "n": 53,
+    "wk": "ebd",
+    "id": 259,
+    "etym": "Adoration/Dévotion",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Mépriser\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Colérique\" (1 sens)",
+      "singleton [Sens isolé/Être] : \"être en colère\"",
+      "singleton [Sens isolé/Mépriser] : \"mépriser\"",
+      "singleton [Sens isolé/Colérique] : \"colérique\""
+    ],
+    "concepts": {
+      "Adoration/Dévotion": [
+        {
+          "do": 1,
+          "s": "adorer"
+        },
+        {
+          "do": 2,
+          "s": "servir"
+        },
+        {
+          "do": 3,
+          "s": "vouer un culte"
+        },
+        {
+          "do": 4,
+          "s": "se dévouer"
+        },
+        {
+          "do": 5,
+          "s": "dévotion"
+        },
+        {
+          "do": 6,
+          "s": "adoration"
+        }
+      ],
+      "Servitude/Esclavage": [
+        {
+          "do": 7,
+          "s": "serviteur"
+        },
+        {
+          "do": 8,
+          "s": "esclave"
+        },
+        {
+          "do": 9,
+          "s": "être humain"
+        },
+        {
+          "do": 10,
+          "s": "asservir"
+        },
+        {
+          "do": 11,
+          "s": "rendre soumis"
+        },
+        {
+          "do": 12,
+          "s": "aplanir un chemin"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 13,
+          "s": "être en colère"
+        }
+      ],
+      "Sens isolé/Mépriser": [
+        {
+          "do": 14,
+          "s": "mépriser"
+        }
+      ],
+      "Sens isolé/Colérique": [
+        {
+          "do": 15,
+          "s": "colérique"
+        }
+      ]
+    }
+  },
+  {
+    "n": 54,
+    "wk": "ebr",
+    "id": 1238,
+    "etym": "Traversée/Passage",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Pleurer\" (2 sens)"
+    ],
+    "concepts": {
+      "Traversée/Passage": [
+        {
+          "do": 1,
+          "s": "traverser"
+        },
+        {
+          "do": null,
+          "s": "passer d'un côté à l'autre"
+        },
+        {
+          "do": null,
+          "s": "faire traverser"
+        },
+        {
+          "do": null,
+          "s": "rive (d'un fleuve)"
+        }
+      ],
+      "Interprétation/Leçon": [
+        {
+          "do": 2,
+          "s": "interpréter (un rêve)"
+        },
+        {
+          "do": 3,
+          "s": "leçon (ibra)"
+        },
+        {
+          "do": null,
+          "s": "tirer un enseignement"
+        },
+        {
+          "do": null,
+          "s": "méditer"
+        }
+      ],
+      "Sens isolé/Pleurer": [
+        {
+          "do": 4,
+          "s": "pleurer"
+        },
+        {
+          "do": null,
+          "s": "larme"
+        }
+      ]
+    }
+  },
+  {
+    "n": 55,
+    "wk": "edb",
+    "id": 314,
+    "etym": "Douceur",
+    "flags": [
+      "singleton [Eau/Liquide] : \"poussières flottant sur l'eau\"",
+      "singleton [Végétation/Plante] : \"arbre vénéneux\""
+    ],
+    "concepts": {
+      "Douceur": [
+        {
+          "do": 1,
+          "s": "doux"
+        },
+        {
+          "do": 2,
+          "s": "sucré"
+        },
+        {
+          "do": 3,
+          "s": "eau douce"
+        },
+        {
+          "do": 4,
+          "s": "agréable"
+        }
+      ],
+      "Châtiment/Punition": [
+        {
+          "do": 5,
+          "s": "punir"
+        },
+        {
+          "do": 6,
+          "s": "châtier"
+        },
+        {
+          "do": 7,
+          "s": "tourmenter"
+        },
+        {
+          "do": 8,
+          "s": "châtiment"
+        }
+      ],
+      "Abstention": [
+        {
+          "do": 9,
+          "s": "s'abstenir"
+        },
+        {
+          "do": 10,
+          "s": "quitter"
+        }
+      ],
+      "Eau/Liquide": [
+        {
+          "do": 11,
+          "s": "poussières flottant sur l'eau"
+        }
+      ],
+      "Végétation/Plante": [
+        {
+          "do": 12,
+          "s": "arbre vénéneux"
+        }
+      ]
+    }
+  },
+  {
+    "n": 56,
+    "wk": "edl",
+    "id": 535,
+    "etym": "Justice/Équité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Dévier\" (1 sens)",
+      "singleton [Sens isolé/Dévier] : \"dévier\""
+    ],
+    "concepts": {
+      "Justice/Équité": [
+        {
+          "do": 1,
+          "s": "être juste"
+        },
+        {
+          "do": 2,
+          "s": "justice"
+        },
+        {
+          "do": 3,
+          "s": "équité"
+        },
+        {
+          "do": 4,
+          "s": "rançon"
+        },
+        {
+          "do": 5,
+          "s": "équivalent"
+        }
+      ],
+      "Sens isolé/Dévier": [
+        {
+          "do": 6,
+          "s": "dévier"
+        }
+      ]
+    }
+  },
+  {
+    "n": 58,
+    "wk": "edw",
+    "id": 457,
+    "etym": "Course/Vitesse",
+    "flags": [
+      "singleton [Course/Vitesse] : \"courir\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Hostilité/Inimitié": [
+        {
+          "do": 1,
+          "s": "ennemi"
+        },
+        {
+          "do": 2,
+          "s": "hostilité"
+        },
+        {
+          "do": 3,
+          "s": "agression"
+        }
+      ],
+      "Course/Vitesse": [
+        {
+          "do": 4,
+          "s": "courir"
+        }
+      ],
+      "Transgression/Excès": [
+        {
+          "do": 5,
+          "s": "transgresser"
+        },
+        {
+          "do": 6,
+          "s": "injustice"
+        }
+      ]
+    }
+  },
+  {
+    "n": 60,
+    "wk": "elm",
+    "id": 254,
+    "etym": "Savoir/Connaissance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Enseigner\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Homonyme\" (1 sens)",
+      "singleton [Sens isolé/Enseigner] : \"enseigner\"",
+      "singleton [Sens isolé/Homonyme] : \"homonyme\""
+    ],
+    "concepts": {
+      "Savoir/Connaissance": [
+        {
+          "do": 1,
+          "s": "savoir"
+        },
+        {
+          "do": 2,
+          "s": "connaître"
+        },
+        {
+          "do": 3,
+          "s": "être informé"
+        },
+        {
+          "do": 4,
+          "s": "certitude"
+        },
+        {
+          "do": 5,
+          "s": "savant"
+        },
+        {
+          "do": 6,
+          "s": "science"
+        },
+        {
+          "do": 7,
+          "s": "enseignement"
+        }
+      ],
+      "Marque/Signe": [
+        {
+          "do": 8,
+          "s": "marquer"
+        },
+        {
+          "do": 9,
+          "s": "signe"
+        },
+        {
+          "do": 10,
+          "s": "drapeau"
+        },
+        {
+          "do": 11,
+          "s": "montagne"
+        },
+        {
+          "do": 12,
+          "s": "repère"
+        },
+        {
+          "do": 13,
+          "s": "étendard"
+        },
+        {
+          "do": 14,
+          "s": "lèvre fendue"
+        }
+      ],
+      "Monde/Création": [
+        {
+          "do": 15,
+          "s": "monde"
+        },
+        {
+          "do": 16,
+          "s": "les mondes"
+        },
+        {
+          "do": 17,
+          "s": "ensemble des créatures"
+        },
+        {
+          "do": 18,
+          "s": "univers"
+        }
+      ],
+      "Sens isolé/Enseigner": [
+        {
+          "do": 19,
+          "s": "enseigner"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 20,
+          "s": "informer"
+        },
+        {
+          "do": 21,
+          "s": "nommer"
+        }
+      ],
+      "Sens isolé/Homonyme": [
+        {
+          "do": 22,
+          "s": "homonyme"
+        }
+      ]
+    }
+  },
+  {
+    "n": 61,
+    "wk": "elw",
+    "id": 371,
+    "etym": "Hauteur/Élévation",
+    "flags": [
+      "singleton [Animal/Faune] : \"charger sur un chameau\""
+    ],
+    "concepts": {
+      "Hauteur/Élévation": [
+        {
+          "do": 1,
+          "s": "être haut"
+        },
+        {
+          "do": 2,
+          "s": "élever"
+        },
+        {
+          "do": 3,
+          "s": "s'élever"
+        },
+        {
+          "do": 4,
+          "s": "supérieur"
+        },
+        {
+          "do": 5,
+          "s": "le Très-Haut"
+        },
+        {
+          "do": 7,
+          "s": "rivaliser en élévation"
+        }
+      ],
+      "Animal/Faune": [
+        {
+          "do": 6,
+          "s": "charger sur un chameau"
+        }
+      ]
+    }
+  },
+  {
+    "n": 62,
+    "wk": "eml",
+    "id": 393,
+    "etym": "Action/Oeuvre",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Gouverneur\" (1 sens)",
+      "singleton [Sens isolé/Gouverneur] : \"gouverneur\""
+    ],
+    "concepts": {
+      "Action/Oeuvre": [
+        {
+          "do": 1,
+          "s": "travailler"
+        },
+        {
+          "do": 2,
+          "s": "agir"
+        },
+        {
+          "do": 3,
+          "s": "oeuvre"
+        },
+        {
+          "do": 4,
+          "s": "acte"
+        },
+        {
+          "do": 5,
+          "s": "ouvrier"
+        },
+        {
+          "do": 7,
+          "s": "faire"
+        }
+      ],
+      "Sens isolé/Gouverneur": [
+        {
+          "do": 6,
+          "s": "gouverneur"
+        }
+      ]
+    }
+  },
+  {
+    "n": 64,
+    "wk": "ent",
+    "id": 1025,
+    "etym": "Difficulté/Souffrance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Fornication\" (1 sens)",
+      "singleton [Sens isolé/Fornication] : \"fornication\""
+    ],
+    "concepts": {
+      "Difficulté/Souffrance": [
+        {
+          "do": 1,
+          "s": "être en difficulté"
+        },
+        {
+          "do": 2,
+          "s": "souffrir"
+        },
+        {
+          "do": 3,
+          "s": "pécher"
+        }
+      ],
+      "Sens isolé/Fornication": [
+        {
+          "do": 4,
+          "s": "fornication"
+        }
+      ],
+      "Épreuve pénible": [
+        {
+          "do": 5,
+          "s": "épreuve pénible"
+        },
+        {
+          "do": 6,
+          "s": "fauter par excès"
+        },
+        {
+          "do": 7,
+          "s": "rigueur excessive"
+        }
+      ]
+    }
+  },
+  {
+    "n": 65,
+    "wk": "eqd",
+    "id": 1069,
+    "etym": "Nœud/Contrat",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Nœud\" (1 sens)",
+      "singleton [Détermination] : \"résolution ferme\"",
+      "singleton [Sens isolé/Nœud] : \"nœud de magie\""
+    ],
+    "concepts": {
+      "Nœud/Contrat": [
+        {
+          "do": 1,
+          "s": "nouer"
+        },
+        {
+          "do": 2,
+          "s": "contracter"
+        },
+        {
+          "do": 3,
+          "s": "pacte"
+        }
+      ],
+      "Détermination": [
+        {
+          "do": 4,
+          "s": "résolution ferme"
+        }
+      ],
+      "Sens isolé/Nœud": [
+        {
+          "do": 5,
+          "s": "nœud de magie"
+        }
+      ]
+    }
+  },
+  {
+    "n": 66,
+    "wk": "erd",
+    "id": 417,
+    "etym": "Largeur/Étendue",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Rivaliser\" (1 sens)",
+      "singleton [Sens isolé/Rivaliser] : \"rivaliser\""
+    ],
+    "concepts": {
+      "Largeur/Étendue": [
+        {
+          "do": 1,
+          "s": "être large"
+        },
+        {
+          "do": 2,
+          "s": "large"
+        }
+      ],
+      "Présentation/Exposition": [
+        {
+          "do": 3,
+          "s": "montrer"
+        },
+        {
+          "do": 4,
+          "s": "proposer"
+        },
+        {
+          "do": 5,
+          "s": "exposer"
+        },
+        {
+          "do": 6,
+          "s": "parler indirectement"
+        }
+      ],
+      "Accident/Éphémère": [
+        {
+          "do": 7,
+          "s": "accident"
+        },
+        {
+          "do": 8,
+          "s": "maladie"
+        }
+      ],
+      "Sens isolé/Rivaliser": [
+        {
+          "do": 9,
+          "s": "rivaliser"
+        }
+      ],
+      "Détournement/Refus": [
+        {
+          "do": 10,
+          "s": "se détourner"
+        },
+        {
+          "do": 11,
+          "s": "refuser"
+        },
+        {
+          "do": 12,
+          "s": "ignorer"
+        }
+      ]
+    }
+  },
+  {
+    "n": 67,
+    "wk": "erf",
+    "id": 682,
+    "etym": "Connaissance/Reconnaissance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Crête\" (1 sens)",
+      "singleton [Sens isolé/Crête] : \"crête\""
+    ],
+    "concepts": {
+      "Connaissance/Reconnaissance": [
+        {
+          "do": 1,
+          "s": "connaître"
+        },
+        {
+          "do": 2,
+          "s": "reconnaître"
+        },
+        {
+          "do": 3,
+          "s": "bien reconnu"
+        },
+        {
+          "do": 4,
+          "s": "coutume"
+        },
+        {
+          "do": 5,
+          "s": "identifier"
+        }
+      ],
+      "Sens isolé/Crête": [
+        {
+          "do": 6,
+          "s": "crête"
+        }
+      ]
+    }
+  },
+  {
+    "n": 70,
+    "wk": "esy",
+    "id": 594,
+    "etym": "Bâton/Verge",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=7)"
+    ],
+    "concepts": {
+      "Rébellion/Péché": [
+        {
+          "do": 1,
+          "s": "désobéir"
+        },
+        {
+          "do": 2,
+          "s": "se rebeller"
+        },
+        {
+          "do": 3,
+          "s": "pécher"
+        }
+      ],
+      "Désobéissance/Révolte": [
+        {
+          "do": 4,
+          "s": "révolte"
+        },
+        {
+          "do": 5,
+          "s": "transgresser"
+        },
+        {
+          "do": 6,
+          "s": "rebelle"
+        }
+      ],
+      "Bâton/Verge": [
+        {
+          "do": 7,
+          "s": "bâton"
+        },
+        {
+          "do": 8,
+          "s": "verge"
+        }
+      ]
+    }
+  },
+  {
+    "n": 71,
+    "wk": "etd",
+    "id": 600,
+    "etym": "Préparation/Prêt",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Préparation/Disponibilité": [
+        {
+          "do": 1,
+          "s": "préparer"
+        },
+        {
+          "do": 2,
+          "s": "tenir prêt"
+        },
+        {
+          "do": 3,
+          "s": "disposer"
+        }
+      ],
+      "Préparation/Prêt": [
+        {
+          "do": 4,
+          "s": "préparer"
+        },
+        {
+          "do": 5,
+          "s": "apprêté"
+        },
+        {
+          "do": 6,
+          "s": "tenu prêt"
+        }
+      ]
+    }
+  },
+  {
+    "n": 72,
+    "wk": "ewl",
+    "id": 1040,
+    "etym": "Déviation/Injustice",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Pleurer\" (2 sens)",
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Entretien/Charge": [
+        {
+          "do": 1,
+          "s": "subvenir aux besoins"
+        },
+        {
+          "do": 2,
+          "s": "entretenir"
+        },
+        {
+          "do": 20,
+          "s": "avoir à charge"
+        }
+      ],
+      "Déviation/Injustice": [
+        {
+          "do": 3,
+          "s": "s'écarter de la justice"
+        },
+        {
+          "do": 10,
+          "s": "faire pencher"
+        },
+        {
+          "do": 11,
+          "s": "agir injustement"
+        }
+      ],
+      "Sens isolé/Pleurer": [
+        {
+          "do": 4,
+          "s": "pleurer"
+        },
+        {
+          "do": 30,
+          "s": "gémir"
+        }
+      ]
+    }
+  },
+  {
+    "n": 73,
+    "wk": "ezm",
+    "id": 310,
+    "etym": "Structure/Ossature",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Châtiment\" (1 sens)",
+      "singleton [Sens isolé/Châtiment] : \"châtiment terrible\"",
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Grandeur/Importance": [
+        {
+          "do": 1,
+          "s": "être grand"
+        },
+        {
+          "do": 2,
+          "s": "grandir"
+        },
+        {
+          "do": 3,
+          "s": "immense"
+        },
+        {
+          "do": 4,
+          "s": "magnifier"
+        }
+      ],
+      "Structure/Ossature": [
+        {
+          "do": 5,
+          "s": "os"
+        },
+        {
+          "do": 6,
+          "s": "squelette"
+        }
+      ],
+      "Sens isolé/Châtiment": [
+        {
+          "do": 7,
+          "s": "châtiment terrible"
+        }
+      ],
+      "Résolution/Détermination": [
+        {
+          "do": 8,
+          "s": "résolution"
+        },
+        {
+          "do": 9,
+          "s": "détermination"
+        },
+        {
+          "do": 10,
+          "s": "fermeté"
+        }
+      ]
+    }
+  },
+  {
+    "n": 74,
+    "wk": "fdl",
+    "id": 524,
+    "etym": "Reste/Surplus",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Excellence/Faveur": [
+        {
+          "do": 1,
+          "s": "être supérieur"
+        },
+        {
+          "do": 2,
+          "s": "grâce"
+        },
+        {
+          "do": 3,
+          "s": "faveur"
+        },
+        {
+          "do": 4,
+          "s": "mérite"
+        }
+      ],
+      "Reste/Surplus": [
+        {
+          "do": 5,
+          "s": "surplus"
+        },
+        {
+          "do": 6,
+          "s": "reste"
+        }
+      ]
+    }
+  },
+  {
+    "n": 75,
+    "wk": "fdw",
+    "id": 983,
+    "etym": "Extension/Diffusion",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Espace/Débordement": [
+        {
+          "do": 1,
+          "s": "être spacieux"
+        },
+        {
+          "do": 2,
+          "s": "déborder"
+        },
+        {
+          "do": 3,
+          "s": "verser (le trop-plein)"
+        },
+        {
+          "do": 4,
+          "s": "s'étendre"
+        }
+      ],
+      "Extension/Diffusion": [
+        {
+          "do": 5,
+          "s": "s'étendre à"
+        },
+        {
+          "do": 6,
+          "s": "aboutir à"
+        },
+        {
+          "do": 7,
+          "s": "espace libre"
+        }
+      ]
+    }
+  },
+  {
+    "n": 77,
+    "wk": "fḫr",
+    "id": 1479,
+    "etym": "Poterie/Terre cuite",
+    "flags": [
+      "singleton [Excellence] : \"glorieux\"",
+      "singleton [Poterie/Terre cuite] : \"argile cuite (fakhkhār)\"",
+      "etym✦ n'a aucun sens à do=1 (min do=7)"
+    ],
+    "concepts": {
+      "Orgueil/Vantardise": [
+        {
+          "do": 1,
+          "s": "se vanter"
+        },
+        {
+          "do": 2,
+          "s": "fierté"
+        },
+        {
+          "do": 3,
+          "s": "orgueil"
+        },
+        {
+          "do": 6,
+          "s": "s'enorgueillir"
+        }
+      ],
+      "Excellence": [
+        {
+          "do": 4,
+          "s": "glorieux"
+        }
+      ],
+      "Poterie/Terre cuite": [
+        {
+          "do": 7,
+          "s": "argile cuite (fakhkhār)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 78,
+    "wk": "fhš",
+    "id": 944,
+    "etym": "Indécence/Turpitude",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Avarice\" (1 sens)",
+      "singleton [Sens isolé/Être] : \"être avare\"",
+      "singleton [Sens isolé/Avarice] : \"avarice\""
+    ],
+    "concepts": {
+      "Indécence/Turpitude": [
+        {
+          "do": 1,
+          "s": "être obscène"
+        },
+        {
+          "do": 2,
+          "s": "turpitude"
+        },
+        {
+          "do": 3,
+          "s": "acte immoral"
+        },
+        {
+          "do": 4,
+          "s": "excéder les limites"
+        },
+        {
+          "do": 6,
+          "s": "indécence"
+        },
+        {
+          "do": 7,
+          "s": "abomination"
+        },
+        {
+          "do": 8,
+          "s": "obscène"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 5,
+          "s": "être avare"
+        }
+      ],
+      "Sens isolé/Avarice": [
+        {
+          "do": 9,
+          "s": "avarice"
+        }
+      ]
+    }
+  },
+  {
+    "n": 80,
+    "wk": "frd",
+    "id": 618,
+    "etym": "Sens isolé/Entaille",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Grand\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Entaille\" (1 sens)",
+      "singleton [Sens isolé/Grand] : \"énorme\"",
+      "singleton [Sens isolé/Entaille] : \"encoche\"",
+      "etym✦ n'a aucun sens à do=1 (min do=40)"
+    ],
+    "concepts": {
+      "Obligation/Devoir": [
+        {
+          "do": 1,
+          "s": "obliger"
+        },
+        {
+          "do": 2,
+          "s": "prescrire"
+        },
+        {
+          "do": 3,
+          "s": "devoir"
+        },
+        {
+          "do": 10,
+          "s": "assigner"
+        },
+        {
+          "do": 11,
+          "s": "fixer"
+        }
+      ],
+      "Part déterminée": [
+        {
+          "do": 4,
+          "s": "part"
+        },
+        {
+          "do": 20,
+          "s": "part obligatoire"
+        },
+        {
+          "do": 21,
+          "s": "part successorale"
+        }
+      ],
+      "Sens isolé/Grand": [
+        {
+          "do": 30,
+          "s": "énorme"
+        }
+      ],
+      "Sens isolé/Entaille": [
+        {
+          "do": 40,
+          "s": "encoche"
+        }
+      ]
+    }
+  },
+  {
+    "n": 82,
+    "wk": "fwq",
+    "id": 407,
+    "etym": "Supériorité/Dessus",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Encoche\" (1 sens)",
+      "singleton [Rétablissement] : \"se rétablir\"",
+      "singleton [Sens isolé/Encoche] : \"encoche de flèche\""
+    ],
+    "concepts": {
+      "Supériorité/Dessus": [
+        {
+          "do": 1,
+          "s": "au-dessus"
+        },
+        {
+          "do": 2,
+          "s": "surpasser"
+        },
+        {
+          "do": 3,
+          "s": "exceller"
+        }
+      ],
+      "Rétablissement": [
+        {
+          "do": 4,
+          "s": "se rétablir"
+        }
+      ],
+      "Sens isolé/Encoche": [
+        {
+          "do": 5,
+          "s": "encoche de flèche"
+        }
+      ]
+    }
+  },
+  {
+    "n": 84,
+    "wk": "gfr",
+    "id": 1681,
+    "etym": "Protection/Couverture physique",
+    "flags": [
+      "singleton [Protection/Couverture physique] : \"casque\"",
+      "etym✦ n'a aucun sens à do=1 (min do=10)"
+    ],
+    "concepts": {
+      "Pardon/Couverture": [
+        {
+          "do": 1,
+          "s": "pardonner"
+        },
+        {
+          "do": 2,
+          "s": "couvrir"
+        },
+        {
+          "do": 3,
+          "s": "effacer les péchés"
+        },
+        {
+          "do": 4,
+          "s": "pardonneur"
+        }
+      ],
+      "Protection/Couverture physique": [
+        {
+          "do": 10,
+          "s": "casque"
+        }
+      ]
+    }
+  },
+  {
+    "n": 85,
+    "wk": "ghlz",
+    "id": 1382,
+    "etym": "Épaisseur/Solidité",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Dureté/Sévérité": [
+        {
+          "do": 1,
+          "s": "être dur de cœur"
+        },
+        {
+          "do": 2,
+          "s": "sévérité"
+        },
+        {
+          "do": null,
+          "s": "rigueur"
+        },
+        {
+          "do": null,
+          "s": "dureté"
+        },
+        {
+          "do": null,
+          "s": "rudesse"
+        }
+      ],
+      "Épaisseur/Solidité": [
+        {
+          "do": 3,
+          "s": "être épais"
+        },
+        {
+          "do": null,
+          "s": "solide"
+        }
+      ]
+    }
+  },
+  {
+    "n": 86,
+    "wk": "ghsl",
+    "id": 1486,
+    "etym": "Lavage/Purification",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Purification/Nettoyage": [
+        {
+          "do": 1,
+          "s": "laver"
+        },
+        {
+          "do": 2,
+          "s": "purifier"
+        },
+        {
+          "do": 3,
+          "s": "ablution"
+        }
+      ],
+      "Lavage/Purification": [
+        {
+          "do": 4,
+          "s": "laver"
+        },
+        {
+          "do": 5,
+          "s": "ablution complète (ghusl)"
+        },
+        {
+          "do": 6,
+          "s": "purifier par l'eau"
+        }
+      ]
+    }
+  },
+  {
+    "n": 87,
+    "wk": "ghwt",
+    "id": 1487,
+    "etym": "Fosse/Dépression",
+    "flags": [
+      "singleton [Besoin naturel/Latrines] : \"lieu d'aisance (ghāʾiṭ)\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Engloutissement/Profondeur": [
+        {
+          "do": 1,
+          "s": "enfoncer"
+        },
+        {
+          "do": 2,
+          "s": "engloutir"
+        },
+        {
+          "do": 3,
+          "s": "abîme"
+        }
+      ],
+      "Fosse/Dépression": [
+        {
+          "do": 4,
+          "s": "fosse profonde"
+        },
+        {
+          "do": 5,
+          "s": "dépression du sol"
+        }
+      ],
+      "Besoin naturel/Latrines": [
+        {
+          "do": 6,
+          "s": "lieu d'aisance (ghāʾiṭ)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 88,
+    "wk": "ghyr",
+    "id": 266,
+    "etym": "Changement/Altération",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Mensonge\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Badge\" (1 sens)",
+      "singleton [Sens isolé/Mensonge] : \"mensonge\"",
+      "singleton [Lieu/Géographie] : \"terre arrosée\"",
+      "singleton [Sens isolé/Badge] : \"badge des non-musulmans\""
+    ],
+    "concepts": {
+      "Changement/Altération": [
+        {
+          "do": 1,
+          "s": "changer"
+        },
+        {
+          "do": 2,
+          "s": "altérer"
+        },
+        {
+          "do": 3,
+          "s": "transformer"
+        },
+        {
+          "do": 4,
+          "s": "modifier"
+        },
+        {
+          "do": 5,
+          "s": "échanger"
+        },
+        {
+          "do": 6,
+          "s": "devenir autre"
+        },
+        {
+          "do": 7,
+          "s": "arracher les cheveux blancs"
+        }
+      ],
+      "Autre/Exclusion": [
+        {
+          "do": 8,
+          "s": "autre"
+        },
+        {
+          "do": 9,
+          "s": "sauf"
+        },
+        {
+          "do": 10,
+          "s": "excepté"
+        },
+        {
+          "do": 11,
+          "s": "différent"
+        },
+        {
+          "do": 12,
+          "s": "exclusion"
+        },
+        {
+          "do": 13,
+          "s": "pas"
+        },
+        {
+          "do": 14,
+          "s": "n'est pas"
+        },
+        {
+          "do": 15,
+          "s": "sans"
+        }
+      ],
+      "Jalousie/Protection": [
+        {
+          "do": 16,
+          "s": "jalousie"
+        },
+        {
+          "do": 17,
+          "s": "très jaloux"
+        },
+        {
+          "do": 18,
+          "s": "plus jaloux"
+        },
+        {
+          "do": 19,
+          "s": "protéger ce qui est sien"
+        }
+      ],
+      "Provision/Subsistance": [
+        {
+          "do": 20,
+          "s": "provision de blé"
+        },
+        {
+          "do": 21,
+          "s": "pourvoir sa famille"
+        },
+        {
+          "do": 22,
+          "s": "obtenir un bénéfice"
+        }
+      ],
+      "Sens isolé/Mensonge": [
+        {
+          "do": 23,
+          "s": "mensonge"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 24,
+          "s": "terre arrosée"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 25,
+          "s": "sang versé"
+        },
+        {
+          "do": 27,
+          "s": "discours"
+        }
+      ],
+      "Sens isolé/Badge": [
+        {
+          "do": 26,
+          "s": "badge des non-musulmans"
+        }
+      ]
+    }
+  },
+  {
+    "n": 89,
+    "wk": "gny",
+    "id": 2584,
+    "etym": "Richesse/Autosuffisance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Chant\" (2 sens)",
+      "concept fourre-tout \"Sens isolé/Habitation\" (2 sens)",
+      "concept fourre-tout \"Sens isolé/Plante\" (1 sens)",
+      "singleton [Sens isolé/Plante] : \"plante grasse\""
+    ],
+    "concepts": {
+      "Richesse/Autosuffisance": [
+        {
+          "do": 1,
+          "s": "être riche"
+        },
+        {
+          "do": 2,
+          "s": "se passer de"
+        },
+        {
+          "do": 3,
+          "s": "être autosuffisant"
+        },
+        {
+          "do": 4,
+          "s": "enrichir"
+        },
+        {
+          "do": 10,
+          "s": "indépendant"
+        }
+      ],
+      "Sens isolé/Chant": [
+        {
+          "do": 5,
+          "s": "chant"
+        },
+        {
+          "do": 8,
+          "s": "chanter"
+        }
+      ],
+      "Sens isolé/Habitation": [
+        {
+          "do": 6,
+          "s": "habiter"
+        },
+        {
+          "do": 7,
+          "s": "demeurer"
+        }
+      ],
+      "Sens isolé/Plante": [
+        {
+          "do": 9,
+          "s": "plante grasse"
+        }
+      ]
+    }
+  },
+  {
+    "n": 91,
+    "wk": "hbb",
+    "id": 930,
+    "etym": "Graine/Semence",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Amour/Affection": [
+        {
+          "do": 1,
+          "s": "aimer"
+        },
+        {
+          "do": 2,
+          "s": "affection"
+        },
+        {
+          "do": 3,
+          "s": "préférer"
+        },
+        {
+          "do": 8,
+          "s": "amour"
+        },
+        {
+          "do": 9,
+          "s": "attachement"
+        },
+        {
+          "do": 99,
+          "s": "approuver"
+        }
+      ],
+      "Graine/Semence": [
+        {
+          "do": 4,
+          "s": "graine"
+        },
+        {
+          "do": 5,
+          "s": "grain"
+        }
+      ],
+      "Lien": [
+        {
+          "do": 6,
+          "s": "corde"
+        },
+        {
+          "do": 10,
+          "s": "attacher"
+        }
+      ]
+    }
+  },
+  {
+    "n": 92,
+    "wk": "hdd",
+    "id": 977,
+    "etym": "Fer/Dureté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Interdire\" (1 sens)",
+      "singleton [Sens isolé/Interdire] : \"interdire\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Limite/Frontière": [
+        {
+          "do": 1,
+          "s": "limiter"
+        },
+        {
+          "do": 2,
+          "s": "délimiter"
+        },
+        {
+          "do": 3,
+          "s": "frontières (hudud)"
+        },
+        {
+          "do": null,
+          "s": "limite"
+        }
+      ],
+      "Fer/Dureté": [
+        {
+          "do": 4,
+          "s": "fer (hadid)"
+        },
+        {
+          "do": 5,
+          "s": "être tranchant"
+        }
+      ],
+      "Sens isolé/Interdire": [
+        {
+          "do": 6,
+          "s": "interdire"
+        }
+      ]
+    }
+  },
+  {
+    "n": 93,
+    "wk": "hdr",
+    "id": 815,
+    "etym": "Présence/Témoignage",
+    "flags": [
+      "singleton [Mort/Destruction] : \"mort (la mort se présente)\""
+    ],
+    "concepts": {
+      "Présence/Témoignage": [
+        {
+          "do": 1,
+          "s": "être présent"
+        },
+        {
+          "do": 2,
+          "s": "assister à"
+        },
+        {
+          "do": 3,
+          "s": "venir"
+        },
+        {
+          "do": 4,
+          "s": "se présenter"
+        },
+        {
+          "do": 5,
+          "s": "présenter"
+        },
+        {
+          "do": 6,
+          "s": "exposer"
+        }
+      ],
+      "Sédentarité/Civilisation": [
+        {
+          "do": 5,
+          "s": "zone habitée (hadar)"
+        },
+        {
+          "do": 6,
+          "s": "sédentaire (vs. nomade)"
+        }
+      ],
+      "Mort/Destruction": [
+        {
+          "do": 7,
+          "s": "mort (la mort se présente)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 94,
+    "wk": "hdth",
+    "id": 1649,
+    "etym": "Nouveauté",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Narration/Récit": [
+        {
+          "do": 1,
+          "s": "parler"
+        },
+        {
+          "do": 2,
+          "s": "raconter"
+        },
+        {
+          "do": 7,
+          "s": "récit rapporté"
+        }
+      ],
+      "Nouveauté": [
+        {
+          "do": 3,
+          "s": "événement nouveau"
+        },
+        {
+          "do": 4,
+          "s": "nouveau"
+        },
+        {
+          "do": 5,
+          "s": "événement (ḥadath)"
+        },
+        {
+          "do": 6,
+          "s": "nouveauté"
+        }
+      ]
+    }
+  },
+  {
+    "n": 95,
+    "wk": "hdy",
+    "id": 261,
+    "etym": "Guidance/Direction",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Repentance\" (1 sens)",
+      "singleton [Parenté/Famille] : \"conduire une mariée\"",
+      "singleton [Sens isolé/Repentance] : \"repentance\""
+    ],
+    "concepts": {
+      "Guidance/Direction": [
+        {
+          "do": 1,
+          "s": "guider"
+        },
+        {
+          "do": 2,
+          "s": "diriger vers la bonne voie"
+        },
+        {
+          "do": 3,
+          "s": "montrer le chemin"
+        },
+        {
+          "do": 4,
+          "s": "guidance"
+        },
+        {
+          "do": 5,
+          "s": "se guider soi-même"
+        }
+      ],
+      "Conduite/Comportement": [
+        {
+          "do": 6,
+          "s": "conduite"
+        },
+        {
+          "do": 7,
+          "s": "manière d'agir"
+        },
+        {
+          "do": 8,
+          "s": "comportement calme"
+        }
+      ],
+      "Don/Offrande": [
+        {
+          "do": 9,
+          "s": "cadeau"
+        },
+        {
+          "do": 10,
+          "s": "offrande"
+        },
+        {
+          "do": 11,
+          "s": "sacrifice"
+        },
+        {
+          "do": 12,
+          "s": "présent"
+        }
+      ],
+      "Parenté/Famille": [
+        {
+          "do": 13,
+          "s": "conduire une mariée"
+        }
+      ],
+      "Sens isolé/Repentance": [
+        {
+          "do": 14,
+          "s": "repentance"
+        }
+      ]
+    }
+  },
+  {
+    "n": 98,
+    "wk": "Hjr",
+    "id": 376,
+    "etym": "Pierre/Matériau",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Giron\" (2 sens)"
+    ],
+    "concepts": {
+      "Pierre/Matériau": [
+        {
+          "do": 1,
+          "s": "pierre"
+        },
+        {
+          "do": 2,
+          "s": "roche"
+        }
+      ],
+      "Interdit/Enclos": [
+        {
+          "do": 3,
+          "s": "interdit"
+        },
+        {
+          "do": 4,
+          "s": "sanctuaire"
+        }
+      ],
+      "Migration/Séparation": [
+        {
+          "do": 5,
+          "s": "émigrer"
+        },
+        {
+          "do": 6,
+          "s": "abandonner"
+        }
+      ],
+      "Sens isolé/Giron": [
+        {
+          "do": 7,
+          "s": "giron"
+        },
+        {
+          "do": 12,
+          "s": "chambre intérieure"
+        }
+      ],
+      "Raison/Intelligence": [
+        {
+          "do": 8,
+          "s": "raison"
+        },
+        {
+          "do": 9,
+          "s": "intelligence"
+        },
+        {
+          "do": 10,
+          "s": "discernement"
+        },
+        {
+          "do": 11,
+          "s": "jugement retenu"
+        }
+      ]
+    }
+  },
+  {
+    "n": 99,
+    "wk": "hkm",
+    "id": 447,
+    "etym": "Empêcher/Retenir",
+    "flags": [
+      "singleton [Autorité/Pouvoir] : \"gouverner\"",
+      "singleton [Empêcher/Retenir] : \"empêcher\"",
+      "etym✦ n'a aucun sens à do=1 (min do=7)"
+    ],
+    "concepts": {
+      "Jugement/Décision": [
+        {
+          "do": 1,
+          "s": "juger"
+        },
+        {
+          "do": 2,
+          "s": "décider"
+        },
+        {
+          "do": 3,
+          "s": "sentence"
+        }
+      ],
+      "Autorité/Pouvoir": [
+        {
+          "do": 4,
+          "s": "gouverner"
+        }
+      ],
+      "Sagesse": [
+        {
+          "do": 5,
+          "s": "être sage"
+        },
+        {
+          "do": 6,
+          "s": "sagesse"
+        }
+      ],
+      "Empêcher/Retenir": [
+        {
+          "do": 7,
+          "s": "empêcher"
+        }
+      ]
+    }
+  },
+  {
+    "n": 100,
+    "wk": "hll",
+    "id": 939,
+    "etym": "Dissolution/Libération",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Licéité/Permission": [
+        {
+          "do": 1,
+          "s": "être licite"
+        },
+        {
+          "do": 2,
+          "s": "être permis"
+        },
+        {
+          "do": 3,
+          "s": "rendre licite"
+        }
+      ],
+      "Dissolution/Libération": [
+        {
+          "do": 4,
+          "s": "délier"
+        },
+        {
+          "do": 5,
+          "s": "résoudre"
+        }
+      ],
+      "Installation": [
+        {
+          "do": 6,
+          "s": "descendre (en un lieu)"
+        },
+        {
+          "do": 7,
+          "s": "séjourner"
+        }
+      ],
+      "Époux/Épouse": [
+        {
+          "do": null,
+          "s": "épouse"
+        },
+        {
+          "do": null,
+          "s": "époux"
+        }
+      ]
+    }
+  },
+  {
+    "n": 101,
+    "wk": "hlm",
+    "id": 1029,
+    "etym": "Rêve/Songe",
+    "flags": [
+      "singleton [Maturité] : \"puberté\""
+    ],
+    "concepts": {
+      "Rêve/Songe": [
+        {
+          "do": 1,
+          "s": "rêver"
+        },
+        {
+          "do": 2,
+          "s": "songe"
+        }
+      ],
+      "Clémence/Retenue": [
+        {
+          "do": 3,
+          "s": "être clément"
+        },
+        {
+          "do": 4,
+          "s": "douceur"
+        }
+      ],
+      "Maturité": [
+        {
+          "do": 5,
+          "s": "puberté"
+        }
+      ],
+      "Songe vain/Chimère": [
+        {
+          "do": 6,
+          "s": "songe vain"
+        },
+        {
+          "do": 7,
+          "s": "chimère"
+        }
+      ]
+    }
+  },
+  {
+    "n": 102,
+    "wk": "hna",
+    "id": 1425,
+    "etym": "Agrément/Bienfaisance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Féliciter\" (2 sens)",
+      "singleton [Sollicitation] : \"demander un cadeau\""
+    ],
+    "concepts": {
+      "Agrément/Bienfaisance": [
+        {
+          "do": 1,
+          "s": "être agréable"
+        },
+        {
+          "do": 2,
+          "s": "digeste"
+        },
+        {
+          "do": 3,
+          "s": "plaisant"
+        },
+        {
+          "do": 4,
+          "s": "savoureux"
+        }
+      ],
+      "Sens isolé/Féliciter": [
+        {
+          "do": 3,
+          "s": "féliciter"
+        },
+        {
+          "do": 11,
+          "s": "souhaiter bon appétit"
+        }
+      ],
+      "Sollicitation": [
+        {
+          "do": 20,
+          "s": "demander un cadeau"
+        }
+      ]
+    }
+  },
+  {
+    "n": 103,
+    "wk": "hrm",
+    "id": 671,
+    "etym": "Interdiction/Sacré",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Épouse\" (1 sens)",
+      "singleton [Sens isolé/Épouse] : \"épouse\""
+    ],
+    "concepts": {
+      "Interdiction/Sacré": [
+        {
+          "do": 1,
+          "s": "interdire"
+        },
+        {
+          "do": 2,
+          "s": "sacré"
+        },
+        {
+          "do": 3,
+          "s": "sanctuaire"
+        },
+        {
+          "do": 4,
+          "s": "illicite"
+        },
+        {
+          "do": 5,
+          "s": "priver"
+        },
+        {
+          "do": 6,
+          "s": "respecter"
+        }
+      ],
+      "Sens isolé/Épouse": [
+        {
+          "do": 7,
+          "s": "épouse"
+        }
+      ]
+    }
+  },
+  {
+    "n": 104,
+    "wk": "hsb",
+    "id": 996,
+    "etym": "Calcul/Évaluation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Noblesse\" (2 sens)"
+    ],
+    "concepts": {
+      "Calcul/Évaluation": [
+        {
+          "do": 1,
+          "s": "compter"
+        },
+        {
+          "do": 2,
+          "s": "estimer"
+        },
+        {
+          "do": 3,
+          "s": "penser"
+        },
+        {
+          "do": 4,
+          "s": "compte"
+        }
+      ],
+      "Suffisance": [
+        {
+          "do": 5,
+          "s": "suffire"
+        },
+        {
+          "do": 6,
+          "s": "suffisant"
+        }
+      ],
+      "Sens isolé/Noblesse": [
+        {
+          "do": 7,
+          "s": "noblesse"
+        },
+        {
+          "do": 8,
+          "s": "lignage noble"
+        }
+      ]
+    }
+  },
+  {
+    "n": 105,
+    "wk": "hsn",
+    "id": 574,
+    "etym": "Beauté/Bonté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Joue\" (1 sens)",
+      "singleton [Sens isolé/Joue] : \"joue\""
+    ],
+    "concepts": {
+      "Beauté/Bonté": [
+        {
+          "do": 1,
+          "s": "être beau"
+        },
+        {
+          "do": 2,
+          "s": "bon"
+        },
+        {
+          "do": 3,
+          "s": "excellent"
+        }
+      ],
+      "Bienfaisance/Amélioration": [
+        {
+          "do": 4,
+          "s": "bien faire"
+        },
+        {
+          "do": 5,
+          "s": "bienfaisance"
+        },
+        {
+          "do": 6,
+          "s": "embellir"
+        },
+        {
+          "do": 7,
+          "s": "amélioration"
+        },
+        {
+          "do": 8,
+          "s": "excellence"
+        }
+      ],
+      "Sens isolé/Joue": [
+        {
+          "do": 10,
+          "s": "joue"
+        }
+      ]
+    }
+  },
+  {
+    "n": 108,
+    "wk": "hwn",
+    "id": 1303,
+    "etym": "Humiliation/Mépris",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=2)"
+    ],
+    "concepts": {
+      "Facilité/Légèreté": [
+        {
+          "do": 1,
+          "s": "être facile"
+        },
+        {
+          "do": 10,
+          "s": "être léger"
+        },
+        {
+          "do": 11,
+          "s": "aisance"
+        }
+      ],
+      "Humiliation/Mépris": [
+        {
+          "do": 2,
+          "s": "humiliation"
+        },
+        {
+          "do": 3,
+          "s": "être méprisé"
+        },
+        {
+          "do": null,
+          "s": "humiliant"
+        },
+        {
+          "do": null,
+          "s": "humilier"
+        },
+        {
+          "do": null,
+          "s": "avilir"
+        }
+      ]
+    }
+  },
+  {
+    "n": 110,
+    "wk": "j h l",
+    "id": 1184,
+    "etym": "Ignorance/Méconnaissance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "singleton [Sens isolé/Être] : \"être impétueux\""
+    ],
+    "concepts": {
+      "Ignorance/Méconnaissance": [
+        {
+          "do": 1,
+          "s": "ignorer"
+        },
+        {
+          "do": 2,
+          "s": "être ignorant"
+        },
+        {
+          "do": 3,
+          "s": "agir par ignorance"
+        },
+        {
+          "do": null,
+          "s": "ignorance"
+        },
+        {
+          "do": null,
+          "s": "jāhiliyya"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 4,
+          "s": "être impétueux"
+        }
+      ]
+    }
+  },
+  {
+    "n": 111,
+    "wk": "jel",
+    "id": 359,
+    "etym": "Action/Réalisation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Récompense\" (1 sens)",
+      "singleton [Sens isolé/Récompense] : \"récompense\""
+    ],
+    "concepts": {
+      "Action/Réalisation": [
+        {
+          "do": 1,
+          "s": "faire"
+        },
+        {
+          "do": 2,
+          "s": "rendre"
+        },
+        {
+          "do": 3,
+          "s": "placer"
+        },
+        {
+          "do": 4,
+          "s": "commencer à"
+        },
+        {
+          "do": 5,
+          "s": "établir"
+        },
+        {
+          "do": 6,
+          "s": "créer"
+        },
+        {
+          "do": 8,
+          "s": "instituer"
+        }
+      ],
+      "Sens isolé/Récompense": [
+        {
+          "do": 7,
+          "s": "récompense"
+        }
+      ]
+    }
+  },
+  {
+    "n": 114,
+    "wk": "jnh",
+    "id": 924,
+    "etym": "Aile/Côté",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Inclinaison/Penchant": [
+        {
+          "do": 1,
+          "s": "pencher"
+        },
+        {
+          "do": 2,
+          "s": "incliner vers"
+        },
+        {
+          "do": null,
+          "s": "pente"
+        }
+      ],
+      "Aile/Côté": [
+        {
+          "do": 3,
+          "s": "aile"
+        },
+        {
+          "do": 4,
+          "s": "côté"
+        }
+      ],
+      "Faute/Culpabilité": [
+        {
+          "do": 5,
+          "s": "péché (junah)"
+        },
+        {
+          "do": null,
+          "s": "reproche"
+        },
+        {
+          "do": null,
+          "s": "faute"
+        }
+      ]
+    }
+  },
+  {
+    "n": 115,
+    "wk": "jnn",
+    "id": 394,
+    "etym": "Dissimulation/Couverture",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (3 sens)"
+    ],
+    "concepts": {
+      "Dissimulation/Couverture": [
+        {
+          "do": 1,
+          "s": "cacher"
+        },
+        {
+          "do": 2,
+          "s": "couvrir"
+        }
+      ],
+      "Jardin/Paradis": [
+        {
+          "do": 3,
+          "s": "jardin"
+        },
+        {
+          "do": 4,
+          "s": "paradis"
+        }
+      ],
+      "Êtres cachés": [
+        {
+          "do": 5,
+          "s": "djinn"
+        },
+        {
+          "do": 9,
+          "s": "êtres invisibles"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 6,
+          "s": "folie"
+        },
+        {
+          "do": 7,
+          "s": "bouclier"
+        },
+        {
+          "do": 8,
+          "s": "embryon"
+        }
+      ]
+    }
+  },
+  {
+    "n": 116,
+    "wk": "jry",
+    "id": 395,
+    "etym": "Course/Flux",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (2 sens)"
+    ],
+    "concepts": {
+      "Course/Flux": [
+        {
+          "do": 1,
+          "s": "courir"
+        },
+        {
+          "do": 2,
+          "s": "couler"
+        },
+        {
+          "do": 3,
+          "s": "se passer"
+        },
+        {
+          "do": 4,
+          "s": "faire courir"
+        },
+        {
+          "do": 5,
+          "s": "rivière"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 6,
+          "s": "rivaliser"
+        },
+        {
+          "do": 7,
+          "s": "agent"
+        }
+      ]
+    }
+  },
+  {
+    "n": 120,
+    "wk": "kfr",
+    "id": 294,
+    "etym": "Couverture/Dissimulation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Cultivateur\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Goudron\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Village\" (1 sens)",
+      "singleton [Sens isolé/Cultivateur] : \"cultivateur\"",
+      "singleton [Sens isolé/Goudron] : \"goudron\"",
+      "singleton [Sens isolé/Village] : \"village\""
+    ],
+    "concepts": {
+      "Couverture/Dissimulation": [
+        {
+          "do": 1,
+          "s": "couvrir"
+        },
+        {
+          "do": 2,
+          "s": "cacher"
+        },
+        {
+          "do": 3,
+          "s": "la nuit qui couvre"
+        }
+      ],
+      "Rejet/Ingratitude": [
+        {
+          "do": 4,
+          "s": "nier"
+        },
+        {
+          "do": 5,
+          "s": "être ingrat"
+        },
+        {
+          "do": 6,
+          "s": "renier un bienfait"
+        },
+        {
+          "do": 7,
+          "s": "rejeter"
+        },
+        {
+          "do": 8,
+          "s": "mécréant"
+        }
+      ],
+      "Expiation/Réparation": [
+        {
+          "do": 9,
+          "s": "expier"
+        },
+        {
+          "do": 10,
+          "s": "effacer les péchés"
+        }
+      ],
+      "Sens isolé/Cultivateur": [
+        {
+          "do": 11,
+          "s": "cultivateur"
+        }
+      ],
+      "Sens isolé/Goudron": [
+        {
+          "do": 12,
+          "s": "goudron"
+        }
+      ],
+      "Sens isolé/Village": [
+        {
+          "do": 13,
+          "s": "village"
+        }
+      ]
+    }
+  },
+  {
+    "n": 121,
+    "wk": "kfy",
+    "id": 823,
+    "etym": "Suffisance/Protection",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Rendre\" (1 sens)",
+      "singleton [Sens isolé/Rendre] : \"rendre suffisant\""
+    ],
+    "concepts": {
+      "Suffisance/Protection": [
+        {
+          "do": 1,
+          "s": "suffire"
+        },
+        {
+          "do": 2,
+          "s": "protéger contre"
+        },
+        {
+          "do": 3,
+          "s": "épargner un mal"
+        },
+        {
+          "do": 4,
+          "s": "être compétent"
+        }
+      ],
+      "Sens isolé/Rendre": [
+        {
+          "do": 5,
+          "s": "rendre suffisant"
+        }
+      ]
+    }
+  },
+  {
+    "n": 122,
+    "wk": "khbr",
+    "id": 1564,
+    "etym": "Connaissance/Expérience",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Tarir\" (1 sens)",
+      "singleton [Sens isolé/Tarir] : \"épuiser\""
+    ],
+    "concepts": {
+      "Connaissance/Expérience": [
+        {
+          "do": 1,
+          "s": "informer"
+        },
+        {
+          "do": 2,
+          "s": "connaître en profondeur"
+        },
+        {
+          "do": 6,
+          "s": "expérience"
+        },
+        {
+          "do": 7,
+          "s": "connaisseur"
+        },
+        {
+          "do": 8,
+          "s": "expert"
+        },
+        {
+          "do": 10,
+          "s": "bien informé"
+        },
+        {
+          "do": 11,
+          "s": "informé"
+        }
+      ],
+      "Information/Nouvelle": [
+        {
+          "do": 3,
+          "s": "information"
+        },
+        {
+          "do": 4,
+          "s": "nouvelle"
+        },
+        {
+          "do": 5,
+          "s": "récit"
+        }
+      ],
+      "Sens isolé/Tarir": [
+        {
+          "do": 9,
+          "s": "épuiser"
+        }
+      ]
+    }
+  },
+  {
+    "n": 124,
+    "wk": "khd",
+    "id": 403,
+    "etym": "Permanence/Éternité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Orner\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Boucle\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Mulot\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Vieillesse\" (1 sens)",
+      "singleton [Sens isolé/Orner] : \"orner de bracelets\"",
+      "singleton [Sens isolé/Boucle] : \"boucle d'oreille\"",
+      "singleton [Sens isolé/Mulot] : \"mulot\"",
+      "singleton [Sens isolé/Vieillesse] : \"longévité\""
+    ],
+    "concepts": {
+      "Permanence/Éternité": [
+        {
+          "do": 1,
+          "s": "demeurer"
+        },
+        {
+          "do": 2,
+          "s": "demeurer longtemps"
+        },
+        {
+          "do": 3,
+          "s": "éternel"
+        },
+        {
+          "do": 4,
+          "s": "faire demeurer"
+        }
+      ],
+      "Sens isolé/Orner": [
+        {
+          "do": 5,
+          "s": "orner de bracelets"
+        }
+      ],
+      "Sens isolé/Boucle": [
+        {
+          "do": 6,
+          "s": "boucle d'oreille"
+        }
+      ],
+      "Sens isolé/Mulot": [
+        {
+          "do": 7,
+          "s": "mulot"
+        }
+      ],
+      "Sens isolé/Vieillesse": [
+        {
+          "do": 8,
+          "s": "longévité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 125,
+    "wk": "khdn",
+    "id": 1463,
+    "etym": "Amant/Compagnon caché",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Intimité/Relation secrète": [
+        {
+          "do": 1,
+          "s": "ami intime"
+        },
+        {
+          "do": 2,
+          "s": "amant"
+        },
+        {
+          "do": 3,
+          "s": "relation secrète"
+        }
+      ],
+      "Amant/Compagnon caché": [
+        {
+          "do": 4,
+          "s": "amant (khidn)"
+        },
+        {
+          "do": 5,
+          "s": "compagnon secret"
+        },
+        {
+          "do": 6,
+          "s": "relation cachée"
+        }
+      ]
+    }
+  },
+  {
+    "n": 126,
+    "wk": "khw f",
+    "id": 482,
+    "etym": "Crainte/Peur",
+    "flags": [
+      "singleton [Menace/Danger] : \"danger\""
+    ],
+    "concepts": {
+      "Crainte/Peur": [
+        {
+          "do": 1,
+          "s": "craindre"
+        },
+        {
+          "do": 2,
+          "s": "peur"
+        },
+        {
+          "do": 3,
+          "s": "avoir peur"
+        },
+        {
+          "do": 4,
+          "s": "effrayer"
+        }
+      ],
+      "Menace/Danger": [
+        {
+          "do": 5,
+          "s": "danger"
+        }
+      ]
+    }
+  },
+  {
+    "n": 127,
+    "wk": "khyl",
+    "id": 1292,
+    "etym": "Imagination/Apparence",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Cheval/Cavalerie": [
+        {
+          "do": 1,
+          "s": "cheval"
+        },
+        {
+          "do": 2,
+          "s": "cavalerie"
+        },
+        {
+          "do": null,
+          "s": "cavalier"
+        },
+        {
+          "do": null,
+          "s": "jument"
+        }
+      ],
+      "Imagination/Apparence": [
+        {
+          "do": 3,
+          "s": "imaginer"
+        },
+        {
+          "do": null,
+          "s": "supposer"
+        },
+        {
+          "do": null,
+          "s": "apparence"
+        },
+        {
+          "do": null,
+          "s": "illusion"
+        }
+      ],
+      "Orgueil/Prétention": [
+        {
+          "do": null,
+          "s": "orgueil"
+        },
+        {
+          "do": null,
+          "s": "se vanter"
+        }
+      ]
+    }
+  },
+  {
+    "n": 129,
+    "wk": "kll",
+    "id": 372,
+    "etym": "Corps/Anatomie",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Agacer\" (1 sens)",
+      "singleton [Corps/Anatomie] : \"couronner\"",
+      "singleton [Sens isolé/Agacer] : \"agacer les dents\"",
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Émoussement/Faiblesse": [
+        {
+          "do": 1,
+          "s": "s'émousser"
+        },
+        {
+          "do": 2,
+          "s": "être fatigué"
+        }
+      ],
+      "Charge/Dépendance": [
+        {
+          "do": 3,
+          "s": "fardeau"
+        },
+        {
+          "do": 4,
+          "s": "personne à charge"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 5,
+          "s": "couronner"
+        }
+      ],
+      "Sens isolé/Agacer": [
+        {
+          "do": 6,
+          "s": "agacer les dents"
+        }
+      ],
+      "Totalité": [
+        {
+          "do": 7,
+          "s": "tout"
+        },
+        {
+          "do": 8,
+          "s": "chaque"
+        },
+        {
+          "do": 9,
+          "s": "totalité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 133,
+    "wk": "ksb",
+    "id": 647,
+    "etym": "Acquisition/Rétribution",
+    "flags": [
+      "singleton [Effort/Travail] : \"s'efforcer de gagner\""
+    ],
+    "concepts": {
+      "Acquisition/Rétribution": [
+        {
+          "do": 1,
+          "s": "acquérir"
+        },
+        {
+          "do": 2,
+          "s": "gagner"
+        },
+        {
+          "do": 3,
+          "s": "mériter"
+        },
+        {
+          "do": 4,
+          "s": "commettre (un acte)"
+        },
+        {
+          "do": 5,
+          "s": "profit"
+        }
+      ],
+      "Effort/Travail": [
+        {
+          "do": 6,
+          "s": "s'efforcer de gagner"
+        }
+      ]
+    }
+  },
+  {
+    "n": 136,
+    "wk": "ktb",
+    "id": 275,
+    "etym": "Écriture/Inscription",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (4 sens)"
+    ],
+    "concepts": {
+      "Écriture/Inscription": [
+        {
+          "do": 1,
+          "s": "écrire"
+        },
+        {
+          "do": 2,
+          "s": "dicter"
+        },
+        {
+          "do": 3,
+          "s": "demander d'écrire"
+        },
+        {
+          "do": 4,
+          "s": "écrire à quelqu'un"
+        },
+        {
+          "do": 5,
+          "s": "s'inscrire"
+        },
+        {
+          "do": 6,
+          "s": "copier un livre"
+        },
+        {
+          "do": 7,
+          "s": "art de l'écriture"
+        },
+        {
+          "do": 8,
+          "s": "scribe"
+        },
+        {
+          "do": 9,
+          "s": "savant"
+        },
+        {
+          "do": 10,
+          "s": "école"
+        },
+        {
+          "do": 11,
+          "s": "enseignant"
+        },
+        {
+          "do": 12,
+          "s": "vendeur de livres"
+        }
+      ],
+      "Livre/Écrit": [
+        {
+          "do": 13,
+          "s": "livre"
+        },
+        {
+          "do": 14,
+          "s": "écriture révélée"
+        },
+        {
+          "do": 15,
+          "s": "registre"
+        },
+        {
+          "do": 16,
+          "s": "contrat écrit"
+        },
+        {
+          "do": 17,
+          "s": "contrat de mariage"
+        },
+        {
+          "do": 18,
+          "s": "contrat d'affranchissement"
+        }
+      ],
+      "Obligation/Décret": [
+        {
+          "do": 19,
+          "s": "prescrire"
+        },
+        {
+          "do": 20,
+          "s": "rendre obligatoire"
+        },
+        {
+          "do": 21,
+          "s": "juger"
+        },
+        {
+          "do": 22,
+          "s": "décret divin"
+        },
+        {
+          "do": 23,
+          "s": "prédestination"
+        }
+      ],
+      "Assemblage/Couture": [
+        {
+          "do": 24,
+          "s": "rassembler"
+        },
+        {
+          "do": 25,
+          "s": "coudre"
+        },
+        {
+          "do": 26,
+          "s": "attacher"
+        },
+        {
+          "do": 27,
+          "s": "fermer la vulve"
+        },
+        {
+          "do": 28,
+          "s": "lier l'outre"
+        },
+        {
+          "do": 29,
+          "s": "se ceindre"
+        },
+        {
+          "do": 30,
+          "s": "collecter"
+        },
+        {
+          "do": 31,
+          "s": "préparer les troupes"
+        },
+        {
+          "do": 32,
+          "s": "armée"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 33,
+          "s": "rétention urinaire"
+        },
+        {
+          "do": 34,
+          "s": "constipation"
+        },
+        {
+          "do": 35,
+          "s": "flèche d'entraînement"
+        },
+        {
+          "do": 36,
+          "s": "gonflé et plein"
+        }
+      ]
+    }
+  },
+  {
+    "n": 138,
+    "wk": "ktm",
+    "id": 471,
+    "etym": "Dissimulation/Secret",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Teinture\" (1 sens)",
+      "singleton [Sens isolé/Teinture] : \"teindre (les cheveux)\""
+    ],
+    "concepts": {
+      "Dissimulation/Secret": [
+        {
+          "do": 1,
+          "s": "cacher"
+        },
+        {
+          "do": 2,
+          "s": "taire"
+        },
+        {
+          "do": 3,
+          "s": "dissimuler"
+        },
+        {
+          "do": 4,
+          "s": "garder secret"
+        }
+      ],
+      "Répression/Étouffement": [
+        {
+          "do": 5,
+          "s": "étouffer"
+        },
+        {
+          "do": 6,
+          "s": "réprimer"
+        },
+        {
+          "do": 7,
+          "s": "retenir (son souffle)"
+        }
+      ],
+      "Sens isolé/Teinture": [
+        {
+          "do": 8,
+          "s": "teindre (les cheveux)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 140,
+    "wk": "kwn",
+    "id": 2577,
+    "etym": "Être/Existence",
+    "flags": [
+      "singleton [Humilité/Soumission] : \"être humble soumis\""
+    ],
+    "concepts": {
+      "Être/Existence": [
+        {
+          "do": 0,
+          "s": "être"
+        },
+        {
+          "do": 1,
+          "s": "être (verbe incomplet)"
+        },
+        {
+          "do": 2,
+          "s": "venir à l'existence"
+        }
+      ],
+      "Humilité/Soumission": [
+        {
+          "do": 3,
+          "s": "être humble soumis"
+        }
+      ],
+      "Lieu/État": [
+        {
+          "do": 4,
+          "s": "lieu"
+        },
+        {
+          "do": 5,
+          "s": "reste à ta place"
+        },
+        {
+          "do": 6,
+          "s": "état condition"
+        },
+        {
+          "do": 7,
+          "s": "motif raison"
+        },
+        {
+          "do": 8,
+          "s": "devenir comme"
+        }
+      ]
+    }
+  },
+  {
+    "n": 141,
+    "wk": "kyf",
+    "id": 1135,
+    "etym": "Interrogation/Manière",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/État\" (3 sens)"
+    ],
+    "concepts": {
+      "Interrogation/Manière": [
+        {
+          "do": 1,
+          "s": "comment"
+        },
+        {
+          "do": 2,
+          "s": "de quelle manière"
+        },
+        {
+          "do": 3,
+          "s": "comment se fait-il"
+        }
+      ],
+      "Sens isolé/État": [
+        {
+          "do": 4,
+          "s": "état"
+        },
+        {
+          "do": 5,
+          "s": "manière"
+        },
+        {
+          "do": 6,
+          "s": "condition"
+        }
+      ]
+    }
+  },
+  {
+    "n": 142,
+    "wk": "ldn",
+    "id": 1223,
+    "etym": "Souplesse/Flexibilité",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=6)"
+    ],
+    "concepts": {
+      "Proximité/Source": [
+        {
+          "do": 1,
+          "s": "auprès de"
+        },
+        {
+          "do": 2,
+          "s": "chez"
+        },
+        {
+          "do": 3,
+          "s": "de la part de (Dieu)"
+        },
+        {
+          "do": 4,
+          "s": "depuis (temporel)"
+        },
+        {
+          "do": 5,
+          "s": "du côté de"
+        }
+      ],
+      "Souplesse/Flexibilité": [
+        {
+          "do": 6,
+          "s": "souple"
+        },
+        {
+          "do": 7,
+          "s": "flexible"
+        },
+        {
+          "do": 8,
+          "s": "mou"
+        },
+        {
+          "do": 9,
+          "s": "pliant"
+        }
+      ]
+    }
+  },
+  {
+    "n": 143,
+    "wk": "lms",
+    "id": 1488,
+    "etym": "Toucher/Contact",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Toucher/Contact": [
+        {
+          "do": 4,
+          "s": "toucher"
+        },
+        {
+          "do": 5,
+          "s": "palper"
+        },
+        {
+          "do": 6,
+          "s": "contact physique"
+        },
+        {
+          "do": 7,
+          "s": "atteindre"
+        }
+      ]
+    }
+  },
+  {
+    "n": 145,
+    "wk": "mlk",
+    "id": 256,
+    "etym": "Possession/Autorité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Pâte\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Maîtriser\" (1 sens)",
+      "singleton [Sens isolé/Pâte] : \"pâte\"",
+      "singleton [Sens isolé/Maîtriser] : \"maîtriser soi-même\"",
+      "singleton [Eau/Liquide] : \"eau stagnante\""
+    ],
+    "concepts": {
+      "Possession/Autorité": [
+        {
+          "do": 1,
+          "s": "posséder"
+        },
+        {
+          "do": 2,
+          "s": "maître"
+        },
+        {
+          "do": 3,
+          "s": "possesseur"
+        },
+        {
+          "do": 4,
+          "s": "propriété"
+        },
+        {
+          "do": 5,
+          "s": "biens"
+        },
+        {
+          "do": 6,
+          "s": "esclave"
+        },
+        {
+          "do": 7,
+          "s": "asservir"
+        }
+      ],
+      "Royauté/Souveraineté": [
+        {
+          "do": 8,
+          "s": "roi"
+        },
+        {
+          "do": 9,
+          "s": "royaume"
+        },
+        {
+          "do": 10,
+          "s": "règne"
+        },
+        {
+          "do": 11,
+          "s": "souverain"
+        },
+        {
+          "do": 12,
+          "s": "couronnement"
+        },
+        {
+          "do": 13,
+          "s": "trône"
+        }
+      ],
+      "Ange/Messager": [
+        {
+          "do": 14,
+          "s": "ange"
+        },
+        {
+          "do": 15,
+          "s": "messager"
+        },
+        {
+          "do": 16,
+          "s": "message"
+        }
+      ],
+      "Sens isolé/Pâte": [
+        {
+          "do": 17,
+          "s": "pâte"
+        }
+      ],
+      "Sens isolé/Maîtriser": [
+        {
+          "do": 18,
+          "s": "maîtriser soi-même"
+        }
+      ],
+      "Eau/Liquide": [
+        {
+          "do": 19,
+          "s": "eau stagnante"
+        }
+      ]
+    }
+  },
+  {
+    "n": 146,
+    "wk": "mny",
+    "id": 608,
+    "etym": "Semence",
+    "flags": [
+      "singleton [Semence] : \"sperme\"",
+      "singleton [Destin/Mort assignée] : \"destin assigné\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Désir/Espérance": [
+        {
+          "do": 1,
+          "s": "souhaiter"
+        },
+        {
+          "do": 2,
+          "s": "désirer"
+        },
+        {
+          "do": 3,
+          "s": "espérer"
+        }
+      ],
+      "Semence": [
+        {
+          "do": 4,
+          "s": "sperme"
+        }
+      ],
+      "Vœu/Illusion": [
+        {
+          "do": 5,
+          "s": "vœu"
+        },
+        {
+          "do": 6,
+          "s": "fausses espérances"
+        }
+      ],
+      "Destin/Mort assignée": [
+        {
+          "do": 7,
+          "s": "destin assigné"
+        }
+      ]
+    }
+  },
+  {
+    "n": 148,
+    "wk": "mra",
+    "id": 881,
+    "etym": "Santé/Bienfaisance",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Personne/Individu": [
+        {
+          "do": 1,
+          "s": "homme (imru')"
+        },
+        {
+          "do": 2,
+          "s": "femme (imra'a)"
+        },
+        {
+          "do": 6,
+          "s": "femme"
+        }
+      ],
+      "Santé/Bienfaisance": [
+        {
+          "do": 3,
+          "s": "être sain"
+        },
+        {
+          "do": 4,
+          "s": "être digeste"
+        },
+        {
+          "do": 5,
+          "s": "être bienfaisant"
+        }
+      ]
+    }
+  },
+  {
+    "n": 149,
+    "wk": "mraa",
+    "id": 2470,
+    "etym": "Personne/Individu",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Sain\" (2 sens)",
+      "concept fourre-tout \"Sens isolé/Bénéfice\" (1 sens)",
+      "singleton [Sens isolé/Bénéfice] : \"profitable\""
+    ],
+    "concepts": {
+      "Personne/Individu": [
+        {
+          "do": 1,
+          "s": "homme (imru')"
+        },
+        {
+          "do": 2,
+          "s": "femme (imra'a)"
+        }
+      ],
+      "Santé/Bienfaisance": [
+        {
+          "do": 3,
+          "s": "être sain"
+        },
+        {
+          "do": 4,
+          "s": "être digeste"
+        },
+        {
+          "do": 5,
+          "s": "être bienfaisant"
+        }
+      ],
+      "Sens isolé/Sain": [
+        {
+          "do": 6,
+          "s": "sain"
+        },
+        {
+          "do": 7,
+          "s": "salutaire"
+        }
+      ],
+      "Sens isolé/Bénéfice": [
+        {
+          "do": 8,
+          "s": "profitable"
+        }
+      ]
+    }
+  },
+  {
+    "n": 150,
+    "wk": "mrD",
+    "id": 311,
+    "etym": "Maladie/Faiblesse",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Défaut\" (1 sens)",
+      "singleton [Sens isolé/Défaut] : \"défaut\""
+    ],
+    "concepts": {
+      "Maladie/Faiblesse": [
+        {
+          "do": 1,
+          "s": "être malade"
+        },
+        {
+          "do": 2,
+          "s": "maladie"
+        },
+        {
+          "do": 3,
+          "s": "tomber malade"
+        },
+        {
+          "do": 4,
+          "s": "rendre malade"
+        },
+        {
+          "do": 5,
+          "s": "malade"
+        },
+        {
+          "do": 6,
+          "s": "doute dans le coeur"
+        }
+      ],
+      "Sens isolé/Défaut": [
+        {
+          "do": 7,
+          "s": "défaut"
+        }
+      ]
+    }
+  },
+  {
+    "n": 151,
+    "wk": "msh",
+    "id": 1271,
+    "etym": "Essuyage/Onction",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Voyager\" (1 sens)",
+      "singleton [Titre/Nom] : \"Messie (masih)\"",
+      "singleton [Sens isolé/Voyager] : \"voyager\""
+    ],
+    "concepts": {
+      "Essuyage/Onction": [
+        {
+          "do": 1,
+          "s": "essuyer"
+        },
+        {
+          "do": 2,
+          "s": "passer la main sur"
+        },
+        {
+          "do": 3,
+          "s": "oindre"
+        }
+      ],
+      "Titre/Nom": [
+        {
+          "do": 4,
+          "s": "Messie (masih)"
+        }
+      ],
+      "Sens isolé/Voyager": [
+        {
+          "do": 5,
+          "s": "voyager"
+        }
+      ]
+    }
+  },
+  {
+    "n": 153,
+    "wk": "mtae",
+    "id": 853,
+    "etym": "Durée/Extension",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=6)"
+    ],
+    "concepts": {
+      "Jouissance/Profit": [
+        {
+          "do": 1,
+          "s": "jouir"
+        },
+        {
+          "do": 2,
+          "s": "profiter"
+        },
+        {
+          "do": 3,
+          "s": "faire profiter"
+        },
+        {
+          "do": 10,
+          "s": "jouissance"
+        }
+      ],
+      "Bien/Provision": [
+        {
+          "do": 4,
+          "s": "provision"
+        },
+        {
+          "do": 5,
+          "s": "bien temporel"
+        }
+      ],
+      "Durée/Extension": [
+        {
+          "do": 6,
+          "s": "prolonger"
+        },
+        {
+          "do": 7,
+          "s": "sursis"
+        }
+      ]
+    }
+  },
+  {
+    "n": 154,
+    "wk": "mvl",
+    "id": 2599,
+    "etym": "Ressemblance/Identité",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=6)"
+    ],
+    "concepts": {
+      "Similitude/Comparaison": [
+        {
+          "do": 1,
+          "s": "exemple"
+        },
+        {
+          "do": 2,
+          "s": "parabole"
+        },
+        {
+          "do": 3,
+          "s": "similitude"
+        },
+        {
+          "do": 4,
+          "s": "comparaison"
+        },
+        {
+          "do": 5,
+          "s": "semblable"
+        }
+      ],
+      "Ressemblance/Identité": [
+        {
+          "do": 6,
+          "s": "ressembler"
+        },
+        {
+          "do": 7,
+          "s": "être semblable"
+        },
+        {
+          "do": 8,
+          "s": "pareil"
+        },
+        {
+          "do": 9,
+          "s": "équivalent"
+        }
+      ],
+      "Représentation/Image": [
+        {
+          "do": 10,
+          "s": "statue"
+        },
+        {
+          "do": 11,
+          "s": "image"
+        },
+        {
+          "do": 12,
+          "s": "représentation"
+        }
+      ]
+    }
+  },
+  {
+    "n": 157,
+    "wk": "mwt",
+    "id": 364,
+    "etym": "Mort/Cessation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Immobile\" (1 sens)",
+      "singleton [Sens isolé/Immobile] : \"immobile\""
+    ],
+    "concepts": {
+      "Mort/Cessation": [
+        {
+          "do": 1,
+          "s": "mourir"
+        },
+        {
+          "do": 2,
+          "s": "mort"
+        },
+        {
+          "do": 3,
+          "s": "tuer"
+        },
+        {
+          "do": 4,
+          "s": "mortel"
+        },
+        {
+          "do": 5,
+          "s": "terre morte"
+        }
+      ],
+      "Sens isolé/Immobile": [
+        {
+          "do": 6,
+          "s": "immobile"
+        }
+      ]
+    }
+  },
+  {
+    "n": 158,
+    "wk": "myl",
+    "id": 1467,
+    "etym": "Inclinaison/Physique",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Inclinaison/Morale": [
+        {
+          "do": 1,
+          "s": "pencher"
+        },
+        {
+          "do": 2,
+          "s": "incliner"
+        },
+        {
+          "do": 3,
+          "s": "dévier"
+        },
+        {
+          "do": 4,
+          "s": "être partial"
+        }
+      ],
+      "Inclinaison/Physique": [
+        {
+          "do": 5,
+          "s": "pencher vers"
+        },
+        {
+          "do": 6,
+          "s": "incliner (le corps)"
+        },
+        {
+          "do": 7,
+          "s": "préférence marquée"
+        }
+      ]
+    }
+  },
+  {
+    "n": 160,
+    "wk": "nfq",
+    "id": 285,
+    "etym": "Dépense/Distribution",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Mourir\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Vendre\" (1 sens)",
+      "singleton [Sens isolé/Mourir] : \"mourir\"",
+      "singleton [Sens isolé/Vendre] : \"vendre\""
+    ],
+    "concepts": {
+      "Dépense/Distribution": [
+        {
+          "do": 1,
+          "s": "dépenser"
+        },
+        {
+          "do": 2,
+          "s": "distribuer"
+        },
+        {
+          "do": 3,
+          "s": "s'épuiser"
+        }
+      ],
+      "Passage/Traversée": [
+        {
+          "do": 4,
+          "s": "passer à travers"
+        },
+        {
+          "do": 5,
+          "s": "tunnel"
+        }
+      ],
+      "Hypocrisie": [
+        {
+          "do": 6,
+          "s": "hypocrisie"
+        },
+        {
+          "do": 7,
+          "s": "hypocrite"
+        }
+      ],
+      "Sens isolé/Mourir": [
+        {
+          "do": 8,
+          "s": "mourir"
+        }
+      ],
+      "Sens isolé/Vendre": [
+        {
+          "do": 9,
+          "s": "vendre"
+        }
+      ]
+    }
+  },
+  {
+    "n": 161,
+    "wk": "nfs",
+    "id": 298,
+    "etym": "Âme/Être",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Oeil\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Quantité\" (1 sens)",
+      "singleton [Corps/Anatomie] : \"sang\"",
+      "singleton [Sens isolé/Oeil] : \"oeil mauvais\"",
+      "singleton [Sens isolé/Quantité] : \"quantité\""
+    ],
+    "concepts": {
+      "Âme/Être": [
+        {
+          "do": 1,
+          "s": "âme"
+        },
+        {
+          "do": 2,
+          "s": "soi-même"
+        },
+        {
+          "do": 3,
+          "s": "personne"
+        },
+        {
+          "do": 4,
+          "s": "esprit"
+        },
+        {
+          "do": 5,
+          "s": "désir"
+        }
+      ],
+      "Souffle/Vie": [
+        {
+          "do": 6,
+          "s": "souffle"
+        },
+        {
+          "do": 7,
+          "s": "respirer"
+        },
+        {
+          "do": 8,
+          "s": "soulagement"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 9,
+          "s": "sang"
+        }
+      ],
+      "Sens isolé/Oeil": [
+        {
+          "do": 10,
+          "s": "oeil mauvais"
+        }
+      ],
+      "Sens isolé/Quantité": [
+        {
+          "do": 11,
+          "s": "quantité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 162,
+    "wk": "nhl",
+    "id": 1423,
+    "etym": "Don/Cadeau nuptial",
+    "flags": [
+      "singleton [Végétation/Plante] : \"palmier (nakhla)\""
+    ],
+    "concepts": {
+      "Don/Cadeau nuptial": [
+        {
+          "do": 1,
+          "s": "don (mahr)"
+        },
+        {
+          "do": 2,
+          "s": "don spontané"
+        },
+        {
+          "do": 3,
+          "s": "offrande"
+        }
+      ],
+      "Abeille/Production": [
+        {
+          "do": 2,
+          "s": "abeille"
+        },
+        {
+          "do": 12,
+          "s": "miel"
+        }
+      ],
+      "Végétation/Plante": [
+        {
+          "do": 3,
+          "s": "palmier (nakhla)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 163,
+    "wk": "nhr",
+    "id": 397,
+    "etym": "Eau/Cours d'eau",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (2 sens)"
+    ],
+    "concepts": {
+      "Eau/Cours d'eau": [
+        {
+          "do": 1,
+          "s": "rivière"
+        },
+        {
+          "do": 2,
+          "s": "fleuve"
+        },
+        {
+          "do": 3,
+          "s": "couler"
+        },
+        {
+          "do": 4,
+          "s": "abondance"
+        },
+        {
+          "do": 9,
+          "s": "cours d'eau"
+        }
+      ],
+      "Clarté/Jour": [
+        {
+          "do": 5,
+          "s": "jour"
+        },
+        {
+          "do": 6,
+          "s": "clarté"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 7,
+          "s": "interdire"
+        },
+        {
+          "do": 8,
+          "s": "creuser"
+        }
+      ]
+    }
+  },
+  {
+    "n": 164,
+    "wk": "nhy",
+    "id": 979,
+    "etym": "Interdiction/Empêchement",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Atteindre\" (1 sens)",
+      "singleton [Intelligence/Discernement] : \"intelligence (nuha)\"",
+      "singleton [Sens isolé/Atteindre] : \"atteindre son terme\""
+    ],
+    "concepts": {
+      "Interdiction/Empêchement": [
+        {
+          "do": 1,
+          "s": "interdire"
+        },
+        {
+          "do": 2,
+          "s": "empêcher"
+        },
+        {
+          "do": 3,
+          "s": "défendre"
+        }
+      ],
+      "Intelligence/Discernement": [
+        {
+          "do": 4,
+          "s": "intelligence (nuha)"
+        }
+      ],
+      "Sens isolé/Atteindre": [
+        {
+          "do": 5,
+          "s": "atteindre son terme"
+        }
+      ]
+    }
+  },
+  {
+    "n": 167,
+    "wk": "nsf",
+    "id": 1067,
+    "etym": "Moitié/Milieu",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Division/Moitié": [
+        {
+          "do": 1,
+          "s": "moitié"
+        },
+        {
+          "do": 2,
+          "s": "milieu"
+        }
+      ],
+      "Justice/Équité": [
+        {
+          "do": 3,
+          "s": "être juste"
+        },
+        {
+          "do": 4,
+          "s": "équité"
+        },
+        {
+          "do": null,
+          "s": "faire justice à quelqu'un"
+        },
+        {
+          "do": null,
+          "s": "accorder son droit à quelqu'un"
+        }
+      ],
+      "Moitié/Milieu": [
+        {
+          "do": null,
+          "s": "être à la moitié"
+        },
+        {
+          "do": null,
+          "s": "atteindre le milieu"
+        },
+        {
+          "do": null,
+          "s": "moitié"
+        }
+      ]
+    }
+  },
+  {
+    "n": 168,
+    "wk": "nshz",
+    "id": 1136,
+    "etym": "Élévation/Rébellion",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Terrain\" (1 sens)",
+      "singleton [Sens isolé/Terrain] : \"terrain élevé\"",
+      "singleton [Rébellion conjugale] : \"nushūz (désobéissance conjugale)\""
+    ],
+    "concepts": {
+      "Élévation/Rébellion": [
+        {
+          "do": 1,
+          "s": "se lever"
+        },
+        {
+          "do": 2,
+          "s": "désobéir (dans le couple)"
+        },
+        {
+          "do": 3,
+          "s": "se rebeller"
+        },
+        {
+          "do": 5,
+          "s": "se dresser"
+        },
+        {
+          "do": 6,
+          "s": "lieu élevé"
+        }
+      ],
+      "Sens isolé/Terrain": [
+        {
+          "do": 4,
+          "s": "terrain élevé"
+        }
+      ],
+      "Rébellion conjugale": [
+        {
+          "do": 7,
+          "s": "nushūz (désobéissance conjugale)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 169,
+    "wk": "nsw",
+    "id": 2198,
+    "etym": "Féminin/Épouses",
+    "flags": [
+      "singleton [Anatomie/Sciatique] : \"veine sciatique\"",
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Oubli/Négligence": [
+        {
+          "do": 1,
+          "s": "oublier"
+        },
+        {
+          "do": 2,
+          "s": "négliger"
+        },
+        {
+          "do": 6,
+          "s": "feindre d'oublier"
+        }
+      ],
+      "Féminin/Épouses": [
+        {
+          "do": 3,
+          "s": "femmes"
+        },
+        {
+          "do": 4,
+          "s": "épouses"
+        },
+        {
+          "do": 5,
+          "s": "genre féminin"
+        }
+      ],
+      "Anatomie/Sciatique": [
+        {
+          "do": 7,
+          "s": "veine sciatique"
+        }
+      ]
+    }
+  },
+  {
+    "n": 170,
+    "wk": "nwr",
+    "id": 349,
+    "etym": "Lumière/Clarté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Fleur\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Fuir\" (1 sens)",
+      "singleton [Sens isolé/Fleur] : \"fleur\"",
+      "singleton [Sens isolé/Fuir] : \"fuir\""
+    ],
+    "concepts": {
+      "Lumière/Clarté": [
+        {
+          "do": 1,
+          "s": "lumière"
+        },
+        {
+          "do": 2,
+          "s": "éclairer"
+        },
+        {
+          "do": 3,
+          "s": "feu"
+        },
+        {
+          "do": 4,
+          "s": "guider par la lumière"
+        }
+      ],
+      "Sens isolé/Fleur": [
+        {
+          "do": 5,
+          "s": "fleur"
+        }
+      ],
+      "Sens isolé/Fuir": [
+        {
+          "do": 6,
+          "s": "fuir"
+        }
+      ]
+    }
+  },
+  {
+    "n": 171,
+    "wk": "nws",
+    "id": 303,
+    "etym": "Humanité/Peuple",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Oublier\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "singleton [Sens isolé/Oublier] : \"oublier\"",
+      "singleton [Sens isolé/Être] : \"être agité\""
+    ],
+    "concepts": {
+      "Humanité/Peuple": [
+        {
+          "do": 1,
+          "s": "gens"
+        },
+        {
+          "do": 2,
+          "s": "êtres humains"
+        },
+        {
+          "do": 3,
+          "s": "peuple"
+        }
+      ],
+      "Perception/Visibilité": [
+        {
+          "do": 4,
+          "s": "voir de loin"
+        },
+        {
+          "do": 5,
+          "s": "être visible"
+        }
+      ],
+      "Sens isolé/Oublier": [
+        {
+          "do": 6,
+          "s": "oublier"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 7,
+          "s": "être agité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 172,
+    "wk": "qbl",
+    "id": 291,
+    "etym": "Réception/Accueil",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Tribu\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Embrasser\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Garantie\" (1 sens)",
+      "singleton [Sens isolé/Tribu] : \"tribu\"",
+      "singleton [Sens isolé/Embrasser] : \"embrasser\"",
+      "singleton [Sens isolé/Garantie] : \"garantie\""
+    ],
+    "concepts": {
+      "Réception/Accueil": [
+        {
+          "do": 1,
+          "s": "recevoir"
+        },
+        {
+          "do": 2,
+          "s": "accepter"
+        },
+        {
+          "do": 3,
+          "s": "agréer"
+        }
+      ],
+      "Orientation/Direction": [
+        {
+          "do": 4,
+          "s": "se tourner vers"
+        },
+        {
+          "do": 5,
+          "s": "faire face"
+        },
+        {
+          "do": 6,
+          "s": "venir vers"
+        }
+      ],
+      "Antériorité/Passé": [
+        {
+          "do": 7,
+          "s": "avant"
+        },
+        {
+          "do": 8,
+          "s": "auparavant"
+        },
+        {
+          "do": 9,
+          "s": "ancien"
+        },
+        {
+          "do": 10,
+          "s": "devant"
+        }
+      ],
+      "Sens isolé/Tribu": [
+        {
+          "do": 11,
+          "s": "tribu"
+        }
+      ],
+      "Sens isolé/Embrasser": [
+        {
+          "do": 12,
+          "s": "embrasser"
+        }
+      ],
+      "Sens isolé/Garantie": [
+        {
+          "do": 13,
+          "s": "garantie"
+        }
+      ]
+    }
+  },
+  {
+    "n": 173,
+    "wk": "qll",
+    "id": 493,
+    "etym": "Quantité/Rareté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (3 sens)"
+    ],
+    "concepts": {
+      "Quantité/Rareté": [
+        {
+          "do": 1,
+          "s": "être peu"
+        },
+        {
+          "do": 2,
+          "s": "diminuer"
+        },
+        {
+          "do": 3,
+          "s": "peu nombreux"
+        },
+        {
+          "do": 4,
+          "s": "rare"
+        },
+        {
+          "do": 6,
+          "s": "minoritaire"
+        },
+        {
+          "do": 9,
+          "s": "petitesse"
+        },
+        {
+          "do": 10,
+          "s": "faible quantité"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 5,
+          "s": "porter"
+        },
+        {
+          "do": 7,
+          "s": "sommet"
+        },
+        {
+          "do": 8,
+          "s": "soulever"
+        }
+      ]
+    }
+  },
+  {
+    "n": 174,
+    "wk": "qnt",
+    "id": 753,
+    "etym": "Dévotion/Humilité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Frugalité\" (1 sens)",
+      "singleton [Sens isolé/Frugalité] : \"manger peu\""
+    ],
+    "concepts": {
+      "Dévotion/Humilité": [
+        {
+          "do": 1,
+          "s": "obéir dévotement"
+        },
+        {
+          "do": 2,
+          "s": "être humble"
+        },
+        {
+          "do": 3,
+          "s": "dévotion"
+        },
+        {
+          "do": null,
+          "s": "prier longtemps"
+        },
+        {
+          "do": null,
+          "s": "se tenir debout (en prière)"
+        }
+      ],
+      "Sens isolé/Frugalité": [
+        {
+          "do": null,
+          "s": "manger peu"
+        }
+      ],
+      "Silence/Soumission": [
+        {
+          "do": null,
+          "s": "se soumettre"
+        },
+        {
+          "do": null,
+          "s": "rester silencieux"
+        }
+      ]
+    }
+  },
+  {
+    "n": 176,
+    "wk": "qrb",
+    "id": 467,
+    "etym": "Proximité/Rapprochement",
+    "flags": [
+      "singleton [Parenté] : \"parent proche\""
+    ],
+    "concepts": {
+      "Proximité/Rapprochement": [
+        {
+          "do": 1,
+          "s": "être proche"
+        },
+        {
+          "do": 2,
+          "s": "s'approcher"
+        },
+        {
+          "do": 3,
+          "s": "rapprocher"
+        }
+      ],
+      "Offrande/Sacrifice": [
+        {
+          "do": 4,
+          "s": "sacrifice"
+        },
+        {
+          "do": 5,
+          "s": "offrande"
+        }
+      ],
+      "Parenté": [
+        {
+          "do": 6,
+          "s": "parent proche"
+        }
+      ]
+    }
+  },
+  {
+    "n": 177,
+    "wk": "qrn",
+    "id": 1477,
+    "etym": "Corne/Excroissance",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Temps/Génération": [
+        {
+          "do": 1,
+          "s": "siècle"
+        },
+        {
+          "do": 2,
+          "s": "génération"
+        }
+      ],
+      "Corne/Excroissance": [
+        {
+          "do": 3,
+          "s": "corne"
+        },
+        {
+          "do": 9,
+          "s": "à double corne (aqran)"
+        }
+      ],
+      "Association/Appairage": [
+        {
+          "do": 4,
+          "s": "accompagner"
+        },
+        {
+          "do": 5,
+          "s": "joindre ensemble (qarana)"
+        },
+        {
+          "do": 6,
+          "s": "associer (aqrana)"
+        },
+        {
+          "do": 7,
+          "s": "compagnon"
+        },
+        {
+          "do": 8,
+          "s": "union (qirān)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 179,
+    "wk": "qst",
+    "id": 1240,
+    "etym": "Justice/Équité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Parcimonie\" (1 sens)",
+      "singleton [Sens isolé/Être] : \"être injuste (qasata)\"",
+      "singleton [Sens isolé/Parcimonie] : \"être avare dans les dépenses\""
+    ],
+    "concepts": {
+      "Justice/Équité": [
+        {
+          "do": 1,
+          "s": "être juste"
+        },
+        {
+          "do": 2,
+          "s": "équité"
+        },
+        {
+          "do": 3,
+          "s": "balance"
+        },
+        {
+          "do": null,
+          "s": "agir équitablement"
+        },
+        {
+          "do": null,
+          "s": "le plus équitable"
+        }
+      ],
+      "Sens isolé/Être": [
+        {
+          "do": 4,
+          "s": "être injuste (qasata)"
+        }
+      ],
+      "Injustice/Déviation": [
+        {
+          "do": null,
+          "s": "dévier du droit chemin"
+        },
+        {
+          "do": null,
+          "s": "tyranniser"
+        },
+        {
+          "do": null,
+          "s": "agir injustement"
+        }
+      ],
+      "Distribution/Partage": [
+        {
+          "do": null,
+          "s": "distribuer"
+        },
+        {
+          "do": null,
+          "s": "répartir"
+        },
+        {
+          "do": null,
+          "s": "part"
+        },
+        {
+          "do": null,
+          "s": "portion"
+        },
+        {
+          "do": null,
+          "s": "lot"
+        }
+      ],
+      "Mesure/Quantité": [
+        {
+          "do": null,
+          "s": "mesure de grain"
+        },
+        {
+          "do": null,
+          "s": "quantité"
+        },
+        {
+          "do": null,
+          "s": "moyens de subsistance"
+        }
+      ],
+      "Sens isolé/Parcimonie": [
+        {
+          "do": null,
+          "s": "être avare dans les dépenses"
+        }
+      ],
+      "Parfum/Fumigation": [
+        {
+          "do": null,
+          "s": "substance parfumée"
+        },
+        {
+          "do": null,
+          "s": "bois pour fumigation"
+        }
+      ]
+    }
+  },
+  {
+    "n": 180,
+    "wk": "qtl",
+    "id": 556,
+    "etym": "Meurtre/Combat",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Imprécation\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Mélanger\" (1 sens)",
+      "singleton [Sens isolé/Imprécation] : \"imprécation\"",
+      "singleton [Sens isolé/Mélanger] : \"couper le vin\""
+    ],
+    "concepts": {
+      "Meurtre/Combat": [
+        {
+          "do": 1,
+          "s": "tuer"
+        },
+        {
+          "do": 2,
+          "s": "assassiner"
+        },
+        {
+          "do": 3,
+          "s": "combattre"
+        },
+        {
+          "do": 4,
+          "s": "meurtre"
+        },
+        {
+          "do": 5,
+          "s": "combat"
+        },
+        {
+          "do": 6,
+          "s": "guerre"
+        }
+      ],
+      "Sens isolé/Imprécation": [
+        {
+          "do": 7,
+          "s": "imprécation"
+        }
+      ],
+      "Sens isolé/Mélanger": [
+        {
+          "do": 8,
+          "s": "couper le vin"
+        }
+      ]
+    }
+  },
+  {
+    "n": 181,
+    "wk": "qwl",
+    "id": 307,
+    "etym": "Parole/Énonciation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Puissance\" (1 sens)",
+      "singleton [Sens isolé/Puissance] : \"puissance\"",
+      "singleton [Corps/Anatomie] : \"troupeau\""
+    ],
+    "concepts": {
+      "Parole/Énonciation": [
+        {
+          "do": 1,
+          "s": "dire"
+        },
+        {
+          "do": 2,
+          "s": "parler"
+        },
+        {
+          "do": 3,
+          "s": "parole"
+        },
+        {
+          "do": 4,
+          "s": "discours"
+        },
+        {
+          "do": 5,
+          "s": "affirmer"
+        }
+      ],
+      "Pensée/Avis": [
+        {
+          "do": 6,
+          "s": "opinion"
+        },
+        {
+          "do": 7,
+          "s": "avis"
+        },
+        {
+          "do": 8,
+          "s": "doctrine"
+        }
+      ],
+      "Sens isolé/Puissance": [
+        {
+          "do": 9,
+          "s": "puissance"
+        }
+      ],
+      "Corps/Anatomie": [
+        {
+          "do": 10,
+          "s": "troupeau"
+        }
+      ]
+    }
+  },
+  {
+    "n": 182,
+    "wk": "qwm",
+    "id": 263,
+    "etym": "Verticalité/Droiture",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Résidence\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Station\" (1 sens)",
+      "singleton [Lieu/Géographie] : \"lieu\"",
+      "singleton [Sens isolé/Résidence] : \"résidence\"",
+      "singleton [Sens isolé/Station] : \"station\""
+    ],
+    "concepts": {
+      "Verticalité/Droiture": [
+        {
+          "do": 1,
+          "s": "se lever"
+        },
+        {
+          "do": 2,
+          "s": "se dresser"
+        },
+        {
+          "do": 3,
+          "s": "droit"
+        },
+        {
+          "do": 4,
+          "s": "rectitude"
+        },
+        {
+          "do": 5,
+          "s": "redresser"
+        },
+        {
+          "do": 6,
+          "s": "corriger"
+        },
+        {
+          "do": 7,
+          "s": "se tenir debout"
+        }
+      ],
+      "Peuple/Communauté": [
+        {
+          "do": 8,
+          "s": "peuple"
+        },
+        {
+          "do": 9,
+          "s": "communauté"
+        },
+        {
+          "do": 10,
+          "s": "tribu"
+        },
+        {
+          "do": 11,
+          "s": "nation"
+        },
+        {
+          "do": 12,
+          "s": "groupe"
+        }
+      ],
+      "Gestion/Administration": [
+        {
+          "do": 13,
+          "s": "gérer"
+        },
+        {
+          "do": 14,
+          "s": "administrer"
+        },
+        {
+          "do": 15,
+          "s": "prendre en charge"
+        },
+        {
+          "do": 16,
+          "s": "diriger"
+        },
+        {
+          "do": 17,
+          "s": "veiller sur"
+        }
+      ],
+      "Valeur/Mesure": [
+        {
+          "do": 18,
+          "s": "valeur"
+        },
+        {
+          "do": 19,
+          "s": "prix"
+        },
+        {
+          "do": 20,
+          "s": "estimation"
+        },
+        {
+          "do": 21,
+          "s": "stature"
+        },
+        {
+          "do": 22,
+          "s": "taille"
+        }
+      ],
+      "Subsistance": [
+        {
+          "do": 23,
+          "s": "subsistance"
+        },
+        {
+          "do": 24,
+          "s": "nourriture"
+        },
+        {
+          "do": 25,
+          "s": "ce qui fait vivre"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 26,
+          "s": "lieu"
+        }
+      ],
+      "Sens isolé/Résidence": [
+        {
+          "do": 27,
+          "s": "résidence"
+        }
+      ],
+      "Sens isolé/Station": [
+        {
+          "do": 28,
+          "s": "station"
+        }
+      ]
+    }
+  },
+  {
+    "n": 184,
+    "wk": "rbb",
+    "id": 253,
+    "etym": "Éducation/Accompagnement",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (5 sens)",
+      "etym✦ n'a aucun sens à do=1 (min do=16)"
+    ],
+    "concepts": {
+      "Croissance/Augmentation": [
+        {
+          "do": 1,
+          "s": "augmenter"
+        },
+        {
+          "do": 2,
+          "s": "croître"
+        },
+        {
+          "do": 3,
+          "s": "faire grandir"
+        },
+        {
+          "do": 4,
+          "s": "nourrir"
+        },
+        {
+          "do": 5,
+          "s": "développer"
+        },
+        {
+          "do": 6,
+          "s": "excès"
+        },
+        {
+          "do": 7,
+          "s": "colline"
+        },
+        {
+          "do": 8,
+          "s": "éminence"
+        }
+      ],
+      "Seigneurie/Autorité bienveillante": [
+        {
+          "do": 9,
+          "s": "seigneur"
+        },
+        {
+          "do": 10,
+          "s": "maître"
+        },
+        {
+          "do": 11,
+          "s": "propriétaire"
+        },
+        {
+          "do": 12,
+          "s": "celui qui élève"
+        },
+        {
+          "do": 13,
+          "s": "celui qui entretient"
+        },
+        {
+          "do": 14,
+          "s": "celui qui possède"
+        },
+        {
+          "do": 15,
+          "s": "gouverner"
+        }
+      ],
+      "Éducation/Accompagnement": [
+        {
+          "do": 16,
+          "s": "élever un enfant"
+        },
+        {
+          "do": 17,
+          "s": "éduquer"
+        },
+        {
+          "do": 18,
+          "s": "former"
+        },
+        {
+          "do": 19,
+          "s": "accompagner la croissance"
+        }
+      ],
+      "Commerce/Usure": [
+        {
+          "do": 20,
+          "s": "usure"
+        },
+        {
+          "do": 21,
+          "s": "augmentation de dette"
+        },
+        {
+          "do": 22,
+          "s": "intérêt"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 23,
+          "s": "essoufflement"
+        },
+        {
+          "do": 24,
+          "s": "fixer"
+        },
+        {
+          "do": 25,
+          "s": "rassembler"
+        },
+        {
+          "do": 26,
+          "s": "groupe"
+        },
+        {
+          "do": 27,
+          "s": "confiture"
+        }
+      ]
+    }
+  },
+  {
+    "n": 188,
+    "wk": "rhm",
+    "id": 251,
+    "etym": "Miséricorde/Tendresse",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Outre\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/La\" (1 sens)",
+      "singleton [Sens isolé/Outre] : \"outre abîmée\"",
+      "singleton [Sens isolé/La] : \"la crainte vaut mieux que la pitié\"",
+      "etym✦ n'a aucun sens à do=1 (min do=12)"
+    ],
+    "concepts": {
+      "Utérus/Reproduction": [
+        {
+          "do": 1,
+          "s": "utérus"
+        },
+        {
+          "do": 2,
+          "s": "vulve"
+        },
+        {
+          "do": 3,
+          "s": "maladie de l'utérus"
+        },
+        {
+          "do": 4,
+          "s": "utérus gonflé"
+        },
+        {
+          "do": 5,
+          "s": "chamelle malade post-partum"
+        },
+        {
+          "do": 6,
+          "s": "sortie de l'utérus"
+        }
+      ],
+      "Parenté/Lien familial": [
+        {
+          "do": 7,
+          "s": "lien de parenté"
+        },
+        {
+          "do": 8,
+          "s": "parents par les femmes"
+        },
+        {
+          "do": 9,
+          "s": "parent interdit au mariage"
+        },
+        {
+          "do": 10,
+          "s": "sentiment de parenté"
+        },
+        {
+          "do": 11,
+          "s": "connecté par parenté"
+        }
+      ],
+      "Miséricorde/Tendresse": [
+        {
+          "do": 12,
+          "s": "miséricorde"
+        },
+        {
+          "do": 13,
+          "s": "pardon"
+        },
+        {
+          "do": 14,
+          "s": "traiter avec compassion"
+        },
+        {
+          "do": 15,
+          "s": "dire \"que Dieu te fasse miséricorde\""
+        },
+        {
+          "do": 16,
+          "s": "se forcer à la compassion"
+        },
+        {
+          "do": 17,
+          "s": "miséricorde réciproque"
+        },
+        {
+          "do": 18,
+          "s": "demander la miséricorde"
+        },
+        {
+          "do": 19,
+          "s": "compatissant"
+        },
+        {
+          "do": 20,
+          "s": "miséricordieux"
+        },
+        {
+          "do": 21,
+          "s": "objet de miséricorde"
+        }
+      ],
+      "Provision/Bienfait matériel": [
+        {
+          "do": 23,
+          "s": "subsistance"
+        },
+        {
+          "do": 24,
+          "s": "pluie"
+        },
+        {
+          "do": 25,
+          "s": "abondance"
+        },
+        {
+          "do": 26,
+          "s": "prophétie"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 27,
+          "s": "La Mecque"
+        },
+        {
+          "do": 28,
+          "s": "Médine"
+        }
+      ],
+      "Sens isolé/Outre": [
+        {
+          "do": 29,
+          "s": "outre abîmée"
+        }
+      ],
+      "Sens isolé/La": [
+        {
+          "do": 30,
+          "s": "la crainte vaut mieux que la pitié"
+        }
+      ]
+    }
+  },
+  {
+    "n": 189,
+    "wk": "rjl",
+    "id": 1064,
+    "etym": "Homme/Piéton",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Revenir\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Improviser\" (1 sens)",
+      "singleton [Sens isolé/Revenir] : \"revenir\"",
+      "singleton [Sens isolé/Improviser] : \"improviser\""
+    ],
+    "concepts": {
+      "Homme/Piéton": [
+        {
+          "do": 1,
+          "s": "homme"
+        },
+        {
+          "do": 2,
+          "s": "pied"
+        },
+        {
+          "do": 3,
+          "s": "piéton"
+        },
+        {
+          "do": null,
+          "s": "mâle adulte"
+        },
+        {
+          "do": null,
+          "s": "chef de famille"
+        },
+        {
+          "do": null,
+          "s": "à pied"
+        }
+      ],
+      "Sens isolé/Revenir": [
+        {
+          "do": 4,
+          "s": "revenir"
+        }
+      ],
+      "Sens isolé/Improviser": [
+        {
+          "do": 5,
+          "s": "improviser"
+        }
+      ]
+    }
+  },
+  {
+    "n": 192,
+    "wk": "rsl",
+    "id": 688,
+    "etym": "Douceur/Aisance",
+    "flags": [
+      "singleton [Pluie/Eau] : \"pluie envoyee\"",
+      "etym✦ n'a aucun sens à do=1 (min do=10)"
+    ],
+    "concepts": {
+      "Envoi/Transmission": [
+        {
+          "do": 1,
+          "s": "envoyer"
+        },
+        {
+          "do": 2,
+          "s": "envoyer un messager"
+        },
+        {
+          "do": 3,
+          "s": "echanger des messages"
+        },
+        {
+          "do": 4,
+          "s": "message"
+        }
+      ],
+      "Messager/Porteur": [
+        {
+          "do": 5,
+          "s": "messager"
+        },
+        {
+          "do": 6,
+          "s": "envoye"
+        }
+      ],
+      "Lacher/Liberer": [
+        {
+          "do": 7,
+          "s": "lacher"
+        },
+        {
+          "do": 8,
+          "s": "liberer"
+        },
+        {
+          "do": 9,
+          "s": "lancer"
+        }
+      ],
+      "Douceur/Aisance": [
+        {
+          "do": 10,
+          "s": "etre facile dans l'allure"
+        },
+        {
+          "do": 11,
+          "s": "agir avec douceur et calme"
+        },
+        {
+          "do": 12,
+          "s": "reciter posement"
+        }
+      ],
+      "Pendaison/Relachement": [
+        {
+          "do": 13,
+          "s": "cheveux pendants et lisses"
+        },
+        {
+          "do": 14,
+          "s": "pendre"
+        }
+      ],
+      "Troupeau/Groupe": [
+        {
+          "do": 15,
+          "s": "troupeau de chameaux"
+        },
+        {
+          "do": 16,
+          "s": "groupe de personnes"
+        }
+      ],
+      "Pluie/Eau": [
+        {
+          "do": 17,
+          "s": "pluie envoyee"
+        }
+      ]
+    }
+  },
+  {
+    "n": 193,
+    "wk": "rwd",
+    "id": 411,
+    "etym": "Recherche/Quête",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Pâturage\" (2 sens)",
+      "concept fourre-tout \"Sens isolé/Aller-retour\" (1 sens)",
+      "singleton [Douceur/Lenteur] : \"agir doucement\"",
+      "singleton [Sens isolé/Aller-retour] : \"va-et-vient\""
+    ],
+    "concepts": {
+      "Recherche/Quête": [
+        {
+          "do": 1,
+          "s": "aller et venir"
+        },
+        {
+          "do": 2,
+          "s": "chercher à convaincre"
+        },
+        {
+          "do": 3,
+          "s": "désirer"
+        },
+        {
+          "do": 6,
+          "s": "chercher"
+        },
+        {
+          "do": 7,
+          "s": "éclaireur"
+        },
+        {
+          "do": 8,
+          "s": "reconnaissance"
+        }
+      ],
+      "Douceur/Lenteur": [
+        {
+          "do": 4,
+          "s": "agir doucement"
+        }
+      ],
+      "Sens isolé/Pâturage": [
+        {
+          "do": 5,
+          "s": "pâturage"
+        },
+        {
+          "do": 9,
+          "s": "pâturer"
+        }
+      ],
+      "Sens isolé/Aller-retour": [
+        {
+          "do": 10,
+          "s": "va-et-vient"
+        }
+      ]
+    }
+  },
+  {
+    "n": 197,
+    "wk": "sbl",
+    "id": 743,
+    "etym": "Pluie/Abondance",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Voie/Direction": [
+        {
+          "do": 1,
+          "s": "chemin"
+        },
+        {
+          "do": 2,
+          "s": "voie"
+        },
+        {
+          "do": 3,
+          "s": "voyageur"
+        },
+        {
+          "do": null,
+          "s": "moyen"
+        },
+        {
+          "do": null,
+          "s": "route"
+        },
+        {
+          "do": null,
+          "s": "cause"
+        }
+      ],
+      "Végétation/Épi": [
+        {
+          "do": null,
+          "s": "moustache"
+        },
+        {
+          "do": null,
+          "s": "épi de blé"
+        }
+      ],
+      "Pluie/Abondance": [
+        {
+          "do": null,
+          "s": "laisser pendre"
+        },
+        {
+          "do": null,
+          "s": "pluie abondante"
+        }
+      ]
+    }
+  },
+  {
+    "n": 198,
+    "wk": "sbr",
+    "id": 502,
+    "etym": "Patience/Endurance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Divers\" (2 sens)"
+    ],
+    "concepts": {
+      "Patience/Endurance": [
+        {
+          "do": 1,
+          "s": "patienter"
+        },
+        {
+          "do": 2,
+          "s": "endurer"
+        },
+        {
+          "do": 3,
+          "s": "patience"
+        },
+        {
+          "do": 4,
+          "s": "retenir"
+        }
+      ],
+      "Sens isolé/Divers": [
+        {
+          "do": 5,
+          "s": "emprisonner"
+        },
+        {
+          "do": 6,
+          "s": "sommet de montagne"
+        }
+      ]
+    }
+  },
+  {
+    "n": 199,
+    "wk": "sdd_s",
+    "id": 2686,
+    "etym": "Rectitude/Justesse",
+    "flags": [
+      "etym✦=\"Rectitude/Justesse\" ABSENT des concepts"
+    ],
+    "concepts": {}
+  },
+  {
+    "n": 200,
+    "wk": "sdq",
+    "id": 384,
+    "etym": "Vérité/Sincérité",
+    "flags": [
+      "singleton [Amitié] : \"ami sincère\""
+    ],
+    "concepts": {
+      "Vérité/Sincérité": [
+        {
+          "do": 1,
+          "s": "dire vrai"
+        },
+        {
+          "do": 2,
+          "s": "vrai"
+        },
+        {
+          "do": 3,
+          "s": "sincère"
+        },
+        {
+          "do": 4,
+          "s": "confirmer"
+        }
+      ],
+      "Amitié": [
+        {
+          "do": 5,
+          "s": "ami sincère"
+        }
+      ],
+      "Don/Aumône": [
+        {
+          "do": 6,
+          "s": "aumône"
+        },
+        {
+          "do": 7,
+          "s": "dot"
+        }
+      ]
+    }
+  },
+  {
+    "n": 201,
+    "wk": "sds",
+    "id": 1446,
+    "etym": "Fraction/Sixième",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Nombre/Quantité": [
+        {
+          "do": 1,
+          "s": "six"
+        },
+        {
+          "do": 2,
+          "s": "sixième"
+        }
+      ],
+      "Nombre six": [
+        {
+          "do": null,
+          "s": "hexagonal"
+        },
+        {
+          "do": null,
+          "s": "sextuple"
+        },
+        {
+          "do": null,
+          "s": "six"
+        }
+      ],
+      "Fraction/Sixième": [
+        {
+          "do": null,
+          "s": "être le sixième d'un groupe"
+        },
+        {
+          "do": null,
+          "s": "prendre le sixième"
+        },
+        {
+          "do": null,
+          "s": "un sixième"
+        },
+        {
+          "do": null,
+          "s": "sixième"
+        }
+      ]
+    }
+  },
+  {
+    "n": 202,
+    "wk": "sed",
+    "id": 1365,
+    "etym": "Ascension/Élévation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Pente\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Surface du sol\" (2 sens)",
+      "singleton [Sens isolé/Pente] : \"pente (saoud)\""
+    ],
+    "concepts": {
+      "Ascension/Élévation": [
+        {
+          "do": 1,
+          "s": "monter"
+        },
+        {
+          "do": 2,
+          "s": "s'élever"
+        },
+        {
+          "do": 3,
+          "s": "gravir"
+        }
+      ],
+      "Sens isolé/Pente": [
+        {
+          "do": 4,
+          "s": "pente (saoud)"
+        }
+      ],
+      "Sens isolé/Surface du sol": [
+        {
+          "do": 5,
+          "s": "sol pur"
+        },
+        {
+          "do": 6,
+          "s": "surface terrestre"
+        }
+      ]
+    }
+  },
+  {
+    "n": 203,
+    "wk": "ser",
+    "id": 1430,
+    "etym": "Embrasement/Intensité",
+    "flags": [
+      "singleton [Richesse/Valeur] : \"prix (sier)\""
+    ],
+    "concepts": {
+      "Embrasement/Intensité": [
+        {
+          "do": 1,
+          "s": "allumer un feu"
+        },
+        {
+          "do": 2,
+          "s": "brûler intensément"
+        },
+        {
+          "do": null,
+          "s": "attiser un feu"
+        }
+      ],
+      "Richesse/Valeur": [
+        {
+          "do": 3,
+          "s": "prix (sier)"
+        }
+      ],
+      "Folie/Insanité": [
+        {
+          "do": null,
+          "s": "folie"
+        },
+        {
+          "do": null,
+          "s": "être fou"
+        }
+      ]
+    }
+  },
+  {
+    "n": 204,
+    "wk": "sfh",
+    "id": 332,
+    "etym": "Légèreté/Stupidité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Soif\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Se\" (1 sens)",
+      "singleton [Agitation/Mouvement] : \"agitation\"",
+      "singleton [Sens isolé/Soif] : \"soif violente\"",
+      "singleton [Sens isolé/Se] : \"se quereller\""
+    ],
+    "concepts": {
+      "Légèreté/Stupidité": [
+        {
+          "do": 1,
+          "s": "être insensé"
+        },
+        {
+          "do": 2,
+          "s": "léger d'esprit"
+        },
+        {
+          "do": 3,
+          "s": "stupide"
+        },
+        {
+          "do": 4,
+          "s": "déclarer insensé"
+        },
+        {
+          "do": 5,
+          "s": "agir de manière insensée"
+        }
+      ],
+      "Agitation/Mouvement": [
+        {
+          "do": 6,
+          "s": "agitation"
+        }
+      ],
+      "Sens isolé/Soif": [
+        {
+          "do": 7,
+          "s": "soif violente"
+        }
+      ],
+      "Sens isolé/Se": [
+        {
+          "do": 8,
+          "s": "se quereller"
+        }
+      ]
+    }
+  },
+  {
+    "n": 206,
+    "wk": "sfr",
+    "id": 614,
+    "etym": "Voyage/Déplacement",
+    "flags": [
+      "singleton [Balayage/Dispersion] : \"balayer\"",
+      "singleton [Médiation/Envoi] : \"médiateur\"",
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Couleur/Éclat": [
+        {
+          "do": 1,
+          "s": "jaune"
+        },
+        {
+          "do": 2,
+          "s": "doré"
+        },
+        {
+          "do": 3,
+          "s": "pâle"
+        }
+      ],
+      "Voyage/Déplacement": [
+        {
+          "do": null,
+          "s": "voyager"
+        },
+        {
+          "do": null,
+          "s": "déplacement"
+        }
+      ],
+      "Clarté/Révélation": [
+        {
+          "do": null,
+          "s": "révéler"
+        },
+        {
+          "do": null,
+          "s": "briller"
+        }
+      ],
+      "Balayage/Dispersion": [
+        {
+          "do": null,
+          "s": "balayer"
+        }
+      ],
+      "Médiation/Envoi": [
+        {
+          "do": null,
+          "s": "médiateur"
+        }
+      ]
+    }
+  },
+  {
+    "n": 208,
+    "wk": "shd",
+    "id": 2073,
+    "etym": "Témoignage/Attestation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Martyr\" (1 sens)",
+      "singleton [Sens isolé/Martyr] : \"martyr\""
+    ],
+    "concepts": {
+      "Témoignage/Attestation": [
+        {
+          "do": 1,
+          "s": "témoigner"
+        },
+        {
+          "do": 2,
+          "s": "attester"
+        },
+        {
+          "do": 3,
+          "s": "témoin"
+        }
+      ],
+      "Présence/Visibilité": [
+        {
+          "do": 4,
+          "s": "être présent"
+        },
+        {
+          "do": 5,
+          "s": "assister"
+        }
+      ],
+      "Sens isolé/Martyr": [
+        {
+          "do": 6,
+          "s": "martyr"
+        }
+      ]
+    }
+  },
+  {
+    "n": 210,
+    "wk": "shhw",
+    "id": 1233,
+    "etym": "Désir/Convoitise",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Mauvais œil\" (1 sens)",
+      "singleton [Sens isolé/Mauvais œil] : \"frapper du mauvais œil\""
+    ],
+    "concepts": {
+      "Désir/Convoitise": [
+        {
+          "do": 1,
+          "s": "désirer"
+        },
+        {
+          "do": 2,
+          "s": "convoiter"
+        },
+        {
+          "do": 3,
+          "s": "passion (shahwa)"
+        },
+        {
+          "do": 4,
+          "s": "chose désirée"
+        },
+        {
+          "do": null,
+          "s": "aimer"
+        },
+        {
+          "do": null,
+          "s": "appétit"
+        },
+        {
+          "do": null,
+          "s": "désir ardent"
+        }
+      ],
+      "Ressemblance/Imitation": [
+        {
+          "do": null,
+          "s": "plaisanter"
+        },
+        {
+          "do": null,
+          "s": "ressembler"
+        }
+      ],
+      "Sens isolé/Mauvais œil": [
+        {
+          "do": null,
+          "s": "frapper du mauvais œil"
+        }
+      ]
+    }
+  },
+  {
+    "n": 211,
+    "wk": "shrk",
+    "id": 737,
+    "etym": "Partage/Copartenariat",
+    "flags": [
+      "singleton [Lanière] : \"lanière de sandale\"",
+      "etym✦ n'a aucun sens à do=1 (min do=10)"
+    ],
+    "concepts": {
+      "Association/Polythéisme": [
+        {
+          "do": 1,
+          "s": "associer"
+        },
+        {
+          "do": 2,
+          "s": "polythéisme"
+        },
+        {
+          "do": 3,
+          "s": "partenaire"
+        },
+        {
+          "do": 99,
+          "s": "associateurs"
+        }
+      ],
+      "Partage/Copartenariat": [
+        {
+          "do": 10,
+          "s": "partager"
+        },
+        {
+          "do": 11,
+          "s": "participer"
+        },
+        {
+          "do": 12,
+          "s": "être copartenaire"
+        },
+        {
+          "do": 13,
+          "s": "donner une part"
+        }
+      ],
+      "Enchevêtrement/Piège": [
+        {
+          "do": 14,
+          "s": "enlacer"
+        },
+        {
+          "do": 15,
+          "s": "piège"
+        }
+      ],
+      "Lanière": [
+        {
+          "do": 16,
+          "s": "lanière de sandale"
+        }
+      ]
+    }
+  },
+  {
+    "n": 213,
+    "wk": "shy",
+    "id": 466,
+    "etym": "Volonté",
+    "flags": [
+      "singleton [Néant] : \"rien\"",
+      "singleton [Apaisement] : \"s'apaiser\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Chose/Être": [
+        {
+          "do": 1,
+          "s": "chose"
+        },
+        {
+          "do": 2,
+          "s": "quelque chose"
+        },
+        {
+          "do": 8,
+          "s": "être"
+        },
+        {
+          "do": 9,
+          "s": "existence"
+        }
+      ],
+      "Néant": [
+        {
+          "do": 3,
+          "s": "rien"
+        }
+      ],
+      "Volonté": [
+        {
+          "do": 4,
+          "s": "vouloir"
+        },
+        {
+          "do": 5,
+          "s": "désirer"
+        },
+        {
+          "do": 6,
+          "s": "souhaiter"
+        },
+        {
+          "do": 7,
+          "s": "volonté (mashīʾa)"
+        }
+      ],
+      "Incitation/Contrainte": [
+        {
+          "do": 10,
+          "s": "inciter"
+        },
+        {
+          "do": 11,
+          "s": "contraindre"
+        },
+        {
+          "do": 12,
+          "s": "forcer"
+        }
+      ],
+      "Difformité/Laideur": [
+        {
+          "do": 13,
+          "s": "rendre laid"
+        },
+        {
+          "do": 14,
+          "s": "être mal formé"
+        }
+      ],
+      "Apaisement": [
+        {
+          "do": 15,
+          "s": "s'apaiser"
+        }
+      ]
+    }
+  },
+  {
+    "n": 214,
+    "wk": "skn",
+    "id": 462,
+    "etym": "Calme/Repos",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Habitation/Demeure": [
+        {
+          "do": 1,
+          "s": "habiter"
+        },
+        {
+          "do": 2,
+          "s": "demeurer"
+        }
+      ],
+      "Calme/Repos": [
+        {
+          "do": 3,
+          "s": "être calme"
+        },
+        {
+          "do": 4,
+          "s": "s'apaiser"
+        },
+        {
+          "do": 5,
+          "s": "se reposer"
+        }
+      ],
+      "Pauvreté/Manque": [
+        {
+          "do": 6,
+          "s": "pauvre"
+        },
+        {
+          "do": 8,
+          "s": "nécessiteux"
+        },
+        {
+          "do": 9,
+          "s": "démuni"
+        }
+      ]
+    }
+  },
+  {
+    "n": 215,
+    "wk": "skr",
+    "id": 1485,
+    "etym": "Altération/Trouble",
+    "flags": [
+      "singleton [Douceur] : \"sucre\"",
+      "singleton [Fermeture/Verrouillage] : \"boucher (une porte)\""
+    ],
+    "concepts": {
+      "Altération/Trouble": [
+        {
+          "do": 1,
+          "s": "ivresse"
+        },
+        {
+          "do": 2,
+          "s": "enivrer"
+        },
+        {
+          "do": 3,
+          "s": "boisson enivrante"
+        },
+        {
+          "do": 6,
+          "s": "enivré"
+        }
+      ],
+      "Douceur": [
+        {
+          "do": 4,
+          "s": "sucre"
+        }
+      ],
+      "Fermeture/Verrouillage": [
+        {
+          "do": 7,
+          "s": "boucher (une porte)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 216,
+    "wk": "slb",
+    "id": 1462,
+    "etym": "Solidité/Reins",
+    "flags": [
+      "singleton [Solidité/Reins] : \"reins (ṣulb)\"",
+      "etym✦ n'a aucun sens à do=1 (min do=7)"
+    ],
+    "concepts": {
+      "Crucifixion/Suspension": [
+        {
+          "do": 1,
+          "s": "crucifier"
+        },
+        {
+          "do": 2,
+          "s": "croix"
+        },
+        {
+          "do": 6,
+          "s": "suspendre pour châtier"
+        }
+      ],
+      "Dureté/Fermeté": [
+        {
+          "do": 3,
+          "s": "dur"
+        },
+        {
+          "do": 4,
+          "s": "ferme"
+        }
+      ],
+      "Solidité/Reins": [
+        {
+          "do": 7,
+          "s": "reins (ṣulb)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 218,
+    "wk": "slh",
+    "id": 326,
+    "etym": "Bonté/Rectitude",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Paix\" (1 sens)",
+      "singleton [Sens isolé/Paix] : \"paix\""
+    ],
+    "concepts": {
+      "Bonté/Rectitude": [
+        {
+          "do": 1,
+          "s": "être bon"
+        },
+        {
+          "do": 2,
+          "s": "rectitude"
+        },
+        {
+          "do": 3,
+          "s": "réparer"
+        },
+        {
+          "do": 4,
+          "s": "réconcilier"
+        },
+        {
+          "do": 5,
+          "s": "oeuvre bonne"
+        },
+        {
+          "do": 6,
+          "s": "vertueux"
+        },
+        {
+          "do": 8,
+          "s": "réformer"
+        }
+      ],
+      "Sens isolé/Paix": [
+        {
+          "do": 7,
+          "s": "paix"
+        }
+      ]
+    }
+  },
+  {
+    "n": 221,
+    "wk": "snn",
+    "id": 1120,
+    "etym": "Aiguisement",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Dent\" (1 sens)",
+      "singleton [Aiguisement] : \"aiguiser\"",
+      "singleton [Sens isolé/Dent] : \"dent\"",
+      "etym✦ n'a aucun sens à do=1 (min do=4)"
+    ],
+    "concepts": {
+      "Voie/Loi": [
+        {
+          "do": 1,
+          "s": "chemin tracé"
+        },
+        {
+          "do": 2,
+          "s": "loi divine (sunna)"
+        },
+        {
+          "do": 3,
+          "s": "tradition"
+        }
+      ],
+      "Aiguisement": [
+        {
+          "do": 4,
+          "s": "aiguiser"
+        }
+      ],
+      "Sens isolé/Dent": [
+        {
+          "do": 5,
+          "s": "dent"
+        }
+      ],
+      "Modelage/Coulée": [
+        {
+          "do": 6,
+          "s": "modeler"
+        },
+        {
+          "do": 7,
+          "s": "verser sur"
+        }
+      ]
+    }
+  },
+  {
+    "n": 222,
+    "wk": "šqq",
+    "id": 640,
+    "etym": "Fente/Fracture",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=2)"
+    ],
+    "concepts": {
+      "Fente/Fracture": [
+        {
+          "do": 2,
+          "s": "fissure"
+        },
+        {
+          "do": 5,
+          "s": "fendre"
+        },
+        {
+          "do": 6,
+          "s": "crevasse"
+        }
+      ],
+      "Dissension/Discorde": [
+        {
+          "do": 3,
+          "s": "dissension"
+        },
+        {
+          "do": 4,
+          "s": "opposition"
+        },
+        {
+          "do": 7,
+          "s": "querelle"
+        },
+        {
+          "do": 8,
+          "s": "difficulté"
+        }
+      ]
+    }
+  },
+  {
+    "n": 223,
+    "wk": "srf2",
+    "id": 2671,
+    "etym": "Excès/Gaspillage",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Ignorance\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Mite\" (1 sens)",
+      "singleton [Sens isolé/Ignorance] : \"ignorant sans mesure\"",
+      "singleton [Sens isolé/Mite] : \"mite\""
+    ],
+    "concepts": {
+      "Excès/Gaspillage": [
+        {
+          "do": 1,
+          "s": "être excessif"
+        },
+        {
+          "do": 2,
+          "s": "gaspiller"
+        },
+        {
+          "do": 3,
+          "s": "prodigalité"
+        },
+        {
+          "do": 4,
+          "s": "celui qui excède"
+        },
+        {
+          "do": null,
+          "s": "excès"
+        }
+      ],
+      "Sens isolé/Ignorance": [
+        {
+          "do": 5,
+          "s": "ignorant sans mesure"
+        }
+      ],
+      "Sens isolé/Mite": [
+        {
+          "do": 6,
+          "s": "mite"
+        }
+      ]
+    }
+  },
+  {
+    "n": 224,
+    "wk": "stn",
+    "id": 329,
+    "etym": "Éloignement/Distance",
+    "flags": [
+      "singleton [Corde] : \"corde longue\""
+    ],
+    "concepts": {
+      "Éloignement/Distance": [
+        {
+          "do": 1,
+          "s": "être distant"
+        },
+        {
+          "do": 2,
+          "s": "éloigner"
+        },
+        {
+          "do": 3,
+          "s": "loin de la vérité"
+        },
+        {
+          "do": 8,
+          "s": "expédition lointaine"
+        }
+      ],
+      "Diable/Satan": [
+        {
+          "do": 4,
+          "s": "diable"
+        },
+        {
+          "do": 5,
+          "s": "Satan"
+        },
+        {
+          "do": 6,
+          "s": "agir en diable"
+        }
+      ],
+      "Corde": [
+        {
+          "do": 7,
+          "s": "corde longue"
+        }
+      ]
+    }
+  },
+  {
+    "n": 225,
+    "wk": "swa",
+    "id": 539,
+    "etym": "Mal/Mauvais",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Partie honteuse\" (2 sens)",
+      "singleton [Honte/Pudeur] : \"honte\""
+    ],
+    "concepts": {
+      "Mal/Mauvais": [
+        {
+          "do": 1,
+          "s": "mal"
+        },
+        {
+          "do": 2,
+          "s": "mauvais"
+        },
+        {
+          "do": 3,
+          "s": "nuisible"
+        },
+        {
+          "do": 4,
+          "s": "péché"
+        },
+        {
+          "do": 11,
+          "s": "mauvaise action"
+        }
+      ],
+      "Honte/Pudeur": [
+        {
+          "do": 5,
+          "s": "honte"
+        }
+      ],
+      "Action de nuire": [
+        {
+          "do": 6,
+          "s": "faire du mal"
+        },
+        {
+          "do": 7,
+          "s": "nuire"
+        },
+        {
+          "do": 8,
+          "s": "affliger"
+        }
+      ],
+      "Sens isolé/Partie honteuse": [
+        {
+          "do": 9,
+          "s": "nudité"
+        },
+        {
+          "do": 10,
+          "s": "cadavre repoussant"
+        }
+      ]
+    }
+  },
+  {
+    "n": 226,
+    "wk": "swy",
+    "id": 295,
+    "etym": "Égalité/Équivalence",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Se\" (1 sens)",
+      "singleton [Sens isolé/Se] : \"se tenir droit\"",
+      "singleton [Lieu/Géographie] : \"milieu\""
+    ],
+    "concepts": {
+      "Égalité/Équivalence": [
+        {
+          "do": 1,
+          "s": "être égal"
+        },
+        {
+          "do": 2,
+          "s": "équivalent"
+        },
+        {
+          "do": 3,
+          "s": "même chose"
+        },
+        {
+          "do": 4,
+          "s": "indifférent"
+        },
+        {
+          "do": 5,
+          "s": "égaliser"
+        },
+        {
+          "do": 6,
+          "s": "aplanir"
+        }
+      ],
+      "Achèvement/Perfection": [
+        {
+          "do": 7,
+          "s": "achever"
+        },
+        {
+          "do": 8,
+          "s": "rendre parfait"
+        }
+      ],
+      "Sens isolé/Se": [
+        {
+          "do": 9,
+          "s": "se tenir droit"
+        }
+      ],
+      "Lieu/Géographie": [
+        {
+          "do": 10,
+          "s": "milieu"
+        }
+      ]
+    }
+  },
+  {
+    "n": 227,
+    "wk": "šya",
+    "id": 369,
+    "etym": "Volonté",
+    "flags": [
+      "singleton [Apaisement] : \"apaiser sa colère\"",
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Chose/Existence": [
+        {
+          "do": 1,
+          "s": "chose"
+        },
+        {
+          "do": 2,
+          "s": "quelque chose"
+        },
+        {
+          "do": 5,
+          "s": "rien"
+        },
+        {
+          "do": 6,
+          "s": "entité"
+        },
+        {
+          "do": 7,
+          "s": "existence"
+        }
+      ],
+      "Volonté": [
+        {
+          "do": 3,
+          "s": "vouloir"
+        },
+        {
+          "do": 4,
+          "s": "créer"
+        },
+        {
+          "do": 8,
+          "s": "désirer"
+        },
+        {
+          "do": 9,
+          "s": "souhaiter"
+        },
+        {
+          "do": 10,
+          "s": "volonté"
+        }
+      ],
+      "Incitation/Contrainte": [
+        {
+          "do": 11,
+          "s": "inciter"
+        },
+        {
+          "do": 12,
+          "s": "contraindre"
+        }
+      ],
+      "Laideur/Difformité": [
+        {
+          "do": 13,
+          "s": "rendre laid"
+        },
+        {
+          "do": 14,
+          "s": "mal formé"
+        }
+      ],
+      "Apaisement": [
+        {
+          "do": 15,
+          "s": "apaiser sa colère"
+        }
+      ]
+    }
+  },
+  {
+    "n": 228,
+    "wk": "tbe",
+    "id": 1752,
+    "etym": "Suivi/Adhérence",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Conséquence/Responsabilité": [
+        {
+          "do": null,
+          "s": "responsabilité"
+        },
+        {
+          "do": null,
+          "s": "conséquence"
+        },
+        {
+          "do": null,
+          "s": "poursuite"
+        }
+      ],
+      "Consécution/Succession": [
+        {
+          "do": null,
+          "s": "sans interruption"
+        },
+        {
+          "do": null,
+          "s": "successif"
+        },
+        {
+          "do": null,
+          "s": "consécutif"
+        }
+      ],
+      "Suivi/Adhérence": [
+        {
+          "do": null,
+          "s": "adhérer à"
+        },
+        {
+          "do": null,
+          "s": "se conformer à"
+        },
+        {
+          "do": null,
+          "s": "venir après"
+        },
+        {
+          "do": null,
+          "s": "suivre"
+        },
+        {
+          "do": null,
+          "s": "marcher derrière"
+        }
+      ]
+    }
+  },
+  {
+    "n": 229,
+    "wk": "thlth",
+    "id": 734,
+    "etym": "Nombre/Trinité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Objet\" (1 sens)",
+      "singleton [Sens isolé/Objet] : \"corde à trois brins\""
+    ],
+    "concepts": {
+      "Nombre/Trinité": [
+        {
+          "do": 1,
+          "s": "trois"
+        },
+        {
+          "do": 2,
+          "s": "tiers"
+        },
+        {
+          "do": 3,
+          "s": "troisième"
+        }
+      ],
+      "Action liée au nombre": [
+        {
+          "do": 4,
+          "s": "prendre le tiers"
+        },
+        {
+          "do": 5,
+          "s": "être le troisième"
+        },
+        {
+          "do": 6,
+          "s": "tripler"
+        },
+        {
+          "do": 7,
+          "s": "par groupes de trois"
+        }
+      ],
+      "Sens isolé/Objet": [
+        {
+          "do": 8,
+          "s": "corde à trois brins"
+        }
+      ]
+    }
+  },
+  {
+    "n": 230,
+    "wk": "thmn",
+    "id": 492,
+    "etym": "Nombre",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Valeur/Prix": [
+        {
+          "do": 1,
+          "s": "prix"
+        },
+        {
+          "do": 2,
+          "s": "valeur"
+        },
+        {
+          "do": 3,
+          "s": "acheter"
+        },
+        {
+          "do": 4,
+          "s": "vendre"
+        }
+      ],
+      "Nombre": [
+        {
+          "do": 5,
+          "s": "huit"
+        },
+        {
+          "do": 6,
+          "s": "huitième"
+        }
+      ]
+    }
+  },
+  {
+    "n": 231,
+    "wk": "thny",
+    "id": 588,
+    "etym": "Dualité/Répétition",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Exception\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Louer\" (1 sens)",
+      "singleton [Sens isolé/Exception] : \"exception\"",
+      "singleton [Sens isolé/Louer] : \"louer\""
+    ],
+    "concepts": {
+      "Dualité/Répétition": [
+        {
+          "do": 1,
+          "s": "plier"
+        },
+        {
+          "do": 2,
+          "s": "répéter"
+        },
+        {
+          "do": 3,
+          "s": "deux"
+        },
+        {
+          "do": 4,
+          "s": "deuxième"
+        }
+      ],
+      "Sens isolé/Exception": [
+        {
+          "do": 5,
+          "s": "exception"
+        }
+      ],
+      "Sens isolé/Louer": [
+        {
+          "do": 6,
+          "s": "louer"
+        }
+      ]
+    }
+  },
+  {
+    "n": 237,
+    "wk": "twb",
+    "id": 479,
+    "etym": "L'action de se repentir",
+    "flags": [
+      "singleton [Le nom du repentant] : \"repentant\""
+    ],
+    "concepts": {
+      "L'action de se repentir": [
+        {
+          "do": 1,
+          "s": "revenir"
+        },
+        {
+          "do": 2,
+          "s": "se repentir"
+        },
+        {
+          "do": 4,
+          "s": "repentir"
+        }
+      ],
+      "Acceptation du repentir": [
+        {
+          "do": 3,
+          "s": "accepter le repentir"
+        },
+        {
+          "do": 5,
+          "s": "agréer le repentir"
+        },
+        {
+          "do": 7,
+          "s": "revenir"
+        }
+      ],
+      "Le nom du repentant": [
+        {
+          "do": 6,
+          "s": "repentant"
+        }
+      ]
+    }
+  },
+  {
+    "n": 240,
+    "wk": "tyb",
+    "id": 564,
+    "etym": "Bonté/Pureté",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Vin\" (1 sens)",
+      "singleton [Excellence/Choix] : \"le meilleur de\"",
+      "singleton [Sens isolé/Vin] : \"vin\""
+    ],
+    "concepts": {
+      "Bonté/Pureté": [
+        {
+          "do": 1,
+          "s": "être bon"
+        },
+        {
+          "do": 2,
+          "s": "pur"
+        },
+        {
+          "do": 3,
+          "s": "licite"
+        },
+        {
+          "do": 4,
+          "s": "agréable"
+        },
+        {
+          "do": 5,
+          "s": "parfum"
+        },
+        {
+          "do": 6,
+          "s": "terre fertile"
+        },
+        {
+          "do": 7,
+          "s": "bonne progéniture"
+        },
+        {
+          "do": 20,
+          "s": "bon"
+        }
+      ],
+      "Plaisanterie/Détente": [
+        {
+          "do": 8,
+          "s": "plaisanter"
+        },
+        {
+          "do": 9,
+          "s": "badiner"
+        }
+      ],
+      "Excellence/Choix": [
+        {
+          "do": 10,
+          "s": "le meilleur de"
+        }
+      ],
+      "Sens isolé/Vin": [
+        {
+          "do": 11,
+          "s": "vin"
+        }
+      ]
+    }
+  },
+  {
+    "n": 241,
+    "wk": "wahd",
+    "id": 2218,
+    "etym": "Unicité/Unité",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Solitude\" (2 sens)",
+      "concept fourre-tout \"Sens isolé/Réunion\" (1 sens)",
+      "singleton [Sens isolé/Réunion] : \"unifier\""
+    ],
+    "concepts": {
+      "Unicité/Unité": [
+        {
+          "do": 1,
+          "s": "un"
+        },
+        {
+          "do": 2,
+          "s": "unique"
+        },
+        {
+          "do": 3,
+          "s": "un seul"
+        },
+        {
+          "do": 4,
+          "s": "unicité"
+        },
+        {
+          "do": 5,
+          "s": "tawḥīd"
+        }
+      ],
+      "Sens isolé/Solitude": [
+        {
+          "do": 6,
+          "s": "isolé"
+        },
+        {
+          "do": 7,
+          "s": "solitaire"
+        }
+      ],
+      "Sens isolé/Réunion": [
+        {
+          "do": 8,
+          "s": "unifier"
+        }
+      ]
+    }
+  },
+  {
+    "n": 242,
+    "wk": "wdd",
+    "id": 703,
+    "etym": "Amour/Affection",
+    "flags": [
+      "singleton [Idolâtrie] : \"idole (Wadd)\""
+    ],
+    "concepts": {
+      "Amour/Affection": [
+        {
+          "do": 1,
+          "s": "aimer"
+        },
+        {
+          "do": 2,
+          "s": "affection"
+        },
+        {
+          "do": 3,
+          "s": "souhaiter"
+        },
+        {
+          "do": 4,
+          "s": "amour"
+        },
+        {
+          "do": 5,
+          "s": "ami"
+        },
+        {
+          "do": 6,
+          "s": "bien-aimé"
+        },
+        {
+          "do": 7,
+          "s": "aimant"
+        },
+        {
+          "do": 8,
+          "s": "s'aimer mutuellement"
+        },
+        {
+          "do": 9,
+          "s": "se faire aimer"
+        }
+      ],
+      "Souhait/Désir": [
+        {
+          "do": 10,
+          "s": "désirer"
+        },
+        {
+          "do": 11,
+          "s": "souhaiter ardemment"
+        }
+      ],
+      "Idolâtrie": [
+        {
+          "do": 12,
+          "s": "idole (Wadd)"
+        }
+      ]
+    }
+  },
+  {
+    "n": 243,
+    "wk": "wez",
+    "id": 598,
+    "etym": "Exhortation/Conseil",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Être touché\" (1 sens)",
+      "singleton [Sens isolé/Être touché] : \"être touché\""
+    ],
+    "concepts": {
+      "Exhortation/Conseil": [
+        {
+          "do": 1,
+          "s": "exhorter"
+        },
+        {
+          "do": 2,
+          "s": "prêcher"
+        },
+        {
+          "do": 3,
+          "s": "conseiller"
+        },
+        {
+          "do": 4,
+          "s": "sermon"
+        },
+        {
+          "do": 5,
+          "s": "admonester"
+        },
+        {
+          "do": 6,
+          "s": "exhortation"
+        }
+      ],
+      "Sens isolé/Être touché": [
+        {
+          "do": 7,
+          "s": "être touché"
+        }
+      ]
+    }
+  },
+  {
+    "n": 245,
+    "wk": "wfy",
+    "id": 487,
+    "etym": "Fidélité/Accomplissement",
+    "flags": [
+      "singleton [Réception totale] : \"recevoir entièrement, prélever en totalité\""
+    ],
+    "concepts": {
+      "Fidélité/Accomplissement": [
+        {
+          "do": 1,
+          "s": "être fidèle"
+        },
+        {
+          "do": 2,
+          "s": "accomplir"
+        },
+        {
+          "do": 3,
+          "s": "tenir sa promesse"
+        },
+        {
+          "do": 4,
+          "s": "payer intégralement"
+        },
+        {
+          "do": 6,
+          "s": "apporter, livrer"
+        },
+        {
+          "do": 7,
+          "s": "loyauté, fidélité à l'engagement (wafāʾ)"
+        }
+      ],
+      "Mort/Fin": [
+        {
+          "do": 5,
+          "s": "mourir"
+        },
+        {
+          "do": 11,
+          "s": "prendre l'âme (acte divin)"
+        },
+        {
+          "do": 12,
+          "s": "faire mourir"
+        },
+        {
+          "do": 13,
+          "s": "rappeler à Dieu (acte divin)"
+        }
+      ],
+      "Surplomb/Vue": [
+        {
+          "do": 8,
+          "s": "surplomber, dominer par la vue"
+        },
+        {
+          "do": 9,
+          "s": "se percher en vue de, regarder depuis le dessus"
+        }
+      ],
+      "Réception totale": [
+        {
+          "do": 10,
+          "s": "recevoir entièrement, prélever en totalité"
+        }
+      ]
+    }
+  },
+  {
+    "n": 247,
+    "wk": "wjh",
+    "id": 747,
+    "etym": "Visage/Direction",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Manière\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Noble\" (1 sens)",
+      "singleton [Sens isolé/Manière] : \"manière\"",
+      "singleton [Sens isolé/Noble] : \"noble\""
+    ],
+    "concepts": {
+      "Visage/Direction": [
+        {
+          "do": 1,
+          "s": "visage"
+        },
+        {
+          "do": 2,
+          "s": "face"
+        },
+        {
+          "do": 3,
+          "s": "direction"
+        },
+        {
+          "do": 4,
+          "s": "se diriger vers"
+        }
+      ],
+      "Sens isolé/Manière": [
+        {
+          "do": 5,
+          "s": "manière"
+        }
+      ],
+      "Sens isolé/Noble": [
+        {
+          "do": 6,
+          "s": "noble"
+        }
+      ]
+    }
+  },
+  {
+    "n": 248,
+    "wk": "wld",
+    "id": 2576,
+    "etym": "Engendrer/Naissance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Poule\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Brebis\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Un\" (1 sens)",
+      "concept fourre-tout \"Sens isolé/Homme\" (1 sens)",
+      "singleton [Sens isolé/Poule] : \"poule domestique\"",
+      "singleton [Sens isolé/Brebis] : \"brebis enceinte\"",
+      "singleton [Sens isolé/Un] : \"un seul petit\"",
+      "singleton [Temps/Cycle] : \"société productive\"",
+      "singleton [Sens isolé/Homme] : \"homme sans lignée connue\"",
+      "singleton [Végétation/Plante] : \"herbe fraîche\"",
+      "singleton [Parenté/Famille] : \"enfant mort en bas âge au paradis\""
+    ],
+    "concepts": {
+      "Engendrer/Naissance": [
+        {
+          "do": 1,
+          "s": "mettre au monde"
+        },
+        {
+          "do": 2,
+          "s": "engendrer"
+        },
+        {
+          "do": 3,
+          "s": "la terre produit"
+        },
+        {
+          "do": 4,
+          "s": "les nuits sont enceintes"
+        },
+        {
+          "do": 5,
+          "s": "accoucher (aider)"
+        },
+        {
+          "do": 6,
+          "s": "rendre mère"
+        },
+        {
+          "do": 7,
+          "s": "approcher de l'accouchement"
+        },
+        {
+          "do": 8,
+          "s": "rendre enceinte"
+        },
+        {
+          "do": 9,
+          "s": "se multiplier par reproduction"
+        },
+        {
+          "do": 10,
+          "s": "grossesse"
+        },
+        {
+          "do": 11,
+          "s": "prolifique"
+        },
+        {
+          "do": 12,
+          "s": "sage-femme"
+        }
+      ],
+      "Enfant/Descendance": [
+        {
+          "do": 13,
+          "s": "enfant"
+        },
+        {
+          "do": 14,
+          "s": "nouveau-né"
+        },
+        {
+          "do": 15,
+          "s": "garçon serviteur"
+        },
+        {
+          "do": 16,
+          "s": "contemporain de naissance"
+        },
+        {
+          "do": 17,
+          "s": "père / mère / parents"
+        },
+        {
+          "do": 18,
+          "s": "peuple tribu famille"
+        },
+        {
+          "do": 19,
+          "s": "enfance"
+        },
+        {
+          "do": 20,
+          "s": "lieu de naissance"
+        },
+        {
+          "do": 21,
+          "s": "moment de naissance"
+        }
+      ],
+      "Éducation/Croissance": [
+        {
+          "do": 22,
+          "s": "élever éduquer"
+        },
+        {
+          "do": 23,
+          "s": "rudesse illettrisme"
+        }
+      ],
+      "Production/Innovation": [
+        {
+          "do": 24,
+          "s": "innover produire"
+        },
+        {
+          "do": 25,
+          "s": "être engendré (chose)"
+        },
+        {
+          "do": 26,
+          "s": "esprit de parti engendré"
+        },
+        {
+          "do": 27,
+          "s": "post-classique innovant"
+        },
+        {
+          "do": 28,
+          "s": "forgé falsifié"
+        }
+      ],
+      "Sens isolé/Poule": [
+        {
+          "do": 29,
+          "s": "poule domestique"
+        }
+      ],
+      "Sens isolé/Brebis": [
+        {
+          "do": 30,
+          "s": "brebis enceinte"
+        }
+      ],
+      "Sens isolé/Un": [
+        {
+          "do": 31,
+          "s": "un seul petit"
+        }
+      ],
+      "Temps/Cycle": [
+        {
+          "do": 32,
+          "s": "société productive"
+        }
+      ],
+      "Sens isolé/Homme": [
+        {
+          "do": 33,
+          "s": "homme sans lignée connue"
+        }
+      ],
+      "Végétation/Plante": [
+        {
+          "do": 34,
+          "s": "herbe fraîche"
+        }
+      ],
+      "Parenté/Famille": [
+        {
+          "do": 35,
+          "s": "enfant mort en bas âge au paradis"
+        }
+      ]
+    }
+  },
+  {
+    "n": 250,
+    "wk": "wqy",
+    "id": 277,
+    "etym": "Protection/Préservation",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Bouclier\" (1 sens)",
+      "singleton [Sens isolé/Bouclier] : \"bouclier\""
+    ],
+    "concepts": {
+      "Protection/Préservation": [
+        {
+          "do": 1,
+          "s": "protéger"
+        },
+        {
+          "do": 2,
+          "s": "préserver"
+        },
+        {
+          "do": 3,
+          "s": "craindre"
+        },
+        {
+          "do": 4,
+          "s": "piété"
+        },
+        {
+          "do": 5,
+          "s": "se prémunir"
+        },
+        {
+          "do": 6,
+          "s": "éviter"
+        },
+        {
+          "do": 15,
+          "s": "avoir conscience de"
+        }
+      ],
+      "Sens isolé/Bouclier": [
+        {
+          "do": 7,
+          "s": "bouclier"
+        }
+      ]
+    }
+  },
+  {
+    "n": 253,
+    "wk": "wsy",
+    "id": 813,
+    "etym": "Liaison/Connexion",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=5)"
+    ],
+    "concepts": {
+      "Recommandation/Injonction": [
+        {
+          "do": 1,
+          "s": "recommander"
+        },
+        {
+          "do": 2,
+          "s": "enjoindre"
+        },
+        {
+          "do": 3,
+          "s": "faire un testament"
+        },
+        {
+          "do": 4,
+          "s": "charger quelqu'un d'une mission"
+        }
+      ],
+      "Liaison/Connexion": [
+        {
+          "do": 5,
+          "s": "lier ensemble"
+        },
+        {
+          "do": 6,
+          "s": "terre fertile continue"
+        }
+      ]
+    }
+  },
+  {
+    "n": 256,
+    "wk": "xlf",
+    "id": 436,
+    "etym": "Succession/Remplacement",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Position/Arrière": [
+        {
+          "do": 1,
+          "s": "être derrière"
+        },
+        {
+          "do": 2,
+          "s": "laisser derrière"
+        }
+      ],
+      "Succession/Remplacement": [
+        {
+          "do": 3,
+          "s": "succéder"
+        },
+        {
+          "do": 4,
+          "s": "remplacer"
+        },
+        {
+          "do": 5,
+          "s": "successeur"
+        },
+        {
+          "do": 6,
+          "s": "califat"
+        }
+      ],
+      "Différence/Opposition": [
+        {
+          "do": 7,
+          "s": "différer"
+        },
+        {
+          "do": 8,
+          "s": "contredire"
+        },
+        {
+          "do": 9,
+          "s": "manquer à sa promesse"
+        }
+      ]
+    }
+  },
+  {
+    "n": 259,
+    "wk": "xwl",
+    "id": 1793,
+    "etym": "Parenté maternelle",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=999)"
+    ],
+    "concepts": {
+      "Don/Service": [
+        {
+          "do": 1,
+          "s": "accorder"
+        },
+        {
+          "do": 2,
+          "s": "gratifier"
+        },
+        {
+          "do": 3,
+          "s": "serviteur"
+        }
+      ],
+      "Gestion/Pastorat": [
+        {
+          "do": null,
+          "s": "pastorer"
+        },
+        {
+          "do": null,
+          "s": "gérer"
+        }
+      ],
+      "Parenté maternelle": [
+        {
+          "do": null,
+          "s": "tante maternelle"
+        },
+        {
+          "do": null,
+          "s": "oncle maternel"
+        },
+        {
+          "do": null,
+          "s": "lien maternel"
+        }
+      ]
+    }
+  },
+  {
+    "n": 261,
+    "wk": "ymm",
+    "id": 1161,
+    "etym": "Direction/Orientation",
+    "flags": [
+      "singleton [Purification] : \"ablution sèche (tayammum)\""
+    ],
+    "concepts": {
+      "Direction/Orientation": [
+        {
+          "do": 1,
+          "s": "se diriger vers"
+        },
+        {
+          "do": 2,
+          "s": "viser"
+        },
+        {
+          "do": 5,
+          "s": "viser (yamma)"
+        },
+        {
+          "do": 6,
+          "s": "se tourner vers (tayammama)"
+        }
+      ],
+      "Purification": [
+        {
+          "do": 3,
+          "s": "ablution sèche (tayammum)"
+        }
+      ],
+      "Mer/Océan": [
+        {
+          "do": 7,
+          "s": "mer (yamm)"
+        },
+        {
+          "do": 8,
+          "s": "grande étendue d'eau"
+        }
+      ]
+    }
+  },
+  {
+    "n": 262,
+    "wk": "ymn",
+    "id": 1028,
+    "etym": "Droite/Serment",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Yémen\" (1 sens)",
+      "singleton [Sens isolé/Yémen] : \"Yémen\""
+    ],
+    "concepts": {
+      "Droite/Serment": [
+        {
+          "do": 1,
+          "s": "droite"
+        },
+        {
+          "do": 2,
+          "s": "serment"
+        },
+        {
+          "do": 3,
+          "s": "main droite"
+        }
+      ],
+      "Bénédiction/Prospérité": [
+        {
+          "do": 4,
+          "s": "être béni"
+        },
+        {
+          "do": 5,
+          "s": "prospérité"
+        }
+      ],
+      "Sens isolé/Yémen": [
+        {
+          "do": 6,
+          "s": "Yémen"
+        }
+      ]
+    }
+  },
+  {
+    "n": 263,
+    "wk": "ysr",
+    "id": 968,
+    "etym": "Facilité/Aisance",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Côté\" (1 sens)",
+      "singleton [Sens isolé/Côté] : \"côté gauche\""
+    ],
+    "concepts": {
+      "Facilité/Aisance": [
+        {
+          "do": 1,
+          "s": "être facile"
+        },
+        {
+          "do": 2,
+          "s": "faciliter"
+        },
+        {
+          "do": 3,
+          "s": "aisance"
+        },
+        {
+          "do": 4,
+          "s": "richesse"
+        }
+      ],
+      "Sens isolé/Côté": [
+        {
+          "do": 5,
+          "s": "côté gauche"
+        }
+      ]
+    }
+  },
+  {
+    "n": 265,
+    "wk": "ywm",
+    "id": 257,
+    "etym": "Temps/Période",
+    "flags": [
+      "concept fourre-tout \"Sens isolé/Étape\" (1 sens)",
+      "singleton [Sens isolé/Étape] : \"étape\""
+    ],
+    "concepts": {
+      "Temps/Période": [
+        {
+          "do": 1,
+          "s": "jour"
+        },
+        {
+          "do": 2,
+          "s": "journée"
+        },
+        {
+          "do": 3,
+          "s": "temps"
+        },
+        {
+          "do": 4,
+          "s": "période"
+        },
+        {
+          "do": 10,
+          "s": "distance d'un jour de marche"
+        }
+      ],
+      "Événement/Moment marquant": [
+        {
+          "do": 5,
+          "s": "événement"
+        },
+        {
+          "do": 6,
+          "s": "bataille"
+        },
+        {
+          "do": 7,
+          "s": "jour de combat"
+        },
+        {
+          "do": 8,
+          "s": "jour marquant"
+        }
+      ],
+      "Sens isolé/Étape": [
+        {
+          "do": 9,
+          "s": "étape"
+        }
+      ]
+    }
+  },
+  {
+    "n": 266,
+    "wk": "zlm",
+    "id": 354,
+    "etym": "Injustice/Oppression",
+    "flags": [
+      "singleton [Souffle/Vent] : \"se faire du tort\""
+    ],
+    "concepts": {
+      "Injustice/Oppression": [
+        {
+          "do": 1,
+          "s": "opprimer"
+        },
+        {
+          "do": 2,
+          "s": "être injuste"
+        },
+        {
+          "do": 3,
+          "s": "injustice"
+        },
+        {
+          "do": 4,
+          "s": "oppresseur"
+        }
+      ],
+      "Obscurité/Ténèbres": [
+        {
+          "do": 5,
+          "s": "obscurité"
+        },
+        {
+          "do": 6,
+          "s": "ténèbres"
+        }
+      ],
+      "Souffle/Vent": [
+        {
+          "do": 7,
+          "s": "se faire du tort"
+        }
+      ]
+    }
+  },
+  {
+    "n": 267,
+    "wk": "zwj",
+    "id": 401,
+    "etym": "Paire/Membre du couple",
+    "flags": [
+      "etym✦ n'a aucun sens à do=1 (min do=3)"
+    ],
+    "concepts": {
+      "Coupler/Marier": [
+        {
+          "do": 1,
+          "s": "coupler"
+        },
+        {
+          "do": 2,
+          "s": "marier"
+        }
+      ],
+      "Paire/Membre du couple": [
+        {
+          "do": 3,
+          "s": "époux"
+        },
+        {
+          "do": 4,
+          "s": "paire"
+        },
+        {
+          "do": 6,
+          "s": "mari"
+        },
+        {
+          "do": 7,
+          "s": "épouse"
+        },
+        {
+          "do": 8,
+          "s": "conjoint"
+        }
+      ],
+      "Espèce/Sorte": [
+        {
+          "do": 5,
+          "s": "espèce"
+        },
+        {
+          "do": 20,
+          "s": "sorte"
+        }
+      ]
+    }
+  }
+]

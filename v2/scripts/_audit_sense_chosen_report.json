@@ -1,0 +1,5487 @@
+{
+  "inventedSense": [],
+  "frMismatch": [
+    {
+      "s": 3,
+      "v": 5,
+      "pos": 6,
+      "wk": "shy",
+      "fr": "rien",
+      "sense_chosen": "chose",
+      "bdd_matching": [
+        "être",
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 147,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "n'a été",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 40,
+      "pos": 12,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 52,
+      "pos": 11,
+      "wk": "qwl",
+      "fr": "ont dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 44,
+      "pos": 8,
+      "wk": "kwn",
+      "fr": "tu étais",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "motif raison",
+        "être",
+        "état condition"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 69,
+      "pos": 11,
+      "wk": "nfs",
+      "fr": "eux-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 34,
+      "pos": 7,
+      "wk": "elm",
+      "fr": "sait tout",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 41,
+      "pos": 6,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 45,
+      "pos": 15,
+      "wk": "wjh",
+      "fr": "éminent",
+      "sense_chosen": "noble",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 19,
+      "pos": 7,
+      "wk": "xlf",
+      "fr": "se sont divisés",
+      "sense_chosen": "différer",
+      "bdd_matching": [
+        "contredire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 21,
+      "wk": "ḏrr",
+      "fr": "et sa descendance",
+      "sense_chosen": "progéniture",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 98,
+      "pos": 12,
+      "wk": "eml",
+      "fr": "vous faites ?",
+      "sense_chosen": "agir",
+      "bdd_matching": [
+        "faire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 105,
+      "pos": 5,
+      "wk": "khlf",
+      "fr": "et se sont mis en désaccord",
+      "sense_chosen": "diverger",
+      "bdd_matching": [
+        "être en désaccord",
+        "contrevenir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 46,
+      "pos": 5,
+      "wk": "kahl",
+      "fr": "et adulte",
+      "sense_chosen": "être d'âge mûr",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 25,
+      "pos": 15,
+      "wk": "zlm",
+      "fr": "seront lésés",
+      "sense_chosen": "opprimer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 46,
+      "pos": 1,
+      "wk": "klm",
+      "fr": "et il s'adressera",
+      "sense_chosen": "parler",
+      "bdd_matching": [
+        "s'adresser à",
+        "expression",
+        "blesser",
+        "blessure"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "elle dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 20,
+      "wk": "qwl",
+      "fr": "alors Il dit seulement",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 139,
+      "pos": 6,
+      "wk": "elw",
+      "fr": "les plus élevés",
+      "sense_chosen": "être haut",
+      "bdd_matching": [
+        "élever",
+        "s'élever"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 49,
+      "pos": 51,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 38,
+      "pos": 11,
+      "wk": "ḏrr",
+      "fr": "une descendance",
+      "sense_chosen": "progéniture",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 38,
+      "pos": 10,
+      "wk": "ldn",
+      "fr": "chez Toi",
+      "sense_chosen": "auprès de",
+      "bdd_matching": [
+        "chez"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 52,
+      "pos": 6,
+      "wk": "qwl",
+      "fr": "il a dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 52,
+      "pos": 18,
+      "wk": "shd",
+      "fr": "et atteste",
+      "sense_chosen": "témoigner",
+      "bdd_matching": [
+        "attester",
+        "assister"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 83,
+      "pos": 11,
+      "wk": "twe",
+      "fr": "— de gré",
+      "sense_chosen": "consentir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 8,
+      "wk": "mss",
+      "fr": "ne m'a touchée",
+      "sense_chosen": "avoir des rapports intimes (euphémisme)",
+      "bdd_matching": [
+        "toucher"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 7,
+      "pos": 35,
+      "wk": "qwl",
+      "fr": "disent",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 26,
+      "pos": 13,
+      "wk": "shy",
+      "fr": "Tu veux",
+      "sense_chosen": "vouloir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 45,
+      "pos": 11,
+      "wk": "msh",
+      "fr": "le Messie",
+      "sense_chosen": "oindre",
+      "bdd_matching": [
+        "Messie (masih)",
+        "essuyer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 3,
+      "wk": "wjh",
+      "fr": "s'éclaireront",
+      "sense_chosen": "visage",
+      "bdd_matching": [
+        "direction"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 50,
+      "pos": 4,
+      "wk": "ydy",
+      "fr": "mes deux mains",
+      "sense_chosen": "devant",
+      "bdd_matching": [
+        "main"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 5,
+      "wk": "wjh",
+      "fr": "s'assombriront.",
+      "sense_chosen": "visage",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 99,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 9,
+      "wk": "wjh",
+      "fr": "se sont assombris :",
+      "sense_chosen": "visage",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 72,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Et dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 84,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 124,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "tu disais",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 26,
+      "pos": 21,
+      "wk": "shy",
+      "fr": "Tu veux",
+      "sense_chosen": "vouloir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 52,
+      "pos": 5,
+      "wk": "kfr",
+      "fr": "le déni",
+      "sense_chosen": "nier",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 73,
+      "pos": 15,
+      "wk": "aty",
+      "fr": "reçoive",
+      "sense_chosen": "donner",
+      "bdd_matching": [
+        "arriver"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 34,
+      "pos": 2,
+      "wk": "bed",
+      "fr": "les uns",
+      "sense_chosen": "une partie",
+      "bdd_matching": [
+        "certains"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 124,
+      "pos": 7,
+      "wk": "mdd",
+      "fr": "votre Seigneur",
+      "sense_chosen": "renforcer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 87,
+      "pos": 9,
+      "wk": "jme",
+      "fr": "de l'ensemble des gens.",
+      "sense_chosen": "totalité",
+      "bdd_matching": [
+        "rassembler",
+        "assembler",
+        "rassemblement"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 73,
+      "pos": 35,
+      "wk": "wse",
+      "fr": "est vaste,",
+      "sense_chosen": "être large",
+      "bdd_matching": [
+        "être vaste"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 107,
+      "pos": 3,
+      "wk": "byd",
+      "fr": "les visages",
+      "sense_chosen": "être blanc",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 13,
+      "pos": 7,
+      "wk": "lqy",
+      "fr": "qui se sont rencontrées",
+      "sense_chosen": "se trouver face à face",
+      "bdd_matching": [
+        "conflit",
+        "rencontrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 178,
+      "pos": 9,
+      "wk": "nfs",
+      "fr": "pour eux-mêmes.",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 107,
+      "pos": 4,
+      "wk": "wjh",
+      "fr": "se sont éclaircis,",
+      "sense_chosen": "visage",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 29,
+      "pos": 9,
+      "wk": "elm",
+      "fr": "le sait",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 33,
+      "pos": 3,
+      "wk": "sfw",
+      "fr": "a élu",
+      "sense_chosen": "élire",
+      "bdd_matching": [
+        "élu (safiy)"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 90,
+      "pos": 7,
+      "wk": "zyd",
+      "fr": "ont accru leur",
+      "sense_chosen": "augmenter",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 29,
+      "pos": 11,
+      "wk": "elm",
+      "fr": "et il sait",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 25,
+      "wk": "hkm",
+      "fr": "alors Je trancherai",
+      "sense_chosen": "juger",
+      "bdd_matching": [
+        "empêcher"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 28,
+      "wk": "kwn",
+      "fr": "vous étiez",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 41,
+      "pos": 14,
+      "wk": "rmz",
+      "fr": "gestes",
+      "sense_chosen": "faire signe",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 91,
+      "pos": 10,
+      "wk": "ahd",
+      "fr": "l'un d'entre eux",
+      "sense_chosen": "quiconque",
+      "bdd_matching": [
+        "un des plusieurs",
+        "un par un"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 30,
+      "pos": 21,
+      "wk": "hḏr",
+      "fr": "et vous met en garde",
+      "sense_chosen": "avertir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 30,
+      "wk": "xlf",
+      "fr": "divergiez",
+      "sense_chosen": "différer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 91,
+      "pos": 4,
+      "wk": "mwt",
+      "fr": "et sont morts",
+      "sense_chosen": "mourir",
+      "bdd_matching": [
+        "mortel",
+        "terre morte",
+        "mort"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 139,
+      "pos": 8,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 6,
+      "wk": "wde",
+      "fr": "je l'ai mise au monde",
+      "sense_chosen": "accoucher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "ont dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 13,
+      "pos": 17,
+      "wk": "raay",
+      "fr": "directement",
+      "sense_chosen": "voir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 75,
+      "pos": 25,
+      "wk": "qwl",
+      "fr": "ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 8,
+      "pos": 4,
+      "wk": "qlb",
+      "fr": "nos cœurs",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 21,
+      "wk": "qwm",
+      "fr": "du redressement",
+      "sense_chosen": "se lever",
+      "bdd_matching": [
+        "redresser",
+        "se dresser",
+        "prendre en charge"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 75,
+      "pos": 31,
+      "wk": "qwl",
+      "fr": "Et ils profèrent",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 8,
+      "wk": "qtl",
+      "fr": "auraient pas été tués. »",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 103,
+      "pos": 4,
+      "wk": "jme",
+      "fr": "tous ensemble,",
+      "sense_chosen": "totalité",
+      "bdd_matching": [
+        "rassembler",
+        "assembler",
+        "rassemblement"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 32,
+      "pos": 4,
+      "wk": "fdl",
+      "fr": "a favorisé",
+      "sense_chosen": "être supérieur",
+      "bdd_matching": [
+        "faveur"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 10,
+      "pos": 7,
+      "wk": "mwl",
+      "fr": "leurs richesses",
+      "sense_chosen": "biens",
+      "bdd_matching": [
+        "possession",
+        "abonder en richesse",
+        "être riche",
+        "richesse"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 9,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 35,
+      "pos": 18,
+      "wk": "elm",
+      "fr": "qui sait tout",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 10,
+      "pos": 12,
+      "wk": "šya",
+      "fr": "en rien",
+      "sense_chosen": "quelque chose",
+      "bdd_matching": [
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 12,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 2,
+      "wk": "wde",
+      "fr": "elle l'a mise au monde",
+      "sense_chosen": "accoucher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 37,
+      "pos": 5,
+      "wk": "nbt",
+      "fr": "et la fit grandir",
+      "sense_chosen": "élever",
+      "bdd_matching": [
+        "faire grandir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 77,
+      "pos": 13,
+      "wk": "xlq",
+      "fr": "part",
+      "sense_chosen": "portion",
+      "bdd_matching": [
+        "part",
+        "part méritée"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 9,
+      "wk": "elm",
+      "fr": "sait le mieux",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 40,
+      "pos": 4,
+      "wk": "knw",
+      "fr": "aurais",
+      "sense_chosen": "advenir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 40,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 26,
+      "pos": 17,
+      "wk": "shy",
+      "fr": "Tu veux",
+      "sense_chosen": "vouloir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 59,
+      "pos": 15,
+      "wk": "kwn",
+      "fr": "Sois",
+      "sense_chosen": "venir à l'existence",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 22,
+      "wk": "kwn",
+      "fr": "Sois !",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 77,
+      "pos": 10,
+      "wk": "qll",
+      "fr": "infime —",
+      "sense_chosen": "être peu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 23,
+      "wk": "kwn",
+      "fr": "et elle est",
+      "sense_chosen": "venir à l'existence",
+      "bdd_matching": [
+        "reste à ta place",
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 41,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 93,
+      "pos": 12,
+      "wk": "nfs",
+      "fr": "lui-même",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 124,
+      "pos": 8,
+      "wk": "rbb",
+      "fr": "vous renforce",
+      "sense_chosen": "seigneur",
+      "bdd_matching": [
+        "former",
+        "élever un enfant"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 59,
+      "pos": 13,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 77,
+      "pos": 23,
+      "wk": "qwm",
+      "fr": "la résurrection,",
+      "sense_chosen": "se lever",
+      "bdd_matching": [
+        "estimation",
+        "résurrection",
+        "station",
+        "nation",
+        "rectitude",
+        "nourriture",
+        "résidence"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 78,
+      "pos": 12,
+      "wk": "hsb",
+      "fr": "vous faire croire que cela",
+      "sense_chosen": "penser",
+      "bdd_matching": [
+        "suffire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 59,
+      "pos": 16,
+      "wk": "kwn",
+      "fr": "et il est",
+      "sense_chosen": "venir à l'existence",
+      "bdd_matching": [
+        "reste à ta place",
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 93,
+      "pos": 18,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 93,
+      "pos": 24,
+      "wk": "sdq",
+      "fr": "véridiques. »",
+      "sense_chosen": "sincère",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 60,
+      "pos": 5,
+      "wk": "kwn",
+      "fr": "sois pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 78,
+      "pos": 21,
+      "wk": "qwl",
+      "fr": "ils disent :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 7,
+      "pos": 28,
+      "wk": "elm",
+      "fr": "connaît",
+      "sense_chosen": "savoir",
+      "bdd_matching": [
+        "connaître"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 35,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 19,
+      "pos": 3,
+      "wk": "amn",
+      "fr": "avez cru",
+      "sense_chosen": "croire",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 78,
+      "pos": 33,
+      "wk": "qwl",
+      "fr": "ils profèrent",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 102,
+      "pos": 6,
+      "wk": "hqq",
+      "fr": "comme il convient",
+      "sense_chosen": "droit",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 10,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 61,
+      "pos": 11,
+      "wk": "qwl",
+      "fr": "alors dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 79,
+      "pos": 11,
+      "wk": "qwl",
+      "fr": "qu'il dise",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 9,
+      "pos": 7,
+      "wk": "ryb",
+      "fr": "aucun doute",
+      "sense_chosen": "inquiétude",
+      "bdd_matching": [
+        "douter"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 11,
+      "pos": 6,
+      "wk": "qbl",
+      "fr": "eux",
+      "sense_chosen": "avant",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 79,
+      "pos": 21,
+      "wk": "rbb",
+      "fr": "des hommes voués au Seigneur,",
+      "sense_chosen": "celui qui élève",
+      "bdd_matching": [
+        "seigneur",
+        "accompagner la croissance",
+        "homme du Seigneur (ribbiyy)"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 31,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 13,
+      "pos": 18,
+      "wk": "eyn",
+      "fr": "de leurs yeux",
+      "sense_chosen": "œil",
+      "bdd_matching": [
+        "voir de ses propres yeux"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 61,
+      "pos": 19,
+      "wk": "nfs",
+      "fr": "et vous-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 95,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 61,
+      "pos": 12,
+      "wk": "elw",
+      "fr": "Venez",
+      "sense_chosen": "être haut",
+      "bdd_matching": [
+        "venir (taʿālaw)"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 61,
+      "pos": 18,
+      "wk": "nfs",
+      "fr": "et nous-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 13,
+      "pos": 15,
+      "wk": "raay",
+      "fr": "ils les voyaient",
+      "sense_chosen": "voir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 103,
+      "pos": 7,
+      "wk": "dhkr",
+      "fr": "Et rappelez-vous",
+      "sense_chosen": "se souvenir",
+      "bdd_matching": [
+        "rappel",
+        "rappeler à autrui",
+        "se rappeler"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 44,
+      "pos": 17,
+      "wk": "kwn",
+      "fr": "tu étais",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "motif raison",
+        "être",
+        "état condition"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 45,
+      "pos": 6,
+      "wk": "alh",
+      "fr": "Dieu",
+      "sense_chosen": "divinité",
+      "bdd_matching": [
+        "Dieu"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 2,
+      "wk": "axdh",
+      "fr": "prit",
+      "sense_chosen": "prendre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 4,
+      "wk": "wthq",
+      "fr": "l'engagement des",
+      "sense_chosen": "pacte",
+      "bdd_matching": [
+        "lier solidement",
+        "engagement"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 14,
+      "pos": 9,
+      "wk": "qntṛ",
+      "fr": "thésaurisés",
+      "sense_chosen": "grande quantité",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 14,
+      "pos": 15,
+      "wk": "nem",
+      "fr": "et les bestiaux",
+      "sense_chosen": "bétail",
+      "bdd_matching": [
+        "oui",
+        "chameaux"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 22,
+      "wk": "axdh",
+      "fr": "et avez-vous pris",
+      "sense_chosen": "prendre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 28,
+      "wk": "qwl",
+      "fr": "Il dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 20,
+      "wk": "qwl",
+      "fr": "Il dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 21,
+      "wk": "qrr",
+      "fr": "« Avez-vous reconnu",
+      "sense_chosen": "avouer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 14,
+      "pos": 3,
+      "wk": "hbb",
+      "fr": "l'amour",
+      "sense_chosen": "aimer",
+      "bdd_matching": [
+        "amour"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 27,
+      "wk": "qrr",
+      "fr": "« Nous avons reconnu. »",
+      "sense_chosen": "avouer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 15,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 14,
+      "pos": 14,
+      "wk": "swm",
+      "fr": "marqués",
+      "sense_chosen": "signe distinctif",
+      "bdd_matching": [
+        "marchander",
+        "marquer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 16,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "disent",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 17,
+      "wk": "shya",
+      "fr": "rien",
+      "sense_chosen": "chose",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 38,
+      "pos": 5,
+      "wk": "qwl",
+      "fr": "il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 28,
+      "wk": "qwl",
+      "fr": "dites",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 2,
+      "wk": "byd",
+      "fr": "où des visages",
+      "sense_chosen": "être blanc",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 4,
+      "wk": "elw",
+      "fr": "venez",
+      "sense_chosen": "être haut",
+      "bdd_matching": [
+        "venir (taʿālaw)"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 28,
+      "pos": 24,
+      "wk": "nfs",
+      "fr": "contre Lui-même",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 148,
+      "pos": 10,
+      "wk": "hsn",
+      "fr": "ceux qui font le bien.",
+      "sense_chosen": "bien faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 159,
+      "pos": 9,
+      "wk": "fzz",
+      "fr": "rude,",
+      "sense_chosen": "être dur",
+      "bdd_matching": [
+        "être rude",
+        "rudoyer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 20,
+      "pos": 3,
+      "wk": "qwl",
+      "fr": "dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 83,
+      "pos": 12,
+      "wk": "krh",
+      "fr": "et de force —",
+      "sense_chosen": "contraindre",
+      "bdd_matching": [
+        "forcer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 97,
+      "pos": 16,
+      "wk": "twa",
+      "fr": "a les moyens",
+      "sense_chosen": "pouvoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 12,
+      "pos": 9,
+      "wk": "mhd",
+      "fr": "que ce lit",
+      "sense_chosen": "couche",
+      "bdd_matching": [
+        "lit"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 20,
+      "pos": 9,
+      "wk": "qwl",
+      "fr": "et dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 28,
+      "pos": 7,
+      "wk": "dwn",
+      "fr": "l'exclusion",
+      "sense_chosen": "en dessous",
+      "bdd_matching": [
+        "à l'exclusion de"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 66,
+      "pos": 16,
+      "wk": "elm",
+      "fr": "sait",
+      "sense_chosen": "savoir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 24,
+      "pos": 3,
+      "wk": "qwl",
+      "fr": "ont dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 30,
+      "pos": 23,
+      "wk": "nfs",
+      "fr": "contre Lui-même",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 26,
+      "pos": 8,
+      "wk": "shy",
+      "fr": "Tu veux",
+      "sense_chosen": "vouloir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 113,
+      "pos": 7,
+      "wk": "qwm",
+      "fr": "droite",
+      "sense_chosen": "se tenir debout",
+      "bdd_matching": [
+        "droit"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 29,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 149,
+      "pos": 11,
+      "wk": "qlb",
+      "fr": "et vous reviendrez",
+      "sense_chosen": "retourner",
+      "bdd_matching": [
+        "revenir",
+        "va-et-vient"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 18,
+      "pos": 11,
+      "wk": "qwm",
+      "fr": "qui se tient ferme",
+      "sense_chosen": "se tenir debout",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 32,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 13,
+      "pos": 16,
+      "wk": "mvl",
+      "fr": "deux fois leur nombre",
+      "sense_chosen": "pareil",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 28,
+      "pos": 22,
+      "wk": "hḏr",
+      "fr": "et vous met en garde",
+      "sense_chosen": "avertir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 11,
+      "wk": "wde",
+      "fr": "elle a mis au monde",
+      "sense_chosen": "accoucher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 3,
+      "wk": "qwl",
+      "fr": "elle dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 34,
+      "pos": 1,
+      "wk": "ḏrr",
+      "fr": "Une descendance",
+      "sense_chosen": "progéniture",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 37,
+      "pos": 18,
+      "wk": "qwl",
+      "fr": "Il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 37,
+      "pos": 23,
+      "wk": "qwl",
+      "fr": "Elle dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 35,
+      "pos": 7,
+      "wk": "ndh r",
+      "fr": "j'ai voué",
+      "sense_chosen": "voeu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 7,
+      "pos": 25,
+      "wk": "bghy",
+      "fr": "et en quête",
+      "sense_chosen": "chercher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 27,
+      "pos": 23,
+      "wk": "shy",
+      "fr": "Tu veux",
+      "sense_chosen": "vouloir",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 7,
+      "pos": 23,
+      "wk": "bghy",
+      "fr": "en quête",
+      "sense_chosen": "chercher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 97,
+      "pos": 18,
+      "wk": "sbl",
+      "fr": "aller.",
+      "sense_chosen": "moyen",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 98,
+      "pos": 1,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 103,
+      "pos": 16,
+      "wk": "qlb",
+      "fr": "vos cœurs",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 103,
+      "pos": 30,
+      "wk": "alh",
+      "fr": "vous montre",
+      "sense_chosen": "Dieu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 103,
+      "pos": 29,
+      "wk": "byn",
+      "fr": "Dieu",
+      "sense_chosen": "expliquer",
+      "bdd_matching": [
+        "entre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 4,
+      "wk": "qwl",
+      "fr": "Et il leur a été dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 115,
+      "pos": 2,
+      "wk": "fel",
+      "fr": "fassent",
+      "sense_chosen": "faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 6,
+      "wk": "swb",
+      "fr": "un mal",
+      "sense_chosen": "atteindre",
+      "bdd_matching": [
+        "malheur"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 7,
+      "wk": "swa",
+      "fr": "vous atteint,",
+      "sense_chosen": "mal",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 15,
+      "wk": "kyd",
+      "fr": "ne vous nuira",
+      "sense_chosen": "stratagème",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 105,
+      "pos": 9,
+      "wk": "jya",
+      "fr": "leur sont",
+      "sense_chosen": "venir",
+      "bdd_matching": [
+        "contraindre à se rendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 105,
+      "pos": 10,
+      "wk": "byn",
+      "fr": "venues.",
+      "sense_chosen": "preuve",
+      "bdd_matching": [
+        "entre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 4,
+      "wk": "swd",
+      "fr": "et d'autres visages",
+      "sense_chosen": "être noir",
+      "bdd_matching": [
+        "chagrin visible",
+        "chagrin visible"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 106,
+      "pos": 8,
+      "wk": "swd",
+      "fr": "les visages",
+      "sense_chosen": "être noir",
+      "bdd_matching": [
+        "chagrin visible",
+        "chagrin visible"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 151,
+      "pos": 3,
+      "wk": "qlb",
+      "fr": "les cœurs",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 110,
+      "pos": 15,
+      "wk": "ahl",
+      "fr": "du Livre",
+      "sense_chosen": "gens de",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 152,
+      "pos": 2,
+      "wk": "sdq",
+      "fr": "a tenu",
+      "sense_chosen": "dire vrai",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 110,
+      "pos": 16,
+      "wk": "ktb",
+      "fr": "avaient accordé confiance,",
+      "sense_chosen": "livre",
+      "bdd_matching": [
+        "savant",
+        "contrat d'affranchissement",
+        "contrat de mariage",
+        "contrat écrit",
+        "flèche d'entraînement",
+        "rétention urinaire",
+        "constipation",
+        "gonflé et plein"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 110,
+      "pos": 14,
+      "wk": "amn",
+      "fr": "les gens",
+      "sense_chosen": "accorder confiance",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 152,
+      "pos": 6,
+      "wk": "hss",
+      "fr": "vous les tuiez",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 112,
+      "pos": 20,
+      "wk": "skn",
+      "fr": "de misère.",
+      "sense_chosen": "pauvre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 152,
+      "pos": 27,
+      "wk": "rwd",
+      "fr": "veulent",
+      "sense_chosen": "désirer",
+      "bdd_matching": [
+        "va-et-vient",
+        "agir doucement"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 116,
+      "pos": 7,
+      "wk": "mwl",
+      "fr": "leurs enfants",
+      "sense_chosen": "biens",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 152,
+      "pos": 18,
+      "wk": "raay",
+      "fr": "Il vous a montré",
+      "sense_chosen": "voir",
+      "bdd_matching": [
+        "montrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 125,
+      "pos": 7,
+      "wk": "aty",
+      "fr": "qu'ils viennent à vous",
+      "sense_chosen": "venir",
+      "bdd_matching": [
+        "donner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 164,
+      "pos": 11,
+      "wk": "nfs",
+      "fr": "eux-mêmes,",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 125,
+      "pos": 9,
+      "wk": "fwr",
+      "fr": "leur élan",
+      "sense_chosen": "à l'instant même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 115,
+      "pos": 6,
+      "wk": "kfr",
+      "fr": "nié.",
+      "sense_chosen": "nier",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 116,
+      "pos": 5,
+      "wk": "gny",
+      "fr": "leurs biens",
+      "sense_chosen": "se passer de",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 116,
+      "pos": 9,
+      "wk": "wld",
+      "fr": "leur servir",
+      "sense_chosen": "enfant",
+      "bdd_matching": [
+        "garçon serviteur"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 116,
+      "pos": 12,
+      "wk": "šya",
+      "fr": "en rien.",
+      "sense_chosen": "quelque chose",
+      "bdd_matching": [
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 125,
+      "pos": 11,
+      "wk": "mdd",
+      "fr": "votre Seigneur",
+      "sense_chosen": "renforcer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 15,
+      "wk": "zlm",
+      "fr": "qui s'est fait tort",
+      "sense_chosen": "être injuste",
+      "bdd_matching": [
+        "se faire du tort"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 22,
+      "wk": "nfs",
+      "fr": "c'est à eux-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 11,
+      "wk": "xbl",
+      "fr": "causer du tort,",
+      "sense_chosen": "perte",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 16,
+      "wk": "nfs",
+      "fr": "à lui-même,",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 23,
+      "wk": "zlm",
+      "fr": "qu'ils font tort. »",
+      "sense_chosen": "être injuste",
+      "bdd_matching": [
+        "se faire du tort"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 6,
+      "wk": "btn",
+      "fr": "de confidents",
+      "sense_chosen": "doublure",
+      "bdd_matching": [
+        "ventre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 19,
+      "wk": "zlm",
+      "fr": "Dieu",
+      "sense_chosen": "être injuste",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 16,
+      "wk": "bdw",
+      "fr": "la haine",
+      "sense_chosen": "apparaître",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 165,
+      "pos": 5,
+      "wk": "swb",
+      "fr": "vous en aviez infligé",
+      "sense_chosen": "atteindre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 117,
+      "pos": 20,
+      "wk": "alh",
+      "fr": "ne leur a pas fait tort,",
+      "sense_chosen": "Dieu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 17,
+      "wk": "bghd",
+      "fr": "est apparue",
+      "sense_chosen": "haine",
+      "bdd_matching": [
+        "détester"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 21,
+      "wk": "xfy",
+      "fr": "leurs poitrines",
+      "sense_chosen": "cacher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 119,
+      "pos": 14,
+      "wk": "khlw",
+      "fr": "ils se retrouvent seuls,",
+      "sense_chosen": "être vide",
+      "bdd_matching": [
+        "retraite"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 119,
+      "pos": 11,
+      "wk": "qwl",
+      "fr": "ils disent :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 119,
+      "pos": 20,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 125,
+      "pos": 12,
+      "wk": "rbb",
+      "fr": "vous renforcera",
+      "sense_chosen": "seigneur",
+      "bdd_matching": [
+        "former",
+        "élever un enfant"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 126,
+      "pos": 11,
+      "wk": "qlb",
+      "fr": "s'apaisent",
+      "sense_chosen": "coeur",
+      "bdd_matching": [
+        "va-et-vient",
+        "déplacements"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 126,
+      "pos": 15,
+      "wk": "nsr",
+      "fr": "ne vient",
+      "sense_chosen": "victoire",
+      "bdd_matching": [
+        "chrétien",
+        "rendre chrétien",
+        "la religion chrétienne"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 153,
+      "pos": 25,
+      "wk": "eml",
+      "fr": "vous faites.",
+      "sense_chosen": "agir",
+      "bdd_matching": [
+        "faire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 126,
+      "pos": 10,
+      "wk": "tmn",
+      "fr": "vos cœurs",
+      "sense_chosen": "s'apaiser",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 153,
+      "pos": 11,
+      "wk": "thwb",
+      "fr": "Alors Il vous a infligé",
+      "sense_chosen": "récompense",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 16,
+      "wk": "sdq",
+      "fr": "véridiques. »",
+      "sense_chosen": "sincère",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 173,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 9,
+      "wk": "ghw",
+      "fr": "qui enveloppait",
+      "sense_chosen": "couvrir",
+      "bdd_matching": [
+        "envahir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 14,
+      "wk": "hmm",
+      "fr": "les préoccupaient",
+      "sense_chosen": "souci",
+      "bdd_matching": [
+        "avoir l'intention"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 15,
+      "wk": "nfs",
+      "fr": "les âmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": [
+        "âme"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 121,
+      "pos": 5,
+      "wk": "bwa",
+      "fr": "installant",
+      "sense_chosen": "établir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 22,
+      "wk": "qwl",
+      "fr": "Ils disaient :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 121,
+      "pos": 7,
+      "wk": "qed",
+      "fr": "à des postes",
+      "sense_chosen": "s'asseoir",
+      "bdd_matching": [
+        "rester",
+        "s'abstenir",
+        "rester en arrière"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 36,
+      "wk": "nfs",
+      "fr": "eux-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 41,
+      "wk": "qwl",
+      "fr": "Ils disent :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 173,
+      "pos": 13,
+      "wk": "qwl",
+      "fr": "et ils ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 18,
+      "pos": 17,
+      "wk": "mwt",
+      "fr": "meurent",
+      "sense_chosen": "mourir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 29,
+      "wk": "qwl",
+      "fr": "» Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 39,
+      "wk": "bdw",
+      "fr": "te dévoilent pas",
+      "sense_chosen": "montrer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 49,
+      "wk": "qtl",
+      "fr": "n'aurions pas été tués",
+      "sense_chosen": "tuer",
+      "bdd_matching": [
+        "imprécation"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 60,
+      "wk": "qtl",
+      "fr": "la mise à mort",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 51,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 62,
+      "wk": "dje",
+      "fr": "leurs lieux de repos —",
+      "sense_chosen": "se coucher",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 137,
+      "pos": 11,
+      "wk": "kwn",
+      "fr": "fut",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 122,
+      "pos": 2,
+      "wk": "hmm",
+      "fr": "deux groupes",
+      "sense_chosen": "avoir l'intention",
+      "bdd_matching": [
+        "vieux décrépit"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 122,
+      "pos": 3,
+      "wk": "twf",
+      "fr": "parmi vous",
+      "sense_chosen": "groupe",
+      "bdd_matching": [
+        "partie distincte"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 137,
+      "pos": 12,
+      "wk": "eqb",
+      "fr": "la fin",
+      "sense_chosen": "conséquence",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 135,
+      "pos": 4,
+      "wk": "fel",
+      "fr": "ils commettent",
+      "sense_chosen": "faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 56,
+      "wk": "brz",
+      "fr": "seraient sortis",
+      "sense_chosen": "apparaître",
+      "bdd_matching": [
+        "sortir au grand jour",
+        "exposer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 170,
+      "pos": 1,
+      "wk": "frh",
+      "fr": "Heureux",
+      "sense_chosen": "se réjouir",
+      "bdd_matching": [
+        "être heureux"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 71,
+      "wk": "qlb",
+      "fr": "vos cœurs. »",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 135,
+      "pos": 8,
+      "wk": "nfs",
+      "fr": "eux-mêmes,",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 123,
+      "pos": 2,
+      "wk": "nsr",
+      "fr": "Dieu",
+      "sense_chosen": "secourir",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 20,
+      "pos": 13,
+      "wk": "shy",
+      "fr": "rien",
+      "sense_chosen": "quelque chose",
+      "bdd_matching": [
+        "être",
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 161,
+      "pos": 22,
+      "wk": "zlm",
+      "fr": "seront pas lésés.",
+      "sense_chosen": "opprimer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 24,
+      "wk": "qwl",
+      "fr": "Ils disent",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 123,
+      "pos": 3,
+      "wk": "alh",
+      "fr": "vous a secourus",
+      "sense_chosen": "Dieu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 164,
+      "pos": 25,
+      "wk": "byn",
+      "fr": "manifeste.",
+      "sense_chosen": "évident",
+      "bdd_matching": [
+        "entre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 3,
+      "wk": "amn",
+      "fr": "avez cru !",
+      "sense_chosen": "croire",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 14,
+      "wk": "drb",
+      "fr": "avaient parcouru",
+      "sense_chosen": "voyager",
+      "bdd_matching": [
+        "frapper la monnaie",
+        "dresser une tente"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 24,
+      "wk": "mwt",
+      "fr": "seraient pas morts",
+      "sense_chosen": "mourir",
+      "bdd_matching": [
+        "mortel",
+        "terre morte",
+        "mort"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 34,
+      "wk": "qlb",
+      "fr": "leurs cœurs.",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 37,
+      "wk": "hyy",
+      "fr": "fait vivre",
+      "sense_chosen": "donner la vie",
+      "bdd_matching": [
+        "vivre",
+        "vivant"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 10,
+      "wk": "qwl",
+      "fr": "qui ont dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 123,
+      "pos": 10,
+      "wk": "škr",
+      "fr": "rendiez grâce. »",
+      "sense_chosen": "remercier",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 165,
+      "pos": 10,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 143,
+      "pos": 10,
+      "wk": "ray",
+      "fr": "vous l'avez vue",
+      "sense_chosen": "voir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 144,
+      "pos": 8,
+      "wk": "qbl",
+      "fr": "lui",
+      "sense_chosen": "avant",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 162,
+      "pos": 13,
+      "wk": "syr",
+      "fr": "devenir !",
+      "sense_chosen": "destination",
+      "bdd_matching": [
+        "faire devenir",
+        "devenir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 144,
+      "pos": 13,
+      "wk": "qtl",
+      "fr": "était tué",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 159,
+      "pos": 11,
+      "wk": "qlb",
+      "fr": "de cœur,",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 145,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "il n'appartient",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 165,
+      "pos": 7,
+      "wk": "qwl",
+      "fr": "vous avez dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 146,
+      "pos": 9,
+      "wk": "whn",
+      "fr": "fléchi",
+      "sense_chosen": "se décourager",
+      "bdd_matching": [
+        "fléchir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 165,
+      "pos": 14,
+      "wk": "nfs",
+      "fr": "vous-mêmes ».",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 29,
+      "wk": "jel",
+      "fr": "pour que ... fasse",
+      "sense_chosen": "faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 13,
+      "wk": "qwl",
+      "fr": "Ils ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 29,
+      "wk": "qlb",
+      "fr": "leurs cœurs.",
+      "sense_chosen": "coeur",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 31,
+      "wk": "elm",
+      "fr": "connaît mieux",
+      "sense_chosen": "savoir",
+      "bdd_matching": [
+        "connaître"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 12,
+      "wk": "nfs",
+      "fr": "vous-mêmes,",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 11,
+      "pos": 63,
+      "wk": "nfa",
+      "fr": "en utilité",
+      "sense_chosen": "avantage",
+      "bdd_matching": [
+        "être utile",
+        "être utile"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 176,
+      "pos": 4,
+      "wk": "sre",
+      "fr": "s'empressent",
+      "sense_chosen": "être rapide",
+      "bdd_matching": [
+        "les premiers à avancer",
+        "s'empresser"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 176,
+      "pos": 17,
+      "wk": "hzz",
+      "fr": "aucune part",
+      "sense_chosen": "chance",
+      "bdd_matching": [
+        "part",
+        "fortune",
+        "partage"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 190,
+      "pos": 10,
+      "wk": "awl",
+      "fr": "pour les doués",
+      "sense_chosen": "détenteurs",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 176,
+      "pos": 11,
+      "wk": "shy",
+      "fr": "en rien",
+      "sense_chosen": "chose",
+      "bdd_matching": [
+        "être",
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 177,
+      "pos": 9,
+      "wk": "shy",
+      "fr": "en rien",
+      "sense_chosen": "chose",
+      "bdd_matching": [
+        "être",
+        "rien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 145,
+      "pos": 23,
+      "wk": "jzy",
+      "fr": "Et Nous récompenserons",
+      "sense_chosen": "rétribuer",
+      "bdd_matching": [
+        "récompenser"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 144,
+      "pos": 25,
+      "wk": "jzy",
+      "fr": ". Et récompensera",
+      "sense_chosen": "rétribuer",
+      "bdd_matching": [
+        "récompenser"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 152,
+      "pos": 23,
+      "wk": "rwd",
+      "fr": "veulent",
+      "sense_chosen": "désirer",
+      "bdd_matching": [
+        "va-et-vient",
+        "agir doucement"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 22,
+      "wk": "sdr",
+      "fr": "cachent",
+      "sense_chosen": "poitrine",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 14,
+      "wk": "drr",
+      "fr": "stratagème",
+      "sense_chosen": "nuire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 180,
+      "pos": 29,
+      "wk": "eml",
+      "fr": "vous faites",
+      "sense_chosen": "agir",
+      "bdd_matching": [
+        "faire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 181,
+      "pos": 6,
+      "wk": "qwl",
+      "fr": "ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 181,
+      "pos": 14,
+      "wk": "qwl",
+      "fr": "ils ont dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 2,
+      "wk": "qwl",
+      "fr": "ont dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 15,
+      "wk": "qwl",
+      "fr": "Dis :",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 23,
+      "wk": "qwl",
+      "fr": "vous avez dit.",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 27,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 184,
+      "pos": 12,
+      "wk": "nwr",
+      "fr": "illuminant.",
+      "sense_chosen": "éclairer",
+      "bdd_matching": [
+        "lumière",
+        "guider par la lumière"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 187,
+      "pos": 18,
+      "wk": "qll",
+      "fr": "dérisoire.",
+      "sense_chosen": "peu",
+      "bdd_matching": [
+        "minoritaire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 27,
+      "wk": "qtl",
+      "fr": "auraient pas été tués »",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 157,
+      "pos": 3,
+      "wk": "qtl",
+      "fr": "vous êtes tués",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 169,
+      "pos": 4,
+      "wk": "qtl",
+      "fr": "ont été tués",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 158,
+      "pos": 5,
+      "wk": "qtl",
+      "fr": "êtes tués,",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 187,
+      "pos": 2,
+      "wk": "akhdh",
+      "fr": "prit",
+      "sense_chosen": "prendre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 25,
+      "wk": "qtl",
+      "fr": "les avez-vous tués",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 24,
+      "pos": 1,
+      "wk": "HSn",
+      "fr": "et les protégées",
+      "sense_chosen": "être inaccessible",
+      "bdd_matching": [
+        "protéger contre attaque"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 188,
+      "pos": 15,
+      "wk": "fwz",
+      "fr": "en sécurité",
+      "sense_chosen": "salut",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 194,
+      "pos": 14,
+      "wk": "wed",
+      "fr": "à la promesse.",
+      "sense_chosen": "rendez-vous",
+      "bdd_matching": [
+        "promettre",
+        "promesse",
+        "avertissement"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 7,
+      "pos": 17,
+      "wk": "kṯr",
+      "fr": "beaucoup —",
+      "sense_chosen": "être nombreux",
+      "bdd_matching": [
+        "beaucoup"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 176,
+      "pos": 19,
+      "wk": "akhr",
+      "fr": "l'au-delà.",
+      "sense_chosen": "la vie dernière",
+      "bdd_matching": [
+        "au-delà",
+        "autre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 193,
+      "pos": 10,
+      "wk": "amn",
+      "fr": "Alors nous avons cru.",
+      "sense_chosen": "croire",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 26,
+      "wk": "qtl",
+      "fr": "et qui ont été tués —",
+      "sense_chosen": "tuer",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 38,
+      "wk": "end",
+      "fr": "la part",
+      "sense_chosen": "auprès de",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 21,
+      "pos": 5,
+      "wk": "bed",
+      "fr": "les uns d'entre vous",
+      "sense_chosen": "une partie",
+      "bdd_matching": [
+        "certains"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 21,
+      "pos": 8,
+      "wk": "axdh",
+      "fr": "et elles ont pris",
+      "sense_chosen": "prendre",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 197,
+      "pos": 2,
+      "wk": "qll",
+      "fr": "courte ;",
+      "sense_chosen": "être peu",
+      "bdd_matching": [
+        "porter"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 8,
+      "wk": "dwn",
+      "fr": "dehors de vous —",
+      "sense_chosen": "à l'exclusion de",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 198,
+      "pos": 15,
+      "wk": "end",
+      "fr": "la part de",
+      "sense_chosen": "auprès de",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 198,
+      "pos": 10,
+      "wk": "nhr",
+      "fr": "les rivières",
+      "sense_chosen": "cours d'eau",
+      "bdd_matching": [
+        "rivière"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 199,
+      "pos": 21,
+      "wk": "qll",
+      "fr": "vil.",
+      "sense_chosen": "être peu",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 199,
+      "pos": 29,
+      "wk": "sre",
+      "fr": "est prompt",
+      "sense_chosen": "être rapide",
+      "bdd_matching": [
+        "promptitude"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 200,
+      "pos": 3,
+      "wk": "amn",
+      "fr": "avez cru,",
+      "sense_chosen": "croire",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 200,
+      "pos": 5,
+      "wk": "sbr",
+      "fr": "rivalisez d'endurance,",
+      "sense_chosen": "patienter",
+      "bdd_matching": [
+        "patience",
+        "endurer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 200,
+      "pos": 10,
+      "wk": "flh",
+      "fr": "triompherez-vous.",
+      "sense_chosen": "réussir",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 13,
+      "pos": 2,
+      "wk": "Sbb",
+      "fr": "a répandu",
+      "sense_chosen": "verser",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 99,
+      "pos": 19,
+      "wk": "eml",
+      "fr": "vous faites.",
+      "sense_chosen": "agir",
+      "bdd_matching": [
+        "faire"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 11,
+      "pos": 70,
+      "wk": "elm",
+      "fr": "Omniscient",
+      "sense_chosen": "savant",
+      "bdd_matching": [
+        "enseignement",
+        "science"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 20,
+      "wk": "eml",
+      "fr": "ils font,",
+      "sense_chosen": "agir",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 156,
+      "pos": 44,
+      "wk": "eml",
+      "fr": "vous faites —",
+      "sense_chosen": "agir",
+      "bdd_matching": [
+        "faire"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 163,
+      "pos": 8,
+      "wk": "eml",
+      "fr": "ils font.",
+      "sense_chosen": "agir",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 34,
+      "wk": "khdn",
+      "fr": "d'amants cachés",
+      "sense_chosen": "compagnon secret",
+      "bdd_matching": [
+        "amant",
+        "amant (khidn)",
+        "relation cachée"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 16,
+      "pos": 4,
+      "wk": "qdr",
+      "fr": "en restreignant",
+      "sense_chosen": "mesurer",
+      "bdd_matching": [
+        "puissant",
+        "destin"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 15,
+      "pos": 2,
+      "wk": "Ans",
+      "fr": "l'homme,",
+      "sense_chosen": "être humain",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 15,
+      "pos": 8,
+      "wk": "qwl",
+      "fr": "il dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 37,
+      "pos": 7,
+      "wk": "hsn",
+      "fr": "belle",
+      "sense_chosen": "bon",
+      "bdd_matching": [
+        "excellence",
+        "embellir",
+        "excellent"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 134,
+      "pos": 17,
+      "wk": "hsn",
+      "fr": "ceux qui font le bien.",
+      "sense_chosen": "bien faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 20,
+      "pos": 5,
+      "wk": "jmm",
+      "fr": "intense,",
+      "sense_chosen": "abondant",
+      "bdd_matching": [
+        "chevelure abondante"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 21,
+      "pos": 5,
+      "wk": "dkk",
+      "fr": "coup",
+      "sense_chosen": "pulvériser",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 21,
+      "pos": 6,
+      "wk": "dkk",
+      "fr": "sur coup,",
+      "sense_chosen": "pulvériser",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 22,
+      "pos": 2,
+      "wk": "jyA",
+      "fr": "viendra",
+      "sense_chosen": "venir",
+      "bdd_matching": [
+        "contraindre à recourir à"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 23,
+      "pos": 7,
+      "wk": "Ans",
+      "fr": "l'homme",
+      "sense_chosen": "être humain",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 23,
+      "pos": 2,
+      "wk": "jyA",
+      "fr": "sera amené",
+      "sense_chosen": "apporter",
+      "bdd_matching": []
+    },
+    {
+      "s": 89,
+      "v": 25,
+      "pos": 4,
+      "wk": "edb",
+      "fr": "comme Il punit",
+      "sense_chosen": "châtiment",
+      "bdd_matching": [
+        "punir"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 16,
+      "pos": 7,
+      "wk": "qwl",
+      "fr": "il dit :",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 37,
+      "pos": 4,
+      "wk": "hsn",
+      "fr": "bel",
+      "sense_chosen": "bon",
+      "bdd_matching": [
+        "embellir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 120,
+      "pos": 3,
+      "wk": "hsn",
+      "fr": "vous touche,",
+      "sense_chosen": "bon",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 81,
+      "pos": 12,
+      "wk": "jya",
+      "fr": "vient à vous",
+      "sense_chosen": "venir",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 17,
+      "pos": 6,
+      "wk": "eml",
+      "fr": "font",
+      "sense_chosen": "faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 4,
+      "pos": 11,
+      "wk": "nfs",
+      "fr": "de leur plein gré,",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 5,
+      "pos": 13,
+      "wk": "qwl",
+      "fr": "et dites",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 20,
+      "wk": "bed",
+      "fr": "les uns d'entre vous",
+      "sense_chosen": "une partie",
+      "bdd_matching": [
+        "certains"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 8,
+      "wk": "HSn",
+      "fr": "les protégées",
+      "sense_chosen": "être inaccessible",
+      "bdd_matching": [
+        "protéger contre attaque"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 7,
+      "pos": 19,
+      "wk": "frd",
+      "fr": "imposée.",
+      "sense_chosen": "prescrire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 44,
+      "wk": "HSn",
+      "fr": "les protégées",
+      "sense_chosen": "être inaccessible",
+      "bdd_matching": [
+        "protéger contre attaque"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 8,
+      "pos": 10,
+      "wk": "qwl",
+      "fr": "et dites",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 9,
+      "pos": 11,
+      "wk": "wqy",
+      "fr": "qu'ils aient donc conscience",
+      "sense_chosen": "se prémunir",
+      "bdd_matching": [
+        "avoir conscience de"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 9,
+      "pos": 13,
+      "wk": "qwl",
+      "fr": "et qu'ils disent",
+      "sense_chosen": "dire",
+      "bdd_matching": [
+        "discours"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 9,
+      "pos": 7,
+      "wk": "ḏrr",
+      "fr": "une descendance",
+      "sense_chosen": "progéniture",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 10,
+      "pos": 13,
+      "wk": "ser",
+      "fr": "dans un brasier",
+      "sense_chosen": "brûler intensément",
+      "bdd_matching": [
+        "prix (sier)"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 12,
+      "pos": 87,
+      "wk": "elm",
+      "fr": "est Omniscient",
+      "sense_chosen": "savant",
+      "bdd_matching": [
+        "enseignement",
+        "science"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 13,
+      "pos": 12,
+      "wk": "tht",
+      "fr": "lesquels",
+      "sense_chosen": "au-dessous",
+      "bdd_matching": [
+        "sous"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 34,
+      "pos": 6,
+      "wk": "fdl",
+      "fr": "a favorisé",
+      "sense_chosen": "être supérieur",
+      "bdd_matching": [
+        "faveur"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 26,
+      "pos": 6,
+      "wk": "snn",
+      "fr": "dans les voies",
+      "sense_chosen": "chemin tracé",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 34,
+      "pos": 2,
+      "wk": "qwm",
+      "fr": "sont responsables",
+      "sense_chosen": "prendre en charge",
+      "bdd_matching": [
+        "redresser",
+        "se dresser"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 34,
+      "pos": 39,
+      "wk": "elw",
+      "fr": "Élevé",
+      "sense_chosen": "être haut",
+      "bdd_matching": [
+        "élever",
+        "s'élever"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 17,
+      "pos": 12,
+      "wk": "qrb",
+      "fr": "après",
+      "sense_chosen": "être proche",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 18,
+      "pos": 4,
+      "wk": "eml",
+      "fr": "font",
+      "sense_chosen": "faire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 18,
+      "pos": 11,
+      "wk": "qwl",
+      "fr": "il dit",
+      "sense_chosen": "dire",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 27,
+      "pos": 6,
+      "wk": "rwd",
+      "fr": "et veulent",
+      "sense_chosen": "désirer",
+      "bdd_matching": [
+        "va-et-vient",
+        "agir doucement"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 29,
+      "pos": 3,
+      "wk": "amn",
+      "fr": "avez cru",
+      "sense_chosen": "croire",
+      "bdd_matching": [
+        "ainsi soit-il"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 29,
+      "pos": 18,
+      "wk": "nfs",
+      "fr": "vous-mêmes",
+      "sense_chosen": "soi-même",
+      "bdd_matching": []
+    },
+    {
+      "s": 4,
+      "v": 35,
+      "pos": 9,
+      "wk": "hkm",
+      "fr": "et un arbitre",
+      "sense_chosen": "juger",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 179,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "n'allait pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 35,
+      "pos": 6,
+      "wk": "hkm",
+      "fr": "un arbitre",
+      "sense_chosen": "juger",
+      "bdd_matching": []
+    },
+    {
+      "s": 3,
+      "v": 179,
+      "pos": 16,
+      "wk": "kwn",
+      "fr": "n'allait pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "bdd_matching": [
+        "être"
+      ]
+    }
+  ],
+  "shorterAvailable": [
+    {
+      "s": 3,
+      "v": 147,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "n'a été",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 69,
+      "pos": 9,
+      "wk": "dll",
+      "fr": "égarent",
+      "sense_chosen": "faire égarer",
+      "better": [
+        "s'égarer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 44,
+      "pos": 8,
+      "wk": "kwn",
+      "fr": "tu étais",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 3,
+      "pos": 1,
+      "wk": "nzl",
+      "fr": "a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 69,
+      "pos": 7,
+      "wk": "dll",
+      "fr": "vous égarer",
+      "sense_chosen": "faire égarer",
+      "better": [
+        "s'égarer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 49,
+      "pos": 51,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 49,
+      "pos": 47,
+      "wk": "dlk",
+      "fr": "cela",
+      "sense_chosen": "cela (démonstratif)",
+      "better": [
+        "cela"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 83,
+      "pos": 6,
+      "wk": "slm",
+      "fr": "se sont remis",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 84,
+      "pos": 29,
+      "wk": "slm",
+      "fr": "que nous nous en remettons. »",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 72,
+      "pos": 14,
+      "wk": "kfr",
+      "fr": ", et reniez-le",
+      "sense_chosen": "renier un bienfait",
+      "better": [
+        "nier"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 53,
+      "pos": 4,
+      "wk": "nzl",
+      "fr": "Tu as fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 34,
+      "pos": 4,
+      "wk": "bed",
+      "fr": "autres",
+      "sense_chosen": "une partie",
+      "better": [
+        "importuner"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 31,
+      "pos": 3,
+      "wk": "kbr",
+      "fr": "les grands",
+      "sense_chosen": "être grand",
+      "better": [
+        "grandir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 4,
+      "pos": 5,
+      "wk": "nzl",
+      "fr": "Et Il a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 52,
+      "pos": 20,
+      "wk": "slm",
+      "fr": "de ceux qui s'en remettent",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 74,
+      "pos": 10,
+      "wk": "ezm",
+      "fr": "immense. »",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 90,
+      "pos": 8,
+      "wk": "kfr",
+      "fr": "reniement,",
+      "sense_chosen": "renier un bienfait",
+      "better": [
+        "nier"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 55,
+      "pos": 28,
+      "wk": "kwn",
+      "fr": "vous étiez",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 31,
+      "pos": 9,
+      "wk": "swa",
+      "fr": "vos mauvaises actions",
+      "sense_chosen": "mauvaise action",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 139,
+      "pos": 8,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 91,
+      "pos": 6,
+      "wk": "kfr",
+      "fr": "le reniement,",
+      "sense_chosen": "renier un bienfait",
+      "better": [
+        "nier"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 8,
+      "pos": 3,
+      "wk": "zygh",
+      "fr": "ne fais pas dévier",
+      "sense_chosen": "faire dévier",
+      "better": [
+        "dévier"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 102,
+      "pos": 12,
+      "wk": "slm",
+      "fr": "en remettant à Lui. »",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 4,
+      "wk": "kwn",
+      "fr": "y aura-t-il",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 105,
+      "pos": 14,
+      "wk": "ezm",
+      "fr": "immense. »",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 47,
+      "pos": 22,
+      "wk": "kwn",
+      "fr": "Sois !",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 36,
+      "pos": 19,
+      "wk": "ewḏ",
+      "fr": "je la place sous protection",
+      "sense_chosen": "placer sous protection",
+      "better": [
+        "protection"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 49,
+      "pos": 32,
+      "wk": "hyy",
+      "fr": "je donne la vie",
+      "sense_chosen": "donner la vie",
+      "better": [
+        "vie"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 93,
+      "pos": 16,
+      "wk": "nzl",
+      "fr": "ne soit descendue",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 110,
+      "pos": 4,
+      "wk": "xrj",
+      "fr": "qu'on a fait sortir",
+      "sense_chosen": "faire sortir",
+      "better": [
+        "sortir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 60,
+      "pos": 5,
+      "wk": "kwn",
+      "fr": "sois pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 31,
+      "pos": 3,
+      "wk": "kwn",
+      "fr": "vous",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 19,
+      "pos": 13,
+      "wk": "dhb",
+      "fr": "pour partir avec",
+      "sense_chosen": "partir",
+      "better": [
+        "or"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 95,
+      "pos": 2,
+      "wk": "sdq",
+      "fr": "« a dit vrai",
+      "sense_chosen": "dire vrai",
+      "better": [
+        "vrai"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 38,
+      "pos": 12,
+      "wk": "tyb",
+      "fr": "bonne",
+      "sense_chosen": "être bon",
+      "better": [
+        "bon"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 80,
+      "pos": 15,
+      "wk": "slm",
+      "fr": "vous en êtes remis ?",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 44,
+      "pos": 17,
+      "wk": "kwn",
+      "fr": "tu étais",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 20,
+      "pos": 14,
+      "wk": "slm",
+      "fr": "vous en êtes-vous remis à Lui",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 49,
+      "pos": 5,
+      "wk": "sryl",
+      "fr": "d'Israël",
+      "sense_chosen": "Israël (nom propre)",
+      "better": [
+        "Israël"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 3,
+      "pos": 9,
+      "wk": "nzl",
+      "fr": "Et Il a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 96,
+      "pos": 8,
+      "wk": "brk",
+      "fr": "bénie",
+      "sense_chosen": "être béni",
+      "better": [
+        "bénir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 96,
+      "pos": 10,
+      "wk": "elm",
+      "fr": "pour les mondes.",
+      "sense_chosen": "les mondes",
+      "better": [
+        "monde"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 19,
+      "pos": 26,
+      "wk": "esa",
+      "fr": "il se peut",
+      "sense_chosen": "il se peut que",
+      "better": [
+        "peut-être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 7,
+      "wk": "swy",
+      "fr": "d'égalité",
+      "sense_chosen": "être égal",
+      "better": [
+        "égaliser"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 42,
+      "pos": 12,
+      "wk": "elm",
+      "fr": "des mondes",
+      "sense_chosen": "les mondes",
+      "better": [
+        "monde"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 17,
+      "pos": 2,
+      "wk": "sdq",
+      "fr": "ceux qui disent vrai",
+      "sense_chosen": "dire vrai",
+      "better": [
+        "vrai"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 19,
+      "pos": 29,
+      "wk": "shy",
+      "fr": "quelque chose",
+      "sense_chosen": "quelque chose",
+      "better": [
+        "chose"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 17,
+      "pos": 5,
+      "wk": "ghf",
+      "fr": "et ceux qui demandent pardon",
+      "sense_chosen": "demander le pardon",
+      "better": [
+        "pardon",
+        "pardonner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 64,
+      "pos": 31,
+      "wk": "slm",
+      "fr": "de ceux qui s'en remettent",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 19,
+      "pos": 33,
+      "wk": "khyr",
+      "fr": "du bien",
+      "sense_chosen": "bien (moral ou physique)",
+      "better": [
+        "bienfait",
+        "bien"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 14,
+      "pos": 24,
+      "wk": "awb",
+      "fr": "lieu de retour",
+      "sense_chosen": "lieu de retour",
+      "better": [
+        "retourner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 67,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "était",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 67,
+      "pos": 12,
+      "wk": "kwn",
+      "fr": "était pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 24,
+      "pos": 14,
+      "wk": "kwn",
+      "fr": "ils",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 67,
+      "pos": 8,
+      "wk": "kwn",
+      "fr": "il était",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 104,
+      "pos": 11,
+      "wk": "nkr",
+      "fr": "blâmable.",
+      "sense_chosen": "blâmable (munkar)",
+      "better": [
+        "blâmable"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 27,
+      "pos": 16,
+      "wk": "xrj",
+      "fr": "Tu fais sortir",
+      "sense_chosen": "faire sortir",
+      "better": [
+        "sortir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 67,
+      "pos": 10,
+      "wk": "slm",
+      "fr": "de ceux qui s'en remettent",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 26,
+      "pos": 15,
+      "wk": "ezz",
+      "fr": "Tu rends puissant",
+      "sense_chosen": "être puissant",
+      "better": [
+        "puissant"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 27,
+      "pos": 1,
+      "wk": "wlj",
+      "fr": "Tu fais entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 27,
+      "pos": 6,
+      "wk": "wlj",
+      "fr": "Tu fais entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 27,
+      "pos": 11,
+      "wk": "xrj",
+      "fr": "Tu fais sortir",
+      "sense_chosen": "faire sortir",
+      "better": [
+        "sortir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 97,
+      "pos": 25,
+      "wk": "elm",
+      "fr": "mondes.",
+      "sense_chosen": "les mondes",
+      "better": [
+        "monde"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 159,
+      "pos": 10,
+      "wk": "ghlz",
+      "fr": "dur",
+      "sense_chosen": "être dur de cœur",
+      "better": [
+        "dureté"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 124,
+      "pos": 13,
+      "wk": "nzl",
+      "fr": "qu'on a fait descendre ?\" »",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 20,
+      "pos": 16,
+      "wk": "slm",
+      "fr": "ils s'en sont remis à Lui",
+      "sense_chosen": "s'en remettre",
+      "better": [
+        "se remettre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 7,
+      "pos": 3,
+      "wk": "nzl",
+      "fr": "a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 108,
+      "pos": 11,
+      "wk": "elm",
+      "fr": "pour les mondes. »",
+      "sense_chosen": "les mondes",
+      "better": [
+        "monde"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 151,
+      "pos": 12,
+      "wk": "nzl",
+      "fr": "Il n'a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 151,
+      "pos": 18,
+      "wk": "thwy",
+      "fr": "demeure",
+      "sense_chosen": "demeure permanente",
+      "better": [
+        "demeurer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 110,
+      "pos": 10,
+      "wk": "nkr",
+      "fr": "blâmable,",
+      "sense_chosen": "blâmable (munkar)",
+      "better": [
+        "blâmable"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 111,
+      "pos": 7,
+      "wk": "wly",
+      "fr": "ils vous tourneront",
+      "sense_chosen": "tourner le dos",
+      "better": [
+        "se détourner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 21,
+      "wk": "qrb",
+      "fr": "plus proches",
+      "sense_chosen": "être proche",
+      "better": [
+        "s'approcher",
+        "rapprocher"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 114,
+      "pos": 9,
+      "wk": "nkr",
+      "fr": "blâmable,",
+      "sense_chosen": "blâmable (munkar)",
+      "better": [
+        "blâmable"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 153,
+      "pos": 15,
+      "wk": "hzn",
+      "fr": "vous ne soyez pas attristés",
+      "sense_chosen": "être triste",
+      "better": [
+        "tristesse",
+        "attrister"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 29,
+      "wk": "kwn",
+      "fr": "vous",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 118,
+      "pos": 23,
+      "wk": "kbr",
+      "fr": "est plus grand.",
+      "sense_chosen": "être grand",
+      "better": [
+        "grandir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 15,
+      "pos": 6,
+      "wk": "shhd",
+      "fr": "faites témoigner",
+      "sense_chosen": "faire témoigner",
+      "better": [
+        "témoigner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 128,
+      "pos": 5,
+      "wk": "shya",
+      "fr": ", quoi que ce soit.",
+      "sense_chosen": "quelque chose",
+      "better": [
+        "chose"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 154,
+      "pos": 2,
+      "wk": "nzl",
+      "fr": "Il a fait descendre",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 121,
+      "pos": 2,
+      "wk": "ghdw",
+      "fr": "tu partis le matin",
+      "sense_chosen": "partir le matin",
+      "better": [
+        "matin"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 137,
+      "pos": 11,
+      "wk": "kwn",
+      "fr": "fut",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 135,
+      "pos": 11,
+      "wk": "ghf",
+      "fr": "et demandent pardon",
+      "sense_chosen": "demander le pardon (istighfār)",
+      "better": [
+        "pardon",
+        "pardonner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 155,
+      "pos": 3,
+      "wk": "wly",
+      "fr": "ont tourné le dos",
+      "sense_chosen": "tourner le dos",
+      "better": [
+        "se détourner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 145,
+      "pos": 10,
+      "wk": "a j l",
+      "fr": "à terme fixé.",
+      "sense_chosen": "terme fixé",
+      "better": [
+        "terme"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 139,
+      "pos": 4,
+      "wk": "hzn",
+      "fr": "vous attristez pas",
+      "sense_chosen": "être triste",
+      "better": [
+        "tristesse",
+        "attrister"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 143,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "vous",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 162,
+      "pos": 12,
+      "wk": "bas",
+      "fr": "Quel mauvais",
+      "sense_chosen": "être mauvais",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 159,
+      "pos": 17,
+      "wk": "ghf",
+      "fr": "demande pardon",
+      "sense_chosen": "demander le pardon (istighfār)",
+      "better": [
+        "pardon",
+        "pardonner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 145,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "il n'appartient",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 146,
+      "pos": 6,
+      "wk": "rbb",
+      "fr": "hommes du Seigneur",
+      "sense_chosen": "homme du Seigneur (ribbiyy)",
+      "better": [
+        "seigneur"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 167,
+      "pos": 23,
+      "wk": "amn",
+      "fr": "de la foi.",
+      "sense_chosen": "avoir la foi",
+      "better": [
+        "foi"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 168,
+      "pos": 4,
+      "wk": "qed",
+      "fr": "alors qu'ils étaient restés en arrière :",
+      "sense_chosen": "rester en arrière",
+      "better": [
+        "rester"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 170,
+      "pos": 19,
+      "wk": "hzn",
+      "fr": "s'attristeront pas.",
+      "sense_chosen": "être triste",
+      "better": [
+        "tristesse",
+        "attrister"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 172,
+      "pos": 15,
+      "wk": "ezm",
+      "fr": "immense.",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 173,
+      "pos": 12,
+      "wk": "amn",
+      "fr": "foi,",
+      "sense_chosen": "avoir la foi",
+      "better": [
+        "foi"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 174,
+      "pos": 15,
+      "wk": "ezm",
+      "fr": "immense.",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 176,
+      "pos": 22,
+      "wk": "ezm",
+      "fr": "immense.",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 177,
+      "pos": 5,
+      "wk": "amn",
+      "fr": "au prix de la foi",
+      "sense_chosen": "avoir la foi",
+      "better": [
+        "foi"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 179,
+      "pos": 36,
+      "wk": "ezm",
+      "fr": "immense.",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 180,
+      "pos": 30,
+      "wk": "khbr",
+      "fr": "est bien informé",
+      "sense_chosen": "bien informé",
+      "better": [
+        "informé"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 183,
+      "pos": 27,
+      "wk": "kwn",
+      "fr": "vous êtes",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 184,
+      "pos": 2,
+      "wk": "kḏb",
+      "fr": "ils te traitent de menteur,",
+      "sense_chosen": "accuser de mensonge",
+      "better": [
+        "mensonge"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 184,
+      "pos": 4,
+      "wk": "kḏb",
+      "fr": "ont été traités de menteurs",
+      "sense_chosen": "accuser de mensonge",
+      "better": [
+        "mensonge"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 186,
+      "pos": 23,
+      "wk": "ezm",
+      "fr": "relève de la résolution",
+      "sense_chosen": "résolution",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 187,
+      "pos": 19,
+      "wk": "bas",
+      "fr": "Bien mauvais",
+      "sense_chosen": "être mauvais",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 193,
+      "pos": 17,
+      "wk": "swa",
+      "fr": "nos mauvaises actions,",
+      "sense_chosen": "mauvaise action",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 193,
+      "pos": 18,
+      "wk": "wfy",
+      "fr": "et fais-nous mourir",
+      "sense_chosen": "faire mourir",
+      "better": [
+        "mourir"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 192,
+      "pos": 4,
+      "wk": "dxl",
+      "fr": "Tu fais entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 6,
+      "wk": "Dye",
+      "fr": "laisse pas perdre",
+      "sense_chosen": "laisser perdre",
+      "better": [
+        "perdre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 14,
+      "wk": "beD",
+      "fr": "— vous êtes les uns",
+      "sense_chosen": "les uns",
+      "better": [
+        "quelques-uns"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 29,
+      "wk": "swa",
+      "fr": "leurs mauvaises actions",
+      "sense_chosen": "mauvaise action",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 21,
+      "pos": 7,
+      "wk": "bed",
+      "fr": "les autres",
+      "sense_chosen": "une partie",
+      "better": [
+        "importuner"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 195,
+      "pos": 30,
+      "wk": "dxl",
+      "fr": "et Je les ferai entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 197,
+      "pos": 6,
+      "wk": "bas",
+      "fr": "— et quel mauvais",
+      "sense_chosen": "quel mauvais",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 198,
+      "pos": 11,
+      "wk": "khld",
+      "fr": "demeurant éternellement",
+      "sense_chosen": "demeurer éternellement",
+      "better": [
+        "demeurer",
+        "éternel"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 199,
+      "pos": 9,
+      "wk": "nzl",
+      "fr": "a été descendu",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 199,
+      "pos": 12,
+      "wk": "nzl",
+      "fr": "a été descendu",
+      "sense_chosen": "faire descendre",
+      "better": [
+        "descendre"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 24,
+      "pos": 7,
+      "wk": "ymn",
+      "fr": "vos mains droites",
+      "sense_chosen": "main droite",
+      "better": [
+        "droite"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 4,
+      "pos": 3,
+      "wk": "sry",
+      "fr": "elle s'écoule.",
+      "sense_chosen": "s'écouler (nuit qui passe)",
+      "better": [
+        "couler",
+        "s'écouler"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 13,
+      "wk": "ymn",
+      "fr": "vos mains droites",
+      "sense_chosen": "main droite",
+      "better": [
+        "droite"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 14,
+      "pos": 3,
+      "wk": "rsd",
+      "fr": "est bien aux aguets,",
+      "sense_chosen": "poste de guet",
+      "better": [
+        "guetter"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 22,
+      "wk": "bed",
+      "fr": "autres",
+      "sense_chosen": "une partie",
+      "better": [
+        "importuner"
+      ]
+    },
+    {
+      "s": 89,
+      "v": 19,
+      "pos": 5,
+      "wk": "lmm",
+      "fr": "amassant tout,",
+      "sense_chosen": "amasser (tout prendre)",
+      "better": [
+        "ramasser"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 172,
+      "pos": 11,
+      "wk": "hsn",
+      "fr": "ont fait le bien",
+      "sense_chosen": "bien faire",
+      "better": [
+        "bienfaisance"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 2,
+      "pos": 16,
+      "wk": "kbr",
+      "fr": "grand.",
+      "sense_chosen": "être grand",
+      "better": [
+        "grandir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 3,
+      "pos": 9,
+      "wk": "tyb",
+      "fr": "est bon",
+      "sense_chosen": "être bon",
+      "better": [
+        "bon"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 3,
+      "pos": 24,
+      "wk": "ymn",
+      "fr": "vos mains droites.",
+      "sense_chosen": "main droite",
+      "better": [
+        "droite"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 4,
+      "pos": 6,
+      "wk": "tyb",
+      "fr": "elles trouvent bon",
+      "sense_chosen": "être bon",
+      "better": [
+        "bon"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 4,
+      "pos": 9,
+      "wk": "šya",
+      "fr": "quelque chose",
+      "sense_chosen": "quelque chose",
+      "better": [
+        "chose"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 7,
+      "pos": 12,
+      "wk": "qrb",
+      "fr": "et les proches",
+      "sense_chosen": "parent proche",
+      "better": [
+        "s'approcher",
+        "rapprocher"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 7,
+      "pos": 6,
+      "wk": "qrb",
+      "fr": "et les proches,",
+      "sense_chosen": "parent proche",
+      "better": [
+        "s'approcher",
+        "rapprocher"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 16,
+      "pos": 4,
+      "wk": "adhy",
+      "fr": "faites-leur du mal",
+      "sense_chosen": "faire du mal",
+      "better": [
+        "maltraiter"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 8,
+      "pos": 5,
+      "wk": "qrb",
+      "fr": "la proximité",
+      "sense_chosen": "parent proche",
+      "better": [
+        "s'approcher",
+        "rapprocher"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 16,
+      "pos": 13,
+      "wk": "twb",
+      "fr": "Grand-Accueillant du repentir",
+      "sense_chosen": "agréer le repentir",
+      "better": [
+        "se repentir",
+        "repentir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 25,
+      "pos": 33,
+      "wk": "axdh",
+      "fr": "prenantes",
+      "sense_chosen": "prendre pour soi",
+      "better": [
+        "prendre",
+        "se prendre pour"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 11,
+      "pos": 61,
+      "wk": "qrb",
+      "fr": "vous sont plus proches",
+      "sense_chosen": "être proche",
+      "better": [
+        "s'approcher",
+        "rapprocher"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 13,
+      "pos": 8,
+      "wk": "dxl",
+      "fr": "Il le fera entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 13,
+      "pos": 18,
+      "wk": "ezm",
+      "fr": "immense",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 12,
+      "pos": 71,
+      "wk": "shrk",
+      "fr": "copartageurs",
+      "sense_chosen": "être copartenaire",
+      "better": [
+        "partenaire"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 14,
+      "pos": 7,
+      "wk": "dxl",
+      "fr": "Il le fera entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 18,
+      "pos": 2,
+      "wk": "twb",
+      "fr": "le repentir agréé",
+      "sense_chosen": "accepter le repentir",
+      "better": [
+        "se repentir",
+        "repentir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 17,
+      "pos": 2,
+      "wk": "twb",
+      "fr": "le repentir agréé",
+      "sense_chosen": "accepter le repentir",
+      "better": [
+        "se repentir",
+        "repentir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 18,
+      "pos": 5,
+      "wk": "swa",
+      "fr": "les mauvaises actions",
+      "sense_chosen": "mauvaise action",
+      "better": [
+        "mauvais"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 34,
+      "pos": 40,
+      "wk": "kbr",
+      "fr": "Grand",
+      "sense_chosen": "être grand",
+      "better": [
+        "grandir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 27,
+      "pos": 13,
+      "wk": "ezm",
+      "fr": "immense",
+      "sense_chosen": "immense",
+      "better": [
+        "os"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 146,
+      "pos": 16,
+      "wk": "def",
+      "fr": "faibli",
+      "sense_chosen": "être faible",
+      "better": [
+        "faiblesse",
+        "faible"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 179,
+      "pos": 2,
+      "wk": "kwn",
+      "fr": "n'allait pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 30,
+      "pos": 7,
+      "wk": "sly",
+      "fr": "Nous le ferons rôtir",
+      "sense_chosen": "faire rôtir",
+      "better": [
+        "rôtir"
+      ]
+    },
+    {
+      "s": 4,
+      "v": 31,
+      "pos": 10,
+      "wk": "dxl",
+      "fr": "et Nous vous ferons entrer",
+      "sense_chosen": "faire entrer",
+      "better": [
+        "entrer"
+      ]
+    },
+    {
+      "s": 3,
+      "v": 179,
+      "pos": 16,
+      "wk": "kwn",
+      "fr": "n'allait pas",
+      "sense_chosen": "être (verbe incomplet)",
+      "better": [
+        "être"
+      ]
+    }
+  ]
+}

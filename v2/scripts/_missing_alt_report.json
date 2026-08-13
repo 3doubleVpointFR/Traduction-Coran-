@@ -1,0 +1,452 @@
+[
+  {
+    "root": "ابد",
+    "found": {
+      "id": 697,
+      "word_key": "abd",
+      "etymological_concept": null,
+      "root_ar": "أ ب د",
+      "senses": 3
+    }
+  },
+  {
+    "root": "ابو",
+    "found": {
+      "id": 1447,
+      "word_key": "abw",
+      "etymological_concept": "Paternité/Filiation",
+      "root_ar": "أ ب و",
+      "senses": 8
+    }
+  },
+  {
+    "root": "اتي",
+    "found": {
+      "id": 379,
+      "word_key": "aty",
+      "etymological_concept": "Venue/Arrivée",
+      "root_ar": "أ ت ي",
+      "senses": 8
+    }
+  },
+  {
+    "root": "اثم",
+    "found": {
+      "id": 952,
+      "word_key": "athm",
+      "etymological_concept": "Retard/Lenteur",
+      "root_ar": "أ ث م",
+      "senses": 6
+    }
+  },
+  {
+    "root": "اجر",
+    "found": {
+      "id": 609,
+      "word_key": "ajr",
+      "etymological_concept": "Rétribution/Salaire",
+      "root_ar": "أ ج ر",
+      "senses": 7
+    }
+  },
+  {
+    "root": "اجل",
+    "found": {
+      "id": 1716,
+      "word_key": "a j l",
+      "etymological_concept": "Terme/Délai",
+      "root_ar": "أ ج ل",
+      "senses": 6
+    }
+  },
+  {
+    "root": "احد",
+    "found": {
+      "id": 2574,
+      "word_key": "ahd",
+      "etymological_concept": "Unicité/Indivisibilité",
+      "root_ar": "أ ح د",
+      "senses": 15
+    }
+  },
+  {
+    "root": "اخذ",
+    "found": {
+      "id": 2660,
+      "word_key": "axdh",
+      "etymological_concept": "Prise/Saisie",
+      "root_ar": "أ خ ذ",
+      "senses": 10
+    }
+  },
+  {
+    "root": "اخر",
+    "found": {
+      "id": 653,
+      "word_key": "akhr",
+      "etymological_concept": null,
+      "root_ar": "أ خ ر",
+      "senses": 20
+    }
+  },
+  {
+    "root": "اخو",
+    "found": {
+      "id": 961,
+      "word_key": "akhw",
+      "etymological_concept": "Fraternité/Lien",
+      "root_ar": "أ خ و",
+      "senses": 8
+    }
+  },
+  {
+    "root": "ادي",
+    "found": {
+      "id": 1208,
+      "word_key": "ady",
+      "etymological_concept": null,
+      "root_ar": "أ د ي",
+      "senses": 12
+    }
+  },
+  {
+    "root": "اذن",
+    "found": {
+      "id": 722,
+      "word_key": "adn",
+      "etymological_concept": "Écoute/Oreille",
+      "root_ar": "أ ذ ن",
+      "senses": 23
+    }
+  },
+  {
+    "root": "اذي",
+    "found": {
+      "id": 1451,
+      "word_key": "adhy",
+      "etymological_concept": null,
+      "root_ar": "أ ذ ي",
+      "senses": 11
+    }
+  },
+  {
+    "root": "ارض",
+    "found": {
+      "id": 2650,
+      "word_key": "ArD",
+      "etymological_concept": "Terre/Sol",
+      "root_ar": "أ ر ض",
+      "senses": 13
+    }
+  },
+  {
+    "root": "اكل",
+    "found": {
+      "id": 947,
+      "word_key": "akl",
+      "etymological_concept": "Alimentation/Consommation",
+      "root_ar": "أ ك ل",
+      "senses": 6
+    }
+  },
+  {
+    "root": "الم",
+    "found": {
+      "id": 315,
+      "word_key": "alm",
+      "etymological_concept": "Douleur/Souffrance",
+      "root_ar": "أ ل م",
+      "senses": 6
+    }
+  },
+  {
+    "root": "امر",
+    "found": {
+      "id": 428,
+      "word_key": "amr",
+      "etymological_concept": "Commandement/Autorité",
+      "root_ar": "أ م ر",
+      "senses": 8
+    }
+  },
+  {
+    "root": "امم",
+    "found": {
+      "id": 785,
+      "word_key": "amm",
+      "etymological_concept": "Direction/Intention",
+      "root_ar": "أ م م",
+      "senses": 23
+    }
+  },
+  {
+    "root": "امن",
+    "found": {
+      "id": 287,
+      "word_key": "amn",
+      "etymological_concept": "Sécurité/Confiance",
+      "root_ar": "أ م ن",
+      "senses": 17
+    }
+  },
+  {
+    "root": "انس",
+    "found": {
+      "id": 2630,
+      "word_key": "Ans",
+      "etymological_concept": "Sociabilité/Familiarité",
+      "root_ar": "أ ن س",
+      "senses": 15
+    }
+  },
+  {
+    "root": "اهل",
+    "found": {
+      "id": 736,
+      "word_key": "ahl",
+      "etymological_concept": "Famille/Communauté",
+      "root_ar": "أ ه ل",
+      "senses": 6
+    }
+  },
+  {
+    "root": "اول",
+    "found": {
+      "id": 337,
+      "word_key": "awl",
+      "etymological_concept": "Retour/Origine",
+      "root_ar": "أ و ل",
+      "senses": 29
+    }
+  },
+  {
+    "root": "اوي",
+    "found": {
+      "id": 755,
+      "word_key": "awy",
+      "etymological_concept": "Retrait vers un abri",
+      "root_ar": "أ و ي",
+      "senses": 9
+    }
+  },
+  {
+    "root": "ايي",
+    "found": {
+      "id": 494,
+      "word_key": "iyya",
+      "etymological_concept": null,
+      "root_ar": "إ ي ي",
+      "senses": 6
+    }
+  },
+  {
+    "root": "باس",
+    "found": {
+      "id": 713,
+      "word_key": "bas",
+      "etymological_concept": "Puissance/Malheur",
+      "root_ar": "ب أ س",
+      "senses": 15
+    }
+  },
+  {
+    "root": "برا",
+    "found": {
+      "id": 555,
+      "word_key": "bra",
+      "etymological_concept": "Innocence/Pureté",
+      "root_ar": "ب ر أ",
+      "senses": 20
+    }
+  },
+  {
+    "root": "بطا",
+    "found": {
+      "id": 1518,
+      "word_key": "bta",
+      "etymological_concept": null,
+      "root_ar": "ب ط أ",
+      "senses": 3
+    }
+  },
+  {
+    "root": "ثبي",
+    "found": null
+  },
+  {
+    "root": "جيا",
+    "found": {
+      "id": 2685,
+      "word_key": "jyA",
+      "etymological_concept": "Venue/Arrivée",
+      "root_ar": "ج ي أ",
+      "senses": 11
+    }
+  },
+  {
+    "root": "حصن",
+    "found": null
+  },
+  {
+    "root": "خطا",
+    "found": {
+      "id": 572,
+      "word_key": "xta",
+      "etymological_concept": null,
+      "root_ar": "خ ط أ",
+      "senses": 5
+    }
+  },
+  {
+    "root": "ذيع",
+    "found": null
+  },
+  {
+    "root": "راي",
+    "found": {
+      "id": 552,
+      "word_key": "ray",
+      "etymological_concept": "Vision/Perception",
+      "root_ar": "ر أ ي",
+      "senses": 8
+    }
+  },
+  {
+    "root": "سال",
+    "found": {
+      "id": 1189,
+      "word_key": "s a l",
+      "etymological_concept": "Demande/Question",
+      "root_ar": "س أ ل",
+      "senses": 10
+    }
+  },
+  {
+    "root": "سبط",
+    "found": null
+  },
+  {
+    "root": "سفح",
+    "found": null
+  },
+  {
+    "root": "سلح",
+    "found": null
+  },
+  {
+    "root": "سوا",
+    "found": {
+      "id": 539,
+      "word_key": "swa",
+      "etymological_concept": null,
+      "root_ar": "س و ء",
+      "senses": 11
+    }
+  },
+  {
+    "root": "شيا",
+    "found": {
+      "id": 466,
+      "word_key": "shy",
+      "etymological_concept": "Volonté",
+      "root_ar": "ش ي أ",
+      "senses": 26
+    }
+  },
+  {
+    "root": "صوم",
+    "found": null
+  },
+  {
+    "root": "طبع",
+    "found": null
+  },
+  {
+    "root": "طمن",
+    "found": null
+  },
+  {
+    "root": "عسي",
+    "found": {
+      "id": 1456,
+      "word_key": "esa",
+      "etymological_concept": null,
+      "root_ar": "ع س ى",
+      "senses": 2
+    }
+  },
+  {
+    "root": "عضل",
+    "found": null
+  },
+  {
+    "root": "فاي",
+    "found": null
+  },
+  {
+    "root": "قرا",
+    "found": {
+      "id": 512,
+      "word_key": "qra",
+      "etymological_concept": null,
+      "root_ar": "ق ر أ",
+      "senses": 4
+    }
+  },
+  {
+    "root": "مرا",
+    "found": {
+      "id": 2470,
+      "word_key": "mraa",
+      "etymological_concept": "Personne/Individu",
+      "root_ar": "م ر أ",
+      "senses": 8
+    }
+  },
+  {
+    "root": "مرد",
+    "found": null
+  },
+  {
+    "root": "مطر",
+    "found": null
+  },
+  {
+    "root": "نبا",
+    "found": {
+      "id": 2185,
+      "word_key": "nbaa",
+      "etymological_concept": "Annonce/Information grave",
+      "root_ar": "ن ب أ",
+      "senses": 10
+    }
+  },
+  {
+    "root": "نبط",
+    "found": null
+  },
+  {
+    "root": "هجر",
+    "found": null
+  },
+  {
+    "root": "هزا",
+    "found": {
+      "id": 320,
+      "word_key": "hza",
+      "etymological_concept": null,
+      "root_ar": "ه ز أ",
+      "senses": 7
+    }
+  },
+  {
+    "root": "هنا",
+    "found": {
+      "id": 1425,
+      "word_key": "hna",
+      "etymological_concept": "Agrément/Bienfaisance",
+      "root_ar": "ه ن أ",
+      "senses": 7
+    }
+  }
+]

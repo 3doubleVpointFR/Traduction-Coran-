@@ -1,127 +1,303 @@
 
+LIS BIEN TOUT NE SOIT PAS FAINIANT verifie bien que 0 tafsir 
 🔍 PROMPT VÉRIFICATION RÉSUMÉS — verset [X:Y]
+
 Vérifier summary_short et summary_long du verset que tu viens de produire. Règle d'or : pas d'interprétation, pas de tafsir, rien que le Coran lui-même + nos choix de traduction maison.
 
+
+
+
+
+RÈGLE 1 — summary_short : VULGARISATION ABSOLUE
+
+❌ NE PAS paraphraser le verset (ne pas reprendre ses mots tels quels)
+
+✅ EXPLIQUER ce que ça veut dire concrètement en français de tous les jours
+
+✅ Ton oral comme un ami qui raconte
+
+✅ 2-3 phrases max
+
+✅ Premier verbe direct : dit, demande, prévient, explique
+
+❌ Mots interdits : « pose », « énonce », « rappelle », « fonde », « affirmation cosmique », « commentaire métadiscursif », « principe ontologique », « fondement métaphysique »
+
+✅ Exemple : « ce qui est dans les cieux et sur la terre appartient à Dieu » → « Dieu possède tout, dans le ciel comme sur la terre »
+
+
+
+RÈGLE 5 — Anti-tafsir dans les résumés
+
+❌ Imposer des liens logiques que le verset ne fait PAS explicitement
+
+❌ « le V109 fonde la justice du V108 » (alors que V109 ne le dit pas)
+
+✅ Décrire ce que le verset dit, pas ce qu'on en déduit
+
+✅ Verbe de liaison neutre : « prolonge », « ajoute », « complète » (pas « fonde », « justifie »)
+
 ÉTAPE 0 — VÉRIFICATION ANTI-TAFSIR (préalable)
+
 Avant tout, scanner les résumés pour détecter :
 
+
+
 Identification tafsirique : nom propre absent du verset (ex: « Badr », « Quraysh ») introduit dans le résumé
+
 Glose contextuelle : ajout d'éléments « bien connus » de la tradition mais absents du verset (ex: « la mère attendait un garçon pour le service du temple »)
+
 Anticipation : mention d'un personnage/événement de versets non encore traités (ex: parler de Jésus dans un résumé sur Marie qui ne le nomme pas)
+
 Claims « première occurrence » : à vérifier 3× (sourate vs Coran). Une racine peut être nouvelle dans la sourate mais déjà apparue ailleurs dans le Mushaf.
+
 Si une de ces fautes est détectée → corriger AVANT de passer à la suite.
 
-SUMMARY_SHORT — règles
+
+
+SUMMARY_SHORT VULGARISER ET ECRIS PLUS SIMPLEMENT retient bien ça tu oublie souvent — règles
+
 Objectif : permettre à un lecteur qui tombe sur le verset isolé (sans avoir lu V-1, V-2, etc.) de comprendre rapidement de quoi il s'agit, en 3-4 phrases max.
 
+
+
 Critères
+
 Paraphrase vulgarisée : raconter en français courant ce que dit le verset, pas juste réordonner ses mots
+
 Lecture isolée possible : si le verset fait référence à un personnage déjà nommé ou à un événement antérieur, citer brièvement les éléments cruciaux (« Faisant suite au V33 qui venait de nommer Adam, Noé, la famille d'Abraham et la famille d'Imrān… »)
+
 3-4 phrases STRICT (pas plus)
+
 Style : français courant, vulgarisé, lecture rapide
+
 Pas de jargon grammatical, pas de phonétique, pas d'arabe brut
+
 Test mode naïf
+
 Relire le verset + summary_short comme un lecteur qui n'a JAMAIS lu le Coran. Doit comprendre :
 
+
+
 de quoi le verset parle (sujet)
+
 où il s'insère minimalement (si référence à un événement antérieur)
+
 la portée immédiate (information / parole / loi / récit)
+
 Si le naïf ne comprend pas → reformuler.
 
+
+
 SUMMARY_LONG — règles
+
 Objectif : donner au lecteur une vue globale du verset, son inscription dans le verset précédent et dans la sourate.
 
+
+
 Structure obligatoire — 3 blocs séparés par double saut de ligne
+
 BLOC 1 — MACRO
+
 Doit montrer en quoi ce verset s'insère dans le discours de la sourate (vue verset ↔ sourate (donc faut que tu es une vue sur tout le debut de la sourate).
 
+
+
 Situer le verset dans la séquence narrative ou argumentative en cours
+
 Citer rapidement les versets voisins concernés par la séquence (ex: « Le V13 clôt la séquence V10-V13 sur ceux qui ont rejeté »)
+
 Permettre au lecteur isolé de voir où ce verset s'insère dans le mouvement général de la sourate
+
 Purement situationnel : pas d'analyse stylistique (« transforme », « durcit », « rupture »…) — toute analyse va dans ITALIQUE
+
 BLOC 2 — MICRO
+
 Doit montrer en quoi ce verset s'insère dans le discours des versets voisins (vue verset ↔ verset voisin).
 
+
+
 Reprendre brièvement ce que disait le V-1 (ou V-1, V-2 si pertinent)
+
 Montrer comment le V courant prolonge / répond / contraste
+
 Décrire ce que le verset apporte concrètement, mot après mot — sans le copier-coller
+
 Citer les segments clés de notre traduction maison
+
 MACRO doit situer Verset dans le mouvement GLOBAL de la sourate (où dans le grand récit ?)
+
 MICRO doit traiter la relation immédiate  (qui demande quoi, qui répond quoi)
+
+
 
 BLOC 3 — ITALIQUE (en *…*)
 
 
+
+
+
 Analyse analytique globale + leçons / faits marquants.
 
+
+
 C'est ICI uniquement que tu peux relever des leçons ou faits marquants du verset (seul ou par rapport à son contexte proche / contexte de la sourate)
+
 Style légèrement contemplatif, mais sans interprétation forcée
+
 Si rien d'analytiquement marquant à dire → ne pas forcer un bloc ITALIQUE artificiel ; laisser une note honnête (« Le verset prolonge simplement la séquence sans introduire de rupture stylistique notable »).
+
 Règles transversales (s'appliquent aux 3 blocs)
+
 Éviter les redits entre MACRO / MICRO / ITALIQUE — chaque bloc apporte un angle différent.
+
 Français clair et limpide — pas de jargon technique, pas de phonétique, pas d'arabe.
+
 Lecture analytique, pas copier-coller — paraphraser et expliquer, ne pas répéter le verset mot pour mot.
+
 Lien explicite verset précédent → verset courant, et lien explicite verset courant → sourate (continuité).
+
 Le bloc ITALIQUE peut formuler des leçons / faits marquants ; les autres blocs restent descriptifs.
+
 RÈGLE — COHÉRENCE INTRA-COR PUS
+
 Si tu cites d'autres versets (avant, après, ou ailleurs) dans le résumé :
 
+
+
 T'assurer qu'ils sont cités en cohérence avec NOTRE traduction maison de ces versets
+
 Pas de glose ou paraphrase qui s'écarte de notre rendu
+
 Si le verset cité n'a pas encore été traité → ne pas le citer (anticipation interdite)
+
 RÈGLE — VÉRIFICATION 3× DES AFFIRMATIONS
+
 Toute affirmation factuelle dans les résumés doit être vérifiée 3 fois :
 
+
+
 « première occurrence dans la sourate / dans le Coran » → requêter BDD pour confirmer
+
 « X est nommé pour la première fois » → vérifier dans toutes les occurrences antérieures (Mushaf order)
+
 « toutes les paroles précédentes étaient X » → relister chaque verset précédent avec sa nature
+
 « ce verset clôt la séquence Y-Z » → vérifier que V+1 ouvre bien autre chose
+
 Si un doute subsiste après 3 vérifications → reformuler en moins absolu (« la première fois dans la sourate », au lieu de « la première fois dans le Coran »).
 
+
+
 MOTS INTERDITS DANS LES 2 RÉSUMÉS
+
 ❌ « rejetants », « rejetant », « rejetantes » → ✅ « ceux qui ont rejeté »
+
 ❌ « islam » au sens confessionnel (post-islamique) → ✅ « remise de soi »
+
 ❌ phonétique arabe (taqabbalahā, hādhā, etc.)
+
 ❌ arabe en script
+
 ❌ jargon linguistique (idāfa, taqdim, participe, accusatif, etc.)
+
 ❌ jargon religieux (tawhid, iman, hidayah)
+
 PROCÉDURE OBLIGATOIRE
+
 Charger le verset + ses voisins (V-2, V-1, V, V+1) avec leurs traductions maison depuis BDD pour vérifier la cohérence intra-corpus.
+
 Anti-tafsir : pour chaque nom propre, événement, élément spécifique du résumé → vérifier qu'il apparaît bien dans segments[].fr du verset analysé. Si absent → identification tafsirique, retirer.
+
 Vérification 3× de chaque claim factuel.
+
 Test mode naïf sur summary_short — un lecteur sans contexte doit comprendre.
+
 Vérification éviter redits entre MACRO / MICRO / ITALIQUE.
+
 Vérification mots interdits.
+
 LIVRABLE — TABLEAU DE VÉRIFICATIONS FAITES
+
 Présenter à la fin un bloc « Vérifications faites » sur le modèle :
 
+
+
 ✓ « X » N'EST PAS dans le verset (vérifié BDD segments) — pas mentionné dans le résumé
+
 ✓ « ... », « ... » : segments fr maison (pos N, M)
+
 ✓ « ... » : cohérent avec correction faite en session précédente
+
 ✓ « ... » : segment fr (pos N)
+
 ✓ Aucune phonétique / arabe / terme technique
+
 ✓ MACRO et ITALIQUE non redondants
+
 ✓ Claims « première occurrence » vérifiés 3× (sourate / Coran)
+
 ✓ Mots interdits absents (rejetants, mécréants, infidèles, hypocrites, islam)
+
 ✓ Anti-tafsir : aucun élément ajouté hors du verset
+
 ✓ Anti-anticipation : aucun verset non traité mentionné
+
 ✓ Lien V-1 → V courant explicite (MICRO)
+
 ✓ Lien V courant ↔ sourate explicite (MACRO)
-Si une vérification échoue → la lister en ❌ et corriger AVANT de finir.
+
+Si une vérification échoue → la lister en ❌ et co
+
+RÈGLE — Cohérence vocabulaire vs §CRITIQUE§ / proof_ctx
+
+- ❌ « Maison » dans summary_short ou summary_long → utiliser « Notre traduction »
+
+- ❌ Jargon (transitif, attribut, accompli, schème, copule, participe) → reformuler en plain French
+
+- ❌ Niveau B / V97 rotation / déplacement Niveau B / carrie → reformuler
+
+
+
+RÈGLE — Anti-glose d'attribut divin dans résumés
+
+Pour tout attribut divin du verset (muḥīṭ, ʿalīm, qādir, samīʿ, baṣīr, etc.) :
+
+- Vérifier que les résumés ne glosent pas par un autre attribut absent du verset
+
+- summary_short et summary_long doivent rester fidèles à l'image du mot arabe
+
+- Si Hamidullah ajoute une glose entre parenthèses, c'est SA lecture — la nôtre doit garder l'image ouverterriger AVANT de finir.
+
+
 
 EN CAS DE PROPOSITION DE NOUVEAU RÉSUMÉ
+
 Présenter sous la forme :
 
+
+
 V[N] — proposition (statut court résumant ton intention)
+
 Trad : « ... »
+
 Vérification anti-tafsir : ...
+
 MACRO :
+
 [texte]
+
 MICRO :
+
 [texte]
+
 ITALIQUE :
+
 *[texte]*
+
 Vérifications faites
+
 ✓ ...
+
 ✓ ...
-Demander ensuite la validation de l'utilisateur avant d'écrire en BDD et a la fin verifiie encore tes affirmation que tu a mis dans tout tes résumé 3 fois et assure toi que il n'y pas de répetition entre micro macro et italique .
+
+Demander ensuite la validation de l'utilisateur avant d'écrire en BDD et a la fin verifiie encore tes affirmation que tu a mis dans tout tes résumé 3 fois et assure toi que il n'y pas de répetition entre micro macro et italique . macro bien narratif et short vulgarisé et pas copié

@@ -1,0 +1,578 @@
+{
+  "ح ص ن": {
+    "aid": 2690,
+    "word_key": "HSn",
+    "etym": "Fortification/Protection",
+    "nb_sens": 14,
+    "concepts": {
+      "Fortification/Protection": [
+        "forteresse",
+        "être inaccessible",
+        "fortifier",
+        "protéger contre attaque",
+        "place forte"
+      ],
+      "Chasteté/Continence": [
+        "être chaste",
+        "continence",
+        "préserver son intimité",
+        "abstinence"
+      ],
+      "Mariage/Union protectrice": [
+        "être marié",
+        "femme mariée",
+        "prendre pour épouse"
+      ],
+      "Cheval de race": [
+        "cheval de race",
+        "étalon"
+      ]
+    }
+  },
+  "ن س و": {
+    "aid": 2198,
+    "word_key": "nsw",
+    "etym": "Féminin/Épouses",
+    "nb_sens": 7,
+    "concepts": {
+      "Oubli/Négligence": [
+        "oublier",
+        "négliger",
+        "feindre d'oublier"
+      ],
+      "Féminin/Épouses": [
+        "femmes",
+        "épouses",
+        "genre féminin"
+      ],
+      "Anatomie/Sciatique": [
+        "veine sciatique"
+      ]
+    }
+  },
+  "م ل ك": {
+    "aid": 256,
+    "word_key": "mlk",
+    "etym": "Possession/Autorité",
+    "nb_sens": 19,
+    "concepts": {
+      "Possession/Autorité": [
+        "posséder",
+        "maître",
+        "possesseur",
+        "propriété",
+        "biens",
+        "esclave",
+        "asservir"
+      ],
+      "Royauté/Souveraineté": [
+        "roi",
+        "royaume",
+        "règne",
+        "souverain",
+        "couronnement",
+        "trône"
+      ],
+      "Ange/Messager": [
+        "ange",
+        "messager",
+        "message"
+      ],
+      "Sens isolé/Pâte": [
+        "pâte"
+      ],
+      "Sens isolé/Maîtriser": [
+        "maîtriser soi-même"
+      ],
+      "Eau/Liquide": [
+        "eau stagnante"
+      ]
+    }
+  },
+  "ي م ن": {
+    "aid": 1028,
+    "word_key": "ymn",
+    "etym": "Droite/Serment",
+    "nb_sens": 6,
+    "concepts": {
+      "Droite/Serment": [
+        "droite",
+        "serment",
+        "main droite"
+      ],
+      "Bénédiction/Prospérité": [
+        "être béni",
+        "prospérité"
+      ],
+      "Sens isolé/Yémen": [
+        "Yémen"
+      ]
+    }
+  },
+  "ك ت ب": {
+    "aid": 275,
+    "word_key": "ktb",
+    "etym": "Écriture/Inscription",
+    "nb_sens": 36,
+    "concepts": {
+      "Écriture/Inscription": [
+        "écrire",
+        "dicter",
+        "demander d'écrire",
+        "écrire à quelqu'un",
+        "s'inscrire",
+        "copier un livre",
+        "art de l'écriture",
+        "scribe",
+        "savant",
+        "école",
+        "enseignant",
+        "vendeur de livres"
+      ],
+      "Livre/Écrit": [
+        "livre",
+        "écriture révélée",
+        "registre",
+        "contrat écrit",
+        "contrat de mariage",
+        "contrat d'affranchissement"
+      ],
+      "Obligation/Décret": [
+        "prescrire",
+        "rendre obligatoire",
+        "juger",
+        "décret divin",
+        "prédestination"
+      ],
+      "Assemblage/Couture": [
+        "rassembler",
+        "coudre",
+        "attacher",
+        "fermer la vulve",
+        "lier l'outre",
+        "se ceindre",
+        "collecter",
+        "préparer les troupes",
+        "armée"
+      ],
+      "Sens isolé/Divers": [
+        "rétention urinaire",
+        "constipation",
+        "flèche d'entraînement",
+        "gonflé et plein"
+      ]
+    }
+  },
+  "ا ل ه": {
+    "aid": 250,
+    "word_key": "alh",
+    "etym": "Adoration/Dévotion",
+    "nb_sens": 15,
+    "concepts": {
+      "Adoration/Dévotion": [
+        "adorer",
+        "faire adorer",
+        "se dévouer au culte",
+        "diviniser"
+      ],
+      "Divinité": [
+        "divinité",
+        "Dieu",
+        "théologie",
+        "exclamation divine",
+        "oui certes"
+      ],
+      "Détresse": [
+        "être perplexe",
+        "se lamenter"
+      ],
+      "Refuge/Protection": [
+        "chercher refuge",
+        "protéger",
+        "demeurer"
+      ],
+      "Domination": [
+        "asservir"
+      ]
+    }
+  },
+  "ح ل ل": {
+    "aid": 939,
+    "word_key": "hll",
+    "etym": "Dissolution/Libération",
+    "nb_sens": 9,
+    "concepts": {
+      "Licéité/Permission": [
+        "être licite",
+        "être permis",
+        "rendre licite"
+      ],
+      "Dissolution/Libération": [
+        "délier",
+        "résoudre"
+      ],
+      "Installation": [
+        "descendre (en un lieu)",
+        "séjourner"
+      ],
+      "Époux/Épouse": [
+        "époux",
+        "épouse"
+      ]
+    }
+  },
+  "و ر ي": {
+    "aid": 685,
+    "word_key": "wry",
+    "etym": "Dissimulation",
+    "nb_sens": 7,
+    "concepts": {
+      "Dissimulation": [
+        "cacher",
+        "dissimuler",
+        "enterrer"
+      ],
+      "Position cachée": [
+        "derrière",
+        "arrière",
+        "au-delà",
+        "dos"
+      ]
+    }
+  },
+  "ب غ ي": {
+    "aid": 683,
+    "word_key": "bgh",
+    "etym": "Quête/Transgression",
+    "nb_sens": 17,
+    "concepts": {
+      "Quête/Transgression": [
+        "rechercher",
+        "chercher",
+        "transgresser",
+        "désirer ardemment",
+        "chercher à atteindre",
+        "opprimer",
+        "désirer",
+        "transgression",
+        "excès",
+        "jalousie envieuse",
+        "rivalité agressive"
+      ],
+      "Injustice/Tyrannie": [
+        "agir injustement",
+        "tyranniser",
+        "se révolter"
+      ],
+      "Sens isolé/Femme infidèle": [
+        "femme infidèle"
+      ],
+      "Sens isolé/Pluie": [
+        "pluie abondante"
+      ],
+      "Sens isolé/Éclaireur": [
+        "éclaireur"
+      ]
+    }
+  },
+  "م و ل": {
+    "aid": 1148,
+    "word_key": "mwl",
+    "etym": "Richesse/Biens",
+    "nb_sens": 7,
+    "concepts": {
+      "Richesse/Biens": [
+        "richesse",
+        "biens",
+        "fortune",
+        "être riche",
+        "possession",
+        "bétail",
+        "abonder en richesse"
+      ]
+    }
+  },
+  "غ ي ر": {
+    "aid": 266,
+    "word_key": "ghyr",
+    "etym": "Changement/Altération",
+    "nb_sens": 27,
+    "concepts": {
+      "Changement/Altération": [
+        "changer",
+        "altérer",
+        "transformer",
+        "modifier",
+        "échanger",
+        "devenir autre",
+        "arracher les cheveux blancs"
+      ],
+      "Autre/Exclusion": [
+        "autre",
+        "sauf",
+        "excepté",
+        "différent",
+        "exclusion",
+        "pas",
+        "n'est pas",
+        "sans"
+      ],
+      "Jalousie/Protection": [
+        "jalousie",
+        "très jaloux",
+        "plus jaloux",
+        "protéger ce qui est sien"
+      ],
+      "Provision/Subsistance": [
+        "provision de blé",
+        "pourvoir sa famille",
+        "obtenir un bénéfice"
+      ],
+      "Sens isolé/Mensonge": [
+        "mensonge"
+      ],
+      "Lieu/Géographie": [
+        "terre arrosée"
+      ],
+      "Corps/Anatomie": [
+        "sang versé",
+        "discours"
+      ],
+      "Sens isolé/Badge": [
+        "badge des non-musulmans"
+      ]
+    }
+  },
+  "س ف ح": {
+    "aid": 2693,
+    "word_key": "sfH",
+    "etym": "Effusion/Écoulement",
+    "nb_sens": 9,
+    "concepts": {
+      "Effusion/Écoulement": [
+        "verser",
+        "faire couler",
+        "effusion (de sang)",
+        "répandre"
+      ],
+      "Pied/Base de montagne": [
+        "pied de la montagne",
+        "base rocheuse",
+        "versant"
+      ],
+      "Fornication illicite": [
+        "fornication",
+        "acte illicite (sifāḥ)"
+      ]
+    }
+  },
+  "م ت ع": {
+    "aid": 853,
+    "word_key": "mtae",
+    "etym": "Durée/Extension",
+    "nb_sens": 8,
+    "concepts": {
+      "Jouissance/Profit": [
+        "jouir",
+        "profiter",
+        "faire profiter",
+        "jouissance"
+      ],
+      "Bien/Provision": [
+        "provision",
+        "bien temporel"
+      ],
+      "Durée/Extension": [
+        "prolonger",
+        "sursis"
+      ]
+    }
+  },
+  "ا ت ي": {
+    "error": "NOT FOUND"
+  },
+  "ا ج ر": {
+    "error": "NOT FOUND"
+  },
+  "ف ر ض": {
+    "aid": 618,
+    "word_key": "frd",
+    "etym": "Sens isolé/Entaille",
+    "nb_sens": 10,
+    "concepts": {
+      "Obligation/Devoir": [
+        "obliger",
+        "prescrire",
+        "devoir",
+        "assigner",
+        "fixer"
+      ],
+      "Part déterminée": [
+        "part",
+        "part obligatoire",
+        "part successorale"
+      ],
+      "Sens isolé/Grand": [
+        "énorme"
+      ],
+      "Sens isolé/Entaille": [
+        "encoche"
+      ]
+    }
+  },
+  "ج ن ح": {
+    "aid": 924,
+    "word_key": "jnh",
+    "etym": "Aile/Côté",
+    "nb_sens": 8,
+    "concepts": {
+      "Inclinaison/Penchant": [
+        "pencher",
+        "incliner vers",
+        "pente"
+      ],
+      "Aile/Côté": [
+        "aile",
+        "côté"
+      ],
+      "Faute/Culpabilité": [
+        "péché (junah)",
+        "faute",
+        "reproche"
+      ]
+    }
+  },
+  "ر ض و": {
+    "aid": 812,
+    "word_key": "rdw",
+    "etym": "Satisfaction/Agrément",
+    "nb_sens": 7,
+    "concepts": {
+      "Satisfaction/Agrément": [
+        "être satisfait",
+        "agréer",
+        "approuver",
+        "consentir",
+        "agrément"
+      ],
+      "Choix/Préférence": [
+        "choisir pour soi",
+        "rendre satisfait"
+      ]
+    }
+  },
+  "ب ع د": {
+    "aid": 926,
+    "word_key": "baed",
+    "etym": "Éloignement/Distance",
+    "nb_sens": 7,
+    "concepts": {
+      "Éloignement/Distance": [
+        "être loin",
+        "éloignement",
+        "lointain",
+        "s'éloigner"
+      ],
+      "Postériorité": [
+        "après",
+        "ensuite"
+      ],
+      "Mort/Destruction": [
+        "périr"
+      ]
+    }
+  },
+  "ك و ن": {
+    "aid": 2117,
+    "word_key": "knw",
+    "etym": "Existence/Devenir",
+    "nb_sens": 12,
+    "concepts": {
+      "Existence/Devenir": [
+        "être",
+        "exister",
+        "devenir",
+        "se trouver (dans un état)",
+        "advenir",
+        "se produire"
+      ],
+      "Humilité/Soumission": [
+        "s'humilier",
+        "être humble",
+        "se soumettre (istakāna)"
+      ],
+      "Lieu/Position": [
+        "position",
+        "lieu",
+        "place"
+      ]
+    }
+  },
+  "ع ل م": {
+    "aid": 254,
+    "word_key": "elm",
+    "etym": "Savoir/Connaissance",
+    "nb_sens": 22,
+    "concepts": {
+      "Savoir/Connaissance": [
+        "savoir",
+        "connaître",
+        "être informé",
+        "certitude",
+        "savant",
+        "science",
+        "enseignement"
+      ],
+      "Marque/Signe": [
+        "marquer",
+        "signe",
+        "drapeau",
+        "montagne",
+        "repère",
+        "étendard",
+        "lèvre fendue"
+      ],
+      "Monde/Création": [
+        "monde",
+        "les mondes",
+        "ensemble des créatures",
+        "univers"
+      ],
+      "Sens isolé/Enseigner": [
+        "enseigner"
+      ],
+      "Lieu/Géographie": [
+        "informer",
+        "nommer"
+      ],
+      "Sens isolé/Homonyme": [
+        "homonyme"
+      ]
+    }
+  },
+  "ح ك م": {
+    "aid": 447,
+    "word_key": "hkm",
+    "etym": "Empêcher/Retenir",
+    "nb_sens": 9,
+    "concepts": {
+      "Jugement/Décision": [
+        "juger",
+        "décider",
+        "sentence"
+      ],
+      "Autorité/Pouvoir": [
+        "gouverner"
+      ],
+      "Sagesse": [
+        "être sage",
+        "sagesse",
+        "fermement établi",
+        "sage"
+      ],
+      "Empêcher/Retenir": [
+        "empêcher"
+      ]
+    }
+  }
+}

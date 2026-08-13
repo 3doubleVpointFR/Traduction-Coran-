@@ -1,0 +1,1612 @@
+{
+  "V71": {
+    "id": 564,
+    "trad": "Ô vous qui avez cru ! Prenez votre garde. Alors mobilisez-vous par petits groupes ou mobilisez-vous tous ensemble.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "yā",
+        "fr": "Ô",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "ayyuhā",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "alladhīna",
+        "fr": "qui",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "āmanū",
+        "fr": "avez cru",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "khudhū",
+        "fr": "Prenez",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "-kum",
+        "fr": "votre",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "hidhr",
+        "fr": "garde",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "fa",
+        "fr": "Alors",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "infirū",
+        "fr": "mobilisez-vous",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "thubātin",
+        "fr": "par petits groupes",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "infirū",
+        "fr": "mobilisez-vous",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "jamīʿan",
+        "fr": "tous ensemble",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Ô** — Le sens retenu est la particule vocative « ya » rendue par « Ô » — l'interjection française qui ouvre une adresse. L'alternative « Oh » est écartée car « Ô » (avec accent circonflexe) est la graphie française conventionnelle pour marquer un appel solennel.\n\n**vous** — Le sens retenu pour « ayyuha » est « vous » — le pronom d'adresse qui reprend en français la fonction d'appel collectif de la particule arabe. L'alternative « ô les » (comme chez Hamidullah « Ô les croyants ») est écartée car elle fond « ya » et « ayyuha » en un seul geste et perd la décomposition articulée entre l'interjection et le marqueur d'adresse.\n\n**qui** — Le sens retenu pour « alladhina » est « qui » — le pronom relatif qui introduit la proposition qualifiant les destinataires. On aurait pu écrire « ceux qui » pour rendre plus explicite la valeur démonstrative, mais l'antécédent « vous » précédent suffit à porter cette valeur — « qui » seul évite la lourdeur.\n\n**avez cru** — Le sens retenu est « croire » (sens **Foi/Adhésion**), rendu ici par « avez cru » au passé composé français. Le verbe arabe est à la troisième personne du pluriel accompli, mais la formule vocative en fait une adresse — on passe donc à la deuxième personne en français (« vous avez cru »). L'alternative « croyants » (nom, comme chez Hamidullah « Ô les croyants ») est écartée car elle fige l'adhésion en identité statique ; le verbe conserve l'idée d'un acte donné.\n\n**Prenez** — Le sens retenu est « prendre » (sens **Prise/Saisie**), rendu à l'impératif de deuxième personne du pluriel. L'alternative « adoptez » (sens **Appropriation/Adoption**) est écartée car elle suggère un choix identitaire durable ; ici l'ordre porte sur un geste ponctuel de mise en garde, comme on prend un objet.\n\n**votre** — Le sens retenu pour « -kum » est le possessif « votre » — équivalent français du suffixe pronominal collectif de deuxième personne du pluriel. Il précède en français le nom (« votre garde ») alors qu'en arabe il fusionne avec le nom (« hidhra-kum »).\n\n**garde** — Le sens retenu est « garde » (sens **Prudence/Vigilance**), qui rend directement le nom « hidhr ». L'alternative « précaution » (sens **Précaution/Préparation**) est écartée car elle glisse vers la disposition matérielle ; « garde » conserve la primauté de l'état intérieur d'éveil, cœur du sens premier de la racine.\n\n**Alors** — Le sens retenu pour « fa » est « Alors » — l'adverbe français de conséquence qui reprend la fonction articulatoire de la particule arabe. L'alternative « Puis » est écartée car elle suggère une simple succession chronologique ; « fa » marque bien une conséquence logique.\n\n**mobilisez-vous** — Le sens retenu est « se mobiliser » (sens **Mobilisation/Marche**), rendu à l'impératif de deuxième personne du pluriel. L'alternative « fuyez » (sens **Fuite/Prise-de-peur**, sens premier) est écartée car l'ordre coranique appelle à un mouvement volontaire et collectif vers l'action, non à un recul devant un danger. L'alternative « partez au combat » de Hamidullah est écartée car elle ajoute l'objectif (le combat) que le verbe seul ne précise pas.\n\n**par petits groupes** — Le sens retenu est « petit groupe » (sens **Groupe/Détachement**), rendu au pluriel avec la préposition « par » qui restitue le rôle adverbial du pluriel (« manière de sortir »). C'est le sens premier de la racine — le plus clair pour un francophone (chaque groupe restant distinct des autres). L'alternative « détachements » colore trop militairement ; « en groupes séparés » (Hamidullah) explicite trop la séparation.\n\n**ou** — Le sens retenu pour « aw » est « ou » — la conjonction française d'alternative qui reprend directement la fonction de la particule arabe.\n\n**mobilisez-vous** — Reprise du même sens que l'occurrence précédente. La répétition n'est pas rhétorique mais introduit une seconde modalité — on garde donc la même traduction pour marquer l'identité du verbe.\n\n**tous ensemble** — Le sens retenu est « tous ensemble » (sens **Totalité/Ensemble**), qui rend directement le nom « jamian ». L'alternative « en une seule masse » est écartée car elle ajoute une image (la masse) absente du mot ; « tous ensemble » reste littéral et clair. L'alternative « ensemble » seule est écartée car elle perd la valeur d'exhaustivité (« tous sans exception ») portée par la forme entière du mot arabe.\n\n"
+  },
+  "V72": {
+    "id": 565,
+    "trad": "Et certes, parmi vous, il y a bien quelqu'un qui tardera vraiment. Alors si un malheur vous atteint, il dit : « Certes, Dieu m'a accordé un bienfait puisque je n'étais pas témoin avec eux. »",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "inna",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "min",
+        "fr": "parmi",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "-kum",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "la",
+        "fr": "il y a bien",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "man",
+        "fr": "quelqu'un qui",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "yubatti'anna",
+        "fr": "tardera",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "la",
+        "fr": "vraiment",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "fa",
+        "fr": "Alors",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "in",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "asabat",
+        "fr": "atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "-kum",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "musibatun",
+        "fr": "un malheur",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "qala",
+        "fr": "il dit",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "qad",
+        "fr": "Certes",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "'alayya",
+        "fr": "m'",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "an'ama",
+        "fr": "a accordé un bienfait",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "idh",
+        "fr": "puisque",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "lam",
+        "fr": "n'",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "akun",
+        "fr": "étais pas",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "ma'a",
+        "fr": "avec",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "shahidan",
+        "fr": "témoin",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et** — Le sens retenu pour « wa » est la conjonction « Et » qui articule la description à ce qui précède (l'ordre du V71). Rien d'autre à discuter.\n\n**certes** — Le sens retenu pour « inna » est « certes » — l'adverbe français qui introduit une affirmation forte. L'alternative « en vérité » est écartée car plus lourde.\n\n**parmi** — Le sens retenu pour « min » est « parmi » — la préposition française qui marque l'appartenance à un ensemble. L'alternative « de » est écartée car ambiguë (peut se lire de rattachement ou origine).\n\n**vous** — Le sens retenu pour « -kum » est « vous » — équivalent français du suffixe collectif de deuxième personne du pluriel.\n\n**il y a bien** — Le sens retenu pour la première particule d'insistance « la » (celle qui accompagne « inna » et souligne le prédicat) est « il y a bien » — expression française qui rend à la fois l'existence introduite par la construction et l'insistance portée par la particule. L'alternative « certes il y a » est écartée car elle dédouble le « certes » déjà rendu pour « inna ».\n\n**quelqu'un qui** — Le sens retenu pour « man » est « quelqu'un qui » — le pronom relatif indéfini singulier qui rend la valeur individuelle typique du mot arabe. L'alternative « ceux qui » est écartée car elle bascule au pluriel ; le singulier arabe cible un individu représentatif.\n\n**tardera** — Le sens retenu est « tarder » (sens **Lenteur/Retard**), rendu ici au futur « tardera » pour restituer la valeur d'avenir catégorique portée par la marque emphatique « anna » (n de renforcement). L'alternative « traîne » (présent) est écartée car elle perd la certitude projetée dans le futur ; « tardera vraiment » restitue à la fois le verbe et son emphase.\n\n**vraiment** — Le sens retenu pour la seconde particule d'insistance « la » (celle qui accompagne le verbe) est « vraiment » — l'adverbe français qui renforce le verbe. Placé après « tardera » pour respecter l'ordre naturel du français. L'alternative « effectivement » est écartée car trop lourde.\n\n**Alors** — Le sens retenu pour « fa » est « Alors » — l'adverbe français de conséquence qui reprend la fonction articulatoire de la particule arabe. L'alternative « Puis » est écartée car elle suggère une simple succession chronologique ; « fa » marque bien une conséquence.\n\n**si** — Le sens retenu pour « in » est « si » — la conjonction française qui ouvre une hypothèse simple.\n\n**atteint** — Le sens retenu est « atteindre » (sens **Atteinte/Affliction**, sens premier ✦), rendu au présent « atteint » car dans une conditionnelle « si + présent » le français exprime l'hypothèse générale. L'alternative « frappe » (également listé dans le même sens) est écartée car plus violente que le neutre « atteint » qui laisse ouverte la gravité de l'événement.\n\n**vous** — Reprise du sens « -kum » (voir plus haut), même équivalence.\n\n**un malheur** — Le sens retenu est « malheur » (sens **Atteinte/Affliction**, sens premier ✦), rendu au singulier indéfini pour respecter la marque arabe « -atun » qui désigne un événement quelconque. L'alternative « une calamité » (Hamidullah) est écartée car elle dramatise davantage ; « malheur » reste neutre et large.\n\n**il dit** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu au passé simple français « il dit » qui correspond au passé arabe d'introduction de parole rapportée.\n\n**Certes** — Le sens retenu pour « qad » est « Certes » — l'adverbe français d'insistance qui donne au passé la valeur emphatique portée par la particule arabe. L'alternative « effectivement » est écartée car moins directe.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu directement par le nom propre français équivalent à « Allah ». L'alternative « Allah » (Hamidullah) est écartée car conservée en phonétique ; « Dieu » est le nom propre français que la traduction adopte systématiquement pour ce référent.\n\n**m'** — Le sens retenu pour « 'alayya » est le pronom « m' » (contraction de « me ») — équivalent français du « à moi » que la construction verbale « accorder un bienfait à quelqu'un » exige. En arabe la préposition « 'ala » est celle sélectionnée par le verbe « an'ama » ; en français, elle est absorbée dans le pronom clitique.\n\n**a accordé un bienfait** — Le sens retenu est « accorder un bienfait » (sens **Bienfait/Faveur**), rendu au passé composé qui correspond au passé arabe. L'alternative « a fait une faveur » (Hamidullah) est écartée car « faveur » sans « bienfait » perd la dimension positive concrète du mot arabe ; « accorder un bienfait » restitue l'acte de don complet.\n\n**puisque** — Le sens retenu pour « idh » est « puisque » — la conjonction française causale qui explicite le lien de raison (le locuteur explique en quoi consiste concrètement le bienfait). L'alternative « quand » (temporel) est écartée car elle réduit la conjonction à une simple indication temporelle, alors que le contexte demande la valeur causale.\n\n**n'** — Le sens retenu pour « lam » est la négation française « ne » (élidée en « n' » devant voyelle) — équivalent français de la particule arabe de négation du passé. Le « pas » qui complète est absorbé dans le verbe suivant.\n\n**étais pas** — Le sens retenu est « être » (sens **Être/Existence**, sens premier ✦), rendu par « étais pas » qui combine le verbe être à l'imparfait français avec la particule « pas » qui complète la négation initiée par « n' » plus haut. L'imparfait est le temps français qui correspond au passé négatif construit par « lam » suivi de la forme verbale raccourcie.\n\n**avec** — Le sens retenu pour « ma'a » est « avec » — la préposition française d'accompagnement, équivalent direct de la préposition arabe.\n\n**eux** — Le sens retenu pour « -hum » est « eux » — le pronom français collectif de troisième personne du pluriel masculin.\n\n**témoin** — Le sens retenu est « témoin » (sens **Témoignage/Déclaration**, sens premier ✦), rendu directement par le nom français équivalent. L'alternative « présent » (sens **Présence/Constatation**) est écartée car elle perd l'idée d'attribut permanent portée par la forme arabe « fa'il » (celui qui a vu et peut attester). L'alternative « martyr » (sens **Martyre/Sacrifice**) est écartée fermement car c'est un sens post-coranique tardif absent du verset.\n\n"
+  },
+  "V73": {
+    "id": 566,
+    "trad": "Et certes, si une grâce de Dieu vous atteint, il dira vraiment — comme s'il n'y avait entre vous et lui aucune affection : « Ah ! si seulement j'avais été avec eux, alors j'aurais gagné un gain immense ! »",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "la",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "in",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "fadlun",
+        "fr": "une grâce",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 2,
+        "phon": "-kum",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "asaba",
+        "fr": "atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "yaqulanna",
+        "fr": "il dira",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "la",
+        "fr": "vraiment",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "ka",
+        "fr": "comme",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "an",
+        "fr": "s'il",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "lam",
+        "fr": "n'",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "takun",
+        "fr": "y avait",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "bayna",
+        "fr": "entre",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "-kum",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "wa-bayna-hu",
+        "fr": "et lui",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "mawaddatun",
+        "fr": "aucune affection",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "ya",
+        "fr": "Ah",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "layta",
+        "fr": "si seulement",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "-ni",
+        "fr": "j'",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "kuntu",
+        "fr": "avais été",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "ma'a",
+        "fr": "avec",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "fa",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "afuza",
+        "fr": "j'aurais gagné",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "fawzan",
+        "fr": "un gain",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "aziman",
+        "fr": "immense",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et** — Le sens retenu pour « wa » est « Et » qui articule le portrait à celui du V72. Rien d'autre à discuter.\n\n**certes** — Le sens retenu pour « la » (première particule d'insistance) est « certes ». L'alternative « oui » est écartée car trop familière ; « certes » restitue l'insistance solennelle de la particule arabe.\n\n**si** — Le sens retenu pour « in » est « si » — la conjonction française qui ouvre une hypothèse simple.\n\n**une grâce** — Le sens retenu est « grâce » (sens **Excellence/Faveur**), rendu au singulier indéfini « une grâce » pour respecter la marque arabe « -un ». L'alternative « une faveur » (également listée dans le même sens) est écartée car plus faible ; « grâce » restitue mieux la dimension de don gratuit venu d'en haut.\n\n**de** — Le sens retenu pour « min » est « de » — la préposition française d'origine. C'est la préposition sélectionnée par la construction « une grâce de Dieu » en français ; parfaitement équivalente à « min » qui marque l'origine.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu directement par le nom propre français équivalent à « Allah ». L'alternative « Allah » (Hamidullah) est écartée car conservée en phonétique ; « Dieu » est le nom propre français que la traduction adopte systématiquement pour ce référent.\n\n**vous** — Le sens retenu pour « -kum » est « vous » — équivalent français du suffixe collectif de deuxième personne du pluriel.\n\n**atteint** — Le sens retenu est « atteindre » (sens **Atteinte/Affliction**, sens premier), rendu au présent « atteint » car dans une conditionnelle « si + présent » le français exprime l'hypothèse générale. Même choix qu'au V72 pos=6 — le verbe reste neutre et couvre les deux polarités (malheur ou grâce).\n\n**il dira** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier), rendu au futur simple français « il dira » pour restituer la valeur d'avenir catégorique portée par la marque emphatique « anna » (n de renforcement).\n\n**vraiment** — Le sens retenu pour « la » (seconde particule d'insistance, attachée au verbe) est « vraiment » — l'adverbe français qui renforce le verbe. Placé après « dira » pour respecter l'ordre naturel du français.\n\n**comme** — Le sens retenu pour « ka » est « comme » — la préposition française de comparaison.\n\n**s'il** — Le sens retenu pour « an » est « s'il » — contraction française de « si » + « il » (pronom impersonnel absorbé), qui rend la conjonction subordonnée arabe. La structure « ka-an » (comme si) marque une comparaison contrefactuelle.\n\n**n'** — Le sens retenu pour « lam » est la négation française « ne » (élidée en « n' » devant voyelle). Le « pas » qui complète est absorbé dans la construction « n'y avait ».\n\n**y avait** — Le sens retenu est « être » (sens **Être/Existence**, sens premier), rendu par « y avait » qui combine le verbe être à l'imparfait français (« il y avait ») avec la valeur négative du « n' » précédent (« il n'y avait pas »). Le « y » impersonnel français est ajouté pour la tournure existentielle standard.\n\n**entre** — Le sens retenu pour « bayna » est « entre » — la préposition française qui marque la position au milieu de deux entités.\n\n**vous** — Reprise du sens « -kum » (voir plus haut), même équivalence.\n\n**et lui** — Le sens retenu pour « wa-bayna-hu » (fusion de trois éléments arabes) est « et lui » — rendu compact qui absorbe le second « entre » sans le répéter. En français on ne dit pas « entre vous et entre lui » (lourd) mais « entre vous et lui ».\n\n**aucune affection** — Le sens retenu est « affection » (sens **Amour/Affection**, sens premier), rendu au singulier avec la négation absorbée « aucune » pour restituer la combinaison arabe « lam takun mawaddatun » (négation + indéfini = aucune). L'alternative « amour » (également listée dans le même sens) est écartée car trop fort et exclusif ; « affection » restitue mieux le lien cordial et amical.\n\n**Ah** — Le sens retenu pour « ya » est l'interjection française « Ah » qui marque l'expression émotionnelle. Ici « ya » n'est pas vocatif (appel à quelqu'un) mais partie de la construction de souhait « ya-layta ».\n\n**si seulement** — Le sens retenu pour « layta » est « si seulement » — la locution française qui exprime le souhait irréel, équivalent direct de la particule arabe.\n\n**je** — Le sens retenu pour « -ni » est « je » — le pronom sujet français qui reprend en français la fonction du suffixe attaché à « layta ».\n\n**avais été** — Le sens retenu est « être » (sens **Être/Existence**, sens premier), rendu au plus-que-parfait français « avais été » pour restituer la valeur d'un souhait qui n'a pas eu lieu portée par la combinaison « ya-layta + kana passé » (souhait d'un fait qui n'a pas eu lieu).\n\n**avec** — Le sens retenu pour « ma'a » est « avec » — la préposition française d'accompagnement.\n\n**eux** — Le sens retenu pour « -hum » est « eux » — le pronom français collectif de troisième personne du pluriel masculin.\n\n**alors** — Le sens retenu pour « fa » est « alors » — l'adverbe français de conséquence, ici pour introduire le résultat attendu du souhait.\n\n**j'aurais gagné** — Le sens retenu est « gagner » (sens **Succès/Salut**, sens premier), rendu au conditionnel passé « j'aurais gagné » qui rend en français la valeur de la forme verbale arabe précédée de « fa » — conséquence attendue d'un souhait qui n'a pas eu lieu.\n\n**un gain** — Le sens retenu est « triompher » (sens **Succès/Salut**, sens premier), rendu par « un gain » (nom) pour respecter la reprise arabe de la racine dans la construction « afuza fawzan » (gagner un gain). L'alternative « une victoire » est écartée car « victoire » suggère un combat gagné ; « gain » reste plus neutre et couvre l'obtention effective d'un bien.\n\n**immense** — Le sens retenu est « immense » (sens **Grandeur/Importance**), rendu directement par l'adjectif français équivalent. L'alternative « énorme » (Hamidullah) est écartée car « énorme » a une connotation matérielle un peu vulgaire ; « immense » restitue mieux la grandeur solennelle.\n\n"
+  },
+  "V74": {
+    "id": 567,
+    "trad": "Qu'ils combattent donc dans le chemin de Dieu, ceux qui vendent la vie d'ici-bas contre la vie dernière. Et quiconque combat dans le chemin de Dieu, qu'il soit tué ou l'emporte, alors bientôt Nous lui donnerons une récompense immense.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "la",
+        "fr": "Qu'ils",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "yuqatil",
+        "fr": "combattent",
+        "is_particle": false
+      },
+      {
+        "pos": 1,
+        "phon": "fa",
+        "fr": "donc",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "sabil",
+        "fr": "le chemin de",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "alladhina",
+        "fr": "ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "yashruna",
+        "fr": "vendent",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "al-hayat",
+        "fr": "la vie",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "al-dunya",
+        "fr": "d'ici-bas",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "bi",
+        "fr": "contre",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "al-akhira",
+        "fr": "la vie dernière",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "man",
+        "fr": "quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "yuqatil",
+        "fr": "combat",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "sabil",
+        "fr": "le chemin de",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "fa",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "yuqtal",
+        "fr": "qu'il soit tué",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "yaghlib",
+        "fr": "l'emporte",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "fa",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "sawfa",
+        "fr": "bientôt",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "nu'tihi",
+        "fr": "Nous lui donnerons",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "ajran",
+        "fr": "une récompense",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "aziman",
+        "fr": "immense",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Qu'ils** — Le sens retenu pour la particule « la » qui accompagne le verbe pour lui donner valeur d'ordre est « Que » — la conjonction française qui introduit un ordre à la troisième personne. Le pronom « ils » ajouté n'est pas dans le mot arabe « la », mais nécessaire en français pour lever une ambigüité : la construction arabe place le sujet (« ceux qui vendent ») après le verbe, ordre qui en français peut se lire à contresens (comme si « ceux qui vendent » étaient l'adversaire du combat, non le sujet). L'ajout de « ils » + une virgule (« Qu'ils combattent donc dans le chemin de Dieu, ceux qui vendent... ») explicite que « ceux qui vendent » est bien le sujet postposé du verbe combattre.\n\n**combattent** — Le sens retenu est « combattre » (sens **Meurtre/Combat**, sens premier ✦), rendu au présent du subjonctif « combattent » pour former avec « Que » l'ordre à la troisième personne. Le pluriel est requis par « ceux qui » (alladhina) plus loin. L'alternative « fassent la guerre » est écartée car plus lourde ; « combattre » est le verbe direct.\n\n**donc** — Le sens retenu pour « fa » est « donc » — l'adverbe français de conséquence. Placé après le verbe pour respecter l'ordre naturel du français.\n\n**dans** — Le sens retenu pour « fi » est « dans » — la préposition française qui marque le cadre. L'alternative « sur » (« sur le chemin de ») serait plus concrète mais moins fidèle à l'idée de cadre englobant portée par « fi ».\n\n**le chemin de** — Le sens retenu est « chemin » (sens **Voie/Direction**), rendu avec la préposition « de » qui rattache au nom propre suivant (« chemin de Dieu »). L'alternative « sentier » (Hamidullah) est écartée car « sentier » suggère un tracé petit et champêtre ; « chemin » reste neutre et large, mieux adapté à l'expression figurée.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu directement par le nom propre français.\n\n**ceux qui** — Le sens retenu pour « alladhina » est « ceux qui » — pronom relatif français qui introduit la clause d'identification.\n\n**vendent** — Le sens retenu est « vendre » (sens **Échange/Transaction**, sens premier ✦), rendu au présent français « vendent ». La racine arabe couvre les deux versants (acheter/vendre) ; le contexte impose « vendre » car ceux visés cèdent leur vie d'ici-bas pour obtenir l'au-delà. L'alternative « troquent » (Hamidullah) est écartée car « troquer » suggère un échange sans argent (échange direct) ; « vendre » restitue mieux l'idée de transaction avec valorisation.\n\n**la vie** — Le sens retenu est « vie » (sens **Vie/Vivant**, sens premier ✦), rendu directement par le nom français équivalent.\n\n**d'ici-bas** — Le sens retenu est « ici-bas » (sens **Proximité/Monde d'ici-bas**, sens premier ✦), rendu par la locution française qui désigne le monde terrestre. Placé après « la vie » pour former l'expression « la vie d'ici-bas ». L'alternative « présente » (Hamidullah) est écartée car « présente » se réfère au temps (le maintenant) ; « d'ici-bas » restitue mieux l'idée spatiale-temporelle de proximité au sujet.\n\n**contre** — Le sens retenu pour « bi » est « contre » — la préposition française qui marque ici la contrepartie d'une transaction (« vendre X contre Y »).\n\n**la vie dernière** — Le sens retenu est « la vie dernière » (sens **Monde à venir/Vie dernière**), rendu directement. L'alternative « future » (Hamidullah) est écartée car « future » relève de la simple postériorité temporelle ; « la vie dernière » restitue mieux la valeur de dimension positive de la vie qui vient après la mort, portée par « al-akhirah ».\n\n**Et** — Le sens retenu pour « wa » est « Et » — la conjonction française qui articule la seconde phrase du verset à la première.\n\n**quiconque** — Le sens retenu pour « man » est « quiconque » — le pronom relatif indéfini qui introduit la valeur universelle de la condition.\n\n**combat** — Reprise du sens « combattre » (voir plus haut), même équivalence.\n\n**dans** — Reprise du sens « fi » (voir plus haut).\n\n**le chemin de** — Reprise du sens « sabil » (voir plus haut).\n\n**Dieu** — Reprise du sens « Dieu » (voir plus haut).\n\n**alors** — Le sens retenu pour « fa » (première occurrence dans la seconde phrase) est « alors » — l'adverbe français qui introduit la suite du « si » de la conditionnelle. L'alternative « puis » est écartée car chronologique ; « alors » restitue mieux la conséquence.\n\n**qu'il soit tué** — Le sens retenu est « tuer » (sens **Meurtre/Combat**, sens premier ✦), rendu à la voix passive du subjonctif français « qu'il soit tué » pour respecter la voix passive arabe « yuqtal ».\n\n**ou** — Le sens retenu pour « aw » est « ou » — la conjonction française d'alternative.\n\n**l'emporte** — Le sens retenu est « l'emporter » (sens **Victoire/Domination**, sens premier ✦), rendu à la troisième personne du subjonctif « qu'il l'emporte » (sous-entendu). L'alternative « vainqueur » (Hamidullah) est écartée car « vainqueur » est un adjectif attribut, alors que le verbe arabe est un verbe d'action ; « l'emporte » restitue mieux la valeur verbale.\n\n**alors** — Deuxième « fa » de conséquence, qui introduit ici la promesse divine.\n\n**bientôt** — Le sens retenu pour « sawfa » est « bientôt » — l'adverbe français qui rend la projection futur de la particule arabe.\n\n**Nous lui donnerons** — Le sens retenu est « donner » (sens **Don/Transmission**), rendu au futur simple « donnerons » à la première personne du pluriel (Nous = Dieu qui parle à Son sujet).\n\n**une récompense** — Le sens retenu est « récompense » (sens **Rétribution/Salaire**, sens premier ✦), rendu directement par le nom français équivalent. L'indéfini respecte la marque arabe « -an ».\n\n**immense** — Le sens retenu est « immense » (sens **Grandeur/Importance**), rendu directement par l'adjectif français équivalent. L'alternative « énorme » (Hamidullah) est écartée car connotation matérielle ; « immense » restitue la grandeur solennelle.\n\n"
+  },
+  "V75": {
+    "id": 568,
+    "trad": "Et qu'avez-vous à ne pas combattre dans le chemin de Dieu — et pour les faibles parmi les hommes, les femmes et les enfants — ceux qui disent : « Notre Seigneur, fais-nous sortir de cette cité dont les gens sont oppresseurs, et assigne-nous de Ta part un allié, et assigne-nous de Ta part un secoureur ».",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "ma",
+        "fr": "qu'",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "lakum",
+        "fr": "avez-vous",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "la",
+        "fr": "à ne",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "tuqatilun",
+        "fr": "pas combattre",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "sabil",
+        "fr": "le chemin de",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "al-mustad'afin",
+        "fr": "les faibles",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "min",
+        "fr": "parmi",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "al-rijal",
+        "fr": "les hommes",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "al-nisa'",
+        "fr": "les femmes",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "al-wildan",
+        "fr": "les enfants",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "alladhina",
+        "fr": "ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "yaqulun",
+        "fr": "disent",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "rabb",
+        "fr": "Seigneur",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "-na",
+        "fr": "notre",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "axrij",
+        "fr": "fais sortir",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "-na",
+        "fr": "nous",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "hadhihi",
+        "fr": "cette",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "al-qarya",
+        "fr": "cité",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "ahluha",
+        "fr": "les gens",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "al-zalim",
+        "fr": "sont oppresseurs",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 22,
+        "phon": "j'al",
+        "fr": "assigne",
+        "is_particle": false
+      },
+      {
+        "pos": 23,
+        "phon": "lana",
+        "fr": "-nous",
+        "is_particle": true
+      },
+      {
+        "pos": 24,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 25,
+        "phon": "ladunka",
+        "fr": "Ta part",
+        "is_particle": false
+      },
+      {
+        "pos": 26,
+        "phon": "waliyyan",
+        "fr": "un allié",
+        "is_particle": false
+      },
+      {
+        "pos": 27,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 27,
+        "phon": "j'al",
+        "fr": "assigne",
+        "is_particle": false
+      },
+      {
+        "pos": 28,
+        "phon": "lana",
+        "fr": "-nous",
+        "is_particle": true
+      },
+      {
+        "pos": 29,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 30,
+        "phon": "ladunka",
+        "fr": "Ta part",
+        "is_particle": false
+      },
+      {
+        "pos": 31,
+        "phon": "nasiran",
+        "fr": "un secoureur",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et** — Le sens retenu pour « wa » est « Et » qui articule l'interpellation à ce qui précède.\n\n**qu'** — Le sens retenu pour « ma » interrogatif est « qu' » — l'interrogatif français qui ouvre la question rhétorique.\n\n**avez-vous** — Le sens retenu pour « lakum » est « avez-vous » — la fusion française qui reprend la valeur idiomatique de « ma lakum » (qu'y a-t-il à vous). L'alternative « à vous » (littéral) est écartée car ambiguë isolément ; « avez-vous » restitue mieux la question.\n\n**à ne** — Le sens retenu pour « la » de négation est « à ne » — la particule française qui, combinée avec « pas » sur le verbe suivant, forme la négation totale. La préposition « à » articule à la question qui précède.\n\n**pas combattre** — Le sens retenu est « combattre » (sens **Meurtre/Combat**, sens premier ✦), rendu avec « pas » qui complète la négation initiée par « à ne » plus haut. L'alternative « fassiez la guerre » est écartée car plus lourde ; « combattre » reste le verbe direct.\n\n**dans** — Le sens retenu pour « fi » est « dans » — la préposition française qui marque le cadre.\n\n**le chemin de** — Le sens retenu est « chemin » (sens **Voie/Direction**), rendu avec « de » qui rattache au nom propre suivant. Reprise du V74. L'alternative « sentier » (Hamidullah) est écartée car trop concrète.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu par le nom propre français équivalent.\n\n**et** — Le sens retenu pour « wa » (seconde occurrence) est « et » — la simple conjonction française. Le tiret cadratin de la traduction est une ponctuation d'incise sans correspondance arabe. Le mot « pour » ajouté dans la traduction française est justifié à l'entrée « pour les faibles » ci-dessous.\n\n**les faibles** — Le sens retenu est « faible » (sens **Faiblesse/Fragilité**, sens premier ✦), rendu au pluriel défini avec la préposition « pour » ajoutée en français. En arabe, le verbe « tuqatilun » (combattre) s'étend au second complément coordonné par « wa » sans marquage : on comprend « ne pas combattre pour les faibles ». En français, cette construction serait ambigüe sans « pour » (« ne pas combattre les faibles » lit à contresens) — d'où l'ajout du « pour ». L'alternative « opprimés » est écartée car elle glisse vers l'agent qui subit l'oppression ; « faibles » restitue l'état de vulnérabilité.\n\n**parmi** — Le sens retenu pour « min » est « parmi » — la préposition française qui marque le partitif.\n\n**les hommes** — Le sens retenu est « homme » (sens **Homme/Piéton**, sens premier ✦), rendu au pluriel défini.\n\n**les femmes** — Le sens retenu est « femmes » (sens **Féminin/Épouses**, sens premier ✦), rendu au pluriel défini.\n\n**et les enfants** — Le sens retenu est « enfant » (sens **Enfant/Descendance**), rendu au pluriel défini précédé de « et » qui traduit le « wa » de coordination.\n\n**ceux qui** — Le sens retenu pour « alladhina » est « ceux qui » — le pronom relatif français qui reprend les faibles en ouvrant la relative qui suit.\n\n**disent** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu au présent français « disent » à la troisième personne du pluriel.\n\n**Seigneur** — Le sens retenu est « seigneur » (sens **Seigneurie/Autorité bienveillante**), rendu par le nom français équivalent. L'alternative « maître » est écartée car « maître » a une connotation de propriété plus dure ; « Seigneur » restitue la relation d'autorité bienveillante.\n\n**notre** — Le sens retenu pour « -na » (suffixe pronominal de la première personne du pluriel) est « notre » — l'adjectif possessif français qui rend l'attachement de « Seigneur » aux locuteurs. En français il se place avant « Seigneur » (« Notre Seigneur »), alors qu'en arabe il suit (« rabba-na »).\n\n**fais sortir** — Le sens retenu est « faire sortir » (sens **Sortie/Émergence**, sens premier ✦), rendu par le groupe « fais sortir » qui couvre à lui seul le verbe complet arabe « axrij » (impératif de la forme qui rend l'action extérieure). En français, « faire sortir » se décompose en deux mots — c'est pourquoi fr contient deux mots pour un seul mot arabe.\n\n**nous** — Le sens retenu pour « -na » est « nous » — le pronom collectif français qui rend le suffixe pronominal arabe. Il se place en français entre « fais » et « sortir » (« fais-nous sortir ») ; en arabe le suffixe suit le verbe directement (« axrij-na »).\n\n**de** — Le sens retenu pour « min » (première occurrence après « sortir ») est « de » — la préposition française d'origine.\n\n**cette** — Le sens retenu pour « hadhihi » est « cette » — le pronom démonstratif féminin français qui rend le démonstratif de proximité arabe.\n\n**cité** — Le sens retenu est « cité » (sens **Établissement humain**, sens premier ✦), rendu directement. L'alternative « village » (également dans le sens) est écartée car « cité » est plus large et convient à une agglomération de taille indéterminée.\n\n**les gens** — Le sens retenu est « gens de » (sens **Famille/Communauté**, sens premier ✦), rendu au pluriel défini avec le relatif français « dont » qui rend explicitement le lien de rattachement à « cité » — la construction arabe « al-qarya al-zalim ahluha » (cette cité — injuste ses gens) marque ce lien par la simple juxtaposition. L'alternative « ses gens » (littéral avec le suffixe) est écartée car alourdit.\n\n**sont oppresseurs** — Le sens retenu est « oppresseur » (sens **Injustice/Oppression**, sens premier ✦), rendu au pluriel avec le verbe « sont » requis par le français pour former l'attribution. L'alternative « injustes » (Hamidullah) est écartée car « injustes » est plus abstrait ; « oppresseurs » restitue mieux l'idée d'agent actif d'oppression.\n\n**et** — Le sens retenu pour « wa » (deuxième demande) est « et » — la conjonction française.\n\n**assigne** — Le sens retenu est « placer » (sens **Action/Réalisation**, sens premier ✦), rendu par « assigne » qui restitue mieux le sens de « disposer en faveur de quelqu'un » dans le contexte d'une supplication. L'alternative « fais » (sens du verbe brut) est écartée car trop vague.\n\n**-nous** — Le sens retenu pour « lana » est le pronom « nous » complément d'assignation.\n\n**de** — Reprise du sens « min » (voir plus haut).\n\n**Ta part** — Le sens retenu est « auprès de » (sens **Proximité/Source**), rendu par la locution française « Ta part » qui restitue la valeur relationnelle de « ladunka ». L'alternative « auprès de Toi » est écartée car alourdit ; « Ta part » est plus compact.\n\n**un allié** — Le sens retenu est « allié » (sens **Proximité/Protection**, sens premier ✦), rendu par le nom français équivalent. L'indéfini respecte la marque arabe. L'alternative « protecteur » (également dans le sens) est écartée car plus verticale ; « allié » restitue mieux la proximité entre partenaires.\n\n**et** — Le sens retenu pour « wa » (troisième demande) est « et ».\n\n**assigne** — Deuxième occurrence, même sens que plus haut.\n\n**-nous** — Reprise du sens « lana ».\n\n**de** — Reprise du sens « min ».\n\n**Ta part** — Deuxième occurrence, même sens que plus haut.\n\n**un secoureur** — Le sens retenu est « secoureur » (sens **Secours/Victoire**, sens premier ✦), rendu par le nom français équivalent. L'indéfini respecte la marque arabe.\n\n"
+  },
+  "V76": {
+    "id": 569,
+    "trad": "Ceux qui ont cru combattent dans le chemin de Dieu, et ceux qui ont rejeté combattent dans le chemin de la tyrannie. Alors combattez les alliés du Diable, certes la ruse du Diable est faible.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "alladhina",
+        "fr": "Ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "amanu",
+        "fr": "ont cru",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "yuqatilun",
+        "fr": "combattent",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "sabil",
+        "fr": "le chemin de",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "alladhina",
+        "fr": "ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "kafaru",
+        "fr": "ont rejeté",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "yuqatilun",
+        "fr": "combattent",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "sabil",
+        "fr": "le chemin de",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "al-taghut",
+        "fr": "la tyrannie",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "fa",
+        "fr": "Alors",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "qatilu",
+        "fr": "combattez",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "awliya'a",
+        "fr": "les alliés",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "al-shaytan",
+        "fr": "du Diable",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "inna",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "kayd",
+        "fr": "la ruse",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "al-shaytan",
+        "fr": "du Diable",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "kana",
+        "fr": "est",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "da'ifan",
+        "fr": "faible",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Ceux qui** — Le sens retenu pour « alladhina » est « Ceux qui » — le pronom relatif français au pluriel qui introduit la clause d'identification.\n\n**ont cru** — Le sens retenu est « croire » (sens **Foi/Adhésion**), rendu au passé composé « ont cru » qui correspond au passé arabe. L'alternative « croyants » (nom) est écartée car elle fige l'adhésion en identité statique ; le verbe conserve l'idée d'un acte donné.\n\n**combattent** — Le sens retenu est « combattre » (sens **Meurtre/Combat**, sens premier ✦), rendu au présent français « combattent » à la troisième personne du pluriel.\n\n**dans** — Le sens retenu pour « fi » est « dans » — la préposition française qui marque le cadre.\n\n**le chemin de** — Le sens retenu est « chemin » (sens **Voie/Direction**), rendu avec « de » qui rattache au nom propre suivant. L'alternative « sentier » (Hamidullah) est écartée car trop concrète.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu par le nom propre français équivalent à « Allah ».\n\n**et** — Le sens retenu pour « wa » est « et » — la conjonction française.\n\n**ceux qui** — Deuxième occurrence du pronom relatif « alladhina », même équivalence que la première.\n\n**ont rejeté** — Le sens retenu est « rejeter » (sens **Rejet/Ingratitude**), rendu au passé composé « ont rejeté ». L'alternative « ont mécru » (Hamidullah) est écartée : « mécru » est un mot religieux post-classique ; « rejeter » restitue l'acte moral de refus assumé porté par la racine kfr dans le contexte coranique (voir R1 sur les racines à dualité physique/abstrait).\n\n**combattent** — Reprise du sens « combattre », même équivalence.\n\n**dans** — Reprise du sens « fi ».\n\n**le chemin de** — Reprise du sens « sabil ».\n\n**la tyrannie** — Le sens retenu est « tyrannie » (sens **Transgression/Excès**), rendu directement par le nom français équivalent. L'alternative de Hamidullah qui garde le mot arabe non traduit est écartée car elle laisse un mot arabe brut dans une traduction française ; « tyrannie » restitue le sens moral porté par la racine tgy (le débordement de l'autorité hors de ses limites légitimes). L'alternative « idole » (glose classique) est écartée car elle importe une idée absente du mot arabe et de la racine.\n\n**Alors** — Le sens retenu pour « fa » est « Alors » — l'adverbe français de conséquence.\n\n**combattez** — Le sens retenu est « combattre » (sens **Meurtre/Combat**, sens premier ✦), rendu à l'impératif « combattez » — troisième occurrence du verbe qtl dans le verset, cette fois adressée aux destinataires.\n\n**les alliés** — Le sens retenu est « allié » (sens **Proximité/Protection**, sens premier ✦), rendu au pluriel défini « les alliés ». L'alternative « les protecteurs » est écartée car verticale ; « alliés » restitue mieux la proximité entre partenaires.\n\n**du Diable** — Le sens retenu est « diable » (sens **Diable/Satan**), rendu avec « du » qui rattache à « alliés » et rend l'article défini arabe. L'alternative « Satan » (Hamidullah) est écartée car anglicisée ; « Diable » est le nom français équivalent.\n\n**certes** — Le sens retenu pour « inna » est « certes » — l'adverbe français d'insistance.\n\n**la ruse** — Le sens retenu est « ruser » (sens **Ruse/Stratagème**, sens premier ✦), rendu au nom « la ruse » qui correspond au nom d'action arabe « kayd ». L'alternative « le stratagème » est écartée car plus abstrait ; « ruse » restitue mieux la dimension trompeuse.\n\n**du Diable** — Deuxième occurrence, même sens.\n\n**est** — Le sens retenu est « être » (sens **Être/Existence**, sens premier ✦), rendu au présent français « est » — le verbe arabe kana au passé marque ici un état stable, rendu en français par le présent.\n\n**faible** — Le sens retenu est « faible » (sens **Faiblesse/Fragilité**, sens premier ✦), rendu directement par l'adjectif français équivalent.\n\n"
+  },
+  "V77": {
+    "id": 570,
+    "trad": "N'as-tu pas vu ceux à qui il a été dit à eux : « Retenez vos mains, accomplissez la prière et donnez l'aumône » ? Puis quand fut prescrit sur eux le combat, voici qu'un groupe parmi eux craint les gens comme ils craignent Dieu, ou d'une crainte plus intense, et ils dirent : « Notre Seigneur, pourquoi Tu as prescrit sur nous le combat ? Si seulement Tu nous avais accordé un délai jusqu'à un terme proche ! » Dis : « La jouissance de l'ici-bas est peu, et la vie dernière est meilleure pour qui a été pieux. Et ne serez pas lésés d'un brin de filament.",
+    "segments": [
+      {
+        "pos": 2,
+        "phon": "a-lam tara ila",
+        "fr": "N'as-tu pas vu",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "alladhina",
+        "fr": "ceux à qui",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "qila",
+        "fr": "il a été dit",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "la-",
+        "fr": "à",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "kuffu",
+        "fr": "Retenez",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "aydiya-",
+        "fr": "mains",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "-kum",
+        "fr": "vos",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "aqimu",
+        "fr": "accomplissez",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "al-salat",
+        "fr": "la prière",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "atu",
+        "fr": "donnez",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "al-zakat",
+        "fr": "l'aumône",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "fa",
+        "fr": "Puis",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "lamma",
+        "fr": "quand",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "kutiba",
+        "fr": "fut prescrit",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "alay-",
+        "fr": "sur",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "-him",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "al-qital",
+        "fr": "le combat",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "idha",
+        "fr": "voici qu'",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "fariq",
+        "fr": "un groupe",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "min-",
+        "fr": "parmi",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 20,
+        "phon": "yakhshawna",
+        "fr": "craint",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "al-nas",
+        "fr": "les gens",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "ka-",
+        "fr": "comme",
+        "is_particle": true
+      },
+      {
+        "pos": 22,
+        "phon": "khashyat",
+        "fr": "ils craignent",
+        "is_particle": false
+      },
+      {
+        "pos": 23,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 25,
+        "phon": "ashadda khashyatan",
+        "fr": "d'une crainte plus intense",
+        "is_particle": false
+      },
+      {
+        "pos": 27,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 27,
+        "phon": "qalu",
+        "fr": "ils dirent",
+        "is_particle": false
+      },
+      {
+        "pos": 28,
+        "phon": "rabba-",
+        "fr": "Seigneur",
+        "is_particle": false
+      },
+      {
+        "pos": 28,
+        "phon": "-na",
+        "fr": "notre",
+        "is_particle": true
+      },
+      {
+        "pos": 29,
+        "phon": "li-ma",
+        "fr": "pourquoi",
+        "is_particle": true
+      },
+      {
+        "pos": 30,
+        "phon": "katabta",
+        "fr": "Tu as prescrit",
+        "is_particle": false
+      },
+      {
+        "pos": 31,
+        "phon": "alay-",
+        "fr": "sur",
+        "is_particle": true
+      },
+      {
+        "pos": 31,
+        "phon": "-na",
+        "fr": "nous",
+        "is_particle": true
+      },
+      {
+        "pos": 32,
+        "phon": "al-qital",
+        "fr": "le combat",
+        "is_particle": false
+      },
+      {
+        "pos": 33,
+        "phon": "law-la",
+        "fr": "Si seulement",
+        "is_particle": true
+      },
+      {
+        "pos": 34,
+        "phon": "akhkharta-",
+        "fr": "Tu avais accordé un délai",
+        "is_particle": false
+      },
+      {
+        "pos": 34,
+        "phon": "-na",
+        "fr": "nous",
+        "is_particle": true
+      },
+      {
+        "pos": 35,
+        "phon": "ila",
+        "fr": "jusqu'à",
+        "is_particle": true
+      },
+      {
+        "pos": 36,
+        "phon": "ajal",
+        "fr": "un terme",
+        "is_particle": false
+      },
+      {
+        "pos": 37,
+        "phon": "qarib",
+        "fr": "proche",
+        "is_particle": false
+      },
+      {
+        "pos": 38,
+        "phon": "qul",
+        "fr": "Dis",
+        "is_particle": false
+      },
+      {
+        "pos": 39,
+        "phon": "mata",
+        "fr": "la jouissance de",
+        "is_particle": false
+      },
+      {
+        "pos": 40,
+        "phon": "al-dunya",
+        "fr": "l'ici-bas",
+        "is_particle": false
+      },
+      {
+        "pos": 41,
+        "phon": "qalil",
+        "fr": "est peu",
+        "is_particle": false
+      },
+      {
+        "pos": 42,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 42,
+        "phon": "al-akhira",
+        "fr": "la vie dernière",
+        "is_particle": false
+      },
+      {
+        "pos": 43,
+        "phon": "khayr",
+        "fr": "est meilleure",
+        "is_particle": false
+      },
+      {
+        "pos": 44,
+        "phon": "li-",
+        "fr": "pour",
+        "is_particle": true
+      },
+      {
+        "pos": 44,
+        "phon": "man",
+        "fr": "qui",
+        "is_particle": true
+      },
+      {
+        "pos": 45,
+        "phon": "ittaqa",
+        "fr": "a été pieux",
+        "is_particle": false
+      },
+      {
+        "pos": 46,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 46,
+        "phon": "la",
+        "fr": "ne",
+        "is_particle": true
+      },
+      {
+        "pos": 47,
+        "phon": "tuzlamuna",
+        "fr": "serez pas lésés",
+        "is_particle": false
+      },
+      {
+        "pos": 48,
+        "phon": "fatila",
+        "fr": "d'un brin de filament",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**N'as-tu pas vu** — Le sens retenu pour l'ensemble « a-lam tara ila » est « N'as-tu pas vu ». Le verbe « tara » (voir) est rendu directement ; « a-lam » traduit la formule interro-négative arabe qui invite le destinataire à reconnaître une évidence. La préposition arabe « ila » (littéralement « vers ») est absorbée en français : le verbe « voir » se construit directement avec son complément (on voit quelqu'un, on ne voit pas « vers » quelqu'un), donc « vers » est retiré de la traduction — sinon la phrase sonne comme un calque de l'arabe.\n\n**ceux à qui** — Le sens retenu pour « alladhina » est « ceux à qui » — pronom relatif français au pluriel qui introduit la subordonnée.\n\n**il a été dit** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu à la forme passive « il a été dit » qui traduit exactement la forme passive arabe « qila ».\n\n**à** — Le sens retenu pour « la- » est « à » — préposition française qui indique le destinataire.\n\n**eux** — Le sens retenu pour « -hum » est « eux » — pronom personnel français au pluriel.\n\n**Retenez** — Le sens retenu est « retenir » (sens **Arrêt/Abstention**), rendu à l'impératif « Retenez ». L'alternative « cessez » est écartée car trop absolue ; « retenir » restitue l'idée de contenir une action possible sans la nier absolument.\n\n**mains** — Le sens retenu est « main » (sens **Main/Membre**), rendu au pluriel « mains ». L'expression « retenir les mains » est directement calquée sur l'arabe et signifie s'abstenir de frapper.\n\n**vos** — Le sens retenu pour « -kum » est « vos » — adjectif possessif français qui rend le pronom suffixe.\n\n**et** — Le sens retenu pour « wa » est « et » — conjonction française.\n\n**accomplissez** — Le sens retenu est « établir » (sens **Verticalité/Droiture**, sens premier ✦), rendu à l'impératif « accomplissez ». L'alternative « établissez » est écartée car en français « établir la prière » a un usage rare ; « accomplissez » restitue mieux l'idée de la pratique régulière (aqama = maintenir droit et régulier).\n\n**la prière** — Le sens retenu est « prière rituelle » (sens **Prière/Invocation**), rendu par « la prière » qui désigne directement la salât rituelle. L'alternative « Salât » (Hamidullah, mot arabe conservé) est écartée car elle laisse un mot arabe brut ; « prière » est le mot français équivalent.\n\n**et** — Reprise du sens « wa ».\n\n**donnez** — Le sens retenu est « donner » (sens **Don/Transmission**), rendu à l'impératif « donnez ». L'alternative « acquittez » (Hamidullah) est écartée car juridique et technique ; « donner » restitue l'acte concret.\n\n**l'aumône** — Le sens retenu est « aumône purificatrice » (sens **Aumône/Zakat**), rendu par « l'aumône ». L'alternative « Zakât » (Hamidullah, mot arabe conservé) est écartée pour la même raison que « Salât » ; « aumône » est le mot français équivalent.\n\n**Puis** — Le sens retenu pour « fa » est « Puis » — adverbe français de succession qui rend la bascule temporelle.\n\n**quand** — Le sens retenu pour « lamma » est « quand » — conjonction française temporelle.\n\n**fut prescrit** — Le sens retenu est « prescrire » (sens **Obligation/Décret**), rendu à la forme passive du passé « fut prescrit ». L'alternative « fut écrit » (sens premier étymologique) est écartée car « écrire » désigne l'acte matériel de tracer, tandis que « prescrire » restitue l'idée de l'obligation imposée par décret.\n\n**sur** — Le sens retenu pour « alay- » est « sur » — préposition française qui rend le sens de ce qui pèse comme obligation.\n\n**eux** — Reprise du sens « -him ».\n\n**le combat** — Le sens retenu est « combat » (sens **Meurtre/Combat**, sens premier ✦), rendu par « le combat » directement.\n\n**voici qu'** — Le sens retenu pour « idha » est « voici qu' » — expression française qui rend la particule de surprise arabe. L'élision « qu' » est nécessaire devant la voyelle « un » qui suit.\n\n**un groupe** — Le sens retenu est « groupe » (sens **Groupe/Partie**), rendu par « un groupe ». L'alternative « une partie » (Hamidullah « une partie d'entre eux ») est acceptable, mais « groupe » restitue mieux l'idée d'un sous-ensemble constitué.\n\n**parmi** — Le sens retenu pour « min- » est « parmi » — préposition française qui rend l'appartenance à un ensemble plus large.\n\n**eux** — Reprise du sens « -hum ».\n\n**craint** — Le sens retenu est « craindre » (sens **Crainte révérencielle**, sens premier ✦), rendu au présent « craint » (accord au singulier avec « un groupe »). Le présent français traduit le présent arabe « yakhshawna » qui marque un état durable. En français strict, « un groupe » (singulier collectif) commande un verbe au singulier — d'où « craint » et non « craignent ».\n\n**les gens** — Le sens retenu est « gens » (sens **Humanité/Peuple**, sens premier ✦), rendu par « les gens » qui désigne les autres êtres humains en général.\n\n**comme** — Le sens retenu pour « ka- » est « comme » — préposition française de comparaison.\n\n**ils craignent** — Le sens retenu est « crainte » (sens **Crainte révérencielle**, sens premier ✦), rendu ici par la forme verbale « ils craignent » (au lieu du nom « la crainte de »). Le nom d'action arabe « khashyat » est verbalisé en français pour rendre la comparaison plus fluide : « craignent les gens comme ils craignent Dieu » sonne naturel en français, là où « craignent les gens comme la crainte de Dieu » est un calque bancal du nom arabe.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu par le nom propre français équivalent au nom arabe « Allah ».\n\n**ou** — Le sens retenu pour « aw » est « ou » — conjonction française de disjonction.\n\n**d'une crainte plus intense** — Le sens retenu est « intense » (sens **Intensité/Sévérité**), rendu par le groupe complet « d'une crainte plus intense » qui traduit l'expression arabe fusionnée « ashadda khashyatan » (comparatif + complément de spécification). En arabe, « ashadda » (plus intense) et « khashyatan » (en crainte) s'articulent en une structure qui n'existe pas telle quelle en français ; on rend l'ensemble par une paraphrase naturelle qui explicite le sens : « d'une crainte plus intense » (que celle de Dieu, sous-entendu).\n\n**et** — Reprise du sens « wa ».\n\n**ils dirent** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu au passé simple « ils dirent » qui traduit le passé arabe « qalu ».\n\n**Seigneur** — Le sens retenu est « seigneur » (sens **Seigneurie/Autorité bienveillante**), rendu par « Seigneur » en majuscule car adressé à Dieu.\n\n**notre** — Le sens retenu pour « -na » est « notre » — adjectif possessif français.\n\n**pourquoi** — Le sens retenu pour l'expression figée « li-ma » est « pourquoi » — mot-outil français équivalent à la formule interrogative causale arabe.\n\n**Tu as prescrit** — Le sens retenu est « prescrire » (sens **Obligation/Décret**), rendu au passé composé « Tu as prescrit » qui traduit le passé arabe « katabta » avec sujet explicite (Dieu). Reprise du même verbe utilisé au passif au début du verset — la protestation porte exactement sur l'obligation initialement énoncée.\n\n**sur** — Reprise du sens « alay- ».\n\n**nous** — Le sens retenu pour « -na » est « nous » — pronom personnel français.\n\n**le combat** — Reprise du sens « combat ».\n\n**Si seulement** — Le sens retenu pour l'expression figée « law-la » est « Si seulement » — la locution française qui rend directement le sens littéral arabe « si-ne-pas » et son ton de regret rétrospectif. L'alternative « Pourquoi ne pas » (rendu contextuel qui transforme le regret en question rhétorique) est écartée car elle rend la particule plus interrogative que regrettante ; l'arabe « law-la » exprime un souhait sur le passé (« si seulement cela avait été... ») plutôt qu'une interrogation directe.\n\n**Tu avais accordé un délai** — Le sens retenu est « accorder un délai » (sens **Altérité/Délai**), rendu au plus-que-parfait « Tu avais accordé un délai » qui traduit le passé arabe « akhkharta ». Le plus-que-parfait est appelé par « Si seulement » qui précède (regret irréel du passé). Ce rendu conserve le sens retenu.\n\n**nous** — Reprise du sens « -na ».\n\n**jusqu'à** — Le sens retenu pour « ila » est « jusqu'à » (usage temporel de la préposition qui indique la borne finale).\n\n**un terme** — Le sens retenu est « terme fixé » (sens **Terme/Délai**, sens premier ✦), rendu par « un terme » qui désigne une échéance temporelle assignée.\n\n**proche** — Le sens retenu est « proche » (sens **Proximité/Rapprochement**, sens premier ✦), rendu par l'adjectif français équivalent qui qualifie « ajal » (terme).\n\n**Dis** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu à l'impératif « Dis » qui traduit l'ordre arabe « qul » adressé au Messager.\n\n**la jouissance de** — Le sens retenu est « jouissance » (sens **Jouissance/Profit**), rendu par « la jouissance de » qui rattache au complément suivant. L'alternative « le plaisir » est écartée car plus étroit ; « jouissance » restitue l'idée globale de tirer parti d'un bien.\n\n**l'ici-bas** — Le sens retenu est « ici-bas » (sens **Proximité/Monde d'ici-bas**, sens premier ✦), rendu par « l'ici-bas ». L'alternative « d'ici-bas » (Hamidullah) est acceptable ; « l'ici-bas » substantivé est le rendu maison régulier de « al-dunya ».\n\n**est peu** — Le sens retenu est « peu » (sens **Quantité/Rareté**, sens premier ✦), rendu par « est peu » qui prédique la jouissance. L'alternative « est éphémère » (Hamidullah) est écartée : « éphémère » ajoute une nuance de brièveté temporelle que le mot arabe « qalil » (peu, faible en quantité) ne contient pas directement.\n\n**et** — Reprise du sens « wa ».\n\n**la vie dernière** — Le sens retenu est « la vie dernière » (sens **Monde à venir/Vie dernière**), rendu directement par « la vie dernière » — aligné exactement sur le sens retenu. L'alternative « la vie future » (Hamidullah) est écartée car projette dans un futur temporel ; « la vie dernière » désigne la réalité définitive.\n\n**est meilleure** — Le sens retenu est « meilleur » (sens **Supériorité**), rendu par « est meilleure » (adjectif accordé au féminin avec « la vie dernière »).\n\n**pour** — Le sens retenu pour « li- » est « pour » — préposition française qui indique le bénéficiaire.\n\n**qui** — Le sens retenu pour « man » est « qui » — pronom relatif français.\n\n**a été pieux** — Le sens retenu est « craindre » (sens **Protection/Préservation**, sens premier ✦), rendu par « a été pieux » (même famille). Le verbe arabe « ittaqa » signifie littéralement « s'est protégé (de Dieu) = a craint Dieu = a été pieux ». L'alternative « a craint Dieu » restitue le sens littéral mais alourdit la phrase ; « a été pieux » est le rendu français idiomatique standard pour cette famille de sens.\n\n**Et** — Reprise du sens « wa », avec majuscule d'ouverture de phrase.\n\n**ne** — Le sens retenu pour « la » est « ne » — particule française de négation partielle.\n\n**serez pas lésés** — Le sens retenu est « opprimer » (sens **Injustice/Oppression**, sens premier ✦), rendu à la forme passive future « serez pas lésés ». Le verbe arabe « tuzlamuna » est un passif présent qui promet l'absence d'injustice. En français, « lésé » traduit plus doucement que « opprimé » et convient à la promesse divine de mesure juste (aucune part indûment retenue).\n\n**d'un brin de filament** — Le sens retenu est « petit filament (fatil) » (sens **Torsion/Infime**, sens premier ✦), rendu par « d'un brin de filament ». Le mot arabe « fatila » désigne le filament très fin torsadé qui se trouve dans l'entaille du noyau de datte, image proverbiale coranique de la plus infime quantité. L'alternative « d'un brin de noyau de datte » (Hamidullah) explicite le noyau ; le rendu maison garde l'image du « filament » qui est le sens exact de fatil.\n\n"
+  },
+  "V78": {
+    "id": 571,
+    "trad": "Où que vous soyez, la mort vous atteindra, et même si vous étiez dans des tours élevées. Et si un bien les atteint, ils disent : « Ceci vient d'auprès de Dieu ». Et si un mal les atteint, ils disent : « Ceci vient d'auprès de toi ». Dis : « Tout vient d'auprès de Dieu ». Alors qu'a donc ce peuple à ne presque pas comprendre un propos ?",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "ayna",
+        "fr": "Où",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "-ma",
+        "fr": "que",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "takunu",
+        "fr": "vous soyez",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "yudrik",
+        "fr": "atteindra",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "-kum",
+        "fr": "vous",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "al-mawt",
+        "fr": "la mort",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "law",
+        "fr": "même si",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "kuntum",
+        "fr": "vous étiez",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "fi",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "buruj",
+        "fr": "des tours",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "mushayyada",
+        "fr": "élevées",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "in",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "tusib",
+        "fr": "atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "-hum",
+        "fr": "les",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "hasana",
+        "fr": "un bien",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "yaqulu",
+        "fr": "ils disent",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "hadhihi",
+        "fr": "Ceci",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "min",
+        "fr": "vient d'",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "ind",
+        "fr": "auprès de",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "in",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "tusib",
+        "fr": "atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "-hum",
+        "fr": "les",
+        "is_particle": true
+      },
+      {
+        "pos": 20,
+        "phon": "sayyi'a",
+        "fr": "un mal",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "yaqulu",
+        "fr": "ils disent",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "hadhihi",
+        "fr": "Ceci",
+        "is_particle": true
+      },
+      {
+        "pos": 23,
+        "phon": "min",
+        "fr": "vient d'",
+        "is_particle": true
+      },
+      {
+        "pos": 24,
+        "phon": "ind",
+        "fr": "auprès de",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "-ka",
+        "fr": "toi",
+        "is_particle": true
+      },
+      {
+        "pos": 25,
+        "phon": "qul",
+        "fr": "Dis",
+        "is_particle": false
+      },
+      {
+        "pos": 26,
+        "phon": "kull",
+        "fr": "Tout",
+        "is_particle": false
+      },
+      {
+        "pos": 27,
+        "phon": "min",
+        "fr": "vient d'",
+        "is_particle": true
+      },
+      {
+        "pos": 28,
+        "phon": "ind",
+        "fr": "auprès de",
+        "is_particle": false
+      },
+      {
+        "pos": 29,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 30,
+        "phon": "fa",
+        "fr": "Alors",
+        "is_particle": true
+      },
+      {
+        "pos": 30,
+        "phon": "ma",
+        "fr": "qu'a",
+        "is_particle": true
+      },
+      {
+        "pos": 30,
+        "phon": "li",
+        "fr": "donc",
+        "is_particle": true
+      },
+      {
+        "pos": 31,
+        "phon": "ha'ula'i",
+        "fr": "ce",
+        "is_particle": true
+      },
+      {
+        "pos": 32,
+        "phon": "al-qawm",
+        "fr": "peuple",
+        "is_particle": false
+      },
+      {
+        "pos": 33,
+        "phon": "la",
+        "fr": "à ne",
+        "is_particle": true
+      },
+      {
+        "pos": 34,
+        "phon": "yakaduna",
+        "fr": "presque pas",
+        "is_particle": false
+      },
+      {
+        "pos": 35,
+        "phon": "yafqahuna",
+        "fr": "comprendre",
+        "is_particle": false
+      },
+      {
+        "pos": 36,
+        "phon": "hadith",
+        "fr": "un propos",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Où** — Le sens retenu pour l'adverbe « ayna » est « Où » — mot interrogatif français équivalent.\n\n**que** — Le sens retenu pour la particule « ma » suivant « ayna » est « que » — la conjonction française qui transforme l'interrogation en conditionnelle universelle.\n\n**vous soyez** — Le sens retenu est « être » (sens **Être/Existence**, sens premier ✦), rendu au subjonctif « soyez » après « où que » (règle grammaticale française du subjonctif après conditionnelle universelle).\n\n**atteindra** — Le sens retenu est « atteindre » (sens **Atteinte/Compréhension**, sens premier ✦), rendu au futur « atteindra ». Le futur français correspond au présent arabe apocopé qui exprime la conséquence future d'une condition.\n\n**vous** — Le sens retenu pour « -kum » est « vous » — pronom complément direct français.\n\n**la mort** — Le sens retenu est « mort » (sens **Mort/Cessation**, sens premier ✦), rendu avec l'article défini « la » qui restitue le défini arabe « al-mawt ».\n\n**et** — Reprise du sens « wa » (conjonction française).\n\n**même si** — Le sens retenu pour « law » est « même si » — locution française qui rend la concession-hypothèse arabe.\n\n**vous étiez** — Le sens retenu est « être » (sens **Être/Existence**, sens premier ✦), rendu à l'imparfait « étiez » après « même si » (règle française : imparfait après « même si » pour l'irréel du passé).\n\n**dans** — Le sens retenu pour « fi » est « dans » (préposition française de lieu).\n\n**des tours** — Le sens retenu est « tour » (sens **Élévation/Zodiaque**, sens premier ✦), rendu au pluriel indéfini « des tours ».\n\n**élevées** — Le sens retenu est « élever haut » (sens **Édification/Construction**), rendu directement par l'adjectif « élevées » qui aligne exactement le fr sur le sens choisi en BDD. L'alternative « édifier » (aussi présent dans le retenu) restitue plus l'idée de bâtir ; « élever haut » évoque mieux la hauteur qui est le sens visé par la forme intensive arabe « mushayyada ».\n\n**Et** — Reprise de « wa ».\n\n**si** — Le sens retenu pour « in » est « si » — conjonction française conditionnelle.\n\n**atteint** — Le sens retenu est « atteindre » (sens **Atteinte/Affliction**, sens premier ✦), rendu au présent « atteint ».\n\n**les** — Le sens retenu pour « -hum » est « les » — pronom complément direct français au pluriel.\n\n**un bien** — Le sens retenu est « bon » (sens **Beauté/Bonté**, sens premier ✦), rendu par le nom substantivé « un bien » qui désigne l'événement heureux. L'alternative « une bonne action » est écartée car trop moralisatrice ; « un bien » est neutre.\n\n**ils disent** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu au présent français.\n\n**Ceci** — Le sens retenu pour le démonstratif « hadhihi » est « Ceci » — pronom démonstratif français neutre proche.\n\n**vient d'** — Le sens retenu pour « min » est « vient de » — la préposition « de » est complétée par le verbe « vient » ajouté pour la fluidité française (une préposition seule ne peut ouvrir la citation en français).\n\n**auprès de** — Le sens retenu est « auprès de » (sens **Proximité/Présence**), rendu directement par la locution française équivalente.\n\n**Dieu** — Le sens retenu est « Dieu » (sens **Divinité**), rendu par le nom propre français équivalent au nom arabe « Allah ».\n\n**Et** — Reprise de « wa ».\n\n**si** — Reprise de « in ».\n\n**atteint** — Reprise du sens « atteindre ».\n\n**les** — Reprise du sens « -hum ».\n\n**un mal** — Le sens retenu est « mal » (sens **Mal/Mauvais**, sens premier ✦), rendu par le nom substantivé « un mal » qui désigne l'événement défavorable. Symétrique à « un bien ».\n\n**ils disent** — Reprise du sens « dire ».\n\n**Ceci** — Reprise du sens « hadhihi ».\n\n**vient d'** — Reprise du sens « min ».\n\n**auprès de** — Reprise du sens « ind ».\n\n**toi** — Le sens retenu pour « -ka » est « toi » — pronom personnel français désignant le Messager.\n\n**Dis** — Le sens retenu est « dire » (sens **Parole/Énonciation**, sens premier ✦), rendu à l'impératif « Dis » adressé au Messager.\n\n**Tout** — Le sens retenu est « tout » (sens **Totalité**), rendu par le quantificateur universel français équivalent.\n\n**vient d'** — Reprise du sens « min ».\n\n**auprès de** — Reprise du sens « ind ».\n\n**Dieu** — Reprise du sens « Dieu ».\n\n**Alors** — Le sens retenu pour « fa » est « Alors » — adverbe français de conséquence.\n\n**qu'a** — Le sens retenu pour « ma » (interrogatif) est « qu'a » — la question « quoi + a » (avec le verbe avoir sous-entendu) qui restitue l'interrogation-reproche arabe.\n\n**donc** — Le sens retenu pour « li » (préposition datif) est « donc » — mot qui restitue la charge de reproche de la construction arabe « ma li- » (qu'y a-t-il à... ?).\n\n**ce** — Le sens retenu pour le démonstratif « ha'ula'i » est « ce » — accordé au singulier avec « peuple » qui suit (« ce peuple »).\n\n**peuple** — Le sens retenu est « peuple » (sens **Peuple/Communauté**), rendu directement.\n\n**à ne** — Le sens retenu pour « la » est « à ne » — la préposition « à » vient de la construction française « avoir à + infinitif » ; « ne » traduit la négation arabe qui suit.\n\n**presque pas** — Le sens retenu est « presque » (sens **Imminence/Proximité**, sens premier ✦), rendu par l'adverbe négatif composé « presque pas ». En français, l'imminence niée arabe (« ne sont même pas près de comprendre ») se rend idiomatiquement par « ne comprennent presque pas », d'où l'alignement direct du sense « presque » sur le fr.\n\n**comprendre** — Le sens retenu est « comprendre » (sens **Compréhension/Jurisprudence**, sens premier ✦), rendu à l'infinitif après le verbe modal « sont presque à ».\n\n**un propos** — Le sens retenu est « récit rapporté » (sens **Narration/Récit**), rendu par « un propos » qui restitue en français simple l'idée de parole rapportée. L'alternative « une parole » (Hamidullah) est écartée car trop générique ; « un propos » évoque mieux un discours qui a un contenu et vise à être compris.\n\n"
+  }
+}

@@ -1,0 +1,1582 @@
+{
+  "2": [
+    {
+      "pos": 1,
+      "vwa_id": 6086,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain dirigé vers le divin. Ici le mot désigne le sujet divin lui-même, pas l'acte qui se tourne vers Lui.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran — pas un nom commun parmi d'autres dieux, mais un nom propre désignant un être unique. Ici, en début de verset, il est *posé en sujet* d'une affirmation centrale : *« Allāh — il n'y a de divinité que Lui »*. La nature philosophique du sens retenu est celle d'un nom propre qui pointe une réalit"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 6087,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte d'adorer. Ici le mot désigne l'objet d'adoration, pas l'acte.",
+      "retenuProof": "***Sens retenu :*** divinité, être adoré. Le mot *ilāh* est ici un *nom commun* qui désigne *l'objet d'adoration*, ce qu'on prend pour dieu. La formule *« il n'y a d'ilāh que Lui »* dit exactement ceci : il n'y a *pas d'autre objet légitime d'adoration* que Dieu Lui-même. La nature philosophique du sens retenu se distingue ici de la position 1 : *Allāh* est le nom propre, *ilāh* est le nom commun "
+    },
+    {
+      "pos": 7,
+      "vwa_id": 6089,
+      "retenu": "Verticalité/Droiture",
+      "name": "Subsistance",
+      "current": "Sens centré sur le fait de faire subsister. C'est une dimension du retenu, mais isolée de l'autonomie ontologique de Dieu.",
+      "retenuProof": "***Sens retenu :*** Celui qui se tient par Lui-même et fait subsister tout. Le mot *al-Qayyūm* est une *forme renforcée* de la racine q-w-m qui porte le sens premier de *« se tenir debout, être droit »*. Appliqué à Dieu, le mot dit *Celui qui se tient par Lui-même* (sans appui extérieur) et qui *fait subsister tout le reste* (les créatures dépendent de Lui pour exister). C'est un attribut double :"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 6089,
+      "retenu": "Verticalité/Droiture",
+      "name": "Gestion/Administration",
+      "current": "Sens dérivé sur la gestion d'affaires. Ici l'idée est plus large : Dieu fait tenir l'existence elle-même, pas seulement les affaires.",
+      "retenuProof": "***Sens retenu :*** Celui qui se tient par Lui-même et fait subsister tout. Le mot *al-Qayyūm* est une *forme renforcée* de la racine q-w-m qui porte le sens premier de *« se tenir debout, être droit »*. Appliqué à Dieu, le mot dit *Celui qui se tient par Lui-même* (sans appui extérieur) et qui *fait subsister tout le reste* (les créatures dépendent de Lui pour exister). C'est un attribut double :"
+    }
+  ],
+  "3": [
+    {
+      "pos": 1,
+      "vwa_id": 6090,
+      "retenu": "Descente/Révélation",
+      "name": "Halte/Séjour",
+      "current": "Sens dérivé sur le fait de descendre pour s'arrêter (halte, campement). Sans rapport avec la transmission progressive d'un contenu ici.",
+      "retenuProof": "***Sens retenu :*** faire descendre par étapes, révéler progressivement. Le verbe *nazzala* est à la *Forme renforcée* qui dit que l'action est faite *par étapes répétées*. Appliqué à la révélation, il signifie *« faire descendre par parties successives »* — non pas une descente unique mais un envoi par fragments dans le temps. La nature philosophique du sens retenu est celle d'une *transmission p"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 6091,
+      "retenu": "Livre/Écrit",
+      "name": "Obligation/Décret",
+      "current": "Sens dérivé sur l'engagement écrit. Ici le sens premier est celui du contenu révélé, pas de l'obligation imposée.",
+      "retenuProof": "***Sens retenu :*** Livre, écrit révélé constituant un tout. Le mot *al-kitāb* avec article défini désigne *un livre identifié* — ici, le Coran lui-même qui est descendu sur le prophète. La racine k-t-b porte les sens d'écriture et d'obligation. Pour le mot *kitāb*, le sens activé est celui de *l'écrit constitué* — un texte structuré avec une identité propre. La nature philosophique du sens retenu"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 6091,
+      "retenu": "Livre/Écrit",
+      "name": "Écriture/Inscription",
+      "current": "Sens verbal sur l'acte d'écrire. Ici le mot est nominal et désigne le résultat (le livre), pas l'acte.",
+      "retenuProof": "***Sens retenu :*** Livre, écrit révélé constituant un tout. Le mot *al-kitāb* avec article défini désigne *un livre identifié* — ici, le Coran lui-même qui est descendu sur le prophète. La racine k-t-b porte les sens d'écriture et d'obligation. Pour le mot *kitāb*, le sens activé est celui de *l'écrit constitué* — un texte structuré avec une identité propre. La nature philosophique du sens retenu"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 6092,
+      "retenu": "Vérité/Réalité",
+      "name": "Obligation/Nécessité",
+      "current": "Sens dérivé qui glisse de la vérité vers le devoir. Lié au retenu mais distinct : la vérité décrit, l'obligation prescrit. Ici c'est la dimension descriptive qui est mobilisée.",
+      "retenuProof": "***Sens retenu :*** vérité, réalité conforme à ce qui est. Le mot *al-ḥaqq* avec article défini désigne *la vérité identifiée*. La racine ḥ-q-q porte le double sens de *vérité* (ce qui est conforme à la réalité) et d'*obligation* (ce qui doit être). Ici, en formule *« avec la vérité »*, le mot dit que le livre est descendu *en conformité avec la réalité* — il ne contient pas d'inventions, mais ce "
+    },
+    {
+      "pos": 5,
+      "vwa_id": 6093,
+      "retenu": "Vérité/Sincérité",
+      "name": "Don/Aumône",
+      "current": "Sens dérivé technique sur l'aumône comme preuve de véracité. Sans rapport avec l'attestation entre révélations mobilisée ici.",
+      "retenuProof": "***Sens retenu :*** confirmer la véracité, attester la conformité. Le mot *muṣaddiqan* est une *forme renforcée* qui dit *« qui confirme, qui atteste comme vrai »*. Appliqué au livre, il signifie que ce livre *confirme* ce qui le précède (la Torah, l'Évangile) — il atteste leur véracité dans leur état originel. La racine ṣ-d-q porte la dimension de cohérence entre le dire et la réalité ; ici elle "
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6094,
+      "retenu": "Antériorité/Présence",
+      "name": "Main/Corps",
+      "current": "Sens concret premier (la main physique). Origine étymologique de l'expression, mais ici le sens est figuré (ce qui est devant).",
+      "retenuProof": "***Sens retenu :*** ce qui est devant, ce qui précède dans le temps. L'expression *bayna yadayhi* (littéralement « entre ses mains ») est une formule idiomatique qui désigne *« ce qui est devant lui »* — au sens spatial mais surtout temporel : *ce qui le précède*. Ici, appliquée au Livre descendu, elle dit *les révélations antérieures* (Torah, Évangile). La nature philosophique du sens est celle d"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6094,
+      "retenu": "Antériorité/Présence",
+      "name": "Pouvoir/Autorité",
+      "current": "Sens dérivé du pouvoir (la main qui agit). Sans rapport avec l'expression de précédence temporelle ici.",
+      "retenuProof": "***Sens retenu :*** ce qui est devant, ce qui précède dans le temps. L'expression *bayna yadayhi* (littéralement « entre ses mains ») est une formule idiomatique qui désigne *« ce qui est devant lui »* — au sens spatial mais surtout temporel : *ce qui le précède*. Ici, appliquée au Livre descendu, elle dit *les révélations antérieures* (Torah, Évangile). La nature philosophique du sens est celle d"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6095,
+      "retenu": "Descente/Révélation",
+      "name": "Halte/Séjour",
+      "current": "Sens dérivé sur le fait de descendre pour s'arrêter. Sans rapport avec la transmission de contenu ici.",
+      "retenuProof": "***Sens retenu :*** faire descendre, révéler. Le verbe *anzala* est à la *Forme renforcée causative* qui dit *« faire descendre »* — l'envoi d'un contenu vers un destinataire. À la différence du verbe employé en position 1 (*nazzala*, qui dit la descente *progressive par étapes*), ce verbe-ci dit *l'acte de descente* sans préciser le rythme. Pour la Torah et l'Évangile mentionnés ensuite, l'usage "
+    }
+  ],
+  "4": [
+    {
+      "pos": 9,
+      "vwa_id": 6101,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Sens étymologique premier — *couvrir, cacher*. Mais ici les signes de Dieu sont des réalités visibles, pas cachées. Le contexte ferme la lecture passive au profit du rejet actif.",
+      "retenuProof": "***Sens retenu :*** rejeter ouvertement les signes reçus. Le verbe à l'accompli (action achevée), employé avec la préposition *« par »* + complément (les signes de Dieu), désigne *l'acte de rejet actif* dirigé vers un objet précis. Dans le contexte du verset (signes de Dieu visibles, refusés en pleine lumière), il ne s'agit pas d'une cachotterie envers autrui mais d'un *refus assumé*. La nature ph"
+    }
+  ],
+  "5": [
+    {
+      "pos": 6,
+      "vwa_id": 6111,
+      "retenu": "Chose/Être",
+      "name": "Néant",
+      "current": "Sens dérivé sur l'absence d'être. Lié sémantiquement, mais ici l'usage est positif (la chose comme indéterminé).",
+      "retenuProof": "***Sens retenu :*** chose, entité indéterminée. Le mot *shayʾ* est un *nom indéfini* qui désigne *« chose, quelque chose »*. Dans la formule *« rien ne se cache à Lui... une chose dans la terre »*, l'indéfini fonctionne ici comme *renforcement de la totalité* : aucune chose, quelle qu'elle soit, n'échappe. La nature philosophique du sens est celle d'une *entité indéterminée* — ce qui en fait l'obj"
+    },
+    {
+      "pos": 6,
+      "vwa_id": 6111,
+      "retenu": "Chose/Être",
+      "name": "Volonté",
+      "current": "Sens verbal dérivé sur la volonté qui crée. Ici le mot est un nom indéfini, pas un acte de volonté.",
+      "retenuProof": "***Sens retenu :*** chose, entité indéterminée. Le mot *shayʾ* est un *nom indéfini* qui désigne *« chose, quelque chose »*. Dans la formule *« rien ne se cache à Lui... une chose dans la terre »*, l'indéfini fonctionne ici comme *renforcement de la totalité* : aucune chose, quelle qu'elle soit, n'échappe. La nature philosophique du sens est celle d'une *entité indéterminée* — ce qui en fait l'obj"
+    },
+    {
+      "pos": 11,
+      "vwa_id": 6113,
+      "retenu": "Ciel/Ce qui couvre",
+      "name": "Nom/Identification",
+      "current": "Sens dérivé sur le nom (*ism*) qui partage la même racine. Sans rapport avec le ciel concret ici.",
+      "retenuProof": "***Sens retenu :*** le ciel, voûte qui couvre. Le mot *al-samāʾ* avec article défini désigne *le ciel identifié* — la voûte au-dessus, par opposition à la terre en dessous. La racine s-m-w porte le sens premier d'*élévation* (être haut, monter). Le ciel est ainsi nommé parce qu'il est *ce qui couvre par le haut*. La formule *« dans la terre... ni dans le ciel »* couvre l'ensemble du domaine percep"
+    },
+    {
+      "pos": 11,
+      "vwa_id": 6113,
+      "retenu": "Ciel/Ce qui couvre",
+      "name": "Hauteur/Élévation",
+      "current": "Sens étymologique premier (être haut). C'est l'origine du nom *samāʾ*. Ici le mot désigne le résultat (l'espace haut), pas l'acte de s'élever.",
+      "retenuProof": "***Sens retenu :*** le ciel, voûte qui couvre. Le mot *al-samāʾ* avec article défini désigne *le ciel identifié* — la voûte au-dessus, par opposition à la terre en dessous. La racine s-m-w porte le sens premier d'*élévation* (être haut, monter). Le ciel est ainsi nommé parce qu'il est *ce qui couvre par le haut*. La formule *« dans la terre... ni dans le ciel »* couvre l'ensemble du domaine percep"
+    }
+  ],
+  "6": [
+    {
+      "pos": 5,
+      "vwa_id": 6115,
+      "retenu": "Utérus/Reproduction",
+      "name": "Miséricorde/Tendresse",
+      "current": "Sens dérivé moral (la miséricorde comme tendresse englobante). C'est l'image de l'utérus appliquée au moral. Ici le mot désigne l'organe concret, pas la qualité morale.",
+      "retenuProof": "***Sens retenu :*** utérus, lieu de la formation prénatale. Le mot *al-arḥām* est le pluriel de *raḥim* — il désigne *l'utérus*, le lieu où se forme l'embryon. La racine r-ḥ-m porte une image fondamentale : *l'enveloppement nourrissant*. L'utérus est l'organe qui *enveloppe et nourrit* l'enfant en formation — c'est l'image étymologique première dont dérivent tous les autres sens (miséricorde, pare"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 6115,
+      "retenu": "Utérus/Reproduction",
+      "name": "Parenté/Lien familial",
+      "current": "Sens dérivé social sur les liens familiaux. Ici l'organe concret est mobilisé, pas le lien qui en dérive.",
+      "retenuProof": "***Sens retenu :*** utérus, lieu de la formation prénatale. Le mot *al-arḥām* est le pluriel de *raḥim* — il désigne *l'utérus*, le lieu où se forme l'embryon. La racine r-ḥ-m porte une image fondamentale : *l'enveloppement nourrissant*. L'utérus est l'organe qui *enveloppe et nourrit* l'enfant en formation — c'est l'image étymologique première dont dérivent tous les autres sens (miséricorde, pare"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 6117,
+      "retenu": "Volonté",
+      "name": "Chose/Être",
+      "current": "Sens nominal de la racine désignant l'objet de la volonté. Ici le verbe désigne l'acte de vouloir, pas l'objet.",
+      "retenuProof": "***Sens retenu :*** vouloir, décider de faire advenir. Le verbe *yashāʾu* désigne *l'acte de vouloir* — décider de faire advenir une chose. Combiné avec *« comme »* qui précède, l'ensemble dit *« comme Il veut »* — la manière du façonnement dépend de Sa décision. La nature philosophique du sens retenu est celle d'une *décision active* qui fait advenir — non pas un simple souhait passif, mais une v"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6120,
+      "retenu": "Sagesse",
+      "name": "Jugement/Décision",
+      "current": "Sens dérivé sur l'acte de juger. Lié à la sagesse, mais ici l'accent est sur la qualité permanente, pas sur des actes ponctuels.",
+      "retenuProof": "***Sens retenu :*** Sage, qui agit avec discernement. Le mot *al-ḥakīm* est un *adjectif intensif* défini qui dit la qualité de manière permanente. La racine ḥ-k-m porte le sens premier d'*empêcher de bouger* — comme un cheval qu'on tient ferme par la bride. Par dérivation, *ḥakīm* signifie *celui qui agit avec discernement* — qui place chaque chose à sa juste place, sans précipitation ni hasard. "
+    }
+  ],
+  "7": [
+    {
+      "pos": 8,
+      "vwa_id": 6124,
+      "retenu": "Sagesse",
+      "name": "Jugement/Décision",
+      "current": "Sens dérivé sur l'acte de juger. Ici le mot qualifie les versets comme stables, pas l'acte.",
+      "retenuProof": "***Sens retenu :*** fermement établis, solidement fondés. Le mot *muḥkamāt* désigne les versets qui sont *« rendus fermes »* — ceux dont le sens est *univoque, clair, sans ambiguïté*. La racine ḥ-k-m porte le sens premier d'*empêcher de bouger* — comme un cheval qu'on tient ferme. Appliqué aux versets, le mot dit *l'établissement ferme du sens* : ces versets ne se prêtent pas à plusieurs lectures,"
+    },
+    {
+      "pos": 17,
+      "vwa_id": 6129,
+      "retenu": "Coeur/Centre",
+      "name": "Retournement/Changement",
+      "current": "Sens verbal premier (le cœur qui se retourne). Ici le mot est nominal, pas l'acte.",
+      "retenuProof": "***Sens retenu :*** cœur, siège intérieur de la décision. Le mot *qulūb* est le pluriel de *qalb* — il désigne *le cœur* dans son sens *moral et intérieur*, pas l'organe physique. C'est le *siège des décisions, des intentions, de l'orientation intérieure*. Le suffixe « leurs » rattache ces cœurs aux personnes décrites — celles dont le centre intérieur n'est pas droit. La nature philosophique du se"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 6133,
+      "retenu": "Recherche/Quête",
+      "name": "Transgression/Injustice",
+      "current": "Sens dérivé sur l'excès moral. Ici l'accent est sur l'acte de chercher, pas sur l'excès.",
+      "retenuProof": "***Sens retenu :*** rechercher activement, tendre vers. Le mot *ibtighāʾ* (forme nominale) désigne *l'acte de chercher activement*, de tendre vers une fin. Ici, en construction « X de Y » avec *al-fitnah* qui suit, l'expression dit *« recherche du désordre »* — la finalité poursuivie en s'attachant aux versets ambigus. La nature philosophique du sens retenu est celle d'une *quête orientée vers un "
+    },
+    {
+      "pos": 24,
+      "vwa_id": 6134,
+      "retenu": "Désordre/Persécution",
+      "name": "Épreuve/Tentation",
+      "current": "Sens proche sur l'épreuve qui teste. Ici l'accent est sur le désordre recherché, pas sur l'épreuve en soi.",
+      "retenuProof": "***Sens retenu :*** désordre, mise à l'épreuve qui sème la confusion. Le mot *fitnah* désigne *un désordre* qui *trouble une situation établie* — comme on met du sable dans un mécanisme. Le sens premier de la racine f-t-n est *l'épreuve par le feu* (qui sépare l'or pur des scories) ; par dérivation, le mot désigne *toute épreuve qui révèle ou qui met en désordre*. Ici, dans la formule *« recherche"
+    },
+    {
+      "pos": 26,
+      "vwa_id": 6136,
+      "retenu": "Retour/Origine",
+      "name": "Famille/Appartenance",
+      "current": "Sens dérivé sur l'appartenance. Sans rapport avec l'interprétation textuelle ici.",
+      "retenuProof": "***Sens retenu :*** interprétation, retour au sens originel. Le mot *taʾwīl* dérive de la racine ʾ-w-l (retourner, revenir à l'origine). Il désigne *l'acte de ramener un texte à son sens originel*, à *ce qu'il signifie en profondeur* — non pas une lecture superficielle, mais le retour à la racine du sens. La nature philosophique du sens retenu est celle d'une *remontée du visible vers le caché* — "
+    },
+    {
+      "pos": 45,
+      "vwa_id": 6148,
+      "retenu": "Famille/Appartenance",
+      "name": "Retour/Origine",
+      "current": "Sens verbal sur le retour. Ici l'usage est nominal sur la possession.",
+      "retenuProof": "***Sens retenu :*** détenteurs, possesseurs de. Le mot *ūlū* désigne *ceux qui possèdent quelque chose*, ceux qui en sont *détenteurs* — non pas par origine, mais *par appartenance à ce qui suit*. Dans la formule *« ūlū l-albāb »* (« détenteurs des intelligences »), le mot identifie une catégorie *par possession d'une qualité*. La nature philosophique du sens retenu est celle d'une *appartenance d"
+    }
+  ],
+  "8": [
+    {
+      "pos": 1,
+      "vwa_id": 6150,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche du retenu, centré sur l'acte d'élever un enfant. Ici le mot englobe une autorité plus large que la sphère parentale.",
+      "retenuProof": "***Sens retenu :*** Seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal qui domine — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Comme un parent qui élève un enfant et le mène vers sa maturité. C'est cette dimension bienveillante qui distingue *rabb* de *mālik* (propriétaire pur) ou *sayyid* (maître social). Le suffixe « notre »"
+    },
+    {
+      "pos": 12,
+      "vwa_id": 6157,
+      "retenu": "Miséricorde/Tendresse",
+      "name": "Provision/Bienfait matériel",
+      "current": "Sens dérivé sur le bienfait matériel concret. Ici la miséricorde demandée est plutôt spirituelle (protection de l'égarement).",
+      "retenuProof": "***Sens retenu :*** miséricorde, tendresse englobante. La racine r-ḥ-m porte une image fondamentale : *la matrice* (utérus) qui *enveloppe et nourrit*. La miséricorde est dérivée de cette image — c'est la qualité de celui qui *enveloppe l'autre dans une protection bienveillante*. Le mot *raḥma* désigne donc une *tendresse active* qui prend soin sans condition. Les pieux demandent à Dieu cette misé"
+    }
+  ],
+  "9": [
+    {
+      "pos": 1,
+      "vwa_id": 6159,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche du retenu, centré sur l'acte d'élever un enfant. Ici le mot englobe une autorité plus large que la sphère parentale.",
+      "retenuProof": "***Sens retenu :*** Seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal qui domine — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Comme un parent qui élève un enfant et le mène vers sa maturité. C'est cette dimension bienveillante qui distingue *rabb* de *mālik* (propriétaire pur) ou *sayyid* (maître social). Le suffixe « notre »"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 6162,
+      "retenu": "Temps/Période",
+      "name": "Événement/Moment marquant",
+      "current": "Sens proche centré sur le contenu événementiel du jour. Ici le mot garde les deux dimensions à la fois.",
+      "retenuProof": "***Sens retenu :*** jour, moment marquant. Le mot *yawm* désigne *un jour* dans son acception large — pas seulement la durée diurne, mais aussi *un moment marquant* identifié par un événement. Ici, en construction « X de Y » avec ce qui suit (*« jour dont il n'y a pas de doute »*), il s'agit d'un *moment précis* à venir, identifié par sa caractéristique de certitude. La nature philosophique du sen"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 6163,
+      "retenu": "Doute/Suspicion",
+      "name": "Besoin/Manque",
+      "current": "Sens dérivé sur le manque. Sans rapport avec l'incertitude mentale mobilisée ici dans la négation du doute.",
+      "retenuProof": "***Sens retenu :*** doute, incertitude qui hésite. Le mot *rayb* désigne *l'état de doute* — une hésitation qui empêche de se décider, un soupçon qui mine la certitude. Dans la formule *« il n'y a pas de doute en cela »*, l'expression affirme la *certitude absolue* de l'événement annoncé : aucune hésitation possible. La nature philosophique du sens retenu est celle d'une *incertitude active* qui r"
+    },
+    {
+      "pos": 10,
+      "vwa_id": 6164,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin garant de la promesse.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici, il est le sujet de la proposition finale : *« certes Dieu ne manque pas à Sa promesse »*. La nature philosophique du sens retenu est celle d'un nom propre qui pointe une réalité unique, ici garante de la fiabilité de la parole donnée. C'est Dieu Lui-même qui valide la certitude du rassem"
+    }
+  ],
+  "10": [
+    {
+      "pos": 9,
+      "vwa_id": 6170,
+      "retenu": "Enfant/Descendance",
+      "name": "Engendrer/Naissance",
+      "current": "Sens verbal lié — l'acte d'engendrer produit les *awlād*. Mais ici le mot désigne le résultat (les enfants), pas le processus.",
+      "retenuProof": "***Sens retenu :*** enfants, descendance engendrée. Le mot *awlād* est le pluriel de *walad* — il désigne *la descendance d'une personne*, fils et filles confondus. Le suffixe *« leurs »* attribue ces enfants à la catégorie mentionnée. Avec *amwāl* qui précède, le verset cite *les deux supports humains habituels de la sécurité* : ce qu'on possède et ce qu'on a engendré. La nature philosophique du "
+    },
+    {
+      "pos": 11,
+      "vwa_id": 6171,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin contre qui les humains tenteraient de se prémunir.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran, au cas du complément de la préposition *« contre »*. Il désigne ici *ce dont les rejetants essaieraient de se mettre à l'abri* — Dieu Lui-même comme source de la rétribution. La nature philosophique est celle d'un nom propre désignant un être unique, par opposition à un nom commun désignant u"
+    }
+  ],
+  "11": [
+    {
+      "pos": 1,
+      "vwa_id": 6186,
+      "retenu": "Persévérance/Habitude",
+      "name": "Effort/Labeur",
+      "current": "Sens verbal lié — l'effort qui produit le daʾb. Ici le mot est nominal et désigne le cas constitué par cette persévérance, pas l'acte d'effort.",
+      "retenuProof": "***Sens retenu :*** affaire, conduite-type, cas exemplaire. La racine d-ʾ-b articule deux pôles liés : la *persévérance dans une conduite* et l'*affaire/manière d'agir habituelle*. Ici, dans la construction comparative *« comme l'affaire de la famille de Pharaon »*, le mot désigne la *trajectoire-type* des gens nommés ensuite — leur manière habituelle d'agir et son issue. La nature philosophique d"
+    },
+    {
+      "pos": 2,
+      "vwa_id": 6187,
+      "retenu": "Famille/Appartenance",
+      "name": "Gouvernance",
+      "current": "Sens verbal de la racine — Pharaon est associé à la gouvernance, mais ici le mot désigne sa famille/entourage, pas son acte de gouverner.",
+      "retenuProof": "***Sens retenu :*** famille, maisonnée rattachée à une figure. Le mot *āl* (en construction « X de Y » avec un nom propre) désigne *le groupe rattaché à une personne par lien d'appartenance* — maisonnée, entourage rapproché, clan au sens large. Le mot est employé spécifiquement pour les figures historiques (*āl Firʿawn*, *āl Ibrāhīm*) pour désigner non seulement la famille de sang mais aussi l'ent"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6190,
+      "retenu": "Signe/Marque",
+      "name": "Exemple/Témoin",
+      "current": "Sens proche mais centré sur l'exemplarité d'imitation. Ici le mot désigne ce qui pointe vers Dieu, pas un modèle à imiter.",
+      "retenuProof": "***Sens retenu :*** signes, marques perceptibles envoyées par Dieu. Le mot *āyāt* désigne les *marques perceptibles* envoyées par Dieu pour pointer vers Lui — événements historiques (les fléaux d'Égypte dans le contexte de Pharaon), paroles révélées, prodiges et phénomènes naturels lus comme indication. Le suffixe *« nos »* rattache ces signes à Dieu, qui en est l'émetteur. La nature philosophique"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6190,
+      "retenu": "Signe/Marque",
+      "name": "Verset/Énoncé",
+      "current": "Sens dérivé restreint aux versets coraniques. Mais ici le contexte historique renvoie à des signes envoyés avant le Coran.",
+      "retenuProof": "***Sens retenu :*** signes, marques perceptibles envoyées par Dieu. Le mot *āyāt* désigne les *marques perceptibles* envoyées par Dieu pour pointer vers Lui — événements historiques (les fléaux d'Égypte dans le contexte de Pharaon), paroles révélées, prodiges et phénomènes naturels lus comme indication. Le suffixe *« nos »* rattache ces signes à Dieu, qui en est l'émetteur. La nature philosophique"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6191,
+      "retenu": "Prise/Saisie",
+      "name": "Appropriation/Adoption",
+      "current": "Sens idiomatique pour des relations humaines (prendre comme allié, comme dieu). Sans rapport avec la prise rétributive ici.",
+      "retenuProof": "***Sens retenu :*** saisir, prendre fermement. Le verbe *akhadha* à l'accompli (action achevée) avec le suffixe « eux » dit *« Il les saisit »*. Précédé de la conjonction *« alors »*, il marque la *suite directe* du démenti. La racine ʾ-kh-dh désigne la prise ferme et abrupte. Ici la nature philosophique du sens est celle d'une *prise par laquelle l'agent (Dieu) soustrait le patient à sa trajectoi"
+    },
+    {
+      "pos": 10,
+      "vwa_id": 6192,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui agit.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici, postposé en arabe pour focaliser l'action de saisie avant d'identifier l'agent, il désigne *celui qui a saisi* les rejetants — Dieu Lui-même comme source de la prise rétributive. La nature philosophique est celle d'un nom propre qui pointe une réalité unique, ici dans son rôle d'agent de"
+    },
+    {
+      "pos": 11,
+      "vwa_id": 6193,
+      "retenu": "Péché/Faute",
+      "name": "Suite/Poursuite",
+      "current": "Sens étymologique premier de la racine. Lié sémantiquement au péché (qui suit la chose), mais ici le mot dénote l'acte coupable, pas la suite physique.",
+      "retenuProof": "***Sens retenu :*** péchés, actes coupables. Le pluriel *dhunūb* désigne les *actes coupables* — non pas des paroles ou des pensées, mais des *actes accomplis* qui transgressent une orientation droite. La préposition *« par »* introduit la *cause de la saisie* : ce ne sont pas les paroles seules qui causent la saisie, mais les actes (péchés) qui en découlent. Le verset noue ainsi *parole de dément"
+    },
+    {
+      "pos": 12,
+      "vwa_id": 6194,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui caractérise une généralité.",
+      "retenuProof": "***Sens retenu :*** Dieu, sujet d'une affirmation universelle. Reprise du nom propre divin déjà mobilisé en position 10, mais ici en *début de proposition* avec la conjonction *« et »* qui *généralise* la phrase. Le verset passe du *cas particulier* (Pharaon) à un *énoncé universel* sur Dieu : « Et Dieu est sévère en conséquence ». La nature philosophique est la même qu'en position 10, mais l'usag"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6195,
+      "retenu": "Intensité/Sévérité",
+      "name": "Force",
+      "current": "Sens étymologique premier (action concrète de serrer). Lié à l'intensité par dérivation, mais ici l'usage est adjectival abstrait.",
+      "retenuProof": "***Sens retenu :*** sévère, intense sans atténuation. Le mot *shadīd* est un *adjectif intensif* qui qualifie l'intensité de la conséquence divine — non pas une cruauté arbitraire, mais une *intensité sans atténuation*. La racine sh-d-d articule plusieurs sens liés (force concrète, intensité abstraite, attaque, hâte) ; ici c'est l'*intensité abstraite* qui est mobilisée. La nature philosophique es"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6195,
+      "retenu": "Intensité/Sévérité",
+      "name": "Force/Solidité",
+      "current": "Sens dérivé concret. Sans rapport direct avec la qualification adjectivale d'intensité.",
+      "retenuProof": "***Sens retenu :*** sévère, intense sans atténuation. Le mot *shadīd* est un *adjectif intensif* qui qualifie l'intensité de la conséquence divine — non pas une cruauté arbitraire, mais une *intensité sans atténuation*. La racine sh-d-d articule plusieurs sens liés (force concrète, intensité abstraite, attaque, hâte) ; ici c'est l'*intensité abstraite* qui est mobilisée. La nature philosophique es"
+    },
+    {
+      "pos": 14,
+      "vwa_id": 6196,
+      "retenu": "Succession/Conséquence",
+      "name": "Châtiment/Rétribution",
+      "current": "Sens dérivé qui glose vers la punition. Écarté pour conserver le lien étymologique entre l'acte et sa suite naturelle.",
+      "retenuProof": "***Sens retenu :*** conséquence, suite logique d'un acte. La racine ʿ-q-b porte le sens étymologique premier de *« ce qui vient à la suite »* (talon, postérité, conséquence). Le mot *ʿiqāb* dérive de cette racine et désigne la *suite logique d'un acte* — non pas un châtiment ajouté de l'extérieur, mais la *conséquence qui suit naturellement*. La nature philosophique du sens retenu est *centrale* i"
+    }
+  ],
+  "12": [
+    {
+      "pos": 3,
+      "vwa_id": 6198,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Sens étymologique premier de la racine — *couvrir, cacher*. Mais ici aucun objet caché n'est évoqué : le contexte présente ces gens comme refusant ouvertement une parole reçue.",
+      "retenuProof": "***Sens retenu :*** rejeter ouvertement la guidance reçue. Le verbe à l'accompli (action achevée), employé seul pour catégoriser un groupe (« ceux qui ont rejeté »), désigne dans l'usage coranique un *acte volontaire de refus* de la parole transmise. Ce n'est pas une cachotterie envers autrui — c'est un *refus assumé* de ce qui a été présenté. Le contexte du verset (l'adresse directe « Dis à ceux "
+    },
+    {
+      "pos": 4,
+      "vwa_id": 6199,
+      "retenu": "Victoire/Domination",
+      "name": "Effort/Lutte",
+      "current": "Sens lié sur le processus de la confrontation. Ici la voix passive met en avant l'issue de la confrontation (être vaincu), pas le processus de lutte.",
+      "retenuProof": "***Sens retenu :*** vaincre, l'emporter dans une confrontation. Le verbe est à l'inaccompli au passif (*« vous serez vaincus »*) — la forme passive applique aux destinataires l'action subie, sans préciser l'agent de la défaite. La particule de futur *sa-* en préfixe annonce que cet événement est à venir. La nature philosophique du sens est celle d'un *événement où une partie l'emporte sur une autr"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 6200,
+      "retenu": "Rassemblement/Résurrection",
+      "name": "Déplacement/Migration",
+      "current": "Sens lié sur le trajet. Ici l'accent est sur la destination unique, pas sur le mouvement de déplacement.",
+      "retenuProof": "***Sens retenu :*** être rassemblé, conduit vers un point de convergence. Le verbe à l'inaccompli au passif (*« vous serez rassemblés »*) applique aux destinataires l'action subie. La nature philosophique du sens est celle d'une *réunion en un point* : un groupe convergent vers un lieu unique — non pas une dispersion mais une *concentration*. Dans l'usage coranique, le mot prend une portée eschato"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6201,
+      "retenu": "Puissance/Malheur",
+      "name": "Détresse/Misère",
+      "current": "Sens lié au pôle de souffrance subie. Mais ici *biʾsa* exprime un jugement extérieur sur la chose, pas l'état intérieur de celui qui souffre.",
+      "retenuProof": "***Sens retenu :*** malheur, situation néfaste subie. Le mot *biʾsa* est un *verbe d'évaluation négative* — une forme figée qui sert à exprimer un jugement de mauvaise qualité, l'équivalent du français *« quel mauvais... »*. La racine b-ʾ-s articule deux pôles liés : la *force déployée* (vaillance, courage) et le *malheur subi* (calamité). Dans la formule *biʾsa* + sujet, c'est le pôle « malheur »"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6202,
+      "retenu": "Berceau/Couche",
+      "name": "Terre/Étendue",
+      "current": "Sens lié désignant l'étendue de terre aplanie. Même image fondamentale, mais ici on parle d'un endroit préparé pour s'y installer, pas d'un terrain naturel.",
+      "retenuProof": "***Sens retenu :*** couche, endroit aplani et préparé pour s'y installer. Le mot *mihād* dérive de la racine m-h-d dont le sens premier est l'*aplanissement et la préparation* d'un endroit où l'on s'installe. *Mihād* désigne le *résultat concret* de cette action — l'endroit aplani et préparé sur lequel on s'étend, comme une couche ou un lit. Dans le verset, par *retournement ironique*, ce qui devr"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6202,
+      "retenu": "Berceau/Couche",
+      "name": "Préparation/Aplanissement",
+      "current": "Sens verbal premier de la racine — l'acte d'aplanir et de préparer. Origine étymologique de *mihād*. Mais ici l'usage est nominal et concret, pas l'acte verbal.",
+      "retenuProof": "***Sens retenu :*** couche, endroit aplani et préparé pour s'y installer. Le mot *mihād* dérive de la racine m-h-d dont le sens premier est l'*aplanissement et la préparation* d'un endroit où l'on s'installe. *Mihād* désigne le *résultat concret* de cette action — l'endroit aplani et préparé sur lequel on s'étend, comme une couche ou un lit. Dans le verset, par *retournement ironique*, ce qui devr"
+    }
+  ],
+  "13": [
+    {
+      "pos": 2,
+      "vwa_id": 6224,
+      "retenu": "Existence/Devenir",
+      "name": "Lieu/Position",
+      "current": "Sens dérivé spatial désignant un lieu ou une place. Sans rapport avec l'usage existentiel mobilisé ici, où le verbe pose simplement l'existence sans localiser.",
+      "retenuProof": "***Sens retenu :*** être, exister dans le temps. Le verbe *kāna* est l'équivalent arabe du verbe *« être »* — il pose un *constat passé* sur ce qui était présent à un moment donné. Ici, il introduit le récit : *« il y avait pour vous »*. La nature philosophique du sens retenu est celle d'une *existence inscrite dans le temps* — non pas une essence figée, mais un fait survenu et continu pendant un "
+    },
+    {
+      "pos": 4,
+      "vwa_id": 6225,
+      "retenu": "Signe/Marque",
+      "name": "Exemple/Témoin",
+      "current": "Sens proche mais centré sur l'*exemplarité d'imitation* — un exemple remarquable à suivre. Ici le mot désigne ce qui *pointe vers Dieu* pour discernement, pas un modèle à imiter. La nuance est entre indication et imitation.",
+      "retenuProof": "***Sens retenu :*** signe, marque qui pointe au-delà d'elle-même. Le mot *āya* désigne *une marque perceptible* envoyée par Dieu pour pointer vers Lui — événement, parole, prodige ou phénomène lu comme indication. Ici, l'indéfini introduit un signe parmi d'autres : un événement précis (la rencontre des deux troupes) à *lire comme indication*. La nature philosophique est celle d'une marque qui *poi"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 6225,
+      "retenu": "Signe/Marque",
+      "name": "Verset/Énoncé",
+      "current": "Sens dérivé restreint aux versets coraniques. Mais ici le contexte historique (Pharaon, bataille) renvoie à des signes envoyés bien avant le Coran. La nuance philosophique différencie le signe d'événement du signe de texte.",
+      "retenuProof": "***Sens retenu :*** signe, marque qui pointe au-delà d'elle-même. Le mot *āya* désigne *une marque perceptible* envoyée par Dieu pour pointer vers Lui — événement, parole, prodige ou phénomène lu comme indication. Ici, l'indéfini introduit un signe parmi d'autres : un événement précis (la rencontre des deux troupes) à *lire comme indication*. La nature philosophique est celle d'une marque qui *poi"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 6227,
+      "retenu": "Rencontre/Face à face",
+      "name": "Réception/Accueil",
+      "current": "Sens dérivé sur l'hospitalité — l'accent est sur la chaleur de l'accueil. Mais ici il s'agit d'un croisement militaire neutre, pas d'un accueil amical. La nuance différencie la rencontre conviviale de la rencontre adverse.",
+      "retenuProof": "***Sens retenu :*** se rencontrer, se trouver face à face. Le verbe à la *Forme renforcée réciproque* dit que l'action est faite *mutuellement entre deux parties*. Le duel féminin renvoie aux deux troupes : elles se sont *mutuellement croisées* en un même lieu, dans un face-à-face. La nature philosophique du sens est celle d'un *face-à-face* où deux parties se trouvent en présence l'une de l'autre"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6228,
+      "retenu": "Groupe/Troupe",
+      "name": "Retour",
+      "current": "Sens verbal premier de la racine. L'usage ici est purement nominal. La nuance est entre acte et résultat.",
+      "retenuProof": "***Sens retenu :*** troupe, corps d'hommes. Reprise du même mot qu'en position 6, mais ici au *singulier indéfini* pour spécifier la *première* des deux troupes mentionnées au duel. La forme indéfinie laisse l'identification se faire par la qualification qui suit (*combattait dans la voie de Dieu*). La nature philosophique du sens est la même qu'en position 6 — une pluralité humaine soudée par app"
+    },
+    {
+      "pos": 12,
+      "vwa_id": 6231,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain dirigé vers le divin. Ici le mot désigne le sujet divin lui-même.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran — un nom propre désignant un être unique. Ici, en construction « X de Y » avec *sabīl* qui précède, l'expression *« voie de Dieu »* identifie l'orientation du combat de la première troupe : c'est *selon Dieu* qu'on combat, pas selon une cause humaine. La nature philosophique est celle d'un nom"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6232,
+      "retenu": "Altérité/Délai",
+      "name": "Autre/Alternative",
+      "current": "Sens proche centré sur le choix entre options égales. Ici les deux troupes sont opposées en nature, pas équivalentes en valeur.",
+      "retenuProof": "***Sens retenu :*** autre, différent par opposition qualitative. Le mot *ukhrā* est un adjectif féminin qui exprime *l'altérité* — la distinction par différence d'avec ce qui précède. Il désigne ici la *seconde fiʾa*, opposée à la première par sa qualification (« qui rejette » vs « qui combat dans la voie de Dieu »). La nature philosophique du sens retenu est celle d'une *distinction qualitative* "
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6232,
+      "retenu": "Altérité/Délai",
+      "name": "Postériorité/Fin",
+      "current": "Sens centré sur la position dans le temps. Ici l'opposition est spatiale entre deux camps présents simultanément, pas temporelle.",
+      "retenuProof": "***Sens retenu :*** autre, différent par opposition qualitative. Le mot *ukhrā* est un adjectif féminin qui exprime *l'altérité* — la distinction par différence d'avec ce qui précède. Il désigne ici la *seconde fiʾa*, opposée à la première par sa qualification (« qui rejette » vs « qui combat dans la voie de Dieu »). La nature philosophique du sens retenu est celle d'une *distinction qualitative* "
+    },
+    {
+      "pos": 15,
+      "vwa_id": 6234,
+      "retenu": "Vision/Perception",
+      "name": "Opinion/Jugement",
+      "current": "Sens dérivé intellectuel — sans rapport avec la perception sensible décrite dans le combat ici.",
+      "retenuProof": "***Sens retenu :*** voir, percevoir directement par les yeux. Le verbe *yarawnahum* est à l'inaccompli (action en cours) avec le suffixe « eux » comme objet — *« ils les voyaient »*. La racine r-ʾ-y désigne la *perception visuelle directe*. L'inaccompli rend l'expérience *continue* de la perception au moment du face-à-face : ils étaient en train de les voir, dans la durée de la rencontre. La natur"
+    },
+    {
+      "pos": 16,
+      "vwa_id": 6235,
+      "retenu": "Ressemblance/Identité",
+      "name": "Similitude/Comparaison",
+      "current": "Sens proche centré sur la mise en parallèle qualitative (*parabole, exemple*). Ici l'usage est strictement quantitatif — un rapport numérique. La nuance est entre comparaison de qualité et rapport de nombre.",
+      "retenuProof": "***Sens retenu :*** pareil, équivalent en nombre. Le mot *mithlay-him* est au *duel* avec le suffixe « eux » — il dit que l'objet vu est *l'équivalent en nombre redoublé* du sujet qui voit. *« Deux fois leur pareil »*. La nature philosophique du sens retenu est celle d'une *équivalence de nombre exprimée par doublement* — non pas une simple comparaison qualitative, mais un rapport quantitatif exac"
+    },
+    {
+      "pos": 17,
+      "vwa_id": 6236,
+      "retenu": "Vision/Perception",
+      "name": "Opinion/Jugement",
+      "current": "Sens dérivé intellectuel — sans rapport avec le nom verbal de perception sensible ici.",
+      "retenuProof": "***Sens retenu :*** vision, perception immédiate. Le mot *raʾya* est un *nom verbal* dérivé du verbe précédent (*yarawnahum*) — il désigne *l'acte ou l'état de voir*. Il fonctionne ici comme *renforcement adverbial* du verbe précédent, dans la formule *« raʾya l-ʿayni »* (« vision de l'œil »). La nature philosophique reste la même qu'en position 15 — la saisie immédiate par les yeux. Le passage du"
+    },
+    {
+      "pos": 19,
+      "vwa_id": 6238,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain dirigé vers le divin. Ici le mot désigne le sujet divin qui agit.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Reprise du nom propre divin déjà mobilisé en position 12, mais ici en *début de proposition* avec la conjonction « et » qui *généralise*. Le verset passe du *cas particulier* (la bataille) à un *énoncé universel* sur Dieu : il renforce qui Il veut. La nature philosophique est la même — un nom propre qui pointe une réalité unique — mais l'usage syntaxi"
+    },
+    {
+      "pos": 21,
+      "vwa_id": 6240,
+      "retenu": "Secours/Victoire",
+      "name": "Alliance/Soutien",
+      "current": "Sens dérivé désignant le partisan — celui qui est de mon côté. Ce sens met l'accent sur l'identité du soutien, alors qu'ici l'accent est sur l'acte du secours lui-même.",
+      "retenuProof": "***Sens retenu :*** secourir, délivrer face à un adversaire. Le mot *naṣr* désigne *le fait de venir en aide à quelqu'un* dans une situation difficile — particulièrement la *délivrance face à un adversaire*. C'est l'aide qui mène à la victoire, distinguée d'une assistance générale. La préposition *« par »* introduit le *moyen* du renforcement : Dieu renforce *au moyen de Son secours propre*. La na"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 6241,
+      "retenu": "Volonté",
+      "name": "Chose/Existence",
+      "current": "Sens nominal de la même racine désignant l'objet de la volonté (*chose, quelque chose*). Ici le verbe désigne l'acte de vouloir, pas l'objet voulu. La nuance est entre acte et résultat.",
+      "retenuProof": "***Sens retenu :*** vouloir, décider de faire advenir. Le verbe *yashāʾu* désigne *l'acte de vouloir* — décider de faire advenir une chose. Combiné avec le pronom relatif *« qui »* qui précède, l'ensemble signifie *« celui qu'Il veut »* — *l'objet du soutien divin est laissé à la décision de Dieu*. La nature philosophique du sens retenu est celle d'une *décision active* qui fait advenir — non pas "
+    },
+    {
+      "pos": 27,
+      "vwa_id": 6242,
+      "retenu": "Interprétation/Leçon",
+      "name": "Traversée/Passage",
+      "current": "Sens étymologique premier de la racine — l'idée de traverser un fleuve, passer d'un côté à l'autre. C'est l'origine sémantique de la leçon (passer du visible au sens). Mais ici l'usage est nominal et moral, pas concret.",
+      "retenuProof": "***Sens retenu :*** leçon, enseignement à tirer d'un événement. La racine ʿ-b-r porte le sens premier de *traversée* — passer d'un côté à l'autre, franchir un fleuve. Par dérivation, *ʿibrah* désigne *ce qui fait passer de l'observation extérieure à la compréhension intérieure* : une leçon qu'on tire d'un événement en *traversant* son apparence pour atteindre son sens. La nature philosophique du s"
+    },
+    {
+      "pos": 28,
+      "vwa_id": 6243,
+      "retenu": "Famille/Appartenance",
+      "name": "Gouvernance",
+      "current": "Sens verbal sur l'acte de gouverner. Sans rapport avec l'usage nominal de possession d'une qualité mobilisé ici.",
+      "retenuProof": "***Sens retenu :*** détenteurs de, possesseurs de. Le mot *ūlū* désigne *ceux qui possèdent quelque chose*, ceux qui en sont *détenteurs* — non pas par origine ou identité, mais *par appartenance à ce qui suit dans la phrase*. Dans la formule *« ūlū l-abṣār »* (« détenteurs des clairvoyances »), le mot identifie une catégorie *par possession d'une qualité*. La nature philosophique du sens retenu e"
+    }
+  ],
+  "14": [
+    {
+      "pos": 6,
+      "vwa_id": 6270,
+      "retenu": "Féminin/Épouses",
+      "name": "Oubli/Négligence",
+      "current": "Sens verbal dérivé d'une autre racine homographe (*nasiya* = oublier, négliger). Même apparence graphique mais autre racine sémantique. Sans rapport avec le pluriel féminin mobilisé ici dans la liste des choses désirées.",
+      "retenuProof": "***Sens retenu :*** femmes (catégorie féminine). Le mot *al-nisāʾ* est un pluriel particulier — un mot pris à une racine distincte n-s-w pour désigner *le pluriel féminin*. Il désigne ici les femmes comme *catégorie* d'objets désirés, du point de vue masculin de l'époque. C'est l'angle adopté par le verset, qui s'adresse à un public majoritairement masculin sans pour autant porter un jugement sur "
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6273,
+      "retenu": "Richesse/Abondance",
+      "name": "Construction/Pont",
+      "current": "Sens dérivé concret sur la solidité physique (*pont, construction solide*). Sans rapport avec l'intensification de la richesse mobilisée ici par la forme dérivée.",
+      "retenuProof": "***Sens retenu :*** thésaurisés, accumulés en quintaux. La forme du mot ici (qui dit que l'action a été faite *sur* la chose) est dérivée par *Forme renforcée* de la même racine que le mot précédent — ce qui *intensifie* la dimension d'accumulation. Il ne s'agit pas seulement de quintaux, mais de quintaux *entassés sur quintaux*. La répétition de la racine sert d'amplificateur : on insiste sur la "
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6276,
+      "retenu": "Cheval/Cavalerie",
+      "name": "Imagination/Apparence",
+      "current": "Sens verbal homographe désignant l'imagination ou la supposition (*khayāl*). Même graphie mais autre dérivation. Sans rapport avec le nom collectif des chevaux mobilisé ici.",
+      "retenuProof": "***Sens retenu :*** chevaux, monture de prestige. Le mot *al-khayl* désigne les chevaux pris *collectivement* — valeur économique et militaire majeure dans la société arabe ancienne. Les chevaux étaient *montures pour la guerre*, pour les *déplacements rapides*, et *symbole de prestige social*. La nature philosophique du sens est celle d'un animal domestiqué qui combine utilité fonctionnelle et ca"
+    },
+    {
+      "pos": 14,
+      "vwa_id": 6277,
+      "retenu": "Marque/Signe",
+      "name": "Pâturage",
+      "current": "Sens verbal sur l'action de mener au pâturage (*faire paître, laisser en liberté, envoyer paître*). C'est une autre acception de la racine, sans rapport sémantique avec le marquage des chevaux mobilisé ici.",
+      "retenuProof": "***Sens retenu :*** marqués d'un signe distinctif. La forme du mot (qui dit que l'action a été faite *sur* la chose) désigne les chevaux qui ont reçu une *marque distinctive* — un signe qui les identifie comme appartenant à une lignée ou à un propriétaire particulier. La nature philosophique est celle d'une *qualification par marquage* : la chose porte un signe qui la distingue des autres et la ra"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 6278,
+      "retenu": "Bétail/Animaux",
+      "name": "Bienfait/Faveur",
+      "current": "Sens dérivé abstrait sur les *bienfaits divins* (*niʿma, faveur, bénédiction*). Le bétail est implicitement compté parmi ces bienfaits, mais ici le mot désigne concrètement les animaux comme bien possédé, pas la faveur abstraite. La nuance est entre l'abstraction du don et la matérialité du bien donné.",
+      "retenuProof": "***Sens retenu :*** bétail, capital vivant. Le mot *al-anʿām* est le pluriel de *naʿam* — il désigne le *bétail au sens large* (chameaux, bovins, ovins, caprins) qui constituait le capital vivant des familles arabes anciennes. C'était la *source principale de viande, de lait, de cuir et de transport*. La nature philosophique du sens est celle d'un capital animal vivant — un bien qui se renouvelle,"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 6278,
+      "retenu": "Bétail/Animaux",
+      "name": "Douceur/Aisance",
+      "current": "Sens dérivé sur la vie agréable (*aisance, confort, fraîcheur*). Même image fondamentale (la prospérité), mais ici on parle des animaux concrets qui produisent cette aisance, pas de l'aisance comme état. La cible philosophique change : matériel contre vécu.",
+      "retenuProof": "***Sens retenu :*** bétail, capital vivant. Le mot *al-anʿām* est le pluriel de *naʿam* — il désigne le *bétail au sens large* (chameaux, bovins, ovins, caprins) qui constituait le capital vivant des familles arabes anciennes. C'était la *source principale de viande, de lait, de cuir et de transport*. La nature philosophique du sens est celle d'un capital animal vivant — un bien qui se renouvelle,"
+    },
+    {
+      "pos": 21,
+      "vwa_id": 6283,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain dirigé vers le divin. Ici le mot désigne le sujet divin lui-même, pas l'acte qui se tourne vers Lui.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran — pas un nom commun parmi d'autres dieux, mais un nom propre désignant un être unique. La proposition « et Dieu, auprès de Lui... » contraste avec ce qui précède : la jouissance d'ici-bas (passagère) opposée à ce qui se trouve auprès de Dieu (permanent). La nature philosophique du sens est cel"
+    },
+    {
+      "pos": 22,
+      "vwa_id": 6284,
+      "retenu": "Proximité/Présence",
+      "name": "Opinion/Jugement",
+      "current": "Sens dérivé abstrait pour exprimer un point de vue (*selon, d'après*) — utilisé pour citer l'opinion de quelqu'un. Ici l'usage est strictement spatial-localisateur. La nuance est entre la pensée et la localisation.",
+      "retenuProof": "***Sens retenu :*** auprès de, dans la sphère de. Le mot *ʿinda* en arabe ne désigne pas la *simple proximité spatiale* — il dit *« auprès de »*, *« chez »*, *« dans la sphère de »*, avec une dimension d'*appartenance* à celui qu'on désigne. Comme quand on dit « chez moi » : ce qui est chez nous nous appartient en propre. Avec le suffixe « lui » qui renvoie à Dieu, l'expression localise *du côté d"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 6285,
+      "retenu": "Beauté/Bonté",
+      "name": "Excellence morale",
+      "current": "Sens verbal restreint à la conduite humaine (*bien faire, bienfaisance*). Ici le mot est nominal et qualifie la nature même du lieu de retour, pas un acte de bienfaisance. La nuance est entre la qualité d'une chose et l'acte d'une personne.",
+      "retenuProof": "***Sens retenu :*** ce qui est bon, qualité positive. Le mot *ḥusn* désigne une *qualité positive globale* — à la fois la *beauté visuelle* et la *bonté morale*, sans préjuger de l'une ou l'autre dimension. C'est cette ambiguïté volontaire qui en fait un mot riche : il pointe une excellence générale, non spécialisée. En construction « X de Y » avec ce qui suit (*lieu de retour*), l'expression dit "
+    }
+  ],
+  "15": [
+    {
+      "pos": 3,
+      "vwa_id": 6325,
+      "retenu": "Bien/Excellence",
+      "name": "Bien/Bonté",
+      "current": "Sens proche centré sur la dimension *morale* (*bien moral, bienfait, vertueux*). C'est une partie de la racine, mais ici le mot est plus large : il inclut aussi la dimension de préférabilité, qui dépasse la seule moralité. La nuance est entre *« moralement bon »* et *« préférable parce que meilleur »*.",
+      "retenuProof": "***Sens retenu :*** ce qui est meilleur, ce qui surpasse en valeur. La racine kh-y-r porte une dimension large : *bien moral*, *bien matériel*, *préférable*, *excellence*. Le mot ici est indéfini et précédé de la préposition *bi-* (« à propos de »), ce qui donne *« quelque chose de meilleur »* — sans préciser encore quoi. C'est une accroche qui ouvre la suite : on annonce une chose préférable à ce"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 6325,
+      "retenu": "Bien/Excellence",
+      "name": "Choix/Préférence",
+      "current": "Sens *verbal* sur l'acte de choisir (*choisir, préférer, sélectionner*). C'est l'acte qui mène à la qualification, pas la qualification elle-même. Ici, le mot est nominal : on parle de la *chose* préférable, pas de l'acte de préférer.",
+      "retenuProof": "***Sens retenu :*** ce qui est meilleur, ce qui surpasse en valeur. La racine kh-y-r porte une dimension large : *bien moral*, *bien matériel*, *préférable*, *excellence*. Le mot ici est indéfini et précédé de la préposition *bi-* (« à propos de »), ce qui donne *« quelque chose de meilleur »* — sans préciser encore quoi. C'est une accroche qui ouvre la suite : on annonce une chose préférable à ce"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 6327,
+      "retenu": "Proximité/Présence",
+      "name": "Opinion/Jugement",
+      "current": "Sens dérivé abstrait pour exprimer un point de vue (*selon, d'après*) — utilisé pour citer l'opinion de quelqu'un. Ici l'usage est strictement spatial-localisateur (*auprès de*), sans aucune référence à une opinion. La nuance est entre une référence mentale et une localisation physique-symbolique.",
+      "retenuProof": "***Sens retenu :*** auprès de, dans la sphère de. Le mot *ʿinda* en arabe ne désigne pas la simple proximité spatiale — il dit *« auprès de »*, *« chez »*, *« dans la sphère de »*, avec une dimension d'*appartenance* à celui qu'on désigne. Comme quand on dit « j'ai ça chez moi » : ce qu'on a est de notre côté, dans notre réserve. Ici, combiné avec « leur Seigneur », l'expression localise la récomp"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 6328,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche du retenu, centré sur l'éducation d'un enfant (*éduquer, former*). Ici, le mot englobe une autorité plus large que la sphère parentale ; il s'adresse à Dieu comme celui qui entretient toute la vie de la personne, pas seulement durant l'enfance. La nuance porte sur l'étendue de la sollicitude.",
+      "retenuProof": "***Sens retenu :*** seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal qui domine — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Comme un parent qui élève un enfant et le mène vers sa maturité. Le suffixe « leur » rattache cette autorité bienveillante à ceux décrits juste avant (les pieux qui se sont prémunis). C'est cette dimen"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 6331,
+      "retenu": "Position basse",
+      "name": "Position inférieure",
+      "current": "Sens dérivé qualitatif sur la valeur (*inférieur en valeur, partie basse*). Ici, le sens est strictement spatial — on parle de la position physique des rivières sous les jardins, pas d'un jugement de hiérarchie ou de valeur. La nuance philosophique est entre l'espace et la valeur.",
+      "retenuProof": "***Sens retenu :*** dessous, en position basse. Le mot désigne une *position spatiale relative* — ce qui se trouve sous quelque chose d'autre. Ici, avec le suffixe « elles » qui renvoie aux jardins (féminin pluriel), l'expression dit que les rivières passent *sous* les jardins. C'est l'image classique du paradis coranique : des jardins dont les eaux coulent en dessous, comme des fondations vivante"
+    },
+    {
+      "pos": 14,
+      "vwa_id": 6332,
+      "retenu": "Eau/Cours d'eau",
+      "name": "Clarté/Jour",
+      "current": "Sens dérivé homographe désignant le jour clair (*nahār*). Même racine que les rivières, mais autre dérivation sémantique. Sans rapport avec le contexte hydrique mobilisé ici par le verbe « coulent ».",
+      "retenuProof": "***Sens retenu :*** rivière, cours d'eau abondant. Le mot *nahr* en arabe désigne un *cours d'eau au sens large* — particulièrement les grands cours d'eau (le mot pour le Nil ou l'Euphrate est *nahr*). Le pluriel défini *al-anhār* renvoie aux rivières des jardins paradisiaques, image classique de l'abondance dans le Coran. La racine porte deux idées distinctes (clarté du jour et eau courante) ; ic"
+    },
+    {
+      "pos": 18,
+      "vwa_id": 6335,
+      "retenu": "Pureté/Purification",
+      "name": "Chasteté/Vertu",
+      "current": "Sens centré sur une dimension morale spécifique (*chasteté, innocence*). Ici le texte ne précise pas cette dimension — il pose seulement la qualité « purifiés » sans la restreindre à la chasteté. La nuance est entre une pureté générale (qui peut être physique, morale, rituelle) et une pureté morale spécifiée.",
+      "retenuProof": "***Sens retenu :*** rendu pur, ayant été purifié. La forme du mot (qui dit que l'action a été faite *sur* la chose) désigne ceux qui ont reçu une purification — la pureté ici n'est pas innée, elle est *opérée*, accomplie sur eux par un acte qui les a rendus tels. La racine ṭ-h-r porte le sens premier de propreté, mais inclut aussi la pureté morale et rituelle. Le texte ne précise pas en quoi consi"
+    },
+    {
+      "pos": 18,
+      "vwa_id": 6335,
+      "retenu": "Pureté/Purification",
+      "name": "Pureté/Propreté",
+      "current": "Sens centré sur la propreté *physique* (*propreté, nettoyer*). Inclus dans le sens retenu, mais isolant la dimension matérielle. Ici la pureté est plus large — elle peut couvrir physique et moral à la fois, sans qu'on tranche.",
+      "retenuProof": "***Sens retenu :*** rendu pur, ayant été purifié. La forme du mot (qui dit que l'action a été faite *sur* la chose) désigne ceux qui ont reçu une purification — la pureté ici n'est pas innée, elle est *opérée*, accomplie sur eux par un acte qui les a rendus tels. La racine ṭ-h-r porte le sens premier de propreté, mais inclut aussi la pureté morale et rituelle. Le texte ne précise pas en quoi consi"
+    },
+    {
+      "pos": 21,
+      "vwa_id": 6337,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal de la racine, désignant l'acte humain dirigé vers le divin (*adorer, se dévouer au culte*). Mais ici le mot désigne le *sujet divin lui-même*, pas l'acte qui se tourne vers Lui. La nuance est entre Dieu (sujet) et l'adoration de Dieu (acte humain).",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le nom propre de la divinité du Coran — pas un nom commun parmi d'autres dieux, mais un nom propre désignant un être unique. Précédé ici de la préposition *« venant de »*, l'expression introduit l'origine de l'agrément : c'est *de Dieu* qu'il vient, comme don accordé. Le mot vient en clôture des récompenses citées (jardins, compagno"
+    },
+    {
+      "pos": 22,
+      "vwa_id": 6338,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain dirigé vers le divin. Ici au contraire, c'est le sujet divin qui est mobilisé comme agent. La nuance est entre Dieu (sujet qui agit) et l'adoration de Dieu (acte humain).",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Reprise du nom propre divin déjà mobilisé en position 21, mais ici en *début de proposition* avec la conjonction « et » qui généralise. Le verset passe du cas particulier (les pieux et leurs récompenses) à un énoncé universel sur Dieu. La nature philosophique du sens est la même — un nom propre désignant un être unique — mais l'usage syntaxique change"
+    },
+    {
+      "pos": 24,
+      "vwa_id": 6340,
+      "retenu": "Servitude/Esclavage",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte d'adorer (*adorer, servir, se dévouer*). Ici le mot est nominal et désigne ceux qui sont sujets à cet acte — l'humanité comme catégorie de serviteurs. La nuance est entre l'acte d'adoration et la catégorie de ceux qui adorent.",
+      "retenuProof": "***Sens retenu :*** serviteurs, êtres humains comme catégorie face à Dieu. Le mot *ʿabd* désigne celui qui sert — appliqué aux humains comme *catégorie générale face à Dieu*, sans la connotation négative du français « esclave ». Dans le contexte coranique, *ʿibād* (pluriel) désigne souvent l'humanité dans sa relation au divin : tous les humains sont *ʿibād Allāh* (« serviteurs de Dieu »). La prépo"
+    }
+  ],
+  "26": [
+    {
+      "pos": 15,
+      "vwa_id": 5673,
+      "retenu": "Puissance/Gloire",
+      "name": "Renforcement",
+      "current": "Sens verbal proche centré sur la force. Inclus dans le retenu mais isole la dimension de force, alors que le retenu garde aussi l'élévation et la prévalence.",
+      "retenuProof": "***Sens retenu :*** rendre puissant, donner de l'éclat. Le verbe *tuʿizzu* est à la *forme renforcée causative* — il dit *« rendre fort, faire prévaloir »*. Appliqué à Dieu, l'acte signifie *donner à quelqu'un l'élévation et la prévalence*. La racine ʿ-z-z porte le sens de *force qui prévaut* (la puissance qui ne se laisse pas dominer). La nature philosophique du sens retenu est celle d'un *transf"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 5676,
+      "retenu": "Bien/Bonté",
+      "name": "Bien/Excellence",
+      "current": "Sens proche centré sur l'excellence comparative. Inclus dans le retenu, mais ce sens-ci isole la dimension de préférabilité, alors que le retenu garde aussi la bonté et l'utilité dans leur ensemble.",
+      "retenuProof": "***Sens retenu :*** le bien, la bonté qui couvre toute valeur positive. Le mot *al-khayr* avec article défini désigne *le bien dans sa totalité* — non seulement la bonté morale, mais aussi tout ce qui est *préférable, excellent, bénéfique*. La racine kh-y-r porte cette dimension large où les sens moral, matériel et préférable sont liés. Dans la formule *« en Ta main est le bien »*, le mot rassembl"
+    },
+    {
+      "pos": 28,
+      "vwa_id": 5679,
+      "retenu": "Puissance/Capacité",
+      "name": "Mesure/Détermination",
+      "current": "Sens proche centré sur la fixation de la juste mesure. Lié au retenu, mais ici l'accent du verset est sur l'étendue du pouvoir, pas sur la mesure proportionnée.",
+      "retenuProof": "***Sens retenu :*** capable, qui a pouvoir sur. Le mot *qadīr* est un *adjectif intensif* qui dit la qualité de manière permanente. Appliqué à Dieu en formule de clôture *« Tu es, sur toute chose, capable »*, il établit la *toute-puissance divine* comme attribut constant. La racine q-d-r porte deux sens liés : *pouvoir/capacité* (être en mesure de) et *mesure/détermination* (fixer la juste mesure)"
+    }
+  ],
+  "29": [
+    {
+      "pos": 1,
+      "vwa_id": 5688,
+      "retenu": "Parole/Énonciation",
+      "name": "Avis/Jugement",
+      "current": "Sens dérivé sur la pensée intérieure. Sans rapport avec l'acte d'élocution mobilisé ici dans un ordre adressé au prophète.",
+      "retenuProof": "***Sens retenu :*** dire, prononcer une parole. Le verbe *qul* est à l'impératif, adressé au prophète : c'est un *ordre direct* de transmettre la parole qui suit. Ce n'est pas une opinion personnelle qu'il formule, mais un message à reporter. La parole prononcée est donnée juste après dans le verset — un avertissement aux humains sur la connaissance divine de ce qu'ils cachent.\n\n**Comparaison avec"
+    },
+    {
+      "pos": 10,
+      "vwa_id": 5693,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui sait.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici comme sujet du verbe *« Il le sait »*, il identifie *Celui dont le savoir transperce* la distinction entre caché et manifesté. La nature philosophique du sens retenu est celle d'un nom propre qui pointe une réalité unique, ici comme sujet d'une connaissance totale.\n\n**Comparaison avec les"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 5695,
+      "retenu": "Ciel/Ce qui couvre",
+      "name": "Hauteur/Élévation",
+      "current": "Sens étymologique premier. Origine du nom des cieux. Ici le mot désigne le résultat (l'espace haut), pas l'acte.",
+      "retenuProof": "***Sens retenu :*** les cieux, voûte qui couvre par le haut. Le mot *al-samāwāt* est le pluriel défini — il désigne *les cieux identifiés* comme l'espace au-dessus, par opposition à la terre en dessous. Le pluriel marque l'*étagement cosmologique* (sept cieux dans la cosmologie coranique). La formule *« ce qui est dans les cieux et ce qui est sur la terre »* couvre *l'ensemble du domaine perceptib"
+    },
+    {
+      "pos": 21,
+      "vwa_id": 5697,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui caractérise une généralité.",
+      "retenuProof": "***Sens retenu :*** Dieu, sujet d'une affirmation universelle. Reprise du nom propre divin (position 10), ici en *début de proposition* avec la conjonction *« et »* qui *généralise*. Le verset passe du cas particulier (la connaissance des secrets) à un *énoncé universel* sur Dieu : *« Et Dieu, sur toute chose, est puissant »*. Cette formule clôt le verset en posant la *toute-puissance divine* comm"
+    },
+    {
+      "pos": 24,
+      "vwa_id": 5699,
+      "retenu": "Chose/Existence",
+      "name": "Volonté",
+      "current": "Sens verbal de la même racine — la volonté qui crée. Ici le mot est un nom indéfini, pas un acte de vouloir.",
+      "retenuProof": "***Sens retenu :*** chose, entité indéterminée. Le mot *shayʾ* est un *nom indéfini* qui désigne *« chose, quelque chose »*. Combiné avec *kull* qui précède, l'expression *« toute chose »* vise *l'ensemble de l'existant* — sans rien exclure. La nature philosophique du sens retenu est celle d'une *entité indéterminée* qui sert d'objet idéal pour une affirmation absolue : si même une chose indétermi"
+    },
+    {
+      "pos": 25,
+      "vwa_id": 5700,
+      "retenu": "Puissance/Capacité",
+      "name": "Mesure/Détermination",
+      "current": "Sens proche sur la fixation de la juste mesure. Lié au retenu, mais ici l'accent est sur l'étendue du pouvoir.",
+      "retenuProof": "***Sens retenu :*** capable, qui a pouvoir sur. Le mot *qadīr* est un *adjectif intensif* qui dit la qualité de manière permanente. Appliqué à Dieu en formule de clôture *« Tu es, sur toute chose, capable »*, il établit la *toute-puissance divine* comme attribut constant. La racine q-d-r porte deux sens liés : *pouvoir/capacité* (être en mesure de) et *mesure/détermination* (fixer la juste mesure)"
+    }
+  ],
+  "30": [
+    {
+      "pos": 1,
+      "vwa_id": 5701,
+      "retenu": "Temps/Période",
+      "name": "Événement/Moment marquant",
+      "current": "Sens proche centré sur le contenu événementiel. Inclus dans le retenu sans nécessité de séparation.",
+      "retenuProof": "***Sens retenu :*** jour, moment précis identifié. Le mot *yawm* désigne *un jour* dans son acception large — pas seulement la durée diurne, mais aussi *un moment marquant* identifié par un événement. Ici, le mot ouvre le verset comme *« Le jour où chaque âme trouve... »* — il pointe le *Jour identifié* du jugement, à venir. La nature philosophique du sens retenu est celle d'un *moment temporel ch"
+    },
+    {
+      "pos": 2,
+      "vwa_id": 5702,
+      "retenu": "Découverte/Existence",
+      "name": "Savoir/Connaissance",
+      "current": "Sens dérivé sur la connaissance acquise par la rencontre. Ici l'accent est sur la rencontre concrète, pas sur le savoir résultant.",
+      "retenuProof": "***Sens retenu :*** trouver, découvrir devant soi. Le verbe *tajidu* dit *« elle trouve »* — l'acte de *rencontrer un objet présent* devant soi. La racine w-j-d porte le sens premier de *trouver, rencontrer*, qui dérive aussi vers *exister*. Ici, dans la formule *« chaque âme trouve présent ce qu'elle a fait »*, le verbe pose le *face-à-face* de l'âme avec ses propres œuvres rendues visibles. La n"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5704,
+      "retenu": "Âme/Être",
+      "name": "Souffle/Vie",
+      "current": "Sens étymologique premier sur le souffle vital. Ici l'accent est sur la dimension morale et personnelle, pas sur le principe vital.",
+      "retenuProof": "***Sens retenu :*** âme, personne intérieure. Le mot *nafs* désigne *l'âme* dans son sens le plus large — *la personne en tant qu'unité intérieure consciente*. Ce n'est pas seulement le souffle vital ni seulement le moi pensant, mais *la totalité de l'être conscient* qui agit, ressent, pense, se souvient. Ici, dans la formule *« chaque âme trouve... »*, le mot désigne *chaque humain comme sujet fa"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5706,
+      "retenu": "Bien/Excellence",
+      "name": "Choix/Préférence",
+      "current": "Sens verbal sur l'acte de choisir. Ici le mot est nominal et désigne le bien.",
+      "retenuProof": "***Sens retenu :*** bien, ce qui est positif et bénéfique. Le mot *khayr* indéfini désigne *le bien dans sa généralité* — non seulement la bonté morale, mais aussi tout ce qui est *préférable, bénéfique, juste*. La racine kh-y-r porte cette dimension large où les sens moral, matériel et préférable sont liés. Ici, dans la formule *« ce qu'elle a fait de bien »*, le mot pose la *première catégorie* "
+    },
+    {
+      "pos": 14,
+      "vwa_id": 5709,
+      "retenu": "Mal/Mauvais",
+      "name": "Honte/Pudeur",
+      "current": "Sens dérivé sur la honte. Lié au retenu, mais ici l'accent est sur l'acte mauvais, pas sur l'effet honteux.",
+      "retenuProof": "***Sens retenu :*** mal, ce qui blesse ou nuit. Le mot *sūʾ* indéfini désigne *le mal dans sa généralité* — ce qui est néfaste, blessant, contraire au bien. La racine s-w-ʾ porte aussi le sens de *honte*, ce qui *peine* celui qui le subit ou le commet. Ici, *« ce qu'elle a fait de mal »* pose la *seconde catégorie* d'œuvres, opposée au *khayr* précédent. La nature philosophique du sens retenu est "
+    },
+    {
+      "pos": 15,
+      "vwa_id": 5710,
+      "retenu": "Souhait/Désir",
+      "name": "Amour/Affection",
+      "current": "Sens premier de la racine sur l'amour porté à autrui. Ici l'accent est sur le souhait d'une situation, pas sur l'affection envers une personne.",
+      "retenuProof": "***Sens retenu :*** souhaiter, désirer ardemment. Le verbe *tawaddu* dit *« elle souhaite »*. La racine w-d-d porte deux pôles liés : *l'amour* (affection envers autrui) et *le souhait* (désir d'une situation). Ici, dans le contexte du jugement, le verbe pointe *le désir paradoxal* de l'âme face à ses œuvres mauvaises — elle *souhaiterait que* ces œuvres soient loin d'elle. La nature philosophique"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 5715,
+      "retenu": "Avertissement/Mise en garde",
+      "name": "Prudence/Méfiance",
+      "current": "Sens premier de la racine — l'état intérieur de prudence. Ici la forme du verbe transforme cet état en acte de mise en garde tourné vers autrui.",
+      "retenuProof": "***Sens retenu :*** avertir, mettre en garde. Le verbe *yuḥadhdhirukum* est à la *forme renforcée intensive* — il dit *« Il vous met fortement en garde »*. La racine ḥ-dh-r porte le sens de *prudence* face à un danger, et la *forme renforcée* transforme l'état (être prudent) en acte de *transmettre* cette prudence à autrui. Ici, *« Dieu vous met en garde de Lui-même »* (Sa propre Personne) dit l'a"
+    },
+    {
+      "pos": 24,
+      "vwa_id": 5716,
+      "retenu": "Divinité",
+      "name": "Adoration/Culte",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui agit.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici comme sujet du verbe *« Il vous met en garde »*, il identifie *Celui qui appelle* à la vigilance — Dieu Lui-même. La construction est saisissante : Dieu met en garde *« de Lui-même »*, c'est-à-dire qu'Il appelle à prendre garde à Lui en tant que juge.\n\n**Comparaison avec les sens probable"
+    },
+    {
+      "pos": 27,
+      "vwa_id": 5718,
+      "retenu": "Divinité",
+      "name": "Adoration/Culte",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin.",
+      "retenuProof": "***Sens retenu :*** Dieu, sujet d'une affirmation universelle. Reprise du nom propre divin (position 24), ici en *début de proposition* avec la conjonction *« et »* qui *généralise*. Le verset passe de l'avertissement particulier à une *affirmation générale* sur Dieu : *« Et Dieu est compatissant envers les serviteurs »*. Cette formule clôt le verset en équilibrant l'avertissement par la *clémence"
+    },
+    {
+      "pos": 29,
+      "vwa_id": 5720,
+      "retenu": "Servitude/Esclavage",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte d'adorer. Ici le mot nominal désigne ceux qui sont sujets à cet acte.",
+      "retenuProof": "***Sens retenu :*** serviteurs, humains face à Dieu. Le mot *ʿibād* est le pluriel de *ʿabd* — il désigne *celui qui sert* — appliqué aux humains comme *catégorie générale face à Dieu*, sans la connotation négative du français *« esclave »*. Dans le contexte coranique, *ʿibād* désigne souvent l'humanité dans sa relation au divin : tous les humains sont *ʿibād Allāh* (« serviteurs de Dieu »). La na"
+    }
+  ],
+  "38": [
+    {
+      "pos": 4,
+      "vwa_id": 5723,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Sens verbal sur l'acte de faire grandir. Origine étymologique du nom *rabb*. Ici le mot est nominal, désigne le sujet qui exerce cet acte.",
+      "retenuProof": "***Sens retenu :*** Seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Comme un parent qui élève un enfant. Le suffixe *« son »* rattache cette autorité à Zacharie. C'est cette dimension bienveillante qui distingue *rabb* de *mālik* (propriétaire pur) ou *sayyid* (maître social) — Z"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5723,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche centré sur l'éducation d'un enfant. Ici le mot englobe une autorité plus large.",
+      "retenuProof": "***Sens retenu :*** Seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Comme un parent qui élève un enfant. Le suffixe *« son »* rattache cette autorité à Zacharie. C'est cette dimension bienveillante qui distingue *rabb* de *mālik* (propriétaire pur) ou *sayyid* (maître social) — Z"
+    },
+    {
+      "pos": 6,
+      "vwa_id": 5725,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Sens verbal sur l'acte de faire grandir. Ici le mot est nominal en apostrophe.",
+      "retenuProof": "***Sens retenu :*** mon Seigneur (apostrophe). Reprise du mot précédent (position 4), mais ici dans la *parole directe* de Zacharie : il dit *« mon Seigneur »* en s'adressant à Dieu. La forme apostrophe ouvre l'invocation directe. La nature philosophique reste la même qu'en position 4 — Zacharie appelle Celui qui prend soin de lui par cette invocation personnelle.\n\n**Comparaison avec les sens prob"
+    },
+    {
+      "pos": 6,
+      "vwa_id": 5725,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche centré sur l'éducation. Ici le mot englobe une autorité plus large.",
+      "retenuProof": "***Sens retenu :*** mon Seigneur (apostrophe). Reprise du mot précédent (position 4), mais ici dans la *parole directe* de Zacharie : il dit *« mon Seigneur »* en s'adressant à Dieu. La forme apostrophe ouvre l'invocation directe. La nature philosophique reste la même qu'en position 4 — Zacharie appelle Celui qui prend soin de lui par cette invocation personnelle.\n\n**Comparaison avec les sens prob"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 5726,
+      "retenu": "Don gratuit",
+      "name": "Descendance/Fruit",
+      "current": "Sens dérivé désignant la descendance comme don. Lié au verset, mais ici l'accent est sur l'acte de donner.",
+      "retenuProof": "***Sens retenu :*** accorder en don, donner sans contrepartie. Le verbe *hab* est à l'impératif (« accorde »), avec le suffixe *« moi »* comme bénéficiaire. La racine w-h-b désigne *le don pur* — celui qui est *accordé sans attente de retour*, par pure libéralité. Ici, Zacharie demande à Dieu de lui *donner* une descendance — il ne réclame pas un dû, il *implore une libéralité*. La nature philosop"
+    }
+  ],
+  "39": [
+    {
+      "pos": 5,
+      "vwa_id": 5735,
+      "retenu": "Prière/Invocation",
+      "name": "Proximité/Attachement",
+      "current": "Sens étymologique sur la proximité. Ici l'accent est sur l'acte rituel, pas sur la proximité abstraite.",
+      "retenuProof": "***Sens retenu :*** prier, accomplir le rite de prière. Le verbe *yuṣallī* à l'inaccompli (action en cours) dit *« il prie »*. La racine ṣ-l-w porte deux pôles liés : *prière* (acte rituel d'invocation) et *proximité/attachement* (être proche de Dieu par cet acte). Ici, le verbe pointe l'acte rituel concret de Zacharie au moment où les anges l'appellent. La nature philosophique du sens retenu est "
+    },
+    {
+      "pos": 9,
+      "vwa_id": 5737,
+      "retenu": "Divinité",
+      "name": "Adoration/Culte",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin qui agit.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici comme sujet du verbe *« t'annonce »* (qui suit), il identifie la *source de l'annonce* transmise par les anges : c'est *Dieu* qui annonce à Zacharie. Les anges ne sont que *les transmetteurs* du message divin.\n\n**Comparaison avec les sens probables :**\n\n**— Adoration/Culte** : sens verbal"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 5742,
+      "retenu": "Divinité",
+      "name": "Adoration/Culte",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin.",
+      "retenuProof": "***Sens retenu :*** Dieu, source de la parole. Reprise du nom propre divin (position 9), ici en construction *« venant de Dieu »*. Le mot identifie la *source* de la parole que Yaḥyā confirmera : c'est *de Dieu* qu'elle vient.\n\n**Comparaison avec les sens probables :**\n\n**— Adoration/Culte** : sens verbal sur l'acte humain. Ici le mot désigne le sujet divin comme source."
+    },
+    {
+      "pos": 17,
+      "vwa_id": 5744,
+      "retenu": "Abstinence/Retenue",
+      "name": "Siège/Confinement",
+      "current": "Sens dérivé sur le confinement physique. Lié à la racine, mais ici le sens est moral, pas physique.",
+      "retenuProof": "***Sens retenu :*** retenu, qui s'abstient des plaisirs. Le mot *ḥaṣūr* est un *adjectif intensif* qui dit *« qui se retient avec force »*. La racine ḥ-ṣ-r porte le sens de *contenir, retenir, confiner*. Appliqué à Yaḥyā, le mot dit qu'il sera *un homme de retenue* — particulièrement dans la tradition, on l'associe à la chasteté volontaire. La nature philosophique du sens retenu est celle d'une *a"
+    },
+    {
+      "pos": 18,
+      "vwa_id": 5745,
+      "retenu": "Prophétie",
+      "name": "Information/Nouvelle",
+      "current": "Sens verbal sur l'acte de transmettre. Origine étymologique de *nabī*. Ici le mot désigne le statut.",
+      "retenuProof": "***Sens retenu :*** prophète, porteur d'information divine. Le mot *nabī* désigne *celui qui transmet l'information divine* — un prophète au sens propre. La racine n-b-ʾ porte le sens premier d'*annonce d'information importante* (*nabaʾ* = nouvelle d'utilité majeure). Le prophète est ainsi *celui par qui la nouvelle divine arrive aux humains*. Ici, qualifiant Yaḥyā, le mot l'identifie comme *proph"
+    }
+  ],
+  "42": [
+    {
+      "pos": 7,
+      "vwa_id": 5750,
+      "retenu": "Élection/Choix",
+      "name": "Pureté/Clarté",
+      "current": "Sens étymologique premier sur la pureté. Origine du verbe d'élection. Ici l'accent est sur l'acte de choisir.",
+      "retenuProof": "***Sens retenu :*** élire, choisir parmi tous. Le verbe *iṣṭafā* à l'accompli est à la *forme renforcée réflexive* — il dit *« il a choisi pour lui-même »*. La racine ṣ-f-w porte le sens de *pureté, clarté* — choisir, c'est *prendre ce qu'il y a de plus pur* dans un ensemble. Ici, *« Dieu t'a choisie »* dit l'acte par lequel Dieu sélectionne Marie comme *réceptacle privilégié* d'une mission. La na"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5751,
+      "retenu": "Pureté/Purification",
+      "name": "Chasteté/Vertu",
+      "current": "Sens dérivé sur la chasteté. Le texte ne précise pas cette dimension restreinte.",
+      "retenuProof": "***Sens retenu :*** purifier, rendre pur. Le verbe *ṭahharaka* à l'accompli est à la *forme renforcée causative* — il dit *« Il t'a purifiée »*, l'acte par lequel quelqu'un est rendu pur par une action extérieure. La racine ṭ-h-r porte le sens premier de *propreté* mais inclut aussi la *pureté morale et rituelle*. Ici, qualifiant l'acte de Dieu sur Marie, le verbe pose une *purification opérée* — "
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5751,
+      "retenu": "Pureté/Purification",
+      "name": "Pureté/Propreté",
+      "current": "Sens proche centré sur la propreté physique. Inclus dans le retenu sans nécessité de séparation distincte.",
+      "retenuProof": "***Sens retenu :*** purifier, rendre pur. Le verbe *ṭahharaka* à l'accompli est à la *forme renforcée causative* — il dit *« Il t'a purifiée »*, l'acte par lequel quelqu'un est rendu pur par une action extérieure. La racine ṭ-h-r porte le sens premier de *propreté* mais inclut aussi la *pureté morale et rituelle*. Ici, qualifiant l'acte de Dieu sur Marie, le verbe pose une *purification opérée* — "
+    },
+    {
+      "pos": 9,
+      "vwa_id": 5752,
+      "retenu": "Élection/Choix",
+      "name": "Pureté/Clarté",
+      "current": "Sens étymologique premier. Origine du verbe.",
+      "retenuProof": "***Sens retenu :*** élire, choisir parmi tous. Reprise du verbe précédent (position 7). La répétition du verbe *« Il t'a élue »* dans le verset accentue *l'élection redoublée* de Marie : non seulement choisie, mais choisie *parmi les femmes des mondes*. La nature philosophique reste celle d'une sélection qui distingue, mais ici le complément (*« sur les femmes des mondes »*) lui donne une portée u"
+    }
+  ],
+  "43": [
+    {
+      "pos": 2,
+      "vwa_id": 5755,
+      "retenu": "Dévotion/Humilité",
+      "name": "Silence/Soumission",
+      "current": "Sens centré sur la passivité — rester silencieux, se soumettre sans résister. Ici le mot inclut aussi l'acte actif de prier, ce que le silence soumis ne capte pas.",
+      "retenuProof": "***Sens retenu :*** être en dévotion, obéir avec humilité. Le verbe *uqnut* à l'impératif dit *« sois en dévotion »*. La racine q-n-t articule plusieurs sens connexes — *obéir dévotement*, *être humble*, *se tenir longtemps en prière*. Ici, le mot ne dit pas une simple obéissance extérieure mais une *posture entière* qui combine soumission active et persévérance dans la prière. C'est l'instruction"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 5756,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche centré sur l'éducation d'un enfant. Ici le mot englobe une autorité plus large.",
+      "retenuProof": "***Sens retenu :*** Seigneur, celui qui élève et entretient. Le mot *rabb* en arabe ne désigne pas un seigneur féodal — c'est plutôt celui qui *fait grandir*, qui nourrit, qui prend soin. Le suffixe *« ton »* rattache cette autorité à Marie. C'est cette dimension bienveillante qui distingue *rabb* de *mālik* (propriétaire pur) ou *sayyid* (maître social).\n\n**Comparaison avec les sens probables :**"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5757,
+      "retenu": "Prosternation/Adoration",
+      "name": "Humilité/Soumission",
+      "current": "Sens dérivé sur l'humilité intérieure. Ici l'accent est sur l'acte corporel concret.",
+      "retenuProof": "***Sens retenu :*** se prosterner, mettre le front à terre. Le verbe *usjudī* à l'impératif féminin dit *« prosterne-toi »*. La racine s-j-d porte le sens d'une *posture d'humilité corporelle extrême* — le front au sol, point le plus bas du corps abaissé, dirigé vers Dieu. La nature philosophique du sens retenu est celle d'un *acte corporel d'humilité* qui dit dans le corps ce que la dévotion dit "
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5758,
+      "retenu": "Inclination/Prière",
+      "name": "Humilité/Abaissement",
+      "current": "Sens dérivé sur l'abaissement moral. Ici l'accent est sur l'acte rituel concret.",
+      "retenuProof": "***Sens retenu :*** s'incliner en prière. Le verbe *irkaʿī* à l'impératif féminin dit *« incline-toi »*. La racine r-k-ʿ porte le sens d'une *inclinaison du buste* — posture rituelle qui précède la prosternation dans la prière. Avec *« avec ceux qui s'inclinent »* qui suit, l'expression invite Marie à *rejoindre la communauté des priants*. La nature philosophique du sens retenu est celle d'un *act"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 5759,
+      "retenu": "Inclination/Prière",
+      "name": "Humilité/Abaissement",
+      "current": "Sens dérivé sur l'humilité morale. Ici le mot désigne ceux qui pratiquent l'acte rituel.",
+      "retenuProof": "***Sens retenu :*** ceux qui s'inclinent, les priants. Le mot *al-rākiʿīn* est un participe pluriel défini — il désigne *ceux qui font l'acte d'inclinaison rituelle*, les priants. Reprise du verbe précédent (position 5), ici comme *catégorie de personnes*. Dans la formule *« avec les inclinés »*, le mot situe Marie dans cette communauté des priants. La nature philosophique reste celle de l'acte d'"
+    }
+  ],
+  "44": [
+    {
+      "pos": 3,
+      "vwa_id": 5760,
+      "retenu": "Information/Nouvelle",
+      "name": "Prophétie",
+      "current": "Sens dérivé sur le statut de prophète. Ici le mot désigne les nouvelles, pas le statut.",
+      "retenuProof": "***Sens retenu :*** nouvelles, informations transmises. Le mot *anbāʾ* est le pluriel de *nabaʾ* — il désigne *les nouvelles d'utilité majeure*, celles qui apportent un éclairage. Dans la formule *« cela fait partie des nouvelles de l'invisible que Nous t'inspirons »*, le mot désigne *les récits transmis au prophète* — récits qu'il n'aurait pas pu connaître autrement. La nature philosophique du se"
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5761,
+      "retenu": "Mystère/Inconnaissable",
+      "name": "Absence/Invisibilité",
+      "current": "Sens proche sur l'absence physique. Ici l'accent est sur la réalité cachée qui contient des informations.",
+      "retenuProof": "***Sens retenu :*** invisible, ce qui échappe à la perception. Le mot *al-ghayb* avec article défini désigne *l'invisible identifié* — l'ensemble de ce qui est *soustrait à la perception humaine*. Cela inclut le passé inaccessible, le futur, les réalités spirituelles. Ici, *« nouvelles de l'invisible »* dit que les récits transmis au prophète portent sur des événements *qu'il ne pouvait pas voir l"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5762,
+      "retenu": "Révélation/Inspiration",
+      "name": "Suggestion",
+      "current": "Sens dérivé sur la suggestion intérieure. Ici le mot mobilise spécifiquement le canal divin.",
+      "retenuProof": "***Sens retenu :*** inspirer, révéler par voie cachée. Le verbe *nūḥīhi* à l'inaccompli (action en cours) avec le suffixe *« le »* dit *« Nous l'inspirons »*. La racine w-ḥ-y porte le sens d'une *transmission rapide et discrète* d'un message — par opposition à la parole publique. C'est le mode propre de la *révélation prophétique* : Dieu transmet directement à Son prophète sans intermédiaire visib"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5763,
+      "retenu": "Être/Existence",
+      "name": "Lieu/État",
+      "current": "Sens dérivé sur la position spatiale. Inclus dans le retenu sans nécessité de séparation.",
+      "retenuProof": "***Sens retenu :*** être présent, se tenir dans un état. Le verbe *kunta* à l'accompli avec *« non »* qui précède dit *« tu n'étais pas »*. La racine k-w-n désigne le fait *d'être ou d'exister dans une situation*. Ici, *« tu n'étais pas chez eux »* nie la *présence du prophète* au moment où l'événement raconté s'est produit — preuve que le récit ne lui vient pas de sa mémoire mais de la révélation"
+    },
+    {
+      "pos": 17,
+      "vwa_id": 5767,
+      "retenu": "Être/Existence",
+      "name": "Lieu/État",
+      "current": "Sens dérivé spatial. Inclus dans le retenu.",
+      "retenuProof": "***Sens retenu :*** être présent, se tenir dans un état. Reprise du verbe précédent (position 8) — *« tu n'étais pas chez eux quand ils se disputaient »*. La répétition de cette négation insiste sur *l'absence du prophète* à un second moment de l'événement (la dispute des prêtres pour la garde de Marie), ce qui renforce que le récit relève de la révélation, pas de la mémoire personnelle.\n\n**Compar"
+    }
+  ],
+  "45": [
+    {
+      "pos": 6,
+      "vwa_id": 5771,
+      "retenu": "Divinité",
+      "name": "Adoration/Dévotion",
+      "current": "Sens verbal sur l'acte humain. Ici le mot désigne le sujet divin.",
+      "retenuProof": "***Sens retenu :*** Dieu, l'être divin unique. Le mot *Allāh* est le *nom propre* de la divinité du Coran. Ici comme sujet du verbe *« t'annonce »*, il identifie *la source de l'annonce* transmise par les anges : c'est Dieu qui annonce à Marie.\n\n**Comparaison avec les sens probables :**\n\n**— Adoration/Dévotion** : sens verbal sur l'acte humain. Ici le mot désigne le sujet divin."
+    },
+    {
+      "pos": 11,
+      "vwa_id": 5775,
+      "retenu": "Essuyage/Onction",
+      "name": "Titre/Nom",
+      "current": "Sens dérivé sur le titre. Ici l'accent est sur l'onction qui distingue, pas sur le titre seul.",
+      "retenuProof": "***Sens retenu :*** Le Christ, Celui qui a été oint. Le mot *al-Masīḥ* est un *titre* appliqué à Jésus — emprunté à la tradition juive (*māshīaḥ* = oint, consacré par l'huile). La racine m-s-ḥ porte le sens d'*essuyage* (passer la main pour effacer ou consacrer). Ici, le titre désigne Jésus *comme oint*, consacré pour sa mission. La nature philosophique du sens retenu est celle d'une *consécration"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 5777,
+      "retenu": "Sens isolé/Noble",
+      "name": "Visage/Direction",
+      "current": "Sens étymologique premier sur le visage. Ici l'accent est sur l'éminence dérivée.",
+      "retenuProof": "***Sens retenu :*** noble, considéré et honoré. Le mot *wajīh* est un *adjectif* qui dit *« noble, distingué, considéré »*. La racine w-j-h porte le sens premier de *visage* (*wajh*), et par dérivation *l'éminence sociale* — celui qui a un visage reconnu, qui est en vue. Appliqué à Jésus, le mot annonce *sa position élevée* à la fois dans le monde présent et dans le monde dernier. La nature philos"
+    }
+  ],
+  "47": [
+    {
+      "pos": 8,
+      "vwa_id": 5790,
+      "retenu": "Contact intime",
+      "name": "Contact/Atteinte",
+      "current": "Sens premier de la racine (toucher, palper). Sans rapport décisif ici dans l'usage euphémique.",
+      "retenuProof": "***Sens retenu :*** avoir des rapports intimes (euphémisme). Le verbe *yamsasnī* à l'inaccompli avec suffixe *« me »* dit *« il me touche »* — au sens lexicalisé euphémique de *contact charnel*. La racine m-s-s porte le sens premier de *toucher physiquement*. Dans le contexte conjugal, le verbe est *l'euphémisme courant* pour les rapports sexuels. Ici, *« aucun être humain ne m'a touchée »* signif"
+    },
+    {
+      "pos": 17,
+      "vwa_id": 5796,
+      "retenu": "Jugement/Décret",
+      "name": "Achèvement/Accomplissement",
+      "current": "Sens parent — proche du retenu, distinction ténue.",
+      "retenuProof": "***Sens retenu :*** décréter, ordonner de manière irrévocable. Le verbe *qaḍā* à l'accompli dit *« Il a décrété »*. La racine q-ḍ-y porte les sens liés de *juger, accomplir, mener à terme*. Ici, *« lorsqu'Il décrète une chose »* pose *la décision divine ferme et irrévocable*. La nature philosophique du sens retenu est celle d'un *acte de décision absolu* — pas un projet, mais une détermination div"
+    }
+  ],
+  "48": [
+    {
+      "pos": 3,
+      "vwa_id": 5802,
+      "retenu": "Livre/Écrit",
+      "name": "Écriture/Inscription",
+      "current": "Sens verbal sur l'acte d'écrire. Ici le mot est nominal.",
+      "retenuProof": "***Sens retenu :*** Livre, écrit révélé. Le mot *al-kitāb* avec article défini désigne *l'écrit constitué* — un texte structuré avec une identité propre. Ici, c'est l'objet du verbe d'enseignement : Jésus reçoit l'enseignement du Livre. La nature philosophique du sens retenu est celle d'un *contenu fixé par l'écriture* qui peut être transmis tel quel.\n\n**Comparaison avec les sens probables :**\n\n**"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5803,
+      "retenu": "Sagesse",
+      "name": "Jugement/Décision",
+      "current": "Sens dérivé sur l'acte de juger. Ici l'accent est sur la qualité globale.",
+      "retenuProof": "***Sens retenu :*** sagesse, capacité de discerner. Le mot *al-ḥikmah* avec article défini désigne *la sagesse identifiée* — la capacité d'agir avec discernement, de placer chaque chose à sa juste place. La racine ḥ-k-m porte le sens premier d'*empêcher de bouger* (tenir ferme) qui dérive vers *juger avec autorité* et *agir avec sagesse*. Ici, c'est l'objet de l'enseignement reçu par Jésus avec le"
+    }
+  ],
+  "49": [
+    {
+      "pos": 27,
+      "vwa_id": 5819,
+      "retenu": "Guérison",
+      "name": "Libération/Innocence",
+      "current": "Sens parent qui éclaire la racine. Sans rapport décisif ici dans la guérison physique.",
+      "retenuProof": "***Sens retenu :*** guérir, restaurer la santé. Le verbe *ubriʾu* à l'inaccompli, à la *forme renforcée causative*, dit *« je guéris »*. La racine b-r-ʾ porte les sens liés de *créer* (sens divin), de *libérer/innocenter* (sens juridique) et de *guérir* (sens médical, par extension du sens de *libérer du mal*). Ici, *« je guéris l'aveugle-né et le lépreux »* énumère deux miracles de guérison. La n"
+    }
+  ],
+  "50": [
+    {
+      "pos": 4,
+      "vwa_id": 5834,
+      "retenu": "Antériorité/Présence",
+      "name": "Main/Corps",
+      "current": "Sens premier physique. Sans rapport décisif ici dans l'expression idiomatique.",
+      "retenuProof": "***Sens retenu :*** devant, antérieur dans le temps (par image des mains). Le mot *yaday* en construction duelle avec suffixe *« mes »* (*yadayya*) signifie *« mes deux mains »* — mais l'expression idiomatique *bayna yadayya* signifie *« devant moi »* au sens temporel. La racine y-d-y porte le sens premier de *main*, et l'usage figé fixe le sens *devant, immédiat*. Ici, *« ce qui est devant moi de"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 5835,
+      "retenu": "Licéité/Permission",
+      "name": "Dissolution/Libération",
+      "current": "Sens parent direct — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** rendre licite, déclarer permis. Le verbe *uḥilla* à l'inaccompli, à la *forme renforcée causative*, dit *« rendre licite »*. La racine ḥ-l-l porte les sens liés de *libérer, dénouer, rendre permis*. Ici, Jésus rend licite *« une partie de ce qui vous a été interdit »* — il assouplit certaines règles posées par les rabbins ou par la Torah elle-même. La nature philosophique du se"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 5838,
+      "retenu": "Venue/Apport",
+      "name": "Apport/Causalité",
+      "current": "Sens parent — sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** venir, parvenir au destinataire. Le verbe *jiʾtu* à l'accompli singulier dit *« je suis venu »* — Jésus parle. La nature philosophique reste celle d'une *arrivée chez le destinataire*.\n\n**Comparaison avec les sens probables :**\n\n*Apport/Causalité* est un sens parent — sans rapport décisif ici."
+    },
+    {
+      "pos": 16,
+      "vwa_id": 5840,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Sens parent — sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** Seigneur, maître qui crée et soutient. Reprise du mot *rabb* avec suffixe — *« votre Seigneur »*. La nature philosophique reste celle d'une *autorité totale*.\n\n**Comparaison avec les sens probables :**\n\n*Croissance/Augmentation* est un sens parent — sans rapport décisif ici."
+    }
+  ],
+  "51": [
+    {
+      "pos": 3,
+      "vwa_id": 5845,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Sens verbal sur l'acte. Ici le mot est nominal.",
+      "retenuProof": "***Sens retenu :*** mon Seigneur, celui qui m'élève. Le mot *rabb* avec suffixe *« mon »* dit *« mon Seigneur »* — celui qui *fait grandir, nourrit, prend soin*. Ici, dans la déclaration de Jésus, le mot affirme sa *condition de créature* face à Dieu — *« Dieu est mon Seigneur »*, c'est-à-dire qu'il se reconnaît lui-même sous l'autorité bienveillante divine.\n\n**Comparaison avec les sens probables "
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5846,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Sens verbal d'origine étymologique. Ici le mot est nominal.",
+      "retenuProof": "***Sens retenu :*** votre Seigneur, celui qui vous élève. Reprise du mot précédent (position 3) avec le suffixe *« vos »*. La structure parallèle *« mon Seigneur et votre Seigneur »* place Jésus *à la même condition que ses auditeurs* — tous sont créatures de Dieu, sans distinction privilégiée pour Jésus lui-même.\n\n**Comparaison avec les sens probables :**\n\n**— Croissance/Augmentation** : sens ver"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5847,
+      "retenu": "Adoration/Dévotion",
+      "name": "Servitude/Esclavage",
+      "current": "Sens nominal sur la catégorie. Ici le verbe désigne l'acte.",
+      "retenuProof": "***Sens retenu :*** adorer, vouer un culte. Le verbe *uʿbudū* à l'impératif pluriel dit *« adorez-Le »*. La racine ʿ-b-d porte les deux pôles liés : *adorer* (l'acte religieux dirigé vers le divin) et *servir* (la condition humaine face à Dieu). Ici, c'est le pôle *adoration* qui est mobilisé — un commandement d'action religieuse adressé aux auditeurs de Jésus.\n\n**Comparaison avec les sens probabl"
+    }
+  ],
+  "52": [
+    {
+      "pos": 5,
+      "vwa_id": 5851,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Sens premier de la racine. Sans rapport décisif ici dans le sens religieux.",
+      "retenuProof": "***Sens retenu :*** rejet de la foi, déni actif. Le mot *al-kufr* avec article défini désigne *l'acte de rejet*. Ici, *« le déni venant d'eux »* (de ceux à qui Jésus s'adresse) désigne *leur refus de la révélation qu'il porte*. La nature philosophique reste celle d'un *retournement délibéré contre ce qui a été reconnu* — l'acte de désaveu actif.\n\n**Comparaison avec les sens probables :**\n\n*Couvert"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5853,
+      "retenu": "Secours/Victoire",
+      "name": "Alliance/Soutien",
+      "current": "Sens parent (partisan, allié) — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** secoureurs, ceux qui aident à la victoire. Le mot *anṣār* au pluriel désigne *les aidants*. La racine n-ṣ-r porte les sens liés d'*aide, secours, victoire par soutien*. Ici, dans la formule *« qui sont mes secoureurs vers Dieu ? »*, le mot désigne *ceux qui s'engagent à soutenir la cause divine portée par Jésus*. La nature philosophique du sens retenu est celle d'une *aide acti"
+    },
+    {
+      "pos": 12,
+      "vwa_id": 5855,
+      "retenu": "Pureté/Élection",
+      "name": "Blancheur/Beauté",
+      "current": "Sens premier de la racine qui éclaire le mot. Sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** ceux qui sont purifiés et éprouvés, compagnons élus. Le mot *al-ḥawāriyyūn* avec article défini désigne *les disciples-compagnons* de Jésus — souvent traduit par *les Apôtres*. La racine ḥ-w-r porte des sens liés à la *blancheur intense*, à la *pureté*, et au *retour-conversion*. Le mot lexicalisé désigne *les compagnons purifiés et dévoués*. La nature philosophique du sens ret"
+    },
+    {
+      "pos": 14,
+      "vwa_id": 5856,
+      "retenu": "Secours/Victoire",
+      "name": "Alliance/Soutien",
+      "current": "Sens parent — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** secoureurs de Dieu. Reprise du mot *anṣār* — mais cette fois en construction génitive avec *Allāh* : *« nous sommes les secoureurs de Dieu »*. L'engagement des Apôtres se formule en termes de *soutien à la cause divine* portée par Jésus.\n\n**Comparaison avec les sens probables :**\n\n*Alliance/Soutien* — sens parent."
+    },
+    {
+      "pos": 16,
+      "vwa_id": 5857,
+      "retenu": "Sécurité/Confiance",
+      "name": "Foi/Adhésion",
+      "current": "Sens parent direct — distinction ténue ici.",
+      "retenuProof": "***Sens retenu :*** mettre sa confiance, se fier. Le verbe *āmannā* à l'accompli pluriel, à la *forme renforcée*, dit *« nous avons donné notre confiance »*. La racine ʾ-m-n porte les sens liés de *sécurité* (état) et de *confiance* (acte). Ici, *« nous avons donné notre confiance en Dieu »* (*āmannā bi-llāh*) exprime *l'engagement intérieur des Apôtres*. La nature philosophique du sens retenu est"
+    },
+    {
+      "pos": 18,
+      "vwa_id": 5858,
+      "retenu": "Témoignage/Attestation",
+      "name": "Présence/Visibilité",
+      "current": "Sens parent — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** témoigner, attester. Le verbe *ishhad* à l'impératif singulier dit *« atteste »* (litt. *« sois témoin »*). La racine sh-h-d porte le sens de *témoigner par présence et déclaration*. Ici, l'impératif s'adresse *à Jésus* : *« atteste que nous sommes de ceux qui se remettent »*. Les Apôtres demandent à leur prophète d'être leur témoin de leur identité de remis. La nature philosop"
+    }
+  ],
+  "56": [
+    {
+      "pos": 3,
+      "vwa_id": 5860,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Sens premier de la racine. Sans rapport décisif ici dans le sens religieux fixé.",
+      "retenuProof": "***Sens retenu :*** rejet, reniement actif. Le verbe *kafarū* à l'accompli pluriel dit *« ils ont rejeté »*. La racine k-f-r porte la double image du *recouvrir* (cacher) et du *renier ce qu'on a reçu* (ingratitude active). Ici, *« quant à ceux qui ont rejeté »* introduit *les destinataires du châtiment*. La nature philosophique du sens retenu est celle d'un *retournement délibéré contre ce qui a "
+    },
+    {
+      "pos": 6,
+      "vwa_id": 5863,
+      "retenu": "Intensité/Sévérité",
+      "name": "Force/Solidité",
+      "current": "Sens premier qui éclaire la racine. Sans rapport décisif ici dans l'adjectif intensif.",
+      "retenuProof": "***Sens retenu :*** intense, sévère. Le mot *shadīd* à l'adjectif intensif qualifie le châtiment — *« un châtiment intense »*. La racine sh-d-d porte le sens premier de *lier fortement, affermir* — d'où *intense, fort*. La nature philosophique du sens retenu est celle d'une *qualité intensive* — pas un degré moyen, mais une intensité maximale.\n"
+    },
+    {
+      "pos": 9,
+      "vwa_id": 5865,
+      "retenu": "Monde à venir/Vie dernière",
+      "name": "Altérité/Délai",
+      "current": "Sens parent — sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** vie dernière, monde post-mortem. Reprise du mot *al-ākhira* — *« et dans la vie dernière »*. La nature philosophique reste celle d'un *au-delà fixé comme terme*. Le châtiment se prolonge donc dans les deux mondes.\n"
+    },
+    {
+      "pos": 13,
+      "vwa_id": 5866,
+      "retenu": "Secours/Victoire",
+      "name": "Alliance/Soutien",
+      "current": "Sens parent — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** secoureur, aidant. Le mot *nāṣirīn* au pluriel défini désigne *des secoureurs*. Ici, dans la formule finale *« et aucun secoureur ne sera à eux »*, le mot souligne *l'isolement absolu des rejeteurs* — personne ne pourra leur venir en aide pour échapper au châtiment. La nature philosophique du sens retenu est celle d'une *aide qui rend victorieuse une cause* — ici niée.\n\n**Compa"
+    }
+  ],
+  "58": [
+    {
+      "pos": 2,
+      "vwa_id": 5867,
+      "retenu": "Récitation/Lecture suivie",
+      "name": "Suite/Succession",
+      "current": "Sens étymologique premier sur le fait de suivre. Ici l'accent est sur la récitation suivie.",
+      "retenuProof": "***Sens retenu :*** réciter, lire en suivant. Le verbe *natlū* à l'inaccompli (action en cours) dit *« Nous le récitons »*. La racine t-l-w porte le sens d'*aller à la suite de*, d'où *réciter une suite* (lire un texte dans l'ordre). Ici, *« Nous te le récitons »* dit l'acte par lequel Dieu transmet le récit au prophète, pas par bloc mais *en suivant l'ordre* du déroulement. La nature philosophiqu"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5868,
+      "retenu": "Signe/Marque",
+      "name": "Exemple/Témoin",
+      "current": "Sens proche sur l'exemplarité. Sans rapport ici.",
+      "retenuProof": "***Sens retenu :*** versets, énoncés du Livre. Le mot *al-āyāt* avec article défini désigne *les versets du Livre* — les unités de révélation qui composent le Coran. Ici, *« cela fait partie des versets »* identifie le récit de Jésus précédent comme *partie de la révélation*. La nature philosophique reste celle d'une *unité de révélation* qui pointe au-delà d'elle-même.\n\n**Comparaison avec les sen"
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5868,
+      "retenu": "Signe/Marque",
+      "name": "Verset/Énoncé",
+      "current": "Sens proche centré sur le verset. Inclus dans le retenu.",
+      "retenuProof": "***Sens retenu :*** versets, énoncés du Livre. Le mot *al-āyāt* avec article défini désigne *les versets du Livre* — les unités de révélation qui composent le Coran. Ici, *« cela fait partie des versets »* identifie le récit de Jésus précédent comme *partie de la révélation*. La nature philosophique reste celle d'une *unité de révélation* qui pointe au-delà d'elle-même.\n\n**Comparaison avec les sen"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 5869,
+      "retenu": "Mémoire/Rappel",
+      "name": "Mémoire/Souvenir",
+      "current": "Sens proche centré sur le souvenir. Ici l'accent est sur la transmission.",
+      "retenuProof": "***Sens retenu :*** rappel, ce qui ramène à la mémoire. Le mot *al-dhikr* avec article défini désigne *le rappel identifié* — souvent *le Coran lui-même* en tant qu'il rappelle aux humains ce qu'ils savent déjà au fond d'eux. La racine dh-k-r porte le sens de *garder en mémoire et faire revenir à l'esprit*. Ici, *« le rappel sage »* qualifie le récit transmis comme *acte de remémoration* au prophè"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5870,
+      "retenu": "Sagesse",
+      "name": "Jugement/Décision",
+      "current": "Sens dérivé sur l'acte de juger. Ici la qualité est globale.",
+      "retenuProof": "***Sens retenu :*** sage, qui agit avec discernement. Le mot *al-ḥakīm* est un *adjectif intensif* défini qui dit la qualité de manière permanente. Appliqué au *« rappel »*, il qualifie ce récit comme *porteur de sagesse* — pas un récit anecdotique, mais une parole qui *enseigne par sa structure même*. La nature philosophique du sens retenu est celle d'une *sagesse incorporée au texte* — la révéla"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5870,
+      "retenu": "Sagesse",
+      "name": "Empêchement/Retenue",
+      "current": "Sens étymologique premier. Origine de la sagesse.",
+      "retenuProof": "***Sens retenu :*** sage, qui agit avec discernement. Le mot *al-ḥakīm* est un *adjectif intensif* défini qui dit la qualité de manière permanente. Appliqué au *« rappel »*, il qualifie ce récit comme *porteur de sagesse* — pas un récit anecdotique, mais une parole qui *enseigne par sa structure même*. La nature philosophique du sens retenu est celle d'une *sagesse incorporée au texte* — la révéla"
+    }
+  ],
+  "60": [
+    {
+      "pos": 1,
+      "vwa_id": 5881,
+      "retenu": "Vérité/Réalité",
+      "name": "Obligation/Nécessité",
+      "current": "Sens dérivé sur le devoir. Ici l'accent est descriptif.",
+      "retenuProof": "***Sens retenu :*** vérité, réalité conforme à ce qui est. Le mot *al-ḥaqq* avec article défini désigne *la vérité identifiée*. La racine ḥ-q-q porte le double sens de *vérité* (ce qui est conforme à la réalité) et d'*obligation* (ce qui doit être). Ici, *« la vérité vient de ton Seigneur »* affirme que ce qui a été annoncé sur Jésus est *vrai*, en provenance directe de Dieu. La nature philosophiq"
+    },
+    {
+      "pos": 3,
+      "vwa_id": 5882,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Éducation/Accompagnement",
+      "current": "Sens proche centré sur l'éducation.",
+      "retenuProof": "***Sens retenu :*** ton Seigneur, celui qui t'élève. Le mot *rabb* avec suffixe *« ton »* (référant au prophète) dit *« ton Seigneur »*. Le mot ne désigne pas un seigneur féodal mais celui qui *fait grandir*, qui *prend soin*. Ici, le mot rattache la vérité du récit à *Celui qui prend soin du prophète* — c'est de cette source bienveillante qu'elle vient.\n\n**Comparaison avec les sens probables :**\n"
+    },
+    {
+      "pos": 7,
+      "vwa_id": 5884,
+      "retenu": "Dispute/Opposition obstinée",
+      "name": "Doute/Contestation",
+      "current": "Sens proche sur le doute intérieur. Ici l'accent est sur l'opposition active.",
+      "retenuProof": "***Sens retenu :*** disputer obstinément, contester avec ténacité. Le mot *al-mumtarīn* est un participe pluriel défini de la *forme renforcée réflexive* — il désigne *ceux qui contestent activement et continûment*. La racine m-r-y porte les sens liés de *douter*, *contester*, *tirer/extraire*. Ici, le mot désigne *ceux qui s'opposent à la vérité par dispute* — pas un doute intérieur passif, mais "
+    }
+  ],
+  "61": [
+    {
+      "pos": 8,
+      "vwa_id": 5887,
+      "retenu": "Venue/Apport",
+      "name": "Apport/Causalité",
+      "current": "Le sens *amener, faire venir* dérive de la même racine. Sans rapport décisif ici car l'accent porte sur l'arrivée passive du savoir au prophète.",
+      "retenuProof": "***Sens retenu :*** venir, parvenir au destinataire. Le verbe *jāʾaka* à l'accompli avec suffixe *« te »* dit *« il t'est venu »*. La racine j-y-ʾ porte le sens de *venue, arrivée*. Ici, la phrase *« ce qui t'est venu du savoir »* pose la révélation comme *un don qui parvient* — pas une production humaine, mais un acquis reçu. La nature philosophique du sens retenu est celle d'une *arrivée à desti"
+    },
+    {
+      "pos": 21,
+      "vwa_id": 5898,
+      "retenu": "Supplication fervente/Humble invocation",
+      "name": "Malédiction/Imprécation",
+      "current": "Le sens *invoquer la malédiction* est étroitement lié à la *mubāhala* (invocation mutuelle). Dans certains lexicographes, c'est même le sens premier du *forme renforcée réflexive ibtahala*. Ici l'accent porte sur la supplication humble, mais la dimension de demande de jugement (qui peut tomber comme malédiction sur les menteurs) reste sous-jacente.",
+      "retenuProof": "***Sens retenu :*** s'humilier en invocation, supplier avec ferveur. Le verbe *nabtahil* à l'inaccompli pluriel, à la *forme renforcée réflexive*, dit *« nous nous humilions ardemment en invocation »*. La racine b-h-l porte les sens liés de *liberté laissée* (laisser une chamelle libre = *bahala*) — d'où, par extension religieuse, *invoquer en se livrant entièrement* (laisser librement Dieu tranch"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 5900,
+      "retenu": "Éloignement/Expulsion",
+      "name": "Malédiction/Exclusion",
+      "current": "Le sens *malédiction, maudit* est le sens lexicalisé arabo-religieux. Très proche du retenu : la malédiction divine = l'éloignement décrété. Pertinent mais l'accent ici est sur la séparation, pas sur l'imprécation émotionnelle.",
+      "retenuProof": "***Sens retenu :*** éloignement décrété, expulsion divine. Le mot *laʿnat* en construction génitive (*laʿnat Allāh* = *« l'éloignement de Dieu »*) désigne *l'éloignement décrété par Dieu* — typiquement traduit par *malédiction*, mais le sens premier est *écarter, repousser loin*. La racine l-ʿ-n porte le sens d'*expulser, écarter durablement*. Ici, *« plaçons l'éloignement de Dieu sur les menteurs"
+    },
+    {
+      "pos": 26,
+      "vwa_id": 5902,
+      "retenu": "Mensonge/Fausseté",
+      "name": "Déni/Rejet",
+      "current": "Le sens *démentir, traiter de menteur* dérive de la même racine k-dh-b à la *forme renforcée*. Sans rapport décisif ici dans le participe pluriel qui désigne les menteurs eux-mêmes.",
+      "retenuProof": "***Sens retenu :*** menteurs, ceux qui disent le faux. Le mot *al-kādhibīn* au pluriel défini désigne *ceux qui mentent*. La racine k-dh-b porte le sens d'*affirmation contraire à la vérité*. Ici, le verset clôt la mubāhala : l'éloignement divin est demandé sur la partie menteuse — la sanction repose sur celui qui ment, quel qu'il soit. La nature philosophique du sens retenu est celle d'une *fauss"
+    }
+  ],
+  "62": [
+    {
+      "pos": 15,
+      "vwa_id": 5909,
+      "retenu": "Sagesse",
+      "name": "Jugement/Décision",
+      "current": "Sens parent direct — distinction ténue avec le retenu.",
+      "retenuProof": "***Sens retenu :*** sage, qui détient la sagesse. Le mot *al-ḥakīm* avec article défini désigne *celui qui est sage*. La racine ḥ-k-m porte les sens liés de *juger, décider, être sage*. Ici, le mot est *un autre nom-attribut divin* qui clôt la formule en posant la sagesse divine — Dieu agit toujours selon une sagesse qui ordonne ses décisions. La nature philosophique du sens retenu est celle d'une"
+    }
+  ],
+  "64": [
+    {
+      "pos": 3,
+      "vwa_id": 5916,
+      "retenu": "Écriture/Inscription",
+      "name": "Livre/Écrit",
+      "current": "Le sens *livre, écrit* est très proche du retenu (souvent ils se chevauchent). La distinction est ténue : *livre* est l'objet, *écriture* est l'acte ou le dépôt scripturaire.",
+      "retenuProof": "***Sens retenu :*** écriture révélée, livre fixé par écrit. Le mot *al-kitāb* avec article défini désigne *l'Écriture révélée*. La nature philosophique du sens retenu est celle d'un *texte révélé fixé* — le dépôt scripturaire qui structure la communauté.\n\n**Comparaison avec les sens probables :**\n\n*Livre/Écrit* est un sens parent, peut-être plus matériel que *Écriture/Inscription* qui souligne l'a"
+    },
+    {
+      "pos": 31,
+      "vwa_id": 5933,
+      "retenu": "Remise/Reddition",
+      "name": "Paix/Soumission",
+      "current": "Sens parent — sans rapport décisif ici dans l'acte de remise.",
+      "retenuProof": "***Sens retenu :*** se remettre, abandonner sa volonté propre à Dieu. Le mot *muslimūn* au participe pluriel désigne *ceux qui ont opéré la remise totale de soi à Dieu*. Ici, dans la formule *« nous, nous sommes de ceux qui se remettent »*, la fierté n'est pas dans l'identité communautaire mais dans l'acte de remise — chacun se livre à Dieu, et c'est ce qui définit le croyant face au refus de l'of"
+    }
+  ],
+  "70": [
+    {
+      "pos": 2,
+      "vwa_id": 5972,
+      "retenu": "Livre/Écrit",
+      "name": "Écriture/Inscription",
+      "current": "Sens verbal sur l'acte. Ici le mot est nominal.",
+      "retenuProof": "***Sens retenu :*** Livre, écrit révélé. Le mot *al-kitāb* avec article défini désigne *le Livre identifié* — ici, les écritures révélées avant le Coran (Torah, Évangile). La construction *« gens du Livre »* situe les juifs et chrétiens *par leur Livre*.\n\n**Comparaison avec les sens probables :**\n\n**— Écriture/Inscription** : sens verbal sur l'acte d'écrire. Ici le mot est nominal."
+    },
+    {
+      "pos": 4,
+      "vwa_id": 5973,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Sens étymologique premier. Mais ici les signes sont visibles, le rejet est ouvert.",
+      "retenuProof": "***Sens retenu :*** rejeter ouvertement les signes. Le verbe *takfurūna* à l'inaccompli (action en cours) avec préposition *bi-* (par/à propos de) dit *« vous rejetez les signes »*. La racine k-f-r articule deux sens : *couvrir* (sens premier) et *rejeter activement*. Ici, le contexte (rejet des signes visibles, en pleine lumière) ferme la lecture *couverture* au profit du *rejet actif*. Les Gens "
+    },
+    {
+      "pos": 5,
+      "vwa_id": 5974,
+      "retenu": "Signe/Marque",
+      "name": "Verset/Énoncé",
+      "current": "Sens dérivé sur les versets. Inclus dans le retenu.",
+      "retenuProof": "***Sens retenu :*** signes, marques perceptibles envoyées par Dieu. Le mot *āyāt* en construction *« signes de Dieu »* désigne *les marques envoyées par Dieu* — événements, paroles révélées, prodiges, à lire comme indication. Ici, ce sont l'objet du rejet : les Gens du Livre rejettent ces signes alors qu'ils les voient.\n\n**Comparaison avec les sens probables :**\n\n**— Verset/Énoncé** : sens dérivé "
+    }
+  ],
+  "71": [
+    {
+      "pos": 2,
+      "vwa_id": 5978,
+      "retenu": "Livre/Écrit",
+      "name": "Écriture/Inscription",
+      "current": "Sens verbal sur l'acte. Ici le mot est nominal.",
+      "retenuProof": "***Sens retenu :*** Livre, écrit révélé. Le mot *al-kitāb* avec article défini désigne *le Livre identifié* — les écritures révélées avant le Coran.\n\n**Comparaison avec les sens probables :**\n\n**— Écriture/Inscription** : sens verbal sur l'acte d'écrire. Ici le mot est nominal."
+    }
+  ],
+  "72": [
+    {
+      "pos": 2,
+      "vwa_id": 5986,
+      "retenu": "Groupe/Faction",
+      "name": "Patrouille/Ronde",
+      "current": "Le sens *patrouille, ronde, garde de nuit* dérive bien de la racine ṭ-w-f (faire le tour). Il garde l'idée de groupe restreint en mouvement, mais avec une coloration militaire absente ici — le verset parle d'une fraction qui dit, pas d'une patrouille qui circule.",
+      "retenuProof": "***Sens retenu :*** faction, partie distincte d'un ensemble plus large. Le mot *ṭāʾifa* avec article indéfini désigne *un groupe restreint* qui s'est détaché du tout pour porter un projet propre. La racine ṭ-w-f porte l'idée de *circuler autour, faire le tour* — d'où *ce qui fait corps en circulant ensemble*. Ici, *« une faction des gens du Livre »* désigne une fraction qui complote séparément : l"
+    },
+    {
+      "pos": 14,
+      "vwa_id": 5993,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Le sens premier de la racine k-f-r est *couvrir, cacher* (la nuit qui couvre, le cultivateur qui couvre la graine). Il éclaire le sens religieux de *kufr* (recouvrir la vérité reçue), mais ici l'impératif est un acte ostensible de rejet, pas une simple dissimulation.",
+      "retenuProof": "***Sens retenu :*** renier ce qui était reçu, rejeter activement. Le verbe *ukfurū* à l'impératif dit *« reniez ! »* — l'ordre du stratagème : feindre la foi le matin, puis afficher le reniement le soir. La racine k-f-r porte la double image du *recouvrir* (cacher physiquement) et du *renier ce qu'on a reçu* (ingratitude active). Ici, l'usage est résolument moral : il s'agit de renier *ce qui a ét"
+    }
+  ],
+  "73": [
+    {
+      "pos": 3,
+      "vwa_id": 5995,
+      "retenu": "Sécurité/Confiance",
+      "name": "Foi/Adhésion",
+      "current": "Le sens *avoir la foi, croire* dérive de la même racine ʾ-m-n. Très proche du retenu — ici la nuance est plus sociale (*accorder foi/confiance entre soi*) que strictement religieuse.",
+      "retenuProof": "***Sens retenu :*** accorder confiance, croire en. Le verbe *tuʾminū* à l'inaccompli pluriel, à la *forme renforcée*, dit *« n'accordez pas confiance »*. La racine ʾ-m-n porte les sens liés de *sécurité* (état) et de *confiance* (acte). Ici, l'instruction est citée par les Gens du Livre eux-mêmes (en discours rapporté) — ils se disent entre eux *« n'accordez foi qu'à ceux qui suivent votre voie »*"
+    },
+    {
+      "pos": 8,
+      "vwa_id": 5997,
+      "retenu": "Religion/Système",
+      "name": "Obéissance/Soumission",
+      "current": "Le sens *obéir, soumission* dérive de la même racine d-y-n. Pertinent comme nuance ici, mais le mot fonctionne d'abord comme système religieux.",
+      "retenuProof": "***Sens retenu :*** pratique, système de croyances. Le mot *dīn* avec suffixe possessif *« votre »* (*dīnakum*) désigne *votre système religieux*. La racine d-y-n porte plusieurs sens liés : *dette/obligation* (sens premier), *religion/voie* (sens dérivé), *jugement/rétribution*. Ici, dans la phrase rapportée *« n'accordez foi qu'à celui qui a suivi votre pratique »*, le mot désigne *l'ensemble de"
+    },
+    {
+      "pos": 17,
+      "vwa_id": 6003,
+      "retenu": "Ressemblance/Identité",
+      "name": "Similitude/Comparaison",
+      "current": "Sens parent qui colore la racine. Sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** pareil, semblable. Le mot *mithl* en construction (*mithla mā ūtītum* = *« pareil à ce qui vous a été accordé »*) désigne *l'équivalent en valeur ou en nature*. La racine m-th-l porte les sens liés de *ressembler, comparer*. Ici, le mot pose *l'équivalence d'objet* — la révélation reçue par un autre serait *équivalente* à celle des Gens du Livre. La nature philosophique du sens"
+    },
+    {
+      "pos": 23,
+      "vwa_id": 6006,
+      "retenu": "Seigneurie/Autorité bienveillante",
+      "name": "Croissance/Augmentation",
+      "current": "Le sens *augmenter, croître* est lié à la racine r-b-b (faire grandir = élever). Sans rapport décisif ici.",
+      "retenuProof": "***Sens retenu :*** Seigneur, maître qui élève et entretient. Le mot *rabb* avec suffixe pluriel (*rabbikum* = *« votre Seigneur »*) désigne *l'autorité divine qui crée et soutient*. Ici, dans *« devant votre Seigneur »*, le mot pose *l'instance d'arbitrage suprême* devant qui se déroule la confrontation finale.\n"
+    },
+    {
+      "pos": 28,
+      "vwa_id": 6008,
+      "retenu": "Main/Corps",
+      "name": "Pouvoir/Autorité",
+      "current": "Sens parent qui rend la signification figurée de l'image *bi-yadi Allāh*. Sans rapport décisif ici, mais éclaire la lecture.",
+      "retenuProof": "***Sens retenu :*** main, image figurée du pouvoir. Le mot *yad* en construction (*bi-yadi Allāh* = *« dans la main de Dieu »*) désigne *la main* dans une image figurée — l'autorité et la disposition. La racine y-d-y porte le sens de *main, bras*. Ici, *« la faveur est dans la main de Dieu »* est une *image anthropomorphique stylisée* qui signifie *Dieu en dispose librement*. La nature philosophiq"
+    }
+  ],
+  "77": [
+    {
+      "pos": 22,
+      "vwa_id": 6037,
+      "retenu": "Temps/Période",
+      "name": "Événement/Moment marquant",
+      "current": "Le sens *événement, jour marquant* dérive de la même racine. Pertinent au sens large (le jour de la résurrection est marquant), mais ici le mot fonctionne sur sa dimension temporelle de jour fixé.",
+      "retenuProof": "***Sens retenu :*** jour, moment marqué dans le temps. Le mot *yawm* en construction génitive (*yawm al-qiyāma* = *« le jour de la résurrection »*) désigne *un moment marqué et solennel*. La racine y-w-m porte le sens premier de *jour comme période*. Ici, l'expression désigne *le jour eschatologique du jugement* — le moment singulier où les actes sont pesés. La nature philosophique du sens retenu "
+    }
+  ],
+  "79": [
+    {
+      "pos": 21,
+      "vwa_id": 5654,
+      "retenu": "Éducation/Accompagnement",
+      "name": "Seigneurie/Autorité bienveillante",
+      "current": "Sens parent direct — c'est le mot *rabb* qui donne *rabbāniyyīn*. La nuance retenue est plutôt celle de la formation/éducation orientée vers le Seigneur, mais les deux se chevauchent fortement.",
+      "retenuProof": "***Sens retenu :*** voués au Seigneur, formés à la connaissance et au service de Dieu. Le mot *rabbāniyyīn* au pluriel désigne *ceux qui sont formés à la voie du Seigneur*. La racine r-b-b porte les sens liés de *seigneurie, élever, éduquer*. Ici, le mot désigne *les humains éduqués à la connaissance de Dieu et à Son service* — une appellation qui ressort de la racine *rabb* (Seigneur, celui qui é"
+    }
+  ],
+  "80": [
+    {
+      "pos": 11,
+      "vwa_id": 5666,
+      "retenu": "Rejet/Ingratitude",
+      "name": "Couverture/Dissimulation",
+      "current": "Le sens premier de la racine k-f-r est *couvrir, cacher* (la nuit qui couvre, le cultivateur qui couvre la graine). Il éclaire le sens religieux mais reste second ici, où l'opposition avec la remise fixe la dimension morale du rejet.",
+      "retenuProof": "***Sens retenu :*** rejet de la foi, reniement actif. Le mot *al-kufr* avec article défini désigne *l'acte de rejet de la foi* posé en notion abstraite. La racine k-f-r porte la double image du *recouvrir* (cacher) et du *renier ce qu'on a reçu*. Ici, dans la formule *« vous ordonnerait-il le rejet ? »*, le mot désigne l'attitude opposée à la *remise* (mentionnée dans la suite du verset). La natur"
+    },
+    {
+      "pos": 15,
+      "vwa_id": 5668,
+      "retenu": "Remise/Reddition",
+      "name": "Paix/Soumission",
+      "current": "Le sens *paix, salām, salut* dérive de la même racine s-l-m (la remise génère la paix). Il reste légitime mais privilégie l'état tandis qu'ici l'accent porte sur l'acte d'abandon volontaire.",
+      "retenuProof": "***Sens retenu :*** se remettre, abandonner sa volonté propre à Dieu. Le mot *muslimūn* au participe pluriel désigne *ceux qui ont opéré la remise totale de soi à Dieu*. La racine s-l-m porte les sens liés de *paix* (état de plénitude) et de *remise* (acte d'abandon de soi). Ici, le verset oppose explicitement la remise (*muslimūn*) au rejet (*kufr*) — la remise est la posture cohérente du croyant"
+    }
+  ]
+}

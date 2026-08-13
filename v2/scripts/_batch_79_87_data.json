@@ -1,0 +1,2051 @@
+{
+  "V79": {
+    "id": 572,
+    "trad": "Ce qui t'atteint de bien, alors vient de Dieu ; et ce qui t'atteint de mal, alors vient de toi-même. Et Nous t'avons envoyé aux gens comme messager. Et Dieu, à Lui seul, suffit comme témoin.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "mā",
+        "fr": "ce qui",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "aṣāba",
+        "fr": "t'atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "ḥasanatin",
+        "fr": "bien",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "mina",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "Allāh",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "mā",
+        "fr": "ce qui",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "aṣāba",
+        "fr": "t'atteint",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "sayyi'atin",
+        "fr": "mal",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "nafsi-ka",
+        "fr": "toi-même",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "arsalnā",
+        "fr": "Nous t'avons envoyé",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "li-",
+        "fr": "aux",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "l-nās",
+        "fr": "gens",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "rasūlan",
+        "fr": "comme messager",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "kafā",
+        "fr": "suffit",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "bi-",
+        "fr": "avec",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "Allāh",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "shahīdan",
+        "fr": "comme témoin",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "swb",
+        "sc": "atteindre",
+        "cc": "Atteinte/Affliction"
+      },
+      {
+        "pos": 4,
+        "wk": "hsn",
+        "sc": "bon",
+        "cc": "Beauté/Bonté"
+      },
+      {
+        "pos": 6,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 8,
+        "wk": "swb",
+        "sc": "atteindre",
+        "cc": "Atteinte/Affliction"
+      },
+      {
+        "pos": 10,
+        "wk": "swa",
+        "sc": "mal",
+        "cc": "Mal/Mauvais"
+      },
+      {
+        "pos": 12,
+        "wk": "nfs",
+        "sc": "soi-même",
+        "cc": "Âme/Être"
+      },
+      {
+        "pos": 13,
+        "wk": "rsl",
+        "sc": "envoyer",
+        "cc": "Envoi/Transmission"
+      },
+      {
+        "pos": 14,
+        "wk": "nws",
+        "sc": "gens",
+        "cc": "Humanité/Peuple"
+      },
+      {
+        "pos": 15,
+        "wk": "rsl",
+        "sc": "messager",
+        "cc": "Envoi/Transmission"
+      },
+      {
+        "pos": 16,
+        "wk": "kfy",
+        "sc": "suffire",
+        "cc": "Suffisance/Protection"
+      },
+      {
+        "pos": 17,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 18,
+        "wk": "shhd",
+        "sc": "témoin",
+        "cc": "Témoignage/Déclaration"
+      }
+    ],
+    "old_justif": "\n\n**ce qui** — Le sens retenu est « ce qui ». Le mot outil arabe ouvre une clause conditionnelle générale, sans nommer d'avance ce qui va advenir. L'alternative « tout » est écartée car elle nominaliserait en avance et perdrait l'ouverture dynamique de la construction arabe.\n\n**t'atteint** — Le sens retenu est « atteindre ». Le mot est choisi car il rend l'idée neutre d'un événement qui parvient au sujet sans préjuger de sa charge morale, contrairement à « frapper » qui aurait connoté négativement l'événement dans les deux occurrences. Le pronom « te » élidé en « t' » est le suffixe arabe qui rattache l'action au Messager.\n\n**de** — Le sens retenu est « de » (partitif). La préposition arabe, associée au mot outil précédent, introduit la catégorie de l'événement : « ce qui t'atteint de bien ». L'alternative « un peu de » est écartée car elle limiterait quantitativement, alors que le partitif reste ouvert.\n\n**bien** — Le sens retenu est « bon ». Le mot est choisi comme nom substantivé (« un bien ») pour rendre la valeur du nom féminin comme événement bon qui advient. L'alternative « bonne action » est écartée car elle aurait pointé vers un acte posé par le sujet, alors qu'ici le sujet reçoit passivement l'événement.\n\n**alors** — Le sens retenu est « alors » — petit mot connecteur de conséquence. L'ajout du verbe « vient » en français est un choix de rendu : l'arabe se contente d'une préposition (« alors de Dieu »), le français a besoin d'un verbe pour lier proprement la source à ce qui l'atteint.\n\n**de** — Le sens retenu est « de » (origine). La préposition arabe désigne ici la source d'où provient la chose. L'alternative « auprès de » est écartée car elle aurait suggéré une provenance locative (comme « min 'ind »), alors que le mot arabe est plus direct.\n\n**Dieu** — Le sens retenu est « Dieu ». Le mot propre est traduit et non transcrit — le nom Allah est le référent divin absolu, sans équivalent lexical direct, mais le mot « Dieu » en français désigne ce même référent depuis la tradition théologique commune.\n\n**et** — Le sens retenu est « et ». Le petit mot arabe coordonne les deux propositions symétriques du verset. Aucune alternative n'est retenue : la coordination est la plus simple et la plus fidèle.\n\n**ce qui** — Le sens retenu est « ce qui ». Reprise en miroir strict du mot outil de tête, appliqué cette fois à un contenu opposé.\n\n**t'atteint** — Le sens retenu est « atteindre ». Reprise à l'identique du verbe de la première proposition. Le parallèle formel est voulu pour construire une symétrie stricte entre bien et mal.\n\n**de** (partitif, seconde occurrence) — Le sens retenu est « de » (partitif). Reprise du partitif introduisant la catégorie de l'événement, symétrique du premier partitif.\n\n**mal** — Le sens retenu est « mal ». Le mot est choisi comme nom substantivé pour rendre l'événement mauvais qui advient, en miroir avec « bien ». L'alternative « péché » est écartée car elle aurait présupposé une intentionnalité morale du sujet, qui n'est pas thématisée ici — le verset parle d'un événement subi, non d'un acte commis.\n\n\n\n**de** (origine, seconde occurrence) — Le sens retenu est « de » (origine). Reprise de la préposition d'origine, mais avec une source différente : c'est le sujet lui-même.\n\n**toi-même** — Le sens retenu est « soi-même ». Le mot arabe *nafs* avec le suffixe possessif rend la construction réflexive : la personne du Messager comme cause du mal qui l'atteint. L'alternative « ton âme » est écartée car elle aurait spiritualisé le référent, alors que le mot vise la personne dans son intégralité — corps, désirs, volonté.\n\n**et** — Le sens retenu est « et ». Reprise du petit mot de coordination, qui articule la seconde partie du verset.\n\n**Nous t'avons envoyé** — Le sens retenu est « envoyer ». Le mot est choisi pour rendre l'acte causal divin de mettre en mouvement le Messager vers un destinataire. L'alternative « expédier » est écartée car trop administrative pour l'acte fondateur d'une mission prophétique. Le pronom « te » élidé en « t' » est le suffixe arabe qui rattache l'action au Messager.\n\n**aux** — Le sens retenu est « à » (destinataire). La préposition arabe désigne le destinataire du mouvement d'envoi. La forme française « aux » (contraction de « à les ») s'accorde avec le nom collectif déterminé qui suit.\n\n**gens** — Le sens retenu est « gens ». Le mot est choisi pour rendre le collectif humain dans son extension la plus large : l'ensemble des humains. L'alternative « peuple » est écartée car elle aurait restreint à une communauté particulière, alors que la mission vise l'humanité entière.\n\n**comme messager** — Le sens retenu est « messager » : le mot désigne celui qui porte le message, plutôt que celui qui est envoyé (déjà exprimé par le verbe qui précède). L'alternative « envoyé » est écartée car elle aurait recopié le verbe et gommé la distinction entre l'acte d'envoi et le statut résultatif.\n\n**et** — Le sens retenu est « et ». Reprise de la coordination pour ouvrir la clôture du verset.\n\n**suffit** — Le sens retenu est « suffire ». Le mot est choisi pour rendre l'autarcie divine relative à la fonction requise : Dieu est à Lui seul une réponse pleine, sans besoin de recours à un tiers. L'alternative « est compétent » est écartée car trop qualitative — le verset dit que Dieu suffit, non seulement qu'Il est compétent.\n\n**avec** — Le mot arabe bi- n'a pas ici de sens propre à traduire, seulement un rôle grammatical. Le rendu français préfère « Dieu, à Lui seul, suffit » plutôt que « suffit avec Dieu » : cette formulation évite le contresens qu'aurait produit « avec », qui aurait suggéré Dieu comme complément d'accompagnement alors qu'il est le sujet réel du verbe.\n\n**Dieu** — Le sens retenu est « Dieu ». Reprise du référent divin de la première occurrence pour clore le verset : le même Dieu qui est source de tout bien est aussi l'instance ultime d'attestation. Le nom propre encadre le verset, en miroir avec la source du bien mentionnée au début.\n\n**comme témoin** — Le sens retenu est « témoin ». Le mot est choisi pour rendre la fonction stable d'attestation, préférable à « témoignage » qui aurait été abstrait. L'alternative « martyr » est écartée car le sujet ici est Dieu, qui ne meurt pas — le sens de martyr est exclu par le contexte.\n\n"
+  },
+  "V80": {
+    "id": 573,
+    "trad": "Quiconque obéit au Messager a certes obéi à Dieu ; et quiconque s'est détourné — Nous ne t'avons pas envoyé sur eux comme gardien.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "man",
+        "fr": "quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "yuṭiʿi",
+        "fr": "obéit",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "al-rasūla",
+        "fr": "au Messager",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "qad",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "aṭāʿa",
+        "fr": "a obéi",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "Allāha",
+        "fr": "à Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "man",
+        "fr": "quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "tawallā",
+        "fr": "s'est détourné",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "mā",
+        "fr": "ne pas",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "arsalnā",
+        "fr": "Nous avons envoyé",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "-ka",
+        "fr": "te",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "ʿalay",
+        "fr": "sur",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "-him",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "ḥafīẓan",
+        "fr": "comme gardien",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "twa",
+        "sc": "obéir",
+        "cc": "Obéissance/Soumission volontaire"
+      },
+      {
+        "pos": 3,
+        "wk": "rsl",
+        "sc": "messager",
+        "cc": "Envoi/Transmission"
+      },
+      {
+        "pos": 5,
+        "wk": "twa",
+        "sc": "obéir",
+        "cc": "Obéissance/Soumission volontaire"
+      },
+      {
+        "pos": 6,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 8,
+        "wk": "wly",
+        "sc": "se détourner",
+        "cc": "Éloignement/Détournement"
+      },
+      {
+        "pos": 10,
+        "wk": "rsl",
+        "sc": "envoyer",
+        "cc": "Envoi/Transmission"
+      },
+      {
+        "pos": 12,
+        "wk": "hfz",
+        "sc": "gardien",
+        "cc": "Préservation/Protection"
+      }
+    ],
+    "old_justif": "\n\n**quiconque** — Le sens retenu est « quiconque ». Le mot outil arabe *man* ouvre une clause conditionnelle générale sur une personne indéfinie. L'alternative « celui qui » aurait été plus lourde ; « quiconque » rend l'ouverture indéfinie avec économie.\n\n**obéit** — Le sens retenu est « obéir ». Le mot est choisi pour rendre l'acte d'adhésion volontaire à une autorité — sens central de la racine. L'alternative « écoute » est écartée car elle glisserait vers l'audition simple, alors que le verbe ici implique l'exécution effective.\n\n**au Messager** — Le sens retenu est « messager ». Le mot est choisi pour désigner celui qui porte le message divin. L'alternative « à l'envoyé » aurait été possible mais moins claire ; « Messager » (majuscule dans ce contexte car référent unique du Messager de Dieu) désigne le porteur institué.\n\n**alors** — Le sens retenu est « alors ». Le petit mot arabe *fa-* marque la conséquence de la clause conditionnelle. Aucune alternative n'est retenue : « alors » rend la succession consécutive de la façon la plus fluide.\n\n**certes** — Le sens retenu est « certes ». Le petit mot arabe *qad* devant un verbe au passé marque l'insistance sur le passéssement effectif de l'action. « Certes » rend l'insistance sans trop alourdir ; l'alternative « déjà » aurait été temporelle, ici c'est l'affirmation qui est en jeu.\n\n**a obéi** — Le sens retenu est « obéir ». Reprise au passé de l'obéissance déjà affirmée  — le verset pose l'équivalence structurelle entre les deux actes d'obéissance.\n\n**à Dieu** — Le sens retenu est « Dieu ». Le mot propre est traduit et non transcrit — le nom Allah désigne le référent divin absolu, rendu en français par « Dieu » depuis la tradition théologique commune.\n\n**et** — Le sens retenu est « et ». Le petit mot arabe *wa-* coordonne les deux propositions symétriques du verset (obéissance / détournement).\n\n**quiconque** (seconde occurrence) — Le sens retenu est « quiconque ». Reprise en miroir du mot outil de tête, appliqué cette fois au cas inverse : celui qui se détourne.\n\n**s'est détourné** — Le sens retenu est « se détourner ». Le mot rend l'acte réfléchi actif où le sujet rompt volontairement la proximité avec le Messager. L'alternative « tourne le dos » est plus imagée mais moins précise ; « se détourner » restitue mieux le sens du réfléchi arabe.\n\n**alors** (seconde occurrence) — Le sens retenu est « alors ». Reprise du petit mot de conséquence, en parallèle strict avec la première clause.\n\n**ne pas** — Le sens retenu est la négation « ne pas ». Le petit mot arabe *ma* nie le verbe qui suit. En français on éclate « ne » avant le verbe et « pas » après ; ici, comme la construction française coule « Nous ne t'avons pas envoyé », le rendu se fait sur cette structure éclatée.\n\n**Nous avons envoyé** — Le sens retenu est « envoyer ». Le mot rend l'acte causal divin d'envoi orienté. Le pronom « te » élidé en « t' » est le suffixe arabe qui rattache l'action au Messager.\n\n**te** — Le sens retenu est le pronom « te ». Le suffixe arabe *-ka* rattache le verbe précédent au Messager destinataire du verset.\n\n**sur** — Le sens retenu est « sur ». La petite préposition arabe *'ala* indique l'objet sur lequel porte le verbe — ici, ceux qui se détournent, comme cibles potentielles d'une action de garde qui n'est pas donnée au Messager.\n\n**eux** — Le sens retenu est le pronom « eux ». Le suffixe arabe *-him* rattache la préposition précédente au groupe de ceux qui se détournent.\n\n**comme gardien** — Le sens retenu est « gardien » : le mot désigne celui qui exerce une surveillance imposée sur autrui. L'alternative « protecteur » est écartée car elle glisserait vers la bienveillance, alors que le sens ici implique la contrainte de garde (que Dieu récuse pour le Messager).\n\n"
+  },
+  "V81": {
+    "id": 574,
+    "trad": "Et ils disent : « Obéissance ! » Puis lorsqu'ils sortent au grand jour auprès de toi, un groupe parmi eux complote la nuit autre chose que ce que tu dis. Et Dieu écrit ce qu'ils complotent la nuit. Alors détourne-toi d'eux et remets-t'en à Dieu. Et Dieu, à Lui seul, suffit comme garant.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "yaqūlūna",
+        "fr": "ils disent",
+        "is_particle": false
+      },
+      {
+        "pos": 2,
+        "phon": "ṭāʿatun",
+        "fr": "obéissance",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "fa-",
+        "fr": "puis",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "iḏā",
+        "fr": "lorsque",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "barazū",
+        "fr": "ils sortent au grand jour",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "min",
+        "fr": "d'",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "ʿindi",
+        "fr": "auprès",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "-ka",
+        "fr": "de toi",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "bayyata",
+        "fr": "complote la nuit",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "ṭāʾifatun",
+        "fr": "un groupe",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "min",
+        "fr": "parmi",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "ghayra",
+        "fr": "autre chose que",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "alladhī",
+        "fr": "ce que",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "taqūlu",
+        "fr": "tu dis",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "Allāhu",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "yaktubu",
+        "fr": "écrit",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "mā",
+        "fr": "ce que",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "yubayyitūna",
+        "fr": "ils complotent la nuit",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "aʿriḍ",
+        "fr": "détourne-toi",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "ʿan",
+        "fr": "d'",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "tawakkal",
+        "fr": "remets-t'en",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "ʿalā",
+        "fr": "à",
+        "is_particle": true
+      },
+      {
+        "pos": 21,
+        "phon": "Allāhi",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 22,
+        "phon": "kafā",
+        "fr": "suffit",
+        "is_particle": false
+      },
+      {
+        "pos": 23,
+        "phon": "bi-",
+        "fr": "avec",
+        "is_particle": true
+      },
+      {
+        "pos": 23,
+        "phon": "Allāhi",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "wakīlan",
+        "fr": "comme garant",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 1,
+        "wk": "qwl",
+        "sc": "dire",
+        "cc": "Parole/Énonciation"
+      },
+      {
+        "pos": 2,
+        "wk": "twa",
+        "sc": "obéir",
+        "cc": "Obéissance/Soumission volontaire"
+      },
+      {
+        "pos": 4,
+        "wk": "brz",
+        "sc": "sortir au grand jour",
+        "cc": "Apparition/Manifestation"
+      },
+      {
+        "pos": 6,
+        "wk": "end",
+        "sc": "auprès de",
+        "cc": "Proximité/Présence"
+      },
+      {
+        "pos": 7,
+        "wk": "byt",
+        "sc": "machination de nuit",
+        "cc": "Attaque/Complot"
+      },
+      {
+        "pos": 8,
+        "wk": "twf",
+        "sc": "groupe",
+        "cc": "Groupe/Faction"
+      },
+      {
+        "pos": 10,
+        "wk": "ghyr",
+        "sc": "autre",
+        "cc": "Autre/Exclusion"
+      },
+      {
+        "pos": 12,
+        "wk": "qwl",
+        "sc": "dire",
+        "cc": "Parole/Énonciation"
+      },
+      {
+        "pos": 13,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 14,
+        "wk": "ktb",
+        "sc": "écrire",
+        "cc": "Écriture/Inscription"
+      },
+      {
+        "pos": 16,
+        "wk": "byt",
+        "sc": "machination de nuit",
+        "cc": "Attaque/Complot"
+      },
+      {
+        "pos": 17,
+        "wk": "erd",
+        "sc": "se détourner",
+        "cc": "Détournement/Refus"
+      },
+      {
+        "pos": 19,
+        "wk": "wkl",
+        "sc": "s'en remettre à",
+        "cc": "Délégation/Remise"
+      },
+      {
+        "pos": 21,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 22,
+        "wk": "kfy",
+        "sc": "suffire",
+        "cc": "Suffisance/Protection"
+      },
+      {
+        "pos": 23,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 24,
+        "wk": "wkl",
+        "sc": "garant",
+        "cc": "Délégation/Remise"
+      }
+    ],
+    "old_justif": "\n\n**et** — Le sens retenu est « et ». Le petit mot arabe *wa-* coordonne les propositions ; « et » est la traduction la plus simple et fidèle.\n\n**ils disent** — Le sens retenu est « dire ». Le mot est choisi pour désigner l'acte verbal des sujets qui déclarent leur obéissance à voix haute. L'alternative « prétendre » est écartée car elle aurait jugé la sincérité en amont, alors que le verset construit progressivement le contraste.\n\n**obéissance** — Le sens retenu est « obéir » (mot du dictionnaire de la racine). Le rendu français par le nom « obéissance » traduit le nom d'action arabe ; il s'agit d'une variante grammaticale — le sens reste celui d'adhésion volontaire à une autorité, exprimé ici en exclamation isolée.\n\n**puis** — Le sens retenu est « puis ». Le petit mot arabe *fa-* marque l'enchaînement temporel entre deux propositions. « Puis » rend cet enchaînement de manière fluide.\n\n**lorsque** — Le sens retenu est « lorsque ». Le petit mot arabe *iḏa* est un outil temporel qui introduit la condition d'un événement à venir ou habituel. « Lorsque » est le rendu français standard.\n\n**ils sortent au grand jour** — Le sens retenu est « sortir au grand jour ». Le mot rend l'idée d'un mouvement qui expose le sujet au regard extérieur. L'alternative « sortir » simple est écartée car elle aurait perdu la nuance d'exposition publique portée par le verbe arabe, qui construit le contraste avec l'action nocturne qui suit.\n\n**d'** — Le sens retenu est « de » (origine). La petite préposition arabe *min* désigne l'origine du mouvement de sortir.\n\n**auprès** — Le sens retenu est « auprès de ». Le mot désigne la présence spatiale et morale du Messager. L'alternative « chez » aurait été plus familière mais moins précise ; « auprès » restitue la dimension de proximité respectueuse.\n\n**de toi** — Le sens retenu est le suffixe pronominal de deuxième personne. Le pronom rattache la présence au Messager destinataire du verset. En français on décompose « auprès + de toi » là où l'arabe fusionne en un seul mot.\n\n**complote la nuit** — Le sens retenu est « machination de nuit ». Le mot est choisi pour restituer à la fois l'action nocturne et le caractère prémédité du complot. L'alternative « passe la nuit » est écartée car trop passive — le verbe implique une action volontaire, pas un simple séjour.\n\n**un groupe** — Le sens retenu est « groupe ». Le mot désigne une fraction identifiable à l'intérieur d'un collectif. L'alternative « faction » est écartée car elle aurait chargé d'avance négativement le mot, alors que le verset laisse le comportement révéler la nature du groupe.\n\n**parmi** — Le sens retenu est « de » (partitif) rendu par « parmi ». La petite préposition arabe *min* signale ici qu'on extrait une partie d'un ensemble ; « parmi » est le rendu naturel du partitif appliqué à une personne humaine.\n\n**eux** — Le sens retenu est le pronom « eux ». Le suffixe arabe *-hum* renvoie à l'ensemble des gens dont on extrait le groupe qui complote.\n\n**autre chose que** — Le sens retenu est « autre ». Le mot pose l'altérité complète par rapport à la parole prononcée. L'alternative « différent de » est écartée car trop atténuée ; le verset insiste sur l'écart total entre déclaration et action.\n\n**ce que** — Le sens retenu est le mot relatif introduisant la clause qui suit. Rendu par « ce que » standard en français.\n\n**tu dis** — Le sens retenu est « dire ». Reprise du verbe de la première occurrence, ici appliquée au Messager qui parle publiquement.\n\n**et** (troisième occurrence) — Reprise du petit mot de coordination.\n\n**Dieu** — Le sens retenu est « Dieu ». Le nom propre arabe Allah est traduit et non transcrit : « Dieu » désigne le même référent absolu depuis la tradition théologique française commune.\n\n**écrit** — Le sens retenu est « écrire ». Le mot est choisi pour rendre l'acte d'inscription registrale de ce qui est fait, y compris en secret. L'alternative « note » est écartée car trop informelle ; « écrit » restitue le sérieux de l'enregistrement divin.\n\n**ce que** — Reprise du mot relatif introduisant l'objet du verbe « écrit ».\n\n**ils complotent la nuit** — Reprise de « machination de nuit » au présent-pluriel ; l'action habituelle et répétée des sujets pluriels.\n\n**alors** — Le sens retenu est « alors ». Le petit mot arabe *fa-* marque ici la conséquence tirée : puisque Dieu enregistre, alors ne t'en préoccupe plus.\n\n**détourne-toi** — Le sens retenu est « se détourner ». Le mot rend l'ordre de rompre l'attention prêtée aux complotant. L'alternative « ignore-les » est écartée car trop passive ; « détourne-toi » implique un acte volontaire de rupture d'engagement.\n\n**d'** — Le sens retenu est « de » (à propos de). Rendu de la préposition *'an* qui indique ici l'objet dont on se détourne.\n\n**eux** (seconde occurrence) — Reprise du pronom pluriel, désignant les complotant dont il faut se détourner.\n\n**et** (quatrième occurrence) — Reprise du petit mot de coordination.\n\n**remets-t'en** — Le sens retenu est « s'en remettre à ». Le mot rend l'ordre de confier son sort à Dieu. Il fait pendant à « détourne-toi » : après la rupture avec les hommes trompeurs, la remise à Dieu.\n\n**à** — Le sens retenu est « à » (destinataire). La petite préposition arabe *'ala* désigne l'objet vers lequel se dirige l'acte de remise.\n\n**Dieu** (seconde occurrence) — Le sens retenu est « Dieu ». Reprise du référent divin, cette fois comme destinataire de la remise de soi.\n\n**et** (cinquième occurrence) — Reprise du petit mot de coordination.\n\n**suffit** — Le sens retenu est « suffire ». Le mot rend l'autarcie divine pour la fonction de garant, en réponse implicite à la duplicité humaine.\n\n**avec** — Le mot arabe bi- n'a pas ici de sens propre à traduire, seulement un rôle grammatical. Le rendu français préfère « Dieu, à Lui seul, suffit » plutôt que « suffit avec Dieu » : cette formulation évite le contresens qu'aurait produit « avec », qui aurait suggéré Dieu comme complément d'accompagnement alors qu'il est le sujet réel du verbe.\n\n**Dieu** (troisième occurrence) — Reprise du référent divin ; sujet réel du verbe « suffit ».\n\n**comme garant** — Le sens retenu est « garant ». Le mot est choisi pour rendre la fonction stable de prise en charge de l'affaire remise. L'alternative « protecteur » (Hamidullah) est écartée car elle glisse vers la bienveillance générique, alors que le mot arabe désigne précisément celui qui répond de l'affaire confiée. Le « comme » ajouté rend le rôle grammatical porté par la marque finale du nom arabe.\n\n"
+  },
+  "V82": {
+    "id": 575,
+    "trad": "Ne méditent-ils donc pas le Coran ? Et s'il avait été d'auprès d'un autre que Dieu, ils y auraient certes trouvé beaucoup de contradictions.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "a-",
+        "fr": "est-ce que",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "fa-",
+        "fr": "donc",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "lā",
+        "fr": "ne pas",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "yatadabbarūna",
+        "fr": "méditent",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "al-qurʾāna",
+        "fr": "le Coran",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "law",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "kāna",
+        "fr": "il avait été",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "ʿindi",
+        "fr": "auprès",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "ghayri",
+        "fr": "d'un autre que",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "Allāhi",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "la-",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "wajadū",
+        "fr": "ils auraient trouvé",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "fī",
+        "fr": "en",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "-hi",
+        "fr": "lui",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "ikhtilāfan",
+        "fr": "contradictions",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "kathīran",
+        "fr": "beaucoup de",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "dbr",
+        "sc": "méditer",
+        "cc": "Méditation/Réflexion"
+      },
+      {
+        "pos": 3,
+        "wk": "qra",
+        "sc": "Coran",
+        "cc": "Lecture/Récitation"
+      },
+      {
+        "pos": 5,
+        "wk": "kwn",
+        "sc": "être",
+        "cc": "Être/Existence"
+      },
+      {
+        "pos": 7,
+        "wk": "end",
+        "sc": "auprès de",
+        "cc": "Proximité/Présence"
+      },
+      {
+        "pos": 8,
+        "wk": "ghyr",
+        "sc": "autre",
+        "cc": "Autre/Exclusion"
+      },
+      {
+        "pos": 9,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 10,
+        "wk": "wjd",
+        "sc": "trouver",
+        "cc": "Découverte/Existence"
+      },
+      {
+        "pos": 12,
+        "wk": "xlf",
+        "sc": "contredire",
+        "cc": "Différence/Opposition"
+      },
+      {
+        "pos": 13,
+        "wk": "kṯr",
+        "sc": "beaucoup",
+        "cc": "Abondance/Multiplicité"
+      }
+    ],
+    "old_justif": "\n\n**est-ce que** — Le sens retenu est la marque interrogative directe. Le petit mot arabe *a-* ouvre une question. Le rendu littéral en français serait « est-ce que » ; dans la traduction on emploie l'inversion sujet-verbe (« ne méditent-ils… ? ») qui est plus fluide et fait porter la question directement par le verbe.\n\n**donc** — Le sens retenu est « donc ». Le petit mot arabe *fa-* marque l'enchaînement avec un contexte antérieur (les complotant du V81). « Donc » rend cet enchaînement conclusif de manière fluide.\n\n**ne pas** — Le sens retenu est la négation « ne... pas ». Le petit mot arabe *la* nie le verbe qui suit ; en français on éclate en « ne » avant le verbe et « pas » après.\n\n**méditent** — Le sens retenu est « méditer ». Le mot est choisi car il rend l'acte réfléchi de retour attentif sur un contenu textuel. L'alternative « réfléchissent » est plus large et perd la nuance de retour attentif sur un texte donné. Dans la traduction, le verbe est mis en tête via l'inversion française (« ne méditent-ils… ? ») pour porter directement la question.\n\n**le Coran** — Le sens retenu est « Coran ». Le nom propre arabe désigne la révélation elle-même ; on le traduit par « Coran » sans transcription supplémentaire, car ce mot est passé en français comme nom propre reconnu.\n\n**et** — Le sens retenu est « et ». Le petit mot arabe *wa-* coordonne les deux propositions.\n\n**si** — Le sens retenu est « si ». Le petit mot arabe *law* introduit spécifiquement une hypothèse contraire à la réalité (irrealis). L'alternative « quand » est écartée car temporelle, non conditionnelle.\n\n**il avait été** — Le sens retenu est « être ». Le verbe est rendu au plus-que-parfait français pour restituer l'irréalité de l'hypothèse posée par *law* : ce qui suit décrit une situation qui ne s'est pas produite.\n\n**de** — Le sens retenu est « de » (origine). La petite préposition arabe *min* indique la provenance hypothétique du Coran.\n\n**auprès** — Le sens retenu est « auprès de ». Le mot désigne la source-origine du texte. L'alternative « chez » aurait été trop familière pour désigner une origine textuelle solennelle.\n\n**d'un autre que** — Le sens retenu est « autre ». Le mot pose l'altérité radicale (quelqu'un qui ne serait pas Dieu). Rendu par « d'un autre que » pour préserver la construction en négation absolue.\n\n**Dieu** — Le sens retenu est « Dieu ». Le nom propre Allah est traduit et non transcrit — « Dieu » désigne le même référent absolu depuis la tradition théologique française commune.\n\n**certes** — Le sens retenu est l'insistance. Le petit mot arabe *la-* marque l'assertion forte de la conséquence dans une hypothèse. « Certes » rend cette insistance en français.\n\n**ils auraient trouvé** — Le sens retenu est « trouver ». Le verbe est rendu au conditionnel passé français pour restituer la conséquence d'une hypothèse irréelle. L'alternative « ils trouveraient » (Hamidullah) est écartée car elle place la conséquence au conditionnel présent, ce qui laisse une possibilité présente ouverte, alors que l'hypothèse arabe est fermement contrefactuelle.\n\n**en** — Le sens retenu est « dans ». La petite préposition arabe *fi* désigne le contenu à l'intérieur duquel se trouve quelque chose. Dans la traduction française, *fi* + *-hi* (« en + lui ») se contracte naturellement en « y » (pronom français qui reprend « dans lui »).\n\n**lui** — Le sens retenu est le pronom « lui ». Le suffixe arabe *-hi* renvoie au Coran nommé au début du verset. Fusionné à *fi* dans la traduction française sous le pronom « y » (= « en lui » = « dans le Coran »).\n\n**contradictions** — Le sens retenu est « contredire ». Le nom arabe *ikhtilaf* désigne l'écart entre plusieurs éléments qui ne coïncident pas ; les senses listés en base incluent « diverger » et « contredire ». On retient « contredire » car le verset construit un argument logique (si origine humaine → défauts logiques attendus). Rendu au pluriel « contradictions » pour restituer la pluralité attendue (« beaucoup de »).\n\n**beaucoup de** — Le sens retenu est « beaucoup ». Le mot qualifie « contradictions » qui précède, et signale la quantité importante attendue si le texte n'était pas d'origine divine.\n\n"
+  },
+  "V83": {
+    "id": 576,
+    "trad": "Et lorsqu'une affaire concernant la sécurité ou la peur leur parvient, ils la divulguent. Et s'ils l'avaient rapportée au Messager et aux détenteurs de l'affaire d'entre eux, ceux qui déduisent d'entre eux l'auraient sue. Et sans la grâce de Dieu sur vous et Sa miséricorde, vous auriez certes suivi Satan, sauf peu.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 1,
+        "phon": "iḏā",
+        "fr": "lorsqu'",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "jāʾa-hum",
+        "fr": "leur parvient",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "amrun",
+        "fr": "une affaire",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "min",
+        "fr": "concernant",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "al-amni",
+        "fr": "la sécurité",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "al-xawfi",
+        "fr": "la peur",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "aḏāʿū",
+        "fr": "ils la divulguent",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "bi-hi",
+        "fr": "par elle",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "law",
+        "fr": "si",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "raddū-hu",
+        "fr": "l'avaient rapportée",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "ilā",
+        "fr": "au",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "al-rasūli",
+        "fr": "Messager",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "wa-ilā",
+        "fr": "et aux",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "ulī",
+        "fr": "détenteurs",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "al-amri",
+        "fr": "de l'affaire",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "min-hum",
+        "fr": "parmi eux",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "la-",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "ʿalima-hu",
+        "fr": "l'auraient sue",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "allaḏīna",
+        "fr": "ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 20,
+        "phon": "yastanbiṭūna-hu",
+        "fr": "déduisent",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "min-hum",
+        "fr": "d'entre eux",
+        "is_particle": true
+      },
+      {
+        "pos": 22,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 22,
+        "phon": "law-lā",
+        "fr": "sans",
+        "is_particle": true
+      },
+      {
+        "pos": 23,
+        "phon": "faḍlu",
+        "fr": "la grâce",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "allāhi",
+        "fr": "de Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 25,
+        "phon": "ʿalay-kum",
+        "fr": "sur vous",
+        "is_particle": true
+      },
+      {
+        "pos": 26,
+        "phon": "wa-raḥmatu-hu",
+        "fr": "et Sa miséricorde",
+        "is_particle": false
+      },
+      {
+        "pos": 27,
+        "phon": "la-",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 27,
+        "phon": "ittabaʿtum",
+        "fr": "vous auriez suivi",
+        "is_particle": false
+      },
+      {
+        "pos": 28,
+        "phon": "al-shayṭāna",
+        "fr": "Satan",
+        "is_particle": false
+      },
+      {
+        "pos": 29,
+        "phon": "illā",
+        "fr": "sauf",
+        "is_particle": true
+      },
+      {
+        "pos": 30,
+        "phon": "qalīlan",
+        "fr": "peu",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "jya",
+        "sc": "venir",
+        "cc": "Venue/Arrivée"
+      },
+      {
+        "pos": 3,
+        "wk": "amr",
+        "sc": "affaire",
+        "cc": "Affaire/Chose"
+      },
+      {
+        "pos": 5,
+        "wk": "amn",
+        "sc": "être en sécurité",
+        "cc": "Sécurité/Tranquillité"
+      },
+      {
+        "pos": 7,
+        "wk": "khw f",
+        "sc": "peur",
+        "cc": "Crainte/Peur"
+      },
+      {
+        "pos": 8,
+        "wk": "dhye",
+        "sc": "divulguer",
+        "cc": "Diffusion/Propagation"
+      },
+      {
+        "pos": 11,
+        "wk": "rdd",
+        "sc": "renvoyer",
+        "cc": "Retour/Renvoi"
+      },
+      {
+        "pos": 13,
+        "wk": "rsl",
+        "sc": "messager",
+        "cc": "Envoi/Transmission"
+      },
+      {
+        "pos": 15,
+        "wk": "awl",
+        "sc": "détenteurs",
+        "cc": "Famille/Appartenance"
+      },
+      {
+        "pos": 16,
+        "wk": "amr",
+        "sc": "affaire",
+        "cc": "Affaire/Chose"
+      },
+      {
+        "pos": 18,
+        "wk": "elm",
+        "sc": "savoir",
+        "cc": "Savoir/Connaissance"
+      },
+      {
+        "pos": 20,
+        "wk": "nbT",
+        "sc": "déduire",
+        "cc": "Déduction/Élucidation"
+      },
+      {
+        "pos": 23,
+        "wk": "fdl",
+        "sc": "grâce",
+        "cc": "Excellence/Faveur"
+      },
+      {
+        "pos": 24,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 26,
+        "wk": "rhm",
+        "sc": "miséricorde",
+        "cc": "Miséricorde/Tendresse"
+      },
+      {
+        "pos": 27,
+        "wk": "tba",
+        "sc": "suivre",
+        "cc": "Suivre/Accompagner"
+      },
+      {
+        "pos": 28,
+        "wk": "stn",
+        "sc": "Satan",
+        "cc": "Diable/Satan"
+      },
+      {
+        "pos": 30,
+        "wk": "qll",
+        "sc": "peu",
+        "cc": "Quantité/Rareté"
+      }
+    ],
+    "old_justif": "\n\n**Et** — On garde « et », rendu simple de la coordination.\n\n**lorsqu'** — On rend le mot arabe par « lorsque » plutôt que « quand » parce que « quand » suggère un événement précis daté, alors qu'ici on décrit une situation typique qui se répète (« chaque fois que »). « Lorsque » a cette nuance légèrement plus soutenue et itérative qui colle mieux au tableau récurrent du groupe.\n\n**leur parvient** — Le sens retenu est « venir ». On dit **« parvient » et non « vient »** parce qu'en français, quand une information atteint un groupe, « parvenir à quelqu'un » est l'expression naturelle — dire « une affaire leur vient » sonnerait bizarre, comme si l'affaire se déplaçait toute seule. « Parvient » ajoute l'idée d'arriver au destinataire, ce qui est déjà porté par le petit mot « -hum » accolé au verbe arabe. On garde le présent pour montrer que c'est un comportement habituel du groupe, pas un événement daté.\n\n**une affaire** — Le sens retenu est « affaire ». On préfère « affaire » à « chose » (trop vague pour un événement à divulguer) et à « commandement » (qui glisserait vers une décision hiérarchique, absente ici). « Une » sans « la » restitue l'absence d'article dans le mot arabe.\n\n**concernant** — La préposition le mot arabe indique ici le domaine dont relève l'affaire. On dit **« concernant » et non « de »** parce que le littéral « une affaire de la sécurité ou de la peur » sonnerait bancal en français — on ne dit pas « une affaire de peur ». « Concernant » rend clairement le lien entre l'affaire et sa catégorie.\n\n**la sécurité** — Le sens retenu est « être en sécurité ». On rend par le nom **« la sécurité »** parce que la construction arabe est déjà un nom (avec article). L'alternative « paix » est écartée : elle glisserait vers un sens politique ou spirituel absent ici — le mot arabe désigne simplement l'état où on est en sûreté (par opposition à « la peur » juste après). L'article défini « la » restitue le « al- » arabe.\n\n**ou** — Rendu direct de la conjonction le mot arabe.\n\n**la peur** — Le sens retenu est « peur ». On préfère **« peur » à « crainte »** parce que « crainte » a une nuance abstraite et souvent religieuse (crainte de Dieu), alors qu'ici le contexte est concret : peur de la guerre, du danger. « Peur » est plus direct et immédiat. L'article défini « la » reste cohérent avec « la sécurité » sous la même préposition « concernant ».\n\n**ils la divulguent** — Le sens retenu est « divulguer ». C'est le mot arabe exact. On garde le présent français car le groupe le fait à chaque fois. Le pronom « la » reprend l'affaire.\n\n**Et** — Coordination simple.\n\n**si** — On rend le mot arabe par **« si » et non « quand »** parce que le mot arabe introduit une situation imaginée qui ne s'est pas produite (« s'ils avaient fait ça… ils auraient su »), pas une clause temporelle. La construction française « si… avaient rapportée… l'auraient sue » restitue cette situation imaginée par le plus-que-parfait et le conditionnel passé.\n\n**l'avaient rapportée** — Le sens retenu est « renvoyer ». On dit **« rapporter » plutôt que « renvoyer »** parce que le contexte précis est celui d'une information à faire remonter au Messager et aux responsables : « renvoyer » suggérerait de la faire repartir loin d'eux, comme si on la refusait, alors que « rapporter à » restitue exactement le mouvement de faire remonter une nouvelle jusqu'à l'autorité compétente. On met au plus-que-parfait français pour marquer que cette action n'a pas eu lieu.\n\n**au** — Contraction de « à + le ». Rendu direct de la préposition le mot arabe.\n\n**Messager** — Le sens retenu est « messager ». C'est le mot exact. Majuscule pour marquer le référent unique et personnel (le Messager de Dieu), comme dans les versets précédents (V79, V80, V81).\n\n**et aux** — Coordination + contraction « à + les ».\n\n**détenteurs** — Le sens retenu est « détenteurs de ». On préfère **« détenteurs »** au périphrase « ceux qui possèdent l'affaire » pour la concision, et à « chefs » ou « autorités » qui ajouteraient une nuance hiérarchique non explicite dans le mot arabe. « Détenteurs » reste neutre : ceux qui ont l'affaire en main.\n\n**de l'affaire** — Reprise du même mot amr qu'au début du verset. On garde **« l'affaire »** (avec article) pour marquer qu'il s'agit de la même chose : c'est la même affaire qui circule sans contrôle, maintenant remise à ceux qui doivent la traiter. « Du commandement » (Hamidullah) casserait ce lien entre les deux occurrences.\n\n**d'entre eux** — La préposition le mot arabe + petit mot le mot arabe est déjà rendue « parmi eux » au début du verset. Ici on varie en **« d'entre eux »** pour éviter la répétition littérale, tout en gardant le sens : une partie du groupe.\n\n**certes** — Rendu du petit mot d'insistance le mot arabe qui répond à le mot arabe. « Certes » restitue cette insistance en français.\n\n**l'auraient sue** — Le sens retenu est « savoir ». On préfère **« l'auraient sue »** (verbe savoir) à « l'auraient connue » parce que « savoir » veut dire connaître vraiment, avec certitude, après avoir compris — alors que « connaître » serait plus passif, juste être au courant. Le pronom « l' » reprend l'affaire, mais dans sa vraie portée cette fois (le résultat de la déduction faite par les compétents), pas la matière brute reçue au début. Conditionnel passé pour montrer qu'ils n'ont pas su, puisqu'ils n'ont pas rapporté.\n\n**ceux qui** — Rendu du mot relatif le mot arabe. Introduit la caractérisation du sous-groupe.\n\n**déduisent** — Le sens retenu est « déduire ». On préfère **« déduisent »** à « analysent » ou « comprennent » parce que la racine nbT porte l'image concrète de « faire jaillir l'eau du puits » — extraire par effort méthodique un sens caché à partir d'une information brute. « Déduire » restitue cette opération d'extraction. On rend **sans complément** (« ceux qui déduisent » et non « ceux qui la déduisent ») pour désigner la catégorie par sa compétence (comme « ceux qui écrivent » désigne les écrivains) — la référence à l'affaire n'est pas répétée car elle est déjà portée par le « l' » du verbe suivant.\n\n**d'entre eux** — Deuxième reprise de le mot arabe. On garde « d'entre eux » pour cohérence avec la première reprise.\n\n**Et** — Coordination.\n\n**sans** — Rendu de l'expression fixe le mot arabe. On dit **« sans »** plutôt que « n'eût été » parce que « sans » est direct et moderne en français. « N'eût été » serait plus vieilli.\n\n**la grâce** — Le sens retenu est « grâce ». Match direct. L'article défini « la » restitue la construction arabe.\n\n**de Dieu** — Match direct pour le mot arabe.\n\n**sur vous** — Rendu direct de le mot arabe.\n\n**et Sa miséricorde** — Le sens retenu est « miséricorde ». Match direct. « Sa » restitue le petit mot « -hu » qui rattache la miséricorde à Dieu.\n\n**certes** — Reprise du petit mot d'insistance le mot arabe qui répond à le mot arabe.\n\n**vous auriez suivi** — Le sens retenu est « suivre ». Match direct. Conditionnel passé français pour marquer une conséquence qui ne s'est pas produite. Le passage du « ils » (le groupe des divulguateurs) au « vous » marque un changement d'interlocuteur : l'avertissement se tourne vers le lecteur.\n\n**Satan** — Match direct pour le mot arabe. Nom propre.\n\n**sauf** — Rendu direct de le mot arabe.\n\n**peu** — Le sens retenu est « peu ». Rendu direct du mot arabe, sans ajout.\n\n"
+  },
+  "V84": {
+    "id": 577,
+    "trad": "Alors combats dans la voie de Dieu — tu n'es chargé que de toi-même — et incite les croyants. Il se peut que Dieu retienne la violence de ceux qui ont rejeté. Et Dieu est plus fort en violence, plus fort en châtiment exemplaire.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "fa-",
+        "fr": "Alors",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "qātil",
+        "fr": "combats",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "fī",
+        "fr": "dans",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "sabīl",
+        "fr": "la voie",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "Allāhi",
+        "fr": "de Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "lā",
+        "fr": "n'",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "tukallafu",
+        "fr": "es chargé",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "illā",
+        "fr": "que",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "nafsa-ka",
+        "fr": "de toi-même",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "ḥarriḍi",
+        "fr": "incite",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "al-muʾminīn",
+        "fr": "les croyants",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "ʿasā",
+        "fr": "Il se peut",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "Allāhu",
+        "fr": "que Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "an",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "yakuffa",
+        "fr": "retienne",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "baʾsa",
+        "fr": "la violence",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "alladhīna",
+        "fr": "de ceux qui",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "kafarū",
+        "fr": "ont rejeté",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 21,
+        "phon": "Allāhu",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "ashaddu",
+        "fr": "est plus fort",
+        "is_particle": false
+      },
+      {
+        "pos": 23,
+        "phon": "baʾsan",
+        "fr": "en violence",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "wa-",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 25,
+        "phon": "ashaddu",
+        "fr": "plus fort",
+        "is_particle": false
+      },
+      {
+        "pos": 26,
+        "phon": "tankīlan",
+        "fr": "en châtiment exemplaire",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "qtl",
+        "sc": "combattre",
+        "cc": "Meurtre/Combat"
+      },
+      {
+        "pos": 4,
+        "wk": "sbl",
+        "sc": "voie",
+        "cc": "Voie/Direction"
+      },
+      {
+        "pos": 5,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 7,
+        "wk": "klf",
+        "sc": "charger quelqu'un",
+        "cc": "Charge/Obligation"
+      },
+      {
+        "pos": 9,
+        "wk": "nfs",
+        "sc": "soi-même",
+        "cc": "Âme/Être"
+      },
+      {
+        "pos": 11,
+        "wk": "hrd",
+        "sc": "inciter",
+        "cc": "Incitation/Exhortation"
+      },
+      {
+        "pos": 12,
+        "wk": "amn",
+        "sc": "croyant",
+        "cc": "Foi/Adhésion"
+      },
+      {
+        "pos": 13,
+        "wk": "esa",
+        "sc": "il se peut que",
+        "cc": "Possibilité/Espoir"
+      },
+      {
+        "pos": 14,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 16,
+        "wk": "kff",
+        "sc": "retenir",
+        "cc": "Arrêt/Abstention"
+      },
+      {
+        "pos": 17,
+        "wk": "bas",
+        "sc": "force",
+        "cc": "Puissance/Malheur"
+      },
+      {
+        "pos": 19,
+        "wk": "kfr",
+        "sc": "rejeter",
+        "cc": "Rejet/Ingratitude"
+      },
+      {
+        "pos": 21,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 22,
+        "wk": "shdd",
+        "sc": "intense",
+        "cc": "Intensité/Sévérité"
+      },
+      {
+        "pos": 23,
+        "wk": "bas",
+        "sc": "force",
+        "cc": "Puissance/Malheur"
+      },
+      {
+        "pos": 25,
+        "wk": "shdd",
+        "sc": "intense",
+        "cc": "Intensité/Sévérité"
+      },
+      {
+        "pos": 26,
+        "wk": "nkl",
+        "sc": "châtiment exemplaire",
+        "cc": "Châtiment exemplaire"
+      }
+    ],
+    "old_justif": "\n\n**Alors** — On rend le petit mot arabe par « alors » plutôt que « donc » parce que le contexte n'est pas argumentatif (« donc » demande une déduction), c'est un tournant narratif : après le portrait des divulgateurs du V83, l'ordre bascule vers le combattant. « Alors » restitue ce basculement.\n\n**combats** — Le sens retenu est « combattre ». On dit **« combats » plutôt que « tue »** parce que la forme du verbe arabe (avec la voyelle longue interne « a ») marque un affrontement mutuel : ce n'est pas un ordre de tuer unilatéral, c'est l'ordre de s'engager dans un combat où l'adversaire riposte. « Combats » restitue cette réciprocité de l'affrontement armé.\n\n**dans** — On rend la petite préposition arabe par « dans » plutôt que « sur » parce que « dans la voie de Dieu » désigne le cadre englobant (à l'intérieur duquel on marche), pas la surface (sur laquelle on avance). L'idée arabe est celle du cadre moral à l'intérieur duquel le combat prend sens.\n\n**la voie** — Le sens retenu est « voie ». On dit **« voie » plutôt que « sentier »** parce que « voie » désigne un chemin structuré, moral, tracé (comme « la voie du droit »), alors que « sentier » évoque un chemin étroit et physique. Le mot arabe désigne ici le chemin moral et pratique de Dieu, pas un chemin géographique.\n\n**de Dieu** — Le sens retenu est « Dieu ». Rendu direct du nom propre. Le « de » traduit la construction arabe qui rattache « voie » à son possesseur.\n\n**n'** — Rendu de la petite négation arabe. Placée devant le verbe pour former le « ne… que » avec la petite exception qui suit.\n\n**es chargé** — Le sens retenu est « charger quelqu'un ». On dit **« es chargé » (forme passive) plutôt que « on te charge »** parce que la forme du verbe arabe est passive : on ne dit pas qui charge, on dit que le sujet reçoit la charge. « Es chargé » restitue cette voix passive sans dévoiler l'agent.\n\n**que** — Rendu de la petite exception arabe. Combiné avec le « n' » précédent pour former l'expression fixe « ne… que » qui restitue la restriction arabe.\n\n**de toi-même** — Le sens retenu est « soi-même ». On dit **« de toi-même » plutôt que « de ton âme »** parce que le mot arabe désigne ici la personne du Messager comme unité vivante (pas son âme spirituelle abstraite). « Toi-même » restitue cette personne concrète prise dans sa totalité.\n\n**et** — Coordination banale. Rendu direct de la petite conjonction arabe.\n\n**incite** — Le sens retenu est « inciter ». On dit **« incite » plutôt que « exhorte »** parce que « exhorter » a une nuance oratoire (donner un discours pour motiver), alors que « inciter » restitue mieux l'appel actif à passer à l'action. Le mot arabe est plus direct qu'un discours d'exhortation.\n\n**les croyants** — Le sens retenu est « croyant ». Rendu direct du mot arabe. Article défini « les » pour marquer la communauté entière.\n\n**Il se peut** — Le sens retenu est « il se peut que ». On dit **« Il se peut »** parce que le mot arabe est un verbe défectif spécial qui n'a pas d'équivalent direct en français — il exprime l'ouverture d'une possibilité future portée par l'espérance. « Il se peut » restitue cette possibilité qui n'engage pas la certitude divine.\n\n**que Dieu** — Le sens retenu est « Dieu ». Rendu direct. Le « que » (qui appartient à la structure française « il se peut que ») est absorbé ici avec « Dieu ».\n\n**de** — Rendu de la petite particule arabe qui introduit la clause subordonnée. En français, la structure « il se peut que … retienne » absorbe naturellement cette subordination ; on garde un « de » minimal pour marquer sa place dans la lecture.\n\n**retienne** — Le sens retenu est « retenir ». On dit **« retienne » (au subjonctif) plutôt que « arrête »** parce que « retenir » évoque un mouvement continu de contention (Dieu tient en arrière la violence sans nécessairement l'annuler), alors qu'« arrêter » évoque un blocage définitif. Le mot arabe restitue mieux la contention active continue.\n\n**la violence** — Le sens retenu est « force ». On dit **« la violence » plutôt que « la force »** parce que le contexte est celui de l'agressivité armée des rejetants — leur force est déployée dans un but hostile. « Violence » restitue cette dimension agressive absente du mot neutre « force ».\n\n**de ceux qui** — Rendu du mot relatif pluriel qui introduit la caractérisation des rejetants.\n\n**ont rejeté** — Le sens retenu est « rejeter ». On dit **« ont rejeté » plutôt que « ont mécru »** parce que « mécroire » est un mot religieux étroit et vieilli, alors que le mot arabe désigne un acte moral plus large : refuser activement la vérité proposée. « Rejeter » restitue cet acte de refus actif dans un français courant.\n\n**Et** — Coordination qui ouvre la clause finale.\n\n**Dieu** — Le sens retenu est « Dieu ». Rendu direct.\n\n**est plus fort** — Le sens retenu est « intense ». On dit **« est plus fort » plutôt que « est plus intense »** parce que « plus intense » sonne abstrait alors que « plus fort » est direct et courant en français, et restitue mieux la dimension combattive du contraste (Dieu vs rejetants).\n\n**en violence** — Le sens retenu est « force ». On dit **« en violence » plutôt que « en force »** pour maintenir la cohérence avec « la violence » plus haut : le mot arabe est le même dans les deux occurrences, donc on le rend par le même mot français.\n\n**et** — Coordination banale.\n\n**plus fort** — Reprise du comparatif pour la seconde qualité. Cohérent avec « est plus fort ».\n\n**en châtiment exemplaire** — Le sens retenu est « châtiment exemplaire ». On dit **« châtiment exemplaire » plutôt que « punition »** parce que le mot arabe désigne spécifiquement une peine dissuasive qui sert d'exemple aux autres, pas une simple punition. L'ajout de « exemplaire » restitue cette dimension pédagogique dissuasive absente du mot « punition ».\n\n"
+  },
+  "V85": {
+    "id": 578,
+    "trad": "Quiconque intercède d'une bonne intercession, il aura pour lui une part de cela. Et quiconque intercède d'une mauvaise intercession, il aura pour lui une charge de cela. Et Dieu est en toute chose Nourricier.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "man",
+        "fr": "Quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "yashfaʿ",
+        "fr": "intercède",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "shafāʿatan",
+        "fr": "d'une intercession",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "ḥasanatan",
+        "fr": "bonne",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "yakun",
+        "fr": "il aura",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "la-hu",
+        "fr": "pour lui",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "naṣīb",
+        "fr": "une part",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "min-hā",
+        "fr": "de cela",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "wa-man",
+        "fr": "Et quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "yashfaʿ",
+        "fr": "intercède",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "shafāʿatan",
+        "fr": "d'une intercession",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "sayyiʾatan",
+        "fr": "mauvaise",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "yakun",
+        "fr": "il aura",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "la-hu",
+        "fr": "pour lui",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "kifl",
+        "fr": "une charge",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "min-hā",
+        "fr": "de cela",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "wa-kāna",
+        "fr": "Et est",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "Allāhu",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "ʿalā",
+        "fr": "en",
+        "is_particle": true
+      },
+      {
+        "pos": 20,
+        "phon": "kull",
+        "fr": "toute",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "shayʾ",
+        "fr": "chose",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "muqīt",
+        "fr": "Nourricier",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 2,
+        "wk": "shfe",
+        "sc": "intercéder",
+        "cc": "Intercession"
+      },
+      {
+        "pos": 3,
+        "wk": "shfe",
+        "sc": "médiation",
+        "cc": "Intercession"
+      },
+      {
+        "pos": 4,
+        "wk": "hsn",
+        "sc": "bon",
+        "cc": "Beauté/Bonté"
+      },
+      {
+        "pos": 5,
+        "wk": "kwn",
+        "sc": "être",
+        "cc": "Être/Existence"
+      },
+      {
+        "pos": 7,
+        "wk": "nsb",
+        "sc": "part",
+        "cc": "Part/Attribution"
+      },
+      {
+        "pos": 10,
+        "wk": "shfe",
+        "sc": "intercéder",
+        "cc": "Intercession"
+      },
+      {
+        "pos": 11,
+        "wk": "shfe",
+        "sc": "médiation",
+        "cc": "Intercession"
+      },
+      {
+        "pos": 12,
+        "wk": "swa",
+        "sc": "mauvais",
+        "cc": "Mal/Mauvais"
+      },
+      {
+        "pos": 13,
+        "wk": "kwn",
+        "sc": "être",
+        "cc": "Être/Existence"
+      },
+      {
+        "pos": 15,
+        "wk": "kfl",
+        "sc": "responsabilité",
+        "cc": "Tutelle/Garantie"
+      },
+      {
+        "pos": 17,
+        "wk": "kwn",
+        "sc": "être",
+        "cc": "Être/Existence"
+      },
+      {
+        "pos": 18,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 20,
+        "wk": "kll",
+        "sc": "tout",
+        "cc": "Totalité"
+      },
+      {
+        "pos": 21,
+        "wk": "shy",
+        "sc": "chose",
+        "cc": "Chose/Être"
+      },
+      {
+        "pos": 22,
+        "wk": "qwt",
+        "sc": "nourriture",
+        "cc": "Subsistance/Alimentation"
+      }
+    ],
+    "old_justif": "\n\n**Quiconque** — Rendu du petit mot conditionnel arabe. « Quiconque » restitue la généralité de la condition : quel que soit celui qui fait cela.\n\n**intercède** — Le sens retenu est « intercéder ». On dit **« intercède » plutôt que « médiatise »** parce que « intercéder » restitue l'idée d'ajouter sa voix pour appuyer une cause, alors que « médiatiser » est trop moderne et technique. Le mot arabe désigne l'acte de parler en faveur d'un autre.\n\n**d'une intercession** — Le sens retenu est « médiation ». On dit **« intercession » plutôt que « médiation »** dans la traduction pour garder la cohérence lexicale avec le verbe « intercède » qui précède. Le mot arabe est le nom formé sur le même verbe, donc on garde le même mot en français.\n\n**bonne** — Le sens retenu est « bon ». Rendu direct de l'adjectif au féminin qui s'accorde avec « intercession ».\n\n**il aura** — Le sens retenu est « être ». On dit **« il aura »** parce qu'en arabe le verbe être suivi de « pour lui » signifie « il y aura pour lui, il aura ». Le français traduit naturellement par le verbe avoir qui restitue cette structure de possession.\n\n**pour lui** — Rendu direct de la préposition avec le petit mot accolé. Désigne le bénéficiaire de ce qui suit.\n\n**une part** — Le sens retenu est « part ». Rendu direct du mot arabe. Article indéfini « une » pour restituer l'absence d'article.\n\n**de cela** — Rendu du composé arabe qui reprend l'intercession du début. « De cela » évite de répéter « de l'intercession » pour un français plus fluide.\n\n**Et quiconque** — Coordination qui ouvre le second cas parallèle.\n\n**intercède** — Reprise du verbe pour le second cas. Cohérent avec la première occurrence.\n\n**d'une intercession** — Reprise du nom pour le second cas. Cohérent avec la première occurrence.\n\n**mauvaise** — Le sens retenu est « mauvais ». On dit **« mauvaise » plutôt que « nuisible »** parce que « mauvaise » restitue simplement l'opposé de « bonne » pour marquer le parallélisme, alors que « nuisible » ajouterait une nuance de dommage effectif absente du simple adjectif arabe.\n\n**il aura** — Reprise du verbe et de la structure pour le second cas.\n\n**pour lui** — Reprise de la préposition.\n\n**une charge** — Le sens retenu est « responsabilité ». On dit **« une charge » plutôt que « une responsabilité »** parce que « charge » restitue mieux l'image concrète du fardeau qui pèse sur celui qui a mal intercédé, alors que « responsabilité » est plus abstrait. Le mot arabe évoque à l'origine une part de tutelle qu'on prend sur soi, ici prise dans son sens négatif.\n\n**de cela** — Reprise du composé pour le second cas.\n\n**Et est** — Rendu du verbe arabe être au passé qui prend ici une valeur de vérité générale. « Est » au présent français restitue la permanence : Dieu est toujours, pour toujours.\n\n**Dieu** — Le sens retenu est « Dieu ». Rendu direct du nom propre.\n\n**en** — On rend la préposition arabe par « en » plutôt que « sur » parce que « Dieu est en toute chose » restitue mieux la portée universelle qu'un « Dieu est sur toute chose » qui suggère une position spatiale de dessus.\n\n**toute** — Le sens retenu est « tout ». Rendu direct du mot arabe, au féminin pour s'accorder avec « chose ».\n\n**chose** — Le sens retenu est « chose ». Rendu direct du mot arabe.\n\n**Nourricier** — Le sens retenu est « nourriture ». On dit **« Nourricier » (avec majuscule)** parce que le mot arabe est la forme du participe qui désigne « celui qui donne la nourriture » — attribut divin qui restitue l'image de Dieu comme source de ce qui maintient tout en vie. L'alternative « Puissant » (Hamidullah) glisse vers une notion de puissance abstraite alors que le mot arabe garde l'image concrète du don de subsistance.\n\n"
+  },
+  "V86": {
+    "id": 579,
+    "trad": "Et lorsque vous êtes salués d'une salutation, saluez d'une plus belle qu'elle, ou rendez-la. Certes Dieu est en toute chose Comptable.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "iḏā",
+        "fr": "lorsque",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "ḥuyyītum",
+        "fr": "vous êtes salués",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "bi-",
+        "fr": "d'",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "taḥiyyatin",
+        "fr": "une salutation",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "fa-",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "ḥayyū",
+        "fr": "saluez",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "bi-",
+        "fr": "d'",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "aḥsana",
+        "fr": "une plus belle",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "min-hā",
+        "fr": "qu'elle",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "ruddū-hā",
+        "fr": "rendez-la",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "inna",
+        "fr": "Certes",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "Allāha",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "kāna",
+        "fr": "est",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "ʿalā",
+        "fr": "en",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "kull",
+        "fr": "toute",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "shayʾ",
+        "fr": "chose",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "ḥasīb",
+        "fr": "Comptable",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 3,
+        "wk": "hyy",
+        "sc": "saluer",
+        "cc": "Salutation/Pudeur"
+      },
+      {
+        "pos": 5,
+        "wk": "hyy",
+        "sc": "saluer",
+        "cc": "Salutation/Pudeur"
+      },
+      {
+        "pos": 7,
+        "wk": "hyy",
+        "sc": "saluer",
+        "cc": "Salutation/Pudeur"
+      },
+      {
+        "pos": 9,
+        "wk": "hsn",
+        "sc": "bon",
+        "cc": "Beauté/Bonté"
+      },
+      {
+        "pos": 12,
+        "wk": "rdd",
+        "sc": "rendre",
+        "cc": "Retour/Renvoi"
+      },
+      {
+        "pos": 14,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 15,
+        "wk": "kwn",
+        "sc": "être",
+        "cc": "Être/Existence"
+      },
+      {
+        "pos": 17,
+        "wk": "kll",
+        "sc": "tout",
+        "cc": "Totalité"
+      },
+      {
+        "pos": 18,
+        "wk": "shy",
+        "sc": "chose",
+        "cc": "Chose/Être"
+      },
+      {
+        "pos": 19,
+        "wk": "hsb",
+        "sc": "compter",
+        "cc": "Calcul/Évaluation"
+      }
+    ],
+    "old_justif": "\n\n**Et** — Coordination banale. Rendu direct de la petite conjonction arabe.\n\n**lorsque** — On rend le petit mot arabe par « lorsque » plutôt que « quand » parce que « lorsque » a une nuance légèrement plus soutenue et itérative qui colle mieux à la règle générale posée ici : chaque fois que la situation se présente.\n\n**vous êtes salués** — Le sens retenu est « saluer ». On dit **« vous êtes salués » (forme passive) plutôt que « on vous salue »** parce que la forme du verbe arabe est passive : on ne dit pas qui salue, on dit que le sujet reçoit la salutation. Le passif français restitue exactement cette même structure.\n\n**d'** — Rendu de la petite préposition arabe. Contraction avec « une » qui suit pour un français fluide.\n\n**une salutation** — Le sens retenu est « saluer ». On dit **« une salutation »** parce que le mot arabe est le nom formé sur le même verbe — en français, le nom qui correspond au verbe « saluer » est « salutation ». Le mot garde ainsi son lien direct avec l'acte de saluer.\n\n**alors** — On rend le petit mot arabe par « alors » plutôt que « donc » parce que le contexte n'est pas argumentatif mais séquentiel : après la situation décrite vient l'ordre à appliquer.\n\n**saluez** — Le sens retenu est « saluer ». Rendu direct du verbe à l'impératif. Deuxième personne du pluriel adressée aux croyants.\n\n**d'** — Reprise de la petite préposition.\n\n**une plus belle** — Le sens retenu est « bon ». On dit **« une plus belle » plutôt que « une meilleure »** parce que la racine arabe recouvre à la fois la beauté et la bonté, et parce que dans le contexte d'une salutation, « plus belle » sonne plus naturel qu'une « meilleure » qui aurait une nuance de comparaison morale trop appuyée. Le mot « salutation » est sous-entendu en français après « plus belle ».\n\n**qu'elle** — Rendu du composé arabe qui renvoie à la salutation reçue. La contraction « qu'elle » (au lieu de « qu'elle-même ») garde la fluidité française.\n\n**ou** — Rendu direct de la petite conjonction arabe.\n\n**rendez-la** — Le sens retenu est « rendre ». On dit **« rendez-la » plutôt que « renvoyez-la » ou « retournez-la »** parce que « rendre » restitue exactement le geste de retourner à l'émetteur ce qu'il a envoyé, sans ajouter la nuance de refus (« rejeter ») ni celle de mouvement spatial (« retourner »). C'est le geste minimum de courtoisie sociale : au moins rendre à l'identique.\n\n**Certes** — Rendu du petit mot d'insistance arabe. Marque l'assertion forte de ce qui suit.\n\n**Dieu** — Le sens retenu est « Dieu ». Rendu direct du nom propre.\n\n**est** — Le sens retenu est « être ». On dit **« est » (au présent) plutôt que « a été » (au passé)** parce que le verbe arabe au passé prend ici une valeur de vérité générale : Dieu EST ainsi, pour toujours. Le présent français restitue cette permanence.\n\n**en** — On rend la préposition arabe par « en » plutôt que « sur » parce que « Dieu est en toute chose » restitue mieux la portée universelle qu'un « Dieu est sur toute chose » qui suggère une position spatiale de dessus.\n\n**toute** — Le sens retenu est « tout ». Rendu direct au féminin pour s'accorder avec « chose ».\n\n**chose** — Le sens retenu est « chose ». Rendu direct du mot arabe.\n\n**Comptable** — Le sens retenu est « compter ». On dit **« Comptable » (avec majuscule)** parce que le mot arabe est à la forme qui désigne « celui qui fait l'action de compter » — attribut divin qui restitue l'image de Dieu comme celui qui tient les comptes de tout ce qui se passe. L'alternative « tient compte de tout » (Hamidullah) est une périphrase explicative qui perd la forme substantivée de l'attribut divin.\n\n"
+  },
+  "V87": {
+    "id": 580,
+    "trad": "Dieu, nulle divinité sinon Lui ! Certes Il vous rassemblera pour le jour de la Résurrection — aucun doute en cela. Et qui est plus véridique que Dieu en récit ?",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "Allāhu",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 2,
+        "phon": "lā",
+        "fr": "nulle",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "ilāha",
+        "fr": "divinité",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "illā",
+        "fr": "sinon",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "huwa",
+        "fr": "Lui",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "la-",
+        "fr": "Certes",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "yajmaʿanna-kum",
+        "fr": "Il vous rassemblera",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "ilā",
+        "fr": "pour",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "yawmi",
+        "fr": "le jour",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "al-qiyāmati",
+        "fr": "de la Résurrection",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "lā",
+        "fr": "aucun",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "rayba",
+        "fr": "doute",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "fī-hi",
+        "fr": "en cela",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "wa-",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "man",
+        "fr": "qui",
+        "is_particle": true
+      },
+      {
+        "pos": 16,
+        "phon": "aṣdaqu",
+        "fr": "est plus véridique",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "min",
+        "fr": "que",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "Allāhi",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "ḥadīthan",
+        "fr": "en récit",
+        "is_particle": false
+      }
+    ],
+    "vwas": [
+      {
+        "pos": 1,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 3,
+        "wk": "alh",
+        "sc": "divinité",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 7,
+        "wk": "jme",
+        "sc": "rassembler",
+        "cc": "Rassemblement/Union"
+      },
+      {
+        "pos": 9,
+        "wk": "ywm",
+        "sc": "jour",
+        "cc": "Temps/Période"
+      },
+      {
+        "pos": 10,
+        "wk": "qwm",
+        "sc": "résurrection",
+        "cc": "Verticalité/Droiture"
+      },
+      {
+        "pos": 12,
+        "wk": "ryb",
+        "sc": "douter",
+        "cc": "Doute/Suspicion"
+      },
+      {
+        "pos": 16,
+        "wk": "sdq",
+        "sc": "vrai",
+        "cc": "Vérité/Sincérité"
+      },
+      {
+        "pos": 18,
+        "wk": "alh",
+        "sc": "Dieu",
+        "cc": "Divinité"
+      },
+      {
+        "pos": 19,
+        "wk": "hdth",
+        "sc": "récit rapporté",
+        "cc": "Narration/Récit"
+      }
+    ],
+    "old_justif": "\n\n**Dieu** — Le sens retenu est « Dieu ». Rendu direct du nom propre. Placé en tête du verset comme sujet absolu, avant même la formule d'unicité qui suit.\n\n**nulle** — On rend la petite négation arabe par « nulle » plutôt que « pas » parce que le contexte est absolu : on nie toute divinité, pas seulement une divinité particulière. « Nulle » restitue mieux cette négation catégorique.\n\n**divinité** — Le sens retenu est « divinité ». Rendu direct du mot arabe. « Divinité » désigne la catégorie même de ce qui peut être adoré, ici niée pour tout autre que Lui.\n\n**sinon** — On rend le petit mot arabe par « sinon » plutôt que « sauf » parce que dans la formule d'unicité, « nulle divinité sinon Lui » sonne plus rythmé et solennel en français que « nulle divinité sauf Lui ». Les deux disent la même chose, mais « sinon » est plus courant dans les formules d'exception liturgiques françaises.\n\n**Lui** — Rendu direct du pronom arabe à la troisième personne. Renvoie à Dieu posé en tête.\n\n**Certes** — Rendu du petit mot d'insistance arabe. Marque l'assertion forte de l'action divine annoncée.\n\n**Il vous rassemblera** — Le sens retenu est « rassembler ». On dit **« Il vous rassemblera »** parce que le verbe arabe combine trois éléments : le sujet implicite (Il, renvoyant à Dieu), le futur (action à venir) et le complément (vous). Le français les rend explicitement au futur avec le pronom sujet et le complément d'objet.\n\n**pour** — On rend la préposition arabe par « pour » plutôt que « au » parce que « pour » indique clairement le but temporel — le moment vers lequel se fait le rassemblement. « Au jour de la Résurrection » (Hamidullah) sonne comme si on rassemblait pendant ce jour ; « pour le jour » restitue mieux l'idée du moment cible.\n\n**le jour** — Le sens retenu est « jour ». Rendu direct du mot arabe. On utilise « le » (petit mot qui rend le mot défini) pour marquer qu'il s'agit d'un jour précis nommé juste après.\n\n**de la Résurrection** — Le sens retenu est « résurrection ». On dit **« Résurrection » (avec majuscule)** parce que le mot désigne ici l'événement eschatologique unique, avec son statut de moment absolu — d'où la majuscule.\n\n**aucun** — Rendu de la petite négation arabe. « Aucun » restitue la négation catégorique de toute forme de doute.\n\n**doute** — Le sens retenu est « douter ». On rend le verbe arabe (dans sa forme nominale) par le nom **« doute »** parce que la construction « aucun doute » est l'expression française naturelle pour nier absolument l'incertitude.\n\n**en cela** — Rendu du composé arabe. « En cela » précise que le doute nié porte sur le jour annoncé lui-même.\n\n**Et** — Coordination banale.\n\n**qui** — Rendu direct du mot interrogatif arabe. Introduit la question rhétorique finale.\n\n**est plus véridique** — Le sens retenu est « vrai ». On dit **« plus véridique » plutôt que « plus vrai »** parce que « véridique » qualifie mieux la parole rapportée (qui reflète fidèlement ce qui est), alors que « vrai » qualifierait plus une chose objective. Ici il s'agit de la parole divine, donc « véridique » colle mieux au contexte du récit.\n\n**que** — Rendu direct de la petite préposition arabe qui joue le rôle du « que » du comparatif français.\n\n**Dieu** — Le sens retenu est « Dieu ». Rendu direct du nom propre. Terme de comparaison de la question rhétorique.\n\n**en récit** — Le sens retenu est « récit rapporté ». On dit **« en récit » plutôt que « en parole » (Hamidullah)** parce que le mot arabe désigne spécifiquement le contenu transmis, la parole racontée à autrui, alors que « parole » est plus vague et couvre aussi la parole spontanée. « Récit » restitue la dimension de transmission qui est au cœur du mot arabe.\n\n"
+  }
+}

@@ -1,0 +1,5523 @@
+{
+  "mapped": [
+    {
+      "aid": 306,
+      "word_key": "ghw",
+      "root_ar": "غ ش و",
+      "etymological_concept": "Couverture/Voile",
+      "score": 4,
+      "hits": [
+        "covered(cover)→couvrir",
+        "concealed(conceal)→cacher"
+      ],
+      "lane_sample": "it covered, | concealed, him,"
+    },
+    {
+      "aid": 307,
+      "word_key": "qwl",
+      "root_ar": "ق و ل",
+      "etymological_concept": "Parole/Énonciation",
+      "score": 4,
+      "hits": [
+        "said(say)→dire",
+        "said(say)→dire"
+      ],
+      "lane_sample": "he said, | he lied,"
+    },
+    {
+      "aid": 317,
+      "word_key": "kḏb",
+      "root_ar": "ك ذ ب",
+      "etymological_concept": "Mensonge/Fausseté",
+      "score": 4,
+      "hits": [
+        "lied(lie)→mensonge",
+        "falsehood(falsehood)→fausseté"
+      ],
+      "lane_sample": "he lied; uttered a falsehood; said what was untrue | he gave an untrue account,"
+    },
+    {
+      "aid": 374,
+      "word_key": "fel",
+      "root_ar": "ف ع ل",
+      "etymological_concept": "Action/Acte",
+      "score": 4,
+      "hits": [
+        "doing(do)→faire",
+        "works(work)→action"
+      ],
+      "lane_sample": "he did it | and we suggested to them the doing of good works"
+    },
+    {
+      "aid": 384,
+      "word_key": "sdq",
+      "root_ar": "ص د ق",
+      "etymological_concept": "Vérité/Sincérité",
+      "score": 8,
+      "hits": [
+        "spoke(speak)→dire",
+        "said(say)→dire",
+        "uttered(utter)→dire",
+        "truth(truth)→vérité"
+      ],
+      "lane_sample": "he spoke, said, uttered, | told, truth,"
+    },
+    {
+      "aid": 393,
+      "word_key": "eml",
+      "root_ar": "ع م ل",
+      "etymological_concept": "Action/Oeuvre",
+      "score": 3,
+      "hits": [
+        "worked→travail~travailler",
+        "worked(work)→oeuvre"
+      ],
+      "lane_sample": "he worked, | wrought; laboured; served,"
+    },
+    {
+      "aid": 304,
+      "word_key": "bsr",
+      "root_ar": "ب ص ر",
+      "etymological_concept": "Vision/Perception",
+      "score": 4,
+      "hits": [
+        "saw(see)→voir",
+        "seeing(see)→voir"
+      ],
+      "lane_sample": "he saw; | he became seeing;"
+    },
+    {
+      "aid": 294,
+      "word_key": "kfr",
+      "root_ar": "ك ف ر",
+      "etymological_concept": "Couverture/Dissimulation",
+      "score": 8,
+      "hits": [
+        "concealed(conceal)→cacher",
+        "hid(hide)→cacher",
+        "covered(cover)→couvrir",
+        "covered(cover)→couvrir"
+      ],
+      "lane_sample": "he veiled, concealed, hid, | covered, the thing"
+    },
+    {
+      "aid": 405,
+      "word_key": "drb",
+      "root_ar": "ض ر ب",
+      "etymological_concept": "Frappe/Coup",
+      "score": 4,
+      "hits": [
+        "struck(strike)→frapper",
+        "hit(hit)→frapper"
+      ],
+      "lane_sample": "he beat, struck, smote, | hit, him,"
+    },
+    {
+      "aid": 403,
+      "word_key": "khd",
+      "root_ar": "خ ل د",
+      "etymological_concept": "Permanence/Éternité",
+      "score": 10,
+      "hits": [
+        "remained(remain)→demeurer",
+        "stayed(stay)→demeurer",
+        "abode(abode)→demeurer",
+        "remained(remain)→demeurer"
+      ],
+      "lane_sample": "he remained, stayed, dwelt, | abode;"
+    },
+    {
+      "aid": 411,
+      "word_key": "rwd",
+      "root_ar": "ر و د",
+      "etymological_concept": "Mouvement/Recherche",
+      "score": 4,
+      "hits": [
+        "came(come)→venir",
+        "went(go)→aller"
+      ],
+      "lane_sample": "he, | it,"
+    },
+    {
+      "aid": 422,
+      "word_key": "jme",
+      "root_ar": "ج م ع",
+      "etymological_concept": "Rassemblement/Union",
+      "score": 4,
+      "hits": [
+        "gathered(gather)→rassembler",
+        "gathered(gather)→rassembler"
+      ],
+      "lane_sample": "he collected; brought, | gathered, together; gathered up; assembled; congregated; mustered; drew tog"
+    },
+    {
+      "aid": 474,
+      "word_key": "kdb",
+      "root_ar": "ك ذ ب",
+      "etymological_concept": "Mensonge/Fausseté",
+      "score": 4,
+      "hits": [
+        "lied(lie)→mensonge",
+        "falsehood(falsehood)→fausseté"
+      ],
+      "lane_sample": "he lied; uttered a falsehood; said what was untrue | he gave an untrue account,"
+    },
+    {
+      "aid": 479,
+      "word_key": "twb",
+      "root_ar": "ت و ب",
+      "etymological_concept": "Repentir/Retour à Dieu",
+      "score": 10,
+      "hits": [
+        "repented(repent)→repentir",
+        "repented(repent)→repentir",
+        "god(god)→dieu",
+        "returned(return)→retour"
+      ],
+      "lane_sample": "he repented; | repented toward god;"
+    },
+    {
+      "aid": 2660,
+      "word_key": "axdh",
+      "root_ar": "أ خ ذ",
+      "etymological_concept": "Prise/Saisie",
+      "score": 10,
+      "hits": [
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "take(take)→prendre"
+      ],
+      "lane_sample": "he took; he took with his hand; he took hold of; | take thou,"
+    },
+    {
+      "aid": 522,
+      "word_key": "nzr",
+      "root_ar": "ن ظ ر",
+      "etymological_concept": "Regard/Contemplation",
+      "score": 4,
+      "hits": [
+        "looked(look)→regarder",
+        "see(see)→voir"
+      ],
+      "lane_sample": "he looked at, | towards, in order to see, him,"
+    },
+    {
+      "aid": 545,
+      "word_key": "beth",
+      "root_ar": "ب ع ث",
+      "etymological_concept": "Résurrection/Envoi",
+      "score": 4,
+      "hits": [
+        "sent(send)→envoyer",
+        "sent(send)→envoyer"
+      ],
+      "lane_sample": "removing of that which restrains one from free action | he sent him;"
+    },
+    {
+      "aid": 571,
+      "word_key": "ghf",
+      "root_ar": "غ ف ر",
+      "etymological_concept": "Pardon/Couverture",
+      "score": 4,
+      "hits": [
+        "covered(cover)→couvrir",
+        "covered(cover)→couvrir"
+      ],
+      "lane_sample": "he covered, veiled, concealed, | hid, it;"
+    },
+    {
+      "aid": 577,
+      "word_key": "tem",
+      "root_ar": "ط ع م",
+      "etymological_concept": "Gustation/Nourriture",
+      "score": 4,
+      "hits": [
+        "ate(eat)→manger",
+        "ate(eat)→manger"
+      ],
+      "lane_sample": "he ate it; | he tasted"
+    },
+    {
+      "aid": 619,
+      "word_key": "bkr",
+      "root_ar": "ب ك ر",
+      "etymological_concept": "Début du jour/Primauté",
+      "score": 4,
+      "hits": [
+        "first(first)→premier",
+        "day(day)→jour"
+      ],
+      "lane_sample": "he | went forth early in the morning, in the first part of the day;"
+    },
+    {
+      "aid": 656,
+      "word_key": "dnw",
+      "root_ar": "د ن و",
+      "etymological_concept": "Proximité/Monde d'ici-bas",
+      "score": 4,
+      "hits": [
+        "near(near)→proche",
+        "near(near)→proche"
+      ],
+      "lane_sample": "he, | it, was,"
+    },
+    {
+      "aid": 788,
+      "word_key": "byt",
+      "root_ar": "ب ي ت",
+      "etymological_concept": "Demeure/Sanctuaire",
+      "score": 6,
+      "hits": [
+        "night(night)→nuit",
+        "night(night)→nuit",
+        "night(night)→nuit"
+      ],
+      "lane_sample": "he did such a thing by night, | at night"
+    },
+    {
+      "aid": 814,
+      "word_key": "eqb",
+      "root_ar": "ع ق ب",
+      "etymological_concept": "Succession/Conséquence",
+      "score": 4,
+      "hits": [
+        "came(come)→venir",
+        "after(after)→après"
+      ],
+      "lane_sample": "he struck his | heel"
+    },
+    {
+      "aid": 854,
+      "word_key": "kdhb",
+      "root_ar": "ك ذ ب",
+      "etymological_concept": "Mensonge/Fausseté",
+      "score": 8,
+      "hits": [
+        "lied(lie)→mensonge",
+        "uttered(utter)→dire",
+        "falsehood(falsehood)→fausseté",
+        "said(say)→dire"
+      ],
+      "lane_sample": "he lied; uttered a falsehood; said what was untrue | he gave an untrue account,"
+    },
+    {
+      "aid": 927,
+      "word_key": "xld",
+      "root_ar": "خ ل د",
+      "etymological_concept": "Éternité/Permanence",
+      "score": 10,
+      "hits": [
+        "remained(remain)→demeurer",
+        "stayed(stay)→rester",
+        "abode(abode)→demeurer",
+        "remained(remain)→demeurer"
+      ],
+      "lane_sample": "he remained, stayed, dwelt, | abode;"
+    },
+    {
+      "aid": 929,
+      "word_key": "akhz",
+      "root_ar": "أ خ ذ",
+      "etymological_concept": "Prise/Saisie",
+      "score": 10,
+      "hits": [
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "take(take)→prendre"
+      ],
+      "lane_sample": "he took; he took with his hand; he took hold of; | take thou,"
+    },
+    {
+      "aid": 952,
+      "word_key": "athm",
+      "root_ar": "أ ث م",
+      "etymological_concept": "Péché/Faute",
+      "score": 4,
+      "hits": [
+        "sin(sin)→péché",
+        "sin(sin)→péché"
+      ],
+      "lane_sample": "a sin, | crime,"
+    },
+    {
+      "aid": 961,
+      "word_key": "akhw",
+      "root_ar": "أ خ و",
+      "etymological_concept": "Fraternité/Lien",
+      "score": 4,
+      "hits": [
+        "brother(brother)→frère",
+        "friend(friend)→ami"
+      ],
+      "lane_sample": "thou becamest a brother | friend,"
+    },
+    {
+      "aid": 996,
+      "word_key": "hsb",
+      "root_ar": "ح س ب",
+      "etymological_concept": "Calcul/Évaluation",
+      "score": 4,
+      "hits": [
+        "counted(count)→compter",
+        "count(count)→compter"
+      ],
+      "lane_sample": "he numbered, counted, reckoned, calculated, | computed, it;"
+    },
+    {
+      "aid": 1119,
+      "word_key": "akhdh",
+      "root_ar": "أ خ ذ",
+      "etymological_concept": "Prise/Saisie",
+      "score": 10,
+      "hits": [
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "took(take)→prendre",
+        "take(take)→prendre"
+      ],
+      "lane_sample": "he took; he took with his hand; he took hold of; | take thou,"
+    },
+    {
+      "aid": 1236,
+      "word_key": "awb",
+      "root_ar": "ء و ب",
+      "etymological_concept": "Retour/Repentir",
+      "score": 4,
+      "hits": [
+        "returned(return)→revenir",
+        "returning(return)→revenir"
+      ],
+      "lane_sample": "he | returned"
+    },
+    {
+      "aid": 1271,
+      "word_key": "msh",
+      "root_ar": "م س ح",
+      "etymological_concept": "Essuyage/Onction",
+      "score": 6,
+      "hits": [
+        "hand(hand)→main",
+        "passed(pass)→passer",
+        "hand(hand)→main"
+      ],
+      "lane_sample": "he wiped a thing | with his hand,"
+    },
+    {
+      "aid": 1295,
+      "word_key": "dwm",
+      "root_ar": "د و م",
+      "etymological_concept": "Permanence/Continuité",
+      "score": 5,
+      "hits": [
+        "continued→continu~continuité",
+        "continued(continu)→permanent",
+        "endured(endur)→permanent"
+      ],
+      "lane_sample": "i  q | it"
+    },
+    {
+      "aid": 1342,
+      "word_key": "fsh",
+      "root_ar": "ف ش ل",
+      "etymological_concept": "Échec/Faiblesse",
+      "score": 3,
+      "hits": [
+        "weak→faible~faiblesse",
+        "weak(weak)→faiblesse"
+      ],
+      "lane_sample": "he was, | became, cowardly,"
+    },
+    {
+      "aid": 1367,
+      "word_key": "fwt",
+      "root_ar": "ف و ت",
+      "etymological_concept": "Échappement/Perte",
+      "score": 4,
+      "hits": [
+        "passed(pass)→passer",
+        "passed(pass)→passer"
+      ],
+      "lane_sample": "the time, | opportunity, of the doing,"
+    },
+    {
+      "aid": 1400,
+      "word_key": "tle",
+      "root_ar": "ط ل ع",
+      "etymological_concept": "Lever/Apparition",
+      "score": 6,
+      "hits": [
+        "sun(sun)→soleil",
+        "rose(rise)→lever",
+        "rose(rise)→lever"
+      ],
+      "lane_sample": "the sun rose, | appeared;"
+    },
+    {
+      "aid": 1419,
+      "word_key": "khld",
+      "root_ar": "خ ل د",
+      "etymological_concept": "Permanence/Éternité",
+      "score": 10,
+      "hits": [
+        "remained(remain)→demeurer",
+        "stayed(stay)→demeurer",
+        "abode(abode)→demeurer",
+        "remained(remain)→demeurer"
+      ],
+      "lane_sample": "he remained, stayed, dwelt, | abode;"
+    },
+    {
+      "aid": 1681,
+      "word_key": "gfr",
+      "root_ar": "غ ف ر",
+      "etymological_concept": "Protection/Couverture physique",
+      "score": 6,
+      "hits": [
+        "covered→couvrir~couverture",
+        "covered(cover)→couverture",
+        "covered→couvrir~couverture",
+        "covered(cover)→couverture"
+      ],
+      "lane_sample": "he covered, veiled, concealed, | hid, it;"
+    }
+  ],
+  "review": [
+    {
+      "aid": 352,
+      "word_key": "dhb",
+      "root_ar": "ذ ه ب",
+      "lane_sample": "he | went",
+      "top_candidates": [
+        "Départ/Mouvement(2)",
+        "Or/Richesse(0)"
+      ],
+      "concepts_available": [
+        "Départ/Mouvement",
+        "Or/Richesse"
+      ]
+    },
+    {
+      "aid": 354,
+      "word_key": "zlm",
+      "root_ar": "ظ ل م",
+      "lane_sample": "he did wrong; | acted wrongfully, unjustly, injuriously,",
+      "top_candidates": [
+        "Injustice/Oppression(2)",
+        "Obscurité/Ténèbres(0)"
+      ],
+      "concepts_available": [
+        "Injustice/Oppression",
+        "Obscurité/Ténèbres"
+      ]
+    },
+    {
+      "aid": 363,
+      "word_key": "hḏr",
+      "root_ar": "ح ذ ر",
+      "lane_sample": "he was cautious, wary, | vigilant; was on his guard; took care;",
+      "top_candidates": [
+        "Prudence/Vigilance(0)"
+      ],
+      "concepts_available": [
+        "Prudence/Vigilance"
+      ]
+    },
+    {
+      "aid": 249,
+      "word_key": "smw",
+      "root_ar": "س م و",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Hauteur/Élévation(0)"
+      ],
+      "concepts_available": [
+        "Hauteur/Élévation"
+      ]
+    },
+    {
+      "aid": 251,
+      "word_key": "rhm",
+      "root_ar": "ر ح م",
+      "lane_sample": "he had mercy, | pity,",
+      "top_candidates": [
+        "Utérus/Reproduction(0)"
+      ],
+      "concepts_available": [
+        "Utérus/Reproduction"
+      ]
+    },
+    {
+      "aid": 256,
+      "word_key": "mlk",
+      "root_ar": "م ل ك",
+      "lane_sample": "he possessed it, | owned it,",
+      "top_candidates": [
+        "Possession/Autorité(0)"
+      ],
+      "concepts_available": [
+        "Possession/Autorité"
+      ]
+    },
+    {
+      "aid": 258,
+      "word_key": "dyn",
+      "root_ar": "د ي ن",
+      "lane_sample": "he was, | became, obedient; he obeyed",
+      "top_candidates": [
+        "Obéissance/Soumission(0)",
+        "Religion/Système(0)"
+      ],
+      "concepts_available": [
+        "Obéissance/Soumission",
+        "Religion/Système"
+      ]
+    },
+    {
+      "aid": 263,
+      "word_key": "qwm",
+      "root_ar": "ق و م",
+      "lane_sample": "he stood still | in his place",
+      "top_candidates": [
+        "Verticalité/Droiture(0)"
+      ],
+      "concepts_available": [
+        "Verticalité/Droiture"
+      ]
+    },
+    {
+      "aid": 283,
+      "word_key": "slw",
+      "root_ar": "ص ل و",
+      "lane_sample": "i struck, | beat, that part,",
+      "top_candidates": [
+        "Prière/Invocation(0)"
+      ],
+      "concepts_available": [
+        "Prière/Invocation"
+      ]
+    },
+    {
+      "aid": 284,
+      "word_key": "rzq",
+      "root_ar": "ر ز ق",
+      "lane_sample": "god caused what is termed | to come to him",
+      "top_candidates": [
+        "Subsistance/Provision(0)"
+      ],
+      "concepts_available": [
+        "Subsistance/Provision"
+      ]
+    },
+    {
+      "aid": 291,
+      "word_key": "qbl",
+      "root_ar": "ق ب ل",
+      "lane_sample": "he took, received, | admitted, willingly,",
+      "top_candidates": [
+        "Réception/Accueil(2)",
+        "Orientation/Direction(0)"
+      ],
+      "concepts_available": [
+        "Réception/Accueil",
+        "Orientation/Direction"
+      ]
+    },
+    {
+      "aid": 296,
+      "word_key": "ndh r",
+      "root_ar": "ن ذ ر",
+      "lane_sample": "he made a vow; imposed upon himself a vow; | that he would do such a thing;",
+      "top_candidates": [
+        "Avertissement/Mise en garde(0)",
+        "Voeu/Engagement(0)"
+      ],
+      "concepts_available": [
+        "Avertissement/Mise en garde",
+        "Voeu/Engagement"
+      ]
+    },
+    {
+      "aid": 301,
+      "word_key": "qlb",
+      "root_ar": "ق ل ب",
+      "lane_sample": "he altered, | changed, its,",
+      "top_candidates": [
+        "Retournement/Changement(0)"
+      ],
+      "concepts_available": [
+        "Retournement/Changement"
+      ]
+    },
+    {
+      "aid": 303,
+      "word_key": "nws",
+      "root_ar": "ن و س",
+      "lane_sample": "it | moved to and fro;",
+      "top_candidates": [
+        "Humanité/Peuple(0)",
+        "Perception/Visibilité(0)"
+      ],
+      "concepts_available": [
+        "Humanité/Peuple",
+        "Perception/Visibilité"
+      ]
+    },
+    {
+      "aid": 310,
+      "word_key": "ezm",
+      "root_ar": "ع ظ م",
+      "lane_sample": "he was, | became, great in his bone",
+      "top_candidates": [
+        "Grandeur/Importance(0)",
+        "Structure/Ossature(0)"
+      ],
+      "concepts_available": [
+        "Grandeur/Importance",
+        "Structure/Ossature"
+      ]
+    },
+    {
+      "aid": 315,
+      "word_key": "alm",
+      "root_ar": "أ ل م",
+      "lane_sample": "it, | he,",
+      "top_candidates": [
+        "Douleur/Souffrance(0)"
+      ],
+      "concepts_available": [
+        "Douleur/Souffrance"
+      ]
+    },
+    {
+      "aid": 324,
+      "word_key": "ard",
+      "root_ar": "أ ر ض",
+      "lane_sample": "the land became thriving, | productive;",
+      "top_candidates": [
+        "Terre/Sol(2)",
+        "Sens isolé/Rhume(0)"
+      ],
+      "concepts_available": [
+        "Terre/Sol",
+        "Sens isolé/Rhume"
+      ]
+    },
+    {
+      "aid": 326,
+      "word_key": "slh",
+      "root_ar": "ص ل ح",
+      "lane_sample": "it, | he, was,",
+      "top_candidates": [
+        "Bonté/Rectitude(2)"
+      ],
+      "concepts_available": [
+        "Bonté/Rectitude"
+      ]
+    },
+    {
+      "aid": 337,
+      "word_key": "awl",
+      "root_ar": "أ و ل",
+      "lane_sample": "he, | it, returned;",
+      "top_candidates": [
+        "Retour/Origine(2)",
+        "Famille/Appartenance(0)"
+      ],
+      "concepts_available": [
+        "Retour/Origine",
+        "Famille/Appartenance"
+      ]
+    },
+    {
+      "aid": 344,
+      "word_key": "xlq",
+      "root_ar": "خ ل ق",
+      "lane_sample": "measuring; | determining the measure, proportion,",
+      "top_candidates": [
+        "Création/Production(0)"
+      ],
+      "concepts_available": [
+        "Création/Production"
+      ]
+    },
+    {
+      "aid": 347,
+      "word_key": "mthl",
+      "root_ar": "م ث ل",
+      "lane_sample": "he stood erect; | before him",
+      "top_candidates": [
+        "Station/Présence(2)",
+        "Ressemblance/Exemple(0)"
+      ],
+      "concepts_available": [
+        "Station/Présence",
+        "Ressemblance/Exemple"
+      ]
+    },
+    {
+      "aid": 348,
+      "word_key": "wqd",
+      "root_ar": "و ق د",
+      "lane_sample": "the fire burned; burned up; burned brightly | fiercely; blazed;",
+      "top_candidates": [
+        "Feu/Combustion(2)"
+      ],
+      "concepts_available": [
+        "Feu/Combustion"
+      ]
+    },
+    {
+      "aid": 364,
+      "word_key": "mwt",
+      "root_ar": "م و ت",
+      "lane_sample": "he died; | he died having passed away from,",
+      "top_candidates": [
+        "Mort/Cessation(0)"
+      ],
+      "concepts_available": [
+        "Mort/Cessation"
+      ]
+    },
+    {
+      "aid": 388,
+      "word_key": "xrj",
+      "root_ar": "خ ر ج",
+      "lane_sample": "he, | it, went, came, passed,",
+      "top_candidates": [
+        "Sortie/Émergence(0)",
+        "Tribut/Revenu(0)"
+      ],
+      "concepts_available": [
+        "Sortie/Émergence",
+        "Tribut/Revenu"
+      ]
+    },
+    {
+      "aid": 392,
+      "word_key": "bshr",
+      "root_ar": "ب ش ر",
+      "lane_sample": "he pared | removing its",
+      "top_candidates": [
+        "Annonce/Réjouissance(2)",
+        "Surface/Contact(0)"
+      ],
+      "concepts_available": [
+        "Annonce/Réjouissance",
+        "Surface/Contact"
+      ]
+    },
+    {
+      "aid": 397,
+      "word_key": "nhr",
+      "root_ar": "ن ه ر",
+      "lane_sample": "it | ran upon,",
+      "top_candidates": [
+        "Eau/Cours d'eau(0)",
+        "Clarté/Jour(0)"
+      ],
+      "concepts_available": [
+        "Eau/Cours d'eau",
+        "Clarté/Jour"
+      ]
+    },
+    {
+      "aid": 1250,
+      "word_key": "amd",
+      "root_ar": "أ م د",
+      "lane_sample": "he was angry with him",
+      "top_candidates": [
+        "Durée/Limite(0)"
+      ],
+      "concepts_available": [
+        "Durée/Limite"
+      ]
+    },
+    {
+      "aid": 302,
+      "word_key": "sme",
+      "root_ar": "س م ع",
+      "lane_sample": "he heard it, | him;",
+      "top_candidates": [
+        "Audition/Écoute(2)"
+      ],
+      "concepts_available": [
+        "Audition/Écoute"
+      ]
+    },
+    {
+      "aid": 314,
+      "word_key": "edb",
+      "root_ar": "ع ذ ب",
+      "lane_sample": "it was, | became, sweet",
+      "top_candidates": [
+        "Douceur(2)",
+        "Châtiment/Punition(0)"
+      ],
+      "concepts_available": [
+        "Douceur",
+        "Châtiment/Punition"
+      ]
+    },
+    {
+      "aid": 318,
+      "word_key": "fsd",
+      "root_ar": "ف س د",
+      "lane_sample": "it | he",
+      "top_candidates": [
+        "Corruption/Désordre(0)"
+      ],
+      "concepts_available": [
+        "Corruption/Désordre"
+      ]
+    },
+    {
+      "aid": 252,
+      "word_key": "hmd",
+      "root_ar": "ح م د",
+      "lane_sample": "he praised, eulogized, | commended, him; spoke well of him; mentioned him with approbation;",
+      "top_candidates": [
+        "Louange/Éloge(0)"
+      ],
+      "concepts_available": [
+        "Louange/Éloge"
+      ]
+    },
+    {
+      "aid": 254,
+      "word_key": "elm",
+      "root_ar": "ع ل م",
+      "lane_sample": "he knew it; | he was,",
+      "top_candidates": [
+        "Savoir/Connaissance(2)"
+      ],
+      "concepts_available": [
+        "Savoir/Connaissance"
+      ]
+    },
+    {
+      "aid": 328,
+      "word_key": "khlw",
+      "root_ar": "خ ل و",
+      "lane_sample": "it was, | became, empty, vacant, void, devoid, destitute,",
+      "top_candidates": [
+        "Vide/Vacuité(2)",
+        "Abandon/Séparation(0)"
+      ],
+      "concepts_available": [
+        "Vide/Vacuité",
+        "Abandon/Séparation"
+      ]
+    },
+    {
+      "aid": 259,
+      "word_key": "ebd",
+      "root_ar": "ع ب د",
+      "lane_sample": "he served, worshipped, | adored, god; rendered to him religious service, worship,",
+      "top_candidates": [
+        "Adoration/Dévotion(2)"
+      ],
+      "concepts_available": [
+        "Adoration/Dévotion"
+      ]
+    },
+    {
+      "aid": 264,
+      "word_key": "nem",
+      "root_ar": "ن ع م",
+      "lane_sample": "his life was, | became, plentiful and easy",
+      "top_candidates": [
+        "Douceur/Aisance(2)"
+      ],
+      "concepts_available": [
+        "Douceur/Aisance"
+      ]
+    },
+    {
+      "aid": 266,
+      "word_key": "ghyr",
+      "root_ar": "غ ي ر",
+      "lane_sample": "i  q | he brought,",
+      "top_candidates": [
+        "Changement/Altération(0)"
+      ],
+      "concepts_available": [
+        "Changement/Altération"
+      ]
+    },
+    {
+      "aid": 267,
+      "word_key": "ghdb",
+      "root_ar": "غ ض ب",
+      "lane_sample": "he was angry with him; | he was angry",
+      "top_candidates": [
+        "Dureté/Matériau(0)"
+      ],
+      "concepts_available": [
+        "Dureté/Matériau"
+      ]
+    },
+    {
+      "aid": 329,
+      "word_key": "stn",
+      "root_ar": "ش ط ن",
+      "lane_sample": "he was, | became, distant,",
+      "top_candidates": [
+        "Éloignement/Distance(0)",
+        "Diable/Satan(0)"
+      ],
+      "concepts_available": [
+        "Éloignement/Distance",
+        "Diable/Satan"
+      ]
+    },
+    {
+      "aid": 336,
+      "word_key": "rje",
+      "root_ar": "ر ج ع",
+      "lane_sample": "he returned; he went, | came, back",
+      "top_candidates": [
+        "Retour/Réversion(2)"
+      ],
+      "concepts_available": [
+        "Retour/Réversion"
+      ]
+    },
+    {
+      "aid": 276,
+      "word_key": "ryb",
+      "root_ar": "ر ي ب",
+      "lane_sample": "it | occasioned in me disquiet, disturbance,",
+      "top_candidates": [
+        "Doute/Suspicion(0)",
+        "Besoin/Manque(0)"
+      ],
+      "concepts_available": [
+        "Doute/Suspicion",
+        "Besoin/Manque"
+      ]
+    },
+    {
+      "aid": 280,
+      "word_key": "flh",
+      "root_ar": "ف ل ح",
+      "lane_sample": "he clave, split, slit, | cracked;",
+      "top_candidates": [
+        "Réussite/Prospérité(0)",
+        "Fendre/Labourer(0)"
+      ],
+      "concepts_available": [
+        "Réussite/Prospérité",
+        "Fendre/Labourer"
+      ]
+    },
+    {
+      "aid": 349,
+      "word_key": "nwr",
+      "root_ar": "ن و ر",
+      "lane_sample": "i made a mark upon the camel with a hot iron",
+      "top_candidates": [
+        "Lumière/Clarté(0)",
+        "Sens isolé/Fleur(0)"
+      ],
+      "concepts_available": [
+        "Lumière/Clarté",
+        "Sens isolé/Fleur"
+      ]
+    },
+    {
+      "aid": 1221,
+      "word_key": "zygh",
+      "root_ar": "ز ي غ",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Déviation/Égarement(0)"
+      ],
+      "concepts_available": [
+        "Déviation/Égarement"
+      ]
+    },
+    {
+      "aid": 285,
+      "word_key": "nfq",
+      "root_ar": "ن ف ق",
+      "lane_sample": "the marked became brisk, its goods selling much; | it was,",
+      "top_candidates": [
+        "Dépense/Distribution(0)",
+        "Passage/Traversée(0)"
+      ],
+      "concepts_available": [
+        "Dépense/Distribution",
+        "Passage/Traversée"
+      ]
+    },
+    {
+      "aid": 351,
+      "word_key": "hwl",
+      "root_ar": "ح و ل",
+      "lane_sample": "it | became altered, transmuted,",
+      "top_candidates": [
+        "Changement/Transformation(0)",
+        "Ruse/Stratagème(0)"
+      ],
+      "concepts_available": [
+        "Changement/Transformation",
+        "Ruse/Stratagème"
+      ]
+    },
+    {
+      "aid": 298,
+      "word_key": "nfs",
+      "root_ar": "ن ف س",
+      "lane_sample": "it was, | became, high in estimation, of high account,",
+      "top_candidates": [
+        "Âme/Être(0)"
+      ],
+      "concepts_available": [
+        "Âme/Être"
+      ]
+    },
+    {
+      "aid": 365,
+      "word_key": "hwt",
+      "root_ar": "ح و ط",
+      "lane_sample": "he guarded, kept, kept safely, protected, | took care of, him,",
+      "top_candidates": [
+        "Protection/Encerclement(0)"
+      ],
+      "concepts_available": [
+        "Protection/Encerclement"
+      ]
+    },
+    {
+      "aid": 371,
+      "word_key": "elw",
+      "root_ar": "ع ل و",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Hauteur/Élévation(0)"
+      ],
+      "concepts_available": [
+        "Hauteur/Élévation"
+      ]
+    },
+    {
+      "aid": 373,
+      "word_key": "qdr",
+      "root_ar": "ق د ر",
+      "lane_sample": "i measured the thing; computed, | determined, its quantity, measure, size, bulk, proportion, extent,",
+      "top_candidates": [
+        "Mesure/Détermination(2)",
+        "Puissance/Capacité(0)"
+      ],
+      "concepts_available": [
+        "Mesure/Détermination",
+        "Puissance/Capacité"
+      ]
+    },
+    {
+      "aid": 380,
+      "word_key": "swr",
+      "root_ar": "س و ر",
+      "lane_sample": "he leaped | sprang,",
+      "top_candidates": [
+        "Forme/Image(0)",
+        "Sens isolé/Trompette(0)"
+      ],
+      "concepts_available": [
+        "Forme/Image",
+        "Sens isolé/Trompette"
+      ]
+    },
+    {
+      "aid": 381,
+      "word_key": "dew",
+      "root_ar": "د ع و",
+      "lane_sample": "seeking, desiring, asking, | demanding",
+      "top_candidates": [
+        "Appel/Invocation(2)",
+        "Prétention/Revendication(0)"
+      ],
+      "concepts_available": [
+        "Appel/Invocation",
+        "Prétention/Revendication"
+      ]
+    },
+    {
+      "aid": 383,
+      "word_key": "dwn",
+      "root_ar": "د و ن",
+      "lane_sample": "he, | it, was,",
+      "top_candidates": [
+        "Infériorité/En-dessous(0)",
+        "Proximité/Moindre distance(0)",
+        "Sens isolé/Le(0)"
+      ],
+      "concepts_available": [
+        "Infériorité/En-dessous",
+        "Proximité/Moindre distance",
+        "Sens isolé/Le"
+      ]
+    },
+    {
+      "aid": 838,
+      "word_key": "raf",
+      "root_ar": "ر أ ف",
+      "lane_sample": "he pitied, | compassionated, him",
+      "top_candidates": [
+        "Compassion/Clémence(0)"
+      ],
+      "concepts_available": [
+        "Compassion/Clémence"
+      ]
+    },
+    {
+      "aid": 402,
+      "word_key": "thr",
+      "root_ar": "ط ه ر",
+      "lane_sample": "it was, | became, clean, free from dirt",
+      "top_candidates": [
+        "Pureté/Purification(2)"
+      ],
+      "concepts_available": [
+        "Pureté/Purification"
+      ]
+    },
+    {
+      "aid": 406,
+      "word_key": "bed",
+      "root_ar": "ب ع ض",
+      "lane_sample": "the | gnats,",
+      "top_candidates": [
+        "Partie/Division(0)",
+        "Sens isolé/Moustique(0)"
+      ],
+      "concepts_available": [
+        "Partie/Division",
+        "Sens isolé/Moustique"
+      ]
+    },
+    {
+      "aid": 414,
+      "word_key": "fsq",
+      "root_ar": "ف س ق",
+      "lane_sample": "it | went forth,",
+      "top_candidates": [
+        "Transgression/Rébellion(0)",
+        "Corps/Anatomie(0)",
+        "Sortie/Transgression(0)"
+      ],
+      "concepts_available": [
+        "Transgression/Rébellion",
+        "Corps/Anatomie",
+        "Sortie/Transgression"
+      ]
+    },
+    {
+      "aid": 1164,
+      "word_key": "rbw",
+      "root_ar": "ر ب و",
+      "lane_sample": "it | increased,",
+      "top_candidates": [
+        "Croissance/Augmentation(0)",
+        "Usure/Intérêt(0)"
+      ],
+      "concepts_available": [
+        "Croissance/Augmentation",
+        "Usure/Intérêt"
+      ]
+    },
+    {
+      "aid": 1178,
+      "word_key": "h s r",
+      "root_ar": "ح ص ر",
+      "lane_sample": "he, | it, straitened him;",
+      "top_candidates": [
+        "Siège/Confinement(0)"
+      ],
+      "concepts_available": [
+        "Siège/Confinement"
+      ]
+    },
+    {
+      "aid": 2068,
+      "word_key": "bxl",
+      "root_ar": "ب خ ل",
+      "lane_sample": "he was, | became, niggardly, tenacious, stingy, penurious,",
+      "top_candidates": [
+        "Avarice/Rétention(0)"
+      ],
+      "concepts_available": [
+        "Avarice/Rétention"
+      ]
+    },
+    {
+      "aid": 1312,
+      "word_key": "nkr",
+      "root_ar": "ن ك ر",
+      "lane_sample": "he was, | became, ignorant",
+      "top_candidates": [
+        "Déni/Rejet(0)",
+        "Blâmable/Mal(0)",
+        "Sens isolé/Inconnu(0)"
+      ],
+      "concepts_available": [
+        "Déni/Rejet",
+        "Blâmable/Mal",
+        "Sens isolé/Inconnu",
+        "Désaveu/Négation"
+      ]
+    },
+    {
+      "aid": 407,
+      "word_key": "fwq",
+      "root_ar": "ف و ق",
+      "lane_sample": "he | was,",
+      "top_candidates": [
+        "Supériorité/Dessus(0)",
+        "Rétablissement(0)",
+        "Sens isolé/Encoche(0)"
+      ],
+      "concepts_available": [
+        "Supériorité/Dessus",
+        "Rétablissement",
+        "Sens isolé/Encoche"
+      ]
+    },
+    {
+      "aid": 1283,
+      "word_key": "hwr",
+      "root_ar": "ح و ر",
+      "lane_sample": "he, | it, returned,",
+      "top_candidates": [
+        "Retour/Conversion(2)",
+        "Blancheur/Beauté(0)",
+        "Sens isolé/Discuter(0)"
+      ],
+      "concepts_available": [
+        "Retour/Conversion",
+        "Blancheur/Beauté",
+        "Sens isolé/Discuter"
+      ]
+    },
+    {
+      "aid": 416,
+      "word_key": "adm",
+      "root_ar": "ء د م",
+      "lane_sample": "he mixed the bread with | seasoning;",
+      "top_candidates": [
+        "Surface/Peau(0)",
+        "Assaisonnement(0)",
+        "Sens isolé/Exemple(0)"
+      ],
+      "concepts_available": [
+        "Surface/Peau",
+        "Assaisonnement",
+        "Sens isolé/Exemple"
+      ]
+    },
+    {
+      "aid": 417,
+      "word_key": "erd",
+      "root_ar": "ع ر ض",
+      "lane_sample": "it was, | became, broad,",
+      "top_candidates": [
+        "Largeur/Étendue(0)",
+        "Présentation/Exposition(0)"
+      ],
+      "concepts_available": [
+        "Largeur/Étendue",
+        "Présentation/Exposition"
+      ]
+    },
+    {
+      "aid": 425,
+      "word_key": "ehd",
+      "root_ar": "ع ه د",
+      "lane_sample": "he enjoined, charged, bade, ordered, | commanded, him;",
+      "top_candidates": [
+        "Engagement/Promesse(0)",
+        "Sens isolé/Époque(0)"
+      ],
+      "concepts_available": [
+        "Engagement/Promesse",
+        "Sens isolé/Époque"
+      ]
+    },
+    {
+      "aid": 426,
+      "word_key": "wthq",
+      "root_ar": "و ث ق",
+      "lane_sample": "it was, | became, firm, stable, fast,",
+      "top_candidates": [
+        "Fermeté/Confiance(0)"
+      ],
+      "concepts_available": [
+        "Fermeté/Confiance"
+      ]
+    },
+    {
+      "aid": 428,
+      "word_key": "amr",
+      "root_ar": "أ م ر",
+      "lane_sample": "he commanded him; ordered him; bade him; enjoined him; | contr  of",
+      "top_candidates": [
+        "Commandement/Autorité(0)",
+        "Consultation(0)",
+        "Affaire/Chose(0)"
+      ],
+      "concepts_available": [
+        "Commandement/Autorité",
+        "Consultation",
+        "Affaire/Chose"
+      ]
+    },
+    {
+      "aid": 431,
+      "word_key": "khsr",
+      "root_ar": "خ س ر",
+      "lane_sample": "he lost, | suffered loss",
+      "top_candidates": [
+        "Perte/Diminution(2)",
+        "Égarement(0)",
+        "Destruction(0)"
+      ],
+      "concepts_available": [
+        "Perte/Diminution",
+        "Égarement",
+        "Destruction"
+      ]
+    },
+    {
+      "aid": 436,
+      "word_key": "xlf",
+      "root_ar": "خ ل ف",
+      "lane_sample": "he came after, followed, succeeded, | remained after, another,",
+      "top_candidates": [
+        "Succession/Remplacement(2)",
+        "Position/Arrière(0)"
+      ],
+      "concepts_available": [
+        "Position/Arrière",
+        "Succession/Remplacement"
+      ]
+    },
+    {
+      "aid": 440,
+      "word_key": "sbh",
+      "root_ar": "س ب ح",
+      "lane_sample": "he swam, | in the river",
+      "top_candidates": [
+        "Mouvement/Flottement(2)",
+        "Glorification/Louange(0)"
+      ],
+      "concepts_available": [
+        "Mouvement/Flottement",
+        "Glorification/Louange"
+      ]
+    },
+    {
+      "aid": 447,
+      "word_key": "hkm",
+      "root_ar": "ح ك م",
+      "lane_sample": "he prevented, restrained, | withheld, him",
+      "top_candidates": [
+        "Jugement/Décision(0)",
+        "Autorité/Pouvoir(0)",
+        "Sagesse(0)"
+      ],
+      "concepts_available": [
+        "Jugement/Décision",
+        "Autorité/Pouvoir",
+        "Sagesse"
+      ]
+    },
+    {
+      "aid": 448,
+      "word_key": "sjd",
+      "root_ar": "س ج د",
+      "lane_sample": "he was, | became, lowly, humble,",
+      "top_candidates": [
+        "Prosternation/Adoration(0)",
+        "Lieu de prosternation(0)"
+      ],
+      "concepts_available": [
+        "Prosternation/Adoration",
+        "Lieu de prosternation"
+      ]
+    },
+    {
+      "aid": 451,
+      "word_key": "kbr",
+      "root_ar": "ك ب ر",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Grandeur/Importance(0)",
+        "Orgueil/Arrogance(0)"
+      ],
+      "concepts_available": [
+        "Grandeur/Importance",
+        "Orgueil/Arrogance"
+      ]
+    },
+    {
+      "aid": 456,
+      "word_key": "hbt",
+      "root_ar": "ح ب ط",
+      "lane_sample": "he | ate much,",
+      "top_candidates": [
+        "Annulation/Nullité(0)"
+      ],
+      "concepts_available": [
+        "Annulation/Nullité"
+      ]
+    },
+    {
+      "aid": 457,
+      "word_key": "edw",
+      "root_ar": "ع د و",
+      "lane_sample": "he passed from it, | and left it;",
+      "top_candidates": [
+        "Hostilité/Inimitié(0)",
+        "Course/Vitesse(0)",
+        "Transgression/Excès(0)"
+      ],
+      "concepts_available": [
+        "Hostilité/Inimitié",
+        "Course/Vitesse",
+        "Transgression/Excès"
+      ]
+    },
+    {
+      "aid": 462,
+      "word_key": "skn",
+      "root_ar": "س ك ن",
+      "lane_sample": "it was, | became, still, motionless, stationary, in a state of rest, quiet, calm,",
+      "top_candidates": [
+        "Habitation/Demeure(0)",
+        "Calme/Repos(0)"
+      ],
+      "concepts_available": [
+        "Habitation/Demeure",
+        "Calme/Repos"
+      ]
+    },
+    {
+      "aid": 466,
+      "word_key": "shy",
+      "root_ar": "ش ي أ",
+      "lane_sample": "he, | i, willed, wished,",
+      "top_candidates": [
+        "Chose/Être(0)",
+        "Néant(0)",
+        "Volonté(0)"
+      ],
+      "concepts_available": [
+        "Chose/Être",
+        "Néant",
+        "Volonté"
+      ]
+    },
+    {
+      "aid": 467,
+      "word_key": "qrb",
+      "root_ar": "ق ر ب",
+      "lane_sample": "it, | he, was,",
+      "top_candidates": [
+        "Proximité/Rapprochement(2)",
+        "Offrande/Sacrifice(0)"
+      ],
+      "concepts_available": [
+        "Proximité/Rapprochement",
+        "Offrande/Sacrifice"
+      ]
+    },
+    {
+      "aid": 470,
+      "word_key": "bdw",
+      "root_ar": "ب د و",
+      "lane_sample": "it appeared; it became apparent, open, manifest, plain, | evident",
+      "top_candidates": [
+        "Apparition/Manifestation(0)",
+        "Désert/Nomadisme(0)"
+      ],
+      "concepts_available": [
+        "Apparition/Manifestation",
+        "Désert/Nomadisme"
+      ]
+    },
+    {
+      "aid": 471,
+      "word_key": "ktm",
+      "root_ar": "ك ت م",
+      "lane_sample": "he concealed, | suppressed,",
+      "top_candidates": [
+        "Dissimulation/Secret(2)",
+        "Répression/Étouffement(0)"
+      ],
+      "concepts_available": [
+        "Dissimulation/Secret",
+        "Répression/Étouffement"
+      ]
+    },
+    {
+      "aid": 476,
+      "word_key": "shb",
+      "root_ar": "ص ح ب",
+      "lane_sample": "he associated, kept company, | consorted, with him;",
+      "top_candidates": [
+        "Compagnonnage/Association(0)"
+      ],
+      "concepts_available": [
+        "Compagnonnage/Association"
+      ]
+    },
+    {
+      "aid": 482,
+      "word_key": "khw f",
+      "root_ar": "خ و ف",
+      "lane_sample": "he feared; he was afraid | frightened",
+      "top_candidates": [
+        "Crainte/Peur(2)",
+        "Menace/Danger(0)"
+      ],
+      "concepts_available": [
+        "Crainte/Peur",
+        "Menace/Danger"
+      ]
+    },
+    {
+      "aid": 483,
+      "word_key": "hzn",
+      "root_ar": "ح ز ن",
+      "lane_sample": "he was, | became, affected with",
+      "top_candidates": [
+        "Tristesse/Affliction(0)"
+      ],
+      "concepts_available": [
+        "Tristesse/Affliction"
+      ]
+    },
+    {
+      "aid": 485,
+      "word_key": "dhkr",
+      "root_ar": "ذ ك ر",
+      "lane_sample": "he preserved it in his memory | he remembered it;",
+      "top_candidates": [
+        "Évocation/Mention(0)",
+        "Rappel/Admonition(0)"
+      ],
+      "concepts_available": [
+        "Évocation/Mention",
+        "Rappel/Admonition"
+      ]
+    },
+    {
+      "aid": 1585,
+      "word_key": "hšr",
+      "root_ar": "ح ش ر",
+      "lane_sample": "he congregated, | collected together,",
+      "top_candidates": [
+        "Rassemblement/Résurrection(0)",
+        "Sens isolé/Expulser(0)"
+      ],
+      "concepts_available": [
+        "Rassemblement/Résurrection",
+        "Sens isolé/Expulser"
+      ]
+    },
+    {
+      "aid": 2310,
+      "word_key": "xsm",
+      "root_ar": "خ ص م",
+      "lane_sample": "he contended in an altercation, disputed, | litigated, in a valid,",
+      "top_candidates": [
+        "Conflit/Adversité(0)"
+      ],
+      "concepts_available": [
+        "Conflit/Adversité"
+      ]
+    },
+    {
+      "aid": 688,
+      "word_key": "rsl",
+      "root_ar": "ر س ل",
+      "lane_sample": "he | was,",
+      "top_candidates": [
+        "Envoi/Transmission(0)",
+        "Messager/Porteur(0)"
+      ],
+      "concepts_available": [
+        "Envoi/Transmission",
+        "Messager/Porteur"
+      ]
+    },
+    {
+      "aid": 289,
+      "word_key": "nzl",
+      "root_ar": "ن ز ل",
+      "lane_sample": "he alighted, descended and stopped | sojourned",
+      "top_candidates": [
+        "Descente/Révélation(2)"
+      ],
+      "concepts_available": [
+        "Descente/Révélation"
+      ]
+    },
+    {
+      "aid": 505,
+      "word_key": "rka",
+      "root_ar": "ر ك ع",
+      "lane_sample": "he bowed, | bent, himself;",
+      "top_candidates": [
+        "Inclination/Prière(0)",
+        "Humilité/Abaissement(0)"
+      ],
+      "concepts_available": [
+        "Inclination/Prière",
+        "Humilité/Abaissement"
+      ]
+    },
+    {
+      "aid": 525,
+      "word_key": "wed",
+      "root_ar": "و ع د",
+      "lane_sample": "he promised | he promised him good",
+      "top_candidates": [
+        "Promesse/Engagement(0)",
+        "Menace/Avertissement(0)"
+      ],
+      "concepts_available": [
+        "Promesse/Engagement",
+        "Menace/Avertissement"
+      ]
+    },
+    {
+      "aid": 1480,
+      "word_key": "wrṯ",
+      "root_ar": "و ر ث",
+      "lane_sample": "he inherited | he inherited",
+      "top_candidates": [
+        "Héritage/Succession(0)"
+      ],
+      "concepts_available": [
+        "Héritage/Succession"
+      ]
+    },
+    {
+      "aid": 1721,
+      "word_key": "fqr",
+      "root_ar": "ف ق ر",
+      "lane_sample": "he dug | he dug",
+      "top_candidates": [
+        "Pauvreté/Besoin(0)"
+      ],
+      "concepts_available": [
+        "Pauvreté/Besoin"
+      ]
+    },
+    {
+      "aid": 287,
+      "word_key": "amn",
+      "root_ar": "أ م ن",
+      "lane_sample": "he was, | became,",
+      "top_candidates": [
+        "Sécurité/Confiance(2)"
+      ],
+      "concepts_available": [
+        "Sécurité/Confiance"
+      ]
+    },
+    {
+      "aid": 1582,
+      "word_key": "rsx",
+      "root_ar": "ر س خ",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Fermeté/Enracinement(0)",
+        "Implantation solide(0)"
+      ],
+      "concepts_available": [
+        "Fermeté/Enracinement",
+        "Implantation solide"
+      ]
+    },
+    {
+      "aid": 275,
+      "word_key": "ktb",
+      "root_ar": "ك ت ب",
+      "lane_sample": "he wrote it | he asked",
+      "top_candidates": [
+        "Écriture/Inscription(2)"
+      ],
+      "concepts_available": [
+        "Écriture/Inscription"
+      ]
+    },
+    {
+      "aid": 1716,
+      "word_key": "a j l",
+      "root_ar": "أ ج ل",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Limite/Échéance(0)",
+        "Cause(0)",
+        "Terme/Délai(0)"
+      ],
+      "concepts_available": [
+        "Limite/Échéance",
+        "Cause",
+        "Terme/Délai"
+      ]
+    },
+    {
+      "aid": 2086,
+      "word_key": "nyl",
+      "root_ar": "ن ي ل",
+      "lane_sample": "he defamed him | he defamed him",
+      "top_candidates": [
+        "Obtention/Atteinte(0)",
+        "Fleuve(0)"
+      ],
+      "concepts_available": [
+        "Obtention/Atteinte",
+        "Fleuve"
+      ]
+    },
+    {
+      "aid": 492,
+      "word_key": "thmn",
+      "root_ar": "ث م ن",
+      "lane_sample": "he took the eighth of their goods, | property",
+      "top_candidates": [
+        "Valeur/Prix(0)",
+        "Nombre(0)"
+      ],
+      "concepts_available": [
+        "Valeur/Prix",
+        "Nombre"
+      ]
+    },
+    {
+      "aid": 504,
+      "word_key": "zkw",
+      "root_ar": "ز ك و",
+      "lane_sample": "it increased, | augmented;",
+      "top_candidates": [
+        "Purification/Croissance(0)"
+      ],
+      "concepts_available": [
+        "Purification/Croissance"
+      ]
+    },
+    {
+      "aid": 507,
+      "word_key": "btl",
+      "root_ar": "ب ط ل",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Vanité/Nullité(0)",
+        "Annulation(0)"
+      ],
+      "concepts_available": [
+        "Vanité/Nullité",
+        "Annulation"
+      ]
+    },
+    {
+      "aid": 513,
+      "word_key": "eql",
+      "root_ar": "ع ق ل",
+      "lane_sample": "withholding, | restraining;",
+      "top_candidates": [
+        "Raison/Intelligence(0)",
+        "Lien/Entrave(0)"
+      ],
+      "concepts_available": [
+        "Raison/Intelligence",
+        "Lien/Entrave"
+      ]
+    },
+    {
+      "aid": 537,
+      "word_key": "nsr",
+      "root_ar": "ن ص ر",
+      "lane_sample": "he aided | assisted him,",
+      "top_candidates": [
+        "Secours/Victoire(0)",
+        "Alliance/Soutien(0)"
+      ],
+      "concepts_available": [
+        "Secours/Victoire",
+        "Alliance/Soutien"
+      ]
+    },
+    {
+      "aid": 538,
+      "word_key": "swm",
+      "root_ar": "س و م",
+      "lane_sample": "going, | going away, engaged,",
+      "top_candidates": [
+        "Marque/Signe(0)",
+        "Pâturage(0)",
+        "Affliction(0)"
+      ],
+      "concepts_available": [
+        "Marque/Signe",
+        "Pâturage",
+        "Affliction"
+      ]
+    },
+    {
+      "aid": 502,
+      "word_key": "sbr",
+      "root_ar": "ص ب ر",
+      "lane_sample": "he confined him; held him in custody; detained, retained, restrained, | withheld, him,",
+      "top_candidates": [
+        "Patience/Endurance(0)",
+        "Sens isolé/Emprisonner(0)"
+      ],
+      "concepts_available": [
+        "Patience/Endurance",
+        "Sens isolé/Emprisonner"
+      ]
+    },
+    {
+      "aid": 532,
+      "word_key": "hya",
+      "root_ar": "ه ي أ",
+      "lane_sample": "he was, | became, of good,",
+      "top_candidates": [
+        "Préparation/Disposition(0)",
+        "Facilitation(0)"
+      ],
+      "concepts_available": [
+        "Préparation/Disposition",
+        "Facilitation"
+      ]
+    },
+    {
+      "aid": 1587,
+      "word_key": "ruh",
+      "root_ar": "ر و ح",
+      "lane_sample": "it | was violently windy",
+      "top_candidates": [
+        "Esprit/Vie(0)",
+        "Esprit/Souffle vital(0)",
+        "Sens isolé/Vent(0)"
+      ],
+      "concepts_available": [
+        "Esprit/Vie",
+        "Esprit/Souffle vital",
+        "Sens isolé/Vent"
+      ]
+    },
+    {
+      "aid": 1718,
+      "word_key": "e n d",
+      "root_ar": "ع ن د",
+      "lane_sample": "he declined, | deviated, from it,",
+      "top_candidates": [
+        "Proximité/Présence(0)",
+        "Obstination/Entêtement(0)"
+      ],
+      "concepts_available": [
+        "Proximité/Présence",
+        "Obstination/Entêtement"
+      ]
+    },
+    {
+      "aid": 524,
+      "word_key": "fdl",
+      "root_ar": "ف ض ل",
+      "lane_sample": "it exceeded; | was,",
+      "top_candidates": [
+        "Excellence/Faveur(0)",
+        "Reste/Surplus(0)"
+      ],
+      "concepts_available": [
+        "Excellence/Faveur",
+        "Reste/Surplus"
+      ]
+    },
+    {
+      "aid": 1300,
+      "word_key": "drs",
+      "root_ar": "د ر س",
+      "lane_sample": "it | became effaced, erased, rased,",
+      "top_candidates": [
+        "Étude/Lecture répétée(0)"
+      ],
+      "concepts_available": [
+        "Étude/Lecture répétée"
+      ]
+    },
+    {
+      "aid": 506,
+      "word_key": "lbs",
+      "root_ar": "ل ب س",
+      "lane_sample": "he put on, | wore, the garment",
+      "top_candidates": [
+        "Vêtement/Revêtement(0)",
+        "Confusion/Mélange(0)"
+      ],
+      "concepts_available": [
+        "Vêtement/Revêtement",
+        "Confusion/Mélange"
+      ]
+    },
+    {
+      "aid": 546,
+      "word_key": "škr",
+      "root_ar": "ش ك ر",
+      "lane_sample": "he thanked him; | praised, eulogized,",
+      "top_candidates": [
+        "Gratitude/Reconnaissance(0)"
+      ],
+      "concepts_available": [
+        "Gratitude/Reconnaissance"
+      ]
+    },
+    {
+      "aid": 547,
+      "word_key": "efw",
+      "root_ar": "ع ف و",
+      "lane_sample": "it was, | became, effaced, erased, rased,",
+      "top_candidates": [
+        "Pardon/Effacement(0)",
+        "Surplus/Excès(0)"
+      ],
+      "concepts_available": [
+        "Pardon/Effacement",
+        "Surplus/Excès"
+      ]
+    },
+    {
+      "aid": 555,
+      "word_key": "bra",
+      "root_ar": "ب ر أ",
+      "lane_sample": "he was, | became, clear,",
+      "top_candidates": [
+        "Création/Origination(0)",
+        "Innocence/Pureté(0)",
+        "Création(0)"
+      ],
+      "concepts_available": [
+        "Création/Origination",
+        "Innocence/Pureté",
+        "Création"
+      ]
+    },
+    {
+      "aid": 556,
+      "word_key": "qtl",
+      "root_ar": "ق ت ل",
+      "lane_sample": "he knew the thing; he was, | became, acquainted with it",
+      "top_candidates": [
+        "Meurtre/Combat(0)"
+      ],
+      "concepts_available": [
+        "Meurtre/Combat"
+      ]
+    },
+    {
+      "aid": 564,
+      "word_key": "tyb",
+      "root_ar": "ط ي ب",
+      "lane_sample": "it was, | became, the contr  of",
+      "top_candidates": [
+        "Bonté/Pureté(0)"
+      ],
+      "concepts_available": [
+        "Bonté/Pureté"
+      ]
+    },
+    {
+      "aid": 566,
+      "word_key": "end",
+      "root_ar": "ع ن د",
+      "lane_sample": "he declined, | deviated, from it,",
+      "top_candidates": [
+        "Proximité/Présence(0)",
+        "Opinion/Jugement(0)",
+        "Déviation/Obstination(0)"
+      ],
+      "concepts_available": [
+        "Proximité/Présence",
+        "Opinion/Jugement",
+        "Déviation/Obstination"
+      ]
+    },
+    {
+      "aid": 567,
+      "word_key": "dxl",
+      "root_ar": "د خ ل",
+      "lane_sample": "he, | it, entered;",
+      "top_candidates": [
+        "Entrée/Pénétration(2)",
+        "Ressource(0)"
+      ],
+      "concepts_available": [
+        "Entrée/Pénétration",
+        "Ressource"
+      ]
+    },
+    {
+      "aid": 573,
+      "word_key": "zyd",
+      "root_ar": "ز ي د",
+      "lane_sample": "it | increased,",
+      "top_candidates": [
+        "Augmentation/Surplus(0)"
+      ],
+      "concepts_available": [
+        "Augmentation/Surplus"
+      ]
+    },
+    {
+      "aid": 574,
+      "word_key": "hsn",
+      "root_ar": "ح س ن",
+      "lane_sample": "he, | it",
+      "top_candidates": [
+        "Beauté/Bonté(0)",
+        "Excellence morale(0)"
+      ],
+      "concepts_available": [
+        "Beauté/Bonté",
+        "Excellence morale"
+      ]
+    },
+    {
+      "aid": 579,
+      "word_key": "nbt",
+      "root_ar": "ن ب ت",
+      "lane_sample": "it | grew; grew forth; sprouted; vegetated;",
+      "top_candidates": [
+        "Croissance végétale(0)"
+      ],
+      "concepts_available": [
+        "Croissance végétale"
+      ]
+    },
+    {
+      "aid": 590,
+      "word_key": "eyn",
+      "root_ar": "ع ي ن",
+      "lane_sample": "hitting, | hurting,",
+      "top_candidates": [
+        "Vision/Perception(0)",
+        "Eau vive(0)",
+        "Identité(0)"
+      ],
+      "concepts_available": [
+        "Vision/Perception",
+        "Eau vive",
+        "Identité"
+      ]
+    },
+    {
+      "aid": 596,
+      "word_key": "byn",
+      "root_ar": "ب ي ن",
+      "lane_sample": "it | a thing",
+      "top_candidates": [
+        "Clarté/Évidence(0)",
+        "Séparation/Distance(0)"
+      ],
+      "concepts_available": [
+        "Clarté/Évidence",
+        "Séparation/Distance"
+      ]
+    },
+    {
+      "aid": 605,
+      "word_key": "twr",
+      "root_ar": "ط و ر",
+      "lane_sample": "he went, | hovered,",
+      "top_candidates": [
+        "Montagne/Révélation(0)",
+        "Phase/Développement(0)",
+        "Approche/Proximité(0)"
+      ],
+      "concepts_available": [
+        "Montagne/Révélation",
+        "Phase/Développement",
+        "Approche/Proximité"
+      ]
+    },
+    {
+      "aid": 609,
+      "word_key": "ajr",
+      "root_ar": "أ ج ر",
+      "lane_sample": "he | recompensed, compensated,",
+      "top_candidates": [
+        "Rétribution/Salaire(2)",
+        "Location/Loyer(0)"
+      ],
+      "concepts_available": [
+        "Rétribution/Salaire",
+        "Location/Loyer"
+      ]
+    },
+    {
+      "aid": 1769,
+      "word_key": "ðwq",
+      "root_ar": "ذ و ق",
+      "lane_sample": "he tasted it; | perceived its taste, by means of the moisture of the tongue",
+      "top_candidates": [
+        "Expérience sensorielle(0)",
+        "Goût/Saveur(0)",
+        "Sens isolé/Échantillon(0)"
+      ],
+      "concepts_available": [
+        "Expérience sensorielle",
+        "Goût/Saveur",
+        "Sens isolé/Échantillon"
+      ]
+    },
+    {
+      "aid": 623,
+      "word_key": "ewḏ",
+      "root_ar": "ع و ذ",
+      "lane_sample": "he sought protection, | preservation, by him; sought,",
+      "top_candidates": [
+        "Protection/Abri(0)"
+      ],
+      "concepts_available": [
+        "Protection/Abri"
+      ]
+    },
+    {
+      "aid": 1758,
+      "word_key": "ghdw",
+      "root_ar": "غ د و",
+      "lane_sample": "he went, | went away, in the time called",
+      "top_candidates": [
+        "Temps matinal/Départ(2)",
+        "Lendemain/Demain(0)"
+      ],
+      "concepts_available": [
+        "Temps matinal/Départ",
+        "Lendemain/Demain"
+      ]
+    },
+    {
+      "aid": 987,
+      "word_key": "blgh",
+      "root_ar": "ب ل غ",
+      "lane_sample": "reaching, attaining, arriving at, | coming to, the utmost point of that to which,",
+      "top_candidates": [
+        "Atteinte/Accomplissement(2)",
+        "Atteinte/Parvenance(2)",
+        "Transmission/Communication(0)"
+      ],
+      "concepts_available": [
+        "Atteinte/Accomplissement",
+        "Atteinte/Parvenance",
+        "Transmission/Communication"
+      ]
+    },
+    {
+      "aid": 626,
+      "word_key": "hrth",
+      "root_ar": "ح ر ث",
+      "lane_sample": "he gained, acquired, | earned,",
+      "top_candidates": [
+        "Culture/Effort(0)",
+        "Récolte/Profit(0)"
+      ],
+      "concepts_available": [
+        "Culture/Effort",
+        "Récolte/Profit"
+      ]
+    },
+    {
+      "aid": 627,
+      "word_key": "slm",
+      "root_ar": "س ل م",
+      "lane_sample": "he was, | became, safe,",
+      "top_candidates": [
+        "Intégrité/Préservation(2)"
+      ],
+      "concepts_available": [
+        "Intégrité/Préservation"
+      ]
+    },
+    {
+      "aid": 631,
+      "word_key": "dwr",
+      "root_ar": "د و ر",
+      "lane_sample": "he, | it, went, moved,",
+      "top_candidates": [
+        "Cycle/Rotation(2)",
+        "Demeure(0)"
+      ],
+      "concepts_available": [
+        "Cycle/Rotation",
+        "Demeure"
+      ]
+    },
+    {
+      "aid": 642,
+      "word_key": "ghfl",
+      "root_ar": "غ ف ل",
+      "lane_sample": "he was, | became, unmindful, forgetful, neglectful,",
+      "top_candidates": [
+        "Insouciance/Négligence(0)"
+      ],
+      "concepts_available": [
+        "Insouciance/Négligence"
+      ]
+    },
+    {
+      "aid": 647,
+      "word_key": "ksb",
+      "root_ar": "ك س ب",
+      "lane_sample": "he collected | he gained, acquired,",
+      "top_candidates": [
+        "Acquisition/Rétribution(0)",
+        "Effort/Travail(0)"
+      ],
+      "concepts_available": [
+        "Acquisition/Rétribution",
+        "Effort/Travail"
+      ]
+    },
+    {
+      "aid": 651,
+      "word_key": "khlf",
+      "root_ar": "خ ل ف",
+      "lane_sample": "he came after, followed, succeeded, | remained after, another,",
+      "top_candidates": [
+        "Succession/Différence(2)"
+      ],
+      "concepts_available": [
+        "Succession/Différence"
+      ]
+    },
+    {
+      "aid": 668,
+      "word_key": "zhr",
+      "root_ar": "ظ ه ر",
+      "lane_sample": "it was, | became, outward, exterior, external, extrinsic,",
+      "top_candidates": [
+        "Manifestation/Dos(0)"
+      ],
+      "concepts_available": [
+        "Manifestation/Dos"
+      ]
+    },
+    {
+      "aid": 671,
+      "word_key": "hrm",
+      "root_ar": "ح ر م",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Interdiction/Sacré(0)"
+      ],
+      "concepts_available": [
+        "Interdiction/Sacré"
+      ]
+    },
+    {
+      "aid": 682,
+      "word_key": "erf",
+      "root_ar": "ع ر ف",
+      "lane_sample": "he knew it; he had cognition of it; | he was,",
+      "top_candidates": [
+        "Connaissance/Identification(3)",
+        "Connaissance/Reconnaissance(2)"
+      ],
+      "concepts_available": [
+        "Connaissance/Reconnaissance",
+        "Connaissance/Identification"
+      ]
+    },
+    {
+      "aid": 692,
+      "word_key": "ayd",
+      "root_ar": "أ ي د",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Soutien/Force(0)"
+      ],
+      "concepts_available": [
+        "Soutien/Force"
+      ]
+    },
+    {
+      "aid": 698,
+      "word_key": "qdm",
+      "root_ar": "ق د م",
+      "lane_sample": "he became before the people | he preceded them; went before them; took precedence of them; headed th",
+      "top_candidates": [
+        "Antériorité/Établissement(2)",
+        "Antériorité/Précédence(0)",
+        "Pied/Marche(0)"
+      ],
+      "concepts_available": [
+        "Antériorité/Établissement",
+        "Antériorité/Précédence",
+        "Pied/Marche"
+      ]
+    },
+    {
+      "aid": 713,
+      "word_key": "bas",
+      "root_ar": "ب أ س",
+      "lane_sample": "he was, | became, mighty,",
+      "top_candidates": [
+        "Puissance/Malheur(0)"
+      ],
+      "concepts_available": [
+        "Puissance/Malheur"
+      ]
+    },
+    {
+      "aid": 2597,
+      "word_key": "nbv",
+      "root_ar": "ن ب ذ",
+      "lane_sample": "he cast, threw, | flung, it away, as a thing esteemed of no account",
+      "top_candidates": [
+        "Rejet/Abandon(0)"
+      ],
+      "concepts_available": [
+        "Rejet/Abandon"
+      ]
+    },
+    {
+      "aid": 515,
+      "word_key": "frq",
+      "root_ar": "ف ر ق",
+      "lane_sample": "he made a separation, | a distinction,",
+      "top_candidates": [
+        "Séparation/Distinction(0)",
+        "Groupe/Partie(0)"
+      ],
+      "concepts_available": [
+        "Séparation/Distinction",
+        "Groupe/Partie"
+      ]
+    },
+    {
+      "aid": 711,
+      "word_key": "rfe",
+      "root_ar": "ر ف ع",
+      "lane_sample": "he raised it | he elevated it; upraised it; uplifted it  he took it up  contr  of",
+      "top_candidates": [
+        "Élévation/Exaltation(0)",
+        "Suppression(0)"
+      ],
+      "concepts_available": [
+        "Élévation/Exaltation",
+        "Suppression"
+      ]
+    },
+    {
+      "aid": 2117,
+      "word_key": "knw",
+      "root_ar": "ك و ن",
+      "lane_sample": "he or it was | zeyd was standing",
+      "top_candidates": [
+        "Existence/Devenir(0)"
+      ],
+      "concepts_available": [
+        "Existence/Devenir"
+      ]
+    },
+    {
+      "aid": 2599,
+      "word_key": "mvl",
+      "root_ar": "م ث ل",
+      "lane_sample": "he stood erect; | before him",
+      "top_candidates": [
+        "Similitude/Comparaison(0)",
+        "Ressemblance/Identité(0)"
+      ],
+      "concepts_available": [
+        "Similitude/Comparaison",
+        "Ressemblance/Identité"
+      ]
+    },
+    {
+      "aid": 2376,
+      "word_key": "ḫðl",
+      "root_ar": "خ ذ ل",
+      "lane_sample": "he abstained from, | neglected, aiding him,",
+      "top_candidates": [
+        "Abandon/Trahison(0)",
+        "Non-secours/Privation de soutien(0)"
+      ],
+      "concepts_available": [
+        "Abandon/Trahison",
+        "Non-secours/Privation de soutien"
+      ]
+    },
+    {
+      "aid": 706,
+      "word_key": "alf",
+      "root_ar": "أ ل ف",
+      "lane_sample": "he kept, | clave, to it;",
+      "top_candidates": [
+        "Nombre/Multitude(0)",
+        "Union/Réconciliation(0)",
+        "Habitude(0)"
+      ],
+      "concepts_available": [
+        "Nombre/Multitude",
+        "Union/Réconciliation",
+        "Habitude",
+        "Mille/Nombre"
+      ]
+    },
+    {
+      "aid": 2670,
+      "word_key": "syr2",
+      "root_ar": "س ي ر",
+      "lane_sample": "he, | it, went",
+      "top_candidates": [
+        "Voyage/Marche(0)",
+        "Manière/Conduite(0)"
+      ],
+      "concepts_available": [
+        "Voyage/Marche",
+        "Manière/Conduite"
+      ]
+    },
+    {
+      "aid": 2671,
+      "word_key": "srf2",
+      "root_ar": "س ر ف",
+      "lane_sample": "he was ignorant | he was unmindful, negligent,",
+      "top_candidates": [
+        "Excès/Gaspillage(0)",
+        "Sens isolé/Ignorance(0)"
+      ],
+      "concepts_available": [
+        "Excès/Gaspillage",
+        "Sens isolé/Ignorance"
+      ]
+    },
+    {
+      "aid": 1343,
+      "word_key": "wkl",
+      "root_ar": "و ك ل",
+      "lane_sample": "he left him to his opinion, | judgment",
+      "top_candidates": [
+        "Délégation/Remise(0)"
+      ],
+      "concepts_available": [
+        "Délégation/Remise"
+      ]
+    },
+    {
+      "aid": 2605,
+      "word_key": "gyb",
+      "root_ar": "غ ي ب",
+      "lane_sample": "he, | it, was,",
+      "top_candidates": [
+        "Absence/Invisibilité(0)",
+        "Mystère/Inconnaissable(0)"
+      ],
+      "concepts_available": [
+        "Absence/Invisibilité",
+        "Mystère/Inconnaissable"
+      ]
+    },
+    {
+      "aid": 598,
+      "word_key": "wez",
+      "root_ar": "و ع ظ",
+      "lane_sample": "he exhorted him, admonished him, | warned him; he put him in fear",
+      "top_candidates": [
+        "Exhortation/Conseil(0)",
+        "Exhortation/Conseil moral(0)"
+      ],
+      "concepts_available": [
+        "Exhortation/Conseil",
+        "Exhortation/Conseil moral"
+      ]
+    },
+    {
+      "aid": 726,
+      "word_key": "thwb",
+      "root_ar": "ث و ب",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Vêtement/Rétribution(2)",
+        "Récompense/Retour(2)"
+      ],
+      "concepts_available": [
+        "Vêtement/Rétribution",
+        "Récompense/Retour"
+      ]
+    },
+    {
+      "aid": 727,
+      "word_key": "khyr",
+      "root_ar": "خ ي ر",
+      "lane_sample": "he | was,",
+      "top_candidates": [
+        "Bien/Excellence(0)"
+      ],
+      "concepts_available": [
+        "Bien/Excellence"
+      ]
+    },
+    {
+      "aid": 729,
+      "word_key": "tba",
+      "root_ar": "ت ب ع",
+      "lane_sample": "he followed; | went,",
+      "top_candidates": [
+        "Suivre/Accompagner(0)",
+        "Rattraper/Atteindre(0)"
+      ],
+      "concepts_available": [
+        "Suivre/Accompagner",
+        "Rattraper/Atteindre"
+      ]
+    },
+    {
+      "aid": 730,
+      "word_key": "tlw",
+      "root_ar": "ت ل و",
+      "lane_sample": "he followed; | went,",
+      "top_candidates": [
+        "Suite/Succession(2)",
+        "Récitation/Succession(0)"
+      ],
+      "concepts_available": [
+        "Récitation/Succession",
+        "Suite/Succession"
+      ]
+    },
+    {
+      "aid": 731,
+      "word_key": "shr",
+      "root_ar": "س ح ر",
+      "lane_sample": "he, | it, hit,",
+      "top_candidates": [
+        "Magie/Aube(0)"
+      ],
+      "concepts_available": [
+        "Magie/Aube"
+      ]
+    },
+    {
+      "aid": 736,
+      "word_key": "ahl",
+      "root_ar": "أ ه ل",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Famille/Communauté(0)",
+        "Mérite/Aptitude(0)",
+        "Sens isolé/Accueillir(0)"
+      ],
+      "concepts_available": [
+        "Famille/Communauté",
+        "Mérite/Aptitude",
+        "Sens isolé/Accueillir"
+      ]
+    },
+    {
+      "aid": 737,
+      "word_key": "shrk",
+      "root_ar": "ش ر ك",
+      "lane_sample": "he shared, participated, | partook, with him in it;",
+      "top_candidates": [
+        "Association/Polythéisme(0)"
+      ],
+      "concepts_available": [
+        "Association/Polythéisme"
+      ]
+    },
+    {
+      "aid": 753,
+      "word_key": "qnt",
+      "root_ar": "ق ن ت",
+      "lane_sample": "being obedient | being constantly obedient",
+      "top_candidates": [
+        "Dévotion/Humilité(0)"
+      ],
+      "concepts_available": [
+        "Dévotion/Humilité"
+      ]
+    },
+    {
+      "aid": 761,
+      "word_key": "lys",
+      "root_ar": "ل ي س",
+      "lane_sample": "zeyd is not a person standing | he has bounties the bestowing of which is not on alternate days; and",
+      "top_candidates": [
+        "Négation/Non-existence(0)"
+      ],
+      "concepts_available": [
+        "Négation/Non-existence"
+      ]
+    },
+    {
+      "aid": 790,
+      "word_key": "twf",
+      "root_ar": "ط و ف",
+      "lane_sample": "going, | walking,",
+      "top_candidates": [
+        "Circumambulation/Visite(0)"
+      ],
+      "concepts_available": [
+        "Circumambulation/Visite"
+      ]
+    },
+    {
+      "aid": 796,
+      "word_key": "syr",
+      "root_ar": "ص ي ر",
+      "lane_sample": "he, | it, attained to the state,",
+      "top_candidates": [
+        "Devenir/Destination(0)"
+      ],
+      "concepts_available": [
+        "Devenir/Destination"
+      ]
+    },
+    {
+      "aid": 2672,
+      "word_key": "dxr",
+      "root_ar": "ذ خ ر",
+      "lane_sample": "he hoarded it, treasured it, | laid it up for the future; reposited it,",
+      "top_candidates": [
+        "Mise en réserve/Stockage(0)",
+        "Trésor/Réserve précieuse(0)"
+      ],
+      "concepts_available": [
+        "Mise en réserve/Stockage",
+        "Trésor/Réserve précieuse"
+      ]
+    },
+    {
+      "aid": 812,
+      "word_key": "rdw",
+      "root_ar": "ر ض و",
+      "lane_sample": "he was pleased, well pleased, content, contented, | satisfied, with him; regarded him with good will",
+      "top_candidates": [
+        "Satisfaction/Agrément(0)",
+        "Choix/Préférence(0)"
+      ],
+      "concepts_available": [
+        "Satisfaction/Agrément",
+        "Choix/Préférence"
+      ]
+    },
+    {
+      "aid": 2673,
+      "word_key": "isr2",
+      "root_ar": "أ ص ر",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Engagement contraignant(0)",
+        "Fardeau/Charge lourde(0)"
+      ],
+      "concepts_available": [
+        "Engagement contraignant",
+        "Fardeau/Charge lourde"
+      ]
+    },
+    {
+      "aid": 2676,
+      "word_key": "kbt2",
+      "root_ar": "ك ب ت",
+      "lane_sample": "he threw him down prostrate; | he threw him,",
+      "top_candidates": [
+        "Abaissement/Humiliation(0)",
+        "Refoulement/Mise en échec(0)"
+      ],
+      "concepts_available": [
+        "Abaissement/Humiliation",
+        "Refoulement/Mise en échec"
+      ]
+    },
+    {
+      "aid": 811,
+      "word_key": "hnf",
+      "root_ar": "ح ن ف",
+      "lane_sample": "he, | it, inclined,",
+      "top_candidates": [
+        "Inclinaison/Droiture(0)",
+        "Déviation/Courbure(0)"
+      ],
+      "concepts_available": [
+        "Inclinaison/Droiture",
+        "Déviation/Courbure"
+      ]
+    },
+    {
+      "aid": 2185,
+      "word_key": "nbaa",
+      "root_ar": "ن ب أ",
+      "lane_sample": "he uttered a low voice, | sound",
+      "top_candidates": [
+        "Annonce/Information grave(0)",
+        "Annonce/Information(0)"
+      ],
+      "concepts_available": [
+        "Annonce/Information grave",
+        "Annonce/Information"
+      ]
+    },
+    {
+      "aid": 815,
+      "word_key": "hdr",
+      "root_ar": "ح ض ر",
+      "lane_sample": "he was, | became, present; contr  of",
+      "top_candidates": [
+        "Présence/Témoignage(2)",
+        "Sédentarité/Civilisation(0)"
+      ],
+      "concepts_available": [
+        "Présence/Témoignage",
+        "Sédentarité/Civilisation"
+      ]
+    },
+    {
+      "aid": 2519,
+      "word_key": "lyn",
+      "root_ar": "ل ي ن",
+      "lane_sample": "contr  of | it was,",
+      "top_candidates": [
+        "Douceur/Souplesse(2)",
+        "Souplesse physique(0)",
+        "Tendresse/Bienveillance(0)"
+      ],
+      "concepts_available": [
+        "Douceur/Souplesse",
+        "Souplesse physique",
+        "Tendresse/Bienveillance"
+      ]
+    },
+    {
+      "aid": 2623,
+      "word_key": "xyb",
+      "root_ar": "خ ي ب",
+      "lane_sample": "he | was disappointed of attaining what he desired",
+      "top_candidates": [
+        "Échec/Déception(0)",
+        "Perte/Privation(0)"
+      ],
+      "concepts_available": [
+        "Échec/Déception",
+        "Perte/Privation"
+      ]
+    },
+    {
+      "aid": 2679,
+      "word_key": "wdhr",
+      "root_ar": "و ذ ر",
+      "lane_sample": "he leaves, lets alone, | ceases",
+      "top_candidates": [
+        "Abandon/Délaissement(0)",
+        "Permission/Tolérance(0)"
+      ],
+      "concepts_available": [
+        "Abandon/Délaissement",
+        "Permission/Tolérance"
+      ]
+    },
+    {
+      "aid": 827,
+      "word_key": "xlw",
+      "root_ar": "خ ل و",
+      "lane_sample": "it was, | became, empty, vacant, void, devoid, destitute,",
+      "top_candidates": [
+        "Vacuité/Solitude(2)",
+        "Passage/Passé(0)",
+        "Abandon(0)"
+      ],
+      "concepts_available": [
+        "Vacuité/Solitude",
+        "Passage/Passé",
+        "Abandon"
+      ]
+    },
+    {
+      "aid": 837,
+      "word_key": "dye",
+      "root_ar": "ض ي ع",
+      "lane_sample": "it | perished, came to nought, passed away,",
+      "top_candidates": [
+        "Perte/Gaspillage(2)"
+      ],
+      "concepts_available": [
+        "Perte/Gaspillage"
+      ]
+    },
+    {
+      "aid": 853,
+      "word_key": "mtae",
+      "root_ar": "م ت ع",
+      "lane_sample": "the day became advanced, the sun being high, | before the declining of the sun from the meridian",
+      "top_candidates": [
+        "Jouissance/Profit(0)",
+        "Bien/Provision(0)"
+      ],
+      "concepts_available": [
+        "Jouissance/Profit",
+        "Bien/Provision"
+      ]
+    },
+    {
+      "aid": 879,
+      "word_key": "ftn",
+      "root_ar": "ف ت ن",
+      "lane_sample": "he burned it | the day,",
+      "top_candidates": [
+        "Épreuve/Tentation(0)",
+        "Désordre/Persécution(0)"
+      ],
+      "concepts_available": [
+        "Épreuve/Tentation",
+        "Désordre/Persécution"
+      ]
+    },
+    {
+      "aid": 917,
+      "word_key": "swb",
+      "root_ar": "ص و ب",
+      "lane_sample": "it poured forth; | it descended;",
+      "top_candidates": [
+        "Atteinte/Affliction(0)",
+        "Justesse/Rectitude(0)"
+      ],
+      "concepts_available": [
+        "Atteinte/Affliction",
+        "Justesse/Rectitude"
+      ]
+    },
+    {
+      "aid": 918,
+      "word_key": "blw",
+      "root_ar": "ب ل و",
+      "lane_sample": "he | tried, proved,",
+      "top_candidates": [
+        "Épreuve/Test(0)",
+        "Usure(0)"
+      ],
+      "concepts_available": [
+        "Épreuve/Test",
+        "Usure"
+      ]
+    },
+    {
+      "aid": 923,
+      "word_key": "sfw",
+      "root_ar": "ص ف و",
+      "lane_sample": "it was, | became, clear, limpid,",
+      "top_candidates": [
+        "Pureté/Clarté(2)",
+        "Élection/Choix(0)"
+      ],
+      "concepts_available": [
+        "Pureté/Clarté",
+        "Élection/Choix"
+      ]
+    },
+    {
+      "aid": 925,
+      "word_key": "twe",
+      "root_ar": "ط و ع",
+      "lane_sample": "he was, | became, submissive to him;",
+      "top_candidates": [
+        "Obéissance/Soumission volontaire(0)",
+        "Capacité/Pouvoir(0)"
+      ],
+      "concepts_available": [
+        "Obéissance/Soumission volontaire",
+        "Capacité/Pouvoir"
+      ]
+    },
+    {
+      "aid": 926,
+      "word_key": "baed",
+      "root_ar": "ب ع د",
+      "lane_sample": "he, | it, was,",
+      "top_candidates": [
+        "Éloignement/Distance(2)",
+        "Postériorité(0)",
+        "Mort/Destruction(0)"
+      ],
+      "concepts_available": [
+        "Éloignement/Distance",
+        "Postériorité",
+        "Mort/Destruction"
+      ]
+    },
+    {
+      "aid": 943,
+      "word_key": "hsr",
+      "root_ar": "ح س ر",
+      "lane_sample": "he removed it, put it off, took it off, | stripped if off,",
+      "top_candidates": [
+        "Regret/Désolation(0)",
+        "Découvrement/Révélation(0)",
+        "Épuisement(0)"
+      ],
+      "concepts_available": [
+        "Regret/Désolation",
+        "Découvrement/Révélation",
+        "Épuisement"
+      ]
+    },
+    {
+      "aid": 947,
+      "word_key": "akl",
+      "root_ar": "أ ك ل",
+      "lane_sample": "he ate it, | swallowing",
+      "top_candidates": [
+        "Alimentation/Consommation(2)",
+        "Destruction/Érosion(1)"
+      ],
+      "concepts_available": [
+        "Alimentation/Consommation",
+        "Destruction/Érosion"
+      ]
+    },
+    {
+      "aid": 948,
+      "word_key": "btn",
+      "root_ar": "ب ط ن",
+      "lane_sample": "he | was,",
+      "top_candidates": [
+        "Intériorité/Profondeur(0)",
+        "Lignée/Subdivision(0)"
+      ],
+      "concepts_available": [
+        "Intériorité/Profondeur",
+        "Lignée/Subdivision"
+      ]
+    },
+    {
+      "aid": 963,
+      "word_key": "jwb",
+      "root_ar": "ج و ب",
+      "lane_sample": "he made a hole in it; | rent,",
+      "top_candidates": [
+        "Réponse/Exaucement(0)",
+        "Traversée/Percement(0)"
+      ],
+      "concepts_available": [
+        "Réponse/Exaucement",
+        "Traversée/Percement"
+      ]
+    },
+    {
+      "aid": 975,
+      "word_key": "byd",
+      "root_ar": "ب ي ض",
+      "lane_sample": "he surpassed him in whiteness | she laid her eggs,",
+      "top_candidates": [
+        "Blancheur/Clarté(0)",
+        "Œuf/Protection(0)",
+        "Sens isolé/Œuf concret(0)"
+      ],
+      "concepts_available": [
+        "Blancheur/Clarté",
+        "Œuf/Protection",
+        "Sens isolé/Œuf concret"
+      ]
+    },
+    {
+      "aid": 976,
+      "word_key": "swd",
+      "root_ar": "س و د",
+      "lane_sample": "he was, | became,",
+      "top_candidates": [
+        "Noirceur/Obscurité(0)",
+        "Prééminence/Maîtrise(0)"
+      ],
+      "concepts_available": [
+        "Noirceur/Obscurité",
+        "Prééminence/Maîtrise"
+      ]
+    },
+    {
+      "aid": 2682,
+      "word_key": "Dye",
+      "root_ar": "ض ي ع",
+      "lane_sample": "it | perished, came to nought, passed away,",
+      "top_candidates": [
+        "Perte/Perdition(2)",
+        "Négligence/Gaspillage(0)"
+      ],
+      "concepts_available": [
+        "Perte/Perdition",
+        "Négligence/Gaspillage"
+      ]
+    },
+    {
+      "aid": 980,
+      "word_key": "thqf",
+      "root_ar": "ث ق ف",
+      "lane_sample": "he | became skilled,",
+      "top_candidates": [
+        "Rencontre/Découverte(0)",
+        "Habileté(0)",
+        "Saisie vive/Acuité(0)"
+      ],
+      "concepts_available": [
+        "Rencontre/Découverte",
+        "Habileté",
+        "Saisie vive/Acuité"
+      ]
+    },
+    {
+      "aid": 982,
+      "word_key": "hlk",
+      "root_ar": "ه ل ك",
+      "lane_sample": "he, | it, perished, came to nought, came to an end, passed away, was not, was no more,",
+      "top_candidates": [
+        "Destruction/Anéantissement(2)",
+        "Sens isolé/Gaspiller(0)",
+        "Perte/Anéantissement(0)"
+      ],
+      "concepts_available": [
+        "Destruction/Anéantissement",
+        "Sens isolé/Gaspiller",
+        "Perte/Anéantissement"
+      ]
+    },
+    {
+      "aid": 994,
+      "word_key": "nsb",
+      "root_ar": "ن ص ب",
+      "lane_sample": "he set up, put up, set upright, erected, | he elevated, raised, reared,",
+      "top_candidates": [
+        "Érection/Installation(0)",
+        "Fatigue/Peine(0)"
+      ],
+      "concepts_available": [
+        "Érection/Installation",
+        "Fatigue/Peine"
+      ]
+    },
+    {
+      "aid": 995,
+      "word_key": "sre",
+      "root_ar": "س ر ع",
+      "lane_sample": "he, | it, was quick, expeditious, hasty, speedy, rapid, swift,",
+      "top_candidates": [
+        "Vitesse/Empressement(0)"
+      ],
+      "concepts_available": [
+        "Vitesse/Empressement"
+      ]
+    },
+    {
+      "aid": 1003,
+      "word_key": "mhd",
+      "root_ar": "م ه د",
+      "lane_sample": "he made plain, even, | smooth,",
+      "top_candidates": [
+        "Préparation/Aplanissement(0)",
+        "Berceau/Couche(0)",
+        "Terre/Étendue(0)"
+      ],
+      "concepts_available": [
+        "Préparation/Aplanissement",
+        "Berceau/Couche",
+        "Terre/Étendue"
+      ]
+    },
+    {
+      "aid": 1006,
+      "word_key": "zyn",
+      "root_ar": "ز ي ن",
+      "lane_sample": "he, | it, adorned, ornamented, decorated, decked, bedecked, garnished, embellished, beautified,",
+      "top_candidates": [
+        "Beauté/Ornement(0)",
+        "Séduction/Illusion(0)"
+      ],
+      "concepts_available": [
+        "Beauté/Ornement",
+        "Séduction/Illusion"
+      ]
+    },
+    {
+      "aid": 1010,
+      "word_key": "krh",
+      "root_ar": "ك ر ه",
+      "lane_sample": "he disliked, was displeased with, disapproved of, hated, him or it | he did not desire it; he disapp",
+      "top_candidates": [
+        "Aversion/Répugnance(0)",
+        "Contrainte/Force(0)"
+      ],
+      "concepts_available": [
+        "Aversion/Répugnance",
+        "Contrainte/Force"
+      ]
+    },
+    {
+      "aid": 1014,
+      "word_key": "jhd",
+      "root_ar": "ج ه د",
+      "lane_sample": "he strove, laboured, | toiled; exerted himself",
+      "top_candidates": [
+        "Effort/Lutte(0)",
+        "Serment/Engagement(0)",
+        "Sens isolé/Peine(0)"
+      ],
+      "concepts_available": [
+        "Effort/Lutte",
+        "Serment/Engagement",
+        "Sens isolé/Peine"
+      ]
+    },
+    {
+      "aid": 1017,
+      "word_key": "fkr",
+      "root_ar": "ف ك ر",
+      "lane_sample": "he thought upon it, considered it, | examined it",
+      "top_candidates": [
+        "Réflexion/Méditation(0)"
+      ],
+      "concepts_available": [
+        "Réflexion/Méditation"
+      ]
+    },
+    {
+      "aid": 1025,
+      "word_key": "ent",
+      "root_ar": "ع ن ت",
+      "lane_sample": "he fell into a difficult, hard, | distressing, case",
+      "top_candidates": [
+        "Difficulté/Souffrance(0)",
+        "Sens isolé/Fornication(0)",
+        "Épreuve pénible(0)"
+      ],
+      "concepts_available": [
+        "Difficulté/Souffrance",
+        "Sens isolé/Fornication",
+        "Épreuve pénible"
+      ]
+    },
+    {
+      "aid": 1028,
+      "word_key": "ymn",
+      "root_ar": "ي م ن",
+      "lane_sample": "he was prosperous; fortunate; lucky",
+      "top_candidates": [
+        "Droite/Serment(0)",
+        "Bénédiction/Prospérité(0)",
+        "Sens isolé/Yémen(0)"
+      ],
+      "concepts_available": [
+        "Droite/Serment",
+        "Bénédiction/Prospérité",
+        "Sens isolé/Yémen"
+      ]
+    },
+    {
+      "aid": 1029,
+      "word_key": "hlm",
+      "root_ar": "ح ل م",
+      "lane_sample": "he dreamed, | saw a dream",
+      "top_candidates": [
+        "Rêve/Songe(0)",
+        "Clémence/Retenue(0)",
+        "Maturité(0)"
+      ],
+      "concepts_available": [
+        "Rêve/Songe",
+        "Clémence/Retenue",
+        "Maturité"
+      ]
+    },
+    {
+      "aid": 1030,
+      "word_key": "hrṯ",
+      "root_ar": "ح ر ث",
+      "lane_sample": "he gained, acquired, | earned,",
+      "top_candidates": [
+        "Labour/Culture(0)",
+        "Sens isolé/Femme(0)"
+      ],
+      "concepts_available": [
+        "Labour/Culture",
+        "Sens isolé/Femme"
+      ]
+    },
+    {
+      "aid": 1037,
+      "word_key": "alw",
+      "root_ar": "أ ل و",
+      "lane_sample": "he fell short; | he fell short of doing what was requisite,",
+      "top_candidates": [
+        "Persistance/Constance(2)",
+        "Effort/Diligence(2)",
+        "Sens isolé/Bienfait(0)"
+      ],
+      "concepts_available": [
+        "Persistance/Constance",
+        "Effort/Diligence",
+        "Sens isolé/Bienfait"
+      ]
+    },
+    {
+      "aid": 1043,
+      "word_key": "drj",
+      "root_ar": "د ر ج",
+      "lane_sample": "he went on foot; | went step by step; stepped along;",
+      "top_candidates": [
+        "Degré/Rang(0)",
+        "Gradation/Progression(0)"
+      ],
+      "concepts_available": [
+        "Degré/Rang",
+        "Gradation/Progression"
+      ]
+    },
+    {
+      "aid": 2683,
+      "word_key": "beD",
+      "root_ar": "ب ع ض",
+      "lane_sample": "the | gnats,",
+      "top_candidates": [
+        "Partie/Portion(0)"
+      ],
+      "concepts_available": [
+        "Partie/Portion"
+      ]
+    },
+    {
+      "aid": 2684,
+      "word_key": "vwb",
+      "root_ar": "ث و ب",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Retour/Reflux(2)",
+        "Récompense/Rétribution(0)"
+      ],
+      "concepts_available": [
+        "Récompense/Rétribution",
+        "Retour/Reflux"
+      ]
+    },
+    {
+      "aid": 1061,
+      "word_key": "wse",
+      "root_ar": "و س ع",
+      "lane_sample": "the vessel was sufficient in its capacity | dimensions,",
+      "top_candidates": [
+        "Vastitude/Ampleur(0)",
+        "Sens isolé/Élargir(0)"
+      ],
+      "concepts_available": [
+        "Vastitude/Ampleur",
+        "Sens isolé/Élargir"
+      ]
+    },
+    {
+      "aid": 1076,
+      "word_key": "def",
+      "root_ar": "ض ع ف",
+      "lane_sample": "he, | it, was,",
+      "top_candidates": [
+        "Faiblesse/Fragilité(2)",
+        "Faiblesse/Insuffisance(2)",
+        "Multiplication/Double(0)"
+      ],
+      "concepts_available": [
+        "Faiblesse/Fragilité",
+        "Multiplication/Double",
+        "Faiblesse/Insuffisance"
+      ]
+    },
+    {
+      "aid": 1099,
+      "word_key": "ghlb",
+      "root_ar": "غ ل ب",
+      "lane_sample": "he, | it, overcame, conquered, subdued, overpowered, mastered,",
+      "top_candidates": [
+        "Victoire/Domination(0)"
+      ],
+      "concepts_available": [
+        "Victoire/Domination"
+      ]
+    },
+    {
+      "aid": 1100,
+      "word_key": "brz",
+      "root_ar": "ب ر ز",
+      "lane_sample": "he | went,",
+      "top_candidates": [
+        "Apparition/Manifestation(0)",
+        "Confrontation(0)",
+        "Exposition/Mise au jour(0)"
+      ],
+      "concepts_available": [
+        "Apparition/Manifestation",
+        "Confrontation",
+        "Exposition/Mise au jour"
+      ]
+    },
+    {
+      "aid": 1103,
+      "word_key": "thbt",
+      "root_ar": "ث ب ت",
+      "lane_sample": "it | continued, subsisted, lasted, endured, remained, remained fixed",
+      "top_candidates": [
+        "Fermeté/Stabilité(0)",
+        "Confirmation/Preuve(0)"
+      ],
+      "concepts_available": [
+        "Fermeté/Stabilité",
+        "Confirmation/Preuve"
+      ]
+    },
+    {
+      "aid": 1106,
+      "word_key": "dfe",
+      "root_ar": "د ف ع",
+      "lane_sample": "he impelled it, pushed it, thrust it, | drove it;",
+      "top_candidates": [
+        "Repoussement/Défense(0)"
+      ],
+      "concepts_available": [
+        "Repoussement/Défense"
+      ]
+    },
+    {
+      "aid": 1152,
+      "word_key": "tyr",
+      "root_ar": "ط ي ر",
+      "lane_sample": "he | moved in the air by means of his wings; flew;",
+      "top_candidates": [
+        "Vol/Oiseau(0)",
+        "Présage/Destin(0)",
+        "Vol/Mouvement(0)"
+      ],
+      "concepts_available": [
+        "Vol/Oiseau",
+        "Présage/Destin",
+        "Vol/Mouvement"
+      ]
+    },
+    {
+      "aid": 793,
+      "word_key": "bld",
+      "root_ar": "ب ل د",
+      "lane_sample": "he | remained, stayed, abode,",
+      "top_candidates": [
+        "Territoire/Cité(0)"
+      ],
+      "concepts_available": [
+        "Territoire/Cité"
+      ]
+    },
+    {
+      "aid": 1156,
+      "word_key": "trb",
+      "root_ar": "ت ر ب",
+      "lane_sample": "it | became dusted,",
+      "top_candidates": [
+        "Terre/Poussière(0)",
+        "Sens isolé/Être(0)"
+      ],
+      "concepts_available": [
+        "Terre/Poussière",
+        "Sens isolé/Être"
+      ]
+    },
+    {
+      "aid": 2264,
+      "word_key": "dra",
+      "root_ar": "د ر أ",
+      "lane_sample": "he pushed it, | thrust it;",
+      "top_candidates": [
+        "Repoussement/Défense(0)"
+      ],
+      "concepts_available": [
+        "Repoussement/Défense"
+      ]
+    },
+    {
+      "aid": 1162,
+      "word_key": "khbth",
+      "root_ar": "خ ب ث",
+      "lane_sample": "it was, | became,",
+      "top_candidates": [
+        "Impureté/Vilenie(0)"
+      ],
+      "concepts_available": [
+        "Impureté/Vilenie"
+      ]
+    },
+    {
+      "aid": 1169,
+      "word_key": "hrq",
+      "root_ar": "ح ر ق",
+      "lane_sample": "he filed it | he rubbed one part of it with another",
+      "top_candidates": [
+        "Combustion/Feu(0)",
+        "Sens isolé/Grincer(0)"
+      ],
+      "concepts_available": [
+        "Combustion/Feu",
+        "Sens isolé/Grincer"
+      ]
+    },
+    {
+      "aid": 1174,
+      "word_key": "xfy",
+      "root_ar": "خ ف ى",
+      "lane_sample": "it was, | became, unperceived",
+      "top_candidates": [
+        "Dissimulation/Secret(0)"
+      ],
+      "concepts_available": [
+        "Dissimulation/Secret"
+      ]
+    },
+    {
+      "aid": 1195,
+      "word_key": "mhq",
+      "root_ar": "م ح ق",
+      "lane_sample": "he rendered | deficient, and deprived",
+      "top_candidates": [
+        "Anéantissement/Effacement(0)"
+      ],
+      "concepts_available": [
+        "Anéantissement/Effacement"
+      ]
+    },
+    {
+      "aid": 1196,
+      "word_key": "hrb",
+      "root_ar": "ح ر ب",
+      "lane_sample": "he despoiled him of his wealth, | property;",
+      "top_candidates": [
+        "Guerre/Combat(0)",
+        "Dépossession/Perte(0)"
+      ],
+      "concepts_available": [
+        "Guerre/Combat",
+        "Dépossession/Perte"
+      ]
+    },
+    {
+      "aid": 1220,
+      "word_key": "nqm",
+      "root_ar": "ن ق م",
+      "lane_sample": "he exacted vengeance upon him, punished him",
+      "top_candidates": [
+        "Vengeance/Châtiment(2)",
+        "Sens isolé/Détester(0)"
+      ],
+      "concepts_available": [
+        "Vengeance/Châtiment",
+        "Sens isolé/Détester"
+      ]
+    },
+    {
+      "aid": 1227,
+      "word_key": "dab",
+      "root_ar": "د أ ب",
+      "lane_sample": "he strove, laboured, toiled, | exerted himself;",
+      "top_candidates": [
+        "Persévérance/Habitude(0)",
+        "Effort/Labeur(0)"
+      ],
+      "concepts_available": [
+        "Persévérance/Habitude",
+        "Effort/Labeur"
+      ]
+    },
+    {
+      "aid": 1229,
+      "word_key": "dnb",
+      "root_ar": "ذ ن ب",
+      "lane_sample": "he followed his tail, not quitting his track | he followed him",
+      "top_candidates": [
+        "Péché/Faute(0)",
+        "Sens isolé/Queue(0)"
+      ],
+      "concepts_available": [
+        "Péché/Faute",
+        "Sens isolé/Queue"
+      ]
+    },
+    {
+      "aid": 1245,
+      "word_key": "sdr",
+      "root_ar": "ص د ر",
+      "lane_sample": "he returned, went back; | went,",
+      "top_candidates": [
+        "Poitrine/Intériorité(0)",
+        "Émission/Sortie(0)",
+        "Eau/Liquide(0)"
+      ],
+      "concepts_available": [
+        "Poitrine/Intériorité",
+        "Émission/Sortie",
+        "Eau/Liquide"
+      ]
+    },
+    {
+      "aid": 2576,
+      "word_key": "wld",
+      "root_ar": "و ل د",
+      "lane_sample": "she | brought forth",
+      "top_candidates": [
+        "Engendrer/Naissance(0)"
+      ],
+      "concepts_available": [
+        "Engendrer/Naissance"
+      ]
+    },
+    {
+      "aid": 1233,
+      "word_key": "shhw",
+      "root_ar": "ش ه و",
+      "lane_sample": "it | was good, sweet, pleasant,",
+      "top_candidates": [
+        "Désir/Convoitise(0)"
+      ],
+      "concepts_available": [
+        "Désir/Convoitise"
+      ]
+    },
+    {
+      "aid": 2577,
+      "word_key": "kwn",
+      "root_ar": "ك و ن",
+      "lane_sample": "he or it was | zeyd was standing",
+      "top_candidates": [
+        "Être/Existence(0)",
+        "Humilité/Soumission(0)",
+        "Lieu/État(0)"
+      ],
+      "concepts_available": [
+        "Être/Existence",
+        "Humilité/Soumission",
+        "Lieu/État"
+      ]
+    },
+    {
+      "aid": 1238,
+      "word_key": "ebr",
+      "root_ar": "ع ب ر",
+      "lane_sample": "he crossed it, went across it, | passed over it,",
+      "top_candidates": [
+        "Traversée/Passage(1)",
+        "Interprétation/Leçon(0)",
+        "Sens isolé/Pleurer(0)"
+      ],
+      "concepts_available": [
+        "Traversée/Passage",
+        "Interprétation/Leçon",
+        "Sens isolé/Pleurer"
+      ]
+    },
+    {
+      "aid": 1248,
+      "word_key": "nza",
+      "root_ar": "ن ز ع",
+      "lane_sample": "he yearned towards | for, longed for,",
+      "top_candidates": [
+        "Arrachement/Extraction(0)",
+        "Aspiration/Nostalgie(0)"
+      ],
+      "concepts_available": [
+        "Arrachement/Extraction",
+        "Aspiration/Nostalgie"
+      ]
+    },
+    {
+      "aid": 1240,
+      "word_key": "qst",
+      "root_ar": "ق س ط",
+      "lane_sample": "he declined, | deviated, from the right course; acted unjustly, wrongfully, injuriously,",
+      "top_candidates": [
+        "Justice/Équité(2)",
+        "Sens isolé/Être(0)"
+      ],
+      "concepts_available": [
+        "Justice/Équité",
+        "Sens isolé/Être"
+      ]
+    },
+    {
+      "aid": 1251,
+      "word_key": "twa",
+      "root_ar": "ط و ع",
+      "lane_sample": "he was, | became, submissive to him;",
+      "top_candidates": [
+        "Obéissance/Soumission volontaire(0)"
+      ],
+      "concepts_available": [
+        "Obéissance/Soumission volontaire"
+      ]
+    },
+    {
+      "aid": 1256,
+      "word_key": "zkr",
+      "root_ar": "ز ك ر",
+      "lane_sample": "he filled",
+      "top_candidates": [
+        "Mention/Rappel(0)",
+        "Masculin/Mâle(0)",
+        "Nom propre(0)"
+      ],
+      "concepts_available": [
+        "Mention/Rappel",
+        "Masculin/Mâle",
+        "Nom propre"
+      ]
+    },
+    {
+      "aid": 1260,
+      "word_key": "glm",
+      "root_ar": "غ ل م",
+      "lane_sample": "he was, | became, excited by lust,",
+      "top_candidates": [
+        "Jeunesse/Enfant mâle(0)",
+        "Désir/Pulsion(0)",
+        "Excès/Agitation(0)"
+      ],
+      "concepts_available": [
+        "Jeunesse/Enfant mâle",
+        "Désir/Pulsion",
+        "Excès/Agitation",
+        "Sens isolé/Animal",
+        "Sens isolé/Eau"
+      ]
+    },
+    {
+      "aid": 1261,
+      "word_key": "eqr",
+      "root_ar": "ع ق ر",
+      "lane_sample": "he wounded him; | he wounded him much;",
+      "top_candidates": [
+        "Stérilité/Incapacité(0)",
+        "Destruction/Mutilation(0)",
+        "Végétation/Plante(0)"
+      ],
+      "concepts_available": [
+        "Stérilité/Incapacité",
+        "Destruction/Mutilation",
+        "Végétation/Plante",
+        "Bien immobilier/Fondement",
+        "Sens isolé/Vin",
+        "Voix/Cri"
+      ]
+    },
+    {
+      "aid": 1262,
+      "word_key": "wde",
+      "root_ar": "و ض ع",
+      "lane_sample": "he put it, | laid it,",
+      "top_candidates": [
+        "Dépôt/Placement(0)",
+        "Abaissement(0)",
+        "Imposition/Obligation(0)"
+      ],
+      "concepts_available": [
+        "Dépôt/Placement",
+        "Abaissement",
+        "Imposition/Obligation",
+        "Constitution/Forme"
+      ]
+    },
+    {
+      "aid": 1265,
+      "word_key": "rjm",
+      "root_ar": "ر ج م",
+      "lane_sample": "throwing, | casting, of stones",
+      "top_candidates": [
+        "Lapidation/Rejet(0)",
+        "Sens isolé/Conjecturer(0)",
+        "Pierre/Tombe(0)"
+      ],
+      "concepts_available": [
+        "Lapidation/Rejet",
+        "Sens isolé/Conjecturer",
+        "Pierre/Tombe"
+      ]
+    },
+    {
+      "aid": 1266,
+      "word_key": "kfl",
+      "root_ar": "ك ف ل",
+      "lane_sample": "he was, | became, responsible, answerable, accountable, amenable, surety,",
+      "top_candidates": [
+        "Tutelle/Garantie(0)",
+        "Sens isolé/Part(0)",
+        "Corps/Anatomie(0)"
+      ],
+      "concepts_available": [
+        "Tutelle/Garantie",
+        "Sens isolé/Part",
+        "Corps/Anatomie"
+      ]
+    },
+    {
+      "aid": 1272,
+      "word_key": "rmz",
+      "root_ar": "ر م ز",
+      "lane_sample": "he made a sign, | in indication of a thing that might be shown",
+      "top_candidates": [
+        "Signe/Symbole(2)"
+      ],
+      "concepts_available": [
+        "Signe/Symbole"
+      ]
+    },
+    {
+      "aid": 1273,
+      "word_key": "eshw",
+      "root_ar": "ع ش و",
+      "lane_sample": "i  q | he ate the",
+      "top_candidates": [
+        "Aveuglement/Obscurité(0)",
+        "Temps/Cycle(0)"
+      ],
+      "concepts_available": [
+        "Aveuglement/Obscurité",
+        "Temps/Cycle"
+      ]
+    },
+    {
+      "aid": 1276,
+      "word_key": "tyn",
+      "root_ar": "ط ي ن",
+      "lane_sample": "he plastered it, | coated it, with",
+      "top_candidates": [
+        "Argile/Matière première(0)",
+        "Matière/Argile(0)",
+        "Travail/Construction(0)"
+      ],
+      "concepts_available": [
+        "Argile/Matière première",
+        "Matière/Argile",
+        "Travail/Construction",
+        "Nature/Tempérament"
+      ]
+    },
+    {
+      "aid": 1277,
+      "word_key": "nfx",
+      "root_ar": "ن ف خ",
+      "lane_sample": "he blew with his mouth; sent forth wind from his mouth; | he blew the trumpet,",
+      "top_candidates": [
+        "Gonflement/Enflure(1)",
+        "Souffle/Insufflation(0)",
+        "Sens isolé/Gonfler(0)"
+      ],
+      "concepts_available": [
+        "Souffle/Insufflation",
+        "Sens isolé/Gonfler",
+        "Gonflement/Enflure",
+        "Orgueil/Arrogance",
+        "Souffle/Expiration",
+        "Vigueur/Plénitude"
+      ]
+    },
+    {
+      "aid": 1279,
+      "word_key": "brs",
+      "root_ar": "ب ر ص",
+      "lane_sample": "he | was,",
+      "top_candidates": [
+        "Maladie/Blancheur(0)",
+        "Maladie/Lèpre(0)",
+        "Animal/Reptile(0)"
+      ],
+      "concepts_available": [
+        "Maladie/Blancheur",
+        "Maladie/Lèpre",
+        "Animal/Reptile",
+        "Brillance/Éclat",
+        "Marque/Trace",
+        "Lèpre/Maladie"
+      ]
+    },
+    {
+      "aid": 1281,
+      "word_key": "mkr",
+      "root_ar": "م ك ر",
+      "lane_sample": "he practised deceit, guile, | circumvention;",
+      "top_candidates": [
+        "Ruse/Stratagème(0)",
+        "Habileté/Gestion(0)",
+        "Stratégie militaire(0)"
+      ],
+      "concepts_available": [
+        "Ruse/Stratagème",
+        "Habileté/Gestion",
+        "Stratégie militaire",
+        "Rétribution/Compensation",
+        "Tromperie réciproque"
+      ]
+    },
+    {
+      "aid": 1287,
+      "word_key": "bhl",
+      "root_ar": "ب ه ل",
+      "lane_sample": "he left the she-camel without a | bound upon her udder to prevent her being sucked",
+      "top_candidates": [
+        "Malédiction/Imprécation(0)",
+        "Sens isolé/Laisser(0)",
+        "Liberté/Laisser libre(0)"
+      ],
+      "concepts_available": [
+        "Malédiction/Imprécation",
+        "Sens isolé/Laisser",
+        "Liberté/Laisser libre",
+        "Supplication fervente/Humble invocation",
+        "Noblesse/Générosité"
+      ]
+    },
+    {
+      "aid": 1292,
+      "word_key": "khyl",
+      "root_ar": "خ ي ل",
+      "lane_sample": "he thought, | opined, the thing",
+      "top_candidates": [
+        "Cheval/Cavalerie(0)",
+        "Imagination/Apparence(0)",
+        "Orgueil/Prétention(0)"
+      ],
+      "concepts_available": [
+        "Cheval/Cavalerie",
+        "Imagination/Apparence",
+        "Orgueil/Prétention"
+      ]
+    },
+    {
+      "aid": 1303,
+      "word_key": "hwn",
+      "root_ar": "ه و ن",
+      "lane_sample": "he, | it, was,",
+      "top_candidates": [
+        "Facilité/Légèreté(0)",
+        "Humiliation/Mépris(0)"
+      ],
+      "concepts_available": [
+        "Facilité/Légèreté",
+        "Humiliation/Mépris"
+      ]
+    },
+    {
+      "aid": 1309,
+      "word_key": "brk",
+      "root_ar": "ب ر ك",
+      "lane_sample": "i  q | he lay down,",
+      "top_candidates": [
+        "Bénédiction/Abondance(0)",
+        "Repos/Stabilité(0)",
+        "Eau/Liquide(0)"
+      ],
+      "concepts_available": [
+        "Bénédiction/Abondance",
+        "Repos/Stabilité",
+        "Eau/Liquide",
+        "Sens isolé/Agenouillement",
+        "Sens isolé/Étang"
+      ]
+    },
+    {
+      "aid": 1311,
+      "word_key": "ewj",
+      "root_ar": "ع و ج",
+      "lane_sample": "it was, | became, crooked, curved, bent, winding, wry, contorted, distorted,",
+      "top_candidates": [
+        "Torsion/Déviation(0)",
+        "Sinuosité/Biais(0)",
+        "Sens isolé/Défaut moral(0)"
+      ],
+      "concepts_available": [
+        "Torsion/Déviation",
+        "Sinuosité/Biais",
+        "Sens isolé/Défaut moral"
+      ]
+    },
+    {
+      "aid": 1314,
+      "word_key": "esm",
+      "root_ar": "ع ص م",
+      "lane_sample": "i  q | he,",
+      "top_candidates": [
+        "Protection/Préservation(2)",
+        "Minéral/Terre(0)",
+        "Lien/Allégeance(0)"
+      ],
+      "concepts_available": [
+        "Protection/Préservation",
+        "Minéral/Terre",
+        "Lien/Allégeance"
+      ]
+    },
+    {
+      "aid": 1318,
+      "word_key": "hbl",
+      "root_ar": "ح ب ل",
+      "lane_sample": "he bound, tied, | made fast, him,",
+      "top_candidates": [
+        "Lien/Attachement(0)",
+        "Gestation(0)",
+        "Souffle/Vent(0)"
+      ],
+      "concepts_available": [
+        "Lien/Attachement",
+        "Gestation",
+        "Souffle/Vent",
+        "Lasso/Attache concrète"
+      ]
+    },
+    {
+      "aid": 1319,
+      "word_key": "šfw",
+      "root_ar": "ش ف و",
+      "lane_sample": "the sun was, | became, near to setting",
+      "top_candidates": [
+        "Guérison/Remède(0)",
+        "Bord/Limite(0)",
+        "Intercession(0)"
+      ],
+      "concepts_available": [
+        "Guérison/Remède",
+        "Bord/Limite",
+        "Intercession"
+      ]
+    },
+    {
+      "aid": 1320,
+      "word_key": "hfr",
+      "root_ar": "ح ف ر",
+      "lane_sample": "he dug, excavated, | hollowed out,",
+      "top_candidates": [
+        "Creusement/Fosse(0)",
+        "Excavation/Tombe(0)",
+        "Sens isolé/Pied nu(0)"
+      ],
+      "concepts_available": [
+        "Creusement/Fosse",
+        "Excavation/Tombe",
+        "Sens isolé/Pied nu"
+      ]
+    },
+    {
+      "aid": 1323,
+      "word_key": "dbr",
+      "root_ar": "د ب ر",
+      "lane_sample": "he followed behind his back; he followed his back; | he followed him, with respect to place,",
+      "top_candidates": [
+        "Arrière/Postériorité(2)",
+        "Méditation/Réflexion(0)",
+        "Souffle/Vent(0)"
+      ],
+      "concepts_available": [
+        "Arrière/Postériorité",
+        "Méditation/Réflexion",
+        "Souffle/Vent"
+      ]
+    },
+    {
+      "aid": 1329,
+      "word_key": "kyd",
+      "root_ar": "ك ي د",
+      "lane_sample": "he deceived, beguiled, | circumvented, him",
+      "top_candidates": [
+        "Ruse/Stratagème(0)",
+        "Sens isolé/Lutte(0)",
+        "Machination/Complot(0)"
+      ],
+      "concepts_available": [
+        "Ruse/Stratagème",
+        "Sens isolé/Lutte",
+        "Machination/Complot"
+      ]
+    },
+    {
+      "aid": 1345,
+      "word_key": "fwr",
+      "root_ar": "ف و ر",
+      "lane_sample": "it boiled, | estuated",
+      "top_candidates": [
+        "Ébullition/Urgence(0)",
+        "Ébullition concrète(0)"
+      ],
+      "concepts_available": [
+        "Ébullition/Urgence",
+        "Ébullition concrète"
+      ]
+    },
+    {
+      "aid": 382,
+      "word_key": "shhd",
+      "root_ar": "ش ه د",
+      "lane_sample": "he told, | gave information of, what he had witnessed,",
+      "top_candidates": [
+        "Témoignage/Déclaration(0)",
+        "Présence/Constatation(0)",
+        "Serment/Engagement(0)"
+      ],
+      "concepts_available": [
+        "Témoignage/Déclaration",
+        "Présence/Constatation",
+        "Serment/Engagement",
+        "Connaissance/Reconnaissance",
+        "Prise à témoin",
+        "Martyre/Sacrifice",
+        "Miel/Substance"
+      ]
+    },
+    {
+      "aid": 722,
+      "word_key": "adn",
+      "root_ar": "أ ذ ن",
+      "lane_sample": "he  gave ear | listened to it,",
+      "top_candidates": [
+        "Audition/Permission(0)",
+        "Écoute/Oreille(0)",
+        "Annonce/Appel(0)"
+      ],
+      "concepts_available": [
+        "Audition/Permission",
+        "Écoute/Oreille",
+        "Annonce/Appel",
+        "Permission/Autorisation",
+        "Organe/Corps"
+      ]
+    },
+    {
+      "aid": 418,
+      "word_key": "nba",
+      "root_ar": "ن ب أ",
+      "lane_sample": "he uttered a low voice, | sound",
+      "top_candidates": [
+        "Information/Nouvelle(0)",
+        "Prophétie(0)",
+        "Sens isolé/Crier(0)"
+      ],
+      "concepts_available": [
+        "Information/Nouvelle",
+        "Prophétie",
+        "Sens isolé/Crier"
+      ]
+    },
+    {
+      "aid": 1341,
+      "word_key": "bdr",
+      "root_ar": "ب د ر",
+      "lane_sample": "it | became full",
+      "top_candidates": [
+        "Plénitude/Lumière(1)",
+        "Empressement/Initiative(0)",
+        "Lieu/Géographie(0)"
+      ],
+      "concepts_available": [
+        "Empressement/Initiative",
+        "Plénitude/Lumière",
+        "Lieu/Géographie"
+      ]
+    },
+    {
+      "aid": 1346,
+      "word_key": "khms",
+      "root_ar": "خ م س",
+      "lane_sample": "he took the fifth part of the possessions of the people | he took the fifth part of the property",
+      "top_candidates": [
+        "Nombre/Quantité(0)"
+      ],
+      "concepts_available": [
+        "Nombre/Quantité"
+      ]
+    },
+    {
+      "aid": 1349,
+      "word_key": "trf",
+      "root_ar": "ط ر ف",
+      "lane_sample": "he looked from the outer angle of the eye | he twinkled with his eye,",
+      "top_candidates": [
+        "Vision/Coup d'œil(1)",
+        "Bord/Extrémité(0)",
+        "Frange/Extrémité concrète(0)"
+      ],
+      "concepts_available": [
+        "Bord/Extrémité",
+        "Vision/Coup d'œil",
+        "Frange/Extrémité concrète"
+      ]
+    },
+    {
+      "aid": 700,
+      "word_key": "wjd",
+      "root_ar": "و ج د",
+      "lane_sample": "he found it; lighted on it; attained it; obtained it by searching | seeking; discovered it; perceive",
+      "top_candidates": [
+        "Découverte/Existence(2)",
+        "Savoir/Connaissance(0)",
+        "Existence/Être(0)"
+      ],
+      "concepts_available": [
+        "Découverte/Existence",
+        "Savoir/Connaissance",
+        "Existence/Être",
+        "Richesse/Capacité",
+        "Émotion/Passion"
+      ]
+    },
+    {
+      "aid": 734,
+      "word_key": "thlth",
+      "root_ar": "ث ل ث",
+      "lane_sample": "he took the third of the goods, | property, of the people,",
+      "top_candidates": [
+        "Action liée au nombre(2)",
+        "Nombre/Trinité(0)",
+        "Sens isolé/Objet(0)"
+      ],
+      "concepts_available": [
+        "Nombre/Trinité",
+        "Action liée au nombre",
+        "Sens isolé/Objet"
+      ]
+    },
+    {
+      "aid": 2650,
+      "word_key": "ArD",
+      "root_ar": "أ ر ض",
+      "lane_sample": "the land became thriving, | productive;",
+      "top_candidates": [
+        "Terre/Sol(2)",
+        "Fertilité/Production(0)",
+        "Fixité/Attachement(0)"
+      ],
+      "concepts_available": [
+        "Terre/Sol",
+        "Fertilité/Production",
+        "Fixité/Attachement",
+        "Insecte/Vermissure",
+        "Sens isolé/Maladie"
+      ]
+    },
+    {
+      "aid": 1564,
+      "word_key": "khbr",
+      "root_ar": "خ ب ر",
+      "lane_sample": "he knew; | had,",
+      "top_candidates": [
+        "Connaissance/Expérience(3)",
+        "Information/Connaissance(2)",
+        "Information/Nouvelle(0)"
+      ],
+      "concepts_available": [
+        "Information/Connaissance",
+        "Information/Nouvelle",
+        "Connaissance/Expérience",
+        "Sens isolé/Tarir"
+      ]
+    },
+    {
+      "aid": 1328,
+      "word_key": "frh",
+      "root_ar": "ف ر ح",
+      "lane_sample": "he rejoiced; was joyful, | glad;",
+      "top_candidates": [
+        "Joie/Allégresse(0)",
+        "Joie/Réjouissance(0)",
+        "Sens isolé/Vantardise(0)"
+      ],
+      "concepts_available": [
+        "Joie/Allégresse",
+        "Joie/Réjouissance",
+        "Sens isolé/Vantardise"
+      ]
+    },
+    {
+      "aid": 1332,
+      "word_key": "ghyz",
+      "root_ar": "غ ي ظ",
+      "lane_sample": "he, | it, affected him with",
+      "top_candidates": [
+        "Rage/Colère intense(0)",
+        "Provocation/Irritation(0)"
+      ],
+      "concepts_available": [
+        "Rage/Colère intense",
+        "Provocation/Irritation"
+      ]
+    },
+    {
+      "aid": 1337,
+      "word_key": "bghd",
+      "root_ar": "ب غ ض",
+      "lane_sample": "he, | it,",
+      "top_candidates": [
+        "Haine/Aversion(0)",
+        "Aversion/Rejet(0)"
+      ],
+      "concepts_available": [
+        "Haine/Aversion",
+        "Aversion/Rejet"
+      ]
+    },
+    {
+      "aid": 1340,
+      "word_key": "qed",
+      "root_ar": "ق ع د",
+      "lane_sample": "he sat; i  q | contr  of",
+      "top_candidates": [
+        "Position assise/Immobilité(0)",
+        "Abstention/Retrait(0)"
+      ],
+      "concepts_available": [
+        "Position assise/Immobilité",
+        "Abstention/Retrait"
+      ]
+    },
+    {
+      "aid": 1352,
+      "word_key": "kzm",
+      "root_ar": "ك ظ م",
+      "lane_sample": "he repressed, | restrained, his wrath,",
+      "top_candidates": [
+        "Rétention/Maîtrise de soi(0)"
+      ],
+      "concepts_available": [
+        "Rétention/Maîtrise de soi"
+      ]
+    },
+    {
+      "aid": 1353,
+      "word_key": "qrh",
+      "root_ar": "ق ر ح",
+      "lane_sample": "he wounded him; | he was attacked by the disease termed",
+      "top_candidates": [
+        "Blessure/Plaie(0)",
+        "Initiative/Choix(0)",
+        "Premier/Initial(0)"
+      ],
+      "concepts_available": [
+        "Blessure/Plaie",
+        "Initiative/Choix",
+        "Premier/Initial"
+      ]
+    },
+    {
+      "aid": 1354,
+      "word_key": "dwl",
+      "root_ar": "د و ل",
+      "lane_sample": "i  q | the days came round",
+      "top_candidates": [
+        "Alternance/Cycle(2)",
+        "Circulation/Passage(1)",
+        "Sens isolé/État(0)"
+      ],
+      "concepts_available": [
+        "Alternance/Cycle",
+        "Sens isolé/État",
+        "Circulation/Passage"
+      ]
+    },
+    {
+      "aid": 1355,
+      "word_key": "mhs",
+      "root_ar": "م ح ص",
+      "lane_sample": "becoming, | being, clear, pure,",
+      "top_candidates": [
+        "Purification/Épreuve(0)"
+      ],
+      "concepts_available": [
+        "Purification/Épreuve"
+      ]
+    },
+    {
+      "aid": 1361,
+      "word_key": "whn",
+      "root_ar": "و ه ن",
+      "lane_sample": "he was, | became, weak,",
+      "top_candidates": [
+        "Faiblesse/Fragilité(2)",
+        "Découragement/Défaillance(0)"
+      ],
+      "concepts_available": [
+        "Faiblesse/Fragilité",
+        "Découragement/Défaillance"
+      ]
+    },
+    {
+      "aid": 1362,
+      "word_key": "reb",
+      "root_ar": "ر ع ب",
+      "lane_sample": "he feared; he was afraid | frightened",
+      "top_candidates": [
+        "Terreur/Effroi(2)"
+      ],
+      "concepts_available": [
+        "Terreur/Effroi"
+      ]
+    },
+    {
+      "aid": 1363,
+      "word_key": "slt",
+      "root_ar": "س ل ط",
+      "lane_sample": "he, | it, overcame, prevailed,",
+      "top_candidates": [
+        "Domination/Autorité(0)",
+        "Sens isolé/Preuve(0)"
+      ],
+      "concepts_available": [
+        "Domination/Autorité",
+        "Sens isolé/Preuve"
+      ]
+    },
+    {
+      "aid": 1365,
+      "word_key": "sed",
+      "root_ar": "ص ع د",
+      "lane_sample": "he ascended, | went up, the ladder,",
+      "top_candidates": [
+        "Ascension/Élévation(0)",
+        "Sens isolé/Pente(0)",
+        "Sens isolé/Surface du sol(0)"
+      ],
+      "concepts_available": [
+        "Ascension/Élévation",
+        "Sens isolé/Pente",
+        "Sens isolé/Surface du sol"
+      ]
+    },
+    {
+      "aid": 1374,
+      "word_key": "nes",
+      "root_ar": "ن ع س",
+      "lane_sample": "he drowsed; he was, | became, drowsy,",
+      "top_candidates": [
+        "Somnolence/Assoupissement(0)"
+      ],
+      "concepts_available": [
+        "Somnolence/Assoupissement"
+      ]
+    },
+    {
+      "aid": 1382,
+      "word_key": "ghlz",
+      "root_ar": "غ ل ظ",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Dureté/Sévérité(0)",
+        "Sens isolé/Être(0)"
+      ],
+      "concepts_available": [
+        "Dureté/Sévérité",
+        "Sens isolé/Être"
+      ]
+    },
+    {
+      "aid": 1383,
+      "word_key": "šwr",
+      "root_ar": "ش و ر",
+      "lane_sample": "he gathered | extracted",
+      "top_candidates": [
+        "Consultation/Conseil(0)",
+        "Sens isolé/Montrer(0)"
+      ],
+      "concepts_available": [
+        "Consultation/Conseil",
+        "Sens isolé/Montrer"
+      ]
+    },
+    {
+      "aid": 1384,
+      "word_key": "ghzw",
+      "root_ar": "غ ز و",
+      "lane_sample": "he willed, | desired, it; he sought it;",
+      "top_candidates": [
+        "Expédition/Combat(0)",
+        "Conquête/Razzia(0)",
+        "Visée/Intention(0)"
+      ],
+      "concepts_available": [
+        "Expédition/Combat",
+        "Conquête/Razzia",
+        "Visée/Intention"
+      ]
+    },
+    {
+      "aid": 1387,
+      "word_key": "skht",
+      "root_ar": "س خ ط",
+      "lane_sample": "he was, | became, displeased,",
+      "top_candidates": [
+        "Courroux/Mécontentement(0)"
+      ],
+      "concepts_available": [
+        "Courroux/Mécontentement"
+      ]
+    },
+    {
+      "aid": 1390,
+      "word_key": "lhq",
+      "root_ar": "ل ح ق",
+      "lane_sample": "he reached him; overtook him; | came up with him",
+      "top_candidates": [
+        "Jonction/Rattrapage(2)",
+        "Annexion(0)"
+      ],
+      "concepts_available": [
+        "Jonction/Rattrapage",
+        "Annexion"
+      ]
+    },
+    {
+      "aid": 1391,
+      "word_key": "fwh",
+      "root_ar": "ف و ه",
+      "lane_sample": "he uttered it, | pronounced it,",
+      "top_candidates": [
+        "Articulation/Prononciation(3)",
+        "Bouche/Parole(2)",
+        "Lèvres/Embouchure(0)"
+      ],
+      "concepts_available": [
+        "Bouche/Parole",
+        "Articulation/Prononciation",
+        "Lèvres/Embouchure"
+      ]
+    },
+    {
+      "aid": 1392,
+      "word_key": "nqḏ",
+      "root_ar": "ن ق ذ",
+      "lane_sample": "he became safe, in safety, saved, | liberated; he escaped",
+      "top_candidates": [
+        "Sauvetage/Délivrance(0)",
+        "Extraction du danger(0)",
+        "Promptitude(0)"
+      ],
+      "concepts_available": [
+        "Sauvetage/Délivrance",
+        "Extraction du danger",
+        "Promptitude"
+      ]
+    },
+    {
+      "aid": 1399,
+      "word_key": "myz",
+      "root_ar": "م ي ز",
+      "lane_sample": "he put it, | set it, apart, away,",
+      "top_candidates": [
+        "Distinction/Séparation(0)"
+      ],
+      "concepts_available": [
+        "Distinction/Séparation"
+      ]
+    },
+    {
+      "aid": 1403,
+      "word_key": "zbr",
+      "root_ar": "ز ب ر",
+      "lane_sample": "he cased the well, | walled it internally, with stones",
+      "top_candidates": [
+        "Écriture/Livre(0)",
+        "Sens isolé/Fer(0)",
+        "Construction/Pierre(0)"
+      ],
+      "concepts_available": [
+        "Écriture/Livre",
+        "Sens isolé/Fer",
+        "Construction/Pierre"
+      ]
+    },
+    {
+      "aid": 1405,
+      "word_key": "fwz",
+      "root_ar": "ف و ز",
+      "lane_sample": "he attained, acquired, gained, | won, good,",
+      "top_candidates": [
+        "Succès/Salut(0)"
+      ],
+      "concepts_available": [
+        "Succès/Salut"
+      ]
+    },
+    {
+      "aid": 1412,
+      "word_key": "jnb",
+      "root_ar": "ج ن ب",
+      "lane_sample": "he broke his side | he hit,",
+      "top_candidates": [
+        "Côté/Flanc(0)",
+        "Éviter/Éloigner(0)",
+        "Étranger/Extérieur(0)"
+      ],
+      "concepts_available": [
+        "Côté/Flanc",
+        "Éviter/Éloigner",
+        "Étranger/Extérieur",
+        "État de janāba"
+      ]
+    },
+    {
+      "aid": 2052,
+      "word_key": "xbl",
+      "root_ar": "خ ب ل",
+      "lane_sample": "he was, | became, corrupted, unsound, vitiated,",
+      "top_candidates": [
+        "Corruption/Trouble(0)"
+      ],
+      "concepts_available": [
+        "Corruption/Trouble"
+      ]
+    },
+    {
+      "aid": 1432,
+      "word_key": "fhsh",
+      "root_ar": "ف ح ش",
+      "lane_sample": "it | was,",
+      "top_candidates": [
+        "Indécence/Turpitude(0)"
+      ],
+      "concepts_available": [
+        "Indécence/Turpitude"
+      ]
+    },
+    {
+      "aid": 1444,
+      "word_key": "dje",
+      "root_ar": "ض ج ع",
+      "lane_sample": "he lay upon his side; | he laid his side upon the ground;",
+      "top_candidates": [
+        "Couchage/Repos(0)",
+        "Inclination/Penchant(0)",
+        "Lit conjugal(0)"
+      ],
+      "concepts_available": [
+        "Couchage/Repos",
+        "Inclination/Penchant",
+        "Lit conjugal"
+      ]
+    }
+  ],
+  "missing": [
+    {
+      "aid": 250,
+      "word_key": "alh",
+      "root_ar": "ا ل ه",
+      "reason": "italiques introuvables"
+    },
+    {
+      "aid": 257,
+      "word_key": "ywm",
+      "root_ar": "ي و م",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 261,
+      "word_key": "hdy",
+      "root_ar": "ه د ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 277,
+      "word_key": "wqy",
+      "root_ar": "و ق ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 279,
+      "word_key": "hmm",
+      "root_ar": "ه م م",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 295,
+      "word_key": "swy",
+      "root_ar": "س و ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 341,
+      "word_key": "ayh",
+      "reason": "aucun sens en BDD"
+    },
+    {
+      "aid": 369,
+      "word_key": "šya",
+      "root_ar": "ش ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 372,
+      "word_key": "kll",
+      "root_ar": "ك ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 377,
+      "word_key": "edd",
+      "root_ar": "ع د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 379,
+      "word_key": "aty",
+      "root_ar": "أ ت ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 394,
+      "word_key": "jnn",
+      "root_ar": "ج ن ن",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 395,
+      "word_key": "jry",
+      "root_ar": "ج ر ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 396,
+      "word_key": "tht",
+      "root_ar": "ت ح ت",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 321,
+      "word_key": "mdd",
+      "root_ar": "م د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 253,
+      "word_key": "rbb",
+      "root_ar": "ر ب ب",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 327,
+      "word_key": "lqy",
+      "root_ar": "ل ق ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 255,
+      "word_key": "llh",
+      "root_ar": "ا ل ه",
+      "reason": "italiques introuvables"
+    },
+    {
+      "aid": 268,
+      "word_key": "dll",
+      "root_ar": "ض ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 292,
+      "word_key": "axr",
+      "root_ar": "ء خ ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 386,
+      "word_key": "bny",
+      "root_ar": "ب ن ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 399,
+      "word_key": "shbh",
+      "root_ar": "ش ب ه",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 401,
+      "word_key": "zwj",
+      "root_ar": "ز و ج",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 404,
+      "word_key": "hyy",
+      "root_ar": "ح ي ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 409,
+      "word_key": "hqq",
+      "root_ar": "ح ق ق",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 946,
+      "word_key": "ndw",
+      "root_ar": "ن د و",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1414,
+      "word_key": "anml",
+      "root_ar": "أ ن م ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2658,
+      "word_key": "kahl",
+      "root_ar": "ك ه ل",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1579,
+      "word_key": "why",
+      "root_ar": "و ح ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 376,
+      "word_key": "hjr",
+      "root_ar": "ح ج ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 423,
+      "word_key": "shya",
+      "root_ar": "ش ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 427,
+      "word_key": "qte",
+      "root_ar": "ق ط ع",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 435,
+      "word_key": "ana",
+      "root_ar": "أ ن ى",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 444,
+      "word_key": "any",
+      "root_ar": "أ ن ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 452,
+      "word_key": "zll",
+      "root_ar": "ز ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 459,
+      "word_key": "qrr",
+      "root_ar": "ق ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 478,
+      "word_key": "klm",
+      "root_ar": "ك ل م",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 487,
+      "word_key": "wfy",
+      "root_ar": "و ف ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 499,
+      "word_key": "lwy",
+      "root_ar": "ل و ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 528,
+      "word_key": "lyl",
+      "root_ar": "ل ي ل",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 493,
+      "word_key": "qll",
+      "root_ar": "ق ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2334,
+      "word_key": "f y a",
+      "root_ar": "ف ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2584,
+      "word_key": "gny",
+      "root_ar": "غ ن ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 510,
+      "word_key": "ayy",
+      "root_ar": "آ ي ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2659,
+      "word_key": "shyy",
+      "root_ar": "ش ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 501,
+      "word_key": "znn",
+      "root_ar": "ظ ن ن",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 509,
+      "word_key": "brr",
+      "root_ar": "ب ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 542,
+      "word_key": "nsa",
+      "root_ar": "ن س ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2661,
+      "word_key": "Ehd",
+      "root_ar": "ع هـ د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 539,
+      "word_key": "swa",
+      "root_ar": "س و ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 871,
+      "word_key": "shry",
+      "root_ar": "ش ر ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 531,
+      "word_key": "jzy",
+      "root_ar": "ج ز ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1588,
+      "word_key": "nthy",
+      "root_ar": "ن ه ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1752,
+      "word_key": "tbe",
+      "reason": "aucun sens en BDD"
+    },
+    {
+      "aid": 2352,
+      "word_key": "omm",
+      "root_ar": "أ م م",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 552,
+      "word_key": "ray",
+      "root_ar": "ر أ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 560,
+      "word_key": "ghmm",
+      "root_ar": "غ م م",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 561,
+      "word_key": "mnn",
+      "root_ar": "م ن ن",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 594,
+      "word_key": "esy",
+      "root_ar": "ع ص ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 597,
+      "word_key": "ydy",
+      "root_ar": "ي د ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 608,
+      "word_key": "mny",
+      "root_ar": "م ن ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 616,
+      "word_key": "srr",
+      "root_ar": "س ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1610,
+      "word_key": "kšy",
+      "root_ar": "خ ش ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 629,
+      "word_key": "jyy",
+      "root_ar": "ج ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 637,
+      "word_key": "hjj",
+      "root_ar": "ح ج ج",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 650,
+      "word_key": "mss",
+      "root_ar": "م س س",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 662,
+      "word_key": "jya",
+      "root_ar": "ج ي ء",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 663,
+      "word_key": "sryl",
+      "root_ar": "س ر ي ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 670,
+      "word_key": "fdy",
+      "root_ar": "ف د ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 672,
+      "word_key": "xzy",
+      "root_ar": "خ ز ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 674,
+      "word_key": "rdd",
+      "root_ar": "ر د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 675,
+      "word_key": "shdd",
+      "root_ar": "ش د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 680,
+      "word_key": "len",
+      "root_ar": "ل ع ن",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 683,
+      "word_key": "bgh",
+      "root_ar": "ب غ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 684,
+      "word_key": "bwa",
+      "root_ar": "ب و ء",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 685,
+      "word_key": "wry",
+      "root_ar": "و ر ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 690,
+      "word_key": "eys",
+      "root_ar": "ع ي س",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 691,
+      "word_key": "mry",
+      "root_ar": "م ر ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1301,
+      "word_key": "grr",
+      "root_ar": "غ ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 703,
+      "word_key": "wdd",
+      "root_ar": "و د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 960,
+      "word_key": "anth",
+      "root_ar": "أ ن ث ى",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2666,
+      "word_key": "edd2",
+      "root_ar": "ع ض ض",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2668,
+      "word_key": "srr2",
+      "root_ar": "ص ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 708,
+      "word_key": "zhzh",
+      "root_ar": "ز ح ز ح",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2669,
+      "word_key": "dnr",
+      "root_ar": "د ن ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1624,
+      "word_key": "a w y",
+      "root_ar": "أ و ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 738,
+      "word_key": "khs",
+      "root_ar": "خ ص ص",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 743,
+      "word_key": "sbl",
+      "root_ar": "س ب ل",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 747,
+      "word_key": "wjh",
+      "root_ar": "و ج ه",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 768,
+      "word_key": "qdy",
+      "root_ar": "ق ض ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 773,
+      "word_key": "mll",
+      "root_ar": "م ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 795,
+      "word_key": "drr",
+      "root_ar": "ض ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2614,
+      "word_key": "ḏrr",
+      "root_ar": "ذ ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 807,
+      "word_key": "ezz",
+      "root_ar": "ع ز ز",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2482,
+      "word_key": "fry",
+      "root_ar": "ف ر ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2675,
+      "word_key": "Sbh",
+      "reason": "aucun sens en BDD"
+    },
+    {
+      "aid": 2470,
+      "word_key": "mraa",
+      "root_ar": "م ر أ",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2678,
+      "word_key": "eazm",
+      "reason": "aucun sens en BDD"
+    },
+    {
+      "aid": 823,
+      "word_key": "kfy",
+      "root_ar": "ك ف ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 832,
+      "word_key": "raay",
+      "root_ar": "ر أ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 881,
+      "word_key": "mra",
+      "root_ar": "م ر أ",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 921,
+      "word_key": "mlw",
+      "root_ar": "م ل و",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 928,
+      "word_key": "xff",
+      "root_ar": "خ ف ف",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 930,
+      "word_key": "hbb",
+      "root_ar": "ح ب ب",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 936,
+      "word_key": "srf",
+      "root_ar": "ص ر ف",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 939,
+      "word_key": "hll",
+      "root_ar": "ح ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 950,
+      "word_key": "bghy",
+      "root_ar": "ب غ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 956,
+      "word_key": "qss",
+      "root_ar": "ق ص ص",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 957,
+      "word_key": "lbb",
+      "root_ar": "ل ب ب",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 959,
+      "word_key": "hrr",
+      "root_ar": "ح ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 965,
+      "word_key": "twq",
+      "root_ar": "ط و ق",
+      "reason": "italiques introuvables"
+    },
+    {
+      "aid": 2198,
+      "word_key": "nsw",
+      "root_ar": "ن س و",
+      "reason": "italiques introuvables"
+    },
+    {
+      "aid": 989,
+      "word_key": "aḏy",
+      "root_ar": "أ ذ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1011,
+      "word_key": "shrr",
+      "root_ar": "ش ر ر",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1018,
+      "word_key": "sdd",
+      "root_ar": "ص د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2249,
+      "word_key": "tmn",
+      "root_ar": "ط م أ ن",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1088,
+      "word_key": "mla",
+      "root_ar": "م ل أ",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1120,
+      "word_key": "snn",
+      "root_ar": "س ن ن",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1135,
+      "word_key": "kyf",
+      "root_ar": "ك ي ف",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 2574,
+      "word_key": "ahd",
+      "root_ar": null,
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 2642,
+      "word_key": "ana2",
+      "root_ar": "أ ن ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1148,
+      "word_key": "mwl",
+      "root_ar": "م و ل",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1184,
+      "word_key": "j h l",
+      "root_ar": "ج ه ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1208,
+      "word_key": "ady",
+      "root_ar": "أ د ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1216,
+      "word_key": "khfy",
+      "root_ar": "خ ف ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1219,
+      "word_key": "njl",
+      "root_ar": "ن ج ل",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1223,
+      "word_key": "ldn",
+      "root_ar": "ل د ن",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1234,
+      "word_key": "fdd",
+      "root_ar": "ف ض ض",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1249,
+      "word_key": "dhl",
+      "root_ar": "ذ ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1670,
+      "word_key": "ghll",
+      "root_ar": "غ ل ل",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 262,
+      "word_key": "srt",
+      "root_ar": "ص ر ط",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1269,
+      "word_key": "qlm",
+      "root_ar": "ق ل م",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1282,
+      "word_key": "hss",
+      "root_ar": "ح س س",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1291,
+      "word_key": "qntṛ",
+      "root_ar": "ق ن ط ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1294,
+      "word_key": "qntr",
+      "root_ar": "ق ن ط ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1298,
+      "word_key": "lsn",
+      "root_ar": "ل س ن",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 741,
+      "word_key": "dlk",
+      "root_ar": "ذ ل ك",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 653,
+      "word_key": "akhr",
+      "root_ar": "أ خ ر",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1347,
+      "word_key": "akm",
+      "root_ar": "أ ك م",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1360,
+      "word_key": "kyn",
+      "root_ar": "ك ي ن",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 1364,
+      "word_key": "thwy",
+      "root_ar": "ث و ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1381,
+      "word_key": "fzz",
+      "root_ar": "ف ظ ظ",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1395,
+      "word_key": "hzz",
+      "root_ar": "ح ظ ظ",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1401,
+      "word_key": "jby",
+      "root_ar": "ج ب ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 785,
+      "word_key": "amm",
+      "root_ar": "أ م م",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1451,
+      "word_key": "adhy",
+      "root_ar": "أ ذ ي",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 1453,
+      "word_key": "bwaa",
+      "root_ar": "ب و ء",
+      "reason": "forme 1 pas trouvée"
+    },
+    {
+      "aid": 2073,
+      "word_key": "shd",
+      "root_ar": "ش د د",
+      "reason": "root Lane pas trouvée"
+    },
+    {
+      "aid": 599,
+      "word_key": "wly",
+      "root_ar": "و ل ي",
+      "reason": "root Lane pas trouvée"
+    }
+  ],
+  "skipped": [
+    {
+      "aid": 359,
+      "word_key": "jel",
+      "existing": "Action/Réalisation"
+    },
+    {
+      "aid": 413,
+      "word_key": "kṯr",
+      "existing": "Abondance/Multiplicité"
+    },
+    {
+      "aid": 299,
+      "word_key": "šer",
+      "existing": "Connaissance/Perception"
+    },
+    {
+      "aid": 1224,
+      "word_key": "whb",
+      "existing": "Don gratuit"
+    },
+    {
+      "aid": 1246,
+      "word_key": "wlj",
+      "existing": "Entrée/Pénétration"
+    }
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "V63": {
+    "id": 556,
+    "trad": "Ceux-là sont ceux dont Dieu sait ce qui est dans leurs cœurs. Détourne-toi donc d'eux, exhorte-les et dis-leur, en leurs âmes, une parole éloquente.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "ulaika",
+        "fr": "Ceux-là",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "alladhina",
+        "fr": "sont ceux",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "yalamu",
+        "fr": "sait",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "llahu",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "ma",
+        "fr": "ce qui",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "fi",
+        "fr": "est dans",
+        "is_particle": true
+      },
+      {
+        "pos": 7,
+        "phon": "qulubi-him",
+        "fr": "leurs cœurs",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "fa-arid",
+        "fr": "Détourne-toi donc",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "anhum",
+        "fr": "d'eux",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "wa-izhum",
+        "fr": "exhorte-les",
+        "is_particle": false
+      },
+      {
+        "pos": 11,
+        "phon": "wa-qul",
+        "fr": "et dis",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "lahum",
+        "fr": "leur",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "fi",
+        "fr": "en",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "anfusi-him",
+        "fr": "leurs âmes",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "qawlan",
+        "fr": "une parole",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "balighan",
+        "fr": "éloquente",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Ceux-là** — Le sens retenu est la particule démonstrative « ulaika » qui désigne un groupe déjà mentionné. Renvoie aux personnes décrites aux V60-V62.\n\n**sont ceux** — Le sens retenu est le pronom relatif « alladhina » qui prolonge le démonstratif et introduit la caractérisation qui suit.\n\n**sait** — Le sens retenu est « savoir » (racine elm). Le mot est choisi car il désigne la connaissance directe intérieure — non la marque extérieure ni la transmission à un tiers, autres sens de la racine. L'alternative « connaître » serait moins précise ici où l'objet du savoir est l'intériorité des cœurs.\n\n**Dieu** — Le sens retenu est « Dieu » (racine alh). Nom propre du sujet divin qui connaît ce qui est dans les cœurs — l'attribut fondamental de sa connaissance de l'intérieur des créatures.\n\n**ce qui** — Le sens retenu est le pronom relatif « ma » qui introduit un contenu indéfini — ce que Dieu sait, sans le nommer.\n\n**est dans** — Le sens retenu est la préposition « fi » (dans). On ajoute « est » (implicite en arabe) pour rendre la construction française naturelle.\n\n**leurs cœurs** — Le sens retenu est « coeur » (racine qlb). Le mot est choisi car il désigne le siège des intentions cachées — le lieu intime que Dieu seul connaît directement. L'alternative « esprit » serait plus intellectuelle, moins liée à l'intériorité affective ici en cause.\n\n**Détourne-toi donc** — Le sens retenu est « se détourner » (racine erd). Le mot est choisi car il traduit l'ordre concret adressé au destinataire du verset — se retirer de l'attention envers ces personnes. L'alternative « ignore » serait trop passive, « rejette » trop dur ; « détourne-toi » garde le geste précis du verbe arabe.\n\n**d'eux** — Le sens retenu est la préposition « an » (de, loin de) fusionnée avec le pronom « -hum » (eux). Marque l'objet du détournement.\n\n**exhorte-les** — Le sens retenu est « exhorter » (racine wez). Le mot est choisi car il désigne l'acte de parole ferme qui rappelle sans contraindre — ni simple conseil neutre, ni ordre autoritaire. L'exhortation combine le rappel et l'avertissement dans le respect du libre choix.\n\n**et dis** — Le sens retenu est « dire » (racine qwl). Le mot est choisi car il désigne l'acte d'énonciation directe. Suivi des compléments qui précisent quoi et comment dire.\n\n**leur** — Le sens retenu est la préposition d'attribution « li- » (à) fusionnée avec le pronom « -hum » (eux). Destinataires de la parole.\n\n**en** — Le sens retenu est la préposition « fi » (dans, en). Introduit le lieu où la parole doit atteindre — l'intériorité des personnes.\n\n**leurs âmes** — Le sens retenu est « âme » (racine nfs). Le mot est choisi car il désigne le principe intérieur de la personne — le lieu intime où la parole doit atteindre, parallèle du cœur mentionné plus haut. On garde « âmes » plutôt que « personnes » ou « eux-mêmes » car le mot arabe insiste sur l'intériorité.\n\n**une parole** — Le sens retenu est « parole » (racine qwl, même racine que le verbe « dis » qui précède). Le mot est choisi car il désigne l'énoncé lui-même comme objet du verbe. La construction verbe + nom de même racine insiste sur la nature véritable de ce qui est demandé — une parole authentique.\n\n**éloquente** — Le sens retenu est « éloquent » (racine blgh). Le mot est choisi car il désigne la qualité d'une parole qui atteint sa cible dans l'auditeur — qui ne s'arrête pas au bord de l'oreille mais entre dans le cœur. L'alternative « percutant » serait plus violente, « convaincant » trop rationnel ; « éloquent » garde l'idée de parole qui atteint et transforme.\n\n"
+  },
+  "V64": {
+    "id": 557,
+    "trad": "Et Nous n'avons envoyé de messager que pour qu'il soit obéi, par la permission de Dieu. Et si eux, lorsqu'ils s'étaient fait injustice à eux-mêmes, étaient venus à toi, avaient demandé pardon à Dieu, et que le Messager avait demandé pardon pour eux, ils auraient trouvé Dieu Très-Revenant, Très-Miséricordieux.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-ma",
+        "fr": "Et n'",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "arsal-na",
+        "fr": "avons envoyé",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "rasul",
+        "fr": "messager",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "illa",
+        "fr": "que",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "li-yutaa",
+        "fr": "pour qu'il soit obéi",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "bi-idhni",
+        "fr": "par la permission de",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "llahi",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "wa-law",
+        "fr": "Et si",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "anna-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "idh",
+        "fr": "lorsqu'ils",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "zalamu",
+        "fr": "s'étaient fait injustice",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "anfusa-hum",
+        "fr": "à eux-mêmes",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "jaau-ka",
+        "fr": "étaient venus à toi",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "fa-istaghfaru",
+        "fr": "et avaient demandé pardon",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "llaha",
+        "fr": "à Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 17,
+        "phon": "wa-istaghfara",
+        "fr": "et avait demandé pardon",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "lahumu",
+        "fr": "pour eux",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "l-rasulu",
+        "fr": "le Messager",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "la-wajadu",
+        "fr": "ils auraient trouvé",
+        "is_particle": false
+      },
+      {
+        "pos": 21,
+        "phon": "llaha",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "tawwaban",
+        "fr": "Très-Revenant",
+        "is_particle": false
+      },
+      {
+        "pos": 23,
+        "phon": "rahiman",
+        "fr": "Très-Miséricordieux",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et n'** — Le sens retenu est la particule « wa » (et) qui coordonne au verset précédent, fusionnée avec la négation « ma » rendue par « n' » — ici prise dans la construction restrictive « ma...illa » qui donne « ne...que » en français (le « pas » étant remplacé par « que » restrictif qui suit).\n\n**avons envoyé** — Le sens retenu est « envoyer » (racine rsl). Le mot est choisi car il désigne l'acte d'envoi du messager par une autorité supérieure. Le « nous » (pluriel royal désignant Dieu) est absorbé dans la conjugaison arabe « arsal-na » (1re personne du pluriel). La négation française « n' » qui précède est rattachée au segment « wa-ma ».\n\n**de** — Le sens retenu est la préposition « min » (de) qui introduit un indéfini généralisant.\n\n**messager** — Le sens retenu est « messager » (racine rsl). Le mot est choisi car il désigne la personne du porteur — n'importe quel messager dans la formulation restrictive « ne... que ».\n\n**que** — Le sens retenu est la particule « illa » qui, combinée à « ma » précédente, forme « ne... que » — restrictive.\n\n**pour qu'il soit obéi** — Le sens retenu est « obéir » (racine twe). Le mot est choisi car il désigne l'acte de se conformer volontairement à la parole du messager. Le verbe est à la voix passive en arabe : c'est le messager qui est l'objet de l'obéissance attendue. On rend par le passif français « pour qu'il soit obéi » qui préserve cette construction.\n\n**par la permission de** — Le sens retenu est « permission » (racine adhn). Le mot est choisi car il désigne l'accord préalable qui rend légitime l'obéissance au messager. L'alternative « autorisation » serait plus juridique ; « permission » garde le sens d'accord accordé par une autorité supérieure.\n\n**Dieu** — Le sens retenu est « Dieu » (racine alh). Nom propre du sujet dont émane la permission.\n\n**Et si** — Le sens retenu est la particule « wa-law » qui introduit une condition hypothétique irréelle au passé.\n\n**eux** — Le sens retenu est la particule « anna » (que) fusionnée avec « -hum » (eux). Introduit le groupe comme sujet de l'action hypothétique.\n\n**lorsqu'ils** — Le sens retenu est la particule temporelle « idh » qui situe l'action dans un moment passé précis. En français, la fusion « lorsqu'ils » (« lorsque » + sujet « ils » impliqué par la conjugaison arabe de zalamu) évite la lourdeur d'un sujet apposé et se lit naturellement.\n\n**s'étaient fait injustice** — Le sens retenu est « être injuste » (racine zlm). Le mot est choisi car il désigne l'acte moral qui met une réalité hors de sa juste place. L'expression « se faire injustice à soi-même » est un idiome coranique courant qui désigne l'acte de nuire à son propre être par une conduite fautive. Le plus-que-parfait « s'étaient fait » assure la cohérence des temps dans l'hypothèse irréelle au passé (avec « étaient venus », « avaient demandé », et la conséquence « auraient trouvé »).\n\n**à eux-mêmes** — Le sens retenu est « soi-même » (racine nfs). Le mot est choisi car il forme avec « ont fait injustice » l'expression réflexive « se sont fait injustice à eux-mêmes ». Pluriel de « nafs » avec suffixe « leurs ».\n\n**étaient venus à toi** — Le sens retenu est « venir » (racine jya). Le mot est choisi car il désigne l'acte simple de se rendre auprès du destinataire du verset. Le « toi » est le destinataire.\n\n**et avaient demandé pardon** — Le sens retenu est « demander le pardon (istighfar) » (racine gfr). Le mot est choisi car il rend directement la forme arabe qui fait demander (forme X) — istighfar = sollicitation de la couverture des fautes.\n\n**à Dieu** — Le sens retenu est « Dieu » (racine alh). Complément du verbe « avaient demandé pardon » : c'est à Dieu que le pardon est demandé.\n\n**et avait demandé pardon** — Le sens retenu est « demander le pardon (istighfar) » (racine gfr). Reprise du même sens mais au singulier avec un autre sujet : le Messager qui intercède pour eux.\n\n**pour eux** — Le sens retenu est la préposition d'attribution « la » (pour) fusionnée avec « humu » (eux). Marque les bénéficiaires de l'intercession du Messager.\n\n**le Messager** — Le sens retenu est « messager » (racine rsl). Reprise du même terme qu'à la à la première mention mais cette fois défini (avec l'article) car il s'agit d'un messager précis : le destinataire du verset qui vient d'être nommé.\n\n**ils auraient trouvé** — Le sens retenu est « trouver » (racine wjd). Le mot est choisi car il désigne l'acte d'atteindre par expérience directe la réalité de Dieu — non seulement savoir intellectuellement, mais éprouver. La particule « la » qui précède marque l'emphase : « certes trouvé ».\n\n**Dieu** — Le sens retenu est « Dieu » (racine alh). Complément du verbe « auraient trouvé » : ce que les repentis auraient trouvé, c'est Dieu suivant les attributs qui suivent.\n\n**Très-Revenant** — Le sens retenu est « revenir » (racine twb, sens premier de la racine). Le mot est choisi car il désigne directement l'acte divin de revenir vers celui qui revient à Lui pour agréer son repentir — c'est ce mouvement de retour qui est nommé, pas l'acte d'accepter (qui serait le résultat). On rend en français par « Très-Revenant » (convention pour les attributs divins à la forme « faal » intense) — ce n'est pas « repentant » qui serait un contresens sur Dieu, mais l'image du retour à double sens.\n\n**Très-Miséricordieux** — Le sens retenu est « miséricordieux » (racine rhm). Le mot est choisi car il désigne l'attribut divin de compassion permanente. On rend en français par « Très-Miséricordieux » (convention pour les attributs divins à la forme « fail » intense) qui préserve l'intensité de la forme arabe et l'image originelle de la tendresse liée au lien maternel (racine du mot « utérus »).\n\n"
+  },
+  "V65": {
+    "id": 558,
+    "trad": "Non ! Par ton Seigneur, ils ne croiront pas jusqu'à ce qu'ils te prennent pour juge de ce qui a surgi entre eux, puis qu'ils ne trouvent en leurs âmes aucune gêne de ce que tu auras décidé, et qu'ils s'en remettent pleinement.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "fa-la",
+        "fr": "Non !",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "wa-rabbi-ka",
+        "fr": "par ton Seigneur",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "la",
+        "fr": "ils ne",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "yu-minun",
+        "fr": "croiront pas",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "hatta",
+        "fr": "jusqu'à ce qu'ils",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "yuhakkimu-ka",
+        "fr": "te prennent pour juge",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "fi-ma",
+        "fr": "de ce qui",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "shajara",
+        "fr": "a surgi",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "bayna-hum",
+        "fr": "entre eux",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "thumma",
+        "fr": "puis qu'ils",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "la",
+        "fr": "ne",
+        "is_particle": true
+      },
+      {
+        "pos": 12,
+        "phon": "yajidu",
+        "fr": "trouvent",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "fi",
+        "fr": "en",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "anfusi-him",
+        "fr": "leurs âmes",
+        "is_particle": false
+      },
+      {
+        "pos": 15,
+        "phon": "harajan",
+        "fr": "aucune gêne",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "mimma",
+        "fr": "de ce que",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "qadayta",
+        "fr": "tu auras décidé",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "wa-yusallimu",
+        "fr": "et qu'ils s'en remettent",
+        "is_particle": false
+      },
+      {
+        "pos": 19,
+        "phon": "tasliman",
+        "fr": "pleinement",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Non !** — Le sens retenu est la particule « la » qui prend ici valeur d'exclamation dénégative rejetant d'emblée toute prétention de foi qui contournerait la condition qui suit. La particule *fa* qui précède enchaîne à l'affirmation précédente sans être elle-même rendue en français.\n\n**par ton Seigneur** — Le sens retenu est « seigneur » (racine rbb). Le mot est choisi car il désigne l'autorité bienveillante qui possède, élève et pourvoit. Ici « wa-rabbi-ka » est un serment invoquant le lien personnel de seigneurie du Messager. L'alternative « ton Maître » restitue l'idée d'autorité mais perd la dimension d'accompagnement de la croissance ; « Seigneur » avec majuscule préserve la valeur de titre divin.\n\n**ils ne** — Le sens retenu est la particule « la » (ne) qui porte la négation du verbe suivant. Le pronom « ils » est absorbé anticipativement dans ce segment par fusion avec le sujet implicite du verbe « yu-minun » (conjugaison troisième personne du pluriel arabe), pour éviter un ordre « ne + verbe » sans sujet en français.\n\n**croiront pas** — Le sens retenu est « croire » (racine amn). Le mot est choisi car il désigne l'acte intérieur d'adhésion à ce qui est tenu pour vrai. Le verbe arabe au temps présent après la négation prend valeur de futur négatif dans le contexte hypothétique. L'alternative « n'auront pas la foi » aurait été plus lourde et aurait déplacé le verbe vers un état ; « croire » garde l'acte d'adhésion.\n\n**jusqu'à ce qu'ils** — Le sens retenu est la particule *hatta* qui introduit le terme de la négation qui précède. En français « ne... pas jusqu'à ce que + subjonctif » restitue la structure arabe *la... hatta + verbe au présent*. Le pronom « ils » est fusionné pour absorber le sujet implicite du verbe suivant.\n\n**te prennent pour juge** — Le sens retenu est « juger » (racine hkm). La forme II arabe « hakkama X » ajoute la valeur de faire faire de « prendre X pour juge ». On rend en français par l'idiome « te prendre pour juge » plutôt que par un simple « te faire juger » — la première formulation préserve mieux la valeur de désignation d'une autorité tranchante. L'alternative « t'établir comme arbitre » aurait été plus juridique et moins fidèle à la forme arabe.\n\n**de ce qui** — Le sens retenu est la préposition « fi » (au sujet de) fusionnée avec le pronom relatif « ma » qui joue ici comme sujet du verbe « shajara » qui suit. On rend en français par « ce qui » (sujet) plutôt que « ce que » (COD) pour respecter la fonction grammaticale du « ma ».\n\n**a surgi** — Le sens retenu est « être emmêlé » (racine shjr). Le mot est choisi car il désigne l'enchevêtrement racinaire — les branches d'arbres qui se croisent servent de métaphore pour le conflit qui pousse entre parties. On rend en français par « a surgi » qui restitue l'émergence conflictuelle sans le calque littéral « s'est emmêlé » qui aurait été bizarre pour un contentieux. L'alternative « a poussé » aurait conservé l'image botanique mais aurait été moins claire sur la valeur de conflit.\n\n**entre eux** — Le sens retenu est la préposition « entre » (racine byn). Le mot est choisi car il désigne l'espace inter-personnel où pousse le contentieux. Sens direct sans alternative pertinente.\n\n**puis qu'ils** — Le sens retenu est la particule *thumma* (puis) qui ordonne temporellement une seconde étape de la conditionalité. Le pronom « ils » est fusionné pour absorber le sujet implicite du verbe suivant « yajidu », comme dans les fusions précédentes.\n\n**ne** — Le sens retenu est la particule « la » (ne), seconde négation portant sur le verbe « yajidu ». Reste séparée cette fois du pronom car « qu'ils » est déjà dans *thumma*.\n\n**trouvent** — Le sens retenu est « trouver » (racine wjd). Le mot est choisi car il désigne l'acte de rencontrer par expérience directe ce qui se présente intérieurement. L'alternative « éprouvent » aurait été plus émotionnelle et aurait déplacé le champ ; « trouver » garde la dimension de constat objectif.\n\n**en** — Le sens retenu est la préposition « fi » (dans, en) qui introduit le lieu de la trouvaille possible. On rend en français par « en » plutôt que par « dans » pour marquer le for intérieur — « dans leurs âmes » aurait été plus matériel, « en leurs âmes » garde la dimension abstraite.\n\n**leurs âmes** — Le sens retenu est « âme » (racine nfs). Le mot est choisi car il désigne le principe intérieur personnel, siège de l'acceptation ou du rejet moral. L'alternative « eux-mêmes » aurait été plus léger mais aurait effacé la dimension intériorisée que porte « nafs » ; « âmes » préserve le for intérieur.\n\n**aucune gêne** — Le sens retenu est « gêne » (racine hrj). Le mot est choisi car il désigne l'étroitesse morale ressentie intérieurement — ce qui étrangle le for face à une décision à accepter. La marque -an après un verbe négatif arabe (« harajan ») après un verbe négatif se rend en français par « aucune » qui restitue l'absence totale. L'alternative « aucun malaise » aurait été plus psychologique et moins spatiale ; « gêne » garde la dimension d'étroitesse.\n\n**de ce que** — Le sens retenu est la préposition *min* (de) fusionnée avec le pronom relatif « ma » qui joue ici comme complément d'objet du verbe « qadayta ». On rend en français par « ce que » (COD) plutôt que « ce qui » (sujet), différenciant ce second « mimma » du premier « fi-ma » dont le « ma » était sujet.\n\n**tu auras décidé** — Le sens retenu est « décréter » (racine qdy). Le mot est choisi car il désigne l'acte judiciaire de trancher irrévocablement une décision qui engage. Le verbe arabe au temps passé se rend ici par un futur antérieur français (« tu auras décidé ») pour marquer que l'action est antérieure à celles des autres verbes de la subordonnée. On distingue du « yuhakkimu-ka » précédent : ce dernier est l'acte de prendre pour juge, « qadayta » est la décision effective prononcée. L'alternative « tu auras jugé » aurait pu être choisie mais aurait fait doublon avec le « te prennent pour juge » précédent.\n\n**et qu'ils s'en remettent** — Le sens retenu est « se remettre » (racine slm). Le mot est choisi car il désigne l'acte de confier entièrement sa cause à autrui en renonçant à sa propre réserve. La forme II arabe *sallama* ajoute la valeur d'un acte relationnel intensifié. Le pronom réfléchi français « s'en » restitue la dimension d'orientation vers ce à quoi l'on se remet. L'alternative « et qu'ils se soumettent » aurait été plus fort mais aurait glissé vers un vocabulaire trop juridique/religieux qui n'épouse pas la valeur relationnelle de la forme II arabe (qui renforce l'action ou qui la fait faire).\n\n**pleinement** — Le sens retenu est « soumission » (racine slm). Le mot est choisi car le nom d'action arabe « tasliman » en position de mot qui redouble le verbe renforce l'intensité du verbe précédent — ce redoublement se rend en français par un adverbe d'intensité. « Pleinement » restitue cette insistance sans dupliquer le verbe. L'alternative « d'une remise pleine » aurait gardé le sens littéral du nom d'action mais aurait été plus lourde.\n\n"
+  },
+  "V66": {
+    "id": 559,
+    "trad": "Et si Nous leur avions prescrit ceci : « Tuez-vous vous-mêmes » ou « Sortez de vos demeures », ils ne l'auraient pas fait, sauf un petit nombre d'entre eux. Et si eux avaient fait ce à quoi on les exhorte ainsi, cela aurait été meilleur pour eux et plus fort en affermissement.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-law",
+        "fr": "Et si",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "anna",
+        "fr": "nous",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "katab-na",
+        "fr": "avions prescrit",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "alay-him",
+        "fr": "leur",
+        "is_particle": true
+      },
+      {
+        "pos": 5,
+        "phon": "an",
+        "fr": "ceci",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "uqtul-u",
+        "fr": "tuez-vous",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "anfusa-kum",
+        "fr": "vous-mêmes",
+        "is_particle": false
+      },
+      {
+        "pos": 8,
+        "phon": "aw",
+        "fr": "ou",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "ukhruj-u",
+        "fr": "sortez",
+        "is_particle": false
+      },
+      {
+        "pos": 10,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "diyari-kum",
+        "fr": "vos demeures",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "ma",
+        "fr": "ils ne",
+        "is_particle": true
+      },
+      {
+        "pos": 13,
+        "phon": "faalu-hu",
+        "fr": "l'auraient pas fait",
+        "is_particle": false
+      },
+      {
+        "pos": 14,
+        "phon": "illa",
+        "fr": "sauf",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "qalilun",
+        "fr": "un petit nombre",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "min-hum",
+        "fr": "d'entre eux",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "wa-law",
+        "fr": "Et si",
+        "is_particle": true
+      },
+      {
+        "pos": 18,
+        "phon": "anna-hum",
+        "fr": "eux",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "faal-u",
+        "fr": "avaient fait",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "ma",
+        "fr": "ce à quoi",
+        "is_particle": true
+      },
+      {
+        "pos": 21,
+        "phon": "yuazuna",
+        "fr": "on les exhorte",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "bi-hi",
+        "fr": "ainsi",
+        "is_particle": true
+      },
+      {
+        "pos": 23,
+        "phon": "la-kana",
+        "fr": "cela aurait été",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "khayran",
+        "fr": "meilleur",
+        "is_particle": false
+      },
+      {
+        "pos": 25,
+        "phon": "la-hum",
+        "fr": "pour eux",
+        "is_particle": true
+      },
+      {
+        "pos": 26,
+        "phon": "wa-ashadd",
+        "fr": "et plus fort",
+        "is_particle": false
+      },
+      {
+        "pos": 27,
+        "phon": "tathbitan",
+        "fr": "en affermissement",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et si** — Le sens retenu est la particule « wa-law » qui coordonne au verset précédent et introduit une hypothèse au passé irréelle.\n\n**nous** — Le sens retenu est la particule « anna » (que) fusionnée avec le suffixe « -na » (nous). Le pronom « nous » est le pluriel royal désignant Dieu.\n\n**leur** — Le sens retenu est la préposition « ala » (sur, à) fusionnée avec le suffixe « -him » (eux) — c'est donc l'ensemble « ala + him » qui est rendu par « leur » en français, mot qui condense la préposition et le pronom en une seule forme. L'alternative « à eux » aurait été possible mais plus lourde ; « leur » (contraction possessive) coule mieux dans « leur avions prescrit ».\n\n**avions prescrit** — Le sens retenu est « prescrire » (racine ktb). Le mot est choisi car il désigne l'acte d'imposer une règle qui engage. L'alternative « écrire » (sens premier de la racine) aurait renvoyé à l'acte matériel d'inscrire, alors qu'ici il s'agit d'imposer un commandement — d'où « prescrire ». Le verbe est au plus-que-parfait français pour l'hypothèse irréelle passée.\n\n**ceci** — Le sens retenu est la particule « an » qui introduit la citation du contenu prescrit. En français « ceci : » annonce les propos qui suivent.\n\n**tuez-vous** — Le sens retenu est « tuer » (racine qtl). Le mot est choisi car il désigne directement l'acte de mettre à mort. L'alternative « combattre » aurait été plus large et moins précise ; ici l'impératif hypothétique cible bien l'acte de tuer.\n\n**vous-mêmes** — Le sens retenu est « soi-même » (racine nfs). Le mot est choisi car il rend le sens réflexif de « anfusa-kum » — l'objet de l'acte est le sujet lui-même. L'alternative « âme » aurait été trop abstraite dans un contexte d'action physique.\n\n**ou** — Le sens retenu est la particule « aw » qui coordonne deux hypothèses alternatives.\n\n**sortez** — Le sens retenu est « sortir » (racine xrj). Le mot est choisi car il désigne l'acte de quitter un lieu d'appartenance. Sens direct sans alternative pertinente.\n\n**de** — Le sens retenu est la préposition « min » qui introduit le point de départ du mouvement.\n\n**vos demeures** — Le sens retenu est « demeure » (racine dwr), au pluriel « diyar », avec le suffixe « -kum » (vos) attaché — c'est donc l'ensemble « diyar + kum » qui est rendu par « vos demeures ». Le mot est choisi car il désigne le lieu du foyer, l'ancrage familial. L'alternative « maison » aurait été plus matérielle ; « demeure » garde la dimension de lieu où l'on réside.\n\n**ils ne** — Le sens retenu est la particule « ma » qui porte la négation du verbe suivant. Le « ils » est absorbé anticipativement dans ce segment par fusion avec le sujet implicite du verbe suivant (conjugaison 3e personne du pluriel arabe), pour éviter un ordre « ne + verbe » sans sujet en français. Le « pas » complémentaire est dans le segment suivant.\n\n**l'auraient pas fait** — Le sens retenu est « faire » (racine fel). Le mot est choisi car il rend l'acte accompli en général. Après « law + ma », se rend par le conditionnel passé négatif français — « ils ne l'auraient pas fait ». Le « pas » complète ici la négation « ne » du segment précédent.\n\n**sauf** — Le sens retenu est la particule d'exception « illa » qui restreint l'ensemble précédent à une minorité.\n\n**un petit nombre** — Le sens retenu est « peu nombreux » (racine qll). Le mot est choisi car il désigne une quantité restreinte. On rend en français par le groupe nominal « un petit nombre » plus fluide qu'un adjectif seul.\n\n**d'entre eux** — Le sens retenu est la préposition « min » suivie du possessif « -hum » (eux). Précise que la minorité est prise dans l'ensemble déjà mentionné.\n\n**Et si** — Le sens retenu est la particule « wa-law » qui introduit la seconde hypothèse au passé irréelle parallèle à la première.\n\n**eux** — Le sens retenu est la particule « anna » (que) fusionnée avec « -hum » (eux). Introduit le sujet de la seconde hypothèse — insistance sur « eux ».\n\n**avaient fait** — Le sens retenu est « faire » (racine fel). Reprise du même verbe à la seconde hypothèse. Le verbe au passé arabe après « law » se rend par le plus-que-parfait français — « s'ils avaient fait ».\n\n**ce à quoi** — Le sens retenu est le pronom relatif « ma » complément d'objet du verbe suivant. En français « ce à quoi » (la préposition « à » exigée par « exhorter à ») restitue la fonction relative.\n\n**on les exhorte** — Le sens retenu est « exhorter » (racine wez). Le mot est choisi car il désigne l'acte de rappeler à quelqu'un une conduite juste. Le verbe est à la voix passive en arabe (« sont exhortés »), rendu en français par l'impersonnel actif « on les exhorte » qui garde l'agent indéterminé.\n\n**ainsi** — Le sens retenu est la préposition « bi » (par) fusionnée avec le suffixe « -hi » (cela) — c'est l'ensemble « bi + hi » qui est rendu ici par « ainsi ». On aurait pu rendre par « par cela » (littéral) mais le français aurait alors répété « cela » deux fois (par cela / cela aurait été). « Ainsi » est un adverbe français qui reprend l'antécédent (l'exhortation) sans doubler le pronom.\n\n**cela aurait été** — Le sens retenu est « être ». Le verbe « kana » au passé se rend ici par le conditionnel passé français « aurait été », car c'est la conséquence de la seconde hypothèse au passé. Le « cela » est un sujet ajouté en français : l'arabe n'a pas de démonstratif ici, mais le français a besoin d'un sujet explicite avant le verbe — « cela » renvoie au fait hypothétique d'avoir fait ce à quoi ils sont exhortés.\n\n**meilleur** — Le sens retenu est « meilleur » (racine khyr). Le mot est choisi car il actualise la valeur comparative implicite (« meilleur que ce qu'ils ont fait »). L'alternative « bien » aurait été neutre ; « meilleur » restitue la comparaison sous-jacente.\n\n**pour eux** — Le sens retenu est la préposition « la » (pour) avec le possessif « -hum » (eux) attaché. Marque les bénéficiaires du bénéfice hypothétique.\n\n**et plus fort** — Le sens retenu est « force » (racine shdd). Le mot arabe « ashadd » est un comparatif — « plus fort ». Le sens « force » actualise la valeur comparative dans le contexte « plus fort que ». L'alternative « intensité » aurait été plus abstraite ; « fort » garde le sens direct.\n\n**en affermissement** — Le sens retenu est « affermir » (racine thbt). Le mot arabe « tathbit-an » est un nom d'action qui précise en quoi le comparatif « ashadd » s'exerce — « plus fort en quoi ? en affermissement ». On rend en français par « en affermissement » qui restitue cette valeur de précision.\n\n"
+  },
+  "V67": {
+    "id": 560,
+    "trad": "Et alors, Nous leur aurions donné, de Notre part, une récompense immense.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa-idhan",
+        "fr": "Et alors",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "la-atayna-hum",
+        "fr": "Nous leur aurions donné",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "ladunna",
+        "fr": "Notre part",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "ajran",
+        "fr": "une récompense",
+        "is_particle": false
+      },
+      {
+        "pos": 6,
+        "phon": "azhiman",
+        "fr": "immense",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et alors** — Le sens retenu est la particule « wa » (et) coordonnant au V66 précédent, fusionnée avec « idhan » (alors) qui marque la conséquence hypothétique.\n\n**Nous leur aurions donné** — Le sens retenu est « donner » (sens Venue/Arrivée). Le mot est choisi car la forme arabe qui fait faire « atay-na » (faire venir) prend le sens « donner » — celui qui fait venir apporte, donc donne. L'alternative « apporter » aurait été possible mais moins direct pour une récompense divine ; « donner » est plus fluide. Le « leur » traduit le suffixe « -hum » (eux). Le verbe est au conditionnel passé car conséquence de la seconde hypothèse du V66.\n\n**de** — Le sens retenu est la préposition « min » qui introduit l'origine.\n\n**Notre part** — Le sens retenu est « de la part de (Dieu) » (sens Proximité/Source). Fusion du nom « ladun » (auprès de) et du suffixe « -na » (nous). On rend par « Notre part » — contraction possessive française qui restitue à la fois l'origine et l'appartenance divine. L'alternative « d'auprès de Nous » aurait été plus lourde ; « Notre part » coule mieux.\n\n**une récompense** — Le sens retenu est « récompense » (sens Rétribution/Salaire). Le mot est choisi car il désigne directement la contrepartie qu'un sujet donne pour un acte accompli. Sens direct sans alternative pertinente.\n\n**immense** — Le sens retenu est « immense » (sens Grandeur/Importance). Le mot est choisi car il actualise la grandeur d'échelle marquée par la forme adjectivale « azhim ». L'alternative « grande » aurait été plus neutre ; « immense » restitue l'insistance de la forme.\n\n"
+  },
+  "V68": {
+    "id": 561,
+    "trad": "Et certes Nous les aurions guidés vers un chemin droit.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "la",
+        "fr": "certes",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "hadayna-hum",
+        "fr": "Nous les aurions guidés",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "siratan",
+        "fr": "vers un chemin",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "mustaqiman",
+        "fr": "droit",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et** — Le sens retenu est la particule « wa » qui coordonne au V67 précédent, enchaînant sur la séquence hypothétique en cours.\n\n**certes** — Le sens retenu est la particule d'insistance « la » qui précède le verbe arabe. En français on rend par l'adverbe « certes » pour préserver le poids d'affirmation.\n\n**Nous les aurions guidés** — Le sens retenu est « guider » (sens Guidance/Direction). Le mot est choisi car il désigne directement l'acte de conduire quelqu'un vers la bonne voie. L'alternative « diriger » aurait été plus neutre ; « guider » garde la dimension de conduire avec bienveillance. Le verbe est au conditionnel passé — conséquence de la seconde hypothèse du V66, en cohérence avec « aurions donné » (V67) et « aurait été » (V66). Le « les » traduit le suffixe « -hum » (eux).\n\n**vers un chemin** — Le sens retenu est « chemin » (sens Chemin/Voie). Le mot est choisi car il désigne la voie qu'on parcourt vers une destination. L'alternative « voie » aurait été plus abstraite ; « chemin » garde la dimension concrète du trajet. La préposition « vers » est ajoutée en français pour marquer le complément de mouvement — le verbe arabe « hada » se construit directement avec son objet, sans préposition, mais le français exige « vers ».\n\n**droit** — Le sens retenu est « droit » (sens Verticalité/Droiture). Le mot est choisi car il actualise la rectitude qui ne dévie pas — le sens de « mustaqim » (forme arabe qui prend le sens réfléchi de « se tenir X »). L'alternative « juste » aurait été plus morale ; « droit » garde la dimension spatiale de rectitude directe.\n\n"
+  },
+  "V69": {
+    "id": 562,
+    "trad": "Et quiconque obéit à Dieu et au Messager, alors ceux-là sont avec ceux à qui Dieu a fait bienfait — parmi les prophètes, les véridiques, les témoins et les vertueux. Et quels beaux compagnons que ceux-là !",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "man",
+        "fr": "quiconque",
+        "is_particle": true
+      },
+      {
+        "pos": 3,
+        "phon": "yuti",
+        "fr": "obéit",
+        "is_particle": false
+      },
+      {
+        "pos": 4,
+        "phon": "Allah",
+        "fr": "à Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "ar-Rasul",
+        "fr": "au Messager",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "fa",
+        "fr": "alors",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "ula-ika",
+        "fr": "ceux-là",
+        "is_particle": true
+      },
+      {
+        "pos": 9,
+        "phon": "ma-a",
+        "fr": "sont avec",
+        "is_particle": true
+      },
+      {
+        "pos": 10,
+        "phon": "alladhina",
+        "fr": "ceux",
+        "is_particle": true
+      },
+      {
+        "pos": 11,
+        "phon": "anama",
+        "fr": "a fait bienfait",
+        "is_particle": false
+      },
+      {
+        "pos": 12,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 13,
+        "phon": "alay-him",
+        "fr": "à qui",
+        "is_particle": true
+      },
+      {
+        "pos": 14,
+        "phon": "min",
+        "fr": "parmi",
+        "is_particle": true
+      },
+      {
+        "pos": 15,
+        "phon": "an-nabiyyin",
+        "fr": "les prophètes",
+        "is_particle": false
+      },
+      {
+        "pos": 16,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 17,
+        "phon": "as-siddiqin",
+        "fr": "les véridiques",
+        "is_particle": false
+      },
+      {
+        "pos": 18,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 19,
+        "phon": "ash-shuhadaa",
+        "fr": "les témoins",
+        "is_particle": false
+      },
+      {
+        "pos": 20,
+        "phon": "wa",
+        "fr": "et",
+        "is_particle": true
+      },
+      {
+        "pos": 21,
+        "phon": "as-salihin",
+        "fr": "les vertueux",
+        "is_particle": false
+      },
+      {
+        "pos": 22,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 23,
+        "phon": "hasuna",
+        "fr": "quels beaux",
+        "is_particle": false
+      },
+      {
+        "pos": 24,
+        "phon": "ula-ika",
+        "fr": "que ceux-là",
+        "is_particle": true
+      },
+      {
+        "pos": 25,
+        "phon": "rafiqan",
+        "fr": "compagnons",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Et** — Le sens retenu est la particule « wa » qui coordonne au V68 précédent.\n\n**quiconque** — Le sens retenu est la particule « man » qui introduit une condition universelle applicable à toute personne.\n\n**obéit** — Le sens retenu est « obéir » (sens Obéissance/Soumission volontaire). Le mot est choisi car il désigne l'acte volontaire de se conformer à ce qui est prescrit. L'alternative « se soumettre » aurait été plus marquée ; « obéir » garde la neutralité de l'acte volontaire.\n\n**à Dieu** — Le sens retenu est « Dieu » (sens Divinité). La préposition « à » est ajoutée en français car le verbe « obéir » exige un complément indirect en français.\n\n**et** — Le sens retenu est la particule « wa » qui coordonne les deux compléments d'obéissance.\n\n**au Messager** — Le sens retenu est « messager » (sens Messager/Porteur). Le « au » traduit « à + le » (préposition + article défini). Reprise du même terme désignant celui à qui il faut se remettre pleinement (cf. V65).\n\n**alors** — Le sens retenu est la particule « fa » qui introduit la conséquence de la condition posée par « man » (quiconque).\n\n**ceux-là** — Le sens retenu est le pronom démonstratif « ula-ika » qui reprend « quiconque » comme sujet de la proposition principale.\n\n**sont avec** — Le sens retenu est la préposition « ma'a » (avec). Le verbe « sont » est ajouté en français car la verbe être est implicite en arabe.\n\n**ceux** — Le sens retenu est le pronom relatif « alladhina » qui introduit la relative précisant les bénéficiaires du bienfait.\n\n**a fait bienfait** — Le sens retenu est « accorder un bienfait » (sens Bienfait/Faveur). Le mot est choisi car il désigne l'acte transitif divin de faire faveur à ses bénéficiaires. L'alternative « combler de bienfaits » (Hamidullah) est plus dense mais rajoute une intensité absente du verbe « an'ama » qui dit simplement « faire bienfait ».\n\n**Dieu** — Le sens retenu est « Dieu » (sens Divinité). Sujet du verbe « a fait bienfait ». Reprise du nom propre.\n\n**à qui** — Le sens retenu est la préposition « ala » (sur) avec le suffixe « -him » (eux) attaché. En français on rend par « à qui » qui reprend « alladhina » précédent — la fusion « à qui » est la construction française naturelle pour rendre la reprise du relatif avec un suffixe pronominal complément.\n\n**parmi** — Le sens retenu est la préposition « min » qui introduit l'énumération des quatre catégories bénéficiaires.\n\n**les prophètes** — Le sens retenu est « prophète » (sens Prophétie). Le mot est choisi car il désigne le porteur d'annonce divine. L'alternative « nabi » (transcription) aurait été fidèle à la phonétique mais le mot français « prophète » est le rendu établi.\n\n**et** — Le sens retenu est la particule « wa » qui coordonne dans l'énumération.\n\n**les véridiques** — Le sens retenu est « sincère » (sens Vérité/Sincérité). Le mot est choisi car « véridique » (au pluriel) rend l'amplificatif arabe « siddiq » — celui dont la sincérité est constante et complète. L'alternative « sincère » seul aurait perdu l'intensité amplificative de la forme.\n\n**et** — Le sens retenu est la particule « wa ».\n\n**les témoins** — Le sens retenu est « témoigner » (sens Témoignage/Déclaration). Le mot est choisi pour préserver le sens premier étymologique — celui qui atteste ce qu'il a vu ou reconnu comme vrai. L'alternative « martyrs » (Hamidullah) est le sens dérivé post-islamique tardif ; on préfère le sens premier plus large et ouvert.\n\n**et** — Le sens retenu est la particule « wa ».\n\n**les vertueux** — Le sens retenu est « vertueux » (sens Bonté/Rectitude). Le mot est choisi car il désigne les personnes dont la conduite bonne s'exprime en actions justes. L'alternative « bons » aurait été trop générique ; « vertueux » précise la dimension morale active.\n\n**Et** — Le sens retenu est la particule « wa » qui introduit la seconde phrase du verset (exclamation de louange).\n\n**quels beaux** — Le sens retenu est « être beau » (sens Beauté/Bonté). Le verbe « hasuna » (avoir été beau, être beau) est utilisé dans une construction d'admiration exclamative arabe (ni'ma / bi'sa / hasuna + précision d'application) qui se rend en français par « quels beaux X que ceux-là ». L'alternative « comme sont beaux » aurait été plus littérale mais moins fluide.\n\n**que ceux-là** — Le sens retenu est le pronom démonstratif « ula-ika » repris dans la construction exclamative. Le « que » français fait partie de la structure exclamative « quels beaux X que Y ».\n\n**compagnons** — Le sens retenu est « compagnon » (sens Douceur/Compagnonnage). Le mot est choisi car il désigne le partenaire proche qui accompagne avec bienveillance. Le mot arabe « rafiq » désigne précisément le compagnon de route qui accompagne avec douceur.\n\n"
+  },
+  "V70": {
+    "id": 563,
+    "trad": "Telle est la grâce de Dieu. Et Dieu suffit comme Très-Savant.",
+    "segments": [
+      {
+        "pos": 1,
+        "phon": "dhalika",
+        "fr": "Telle est",
+        "is_particle": true
+      },
+      {
+        "pos": 2,
+        "phon": "al-fadl",
+        "fr": "la grâce",
+        "is_particle": false
+      },
+      {
+        "pos": 3,
+        "phon": "min",
+        "fr": "de",
+        "is_particle": true
+      },
+      {
+        "pos": 4,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 5,
+        "phon": "wa",
+        "fr": "Et",
+        "is_particle": true
+      },
+      {
+        "pos": 6,
+        "phon": "kafa",
+        "fr": "suffit",
+        "is_particle": false
+      },
+      {
+        "pos": 7,
+        "phon": "bi",
+        "fr": "comme",
+        "is_particle": true
+      },
+      {
+        "pos": 8,
+        "phon": "Allah",
+        "fr": "Dieu",
+        "is_particle": false
+      },
+      {
+        "pos": 9,
+        "phon": "aliman",
+        "fr": "comme Très-Savant",
+        "is_particle": false
+      }
+    ],
+    "old_justif": "\n\n**Telle est** — Le sens retenu est le démonstratif « dhalika » qui désigne en amont la promesse du V69. En français on rend par « Telle est » (avec accord féminin « telle » qui anticipe « grâce » qui suit) et l'ajout du verbe « est » (verbe être implicite en arabe).\n\n**la grâce** — Le sens retenu est « grâce » (sens Excellence/Faveur). Le mot est choisi car il désigne le don supérieur accordé sans contrepartie. L'alternative « faveur » aurait été plus neutre ; « grâce » garde la dimension de don qui excède la stricte justice — cohérent avec la promesse divine au V69.\n\n**de** — Le sens retenu est la préposition « min » qui introduit la source divine. En français on rend par « de » qui marque l'origine.\n\n**Dieu** — Le sens retenu est « Dieu » (sens Divinité). Le mot est choisi car il désigne le nom propre de l'unique divinité, source de la grâce.\n\n**Et** — Le sens retenu est la particule « wa » qui coordonne au segment précédent en introduisant la seconde phrase.\n\n**Dieu** — Le sens retenu est « Dieu » (sens Divinité). Second Dieu du verset — le sujet réel du verbe « suffit ». La préposition « bi » qui précède en arabe est absorbée dans la construction française où Dieu devient sujet direct.\n\n**suffit** — Le sens retenu est « suffire » (sens Suffisance/Protection). Le mot est choisi car il désigne la plénitude qui n'appelle rien d'autre. Le verbe arabe au passé se rend ici par le présent français (« suffit ») comme une vérité générale valable en permanence — usage classique dans les formules de louange coraniques.\n\n**par** — Le sens retenu est la préposition « bi » qui marque en arabe le sujet réel du verbe « kafa ». En français, cette préposition est absorbée dans la construction où Dieu devient sujet direct. Néanmoins on la conserve dans les segments pour respecter la présence du mot arabe — le « par » peut aussi se comprendre comme un « par lui-même » implicite (« Dieu suffit par lui-même comme Très-Savant »).\n\n**comme Très-Savant** — Le sens retenu est « savant » (sens Savoir/Connaissance). Le mot arabe « 'aliman » est à la forme « fail » qui marque l'attribut divin permanent et fort. On rend en français par « Très-Savant » (convention maison pour les attributs divins à cette forme) qui préserve l'intensité de la forme arabe. L'alternative « Connaisseur » (Hamidullah) est une glose qui déplace le sens du savoir vers la connaissance en tant qu'acte. « Le « comme » traduit la valeur de précision d'application (« suffit comme quoi ? comme Savant »).\n\n"
+  }
+}

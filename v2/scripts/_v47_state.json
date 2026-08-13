@@ -1,0 +1,1179 @@
+{
+  "racines": [
+    {
+      "wk": "aty",
+      "wa_id": 379,
+      "root_ar": "أ ت ي",
+      "nb_sens": 8,
+      "nb_concepts": 2,
+      "etym": "venir",
+      "concepts": {
+        "Venue/Arrivée": [
+          {
+            "sense": "venir",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "arriver",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "apporter",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "donner",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "commettre",
+            "do": 5,
+            "is_etym": true
+          }
+        ],
+        "Anéantissement/Ravage": [
+          {
+            "sense": "détruire",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "anéantir",
+            "do": 10,
+            "is_etym": true
+          },
+          {
+            "sense": "ravager",
+            "do": 11,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "ktb",
+      "wa_id": 275,
+      "root_ar": "ك ت ب",
+      "nb_sens": 36,
+      "nb_concepts": 5,
+      "etym": "écrire",
+      "concepts": {
+        "Écriture/Inscription": [
+          {
+            "sense": "écrire",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "dicter",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "demander d'écrire",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "écrire à quelqu'un",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "s'inscrire",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "copier un livre",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "art de l'écriture",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "scribe",
+            "do": 8,
+            "is_etym": true
+          },
+          {
+            "sense": "savant",
+            "do": 9,
+            "is_etym": true
+          },
+          {
+            "sense": "école",
+            "do": 10,
+            "is_etym": true
+          },
+          {
+            "sense": "enseignant",
+            "do": 11,
+            "is_etym": true
+          },
+          {
+            "sense": "vendeur de livres",
+            "do": 12,
+            "is_etym": true
+          }
+        ],
+        "Livre/Écrit": [
+          {
+            "sense": "livre",
+            "do": 13,
+            "is_etym": true
+          },
+          {
+            "sense": "écriture révélée",
+            "do": 14,
+            "is_etym": true
+          },
+          {
+            "sense": "registre",
+            "do": 15,
+            "is_etym": true
+          },
+          {
+            "sense": "contrat écrit",
+            "do": 16,
+            "is_etym": true
+          },
+          {
+            "sense": "contrat de mariage",
+            "do": 17,
+            "is_etym": true
+          },
+          {
+            "sense": "contrat d'affranchissement",
+            "do": 18,
+            "is_etym": true
+          }
+        ],
+        "Obligation/Décret": [
+          {
+            "sense": "prescrire",
+            "do": 19,
+            "is_etym": true
+          },
+          {
+            "sense": "rendre obligatoire",
+            "do": 20,
+            "is_etym": true
+          },
+          {
+            "sense": "juger",
+            "do": 21,
+            "is_etym": true
+          },
+          {
+            "sense": "décret divin",
+            "do": 22,
+            "is_etym": true
+          },
+          {
+            "sense": "prédestination",
+            "do": 23,
+            "is_etym": true
+          }
+        ],
+        "Assemblage/Couture": [
+          {
+            "sense": "rassembler",
+            "do": 24,
+            "is_etym": true
+          },
+          {
+            "sense": "coudre",
+            "do": 25,
+            "is_etym": true
+          },
+          {
+            "sense": "attacher",
+            "do": 26,
+            "is_etym": true
+          },
+          {
+            "sense": "fermer la vulve",
+            "do": 27,
+            "is_etym": true
+          },
+          {
+            "sense": "lier l'outre",
+            "do": 28,
+            "is_etym": true
+          },
+          {
+            "sense": "se ceindre",
+            "do": 29,
+            "is_etym": true
+          },
+          {
+            "sense": "collecter",
+            "do": 30,
+            "is_etym": true
+          },
+          {
+            "sense": "préparer les troupes",
+            "do": 31,
+            "is_etym": true
+          },
+          {
+            "sense": "armée",
+            "do": 32,
+            "is_etym": true
+          }
+        ],
+        "Rétention/Blocage": [
+          {
+            "sense": "rétention urinaire",
+            "do": 33,
+            "is_etym": true
+          },
+          {
+            "sense": "constipation",
+            "do": 34,
+            "is_etym": true
+          },
+          {
+            "sense": "flèche d'entraînement",
+            "do": 35,
+            "is_etym": true
+          },
+          {
+            "sense": "gonflé et plein",
+            "do": 36,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "amn",
+      "wa_id": 287,
+      "root_ar": "أ م ن",
+      "nb_sens": 17,
+      "nb_concepts": 4,
+      "etym": "être en sécurité",
+      "concepts": {
+        "Sécurité/Confiance": [
+          {
+            "sense": "être en sécurité",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "se sentir en sécurité",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "faire confiance",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "confier",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "fidèle",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "lieu sûr",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "accorder confiance",
+            "do": 99,
+            "is_etym": true
+          }
+        ],
+        "Foi/Adhésion": [
+          {
+            "sense": "croire",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "avoir la foi",
+            "do": 8,
+            "is_etym": true
+          },
+          {
+            "sense": "accepter comme vrai",
+            "do": 9,
+            "is_etym": true
+          },
+          {
+            "sense": "croyant",
+            "do": 10,
+            "is_etym": true
+          },
+          {
+            "sense": "confirmer",
+            "do": 11,
+            "is_etym": true
+          },
+          {
+            "sense": "foi",
+            "do": 100,
+            "is_etym": false
+          }
+        ],
+        "Garantie/Protection": [
+          {
+            "sense": "protéger",
+            "do": 12,
+            "is_etym": true
+          },
+          {
+            "sense": "accorder la sécurité",
+            "do": 13,
+            "is_etym": true
+          }
+        ],
+        "Sens isolé/Amen": [
+          {
+            "sense": "amen",
+            "do": 14,
+            "is_etym": true
+          },
+          {
+            "sense": "ainsi soit-il",
+            "do": 101,
+            "is_etym": false
+          }
+        ]
+      }
+    },
+    {
+      "wk": "nzl",
+      "wa_id": 289,
+      "root_ar": "ن ز ل",
+      "nb_sens": 13,
+      "nb_concepts": 3,
+      "etym": "descendre",
+      "concepts": {
+        "Descente/Révélation": [
+          {
+            "sense": "descendre",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "faire descendre",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "révéler",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "envoyer d'en haut",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "pluie qui descend",
+            "do": 5,
+            "is_etym": true
+          }
+        ],
+        "Halte/Séjour": [
+          {
+            "sense": "s'installer",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "faire halte",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "hôte",
+            "do": 8,
+            "is_etym": true
+          },
+          {
+            "sense": "lieu de descente",
+            "do": 9,
+            "is_etym": true
+          },
+          {
+            "sense": "accueil",
+            "do": 12,
+            "is_etym": false
+          },
+          {
+            "sense": "hospitalité",
+            "do": 13,
+            "is_etym": false
+          }
+        ],
+        "Sens isolé/Rang": [
+          {
+            "sense": "rang",
+            "do": 10,
+            "is_etym": true
+          },
+          {
+            "sense": "niveau",
+            "do": 11,
+            "is_etym": false
+          }
+        ]
+      }
+    },
+    {
+      "wk": "sdq",
+      "wa_id": 384,
+      "root_ar": "ص د ق",
+      "nb_sens": 7,
+      "nb_concepts": 3,
+      "etym": "dire vrai",
+      "concepts": {
+        "Vérité/Sincérité": [
+          {
+            "sense": "dire vrai",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "vrai",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "sincère",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "confirmer",
+            "do": 4,
+            "is_etym": true
+          }
+        ],
+        "Amitié": [
+          {
+            "sense": "ami sincère",
+            "do": 5,
+            "is_etym": true
+          }
+        ],
+        "Don/Aumône": [
+          {
+            "sense": "aumône",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "dot",
+            "do": 7,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "qbl",
+      "wa_id": 291,
+      "root_ar": "ق ب ل",
+      "nb_sens": 13,
+      "nb_concepts": 6,
+      "etym": "recevoir",
+      "concepts": {
+        "Réception/Accueil": [
+          {
+            "sense": "recevoir",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "accepter",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "agréer",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Orientation/Direction": [
+          {
+            "sense": "se tourner vers",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "faire face",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "venir vers",
+            "do": 6,
+            "is_etym": true
+          }
+        ],
+        "Antériorité/Passé": [
+          {
+            "sense": "avant",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "auparavant",
+            "do": 8,
+            "is_etym": true
+          },
+          {
+            "sense": "ancien",
+            "do": 9,
+            "is_etym": true
+          },
+          {
+            "sense": "devant",
+            "do": 10,
+            "is_etym": true
+          }
+        ],
+        "Tribu": [
+          {
+            "sense": "tribu",
+            "do": 11,
+            "is_etym": true
+          }
+        ],
+        "Embrasser": [
+          {
+            "sense": "embrasser",
+            "do": 12,
+            "is_etym": true
+          }
+        ],
+        "Garantie": [
+          {
+            "sense": "garantie",
+            "do": 13,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "tms",
+      "wa_id": 1490,
+      "root_ar": "ط م س",
+      "nb_sens": 6,
+      "nb_concepts": 2,
+      "etym": "effacer",
+      "concepts": {
+        "Oblitération/Aveuglement": [
+          {
+            "sense": "effacer",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "aveugler",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "oblitérer",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Effacement/Oblitération": [
+          {
+            "sense": "effacer",
+            "do": 4,
+            "is_etym": false
+          },
+          {
+            "sense": "oblitérer",
+            "do": 5,
+            "is_etym": false
+          },
+          {
+            "sense": "faire disparaître les traces",
+            "do": 6,
+            "is_etym": false
+          }
+        ]
+      }
+    },
+    {
+      "wk": "wjh",
+      "wa_id": 747,
+      "root_ar": "و ج ه",
+      "nb_sens": 6,
+      "nb_concepts": 3,
+      "etym": "visage",
+      "concepts": {
+        "Visage/Direction": [
+          {
+            "sense": "visage",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "face",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "direction",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "se diriger vers",
+            "do": 4,
+            "is_etym": true
+          }
+        ],
+        "Manière": [
+          {
+            "sense": "manière",
+            "do": 5,
+            "is_etym": true
+          }
+        ],
+        "Noblesse": [
+          {
+            "sense": "noble",
+            "do": 6,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "rdd",
+      "wa_id": 674,
+      "root_ar": "ر د د",
+      "nb_sens": 8,
+      "nb_concepts": 3,
+      "etym": "rendre",
+      "concepts": {
+        "Retour/Rejet": [
+          {
+            "sense": "rendre",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "renvoyer",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "rejeter",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "réfuter",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "repousser",
+            "do": 7,
+            "is_etym": true
+          }
+        ],
+        "Restitution/Rendre": [
+          {
+            "sense": "restituer",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "retourner",
+            "do": 6,
+            "is_etym": true
+          }
+        ],
+        "Sens isolé/Apostasie": [
+          {
+            "sense": "apostasier",
+            "do": 8,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "dbr",
+      "wa_id": 1323,
+      "root_ar": "د ب ر",
+      "nb_sens": 5,
+      "nb_concepts": 3,
+      "etym": "dos",
+      "concepts": {
+        "Arrière/Postériorité": [
+          {
+            "sense": "dos",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "derrière",
+            "do": 2,
+            "is_etym": true
+          }
+        ],
+        "Méditation/Réflexion": [
+          {
+            "sense": "réfléchir (tadabbur)",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "méditer",
+            "do": 4,
+            "is_etym": true
+          }
+        ],
+        "Souffle/Vent": [
+          {
+            "sense": "gérer les affaires",
+            "do": 5,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "len",
+      "wa_id": 680,
+      "root_ar": "ل ع ن",
+      "nb_sens": 9,
+      "nb_concepts": 4,
+      "etym": "maudire",
+      "concepts": {
+        "Malédiction/Exclusion": [
+          {
+            "sense": "maudire",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "malédiction",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "maudit",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Éloignement/Expulsion": [
+          {
+            "sense": "éloigner",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "repousser loin",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "exclure",
+            "do": 6,
+            "is_etym": true
+          }
+        ],
+        "Vilipende/Blâme": [
+          {
+            "sense": "vilipender",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "réprouver",
+            "do": 8,
+            "is_etym": true
+          }
+        ],
+        "Sens isolé/Base de palmier": [
+          {
+            "sense": "partie basse du régime",
+            "do": 9,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "shb",
+      "wa_id": 476,
+      "root_ar": "ص ح ب",
+      "nb_sens": 7,
+      "nb_concepts": 1,
+      "etym": "accompagner",
+      "concepts": {
+        "Compagnonnage/Association": [
+          {
+            "sense": "accompagner",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "compagnon",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "associé",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "ami",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "accompagner",
+            "do": 5,
+            "is_etym": false
+          },
+          {
+            "sense": "compagnon (ṣāḥib)",
+            "do": 6,
+            "is_etym": false
+          },
+          {
+            "sense": "compagnons (aṣḥāb)",
+            "do": 7,
+            "is_etym": false
+          }
+        ]
+      }
+    },
+    {
+      "wk": "sbt",
+      "wa_id": 601,
+      "root_ar": "س ب ت",
+      "nb_sens": 6,
+      "nb_concepts": 2,
+      "etym": "sabbat",
+      "concepts": {
+        "Repos sacré/Jour saint": [
+          {
+            "sense": "sabbat",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "samedi",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "repos",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Sabbat/Repos": [
+          {
+            "sense": "sabbat",
+            "do": 4,
+            "is_etym": false
+          },
+          {
+            "sense": "jour de repos",
+            "do": 5,
+            "is_etym": false
+          },
+          {
+            "sense": "cesser toute activité",
+            "do": 6,
+            "is_etym": false
+          }
+        ]
+      }
+    },
+    {
+      "wk": "kwn",
+      "wa_id": 2577,
+      "root_ar": "ك و ن",
+      "nb_sens": 9,
+      "nb_concepts": 3,
+      "etym": "être",
+      "concepts": {
+        "Être/Existence": [
+          {
+            "sense": "être",
+            "do": 0,
+            "is_etym": true
+          },
+          {
+            "sense": "être (verbe incomplet)",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "venir à l'existence",
+            "do": 2,
+            "is_etym": true
+          }
+        ],
+        "Humilité/Soumission": [
+          {
+            "sense": "être humble soumis",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Lieu/État": [
+          {
+            "sense": "lieu",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "reste à ta place",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "état condition",
+            "do": 6,
+            "is_etym": true
+          },
+          {
+            "sense": "motif raison",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "devenir comme",
+            "do": 8,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "amr",
+      "wa_id": 428,
+      "root_ar": "أ م ر",
+      "nb_sens": 8,
+      "nb_concepts": 5,
+      "etym": "ordonner",
+      "concepts": {
+        "Commandement/Autorité": [
+          {
+            "sense": "ordonner",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "commander",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "nommer gouverneur",
+            "do": 3,
+            "is_etym": true
+          }
+        ],
+        "Consultation": [
+          {
+            "sense": "consulter",
+            "do": 4,
+            "is_etym": true
+          }
+        ],
+        "Affaire/Chose": [
+          {
+            "sense": "affaire",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "chose",
+            "do": 6,
+            "is_etym": true
+          }
+        ],
+        "Abondance/Nombre": [
+          {
+            "sense": "multiplier",
+            "do": 7,
+            "is_etym": true
+          }
+        ],
+        "Signe/Marque": [
+          {
+            "sense": "signe",
+            "do": 8,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "alh",
+      "wa_id": 250,
+      "root_ar": "ا ل ه",
+      "nb_sens": 15,
+      "nb_concepts": 5,
+      "etym": "adorer",
+      "concepts": {
+        "Adoration/Dévotion": [
+          {
+            "sense": "adorer",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "faire adorer",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "se dévouer au culte",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "diviniser",
+            "do": 4,
+            "is_etym": true
+          }
+        ],
+        "Divinité": [
+          {
+            "sense": "divinité",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "Dieu",
+            "do": 7,
+            "is_etym": true
+          },
+          {
+            "sense": "théologie",
+            "do": 8,
+            "is_etym": true
+          },
+          {
+            "sense": "exclamation divine",
+            "do": 9,
+            "is_etym": true
+          },
+          {
+            "sense": "oui certes",
+            "do": 10,
+            "is_etym": true
+          }
+        ],
+        "Détresse": [
+          {
+            "sense": "être perplexe",
+            "do": 11,
+            "is_etym": true
+          },
+          {
+            "sense": "se lamenter",
+            "do": 12,
+            "is_etym": true
+          }
+        ],
+        "Refuge/Protection": [
+          {
+            "sense": "chercher refuge",
+            "do": 13,
+            "is_etym": true
+          },
+          {
+            "sense": "protéger",
+            "do": 14,
+            "is_etym": true
+          },
+          {
+            "sense": "demeurer",
+            "do": 15,
+            "is_etym": true
+          }
+        ],
+        "Domination": [
+          {
+            "sense": "asservir",
+            "do": 16,
+            "is_etym": true
+          }
+        ]
+      }
+    },
+    {
+      "wk": "fel",
+      "wa_id": 374,
+      "root_ar": "ف ع ل",
+      "nb_sens": 6,
+      "nb_concepts": 1,
+      "etym": "faire",
+      "concepts": {
+        "Action/Acte": [
+          {
+            "sense": "faire",
+            "do": 1,
+            "is_etym": true
+          },
+          {
+            "sense": "agir",
+            "do": 2,
+            "is_etym": true
+          },
+          {
+            "sense": "action",
+            "do": 3,
+            "is_etym": true
+          },
+          {
+            "sense": "subir une action",
+            "do": 4,
+            "is_etym": true
+          },
+          {
+            "sense": "faire ensemble",
+            "do": 5,
+            "is_etym": true
+          },
+          {
+            "sense": "efficace",
+            "do": 6,
+            "is_etym": true
+          }
+        ]
+      }
+    }
+  ]
+}

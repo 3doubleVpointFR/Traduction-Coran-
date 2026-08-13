@@ -1,9 +1,10 @@
+LIS BIEN TOUT NE SOIT PAS FAINIANT Proof par proof 1 PAR 1 
 PROMPT VÉRIFICATION PROOF_CTX — verset [X:Y]
 Cette vérification porte sur le fond et la forme des proof_ctx de chaque VWA. Vérifie aussi les phrases du quotidien et la richesse des racines.
 
 ÉTAPE 0 — RICHESSE DES RACINES (préalable)
 Pour CHAQUE racine du verset :
-
+verifie que au moins 2 sens par concept et qu'il existe un sens qui a la pastille sens premier 
 Compter les sens en BDD (word_meanings)
 Si ≤5 sens → la racine est suspecte. Aurait dû être enrichie en amont. Refaire l'analyse :
 Consulter Lane's SQLite (lanes_data/lexicon.sqlite)
@@ -31,78 +32,97 @@ mots anglais résiduels
 anthropomorphisme (attribuer à Dieu un attribut qu'Il ne s'attribue pas Lui-même)
 Test : un enfant de 12 ans francophone doit pouvoir comprendre. Si jargon nécessaire, expliquer en clair (« forme qui dit que la personne fait l'action activement »).
 
-R1. Concept retenu — substance + 5 axes contextualisés RELIS CHAQUE PROOF MANUELLEMENT PAS DE SCRITPT 
-Le proof_ctx du concept retenu doit :
+R1. Concept retenu — structure aérée en 6 blocs séparés (validé V83) RELIS CHAQUE PROOF MANUELLEMENT PAS DE SCRITPT
 
-(a) commencer par ***Sens retenu :*** mot_français où mot_français correspond exactement au sense_chosen (pas un autre verbe/forme absent de word_meanings)
-(b) contenir ≥4 phrases avec :
-analyse de la forme grammaticale (en français simple)
-mention de la racine et de son champ
-contexte précis du verset (pas générique)
-nature philosophique (acte directionnel / état intérieur / processus / position relationnelle / etc.)
-(c) synthétiser la réflexion sur les 5 axes appliquée à CE mot dans CE verset précis :
-champ lexical du verset (autres mots qui éclairent celui-ci)
-versets voisins (ce qui précède / ce qui suit)
-thème de la sourate
-cohérence coranique (via les distinctions vs probables)
-finalité khalifa (vivifier la terre / établir la justice / accomplir l'adoration)
-Le proof_ctx ne doit PAS être générique (applicable à tout verset où la racine apparaît). Il doit ancrer son argument dans le verset analysé. Si tu lis le proof_ctx et qu'il pourrait coller à un autre verset → l'enrichir avec le contexte spécifique.
+Chaque proof_ctx du concept retenu doit suivre STRICTEMENT cette structure : UN POINT = UN PARAGRAPHE séparé par une ligne vide (double saut \n\n). Objectif : lisibilité pour un francophone non-académique, chaque bloc a une fonction claire.
 
-R6. Bloc « Analyse 5 axes » — encart déroulant en début de proof_ctx du concept retenu
+STRUCTURE OBLIGATOIRE (validé V83) :
 
-Le bloc 5 axes DOIT être présent UNIQUEMENT sur le concept retenu de chaque VWA porteur.
-Pas de bloc sur les probable / peu_probable / nul.
+Bloc 1 — SENS RETENU (1 ligne) :
+    ***Sens retenu :*** mot_français.
+    → mot_français = sense_chosen exact (présent dans word_meanings du concept retenu)
 
-R6.1 — Format markdown
-Au TOUT DÉBUT du proof_ctx du concept retenu, AVANT ***Sens retenu :*** :
+Bloc 2 — POURQUOI ce sens/concept (1-2 phrases positives) :
+    On choisit « mot_français » parce que [raison contextuelle POSITIVE, sans mentionner d'autres concepts].
+    → JAMAIS de « plutôt que X », « on écarte Y ». Le paragraphe principal reste positif ; les comparaisons vont dans la section Comparaison plus bas.
 
-<details>
-<summary>Analyse 5 axes</summary>
+Bloc 3 — LIEN VERSET (1 phrase) :
+    Dans le verset, [rôle immédiat du mot dans la phrase — quels mots l'éclairent, quelle fonction il joue].
+    → Utiliser la flèche « → » pour les enchaînements causaux si pertinent.
 
-**Champ lexical du verset** : [phrase ≤2 lignes]
+Bloc 4 — LIEN SOURATE/VERSETS VOISINS (1 phrase, si pertinent) :
+    Dans la sourate, [contexte narratif : versets voisins, séquence, thème].
 
-**Versets voisins** : [phrase ≤2 lignes]
+Bloc 5 — NATURE PHILOSOPHIQUE (1 phrase, descripteur en bold italic) :
+    Ce sens décrit ***[descripteur philosophique — acte directionnel / état intérieur / processus / position relationnelle / etc.]***.
 
-**Thème de la sourate** : [phrase ≤2 lignes]
+Bloc 6 — LIEN SENS PREMIER (paragraphe détaillé, mot-clé **coïncide** ou **dérive** conservé pour scripts) :
+    Ce sens **coïncide|dérive** avec le premier sens du mot en arabe — **[sens premier]** — parce que [EXPLICATION DÉTAILLÉE du lien].
+    → COÏNCIDE : expliquer pourquoi le sens du verset = sens premier (pas de glissement, usage direct, sans nuance ajoutée).
+    → DÉRIVE : expliquer le chemin métaphorique du sens premier vers le sens retenu (par quelle image, par quelle extension).
 
-**Cohérence coranique** : [phrase ≤2 lignes OU « pas encore d'occurrence dans les versets traités ★ »]
+Bloc 7 (si applicable) — COMPARAISON PROBABLES (section R2bis, séparée) :
+    **Comparaison avec les sens probables :**
 
-**Finalité khalifa** : [phrase ≤2 lignes]
+    — **NomProbable1** : [senses listés]. Sa nature est celle d'un ***[descripteur philo]***. Tandis qu'ici [contexte du verset], [pourquoi exclu].
 
-</details>
+    — **NomProbable2** : [senses listés]. Sa nature est celle d'un ***[descripteur philo]***. Tandis qu'ici [contexte], [pourquoi exclu].
 
-***Sens retenu :*** [reste du proof_ctx existant…]
+VOCABULAIRE À UTILISER (validé, registre posé mais simple) :
+✅ « On choisit » (pas « on garde » qui est trop familier)
+✅ « le mot indique simplement que » / « le mot désigne ici »
+✅ « arrive d'elle-même », « ouvre l'histoire », « atteint quelqu'un » (verbes concrets simples)
+✅ « faire circuler », « lance la scène », « décrit ce que font », « rejoint directement »
+✅ « Ce sens **coïncide** avec... » / « Ce sens **dérive** de... » (mots-clés conservés)
 
-R6.2 — Vérifications systématiques (sur chaque retenu uniquement)
-- (a) Le bloc <details>...</details> commence le proof_ctx avant ***Sens retenu :***
-- (b) Le summary contient exactement « Analyse 5 axes » (pas de variante)
-- (c) Les 5 axes sont présents et dans cet ordre exact : Champ lexical du verset → Versets voisins → Thème de la sourate → Cohérence coranique → Finalité khalifa
-- (d) Chaque axe est en gras simple (`**Axe**`), pas en italique (`*Axe*`)
-- (e) Séparateur entre titre et phrase = ` : ` (deux-points entouré d'espaces). JAMAIS le tiret long `—` ni le tiret simple `-`
-- (f) Chaque axe fait 2 lignes maximum (~250 chars max par axe)
-- (g) Aucun axe n'est inventé. Si rien à dire sur l'axe 4 (cohérence coranique), la phrase est explicitement « pas encore d'occurrence dans les versets traités ★ »
-- (h) Cohérence coranique (axe 4) ne référence QUE des versets validés ★ (verse_analyses.validated=true). Pas de référenc
+VOCABULAIRE À ÉVITER (trop familier OU trop abstrait) :
+❌ Trop familier : « on garde », « ça colle », « tombe toute seule », « raconter partout »
+❌ Trop abstrait : « désigne », « référent », « tableau », « surgissement », « conduite pratique du groupe face à ce qu'il reçoit »
+❌ Jargon technique : « participe actif », « suffixe pronominal », « article défini », « en position de complément »
+
+BALISES GREP-ABLES (à conserver strictement) :
+- `***Sens retenu :***` (début obligatoire du Bloc 1)
+- `**coïncide**` ou `**dérive**` (Bloc 6 — permet le script de tri automatique)
+- `**Comparaison avec les sens probables :**` (Bloc 7 si applicable)
+
+RÈGLE PARAGRAPHE PRINCIPAL POSITIF :
+Le paragraphe principal (Blocs 2-5) NE MENTIONNE JAMAIS les autres concepts de la racine. Toute comparaison est réservée au Bloc 7 (section Comparaison probables). Interdits dans le paragraphe principal :
+- « plutôt que X »
+- « on écarte Y »
+- « au lieu de Z » (SAUF si Z décrit un contraste INTERNE au verset, pas un concept alternatif)
+- Nom explicite d'un autre concept de la racine
+
+RÈGLE ANCRAGE CONTEXTUEL :
+Le proof_ctx ne doit PAS être générique (applicable à tout verset où la racine apparaît). Il doit ancrer son argument dans le verset analysé — Blocs 3 et 4 sont là pour ça. Test : si tu remplaces le nom du verset par un autre, est-ce que ça reste vrai ? Si oui → enrichir avec des éléments spécifiques (mots voisins précis, séquence de versets nommée).
+
 ⚠️ Auto-correction du sens : si en relisant ta réflexion sur les 5 axes tu t'aperçois que le sense_chosen n'est pas le bon → changer sense_chosen / concept_chosen et propager (segment.sense_retenu, segment.fr, translation_arab, §DEMARCHE§, §JUSTIFICATION§, §CRITIQUE§).
 
-R2bis — mise en forme du bloc Comparaison)
-Le proof_ctx du concept retenu doit présenter sa section « Comparaison » avec sauts de ligne explicites pour la lisibilité UI :
+R2bis — mise en forme du bloc Comparaison probables (Bloc 7)
 
-[paragraphe retenu : Sens retenu + analyse + nature philosophique].
-Comparaison avec les sens probables :
-— NomProbable1 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte du verset] désigne un *Y philosophique*, [pourquoi exclu].
-— NomProbable2 : [senses listés]. Sa nature est celle d'un *X philosophique*. Tandis qu'ici [contexte], [pourquoi exclu].
+La section « Comparaison » est séparée du paragraphe principal par une ligne vide (\n\n). Chaque entrée probable est aussi séparée par une ligne vide.
+
+Format :
+
+[Blocs 1-6 : paragraphe principal aéré, séparés par lignes vides]
+
+**Comparaison avec les sens probables :**
+
+— **NomProbable1** : [senses listés]. Sa nature est celle d'un ***[descripteur philo X]***. Tandis qu'ici [contexte du verset], [exclusion explicite].
+
+— **NomProbable2** : [senses listés]. Sa nature est celle d'un ***[descripteur philo Y]***. Tandis qu'ici [contexte], [exclusion explicite].
+
 Détails de format obligatoires :
-
-Double saut de ligne \n\n avant Comparaison avec les sens probables :
-Double saut de ligne \n\n après le header Comparaison avec les sens probables (en gras):
-Double saut de ligne \n\n entre chaque entrée — NomProbable
-Nom du probable PAS en italique (juste — NomProbable :, sans *…* ; en gras )
-Italiques *…* sur les descripteurs philosophiques (ex: *processus physique graduel*, *sujet souverain*, *acte directionnel d'acceptation*)
-Conjonction « Tandis qu'ici » (pas « alors qu'ici » ni « alors que ici »)
-Phrase type : Sa nature est celle d'un *X*. Tandis qu'ici [verset context] [opération précise], [exclusion explicite].
-Test automatique : le script _check_proof_distinctions.js peut être étendu pour vérifier qu'après Comparaison avec les sens probables : chaque — est précédé de \n\n (pas inline).
+- Double saut de ligne \n\n avant **Comparaison avec les sens probables :**
+- Double saut de ligne \n\n après le header
+- Double saut de ligne \n\n entre chaque entrée — **NomProbable**
+- Nom du probable en gras (— **NomProbable** :), PAS en italique
+- Italiques bold ***…*** sur les descripteurs philosophiques (ex: ***processus physique graduel***, ***sujet souverain***, ***acte directionnel d'acceptation***)
+- Conjonction « Tandis qu'ici » obligatoire (pas « alors qu'ici », pas « alors que ici »)
+- Phrase type : Sa nature est celle d'un ***X***. Tandis qu'ici [contexte verset] [opération précise], [exclusion explicite].
+- Test automatique : le script _check_proof_distinctions.js vérifie qu'après « Comparaison avec les sens probables : » chaque « — » est précédé de \n\n (pas inline).
 
 Tableau des règles implicites de mise en forme du proof_ctx :
+Verifie qu'il y'a au moins une phrase qui parle du lien entre le sens retenu et le sens premier de la racine .
 Scanner TOUS les proof_ctx de TOUS les concepts (retenu + probable + peu_probable + nul), pas seulement le retenu
 Élément	Markdown	Rendu	Exemple
 En-tête « Sens retenu »	***Sens retenu :***	bold italic	***Sens retenu :***
@@ -112,17 +132,21 @@ Descripteur philosophique	***X***	bold italic	position relationnelle permanente,
 Marqueur phonétique / grammatical / mention de mot	*X*	italic	-hā, son, yā, fa-, bi-, kullamā
 Mention de versets / racines en clair	plain	normal	« Comme au V35-36 », « racine n-b-t »
 Texte courant	plain	normal	reste du proof_ctx
-Structure complète d'un proof_ctx retenu :
+EXEMPLE COMPLET VALIDÉ (V83 pos=2 jya, sens retenu = venir, coïncide) :
 
-***Sens retenu :*** [mot français = sense_chosen], [analyse grammaticale]. Le mot est ici [forme]. [Contexte précis du verset, ancrage au V−1 / sourate]. La nature philosophique du sens retenu est celle d'une ***[descripteur philo]***.
-**Comparaison avec les sens probables :**
-— **NomProbable1** : [senses listés]. Sa nature est celle d'un ***[descripteur philo X]***. Tandis qu'ici [contexte], [exclusion explicite].
-— **NomProbable2** : [senses listés]. Sa nature est celle d'un ***[descripteur philo Y]***. Tandis qu'ici [contexte], [exclusion explicite].
-Sauts de ligne obligatoires :
+***Sens retenu :*** venir.
 
-\n\n avant **Comparaison avec les sens probables :**
-\n\n après le header
-\n\n entre chaque entrée — **NomProbable**
+On choisit « venir » parce que le mot indique simplement qu'une nouvelle arrive au groupe. Personne ne l'apporte, elle arrive d'elle-même.
+
+Dans le verset, ce mot ouvre l'histoire : une nouvelle arrive → les gens réagissent en la faisant circuler.
+
+Dans la sourate, on est dans une suite de versets (V80 à V83) qui décrit ce que font les gens quand ils reçoivent quelque chose (un ordre, une rumeur, une nouvelle).
+
+Ce sens décrit ***quelque chose qui atteint quelqu'un sans qu'il l'ait cherché***.
+
+Ce sens **coïncide** avec le premier sens du mot en arabe — **venir, arriver** — parce que le verset utilise le mot dans son emploi le plus simple, sans lui ajouter aucune nuance. Sans passer par une image ou une extension : quand le verset dit « une affaire vient au groupe », c'est l'emploi de base de la racine (venir = arriver quelque part). Aucun glissement de sens, aucune adaptation.
+
+(Si probables : ajouter la section **Comparaison avec les sens probables :** avec la structure ci-dessus.)
 R2. Concepts « probable » — distinction philosophique ≥80 chars
 Le proof_ctx du concept retenu doit :
 
@@ -172,4 +196,24 @@ Tableau récapitulatif des corrections :
 | nbt    | A      | sense_chosen=pousser| sense_chosen=élever | 5 axes : Marie humaine, pas plante |
 | qbl    | B      | "sans rapport ici"  | "L'orientation marque un mouvement spatial alors qu'ici..." | distinction <80 chars |
 | rzq    | H      | 0 phrases           | +3 phrases ajoutées | manque pour sense "pourvoir" |
-Re-lancer le script à la fin pour confirmer 0 anomalie.
+
+RÈGLE R0bis — Style narratif simple
+Le proof_ctx doit être lisible par un francophone non académique. Test : « un ami non spécialiste comprendrait-il ? »
+
+❌ INTERDIT (en plus des jargons R0) :
+- « Niveau B », « V97 rotation », « déplacement Niveau B »
+- « carrie » (utiliser « porte »)
+- « Maison utilise / Maison rend » (utiliser « Notre traduction porte / on garde »)
+- « participe actif/passif » sans explication (utiliser « celui qui fait/subit l'action »)
+- « schème faʿīl » sans explication (utiliser « forme « faʿīl » qui marque l'attribut permanent et fort »)
+
+RÈGLE R8bis — Anti-glose d'attribut divin
+Si le verset utilise un attribut divin X (ex: muḥīṭ = englobant), NE JAMAIS le gloser par un autre attribut Y absent du verset (ex: « connaissance »), même si :
+- Le tafsir classique fait ce lien
+- Hamidullah ajoute la glose entre parenthèses
+- Un verset proche utilise effectivement Y
+
+Test : « Le mot arabe X dit-il explicitement Y ? » Si non → pas dans la traduction, pas dans les résumés.
+La glose de Hamidullah doit être CRITIQUÉE dans §CRITIQUE§, pas REPRISE dans nos textes.
+Re-lancer le script à la fin pour confirmer 0 anomalie. 
+Verifie qui y'a pas de mot technique de la pipeline dans chaque proof et aucun jargon technique 

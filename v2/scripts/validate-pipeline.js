@@ -9,8 +9,9 @@
  * Intègre les leçons de l'audit du 11/04/2026 (573 bugs sourate 2).
  */
 
+require('dotenv').config({ path: '.env.local' })
 const { createClient } = require('@supabase/supabase-js')
-const db = createClient('https://gwtgftosscjupxxsubev.supabase.co', process.env.SUPABASE_SERVICE_KEY)
+const db = createClient(process.env.SUPABASE_URL || 'https://gwtgftosscjupxxsubev.supabase.co', process.env.SUPABASE_SERVICE_KEY)
 
 const surahId = parseInt(process.argv[2])
 if (!surahId) {
@@ -129,7 +130,7 @@ async function run() {
     if (!va.translation_arab) { err('V' + v.verse_num + ': translation_arab vide'); vaOk = false }
     if (!va.segments || !va.segments.length) { err('V' + v.verse_num + ': segments vides'); vaOk = false }
     if (!va.translation_explanation) { err('V' + v.verse_num + ': translation_explanation vide'); vaOk = false }
-    if (!va.full_translation) { warn('V' + v.verse_num + ': full_translation (Hamidullah) manquante') }
+    if (!va.full_translation) { err('V' + v.verse_num + ': full_translation (Hamidullah) manquante — indispensable pour §CRITIQUE§'); vaOk = false }
   }
   if (vaOk) ok('Toutes les verse_analyses sont complètes (' + verses.length + ' versets)')
 
@@ -1152,6 +1153,29 @@ async function run() {
   if (apiAccessOk) ok('Tous les sense_chosen des VWA sont accessibles via l\'API (meaning_type etymology/quranic)')
 
   // ================================================================
+  // 31b. VWA sense_chosen doit exister exactement (ou en partial) dans word_meanings BDD
+  //      Détecte les inventions comme "grand" au lieu de "être grand", "fille" au lieu de "femelle"
+  // ================================================================
+  section(31.5, 'sense_chosen VWA existe dans word_meanings BDD (anti-invention)')
+  let noInventOk = true
+  const cleanSense = s => (s || '').toLowerCase().trim().replace(/^["']+|["']+$/g, '').trim()
+  for (const vwa of allVwa) {
+    if (!vwa.sense_chosen) continue
+    const wa = waByKey[vwa.word_key]
+    if (!wa) continue
+    const bdd = (wmByAnalysisId[wa.id] || []).map(x => cleanSense(x.sense))
+    const sc = cleanSense(vwa.sense_chosen)
+    const found = bdd.includes(sc) || bdd.some(s => s.includes(sc) || sc.includes(s))
+    if (!found) {
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const vnum = v ? v.verse_num : vwa.verse_id
+      err('V' + vnum + ' ' + vwa.word_key + ' pos=' + vwa.position + ' : sense_chosen="' + vwa.sense_chosen + '" INEXISTANT en BDD (senses réels: ' + bdd.join(', ') + ')')
+      noInventOk = false
+    }
+  }
+  if (noInventOk) ok('Tous les sense_chosen existent en BDD (aucune invention)')
+
+  // ================================================================
   // 32. §CRITIQUE§ couvre toutes les différences vs Hamidullah
   //     Si notre_mot n'apparaît pas dans full_translation (Hamidullah),
   //     il doit être mentionné dans §CRITIQUE§.
@@ -1414,6 +1438,329 @@ async function run() {
   // ================================================================
   section(38, 'Couverture des 5 axes dans le proof_ctx du retenu')
   console.log('  ℹ️  Test à effectuer manuellement : pour CHAQUE racine importante du verset, le proof_ctx du concept retenu doit pouvoir traiter (implicitement ou explicitement) les 5 axes : (1) champ lexical du verset, (2) versets voisins, (3) thème de la sourate, (4) cohérence coranique [via distinctions vs probables], (5) finalité khalifa. Plus le test grammatical (nature philosophique compatible avec la structure du mot). Si un proof_ctx semble générique ou applicable hors-contexte, demander : « comment as-tu couvert l\'axe X dans ce proof_ctx ? ». Claude doit pouvoir pointer une phrase précise ou reconnaître honnêtement l\'oubli.')
+
+  // ================================================================
+  // 42. Jargon de pipeline interne (Niveau B / V97 / carrie) — ERREUR
+  // ================================================================
+  section(42, 'Jargon de pipeline interne (Niveau B, V97 rotation, déplacement Niveau B, carrie)')
+  {
+    const BANNED_PIPELINE_JARGON = /Niveau B|V97 rotation|déplacement Niveau|\bcarrie\b/i
+    let nbHits = 0
+    for (const va of allVa) {
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const fields = [
+        ['translation_explanation', va.translation_explanation],
+        ['summary_short', va.summary_short],
+        ['summary_long', va.summary_long],
+      ]
+      for (const [name, val] of fields) {
+        if (val && BANNED_PIPELINE_JARGON.test(val)) {
+          const match = val.match(BANNED_PIPELINE_JARGON)[0]
+          err(`${verseLabel} ${name} : jargon de pipeline « ${match} » — voir feedback_no_pipeline_jargon.md`)
+          nbHits++
+        }
+      }
+    }
+    // Also check proof_ctx
+    for (const vwa of allVwa) {
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${vwa.verse_id}`
+      const concepts = vwa.analysis_axes?.concepts || {}
+      for (const [cname, cinfo] of Object.entries(concepts)) {
+        if (cinfo.proof_ctx && BANNED_PIPELINE_JARGON.test(cinfo.proof_ctx)) {
+          const match = cinfo.proof_ctx.match(BANNED_PIPELINE_JARGON)[0]
+          err(`${verseLabel} pos=${vwa.position} ${cname} proof_ctx : jargon de pipeline « ${match} »`)
+          nbHits++
+        }
+      }
+    }
+    if (nbHits === 0) ok('Aucun jargon de pipeline détecté (Niveau B, V97 rotation, carrie)')
+  }
+
+  // ================================================================
+  // 43. Jargon grammatical visible (transitif, attribut, schème, copule…) — ERREUR
+  // ================================================================
+  section(43, 'Jargon grammatical visible (participe actif/passif, transitif, schème, copule, idāfa, accusatif…)')
+  {
+    const BANNED_GRAMMATICAL_JARGON = /\b(participe (actif|passif)|schème|copule|idāfa|accusatif|génitif|tanwīn)\b/i
+    let nbHits = 0
+    for (const va of allVa) {
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const fields = [
+        ['translation_explanation', va.translation_explanation],
+        ['summary_short', va.summary_short],
+        ['summary_long', va.summary_long],
+      ]
+      for (const [name, val] of fields) {
+        if (val && BANNED_GRAMMATICAL_JARGON.test(val)) {
+          const match = val.match(BANNED_GRAMMATICAL_JARGON)[0]
+          err(`${verseLabel} ${name} : jargon grammatical « ${match} » — reformuler en clair (voir feedback_critique_style.md)`)
+          nbHits++
+        }
+      }
+    }
+    for (const vwa of allVwa) {
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${vwa.verse_id}`
+      const concepts = vwa.analysis_axes?.concepts || {}
+      for (const [cname, cinfo] of Object.entries(concepts)) {
+        if (cinfo.proof_ctx && BANNED_GRAMMATICAL_JARGON.test(cinfo.proof_ctx)) {
+          const match = cinfo.proof_ctx.match(BANNED_GRAMMATICAL_JARGON)[0]
+          err(`${verseLabel} pos=${vwa.position} ${cname} proof_ctx : jargon grammatical « ${match} »`)
+          nbHits++
+        }
+      }
+    }
+    if (nbHits === 0) ok('Aucun jargon grammatical visible')
+  }
+
+  // ================================================================
+  // 44. « Maison » dans le texte visible (sauf « maison de Bakka » légitime) — ERREUR
+  // ================================================================
+  section(44, '« Maison » dans le texte visible (sauf « maison de Bakka »)')
+  {
+    // Match "la maison" or "Maison" but EXCLUDE "maison de Bakka"
+    const MAISON_RE = /\b(la maison|Maison)\b(?! de Bakka)/
+    let nbHits = 0
+    for (const va of allVa) {
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const fields = [
+        ['translation_explanation', va.translation_explanation],
+        ['summary_short', va.summary_short],
+        ['summary_long', va.summary_long],
+      ]
+      for (const [name, val] of fields) {
+        if (val && MAISON_RE.test(val)) {
+          const match = val.match(MAISON_RE)[0]
+          err(`${verseLabel} ${name} : « ${match} » au sens pipeline — remplacer par « Notre traduction » ou phrase passive`)
+          nbHits++
+        }
+      }
+    }
+    for (const vwa of allVwa) {
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${vwa.verse_id}`
+      const concepts = vwa.analysis_axes?.concepts || {}
+      for (const [cname, cinfo] of Object.entries(concepts)) {
+        if (cinfo.proof_ctx && MAISON_RE.test(cinfo.proof_ctx)) {
+          const match = cinfo.proof_ctx.match(MAISON_RE)[0]
+          err(`${verseLabel} pos=${vwa.position} ${cname} proof_ctx : « ${match} » au sens pipeline`)
+          nbHits++
+        }
+      }
+    }
+    if (nbHits === 0) ok('Aucune mention « Maison » au sens pipeline')
+  }
+
+  // ================================================================
+  // 45. §CRITIQUE§ : format « Notre traduction / Hamidullah » en tête + zéro phonétique
+  // ================================================================
+  section(45, '§CRITIQUE§ : format obligatoire « Notre traduction / Hamidullah » en tête + zéro phonétique arabe')
+  {
+    const PHON_ARAB = /[āīūṣḍṭẓʿʾḥḫḏṯšġḡẖ]/
+    let nbBadFormat = 0
+    let nbPhon = 0
+    for (const va of allVa) {
+      if (!va.translation_explanation || !va.translation_explanation.includes('§CRITIQUE§')) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const crit = va.translation_explanation.split('§CRITIQUE§')[1]?.split('§FINALITE§')[0]?.trim() || ''
+      // Detect old format pattern : ** X vs « Y » ** : convergence...
+      if (/\*\*[^*]+ vs « [^»]+ »\*\*\s*:/.test(crit)) {
+        warn(`${verseLabel} §CRITIQUE§ : ancien format « X vs « Y » : verdict » détecté — refondre en « Notre traduction : / Hamidullah : »`)
+        nbBadFormat++
+      }
+      // Check that the new format markers exist
+      if (!/\*\*Notre traduction\s*:\*\*/.test(crit) && !/\*\*Hamidullah\s*:\*\*/.test(crit)) {
+        warn(`${verseLabel} §CRITIQUE§ : ne contient pas le format « **Notre traduction :** » / « **Hamidullah :** »`)
+        nbBadFormat++
+      }
+      // Phonétique arabe dans §CRITIQUE§
+      if (PHON_ARAB.test(crit)) {
+        warn(`${verseLabel} §CRITIQUE§ : contient des caractères phonétiques arabes (ā/ī/ū/ṣ/ḍ/ṭ/ẓ/ʿ/ʾ/ḥ…) — à retirer (style narratif simple)`)
+        nbPhon++
+      }
+    }
+    if (nbBadFormat === 0 && nbPhon === 0) ok('§CRITIQUE§ au format « Notre traduction / Hamidullah » sans phonétique arabe')
+  }
+
+  // ================================================================
+  // 46. R0 strict — phonétique arabe / racine notée dans proof_ctx + §JUSTIFICATION§ + §FINALITE§ — ERREUR
+  // ================================================================
+  section(46, 'R0 strict : 0 phonétique arabe dans proof_ctx / §JUSTIFICATION§ / §FINALITE§')
+  {
+    const PHON_STRICT = /[āīūṣḍṭẓʿʾḥĀĪŪṢḌṬẒḤ]/
+    const ROOT_NOTATION = /\b[a-zʾʿḍṣṭẓḥ]-[a-zʾʿḍṣṭẓḥ]-[a-zʾʿḍṣṭẓḥ]\b/i
+    let nbHits = 0
+    for (const vwa of allVwa) {
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${vwa.verse_id}`
+      for (const [cn, cx] of Object.entries(vwa.analysis_axes?.concepts || {})) {
+        const txt = cx.proof_ctx || ''
+        if (PHON_STRICT.test(txt)) {
+          err(`${verseLabel} pos=${vwa.position} concept="${cn}" proof_ctx contient phonétique arabe (${txt.match(new RegExp(PHON_STRICT.source, 'g')).slice(0,5).join(',')})`)
+          nbHits++
+        }
+        if (ROOT_NOTATION.test(txt)) {
+          err(`${verseLabel} pos=${vwa.position} concept="${cn}" proof_ctx contient racine notée "${txt.match(ROOT_NOTATION)[0]}"`)
+          nbHits++
+        }
+      }
+    }
+    for (const va of allVa) {
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      const expl = va.translation_explanation || ''
+      const justif = expl.split('§JUSTIFICATION§')[1]?.split('§CRITIQUE§')[0] || ''
+      const finalite = expl.split('§FINALITE§')[1] || ''
+      if (PHON_STRICT.test(justif)) {
+        err(`${verseLabel} §JUSTIFICATION§ contient phonétique arabe (${justif.match(new RegExp(PHON_STRICT.source, 'g')).slice(0,5).join(',')})`)
+        nbHits++
+      }
+      if (ROOT_NOTATION.test(justif)) {
+        err(`${verseLabel} §JUSTIFICATION§ contient racine notée "${justif.match(ROOT_NOTATION)[0]}"`)
+        nbHits++
+      }
+      if (PHON_STRICT.test(finalite)) {
+        err(`${verseLabel} §FINALITE§ contient phonétique arabe (${finalite.match(new RegExp(PHON_STRICT.source, 'g')).slice(0,5).join(',')})`)
+        nbHits++
+      }
+    }
+    if (nbHits === 0) ok('0 phonétique arabe / racine notée dans proof_ctx, §JUSTIFICATION§, §FINALITE§')
+  }
+
+  // ================================================================
+  // 47. Fidélité inverse : chaque mot de translation_arab doit venir d'un segment.fr — ERREUR
+  // ================================================================
+  section(47, 'Fidélité inverse : chaque mot de translation_arab appartient à un segment.fr')
+  {
+    // Mots-outils français tolérés (articulateurs, ponctuation, mots grammaticaux courts fréquemment absorbés)
+    const TOLERES = new Set(['le','la','les','un','une','des','de','du','à','au','aux','en','y','et','ou','ni','ne','pas','plus','moins','se','s','l','d','c','n','m','t','j','qu','que','qui','quoi','dont','où','a','ai','as','ont','avons','avez','est','sont','était','étaient','êtes','être','été','fut','furent','sera','seront','avec','pour','par','sur','sous','dans','sans','vers','chez','entre','depuis','pendant','avant','après','contre','malgré','selon','comme','si','car','mais','donc','or','puis','alors','encore','déjà','très','trop','bien','mal','ici','là','oui','non','ce','cet','cette','ces','celui','celle','ceux','mon','ma','mes','ton','ta','tes','son','sa','ses','notre','votre','leur','nos','vos','leurs','je','tu','il','elle','on','nous','vous','ils','elles','moi','toi','lui','me','te','le','la','se','son','sa','leur','tout','tous','toute','toutes','même','autre','quelque','plusieurs','chaque','aucun','rien','quelqu','quelque','peu','beaucoup','assez','trop','plutôt','presque'])
+    for (const va of allVa) {
+      if (!va.translation_arab || !va.segments || !va.segments.length) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      // Union de tous les mots des segments.fr, en minuscules
+      const segWords = new Set()
+      for (const seg of va.segments) {
+        if (!seg.fr) continue
+        for (const w of seg.fr.toLowerCase().replace(/[«»"'()\[\]—–-]/g, ' ').split(/[\s,;:!?.…]+/).filter(Boolean)) segWords.add(w)
+      }
+      // Extraire mots de translation_arab
+      const tradWords = va.translation_arab.toLowerCase().replace(/[«»"'()\[\]—–-]/g, ' ').split(/[\s,;:!?.…]+/).filter(Boolean)
+      const missing = []
+      for (const w of tradWords) {
+        if (TOLERES.has(w)) continue
+        if (!segWords.has(w)) missing.push(w)
+      }
+      if (missing.length) {
+        err(`${verseLabel} translation_arab contient mot(s) sans segment correspondant : ${[...new Set(missing)].slice(0, 8).join(', ')}${missing.length > 8 ? '…' : ''} — chaque mot doit venir d'un segment.fr`)
+      }
+    }
+    if (errors === 0) ok('Fidélité inverse OK : chaque mot de translation_arab appartient à un segment')
+  }
+
+  // ================================================================
+  section(48, 'Sens premier ✦ (word_analyses.etymological_concept) vs proof_ctx retenu')
+  {
+    // Cache etymological_concept + sens premier réel par word_key
+    const etymCache = {}
+    for (const key of allKeys) {
+      const { data: was } = await db.from('word_analyses').select('id, etymological_concept').eq('word_key', key)
+      let best = null, bestCount = 0
+      for (const a of was || []) {
+        const { count } = await db.from('word_meanings').select('*', { count: 'exact', head: true }).eq('analysis_id', a.id)
+        if (count > bestCount) { bestCount = count; best = a }
+      }
+      if (best) {
+        const { data: sp } = await db.from('word_meanings').select('sense, display_order').eq('analysis_id', best.id).eq('concept', best.etymological_concept).order('display_order').limit(1)
+        etymCache[key] = { realEtym: best.etymological_concept, realSensPrem: sp?.[0]?.sense }
+      }
+    }
+    let anomCount = 0
+    for (const vwa of allVwa) {
+      if (!vwa.word_key || !etymCache[vwa.word_key]) continue
+      const { realEtym, realSensPrem } = etymCache[vwa.word_key]
+      if (!realSensPrem) continue
+      const retenu = Object.entries(vwa.analysis_axes?.concepts || {}).find(([_, c]) => c.status === 'retenu')
+      if (!retenu) continue
+      const [rName, rData] = retenu
+      const isEtym = rName === realEtym
+      const proof = rData.proof_ctx || ''
+      // Extraire uniquement la phrase de verdict — celle qui suit "Le sens **" ou "Le sens retenu"
+      const verdictMatch = proof.match(/(?:Le sens|Ce sens) \*\*(coïncide|dérive)\*\* (avec le|du) (?:sens premier de la racine|premier sens du mot en arabe) — \*\*([^*]+)\*\*/)
+      const v = verses.find(x => x.id === vwa.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${vwa.verse_id}`
+      if (!verdictMatch) {
+        err(`${verseLabel} pos=${vwa.position} [${vwa.word_key}] : proof_ctx retenu sans phrase canonique « Le sens **coïncide/dérive** ... — **sens premier** »`)
+        anomCount++; continue
+      }
+      const [, verdictActuel, prepActuel, sensActuel] = verdictMatch
+      const verdictAttendu = isEtym ? 'coïncide' : 'dérive'
+      const prepAttendu = isEtym ? 'avec le' : 'du'
+      if (verdictActuel !== verdictAttendu) {
+        err(`${verseLabel} pos=${vwa.position} [${vwa.word_key}] : verdict « ${verdictActuel} » KO — retenu="${rName}" vs etymological_concept="${realEtym}" → devrait être « ${verdictAttendu} »`)
+        anomCount++
+      }
+      if (prepActuel !== prepAttendu) {
+        anomCount++
+        err(`${verseLabel} pos=${vwa.position} [${vwa.word_key}] : préposition « ${prepActuel} » KO — devrait être « ${prepAttendu} »`)
+      }
+      if (sensActuel !== realSensPrem) {
+        warn(`${verseLabel} pos=${vwa.position} [${vwa.word_key}] : sens premier ✦ cité « ${sensActuel} » ≠ RÉEL « ${realSensPrem} »`)
+      }
+    }
+    if (anomCount === 0) ok('Sens premier ✦ aligné : verdict coïncide/dérive correct vs word_analyses.etymological_concept')
+  }
+
+  // ================================================================
+  section(49, 'Anti-tafsir : noms/lieux/personnes absents des segments mais glissés dans le texte')
+  {
+    // Termes tafsirique typiques — si présents dans DEMARCHE/JUSTIFICATION/CRITIQUE/proof_ctx
+    // MAIS pas dans segments.fr du verset, c'est un tafsir importé.
+    const LIEUX = ['mosquée', 'temple', 'Kaʿba', 'Kaaba', 'Médine', 'Mecque', 'La Mecque', 'Sinaï', 'Ṭūr', 'mont Tur', 'Bakka', 'Jérusalem', 'Bayt al-Maqdis']
+    const PERSONNES = ['Muhammad', 'Mahomet', 'le Prophète', 'Prophète Muhammad', 'Quraysh', 'Qurayshites', 'Abū Bakr', 'ʿUmar', 'ʿUthmān', 'ʿAlī', 'Aïcha', 'Ali', 'Omar', 'Uthman', 'Abou Bakr', 'Ansar', 'Muhajir', 'Mouhajir', 'Mouhâjir', 'Ansâr', 'Ansari']
+    const EVENEMENTS = ['bataille de Badr', 'bataille d\'Uhud', 'bataille du Fossé', 'bataille des Coalisés', 'Hijra', 'Hégire', 'nuit du destin', 'Isrāʾ', 'Miʿrāj', 'Fath', 'conquête de La Mecque']
+    const TERMES_SENSIBLES = [...LIEUX, ...PERSONNES, ...EVENEMENTS]
+
+    for (const va of allVa) {
+      if (!va.translation_explanation) continue
+      const v = verses.find(x => x.id === va.verse_id)
+      const verseLabel = v ? `S${v.surah_id}:V${v.verse_num}` : `verse_id=${va.verse_id}`
+      // Concat de toutes les fr du verset (lowercase pour comparaison souple)
+      const segFrLower = (va.segments || []).map(s => (s.fr || '').toLowerCase()).join(' | ')
+      const tradLower = (va.translation_arab || '').toLowerCase()
+      const teLower = va.translation_explanation.toLowerCase()
+
+      for (const terme of TERMES_SENSIBLES) {
+        const termLower = terme.toLowerCase()
+        // Le terme est présent dans le texte de translation_explanation ?
+        const re = new RegExp('\\b' + termLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i')
+        if (!re.test(teLower)) continue
+        // Est-il présent dans segments.fr OU translation_arab (donc légitime) ?
+        if (segFrLower.includes(termLower) || tradLower.includes(termLower)) continue
+        // Sinon → tafsir importé
+        err(`${verseLabel} ANTI-TAFSIR : « ${terme} » présent dans §DEMARCHE§/§JUSTIFICATION§/§CRITIQUE§/proof_ctx mais absent des segments.fr du verset — nom/lieu importé de la tradition, non présent dans le texte`)
+      }
+
+      // Aussi vérifier proof_ctx
+      const vwas = vwaByVid[va.verse_id] || []
+      for (const vwa of vwas) {
+        const allProof = Object.values(vwa.analysis_axes?.concepts || {}).map(c => (c.proof_ctx || '').toLowerCase()).join(' ')
+        for (const terme of TERMES_SENSIBLES) {
+          const termLower = terme.toLowerCase()
+          const re = new RegExp('\\b' + termLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i')
+          if (!re.test(allProof)) continue
+          if (segFrLower.includes(termLower) || tradLower.includes(termLower)) continue
+          err(`${verseLabel} pos=${vwa.position} [${vwa.word_key}] ANTI-TAFSIR proof_ctx : « ${terme} » glissé dans un proof_ctx mais absent des segments.fr — nom/lieu importé de la tradition`)
+        }
+      }
+    }
+    if (errors === 0) ok('Anti-tafsir : aucun nom/lieu/personne importé de la tradition')
+  }
 
   // ================================================================
   // RÉSUMÉ FINAL
