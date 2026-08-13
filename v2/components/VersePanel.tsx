@@ -84,8 +84,11 @@ export default function VersePanel({
   const [resumeExpanded, setResumeExpanded] = useState(true)
   // Note contextuelle (ancienne intro MACRO/MICRO/ITALIQUE) : repliée par défaut
   const [noteExpanded, setNoteExpanded] = useState(false)
-  // Segment.fr actif — highlight bidirectionnel entre le rendu segmenté et la trad française éloquente
-  const [activeSegmentFr, setActiveSegmentFr] = useState<string | null>(null)
+  // Segment actif — highlight bidirectionnel entre le rendu segmenté et la trad française éloquente.
+  // Identifié par son index dans segments[] (unique) : seul le segment cliqué est en surbrillance,
+  // et seule l'occurrence correspondante dans translation_arab est soulignée (basée sur le compte
+  // d'occurrences du même fr avant cet index dans segments[]).
+  const [activeSegmentIdx, setActiveSegmentIdx] = useState<number | null>(null)
   const segments = analysis?.segments
 
   // Résumé court (3-4 phrases) — nouveau champ dédié
@@ -353,7 +356,7 @@ export default function VersePanel({
             {segments.map((seg, i) => {
               const isKey = !seg.is_particle && seg.word_key
               const isActive = activeWordKey !== null && activeWordKey === `${seg.word_key}:${i}`
-              const isSegHighlighted = activeSegmentFr !== null && activeSegmentFr === seg.fr
+              const isSegHighlighted = activeSegmentIdx !== null && activeSegmentIdx === i
 
               if (isKey) {
                 const segSense = (seg as unknown as Record<string, unknown>).sense_retenu as string | undefined
@@ -369,7 +372,7 @@ export default function VersePanel({
                       const segSenseVal = (seg as unknown as Record<string, unknown>).sense_retenu as string | undefined
                       const segPosition = (seg as unknown as Record<string, unknown>).position as number | undefined
                       seg.word_key && onWordClick(seg.word_key, `${seg.word_key}:${i}`, segSenseVal, verse.id, segPosition)
-                      setActiveSegmentFr(prev => prev === seg.fr ? null : seg.fr)
+                      setActiveSegmentIdx(prev => prev === i ? null : i)
                     }}
                   >
                     <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isActive || isSegHighlighted ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
@@ -398,7 +401,7 @@ export default function VersePanel({
                   key={i}
                   className="flex flex-col items-center cursor-pointer"
                   style={{ padding: '2px 2px' }}
-                  onClick={() => setActiveSegmentFr(prev => prev === seg.fr ? null : seg.fr)}
+                  onClick={() => setActiveSegmentIdx(prev => prev === i ? null : i)}
                 >
                   <span className="wf-phon italic text-center" style={{ fontSize: '11px', color: isSegHighlighted ? '#B8962E' : '#6B5E52', lineHeight: 1.2, marginBottom: '2px' }}>
                     {seg.phon}
@@ -672,15 +675,25 @@ export default function VersePanel({
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 600, color: '#1A1410' }}>
               {(() => {
                 const trad = analysis.translation_arab || ''
-                if (!activeSegmentFr) return trad
-                // Split par le segment.fr actif (recherche insensible aux limites de mots pour capter les adaptations)
-                const escaped = activeSegmentFr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                if (activeSegmentIdx === null || !segments) return trad
+                const activeSeg = segments[activeSegmentIdx]
+                if (!activeSeg || !activeSeg.fr) return trad
+                // Compter le nombre d'occurrences du même fr AVANT ce segment dans segments[]
+                // pour identifier quelle occurrence highlighter dans translation_arab
+                const targetOccurrence = segments.slice(0, activeSegmentIdx).filter(s => s.fr === activeSeg.fr).length
+                const escaped = activeSeg.fr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
                 const parts = trad.split(new RegExp(`(${escaped})`, 'g'))
-                return parts.map((part, idx) => (
-                  part === activeSegmentFr
-                    ? <span key={idx} style={{ color: '#B8962E', borderBottom: '2px solid #B8962E', paddingBottom: '2px' }}>{part}</span>
-                    : <React.Fragment key={idx}>{part}</React.Fragment>
-                ))
+                let seenCount = 0
+                return parts.map((part, idx) => {
+                  if (part === activeSeg.fr) {
+                    const isTargetOcc = seenCount === targetOccurrence
+                    seenCount++
+                    if (isTargetOcc) {
+                      return <span key={idx} style={{ color: '#B8962E', borderBottom: '2px solid #B8962E', paddingBottom: '2px' }}>{part}</span>
+                    }
+                  }
+                  return <React.Fragment key={idx}>{part}</React.Fragment>
+                })
               })()}
             </p>
           </div>
