@@ -678,14 +678,17 @@ export default function VersePanel({
                 if (activeSegmentIdx === null || !segments) return trad
                 const activeSeg = segments[activeSegmentIdx]
                 if (!activeSeg || !activeSeg.fr) return trad
-                // Compter le nombre d'occurrences du même fr AVANT ce segment dans segments[]
-                // pour identifier quelle occurrence highlighter dans translation_arab
+                // Pattern V24 négation : segment.fr = "pas X" (ordre arabe) mais trad française = "ne X pas".
+                // Si fr commence par "pas ", chercher le mot après "pas" et matcher son occurrence entre "ne" et "pas".
+                let searchFr = activeSeg.fr
+                const negMatch = /^pas\s+(.+)$/.exec(activeSeg.fr)
+                if (negMatch) searchFr = negMatch[1]
                 const targetOccurrence = segments.slice(0, activeSegmentIdx).filter(s => s.fr === activeSeg.fr).length
-                const escaped = activeSeg.fr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+                const escaped = searchFr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
                 const parts = trad.split(new RegExp(`(${escaped})`, 'g'))
                 let seenCount = 0
                 return parts.map((part, idx) => {
-                  if (part === activeSeg.fr) {
+                  if (part === searchFr) {
                     const isTargetOcc = seenCount === targetOccurrence
                     seenCount++
                     if (isTargetOcc) {
