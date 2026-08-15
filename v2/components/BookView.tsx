@@ -735,49 +735,44 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(120,90,30,0.40), inset 0 1px 0 rgba(255,255,255,0.30);
         }
-        /* ═══ Mobile & tablette étroite : 1 colonne empilée, hauteur libre, padding réduit ═══ */
+        /* ═══ Mobile & tablette étroite : livre 2 pages MINIATURE ═══
+           On garde les 2 pages côte à côte (comme sur PC) mais on utilise
+           « zoom » pour ajuster à la largeur du téléphone. Le pinch-zoom
+           natif du navigateur (maximum-scale:5 dans le viewport meta) permet
+           de zoomer pour lire confortablement.
+        */
         @media (max-width: 900px) {
-          .spread-content {
-            flex-direction: column !important;
-            gap: 20px !important;
-          }
-          .page-side {
-            min-height: auto !important;
-            flex: none !important;
-            font-size: 15px !important;
-            line-height: 1.55 !important;
-          }
-          .book-body {
-            padding: 16px 20px !important;
-          }
           .book {
-            height: auto !important;
-            max-width: 100% !important;
+            width: 900px !important;
+            max-width: none !important;
+            height: 640px !important;
             border-radius: 6px !important;
-            box-shadow: 0 2px 12px rgba(120,90,30,0.15) !important;
+            box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
           }
-          /* Cache la pliure centrale (n'a plus de sens sur 1 colonne) */
-          .book > div[aria-hidden="true"] {
-            display: none !important;
-          }
-          /* Bouton flottant Vue analyse : mis dans le flow (pas fixed) sur mobile */
-          .bv-floating-toggle {
-            display: none !important;
-          }
-          /* Séparateurs colonne gauche/droite dans le footer : masquer un côté redondant */
-          .book footer {
-            padding: 10px 16px 14px !important;
-            gap: 8px !important;
-          }
-          /* Header sourate encore plus compact */
-          .book header {
-            padding: 8px 20px 4px !important;
+          /* Wrapper autour du livre pour supprimer les marges qui poussent au-delà du viewport */
+          .book, .book + div {
+            margin-left: auto !important;
+            margin-right: auto !important;
           }
         }
-        /* Mobile étroit — encore plus compact */
-        @media (max-width: 480px) {
-          .page-side { font-size: 14px !important; line-height: 1.5 !important; }
-          .book-body { padding: 10px 14px !important; }
+        /* Tablette portrait : 600-900px → zoom modéré */
+        @media (max-width: 900px) and (min-width: 601px) { .book { zoom: 0.7; } }
+        /* Mobile large : 481-600px → zoom serré */
+        @media (max-width: 600px) and (min-width: 481px) { .book { zoom: 0.55; } }
+        /* Mobile standard 375-480px */
+        @media (max-width: 480px) and (min-width: 380px) { .book { zoom: 0.4; } }
+        /* Mobile étroit ≤ 379px */
+        @media (max-width: 379px) { .book { zoom: 0.34; } }
+
+        /* Le wrapper padding rend le livre bien centré */
+        @media (max-width: 900px) {
+          .bv-page > div:has(> .book) {
+            padding: 6px 0 12px !important;
+          }
+          .bv-floating-toggle {
+            font-size: 11px !important;
+            padding: 5px 10px !important;
+          }
         }
         .page-arrow:hover:not(:disabled) {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
