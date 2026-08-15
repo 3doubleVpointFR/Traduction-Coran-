@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import { createPortal } from 'react-dom'
 
 const STORAGE_KEY = 'display-settings-v1'
@@ -10,6 +11,9 @@ interface Settings {
   hidePhon: boolean
   hideSections: boolean
   compactMode: boolean
+  // Réglages spécifiques Vue Livre — par défaut cachés (français seul)
+  bvShowArabic: boolean
+  bvShowPhon: boolean
 }
 
 const defaultSettings: Settings = {
@@ -17,6 +21,8 @@ const defaultSettings: Settings = {
   hidePhon: false,
   hideSections: false,
   compactMode: false,
+  bvShowArabic: false,
+  bvShowPhon: false,
 }
 
 export default function DisplaySettings() {
@@ -27,6 +33,8 @@ export default function DisplaySettings() {
   const [popoverPos, setPopoverPos] = useState<{ top: number; left: number; width: number } | null>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const popoverRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname() ?? ''
+  const isLivre = /\/livre(\/|$)/.test(pathname)
 
   // mounted = portal target prêt
   useEffect(() => { setMounted(true) }, [])
@@ -78,6 +86,8 @@ export default function DisplaySettings() {
     body.classList.toggle('hide-arabic', settings.hideArabic || settings.compactMode)
     body.classList.toggle('hide-phon', settings.hidePhon || settings.compactMode)
     body.classList.toggle('hide-sections', settings.hideSections || settings.compactMode)
+    body.classList.toggle('bv-show-arabic', settings.bvShowArabic)
+    body.classList.toggle('bv-show-phon', settings.bvShowPhon)
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(settings))
     } catch { /* ignore quota errors */ }
@@ -199,46 +209,65 @@ export default function DisplaySettings() {
             Affichage
           </div>
 
-          <div style={{ padding: '4px 8px 8px 8px' }}>
-            <SettingRow
-              label="Texte arabe"
-              checked={!settings.hideArabic}
-              disabled={settings.compactMode}
-              onChange={() => toggle('hideArabic')}
-            />
-            <SettingRow
-              label="Phonétique"
-              checked={!settings.hidePhon}
-              disabled={settings.compactMode}
-              onChange={() => toggle('hidePhon')}
-            />
-            <SettingRow
-              label="Sections explicatives"
-              checked={!settings.hideSections}
-              disabled={settings.compactMode}
-              onChange={() => toggle('hideSections')}
-            />
-          </div>
+          {isLivre ? (
+            <div style={{ padding: '4px 8px 12px 8px' }}>
+              <SettingRow
+                label="Texte arabe"
+                caption="Afficher les versets en arabe"
+                checked={settings.bvShowArabic}
+                onChange={() => toggle('bvShowArabic')}
+              />
+              <SettingRow
+                label="Phonétique"
+                caption="Afficher la translittération sous chaque verset"
+                checked={settings.bvShowPhon}
+                onChange={() => toggle('bvShowPhon')}
+              />
+            </div>
+          ) : (
+            <>
+              <div style={{ padding: '4px 8px 8px 8px' }}>
+                <SettingRow
+                  label="Texte arabe"
+                  checked={!settings.hideArabic}
+                  disabled={settings.compactMode}
+                  onChange={() => toggle('hideArabic')}
+                />
+                <SettingRow
+                  label="Phonétique"
+                  checked={!settings.hidePhon}
+                  disabled={settings.compactMode}
+                  onChange={() => toggle('hidePhon')}
+                />
+                <SettingRow
+                  label="Sections explicatives"
+                  checked={!settings.hideSections}
+                  disabled={settings.compactMode}
+                  onChange={() => toggle('hideSections')}
+                />
+              </div>
 
-          {/* Séparateur or */}
-          <div
-            aria-hidden="true"
-            style={{
-              margin: '4px 18px',
-              height: '1px',
-              background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.3), transparent)',
-            }}
-          />
+              {/* Séparateur or */}
+              <div
+                aria-hidden="true"
+                style={{
+                  margin: '4px 18px',
+                  height: '1px',
+                  background: 'linear-gradient(to right, transparent, rgba(184,150,46,0.3), transparent)',
+                }}
+              />
 
-          <div style={{ padding: '4px 8px 12px 8px' }}>
-            <SettingRow
-              label="Mode lecture compact"
-              caption="Cache arabe + phonétique + sections"
-              checked={settings.compactMode}
-              onChange={() => toggle('compactMode')}
-              compact
-            />
-          </div>
+              <div style={{ padding: '4px 8px 12px 8px' }}>
+                <SettingRow
+                  label="Mode lecture compact"
+                  caption="Cache arabe + phonétique + sections"
+                  checked={settings.compactMode}
+                  onChange={() => toggle('compactMode')}
+                  compact
+                />
+              </div>
+            </>
+          )}
 
           {/* Bandeau or bas */}
           <div

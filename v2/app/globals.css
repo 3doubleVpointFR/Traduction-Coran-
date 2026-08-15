@@ -831,6 +831,11 @@
   overflow: hidden;
   min-height: 0;
 }
+/* Dézoom global du panneau de verset pour tenir davantage à l'écran sans scroll —
+   « zoom » compresse tout le contenu (texte, paddings, images) proportionnellement. */
+.verse-card {
+  zoom: 0.82;
+}
 /* État caché — éléments texte (max-height collapse). */
 body.hide-arabic .quran-text,
 body.hide-arabic .surah-bismillah,

@@ -939,6 +939,76 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           </form>
         )}
 
+        {/* Toggle segmenté Analyse | Livre — pill élégante centrée */}
+        <div
+          className="view-toggle"
+          role="tablist"
+          aria-label="Mode d'affichage"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'stretch',
+            marginTop: '22px',
+            padding: '4px',
+            borderRadius: '999px',
+            border: '1px solid rgba(184,150,46,0.42)',
+            background: 'linear-gradient(180deg, rgba(255,251,240,0.85) 0%, rgba(248,240,222,0.9) 100%)',
+            boxShadow: '0 2px 8px rgba(120,90,30,0.10), inset 0 1px 0 rgba(255,255,255,0.6)',
+            fontFamily: "'Cormorant Garamond', serif",
+          }}
+        >
+          {/* Onglet actif : Analyse */}
+          <span
+            aria-current="page"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '7px',
+              padding: '8px 20px',
+              borderRadius: '999px',
+              background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
+              color: '#FFFCF6',
+              fontSize: '13.5px',
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+              boxShadow: '0 2px 6px rgba(120,90,30,0.30), inset 0 1px 0 rgba(255,255,255,0.30)',
+              textShadow: '0 1px 1px rgba(80,55,10,0.28)',
+            }}
+          >
+            <span aria-hidden>✦</span>
+            Analyse
+          </span>
+
+          {/* Onglet inactif : Livre */}
+          <a
+            href={`/surah/${surah.id}/livre`}
+            className="view-toggle-livre"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '7px',
+              padding: '8px 20px',
+              borderRadius: '999px',
+              color: '#8A6E1F',
+              fontSize: '13.5px',
+              fontWeight: 500,
+              letterSpacing: '0.08em',
+              fontStyle: 'italic',
+              textDecoration: 'none',
+              transition: 'background 220ms ease, color 220ms ease',
+            }}
+          >
+            <span aria-hidden>❦</span>
+            Livre
+          </a>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .view-toggle-livre:hover {
+            background: rgba(184,150,46,0.12);
+            color: #1A1410;
+          }
+        `}} />
+
         {surah.id !== 1 && surah.id !== 9 && (
           <p
             className="surah-bismillah font-arabic mt-4"
