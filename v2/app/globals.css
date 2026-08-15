@@ -836,6 +836,10 @@
 .verse-card {
   zoom: 0.82;
 }
+/* Dézoom -15% du side-panel racine (RootAnalysisView) pour la même raison. */
+.word-panel-content {
+  zoom: 0.85;
+}
 /* État caché — éléments texte (max-height collapse). */
 body.hide-arabic .quran-text,
 body.hide-arabic .surah-bismillah,
