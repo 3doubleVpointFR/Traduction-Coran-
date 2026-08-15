@@ -297,7 +297,6 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       cancelled = true
       window.clearTimeout(t1)
       window.clearTimeout(t2)
-      window.clearTimeout(t3)
       ro?.disconnect()
     }
   }, [spread, counts, direction, bvOpts.arabic, bvOpts.phon])
