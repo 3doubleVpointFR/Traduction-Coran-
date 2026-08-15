@@ -108,11 +108,15 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Mémorise le premier verset visible pour retrouver le bon spread après toggle
   const anchorVerseRef = useRef<number | null>(null)
+  const lastBvKeyRef = useRef(`${bvOpts.arabic}-${bvOpts.phon}-${verses.length}`)
 
   useEffect(() => {
-    // Reset counts à l'initial dès qu'un toggle change — nouvelle réf pour forcer le re-render
+    const key = `${bvOpts.arabic}-${bvOpts.phon}-${verses.length}`
+    // Ne reset que si les toggles ont RÉELLEMENT changé (évite d'écraser la cascade
+    // post-render à chaque render intermédiaire).
+    if (key === lastBvKeyRef.current) return
+    lastBvKeyRef.current = key
     setCounts([...initialCounts])
-    // Recompute quel spread contient le verset ancre dans la nouvelle pagination initiale
     const anchor = anchorVerseRef.current
     if (anchor !== null) {
       let idx = 0
@@ -126,14 +130,25 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bvOpts.arabic, bvOpts.phon, initialCounts])
+  }, [bvOpts.arabic, bvOpts.phon, verses.length])
   const totalSpreads = counts.length
   const [spread, setSpread] = useState(0)
   const [direction, setDirection] = useState<null | 'next' | 'prev'>(null)
   const transitionLockRef = useRef(false)
 
-  // Durée transition — courte (Apple/Material 3 standard), fluide, spring-like
-  const TRANSITION_MS = 460
+  // Durée transition — courte (Apple/Material 3 standard), fluide, spring-like.
+  // Sur mobile : réduite à 100ms pour navigation quasi-instantanée (l'animation
+  // CSS est désactivée en mobile de toute façon).
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const mql = window.matchMedia('(max-width: 900px)')
+    const sync = () => setIsMobile(mql.matches)
+    sync()
+    mql.addEventListener('change', sync)
+    return () => mql.removeEventListener('change', sync)
+  }, [])
+  const TRANSITION_MS = isMobile ? 100 : 460
 
   const startTransition = useCallback((dir: 'next' | 'prev') => {
     if (transitionLockRef.current) return
@@ -174,7 +189,8 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return
-    const raf = window.requestAnimationFrame(() => {
+    // setTimeout 30ms → laisse le layout se stabiliser (rAF trop fragile en headless / avec zoom CSS)
+    const t = window.setTimeout(() => {
       const body = bookBodyRef.current
       if (!body) return
       const slot = body.clientHeight
@@ -188,19 +204,25 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       }
       // Tolérance 8px pour éviter les micro-écarts liés au sub-pixel rendering
       if (maxOverflow > 8 && (counts[spread] ?? 0) > 2) {
+        const currentCount = counts[spread] ?? 0
+        // Retire proportionnellement à l'overflow : convergence rapide en 1-2 passes
+        const overRatio = maxOverflow / Math.max(slot, 1)
+        const toRemove = Math.max(1, Math.min(currentCount - 2, Math.ceil(currentCount * overRatio / (1 + overRatio))))
         setCounts(prev => {
           const copy = [...prev]
-          copy[spread] = (copy[spread] ?? 0) - 1
+          const removed = Math.min(toRemove, (copy[spread] ?? 0) - 2)
+          if (removed <= 0) return prev
+          copy[spread] = (copy[spread] ?? 0) - removed
           if (copy[spread + 1] !== undefined) {
-            copy[spread + 1] = copy[spread + 1] + 1
+            copy[spread + 1] = copy[spread + 1] + removed
           } else {
-            copy.push(1)
+            copy.push(removed)
           }
           return copy
         })
       }
-    })
-    return () => window.cancelAnimationFrame(raf)
+    }, 30)
+    return () => window.clearTimeout(t)
   }, [spread, counts, direction, bvOpts.arabic, bvOpts.phon])
 
   // Position réelle : somme des versets des spreads précédents
@@ -773,6 +795,12 @@ export default function BookView({ surah, verses, pageSize }: Props) {
             font-size: 11px !important;
             padding: 5px 10px !important;
           }
+          /* Désactive l'animation shared-axis sur mobile — trop lourde avec zoom CSS */
+          .spread-content.anim-next,
+          .spread-content.anim-prev {
+            animation: none !important;
+          }
+          /* Désactive aussi l'effet 3D actif — laisse juste un instantané pour la fluidité tactile */
         }
         .page-arrow:hover:not(:disabled) {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
