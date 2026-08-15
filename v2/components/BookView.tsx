@@ -120,45 +120,34 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 55,
-      lineHeightPx: 20,
-      arCharsPerLine: 45,
-      arLineHeightPx: 26,
-      phCharsPerLine: 60,
-      phLineHeightPx: 17,
-      verseGapPx: 6,
+      charsPerLine: 48,
+      lineHeightPx: 22,
+      arCharsPerLine: 34,
+      arLineHeightPx: 30,
+      phCharsPerLine: 52,
+      phLineHeightPx: 20,
+      verseGapPx: 10,
     }
-    const SLOT = 880
-    const SLOT_SPREAD_0 = 620
+    const SLOT = 820
+    const SLOT_SPREAD_0 = 580
 
+    // Nouvelle règle : capacité TOTALE d'un spread = SLOT gauche + SLOT droit.
+    // On empile tant que la capacité totale n'est pas saturée. Puis le split
+    // gauche/droite est calculé pour équilibrer les hauteurs.
     const arr: number[] = []
     let i = 0
     let isFirst = true
     while (i < verses.length) {
       const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
+      const maxCombined = slotAvail * 2 // 2 pages
       let count = 0
-      let hL = 0, hR = 0
-      let onLeft = true
+      let total = 0
       while (i + count < verses.length) {
         const h = estimateVerseHeight(verses[i + count] as { translation_arab: string; arabic_text?: string; phonetic?: string }, est)
-        if (onLeft) {
-          if (hL + h > slotAvail && count > 0) {
-            onLeft = false
-            continue
-          }
-          hL += h
-          count++
-        } else {
-          if (hR + h > slotAvail && count > 0) break
-          hR += h
-          count++
-        }
+        if (total + h > maxCombined && count > 0) break
+        total += h
+        count++
       }
-      // Force minimum 2 versets par spread (sauf dernier partiel) pour éviter
-      // les pages droites vides quand un verset gauche seul suffit à saturer
-      // (esthétiquement médiocre — mieux d'accepter un léger overflow).
-      const minCount = 2
-      if (count < minCount && i + count < verses.length) count = Math.min(minCount, verses.length - i)
       arr.push(Math.max(1, count))
       i += Math.max(1, count)
       isFirst = false
@@ -284,7 +273,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       phCharsPerLine: 60, phLineHeightPx: 17,
       verseGapPx: 6,
     }
-    const slot = showHeaderIntro ? 620 : 880
+    const slot = showHeaderIntro ? 580 : 820
     let cumL = 0
     let best = 1
     for (let i = 0; i < spreadVerses.length; i++) {
@@ -293,8 +282,9 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       cumL += h
       best = i + 1
     }
-    // Au moins 1 verset à droite (si count >= 2), sinon on met tout à gauche
-    return spreadVerses.length >= 2 ? Math.min(best, spreadVerses.length - 1) : best
+    // Si tout tient à gauche → tout à gauche (page droite vide OK, mieux qu'un
+    // verset esseulé à droite avec de la place vide à gauche)
+    return best
   })()
   const leftVerses = spreadVerses.slice(0, splitAt)
   const rightVerses = spreadVerses.slice(splitAt)
