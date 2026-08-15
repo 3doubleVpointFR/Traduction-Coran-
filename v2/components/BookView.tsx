@@ -120,16 +120,16 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 48,
-      lineHeightPx: 22,
-      arCharsPerLine: 34,
-      arLineHeightPx: 30,
-      phCharsPerLine: 52,
-      phLineHeightPx: 20,
-      verseGapPx: 10,
+      charsPerLine: 42,
+      lineHeightPx: 24,
+      arCharsPerLine: 30,
+      arLineHeightPx: 32,
+      phCharsPerLine: 46,
+      phLineHeightPx: 21,
+      verseGapPx: 12,
     }
-    const SLOT = 820
-    const SLOT_SPREAD_0 = 580
+    const SLOT = 780
+    const SLOT_SPREAD_0 = 500
 
     // Nouvelle règle : capacité TOTALE d'un spread = SLOT gauche + SLOT droit.
     // On empile tant que la capacité totale n'est pas saturée. Puis le split
@@ -273,7 +273,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       phCharsPerLine: 60, phLineHeightPx: 17,
       verseGapPx: 6,
     }
-    const slot = showHeaderIntro ? 580 : 820
+    const slot = showHeaderIntro ? 500 : 780
     let cumL = 0
     let best = 1
     for (let i = 0; i < spreadVerses.length; i++) {
