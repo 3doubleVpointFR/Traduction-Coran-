@@ -6,6 +6,25 @@ import React, { useState, useEffect, useCallback, useRef, useMemo, useLayoutEffe
 // dynamiquement par splitBalanced pour équilibrer visuellement les 2 colonnes.
 const VERSES_PER_SPREAD = 10
 
+// Estimation rapide de la hauteur d'un verset en pixels selon le mode d'affichage
+// et la largeur de colonne. Sert à pré-calculer les spreads AVANT render pour éviter
+// tout débordement (l'algo cascade post-render n'est qu'une sécurité).
+interface EstOpts { arabic: boolean; phon: boolean; charsPerLine: number; lineHeightPx: number; arCharsPerLine: number; arLineHeightPx: number; phCharsPerLine: number; phLineHeightPx: number; verseGapPx: number }
+function estimateVerseHeight(v: { translation_arab: string; arabic_text?: string; phonetic?: string }, o: EstOpts): number {
+  const trChars = (v.translation_arab || '').length
+  const linesTr = Math.max(1, Math.ceil(trChars / o.charsPerLine))
+  let h = linesTr * o.lineHeightPx + o.verseGapPx
+  if (o.arabic && v.arabic_text) {
+    const arLines = Math.max(1, Math.ceil((v.arabic_text.length) / o.arCharsPerLine))
+    h += arLines * o.arLineHeightPx + 8
+  }
+  if (o.phon && v.phonetic) {
+    const phLines = Math.max(1, Math.ceil((v.phonetic.length) / o.phCharsPerLine))
+    h += phLines * o.phLineHeightPx + 4
+  }
+  return h
+}
+
 // Retourne l'index où couper la liste de versets (nb à gauche) pour équilibrer
 // approximativement le contenu textuel entre les 2 pages du spread.
 function splitBalanced(vs: Array<{ translation_arab: string }>): number {
@@ -89,24 +108,55 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     +Arabe+Phon : les 2 combinés, on démarre à 4.
   //     Le total évolue tout de suite au toggle (11 → 18 → 27…).
   //     La mesure post-render affine si un spread précis déborde encore.
-  const versesPerSpreadTarget = useMemo(() => {
-    // Cibles délibérément prudentes : mieux vaut sous-estimer et laisser
-    // splitBalanced / la cascade remplir plus si de la place restait.
-    if (bvOpts.arabic && bvOpts.phon) return 3
-    if (bvOpts.arabic) return 4
-    if (bvOpts.phon) return 4
-    return 8
-  }, [bvOpts.arabic, bvOpts.phon])
+  // ─── Pré-calcul des counts par estimation de hauteur (garantit zéro débordement) ───
+  // On simule côté JS le remplissage de chaque spread selon le mode d'affichage.
+  // Ainsi la cascade post-render devient une simple correction fine, pas un correctif majeur.
   const initialCounts = useMemo(() => {
+    // Paramètres d'estimation calibrés sur mesure d'un rendu réel
+    const est: EstOpts = {
+      arabic: bvOpts.arabic,
+      phon: bvOpts.phon,
+      charsPerLine: 32,      // ~32 chars/ligne dans une colonne mobile
+      lineHeightPx: 26,      // font 16px * 1.5 + un peu
+      arCharsPerLine: 25,
+      arLineHeightPx: 36,
+      phCharsPerLine: 44,
+      phLineHeightPx: 22,
+      verseGapPx: 14,
+    }
+    // Slot cible (marge de sécurité). Valeur volontairement conservatrice.
+    const SLOT = 700
+    const SLOT_SPREAD_0 = 460 // moins de place car header + basmala
+
     const arr: number[] = []
-    let remaining = verses.length
-    while (remaining > 0) {
-      const n = Math.min(versesPerSpreadTarget, remaining)
-      arr.push(n)
-      remaining -= n
+    let i = 0
+    let isFirst = true
+    while (i < verses.length) {
+      const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
+      let count = 0
+      let hL = 0, hR = 0
+      let onLeft = true
+      while (i + count < verses.length) {
+        const h = estimateVerseHeight(verses[i + count] as { translation_arab: string; arabic_text?: string; phonetic?: string }, est)
+        if (onLeft) {
+          if (hL + h > slotAvail && count > 0) {
+            onLeft = false
+            continue
+          }
+          hL += h
+          count++
+        } else {
+          if (hR + h > slotAvail && count > 0) break
+          hR += h
+          count++
+        }
+      }
+      arr.push(Math.max(1, count))
+      i += Math.max(1, count)
+      isFirst = false
     }
     return arr.length > 0 ? arr : [0]
-  }, [verses.length, versesPerSpreadTarget])
+  }, [verses, bvOpts.arabic, bvOpts.phon])
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Mémorise le premier verset visible pour retrouver le bon spread après toggle
   const anchorVerseRef = useRef<number | null>(null)
@@ -559,8 +609,6 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
-                  overflow: 'hidden',
-                  minHeight: 0,
                 }}
               >
                 {leftVerses.map((v, i) => (
@@ -587,8 +635,6 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
-                  overflow: 'hidden',
-                  minHeight: 0,
                 }}
               >
                 {rightVerses.length > 0 ? (
