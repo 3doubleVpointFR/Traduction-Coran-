@@ -265,7 +265,11 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const over = el.scrollHeight - slot
         if (over > maxOverflow) maxOverflow = over
       }
-      if (maxOverflow > 2 && (counts[spread] ?? 0) > 1) {
+      // Cascade seulement si vraiment gros débordement (>60px) — car en mode
+      // arabe/phon l'estimation JS peut être légèrement off et on ne veut pas
+      // retirer un verset qui déborde de 20px alors qu'il tiendrait juste avec
+      // un léger ajustement. Le pré-calcul JS est la source primaire.
+      if (maxOverflow > 60 && (counts[spread] ?? 0) > 1) {
         const currentCount = counts[spread] ?? 0
         const overRatio = maxOverflow / Math.max(slot, 1)
         const toRemove = Math.max(1, Math.min(currentCount - 1, Math.ceil(currentCount * overRatio / (1 + overRatio))))
