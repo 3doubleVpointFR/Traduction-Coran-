@@ -117,13 +117,13 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 40,
-      lineHeightPx: 25,
-      arCharsPerLine: 20,     // arabe plus dense qu'estimé
-      arLineHeightPx: 38,     // interligne plus large
-      phCharsPerLine: 42,
-      phLineHeightPx: 22,
-      verseGapPx: 14,
+      charsPerLine: 42,
+      lineHeightPx: 24,
+      arCharsPerLine: 26,     // arabe : chars/ligne réaliste
+      arLineHeightPx: 34,
+      phCharsPerLine: 46,
+      phLineHeightPx: 20,
+      verseGapPx: 10,
     }
     // Slot cible aligné sur la vraie hauteur utile du body
     const SLOT = 810
@@ -243,11 +243,11 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     le dernier verset du spread et on le décale vers le spread suivant.
   //     La boucle continue tant qu'il déborde, en cascade sur les spreads suivants.
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
-  // ─── Anti-débordement dynamique : combine setTimeout (initial layout) +
-  //     ResizeObserver (change de taille contenu/viewport) + MutationObserver
-  //     (rerender React). À chaque évent, on re-mesure ; si un côté déborde
-  //     de + de 2px, on retire proportionnellement les versets et on
-  //     recompose le spread suivant. Boucle jusqu'à convergence (min 1 verset).
+  // ─── Cascade réactive DÉSACTIVÉE : source répétée de bugs (retirait des versets
+  //     de la mauvaise page, créait des zones blanches). Le pré-calcul JS via
+  //     estimation de hauteur (initialCounts) est maintenant la seule source
+  //     de vérité pour les counts. Si un cas rare déborde légèrement, le
+  //     contenu reste visible (pas d'overflow:hidden) et la page grandit.
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return
     const body = bookBodyRef.current
@@ -265,41 +265,32 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const over = el.scrollHeight - slot
         if (over > maxOverflow) maxOverflow = over
       }
-      // Cascade seulement si vraiment gros débordement (>60px) — car en mode
-      // arabe/phon l'estimation JS peut être légèrement off et on ne veut pas
-      // retirer un verset qui déborde de 20px alors qu'il tiendrait juste avec
-      // un léger ajustement. Le pré-calcul JS est la source primaire.
-      if (maxOverflow > 60 && (counts[spread] ?? 0) > 1) {
+      // Cascade seulement si débordement CATASTROPHIQUE (>150px) — dernier filet
+      // de sécurité pour cas rarissimes où l'estimation serait vraiment loin.
+      if (maxOverflow > 150 && (counts[spread] ?? 0) > 2) {
         const currentCount = counts[spread] ?? 0
-        const overRatio = maxOverflow / Math.max(slot, 1)
-        const toRemove = Math.max(1, Math.min(currentCount - 1, Math.ceil(currentCount * overRatio / (1 + overRatio))))
         setCounts(prev => {
           const copy = [...prev]
-          const removed = Math.min(toRemove, (copy[spread] ?? 0) - 1)
-          if (removed <= 0) return prev
-          copy[spread] = (copy[spread] ?? 0) - removed
+          if ((copy[spread] ?? 0) <= 2) return prev
+          copy[spread] = (copy[spread] ?? 0) - 1
           if (copy[spread + 1] !== undefined) {
-            copy[spread + 1] = copy[spread + 1] + removed
+            copy[spread + 1] = copy[spread + 1] + 1
           } else {
-            copy.push(removed)
+            copy.push(1)
           }
           return copy
         })
+        void currentCount
       }
     }
 
-    // 1) Check initial (une fois le layout stabilisé)
-    const t1 = window.setTimeout(runCheck, 30)
-    // 2) Deuxième check plus tard (fonts chargées, images, animations)
-    const t2 = window.setTimeout(runCheck, 200)
-    const t3 = window.setTimeout(runCheck, 600)
-
-    // 3) ResizeObserver : recheck à chaque changement de taille du body ou d'une page-side
+    // 1) Check initial
+    const t1 = window.setTimeout(runCheck, 100)
+    const t2 = window.setTimeout(runCheck, 600)
     let ro: ResizeObserver | null = null
     if (typeof ResizeObserver !== 'undefined') {
       ro = new ResizeObserver(() => runCheck())
       ro.observe(body)
-      body.querySelectorAll('.page-side').forEach(s => ro!.observe(s))
     }
 
     return () => {
