@@ -268,24 +268,30 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       setSpread(Math.max(0, counts.length - 1))
     }
   }, [counts, spread])
-  // Sur la 1re double-page, le header+basmala prennent de la place à gauche : on décale
-  // le split vers moins de contenu à gauche pour compenser.
   const showHeaderIntro = spread === 0
-  const headerBias = showHeaderIntro ? 250 : 0
-  // Recalcule le split en tenant compte du header
+  // Split par estimation de hauteur : empile côté gauche jusqu'à saturation
+  // (SLOT), puis passe à droite. Prend en compte l'arabe et la phon si actifs.
   const splitAt = (() => {
     if (spreadVerses.length <= 1) return spreadVerses.length
-    const lens = spreadVerses.map(v => (v.translation_arab?.length ?? 0) + 8)
-    const totalPlusHeader = lens.reduce((a, b) => a + b, 0) + headerBias
-    let cum = headerBias
-    let best = Math.ceil(spreadVerses.length / 2)
-    let bestDiff = Infinity
-    for (let i = 1; i < spreadVerses.length; i++) {
-      cum += lens[i - 1]
-      const diff = Math.abs(cum - totalPlusHeader / 2)
-      if (diff < bestDiff) { bestDiff = diff; best = i }
+    const est: EstOpts = {
+      arabic: bvOpts.arabic,
+      phon: bvOpts.phon,
+      charsPerLine: 45, lineHeightPx: 22,
+      arCharsPerLine: 32, arLineHeightPx: 30,
+      phCharsPerLine: 50, phLineHeightPx: 19,
+      verseGapPx: 8,
     }
-    return best
+    const slot = showHeaderIntro ? 560 : 810
+    let cumL = 0
+    let best = 1
+    for (let i = 0; i < spreadVerses.length; i++) {
+      const h = estimateVerseHeight(spreadVerses[i] as { translation_arab: string; arabic_text?: string; phonetic?: string }, est)
+      if (cumL + h > slot && i > 0) break
+      cumL += h
+      best = i + 1
+    }
+    // Au moins 1 verset à droite (si count >= 2), sinon on met tout à gauche
+    return spreadVerses.length >= 2 ? Math.min(best, spreadVerses.length - 1) : best
   })()
   const leftVerses = spreadVerses.slice(0, splitAt)
   const rightVerses = spreadVerses.slice(splitAt)
