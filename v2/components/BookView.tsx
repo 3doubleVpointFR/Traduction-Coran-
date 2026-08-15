@@ -108,42 +108,72 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     +Arabe+Phon : les 2 combinés, on démarre à 4.
   //     Le total évolue tout de suite au toggle (11 → 18 → 27…).
   //     La mesure post-render affine si un spread précis déborde encore.
-  // ─── Pré-calcul des counts par estimation de hauteur (garantit zéro débordement) ───
-  // On simule côté JS le remplissage de chaque spread selon le mode d'affichage.
-  // Ainsi la cascade post-render devient une simple correction fine, pas un correctif majeur.
-  const initialCounts = useMemo(() => {
-    // Paramètres calibrés — plus réalistes pour l'arabe (peut-être multi-ligne
-    // avec beaucoup de diacritiques). Verses arabes typiquement 4-6 lignes en colonne étroite.
-    // Estimation VOLONTAIREMENT AGRESSIVE (sous-estime la hauteur) —
-    // règle voulue par l'user : « tant que le verset suivant peut tenir sans
-    // déborder, on le met ». Mieux vaut un léger débordement rare qu'une page vide.
-    const est: EstOpts = {
-      arabic: bvOpts.arabic,
-      phon: bvOpts.phon,
-      charsPerLine: 42,
-      lineHeightPx: 24,
-      arCharsPerLine: 30,
-      arLineHeightPx: 32,
-      phCharsPerLine: 46,
-      phLineHeightPx: 21,
-      verseGapPx: 12,
-    }
-    const SLOT = 780
-    const SLOT_SPREAD_0 = 500
+  // ─── Mesure RÉELLE des hauteurs des versets via un container caché ───
+  // Au lieu d'estimer, on rend tous les versets dans un div hors-écran avec
+  // la même largeur qu'une page-side, puis on lit les vraies hauteurs.
+  // Résultat : le calcul de count par spread est fiable, quel que soit le
+  // mode (français seul, +arabe, +phon).
+  const measurerRef = useRef<HTMLDivElement | null>(null)
+  const [verseHeights, setVerseHeights] = useState<number[] | null>(null)
+  const [slotHeights, setSlotHeights] = useState<{ normal: number; spread0: number } | null>(null)
 
-    // Nouvelle règle : capacité TOTALE d'un spread = SLOT gauche + SLOT droit.
-    // On empile tant que la capacité totale n'est pas saturée. Puis le split
-    // gauche/droite est calculé pour équilibrer les hauteurs.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const measure = () => {
+      const m = measurerRef.current
+      if (!m || !m.isConnected) return
+      const els = m.querySelectorAll<HTMLElement>('[data-vi]')
+      const hs: number[] = []
+      els.forEach(el => hs.push(el.getBoundingClientRect().height))
+      // Mesure aussi le slot d'une page-side réelle si dispo
+      const body = bookBodyRef.current
+      let slot = 780
+      let slot0 = 500
+      if (body && body.isConnected) {
+        // La hauteur d'une page-side utile ≈ hauteur du body (à peu près identique)
+        // Sur spread 0, elle est réduite par header + basmala au-dessus
+        const sideEl = body.querySelector<HTMLElement>('.page-side')
+        if (sideEl) {
+          const h = sideEl.clientHeight
+          if (h > 0) {
+            slot = h - 20    // -20 marge de sécurité
+            slot0 = Math.max(200, h - 240) // header/basmala prennent env 220px
+          }
+        }
+      }
+      setVerseHeights(hs)
+      setSlotHeights({ normal: slot, spread0: slot0 })
+    }
+    // Plusieurs passes pour fonts / layout
+    const t1 = window.setTimeout(measure, 60)
+    const t2 = window.setTimeout(measure, 300)
+    const t3 = window.setTimeout(measure, 900)
+    window.addEventListener('resize', measure)
+    return () => {
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+      window.clearTimeout(t3)
+      window.removeEventListener('resize', measure)
+    }
+  }, [verses.length, bvOpts.arabic, bvOpts.phon])
+
+  const initialCounts = useMemo(() => {
+    if (!verseHeights || verseHeights.length !== verses.length || !slotHeights) {
+      // Pas encore mesuré : tout mettre dans un premier spread par défaut
+      return [verses.length || 0]
+    }
+    const SLOT = slotHeights.normal
+    const SLOT_SPREAD_0 = slotHeights.spread0
     const arr: number[] = []
     let i = 0
     let isFirst = true
     while (i < verses.length) {
       const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
-      const maxCombined = slotAvail * 2 // 2 pages
+      const maxCombined = slotAvail * 2
       let count = 0
       let total = 0
       while (i + count < verses.length) {
-        const h = estimateVerseHeight(verses[i + count] as { translation_arab: string; arabic_text?: string; phonetic?: string }, est)
+        const h = verseHeights[i + count] || 100
         if (total + h > maxCombined && count > 0) break
         total += h
         count++
@@ -153,7 +183,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       isFirst = false
     }
     return arr.length > 0 ? arr : [0]
-  }, [verses, bvOpts.arabic, bvOpts.phon])
+  }, [verses.length, verseHeights, slotHeights])
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Mémorise le premier verset visible pour retrouver le bon spread après toggle
   const anchorVerseRef = useRef<number | null>(null)
@@ -260,30 +290,20 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
   }, [counts, spread])
   const showHeaderIntro = spread === 0
-  // Split par estimation de hauteur : empile côté gauche jusqu'à saturation
-  // (SLOT), puis passe à droite. Prend en compte l'arabe et la phon si actifs.
+  // Split par MESURE RÉELLE des hauteurs : empile côté gauche jusqu'à saturation,
+  // puis le reste va à droite.
   const splitAt = (() => {
     if (spreadVerses.length <= 1) return spreadVerses.length
-    // Mêmes valeurs agressives que le pré-calcul initialCounts
-    const est: EstOpts = {
-      arabic: bvOpts.arabic,
-      phon: bvOpts.phon,
-      charsPerLine: 55, lineHeightPx: 20,
-      arCharsPerLine: 45, arLineHeightPx: 26,
-      phCharsPerLine: 60, phLineHeightPx: 17,
-      verseGapPx: 6,
-    }
-    const slot = showHeaderIntro ? 500 : 780
+    const slot = showHeaderIntro ? (slotHeights?.spread0 ?? 500) : (slotHeights?.normal ?? 780)
     let cumL = 0
     let best = 1
     for (let i = 0; i < spreadVerses.length; i++) {
-      const h = estimateVerseHeight(spreadVerses[i] as { translation_arab: string; arabic_text?: string; phonetic?: string }, est)
+      const globalIdx = startIdx + i
+      const h = (verseHeights && verseHeights[globalIdx]) || 100
       if (cumL + h > slot && i > 0) break
       cumL += h
       best = i + 1
     }
-    // Si tout tient à gauche → tout à gauche (page droite vide OK, mieux qu'un
-    // verset esseulé à droite avec de la place vide à gauche)
     return best
   })()
   const leftVerses = spreadVerses.slice(0, splitAt)
@@ -304,6 +324,51 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         fontFamily: "'Cormorant Garamond', Georgia, serif",
       }}
     >
+      {/* ═══════════════ MEASURER OFFSCREEN ═══════════════
+          Rend tous les versets dans un container caché avec la même largeur
+          qu'une page-side. Les hauteurs mesurées servent au pré-calcul des
+          spreads (fiable, pas d'estimation). */}
+      <div
+        ref={measurerRef}
+        aria-hidden
+        style={{
+          position: 'absolute',
+          left: '-99999px',
+          top: 0,
+          width: '350px', // approx largeur d'une page-side unzoomed
+          visibility: 'hidden',
+          pointerEvents: 'none',
+          fontSize: '16px',
+          lineHeight: 1.5,
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
+          textAlign: 'justify',
+          hyphens: 'auto',
+        }}
+      >
+        {verses.map((v, i) => (
+          <div key={v.id} data-vi={i} style={{ marginBottom: '10px' }}>
+            {bvOpts.arabic && v.arabic_text && (
+              <div
+                className="font-arabic"
+                dir="rtl"
+                style={{ fontSize: '20px', lineHeight: 1.9, marginBottom: '4px' }}
+              >
+                {v.arabic_text}
+              </div>
+            )}
+            {bvOpts.phon && v.phonetic && (
+              <div style={{ fontSize: '12.5px', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '4px' }}>
+                {v.phonetic}
+              </div>
+            )}
+            <div>
+              <span style={{ display: 'inline-block', width: '30px', marginRight: '9px' }}>{v.verse_num}</span>
+              {v.translation_arab}
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Toggle flottant Analyse/Livre — top-right discret, ouvre dans un nouvel onglet */}
       <Link
         href={analyseHref}
