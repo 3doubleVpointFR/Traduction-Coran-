@@ -117,13 +117,13 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 42,
-      lineHeightPx: 24,
-      arCharsPerLine: 26,     // arabe : chars/ligne réaliste
-      arLineHeightPx: 34,
-      phCharsPerLine: 46,
-      phLineHeightPx: 20,
-      verseGapPx: 10,
+      charsPerLine: 45,
+      lineHeightPx: 22,
+      arCharsPerLine: 32,     // arabe : plus généreux (moins de lignes)
+      arLineHeightPx: 30,     // interligne compact
+      phCharsPerLine: 50,
+      phLineHeightPx: 19,
+      verseGapPx: 8,
     }
     // Slot cible aligné sur la vraie hauteur utile du body
     const SLOT = 810
@@ -152,6 +152,11 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           count++
         }
       }
+      // Force minimum 2 versets par spread (sauf dernier partiel) pour éviter
+      // les pages droites vides quand un verset gauche seul suffit à saturer
+      // (esthétiquement médiocre — mieux d'accepter un léger overflow).
+      const minCount = 2
+      if (count < minCount && i + count < verses.length) count = Math.min(minCount, verses.length - i)
       arr.push(Math.max(1, count))
       i += Math.max(1, count)
       isFirst = false
@@ -243,52 +248,8 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     le dernier verset du spread et on le décale vers le spread suivant.
   //     La boucle continue tant qu'il déborde, en cascade sur les spreads suivants.
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
-  // ─── Filet de sécurité anti-débordement CATASTROPHIQUE (>150 px) ───
-  //     Le pré-calcul JS via estimation de hauteur (initialCounts) est la
-  //     source primaire des counts. La cascade ci-dessous n'agit que dans
-  //     les cas rarissimes où le rendu réel dépasserait très largement
-  //     l'estimation. Version défensive : try/catch, checks null partout.
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    let cancelled = false
-    const runCheck = () => {
-      if (cancelled) return
-      try {
-        const body = bookBodyRef.current
-        if (!body || !body.isConnected) return
-        const slot = body.clientHeight
-        if (slot <= 0) return
-        const sides = body.querySelectorAll('.page-side')
-        let maxOverflow = 0
-        for (const s of sides) {
-          const el = s as HTMLElement
-          if (!el.isConnected) continue
-          const over = el.scrollHeight - slot
-          if (over > maxOverflow) maxOverflow = over
-        }
-        if (maxOverflow > 150 && (counts[spread] ?? 0) > 2) {
-          setCounts(prev => {
-            const copy = [...prev]
-            if ((copy[spread] ?? 0) <= 2) return prev
-            copy[spread] = (copy[spread] ?? 0) - 1
-            if (copy[spread + 1] !== undefined) {
-              copy[spread + 1] = copy[spread + 1] + 1
-            } else {
-              copy.push(1)
-            }
-            return copy
-          })
-        }
-      } catch { /* ignore mesures ratées (unmount, etc.) */ }
-    }
-    const t1 = window.setTimeout(runCheck, 200)
-    const t2 = window.setTimeout(runCheck, 800)
-    return () => {
-      cancelled = true
-      window.clearTimeout(t1)
-      window.clearTimeout(t2)
-    }
-  }, [spread, counts, direction, bvOpts.arabic, bvOpts.phon])
+  // Cascade réactive complètement supprimée — source de bugs récurrents.
+  // Seul le pré-calcul JS (initialCounts) régit la pagination.
 
   // Position réelle : somme des versets des spreads précédents
   const startIdx = counts.slice(0, spread).reduce((s, n) => s + n, 0)
