@@ -90,10 +90,12 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     Le total évolue tout de suite au toggle (11 → 18 → 27…).
   //     La mesure post-render affine si un spread précis déborde encore.
   const versesPerSpreadTarget = useMemo(() => {
-    if (bvOpts.arabic && bvOpts.phon) return 4
-    if (bvOpts.arabic) return 6
-    if (bvOpts.phon) return 5
-    return VERSES_PER_SPREAD
+    // Cibles délibérément prudentes : mieux vaut sous-estimer et laisser
+    // splitBalanced / la cascade remplir plus si de la place restait.
+    if (bvOpts.arabic && bvOpts.phon) return 3
+    if (bvOpts.arabic) return 4
+    if (bvOpts.phon) return 4
+    return 8
   }, [bvOpts.arabic, bvOpts.phon])
   const initialCounts = useMemo(() => {
     const arr: number[] = []
@@ -557,6 +559,8 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
+                  overflow: 'hidden',
+                  minHeight: 0,
                 }}
               >
                 {leftVerses.map((v, i) => (
@@ -583,6 +587,8 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
+                  overflow: 'hidden',
+                  minHeight: 0,
                 }}
               >
                 {rightVerses.length > 0 ? (
