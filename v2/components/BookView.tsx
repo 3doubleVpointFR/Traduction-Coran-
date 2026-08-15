@@ -151,19 +151,22 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   const TRANSITION_MS = isMobile ? 100 : 460
 
   const startTransition = useCallback((dir: 'next' | 'prev') => {
-    if (transitionLockRef.current) return
+    // Sur mobile, pas de lock (nav instantanée). Sur PC, lock 460ms pour animation
+    if (!isMobile && transitionLockRef.current) return
     setSpread(s => {
       const target = dir === 'next' ? s + 1 : s - 1
       if (target < 0 || target >= totalSpreads) return s
-      transitionLockRef.current = true
-      setDirection(dir)
-      window.setTimeout(() => {
-        setDirection(null)
-        transitionLockRef.current = false
-      }, TRANSITION_MS)
+      if (!isMobile) {
+        transitionLockRef.current = true
+        setDirection(dir)
+        window.setTimeout(() => {
+          setDirection(null)
+          transitionLockRef.current = false
+        }, TRANSITION_MS)
+      }
       return target
     })
-  }, [totalSpreads])
+  }, [totalSpreads, isMobile])
 
   const goPrev = useCallback(() => startTransition('prev'), [startTransition])
   const goNext = useCallback(() => startTransition('next'), [startTransition])
@@ -187,12 +190,19 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     le dernier verset du spread et on le décale vers le spread suivant.
   //     La boucle continue tant qu'il déborde, en cascade sur les spreads suivants.
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
+  // ─── Anti-débordement dynamique : combine setTimeout (initial layout) +
+  //     ResizeObserver (change de taille contenu/viewport) + MutationObserver
+  //     (rerender React). À chaque évent, on re-mesure ; si un côté déborde
+  //     de + de 2px, on retire proportionnellement les versets et on
+  //     recompose le spread suivant. Boucle jusqu'à convergence (min 1 verset).
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return
-    // setTimeout 30ms → laisse le layout se stabiliser (rAF trop fragile en headless / avec zoom CSS)
-    const t = window.setTimeout(() => {
-      const body = bookBodyRef.current
-      if (!body) return
+    const body = bookBodyRef.current
+    if (!body) return
+
+    let cancelled = false
+    const runCheck = () => {
+      if (cancelled) return
       const slot = body.clientHeight
       if (slot <= 0) return
       const sides = body.querySelectorAll('.page-side')
@@ -202,11 +212,8 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const over = el.scrollHeight - slot
         if (over > maxOverflow) maxOverflow = over
       }
-      // Tolérance stricte 2px — chaque verset qui déborde même légèrement doit passer au spread suivant
       if (maxOverflow > 2 && (counts[spread] ?? 0) > 1) {
         const currentCount = counts[spread] ?? 0
-        // Retire proportionnellement à l'overflow : convergence rapide en 1-2 passes.
-        // On garantit d'enlever au moins 1 verset ; on peut descendre jusqu'à 1 verset restant.
         const overRatio = maxOverflow / Math.max(slot, 1)
         const toRemove = Math.max(1, Math.min(currentCount - 1, Math.ceil(currentCount * overRatio / (1 + overRatio))))
         setCounts(prev => {
@@ -222,8 +229,29 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           return copy
         })
       }
-    }, 30)
-    return () => window.clearTimeout(t)
+    }
+
+    // 1) Check initial (une fois le layout stabilisé)
+    const t1 = window.setTimeout(runCheck, 30)
+    // 2) Deuxième check plus tard (fonts chargées, images, animations)
+    const t2 = window.setTimeout(runCheck, 200)
+    const t3 = window.setTimeout(runCheck, 600)
+
+    // 3) ResizeObserver : recheck à chaque changement de taille du body ou d'une page-side
+    let ro: ResizeObserver | null = null
+    if (typeof ResizeObserver !== 'undefined') {
+      ro = new ResizeObserver(() => runCheck())
+      ro.observe(body)
+      body.querySelectorAll('.page-side').forEach(s => ro!.observe(s))
+    }
+
+    return () => {
+      cancelled = true
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+      window.clearTimeout(t3)
+      ro?.disconnect()
+    }
   }, [spread, counts, direction, bvOpts.arabic, bvOpts.phon])
 
   // Position réelle : somme des versets des spreads précédents
@@ -322,6 +350,9 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         className="bv-book-wrap"
         style={{
           padding: '6px 24px 12px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         <div
