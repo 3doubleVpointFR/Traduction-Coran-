@@ -766,26 +766,26 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         */
         @media (max-width: 900px) {
           .book {
-            width: 900px !important;
+            width: 800px !important;
             max-width: none !important;
-            height: 800px !important;
+            height: 900px !important;
             border-radius: 6px !important;
             box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
           }
-          /* Wrapper autour du livre pour supprimer les marges qui poussent au-delà du viewport */
           .book, .book + div {
             margin-left: auto !important;
             margin-right: auto !important;
           }
         }
-        /* Tablette portrait : 600-900px → zoom modéré */
-        @media (max-width: 900px) and (min-width: 601px) { .book { zoom: 0.7; } }
-        /* Mobile large : 481-600px → zoom serré */
-        @media (max-width: 600px) and (min-width: 481px) { .book { zoom: 0.55; } }
-        /* Mobile standard 375-480px */
-        @media (max-width: 480px) and (min-width: 380px) { .book { zoom: 0.4; } }
-        /* Mobile étroit ≤ 379px */
-        @media (max-width: 379px) { .book { zoom: 0.34; } }
+        /* Zoom ajusté pour utiliser au maximum la largeur du viewport (livre 800px de base).
+           Livre visible = 800 * zoom ; le book est centré, on garde 8-12px de marge. */
+        @media (max-width: 900px) and (min-width: 701px) { .book { zoom: 0.85; } }
+        @media (max-width: 700px) and (min-width: 601px) { .book { zoom: 0.75; } }
+        @media (max-width: 600px) and (min-width: 501px) { .book { zoom: 0.62; } }
+        @media (max-width: 500px) and (min-width: 421px) { .book { zoom: 0.55; } }
+        @media (max-width: 420px) and (min-width: 381px) { .book { zoom: 0.5; } }
+        @media (max-width: 380px) and (min-width: 341px) { .book { zoom: 0.45; } }
+        @media (max-width: 340px) { .book { zoom: 0.4; } }
 
         /* Le wrapper padding rend le livre bien centré */
         @media (max-width: 900px) {
