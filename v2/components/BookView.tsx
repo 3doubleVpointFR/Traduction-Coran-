@@ -817,9 +817,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
             height: 900px !important;
             border-radius: 6px !important;
             box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
-            /* Centrage horizontal du book zoomé dans son wrapper */
-            margin-left: auto !important;
-            margin-right: auto !important;
+            /* Ne pas mettre margin auto — align-items:center du wrapper gère le centrage,
+               et margin auto interfère avec le zoom en créant un décalage sub-pixel. */
+            margin-left: 0 !important;
+            margin-right: 0 !important;
           }
         }
         /* Zoom recalibré : livre 800px * zoom = largeur visible, centré dans la viewport. */
