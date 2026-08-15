@@ -243,61 +243,50 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     le dernier verset du spread et on le décale vers le spread suivant.
   //     La boucle continue tant qu'il déborde, en cascade sur les spreads suivants.
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
-  // ─── Cascade réactive DÉSACTIVÉE : source répétée de bugs (retirait des versets
-  //     de la mauvaise page, créait des zones blanches). Le pré-calcul JS via
-  //     estimation de hauteur (initialCounts) est maintenant la seule source
-  //     de vérité pour les counts. Si un cas rare déborde légèrement, le
-  //     contenu reste visible (pas d'overflow:hidden) et la page grandit.
-  useLayoutEffect(() => {
+  // ─── Filet de sécurité anti-débordement CATASTROPHIQUE (>150 px) ───
+  //     Le pré-calcul JS via estimation de hauteur (initialCounts) est la
+  //     source primaire des counts. La cascade ci-dessous n'agit que dans
+  //     les cas rarissimes où le rendu réel dépasserait très largement
+  //     l'estimation. Version défensive : try/catch, checks null partout.
+  useEffect(() => {
     if (typeof window === 'undefined') return
-    const body = bookBodyRef.current
-    if (!body) return
-
     let cancelled = false
     const runCheck = () => {
       if (cancelled) return
-      const slot = body.clientHeight
-      if (slot <= 0) return
-      const sides = body.querySelectorAll('.page-side')
-      let maxOverflow = 0
-      for (const s of sides) {
-        const el = s as HTMLElement
-        const over = el.scrollHeight - slot
-        if (over > maxOverflow) maxOverflow = over
-      }
-      // Cascade seulement si débordement CATASTROPHIQUE (>150px) — dernier filet
-      // de sécurité pour cas rarissimes où l'estimation serait vraiment loin.
-      if (maxOverflow > 150 && (counts[spread] ?? 0) > 2) {
-        const currentCount = counts[spread] ?? 0
-        setCounts(prev => {
-          const copy = [...prev]
-          if ((copy[spread] ?? 0) <= 2) return prev
-          copy[spread] = (copy[spread] ?? 0) - 1
-          if (copy[spread + 1] !== undefined) {
-            copy[spread + 1] = copy[spread + 1] + 1
-          } else {
-            copy.push(1)
-          }
-          return copy
-        })
-        void currentCount
-      }
+      try {
+        const body = bookBodyRef.current
+        if (!body || !body.isConnected) return
+        const slot = body.clientHeight
+        if (slot <= 0) return
+        const sides = body.querySelectorAll('.page-side')
+        let maxOverflow = 0
+        for (const s of sides) {
+          const el = s as HTMLElement
+          if (!el.isConnected) continue
+          const over = el.scrollHeight - slot
+          if (over > maxOverflow) maxOverflow = over
+        }
+        if (maxOverflow > 150 && (counts[spread] ?? 0) > 2) {
+          setCounts(prev => {
+            const copy = [...prev]
+            if ((copy[spread] ?? 0) <= 2) return prev
+            copy[spread] = (copy[spread] ?? 0) - 1
+            if (copy[spread + 1] !== undefined) {
+              copy[spread + 1] = copy[spread + 1] + 1
+            } else {
+              copy.push(1)
+            }
+            return copy
+          })
+        }
+      } catch { /* ignore mesures ratées (unmount, etc.) */ }
     }
-
-    // 1) Check initial
-    const t1 = window.setTimeout(runCheck, 100)
-    const t2 = window.setTimeout(runCheck, 600)
-    let ro: ResizeObserver | null = null
-    if (typeof ResizeObserver !== 'undefined') {
-      ro = new ResizeObserver(() => runCheck())
-      ro.observe(body)
-    }
-
+    const t1 = window.setTimeout(runCheck, 200)
+    const t2 = window.setTimeout(runCheck, 800)
     return () => {
       cancelled = true
       window.clearTimeout(t1)
       window.clearTimeout(t2)
-      ro?.disconnect()
     }
   }, [spread, counts, direction, bvOpts.arabic, bvOpts.phon])
 
