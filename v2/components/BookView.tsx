@@ -319,6 +319,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
 
       {/* ═══════════════ LIVRE OUVERT ═══════════════ */}
       <div
+        className="bv-book-wrap"
         style={{
           padding: '6px 24px 12px',
         }}
@@ -765,27 +766,33 @@ export default function BookView({ surah, verses, pageSize }: Props) {
            de zoomer pour lire confortablement.
         */
         @media (max-width: 900px) {
+          /* Évite tout scroll horizontal éventuel */
+          .bv-page {
+            overflow-x: hidden !important;
+          }
+          /* Wrapper du livre : padding minimal pour laisser toute la largeur au book zoomé */
+          .bv-book-wrap {
+            padding: 6px 0 12px !important;
+          }
           .book {
             width: 800px !important;
             max-width: none !important;
             height: 900px !important;
             border-radius: 6px !important;
             box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
-          }
-          .book, .book + div {
+            /* Centrage horizontal du book zoomé dans son wrapper */
             margin-left: auto !important;
             margin-right: auto !important;
           }
         }
-        /* Zoom ajusté pour utiliser au maximum la largeur du viewport (livre 800px de base).
-           Livre visible = 800 * zoom ; le book est centré, on garde 8-12px de marge. */
-        @media (max-width: 900px) and (min-width: 701px) { .book { zoom: 0.85; } }
-        @media (max-width: 700px) and (min-width: 601px) { .book { zoom: 0.75; } }
-        @media (max-width: 600px) and (min-width: 501px) { .book { zoom: 0.62; } }
-        @media (max-width: 500px) and (min-width: 421px) { .book { zoom: 0.55; } }
-        @media (max-width: 420px) and (min-width: 381px) { .book { zoom: 0.5; } }
-        @media (max-width: 380px) and (min-width: 341px) { .book { zoom: 0.45; } }
-        @media (max-width: 340px) { .book { zoom: 0.4; } }
+        /* Zoom recalibré : livre 800px * zoom = largeur visible, centré dans la viewport. */
+        @media (max-width: 900px) and (min-width: 701px) { .book { zoom: 0.8; } }
+        @media (max-width: 700px) and (min-width: 601px) { .book { zoom: 0.7; } }
+        @media (max-width: 600px) and (min-width: 501px) { .book { zoom: 0.6; } }
+        @media (max-width: 500px) and (min-width: 421px) { .book { zoom: 0.52; } }
+        @media (max-width: 420px) and (min-width: 381px) { .book { zoom: 0.48; } }
+        @media (max-width: 380px) and (min-width: 341px) { .book { zoom: 0.43; } }
+        @media (max-width: 340px) { .book { zoom: 0.38; } }
 
         /* Le wrapper padding rend le livre bien centré */
         @media (max-width: 900px) {
