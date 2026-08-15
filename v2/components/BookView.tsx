@@ -202,15 +202,16 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const over = el.scrollHeight - slot
         if (over > maxOverflow) maxOverflow = over
       }
-      // Tolérance 8px pour éviter les micro-écarts liés au sub-pixel rendering
-      if (maxOverflow > 8 && (counts[spread] ?? 0) > 2) {
+      // Tolérance stricte 2px — chaque verset qui déborde même légèrement doit passer au spread suivant
+      if (maxOverflow > 2 && (counts[spread] ?? 0) > 1) {
         const currentCount = counts[spread] ?? 0
-        // Retire proportionnellement à l'overflow : convergence rapide en 1-2 passes
+        // Retire proportionnellement à l'overflow : convergence rapide en 1-2 passes.
+        // On garantit d'enlever au moins 1 verset ; on peut descendre jusqu'à 1 verset restant.
         const overRatio = maxOverflow / Math.max(slot, 1)
-        const toRemove = Math.max(1, Math.min(currentCount - 2, Math.ceil(currentCount * overRatio / (1 + overRatio))))
+        const toRemove = Math.max(1, Math.min(currentCount - 1, Math.ceil(currentCount * overRatio / (1 + overRatio))))
         setCounts(prev => {
           const copy = [...prev]
-          const removed = Math.min(toRemove, (copy[spread] ?? 0) - 2)
+          const removed = Math.min(toRemove, (copy[spread] ?? 0) - 1)
           if (removed <= 0) return prev
           copy[spread] = (copy[spread] ?? 0) - removed
           if (copy[spread + 1] !== undefined) {
@@ -767,7 +768,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           .book {
             width: 900px !important;
             max-width: none !important;
-            height: 640px !important;
+            height: 800px !important;
             border-radius: 6px !important;
             box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
           }
