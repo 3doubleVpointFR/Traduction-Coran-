@@ -122,29 +122,30 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     const measure = () => {
       const m = measurerRef.current
       if (!m || !m.isConnected) return
+      // Aligne d'abord la largeur du measurer sur la vraie largeur d'une page-side
+      const body = bookBodyRef.current
+      const sideEl = body?.querySelector<HTMLElement>('.page-side')
+      if (sideEl) {
+        const sideW = sideEl.clientWidth
+        if (sideW > 0) m.style.width = sideW + 'px'
+      }
+      // Force reflow puis mesure les versets
       const els = m.querySelectorAll<HTMLElement>('[data-vi]')
       const hs: number[] = []
       els.forEach(el => hs.push(el.getBoundingClientRect().height))
-      // Mesure aussi le slot d'une page-side réelle si dispo
-      const body = bookBodyRef.current
+      // Mesure le slot utile
       let slot = 780
       let slot0 = 500
-      if (body && body.isConnected) {
-        // La hauteur d'une page-side utile ≈ hauteur du body (à peu près identique)
-        // Sur spread 0, elle est réduite par header + basmala au-dessus
-        const sideEl = body.querySelector<HTMLElement>('.page-side')
-        if (sideEl) {
-          const h = sideEl.clientHeight
-          if (h > 0) {
-            slot = h - 20    // -20 marge de sécurité
-            slot0 = Math.max(200, h - 240) // header/basmala prennent env 220px
-          }
+      if (sideEl) {
+        const h = sideEl.clientHeight
+        if (h > 0) {
+          slot = h - 10
+          slot0 = Math.max(200, h - 240)
         }
       }
       setVerseHeights(hs)
       setSlotHeights({ normal: slot, spread0: slot0 })
     }
-    // Plusieurs passes pour fonts / layout
     const t1 = window.setTimeout(measure, 60)
     const t2 = window.setTimeout(measure, 300)
     const t3 = window.setTimeout(measure, 900)
@@ -185,6 +186,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     return arr.length > 0 ? arr : [0]
   }, [verses.length, verseHeights, slotHeights])
   const [counts, setCounts] = useState<number[]>(initialCounts)
+  // Synchronise counts avec initialCounts quand la mesure évolue
+  useEffect(() => {
+    setCounts(initialCounts)
+  }, [initialCounts])
   // Mémorise le premier verset visible pour retrouver le bon spread après toggle
   const anchorVerseRef = useRef<number | null>(null)
   const lastBvKeyRef = useRef(`${bvOpts.arabic}-${bvOpts.phon}-${verses.length}`)
