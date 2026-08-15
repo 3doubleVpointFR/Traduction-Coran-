@@ -114,20 +114,22 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   const initialCounts = useMemo(() => {
     // Paramètres calibrés — plus réalistes pour l'arabe (peut-être multi-ligne
     // avec beaucoup de diacritiques). Verses arabes typiquement 4-6 lignes en colonne étroite.
+    // Estimation VOLONTAIREMENT AGRESSIVE (sous-estime la hauteur) —
+    // règle voulue par l'user : « tant que le verset suivant peut tenir sans
+    // déborder, on le met ». Mieux vaut un léger débordement rare qu'une page vide.
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 45,
-      lineHeightPx: 22,
-      arCharsPerLine: 32,     // arabe : plus généreux (moins de lignes)
-      arLineHeightPx: 30,     // interligne compact
-      phCharsPerLine: 50,
-      phLineHeightPx: 19,
-      verseGapPx: 8,
+      charsPerLine: 55,
+      lineHeightPx: 20,
+      arCharsPerLine: 45,
+      arLineHeightPx: 26,
+      phCharsPerLine: 60,
+      phLineHeightPx: 17,
+      verseGapPx: 6,
     }
-    // Slot cible aligné sur la vraie hauteur utile du body
-    const SLOT = 810
-    const SLOT_SPREAD_0 = 560 // moins de place car header + basmala
+    const SLOT = 880
+    const SLOT_SPREAD_0 = 620
 
     const arr: number[] = []
     let i = 0
@@ -273,15 +275,16 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   // (SLOT), puis passe à droite. Prend en compte l'arabe et la phon si actifs.
   const splitAt = (() => {
     if (spreadVerses.length <= 1) return spreadVerses.length
+    // Mêmes valeurs agressives que le pré-calcul initialCounts
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 45, lineHeightPx: 22,
-      arCharsPerLine: 32, arLineHeightPx: 30,
-      phCharsPerLine: 50, phLineHeightPx: 19,
-      verseGapPx: 8,
+      charsPerLine: 55, lineHeightPx: 20,
+      arCharsPerLine: 45, arLineHeightPx: 26,
+      phCharsPerLine: 60, phLineHeightPx: 17,
+      verseGapPx: 6,
     }
-    const slot = showHeaderIntro ? 560 : 810
+    const slot = showHeaderIntro ? 620 : 880
     let cumL = 0
     let best = 1
     for (let i = 0; i < spreadVerses.length; i++) {
