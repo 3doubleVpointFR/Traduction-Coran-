@@ -735,9 +735,49 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(120,90,30,0.40), inset 0 1px 0 rgba(255,255,255,0.30);
         }
+        /* ═══ Mobile & tablette étroite : 1 colonne empilée, hauteur libre, padding réduit ═══ */
         @media (max-width: 900px) {
-          .book-body { flex-direction: column !important; gap: 32px !important; padding: 20px 32px 40px !important; }
-          .page-side { min-height: auto !important; }
+          .spread-content {
+            flex-direction: column !important;
+            gap: 20px !important;
+          }
+          .page-side {
+            min-height: auto !important;
+            flex: none !important;
+            font-size: 15px !important;
+            line-height: 1.55 !important;
+          }
+          .book-body {
+            padding: 16px 20px !important;
+          }
+          .book {
+            height: auto !important;
+            max-width: 100% !important;
+            border-radius: 6px !important;
+            box-shadow: 0 2px 12px rgba(120,90,30,0.15) !important;
+          }
+          /* Cache la pliure centrale (n'a plus de sens sur 1 colonne) */
+          .book > div[aria-hidden="true"] {
+            display: none !important;
+          }
+          /* Bouton flottant Vue analyse : mis dans le flow (pas fixed) sur mobile */
+          .bv-floating-toggle {
+            display: none !important;
+          }
+          /* Séparateurs colonne gauche/droite dans le footer : masquer un côté redondant */
+          .book footer {
+            padding: 10px 16px 14px !important;
+            gap: 8px !important;
+          }
+          /* Header sourate encore plus compact */
+          .book header {
+            padding: 8px 20px 4px !important;
+          }
+        }
+        /* Mobile étroit — encore plus compact */
+        @media (max-width: 480px) {
+          .page-side { font-size: 14px !important; line-height: 1.5 !important; }
+          .book-body { padding: 10px 14px !important; }
         }
         .page-arrow:hover:not(:disabled) {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
