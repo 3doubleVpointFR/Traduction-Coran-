@@ -112,21 +112,21 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   // On simule côté JS le remplissage de chaque spread selon le mode d'affichage.
   // Ainsi la cascade post-render devient une simple correction fine, pas un correctif majeur.
   const initialCounts = useMemo(() => {
-    // Paramètres d'estimation calibrés sur mesure d'un rendu réel
+    // Paramètres calibrés pour utiliser au max l'espace disponible sans déborder
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 32,      // ~32 chars/ligne dans une colonne mobile
-      lineHeightPx: 26,      // font 16px * 1.5 + un peu
-      arCharsPerLine: 25,
-      arLineHeightPx: 36,
-      phCharsPerLine: 44,
-      phLineHeightPx: 22,
-      verseGapPx: 14,
+      charsPerLine: 40,      // ~40 chars/ligne dans une colonne
+      lineHeightPx: 25,      // font 16px * 1.5 - un peu
+      arCharsPerLine: 28,
+      arLineHeightPx: 34,
+      phCharsPerLine: 48,
+      phLineHeightPx: 20,
+      verseGapPx: 10,
     }
-    // Slot cible (marge de sécurité). Valeur volontairement conservatrice.
-    const SLOT = 700
-    const SLOT_SPREAD_0 = 460 // moins de place car header + basmala
+    // Slot cible aligné sur la vraie hauteur utile du body (~830 mobile, ~800 desktop)
+    const SLOT = 810
+    const SLOT_SPREAD_0 = 580 // moins de place car header + basmala
 
     const arr: number[] = []
     let i = 0
