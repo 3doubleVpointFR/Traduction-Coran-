@@ -112,21 +112,22 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   // On simule côté JS le remplissage de chaque spread selon le mode d'affichage.
   // Ainsi la cascade post-render devient une simple correction fine, pas un correctif majeur.
   const initialCounts = useMemo(() => {
-    // Paramètres calibrés pour utiliser au max l'espace disponible sans déborder
+    // Paramètres calibrés — plus réalistes pour l'arabe (peut-être multi-ligne
+    // avec beaucoup de diacritiques). Verses arabes typiquement 4-6 lignes en colonne étroite.
     const est: EstOpts = {
       arabic: bvOpts.arabic,
       phon: bvOpts.phon,
-      charsPerLine: 40,      // ~40 chars/ligne dans une colonne
-      lineHeightPx: 25,      // font 16px * 1.5 - un peu
-      arCharsPerLine: 28,
-      arLineHeightPx: 34,
-      phCharsPerLine: 48,
-      phLineHeightPx: 20,
-      verseGapPx: 10,
+      charsPerLine: 40,
+      lineHeightPx: 25,
+      arCharsPerLine: 20,     // arabe plus dense qu'estimé
+      arLineHeightPx: 38,     // interligne plus large
+      phCharsPerLine: 42,
+      phLineHeightPx: 22,
+      verseGapPx: 14,
     }
-    // Slot cible aligné sur la vraie hauteur utile du body (~830 mobile, ~800 desktop)
+    // Slot cible aligné sur la vraie hauteur utile du body
     const SLOT = 810
-    const SLOT_SPREAD_0 = 580 // moins de place car header + basmala
+    const SLOT_SPREAD_0 = 560 // moins de place car header + basmala
 
     const arr: number[] = []
     let i = 0
@@ -647,9 +648,9 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                       isFirst={false}
                     />
                   ))
-                ) : (
+                ) : spread === totalSpreads - 1 ? (
                   <div className="book-empty-slot">Fin de la sourate</div>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
