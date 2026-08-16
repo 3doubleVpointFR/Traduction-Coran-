@@ -315,11 +315,18 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       try {
         const el = spreadContentRef.current
         if (!el || !el.isConnected) return
+        const cRect = el.getBoundingClientRect()
         const versesEls = el.querySelectorAll('.verse-inline')
-        const containerBottom = el.getBoundingClientRect().bottom - 4
         let visible = 0
+        // Un verset est vraiment visible si son cadre reste DANS les limites
+        // du container 2-col (à la fois horizontalement ET verticalement).
+        // Les versets rejetés par break-inside:avoid sont poussés en "col 3+"
+        // qui sont hors des limites horizontales.
         versesEls.forEach(v => {
-          if (v.getBoundingClientRect().top < containerBottom) visible++
+          const rect = (v as HTMLElement).getBoundingClientRect()
+          const fitsH = rect.bottom <= cRect.bottom + 4
+          const fitsW = rect.right <= cRect.right + 4
+          if (fitsH && fitsW) visible++
         })
         const wanted = counts[spread] ?? 0
         if (visible < wanted && visible >= 1) {
