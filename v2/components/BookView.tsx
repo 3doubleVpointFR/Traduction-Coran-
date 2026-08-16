@@ -311,17 +311,13 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     certains sont cachés par overflow, les décale vers spread suivant.
   useEffect(() => {
     if (typeof window === 'undefined') return
-    const t = window.setTimeout(() => {
+    const check = () => {
       try {
         const el = spreadContentRef.current
         if (!el || !el.isConnected) return
         const cRect = el.getBoundingClientRect()
         const versesEls = el.querySelectorAll('.verse-inline')
         let visible = 0
-        // Un verset est vraiment visible si son cadre reste DANS les limites
-        // du container 2-col (à la fois horizontalement ET verticalement).
-        // Les versets rejetés par break-inside:avoid sont poussés en "col 3+"
-        // qui sont hors des limites horizontales.
         versesEls.forEach(v => {
           const rect = (v as HTMLElement).getBoundingClientRect()
           const fitsH = rect.bottom <= cRect.bottom + 4
@@ -340,8 +336,17 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           })
         }
       } catch { /* ignore */ }
-    }, 150)
-    return () => window.clearTimeout(t)
+    }
+    // Plusieurs passes : le layout multi-column + zoom mobile peut prendre
+    // plus de temps à se stabiliser
+    const t1 = window.setTimeout(check, 100)
+    const t2 = window.setTimeout(check, 400)
+    const t3 = window.setTimeout(check, 1000)
+    return () => {
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+      window.clearTimeout(t3)
+    }
   }, [spread, counts])
 
   // Position réelle : somme des versets des spreads précédents
