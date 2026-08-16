@@ -165,33 +165,47 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
   }, [verses.length, bvOpts.arabic, bvOpts.phon])
 
-  const initialCounts = useMemo(() => {
+  // ─── ALGORITHME PROPRE : pour chaque page (gauche/droite), on empile
+  //     les versets tant qu'ils rentrent. Sinon → prochaine page. Point.
+  //     Chaque spread = {leftCount, rightCount}. Le total est cumulé.
+  //     Recalcul automatique quand verses / hauteurs / slot changent.
+  const spreadsInfo = useMemo(() => {
     if (!verseHeights || verseHeights.length !== verses.length || !slotHeights) {
-      // Pas encore mesuré : tout mettre dans un premier spread par défaut
-      return [verses.length || 0]
+      return [{ leftCount: verses.length || 0, rightCount: 0 }]
     }
     const SLOT = slotHeights.normal
     const SLOT_SPREAD_0 = slotHeights.spread0
-    const arr: number[] = []
+    const out: Array<{ leftCount: number; rightCount: number }> = []
     let i = 0
     let isFirst = true
     while (i < verses.length) {
       const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
-      const maxCombined = slotAvail * 2
-      let count = 0
-      let total = 0
-      while (i + count < verses.length) {
-        const h = verseHeights[i + count] || 100
-        if (total + h > maxCombined && count > 0) break
-        total += h
-        count++
+      // Empile côté gauche
+      let leftCount = 0, hL = 0
+      while (i + leftCount < verses.length) {
+        const h = verseHeights[i + leftCount] || 100
+        if (hL + h > slotAvail && leftCount > 0) break
+        hL += h
+        leftCount++
       }
-      arr.push(Math.max(1, count))
-      i += Math.max(1, count)
+      // Empile côté droite (le slot droit sur spread 0 = SLOT complet, pas réduit)
+      const slotR = isFirst ? SLOT : SLOT
+      let rightCount = 0, hR = 0
+      while (i + leftCount + rightCount < verses.length) {
+        const h = verseHeights[i + leftCount + rightCount] || 100
+        if (hR + h > slotR && rightCount > 0) break
+        hR += h
+        rightCount++
+      }
+      if (leftCount === 0 && rightCount === 0) leftCount = 1 // safety
+      out.push({ leftCount, rightCount })
+      i += leftCount + rightCount
       isFirst = false
     }
-    return arr.length > 0 ? arr : [0]
+    return out.length > 0 ? out : [{ leftCount: 0, rightCount: 0 }]
   }, [verses.length, verseHeights, slotHeights])
+  // Compat rétro : counts array
+  const initialCounts = useMemo(() => spreadsInfo.map(s => s.leftCount + s.rightCount), [spreadsInfo])
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Synchronise counts avec initialCounts quand la mesure évolue
   useEffect(() => {
@@ -302,24 +316,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
   }, [counts, spread])
   const showHeaderIntro = spread === 0
-  // Split par MESURE RÉELLE des hauteurs : empile côté gauche jusqu'à saturation,
-  // puis le reste va à droite.
-  const splitAt = (() => {
-    if (spreadVerses.length <= 1) return spreadVerses.length
-    const slot = showHeaderIntro ? (slotHeights?.spread0 ?? 500) : (slotHeights?.normal ?? 780)
-    let cumL = 0
-    let best = 1
-    for (let i = 0; i < spreadVerses.length; i++) {
-      const globalIdx = startIdx + i
-      const h = (verseHeights && verseHeights[globalIdx]) || 100
-      if (cumL + h > slot && i > 0) break
-      cumL += h
-      best = i + 1
-    }
-    return best
-  })()
-  const leftVerses = spreadVerses.slice(0, splitAt)
-  const rightVerses = spreadVerses.slice(splitAt)
+  // Le split gauche/droite est directement issu de spreadsInfo (algo propre)
+  const currentSpreadInfo = spreadsInfo[spread] ?? { leftCount: 0, rightCount: 0 }
+  const leftVerses = spreadVerses.slice(0, currentSpreadInfo.leftCount)
+  const rightVerses = spreadVerses.slice(currentSpreadInfo.leftCount)
 
   // ─── Lien vue analyse — cible le premier verset du spread actuel ───
   const firstVerseInSpread = (leftVerses[0] || rightVerses[0])?.verse_num ?? 1
