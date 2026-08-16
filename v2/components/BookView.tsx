@@ -632,6 +632,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
                 {leftVerses.map((v, i) => (
@@ -658,6 +659,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
                 {rightVerses.length > 0 ? (
