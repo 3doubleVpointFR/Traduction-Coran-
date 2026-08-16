@@ -129,8 +129,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const sideW = sideEl.clientWidth
         if (sideW > 0) m.style.width = sideW + 'px'
       }
-      // Force reflow puis mesure les versets — inclut le margin entre versets
-      // en utilisant l'écart entre les tops (ainsi on capture height + margin-bottom)
+      // Force reflow puis mesure les versets
       const els = m.querySelectorAll<HTMLElement>('[data-vi]')
       const hs: number[] = []
       const rects = Array.from(els).map(el => el.getBoundingClientRect())
@@ -140,14 +139,18 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         if (next) hs.push(next.top - cur.top)
         else hs.push(cur.height)
       }
-      // Mesure le slot utile
+      // Mesure du slot UTILE : calculé depuis .book (hauteur fixe), pas depuis
+      // page-side (qui varie selon si on est sur spread 0 ou pas).
+      // book.clientHeight - footer(~60) - padding-vertical body (~52) = slot normal
+      // slot spread 0 = slot normal - header(~150) - basmala(~70) - séparateur(~30)
+      const bookEl = m.parentElement?.querySelector<HTMLElement>('.book')
       let slot = 780
       let slot0 = 500
-      if (sideEl) {
-        const h = sideEl.clientHeight
-        if (h > 0) {
-          slot = h - 10
-          slot0 = Math.max(200, h - 240)
+      if (bookEl) {
+        const bookH = bookEl.clientHeight
+        if (bookH > 0) {
+          slot = Math.max(300, bookH - 60 - 52)   // - footer - body padding vertical
+          slot0 = Math.max(200, slot - 250)        // - header + basmala + séparateur
         }
       }
       setVerseHeights(hs)
