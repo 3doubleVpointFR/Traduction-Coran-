@@ -340,7 +340,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           position: 'absolute',
           left: '-99999px',
           top: 0,
-          width: '350px', // approx largeur d'une page-side unzoomed
+          width: '350px',
           visibility: 'hidden',
           pointerEvents: 'none',
           fontSize: '16px',
@@ -348,29 +348,26 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           textAlign: 'justify',
           hyphens: 'auto',
+          fontWeight: 500,
+          letterSpacing: '0.005em',
+          color: INK,
         }}
       >
         {verses.map((v, i) => (
-          <div key={v.id} data-vi={i} style={{ marginBottom: '10px' }}>
-            {bvOpts.arabic && v.arabic_text && (
-              <div
-                className="font-arabic"
-                dir="rtl"
-                style={{ fontSize: '20px', lineHeight: 1.9, marginBottom: '4px' }}
-              >
+          <span key={v.id} data-vi={i} className="verse-inline" style={{ display: 'block' }}>
+            {v.arabic_text && (
+              <span className="bv-arabic-block font-arabic" dir="rtl" lang="ar">
                 {v.arabic_text}
-              </div>
+              </span>
             )}
-            {bvOpts.phon && v.phonetic && (
-              <div style={{ fontSize: '12.5px', lineHeight: 1.6, fontStyle: 'italic', marginBottom: '4px' }}>
-                {v.phonetic}
-              </div>
+            {v.phonetic && (
+              <span className="bv-phon-block">{v.phonetic}</span>
             )}
-            <div>
-              <span style={{ display: 'inline-block', width: '30px', marginRight: '9px' }}>{v.verse_num}</span>
+            <span className="bv-fr-block">
+              <span className="verse-marker">{v.verse_num}</span>
               {v.translation_arab}
-            </div>
-          </div>
+            </span>
+          </span>
         ))}
       </div>
 
