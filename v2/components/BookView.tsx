@@ -305,8 +305,37 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   //     le dernier verset du spread et on le décale vers le spread suivant.
   //     La boucle continue tant qu'il déborde, en cascade sur les spreads suivants.
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
-  // Cascade réactive complètement supprimée — source de bugs récurrents.
-  // Seul le pré-calcul JS (initialCounts) régit la pagination.
+  const spreadContentRef = useRef<HTMLDivElement | null>(null)
+  // ─── Ajustement POST-render : compte les versets réellement visibles dans
+  //     le container 2-col (ceux dont le top est avant containerBottom). Si
+  //     certains sont cachés par overflow, les décale vers spread suivant.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const t = window.setTimeout(() => {
+      try {
+        const el = spreadContentRef.current
+        if (!el || !el.isConnected) return
+        const versesEls = el.querySelectorAll('.verse-inline')
+        const containerBottom = el.getBoundingClientRect().bottom - 4
+        let visible = 0
+        versesEls.forEach(v => {
+          if (v.getBoundingClientRect().top < containerBottom) visible++
+        })
+        const wanted = counts[spread] ?? 0
+        if (visible < wanted && visible >= 1) {
+          const hidden = wanted - visible
+          setCounts(prev => {
+            const copy = [...prev]
+            copy[spread] = visible
+            if (copy[spread + 1] !== undefined) copy[spread + 1] += hidden
+            else copy.push(hidden)
+            return copy
+          })
+        }
+      } catch { /* ignore */ }
+    }, 150)
+    return () => window.clearTimeout(t)
+  }, [spread, counts])
 
   // Position réelle : somme des versets des spreads précédents
   const startIdx = counts.slice(0, spread).reduce((s, n) => s + n, 0)
@@ -618,6 +647,7 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           >
             <div
               key={`spread-${spread}`}
+              ref={spreadContentRef}
               className={`spread-content page-side ${direction ? `anim-${direction}` : ''}`}
               style={{
                 height: '100%',
