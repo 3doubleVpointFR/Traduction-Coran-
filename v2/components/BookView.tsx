@@ -183,47 +183,37 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
   }, [verses.length, bvOpts.arabic, bvOpts.phon])
 
-  // ─── ALGORITHME PROPRE : pour chaque page (gauche/droite), on empile
-  //     les versets tant qu'ils rentrent. Sinon → prochaine page. Point.
-  //     Chaque spread = {leftCount, rightCount}. Le total est cumulé.
-  //     Recalcul automatique quand verses / hauteurs / slot changent.
-  const spreadsInfo = useMemo(() => {
+  // ─── ALGORITHME SIMPLE (CSS multi-column) : chaque spread a une capacité
+  //     = 2 slots (2 pages côte à côte via CSS column-count:2). On empile
+  //     les versets jusqu'à saturer, puis nouveau spread. Le browser fait
+  //     le split gauche/droite automatiquement.
+  const initialCounts = useMemo(() => {
     if (!verseHeights || verseHeights.length !== verses.length || !slotHeights) {
-      return [{ leftCount: verses.length || 0, rightCount: 0 }]
+      return [verses.length || 0]
     }
     const SLOT = slotHeights.normal
     const SLOT_SPREAD_0 = slotHeights.spread0
-    const out: Array<{ leftCount: number; rightCount: number }> = []
+    const arr: number[] = []
     let i = 0
     let isFirst = true
     while (i < verses.length) {
       const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
-      // Empile côté gauche
-      let leftCount = 0, hL = 0
-      while (i + leftCount < verses.length) {
-        const h = verseHeights[i + leftCount] || 100
-        if (hL + h > slotAvail && leftCount > 0) break
-        hL += h
-        leftCount++
+      // Capacité totale = 2 pages (browser équilibre)
+      const capacity = slotAvail + SLOT  // gauche(reduced spread 0) + droite(full)
+      let count = 0
+      let total = 0
+      while (i + count < verses.length) {
+        const h = verseHeights[i + count] || 100
+        if (total + h > capacity && count > 0) break
+        total += h
+        count++
       }
-      // Empile côté droite (le slot droit sur spread 0 = SLOT complet, pas réduit)
-      const slotR = isFirst ? SLOT : SLOT
-      let rightCount = 0, hR = 0
-      while (i + leftCount + rightCount < verses.length) {
-        const h = verseHeights[i + leftCount + rightCount] || 100
-        if (hR + h > slotR && rightCount > 0) break
-        hR += h
-        rightCount++
-      }
-      if (leftCount === 0 && rightCount === 0) leftCount = 1 // safety
-      out.push({ leftCount, rightCount })
-      i += leftCount + rightCount
+      arr.push(Math.max(1, count))
+      i += Math.max(1, count)
       isFirst = false
     }
-    return out.length > 0 ? out : [{ leftCount: 0, rightCount: 0 }]
+    return arr.length > 0 ? arr : [0]
   }, [verses.length, verseHeights, slotHeights])
-  // Compat rétro : counts array
-  const initialCounts = useMemo(() => spreadsInfo.map(s => s.leftCount + s.rightCount), [spreadsInfo])
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Synchronise counts avec initialCounts quand la mesure évolue
   useEffect(() => {
@@ -334,10 +324,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
   }, [counts, spread])
   const showHeaderIntro = spread === 0
-  // Le split gauche/droite est directement issu de spreadsInfo (algo propre)
-  const currentSpreadInfo = spreadsInfo[spread] ?? { leftCount: 0, rightCount: 0 }
-  const leftVerses = spreadVerses.slice(0, currentSpreadInfo.leftCount)
-  const rightVerses = spreadVerses.slice(currentSpreadInfo.leftCount)
+  // Avec CSS multi-column, plus de split JS : le browser gère.
+  // Ces variables restent pour compat avec le footer (numéros de versets range).
+  const leftVerses = spreadVerses.slice(0, Math.ceil(spreadVerses.length / 2))
+  const rightVerses = spreadVerses.slice(Math.ceil(spreadVerses.length / 2))
 
   // ─── Lien vue analyse — cible le premier verset du spread actuel ───
   const firstVerseInSpread = (leftVerses[0] || rightVerses[0])?.verse_num ?? 1
@@ -607,7 +597,11 @@ export default function BookView({ surah, verses, pageSize }: Props) {
           </div>
           )}
 
-          {/* ═════ CORPS 2 PAGES — transition shared-axis moderne ═════ */}
+          {/* ═════ CORPS 2 PAGES — CSS multi-column natif ═════
+              Le browser fait le split gauche/droite automatiquement.
+              `columnCount: 2` + `columnGap` + `overflow: hidden` sur container fixe.
+              `break-inside: avoid` sur chaque verset empêche coupure au milieu.
+          */}
           <div
             ref={bookBodyRef}
             className="book-body"
@@ -620,75 +614,37 @@ export default function BookView({ surah, verses, pageSize }: Props) {
               overflow: 'hidden',
             }}
           >
-            {/* Le key change à chaque spread → force le remount, l'animation d'entrée joue */}
             <div
               key={`spread-${spread}`}
-              className={`spread-content ${direction ? `anim-${direction}` : ''}`}
+              className={`spread-content page-side ${direction ? `anim-${direction}` : ''}`}
               style={{
-                display: 'flex',
-                gap: '80px',
-                alignItems: 'stretch',
                 height: '100%',
+                columnCount: 2,
+                columnGap: '80px',
+                columnFill: 'auto',
+                textAlign: 'justify',
+                hyphens: 'auto',
+                fontSize: '16px',
+                lineHeight: 1.5,
+                color: INK,
+                fontWeight: 500,
+                letterSpacing: '0.005em',
+                overflow: 'hidden',
               }}
             >
-              {/* Page gauche */}
-              <div
-                className="page-side page-side-left"
-                style={{
-                  flex: 1,
-                  minWidth: 0,
-                  textAlign: 'justify',
-                  hyphens: 'auto',
-                  fontSize: '16px',
-                  lineHeight: 1.5,
-                  color: INK,
-                  fontWeight: 500,
-                  letterSpacing: '0.005em',
-                  position: 'relative',
-                  overflow: 'hidden',
-                }}
-              >
-                {leftVerses.map((v, i) => (
+              {spreadVerses.length > 0 ? (
+                spreadVerses.map((v, i) => (
                   <VerseParagraph
-                    key={`left-${v.id}`}
+                    key={`v-${v.id}`}
                     verse={v}
                     surahId={surah.id}
                     pageForVerse={pageForVerse}
                     isFirst={spread === 0 && i === 0}
                   />
-                ))}
-              </div>
-              {/* Page droite */}
-              <div
-                className="page-side page-side-right"
-                style={{
-                  flex: 1,
-                  minWidth: 0,
-                  textAlign: 'justify',
-                  hyphens: 'auto',
-                  fontSize: '16px',
-                  lineHeight: 1.5,
-                  color: INK,
-                  fontWeight: 500,
-                  letterSpacing: '0.005em',
-                  position: 'relative',
-                  overflow: 'hidden',
-                }}
-              >
-                {rightVerses.length > 0 ? (
-                  rightVerses.map(v => (
-                    <VerseParagraph
-                      key={`right-${v.id}`}
-                      verse={v}
-                      surahId={surah.id}
-                      pageForVerse={pageForVerse}
-                      isFirst={false}
-                    />
-                  ))
-                ) : spread === totalSpreads - 1 ? (
-                  <div className="book-empty-slot">Fin de la sourate</div>
-                ) : null}
-              </div>
+                ))
+              ) : (
+                <div className="book-empty-slot">Fin de la sourate</div>
+              )}
             </div>
           </div>
 
