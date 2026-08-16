@@ -149,8 +149,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       if (bookEl) {
         const bookH = bookEl.clientHeight
         if (bookH > 0) {
-          slot = Math.max(300, bookH - 60 - 52)   // - footer - body padding vertical
-          slot0 = Math.max(200, slot - 250)        // - header + basmala + séparateur
+          // - footer(60) - body padding vertical(52) - marge sécurité(40) pour
+          // compenser les divergences sub-pixel entre measurer et vrai render
+          slot = Math.max(300, bookH - 60 - 52 - 40)
+          slot0 = Math.max(200, slot - 260)  // - header + basmala + séparateur
         }
       }
       setVerseHeights(hs)
