@@ -999,6 +999,17 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         */
         .spread-content {
           will-change: transform, opacity, filter;
+          overflow: hidden !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        /* Sur mobile, force column-count:2 (protection contre override zoom/vendor) */
+        @media (max-width: 900px) {
+          .spread-content {
+            column-count: 2 !important;
+            column-gap: 40px !important;
+            overflow: hidden !important;
+          }
         }
         .spread-content.anim-next {
           animation: bv-enter-from-right ${TRANSITION_MS}ms cubic-bezier(0.32, 0.72, 0, 1) both;
