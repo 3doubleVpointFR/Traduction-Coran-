@@ -198,8 +198,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     let isFirst = true
     while (i < verses.length) {
       const slotAvail = isFirst ? SLOT_SPREAD_0 : SLOT
-      // Capacité totale = 2 pages (browser équilibre)
-      const capacity = slotAvail + SLOT  // gauche(reduced spread 0) + droite(full)
+      // Capacité = 2 pages MINUS 15 % safety (le browser ne remplit jamais 100%
+      // à cause du break-inside:avoid qui force les versets à commencer en haut
+      // de la colonne suivante s'ils ne tiennent pas).
+      const capacity = (slotAvail + SLOT) * 0.85
       let count = 0
       let total = 0
       while (i + count < verses.length) {
