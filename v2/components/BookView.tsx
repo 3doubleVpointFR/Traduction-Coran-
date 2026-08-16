@@ -143,27 +143,29 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       // page-side (qui varie selon si on est sur spread 0 ou pas).
       // book.clientHeight - footer(~60) - padding-vertical body (~52) = slot normal
       // slot spread 0 = slot normal - header(~150) - basmala(~70) - séparateur(~30)
-      // Mesure DIRECTE du body pour le spread actuel — plus fiable qu'un calcul
-      // depuis bookH avec constantes hardcodées.
+      // Mesure DIRECTE du body pour le spread courant (plus fiable que constantes).
+      // Chaque valeur (slot spread 0 et slot normal) est mise à jour quand on
+      // la mesure vraiment (au moment où on visite le spread correspondant).
       const bodyEl = bookBodyRef.current
       let slot = slotHeights?.normal ?? 500
-      let slot0 = slotHeights?.spread0 ?? 300
+      let slot0 = slotHeights?.spread0 ?? 250
       if (bodyEl) {
         const bodyH = bodyEl.clientHeight
-        // -60 safety margin pour compenser divergences measurer/rendu
-        const measured = Math.max(150, bodyH - 60)
-        // On est actuellement sur spread N — met à jour le slot correspondant
-        const currentIsSpread0 = window.location.hash === '' || document.querySelector('.book header')
+        // Safety margin 100 px pour compenser sub-pixel + divergences cumulées
+        const measured = Math.max(150, bodyH - 100)
+        const currentIsSpread0 = !!document.querySelector('.book header')
         if (currentIsSpread0) {
           slot0 = measured
-          // Estime slot normal = slot0 + header+basmala+sep visible height
-          const headerVisible = document.querySelector('.book header')
-          const basmalaVisible = document.querySelector('.book > div[style*="4px 40px"]')
-          const extraH = (headerVisible?.getBoundingClientRect().height || 0) + (basmalaVisible?.getBoundingClientRect().height || 0) + 40
-          slot = Math.max(measured, measured + extraH)
+          // Slot normal jamais mesuré directement ici : estimé += header/basmala visibles
+          const headerH = document.querySelector('.book header')?.getBoundingClientRect().height || 0
+          const basmalaH = document.querySelectorAll('.book > div')
+          let bhH = 0
+          basmalaH.forEach(d => { if (d.textContent?.includes('بِسْمِ')) bhH = d.getBoundingClientRect().height })
+          slot = Math.max(measured, measured + headerH + bhH + 40)
         } else {
           slot = measured
-          if (!slotHeights?.spread0) slot0 = Math.max(150, measured - 260)
+          // Slot spread 0 estimé si pas encore mesuré : mesure - header estimé
+          if (!slotHeights) slot0 = Math.max(150, measured - 260)
         }
       }
       setVerseHeights(hs)
