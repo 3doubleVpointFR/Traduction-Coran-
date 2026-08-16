@@ -129,10 +129,17 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         const sideW = sideEl.clientWidth
         if (sideW > 0) m.style.width = sideW + 'px'
       }
-      // Force reflow puis mesure les versets
+      // Force reflow puis mesure les versets — inclut le margin entre versets
+      // en utilisant l'écart entre les tops (ainsi on capture height + margin-bottom)
       const els = m.querySelectorAll<HTMLElement>('[data-vi]')
       const hs: number[] = []
-      els.forEach(el => hs.push(el.getBoundingClientRect().height))
+      const rects = Array.from(els).map(el => el.getBoundingClientRect())
+      for (let idx = 0; idx < rects.length; idx++) {
+        const next = rects[idx + 1]
+        const cur = rects[idx]
+        if (next) hs.push(next.top - cur.top)
+        else hs.push(cur.height)
+      }
       // Mesure le slot utile
       let slot = 780
       let slot0 = 500
