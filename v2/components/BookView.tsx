@@ -143,16 +143,27 @@ export default function BookView({ surah, verses, pageSize }: Props) {
       // page-side (qui varie selon si on est sur spread 0 ou pas).
       // book.clientHeight - footer(~60) - padding-vertical body (~52) = slot normal
       // slot spread 0 = slot normal - header(~150) - basmala(~70) - séparateur(~30)
-      const bookEl = m.parentElement?.querySelector<HTMLElement>('.book')
-      let slot = 780
-      let slot0 = 500
-      if (bookEl) {
-        const bookH = bookEl.clientHeight
-        if (bookH > 0) {
-          // - footer(60) - body padding vertical(52) - marge sécurité(80) pour
-          // compenser les divergences cumulées measurer/rendu réel
-          slot = Math.max(300, bookH - 60 - 52 - 80)
-          slot0 = Math.max(200, slot - 260)
+      // Mesure DIRECTE du body pour le spread actuel — plus fiable qu'un calcul
+      // depuis bookH avec constantes hardcodées.
+      const bodyEl = bookBodyRef.current
+      let slot = slotHeights?.normal ?? 500
+      let slot0 = slotHeights?.spread0 ?? 300
+      if (bodyEl) {
+        const bodyH = bodyEl.clientHeight
+        // -60 safety margin pour compenser divergences measurer/rendu
+        const measured = Math.max(150, bodyH - 60)
+        // On est actuellement sur spread N — met à jour le slot correspondant
+        const currentIsSpread0 = window.location.hash === '' || document.querySelector('.book header')
+        if (currentIsSpread0) {
+          slot0 = measured
+          // Estime slot normal = slot0 + header+basmala+sep visible height
+          const headerVisible = document.querySelector('.book header')
+          const basmalaVisible = document.querySelector('.book > div[style*="4px 40px"]')
+          const extraH = (headerVisible?.getBoundingClientRect().height || 0) + (basmalaVisible?.getBoundingClientRect().height || 0) + 40
+          slot = Math.max(measured, measured + extraH)
+        } else {
+          slot = measured
+          if (!slotHeights?.spread0) slot0 = Math.max(150, measured - 260)
         }
       }
       setVerseHeights(hs)
