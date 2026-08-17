@@ -683,7 +683,15 @@ export default function VersePanel({
                 let searchFr = activeSeg.fr
                 const negMatch = /^pas\s+(.+)$/.exec(activeSeg.fr)
                 if (negMatch) searchFr = negMatch[1]
-                const targetOccurrence = segments.slice(0, activeSegmentIdx).filter(s => s.fr === activeSeg.fr).length
+                // Compter les segments précédents dont le fr contient searchFr comme sous-chaîne.
+                // Un fr court (ex: "associe") est sinon faussement compté comme 1ère occurrence alors
+                // qu'un fr précédent plus long (ex: "on associe") contient déjà une occurrence de "associe"
+                // dans la trad. On additionne toutes les sous-occurrences pour aligner sur ce que retourne le split.
+                const targetOccurrence = segments.slice(0, activeSegmentIdx).reduce((count, s) => {
+                  if (!s.fr) return count
+                  if (s.fr === activeSeg.fr) return count + 1
+                  return count + (s.fr.split(searchFr).length - 1)
+                }, 0)
                 const escaped = searchFr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
                 const parts = trad.split(new RegExp(`(${escaped})`, 'g'))
                 let seenCount = 0
