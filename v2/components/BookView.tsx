@@ -672,6 +672,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           text-align: left;
           border-bottom: 1px solid rgba(184,150,46,0.28);
           padding-bottom: 4px;
+          /* Le titre reste toujours avec son paragraphe qui suit */
+          break-after: avoid;
+          page-break-after: avoid;
         }
         .conclusion-body h3:first-child {
           margin-top: 0;
