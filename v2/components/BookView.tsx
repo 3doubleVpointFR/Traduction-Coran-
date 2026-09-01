@@ -178,9 +178,22 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       if (pw <= 0) return
       setPageWidth(pw)
       setPageHeight(bodyH)
-      // Mesure la hauteur de chaque item du measurer
+      // Mesure la hauteur de chaque item : top-to-top diff capture les
+      // margins entre items (getBoundingClientRect().height NE compte PAS
+      // les margins, ce qui sous-estimait — provoquait débordement du
+      // dernier item de la page).
       const kids = Array.from(measure.children) as HTMLElement[]
-      const heights = kids.map(el => el.getBoundingClientRect().height)
+      const heights: number[] = []
+      for (let i = 0; i < kids.length; i++) {
+        const rect = kids[i].getBoundingClientRect()
+        if (i + 1 < kids.length) {
+          const nextRect = kids[i + 1].getBoundingClientRect()
+          heights.push(nextRect.top - rect.top)
+        } else {
+          const mb = parseFloat(window.getComputedStyle(kids[i]).marginBottom) || 0
+          heights.push(rect.height + mb)
+        }
+      }
       // Distribution : chaque page respecte bodyH ; un item qui ne rentre pas passe à la page suivante
       const newPages: number[][] = []
       let cur: number[] = []
