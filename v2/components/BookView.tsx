@@ -52,6 +52,26 @@ const CREAM_PAGE = '#FFFBF0'
 const LINE = 'rgba(184,150,46,0.20)'
 const LINE_STRONG = 'rgba(184,150,46,0.42)'
 
+// Hauteur exacte du renvoi de pied de page (ConclusionCue). Il est posé hors
+// flux pour ne pas fausser les mesures, donc la pagination doit lui réserver
+// cette bande explicitement : sans ça il se superpose au dernier verset et son
+// dégradé le fait disparaître.
+const CUE_H = 62
+
+// Un titre emporte au moins ce nombre de lignes de son paragraphe ; c'est aussi
+// le minimum laissé de chaque côté d'un paragraphe coupé (ni veuve ni orpheline).
+const MIN_LINES_AFTER_HEADING = 2
+// En deçà, une coupe ne vaut pas la peine : le fragment serait un moignon.
+const MIN_SPLIT_CHARS = 40
+
+// Tourne de page. La course est volontairement courte (18px) : c'est le fondu
+// qui porte le changement, pas le déplacement. Le décalage entre la page de
+// gauche et celle de droite évite que la double-page bouge d'un bloc rigide.
+const TURN_OUT_MS = 180
+const TURN_IN_MS = 300
+const TURN_STAGGER_MS = 55
+const TURN_SHIFT_PX = 18
+
 // Parseur markdown minimal — headers **X** seul sur une ligne, listes 1., paragraphes.
 function parseConclusionMarkdown(md: string): string {
   const lines = md.split('\n')
@@ -108,6 +128,67 @@ type PageItem =
   | { type: 'conclusion-title' }
   | { type: 'conclusion-block'; html: string }
 
+// Une case de page : l'index de l'item, plus — quand le paragraphe a été coupé
+// entre deux pages — le fragment HTML à rendre à la place de l'item complet.
+type Slot = { i: number; html?: string }
+
+// Seuls les paragraphes de la conclusion se coupent entre deux pages. Les
+// versets, les titres et les listes numérotées restent insécables : couper un
+// verset en deux le rendrait incitable, et une liste coupée perd sa numérotation.
+function isSplittable(item: PageItem | undefined): item is { type: 'conclusion-block'; html: string } {
+  return !!item && item.type === 'conclusion-block' && /^\s*<p[\s>]/i.test(item.html)
+}
+
+// line-height calculé en px, avec repli si le navigateur répond « normal »
+function lineHeightOf(el: HTMLElement): number {
+  const cs = window.getComputedStyle(el)
+  const lh = parseFloat(cs.lineHeight)
+  if (isFinite(lh) && lh > 0) return lh
+  return (parseFloat(cs.fontSize) || 15) * 1.55
+}
+
+// Découpe un <p> à l'offset texte donné et rend le fragment demandé. Le Range
+// se charge de refermer proprement les balises inline coupées en travers.
+function cutParagraph(sourceP: HTMLElement, offset: number, part: 'head' | 'tail'): string {
+  const clone = sourceP.cloneNode(true) as HTMLElement
+  const texts: Text[] = []
+  const walker = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT)
+  let node: Node | null
+  while ((node = walker.nextNode())) texts.push(node as Text)
+  let rem = offset
+  let target = texts[0]
+  let off = 0
+  for (const t of texts) {
+    if (rem <= t.data.length) { target = t; off = rem; break }
+    rem -= t.data.length
+  }
+  if (!target) return clone.outerHTML
+  const range = document.createRange()
+  range.selectNodeContents(clone)
+  // on supprime la moitié qu'on ne garde PAS
+  if (part === 'head') range.setStart(target, off)
+  else range.setEnd(target, off)
+  range.deleteContents()
+  return clone.outerHTML
+}
+
+// Hauteur d'un fragment rendu dans le measurer, marges comprises — les marges
+// sont ajoutées à la main car elles s'échappent du conteneur par collapse.
+function measureHtml(measure: HTMLElement, html: string): number {
+  const probe = document.createElement('div')
+  probe.innerHTML = `<div class="bv-conclusion-block">${html}</div>`
+  measure.appendChild(probe)
+  try {
+    const rect = probe.getBoundingClientRect()
+    const p = probe.querySelector('p')
+    if (!p) return rect.height
+    const cs = window.getComputedStyle(p)
+    return rect.height + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0)
+  } finally {
+    measure.removeChild(probe)
+  }
+}
+
 export default function BookView({ surah, verses, pageSize, conclusion }: Props) {
   const hasConclusion = !!(conclusion && conclusion.trim())
   const conclusionHtml = useMemo(() => (hasConclusion ? parseConclusionMarkdown(conclusion!) : ''), [conclusion, hasConclusion])
@@ -153,17 +234,31 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     return list
   }, [verses, hasConclusion, conclusionHtml])
 
+  // Index du premier item de la conclusion (-1 si pas de conclusion)
+  const concStart = useMemo(() => items.findIndex(it => it.type === 'conclusion-title'), [items])
+
   // Pagination state
-  const [pages, setPages] = useState<number[][]>([])
+  const [pages, setPages] = useState<Slot[][]>([])
   const [pageWidth, setPageWidth] = useState(0)
   const [pageHeight, setPageHeight] = useState(0)
   const [spread, setSpread] = useState(0)
 
   const bookBodyRef = useRef<HTMLDivElement | null>(null)
   const measureRef = useRef<HTMLDivElement | null>(null)
+  const measurerHeightsRef = useRef<number[]>([])
+  // journal des tentatives de coupe de paragraphe, lu par l'overlay ?debug=1
+  const splitLogRef = useRef<string[]>([])
 
   const pagesPerSpread = isMobile ? 1 : 2
   const gap = isMobile ? 0 : 80
+
+  // Debug overlay activable via ?debug=1
+  const [debug, setDebug] = useState(false)
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    setDebug(params.get('debug') === '1')
+  }, [])
 
   // Mesure & distribution en pages
   useLayoutEffect(() => {
@@ -171,8 +266,19 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       const body = bookBodyRef.current
       const measure = measureRef.current
       if (!body || !measure || !measure.isConnected) return
-      const bodyW = body.clientWidth
-      const bodyH = body.clientHeight
+      // book-body a un padding — clientWidth/Height inclut ce padding, mais
+      // .bv-viewport (width/height 100%) résout contre le content-box du
+      // parent, donc l'aire réellement visible = clientDim − padding.
+      // Sans cette soustraction, les pages étaient calculées trop larges
+      // et clippées à droite par le viewport, et trop hautes → dernières
+      // lignes coupées en bas.
+      const cs = window.getComputedStyle(body)
+      const padL = parseFloat(cs.paddingLeft) || 0
+      const padR = parseFloat(cs.paddingRight) || 0
+      const padT = parseFloat(cs.paddingTop) || 0
+      const padB = parseFloat(cs.paddingBottom) || 0
+      const bodyW = body.clientWidth - padL - padR
+      const bodyH = body.clientHeight - padT - padB
       if (bodyW <= 0 || bodyH <= 0) return
       const pw = pagesPerSpread === 1 ? bodyW : (bodyW - gap) / pagesPerSpread
       if (pw <= 0) return
@@ -194,28 +300,208 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           heights.push(rect.height + mb)
         }
       }
-      // Distribution : chaque page respecte bodyH ; un item qui ne rentre pas passe à la page suivante
-      const newPages: number[][] = []
-      let cur: number[] = []
-      let curH = 0
-      for (let i = 0; i < items.length; i++) {
-        const h = heights[i] || 0
-        if (cur.length > 0 && curH + h > bodyH) {
-          newPages.push(cur)
-          cur = []
-          curH = 0
+      measurerHeightsRef.current = heights
+      // ═══ GARDE ANTI-TITRE ORPHELIN ═══
+      // Un titre de section réserve la hauteur de SON BLOC SUIVANT EN ENTIER.
+      // Pourquoi pas « les 2 premières lignes » : dans cette pagination un bloc
+      // est atomique, il ne se coupe jamais en deux pages. Réserver 2 lignes ne
+      // sert donc à rien — soit le paragraphe entier tient sous le titre, soit
+      // il bascule tout entier à la page suivante en laissant le titre seul.
+      // La seule garde qui tienne est donc : titre + paragraphe complet, ou
+      // rien du tout (le titre part sur la page suivante avec son texte).
+      // Note : heights[i] d'un titre inclut déjà l'écart jusqu'au haut du bloc
+      // suivant (mesure top-to-top), donc on n'ajoute QUE le bloc lui-même.
+      const orphanGuard: number[] = new Array(kids.length).fill(0)
+      for (let i = 0; i < kids.length; i++) {
+        const it = items[i]
+        if (!it || it.type !== 'conclusion-block' || !/^\s*<h3/i.test(it.html)) continue
+        const next = items[i + 1]
+        const nextEl = kids[i + 1]
+        if (!next || !nextEl) continue
+        // Un paragraphe étant désormais sécable, le titre n'a besoin d'emporter
+        // que ses premières lignes. Un bloc INsécable (liste numérotée) reste
+        // tout ou rien : le titre doit alors réserver le bloc entier.
+        if (isSplittable(next)) {
+          const target = (nextEl.querySelector('p') as HTMLElement | null) || nextEl
+          orphanGuard[i] = Math.min(lineHeightOf(target) * MIN_LINES_AFTER_HEADING, heights[i + 1] || 0)
+        } else {
+          orphanGuard[i] = heights[i + 1] || 0
         }
-        cur.push(i)
+      }
+
+      const splitLog: string[] = []
+
+      // ═══ COUPE D'UN PARAGRAPHE ═══
+      // Rend le candidat dans le measurer, cherche par dichotomie le plus long
+      // préfixe qui tient dans `avail`, recule jusqu'à une frontière de mot,
+      // puis découpe en deux fragments HTML valides. Les Range du DOM font le
+      // travail délicat : `deleteContents` referme les balises inline (<strong>,
+      // <em>) correctement des deux côtés de la coupe.
+      const trySplit = (i: number, html: string | undefined, avail: number) => {
+        // journal visible dans l'overlay ?debug=1 : une coupe qui échoue en
+        // silence est indétectable à l'œil, on ne voit que le titre orphelin
+        const bail = (why: string) => {
+          splitLog.push(`#${i} ✗ ${why} (av ${Math.round(avail)})`)
+          return null
+        }
+        const it = items[i]
+        if (!it || !isSplittable(it)) return null
+        const src = html ?? (it as { html: string }).html
+        const probe = document.createElement('div')
+        probe.innerHTML = `<div class="bv-conclusion-block">${src}</div>`
+        measure.appendChild(probe)
+        try {
+          const p = probe.querySelector('p') as HTMLElement | null
+          if (!p) return bail('pas de <p>')
+          const lh = lineHeightOf(p)
+          const pcs = window.getComputedStyle(p)
+          const mt = parseFloat(pcs.marginTop) || 0
+          const mb = parseFloat(pcs.marginBottom) || 0
+          if (avail - mt - mb < lh * MIN_LINES_AFTER_HEADING) return bail('place < 2 lignes')
+          const texts: Text[] = []
+          const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT)
+          let node: Node | null
+          while ((node = walker.nextNode())) texts.push(node as Text)
+          const flat = texts.map(t => t.data).join('')
+          const total = flat.length
+          if (total < MIN_SPLIT_CHARS * 2) return bail('paragraphe trop court')
+
+          // Frontières de mots. On ne mesure PAS avec la géométrie des Range :
+          // dans le measurer (visibility: hidden) elle renvoie des rectangles
+          // vides, la dichotomie concluait donc que tout tenait et la coupe
+          // finissait au dernier mot, systématiquement rejetée juste après.
+          // Chaque candidat est donc RENDU puis mesuré comme un élément —
+          // la technique dont dépend déjà tout le reste du measurer.
+          const bounds: number[] = []
+          for (let k = 1; k < total; k++) {
+            if (/\s/.test(flat[k]) && !/\s/.test(flat[k - 1])) bounds.push(k)
+          }
+          if (bounds.length < 2) return bail('pas de frontière de mot')
+          const headAt = (off: number) => measureHtml(measure, cutParagraph(p, off, 'head'))
+          let lo = -1
+          let hi = bounds.length - 1
+          while (lo < hi) {
+            const mid = Math.ceil((lo + hi) / 2)
+            if (headAt(bounds[mid]) <= avail) lo = mid
+            else hi = mid - 1
+          }
+          if (lo < 0) return bail('même le premier mot ne tient pas')
+
+          // La coupe maximale laisse parfois une veuve : une ou deux lignes
+          // seules sur la page suivante. On RECULE alors mot à mot jusqu'à ce
+          // que le reste atteigne ses deux lignes, au lieu de renoncer.
+          // Renoncer coûtait bien plus cher : le paragraphe repartait entier et
+          // laissait le titre orphelin avec toute la page vide sous lui — c'est
+          // exactement ce qui se passait en mobile, où le paragraphe tient de
+          // justesse et la coupe tombait donc à quelques mots de la fin.
+          const minLines = lh * MIN_LINES_AFTER_HEADING
+          const tailAt = (off: number) => measureHtml(measure, cutParagraph(p, off, 'tail'))
+          let backoff = 0
+          while (lo >= 0 && backoff++ < 400) {
+            const c = bounds[lo]
+            if (total - c >= MIN_SPLIT_CHARS && tailAt(c) - mt - mb >= minLines) break
+            lo--
+          }
+          if (lo < 0) return bail('reste toujours trop court')
+
+          const cut = bounds[lo]
+          if (cut < MIN_SPLIT_CHARS) return bail('tête trop courte')
+          const headHtml = cutParagraph(p, cut, 'head')
+          const tailHtml = cutParagraph(p, cut, 'tail')
+          const headH = measureHtml(measure, headHtml)
+          const tailH = measureHtml(measure, tailHtml)
+          if (headH - mt - mb < minLines) return bail('tête < 2 lignes')
+          if (headH > avail) return bail('tête ' + Math.round(headH) + ' > place')
+          splitLog.push('#' + i + ' OK ' + cut + '/' + total + ' h=' + Math.round(headH))
+          return { headHtml, headH, tailHtml, tailH }
+        } finally {
+          measure.removeChild(probe)
+        }
+      }
+
+      // Distribution : chaque page respecte bodyH ; un item qui ne rentre pas
+      // passe à la page suivante — ou se coupe s'il s'agit d'un paragraphe.
+      // File d'attente et non boucle `for` : couper un paragraphe réinjecte son
+      // reste en tête de file, et ce reste peut se couper à son tour.
+      const newPages: Slot[][] = []
+      let cur: Slot[] = []
+      let curH = 0
+      const queue: { i: number; h: number; html?: string }[] = items.map((_, i) => ({ i, h: heights[i] || 0 }))
+      let safety = 0
+      while (queue.length > 0 && safety++ < 4000) {
+        const slot = queue.shift()!
+        const i = slot.i
+        const h = slot.h
+        const isTail = slot.html !== undefined
+        // ═══ RÈGLE D'OUVERTURE DE LA CONCLUSION ═══
+        // La conclusion ne doit jamais « boucher le trou » en bas d'une page
+        // de gauche : le lecteur lit alors la fin de la sourate et l'ouverture
+        // de la conclusion dans la même colonne, ce qui écrase la respiration.
+        //  · sourate finissant à GAUCHE → on casse : la conclusion s'ouvre sur
+        //    la page de droite, donc dans la MÊME double-page (rien n'est caché).
+        //  · sourate finissant à DROITE → on laisse la conclusion démarrer là :
+        //    son titre visible en bas de page est lui-même l'annonce qu'il y a
+        //    une suite. Sauf si le titre y serait orphelin (pas la place pour
+        //    lui + son premier bloc) : on casse, et un renvoi est posé en pied
+        //    de page (cf. cuePage) pour que le lecteur ne croie pas que c'est fini.
+        if (!isTail && i === concStart && cur.length > 0) {
+          const landingPage = newPages.length
+          const endsOnLeftPage = pagesPerSpread === 2 && landingPage % 2 === 0
+          // titre + premier bloc + ce que ce bloc réclame à son tour : sans le
+          // report du garde, on posait le titre décoratif seul en bas de page
+          // et son premier sous-titre basculait — un orphelin de plus.
+          const needed = h + (heights[i + 1] || 0) + (orphanGuard[i + 1] || 0)
+          if (endsOnLeftPage || bodyH - curH < needed) {
+            newPages.push(cur)
+            cur = []
+            curH = 0
+          }
+        }
+        // Un titre réserve en plus les premières lignes de son paragraphe :
+        // s'il n'y a pas la place pour les deux, on casse AVANT le titre.
+        let need = h + (isTail ? 0 : orphanGuard[i] || 0)
+        // Le dernier item de la sourate réserve la bande du renvoi de pied de
+        // page. On réserve sans condition (même si le renvoi ne s'affiche
+        // finalement pas) : savoir s'il sera nécessaire suppose de connaître
+        // la page d'atterrissage de la conclusion, qui dépend elle-même de
+        // cette page — circulaire. Et une sourate qui ne finit pas collée au
+        // bord de la page, c'est de toute façon mieux.
+        if (!isTail && concStart > 0 && i === concStart - 1) need += CUE_H
+
+        if (curH + need > bodyH) {
+          // 1) remplir le bas de page en coupant le paragraphe
+          const cut = trySplit(i, slot.html, bodyH - curH)
+          if (cut) {
+            cur.push({ i, html: cut.headHtml })
+            newPages.push(cur)
+            cur = []
+            curH = 0
+            queue.unshift({ i, h: cut.tailH, html: cut.tailHtml })
+            continue
+          }
+          // 2) sinon page suivante, et on retente : sur une page vierge le
+          //    bloc pourra peut-être se couper là où il ne pouvait pas ici
+          if (cur.length > 0) {
+            newPages.push(cur)
+            cur = []
+            curH = 0
+            queue.unshift(slot)
+            continue
+          }
+          // 3) page vierge et toujours pas sécable : on le pose tel quel
+        }
+        cur.push(isTail ? { i, html: slot.html } : { i })
         curH += h
       }
       if (cur.length > 0) newPages.push(cur)
       setPages(prev => {
         // Éviter update si égal (limite les re-renders)
-        if (prev.length === newPages.length && prev.every((p, i) => p.length === newPages[i].length && p.every((v, j) => v === newPages[i][j]))) {
+        if (prev.length === newPages.length && prev.every((p, i) => p.length === newPages[i].length && p.every((s, j) => s.i === newPages[i][j].i && s.html === newPages[i][j].html))) {
           return prev
         }
         return newPages
       })
+      splitLogRef.current = splitLog
       const maxSpread = Math.max(0, Math.ceil(newPages.length / pagesPerSpread) - 1)
       setSpread(s => Math.min(s, maxSpread))
     }
@@ -240,14 +526,60 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       window.removeEventListener('resize', onResize)
       ro?.disconnect()
     }
-  }, [items, isMobile, bvOpts.arabic, bvOpts.phon, pagesPerSpread, gap])
+  }, [items, concStart, isMobile, bvOpts.arabic, bvOpts.phon, pagesPerSpread, gap])
+
+  // Page portant le renvoi « la conclusion suit ». On ne l'affiche que si la
+  // conclusion démarre sur une double-page que le lecteur ne voit PAS encore :
+  // sinon (conclusion ouverte sur la page de droite d'en face) le renvoi ferait
+  // doublon avec le titre déjà sous les yeux.
+  const cuePage = useMemo(() => {
+    if (concStart < 0 || pages.length === 0) return null
+    const pageOf = (idx: number) => pages.findIndex(p => p.some(s => s.i === idx))
+    const concPage = pageOf(concStart)
+    const lastBodyPage = pageOf(concStart - 1)
+    if (concPage < 0 || lastBodyPage < 0) return null
+    if (Math.floor(concPage / pagesPerSpread) === Math.floor(lastBodyPage / pagesPerSpread)) return null
+    return lastBodyPage
+  }, [pages, concStart, pagesPerSpread])
 
   // Nav
   const totalSpreads = Math.max(1, Math.ceil(pages.length / pagesPerSpread))
   const canPrev = spread > 0
   const canNext = spread < totalSpreads - 1
-  const goPrev = useCallback(() => { setSpread(s => Math.max(0, s - 1)) }, [])
-  const goNext = useCallback(() => { setSpread(s => s + 1) }, [])
+  // ═══ TOURNE DE PAGE ═══
+  // Trois phases plutôt qu'un long glissement : la double-page s'efface d'un
+  // côté (out), le ruban saute à sa nouvelle position pendant qu'elle est
+  // invisible (in), puis elle se repose (rest). L'ancien translateX de 780ms
+  // sur toute la largeur se lisait comme un carrousel — on voyait le livre
+  // bouger au lieu de voir la page arriver.
+  const [turn, setTurn] = useState<{ phase: 'rest' | 'out' | 'in'; dir: 1 | -1 }>({ phase: 'rest', dir: 1 })
+  const turnTimer = useRef<number | null>(null)
+
+  const go = useCallback((dir: 1 | -1) => {
+    if (turnTimer.current !== null) return // tourne déjà en cours
+    const reduce = typeof window !== 'undefined'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) {
+      setSpread(s => Math.max(0, s + dir))
+      return
+    }
+    setTurn({ phase: 'out', dir })
+    turnTimer.current = window.setTimeout(() => {
+      setSpread(s => Math.max(0, s + dir))
+      setTurn({ phase: 'in', dir })
+      // une frame sans transition pour poser la page entrante hors champ,
+      // puis on relâche vers l'état de repos
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        setTurn({ phase: 'rest', dir })
+        turnTimer.current = null
+      }))
+    }, TURN_OUT_MS + TURN_STAGGER_MS)
+  }, [])
+
+  const goPrev = useCallback(() => { if (spread > 0) go(-1) }, [go, spread])
+  const goNext = useCallback(() => { if (spread < totalSpreads - 1) go(1) }, [go, spread, totalSpreads])
+
+  useEffect(() => () => { if (turnTimer.current !== null) window.clearTimeout(turnTimer.current) }, [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -352,26 +684,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           }}
         >
           {!isMobile && (
-            <div
-              aria-hidden
-              style={{
-                position: 'absolute',
-                top: 0,
-                bottom: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '60px',
-                background: `linear-gradient(90deg,
-                  rgba(120,90,30,0) 0%,
-                  rgba(120,90,30,0.06) 40%,
-                  rgba(120,90,30,0.14) 50%,
-                  rgba(120,90,30,0.06) 60%,
-                  rgba(120,90,30,0) 100%
-                )`,
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}
-            />
+            <div aria-hidden className="bv-spine" />
           )}
 
           {/* ═════ ZONE PAGE : contient measurer offscreen + viewport visible ═════ */}
@@ -429,21 +742,24 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   display: 'flex',
                   gap: `${gap}px`,
                   height: '100%',
+                  // le ruban ne s'anime plus : il saute à sa position pendant
+                  // que les pages sont invisibles (phase « in »)
                   transform: pageWidth > 0
                     ? `translateX(-${spread * spreadShift}px)`
                     : 'none',
-                  transition: 'transform 780ms cubic-bezier(0.16, 1, 0.3, 1)',
-                  willChange: 'transform',
                 }}
               >
-                {pages.map((pageIndices, pIdx) => (
+                {pages.map((pageSlots, pIdx) => (
                   <div
                     key={pIdx}
                     className="bv-page-col"
                     style={{
+                      ...turnStyle(turn, pIdx % pagesPerSpread),
                       width: pageWidth,
                       flex: '0 0 auto',
                       height: '100%',
+                      // ancre le renvoi « la conclusion suit » en pied de page
+                      position: 'relative',
                       fontSize: isMobile ? '11px' : '16px',
                       lineHeight: 1.5,
                       color: INK,
@@ -458,13 +774,22 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                       boxSizing: 'border-box',
                     }}
                   >
-                    {pageIndices.map(i => (
+                    {pageSlots.map((slot, ci) => (
                       // Wrapper div IDENTIQUE au measurer → même margin
                       // collapse, mêmes hauteurs mesurées = hauteurs réelles.
-                      <div key={i}>
-                        {renderItem(items[i], surah, pageForVerse, isBaraah)}
+                      <div key={`${slot.i}-${ci}`}>
+                        {renderItem(
+                          // fragment de paragraphe coupé, sinon l'item entier
+                          slot.html !== undefined
+                            ? { type: 'conclusion-block', html: slot.html }
+                            : items[slot.i],
+                          surah,
+                          pageForVerse,
+                          isBaraah,
+                        )}
                       </div>
                     ))}
+                    {cuePage === pIdx && <ConclusionCue />}
                   </div>
                 ))}
               </div>
@@ -494,16 +819,16 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 disabled={!canPrev}
                 className="page-arrow"
                 aria-label="Page précédente"
-                style={arrowStyle(!canPrev)}
+                style={{ ...arrowStyle(!canPrev), ["--chev-dir" as string]: "-2px" }}
               >
-                ←
+                <Chevron dir="left" />
               </button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', fontStyle: 'italic', color: GOLD_DEEP, letterSpacing: '0.2em' }}>
               <span className="font-arabic" style={{ fontSize: '14px', color: GOLD_DEEP, fontStyle: 'normal', letterSpacing: '0.02em' }}>
                 {surah.name_ar}
               </span>
-              <span style={{ fontSize: '10px' }}>
+              <span style={{ fontSize: '13px' }}>
                 {spread + 1} / {totalSpreads}
               </span>
             </div>
@@ -513,9 +838,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 disabled={!canNext}
                 className="page-arrow"
                 aria-label="Page suivante"
-                style={arrowStyle(!canNext)}
+                style={{ ...arrowStyle(!canNext), ["--chev-dir" as string]: "2px" }}
               >
-                →
+                <Chevron dir="right" />
               </button>
             </div>
           </footer>
@@ -588,6 +913,54 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .bv-fr-block {
           display: block;
         }
+        /* ═══ FOND DE CAHIER ═══
+           Un seul dégradé symétrique donnait une tache floue. Une vraie pliure
+           se compose de trois couches superposées, de la plus proche à la plus
+           lointaine : le fil de pliure, les rehauts, puis le creux. */
+        .bv-spine {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 72px;
+          pointer-events: none;
+          z-index: 1;
+          background:
+            /* 1. le fil de pliure : une hairline nette, c'est elle qui donne
+                  l'arête. Sans elle le centre reste mou. */
+            linear-gradient(90deg,
+              transparent calc(50% - 0.5px),
+              rgba(110,80,25,0.34) calc(50% - 0.5px),
+              rgba(110,80,25,0.34) calc(50% + 0.5px),
+              transparent calc(50% + 0.5px)),
+            /* 2. les rehauts : de part et d'autre du pli, le papier remonte
+                  vers la lumière. C'est ce liseré clair qui fait lire « papier
+                  plié » plutôt que « ombre posée ». */
+            linear-gradient(90deg,
+              transparent 26%,
+              rgba(255,253,247,0.85) 40%,
+              rgba(255,253,247,0.15) 47%,
+              transparent 50%,
+              rgba(255,253,247,0.15) 53%,
+              rgba(255,253,247,0.85) 60%,
+              transparent 74%),
+            /* 3. le creux : assombrissement resserré près du centre et très
+                  étalé vers l'extérieur — la courbure du papier n'est pas
+                  linéaire, l'ancien dégradé la traitait comme telle. */
+            linear-gradient(90deg,
+              rgba(110,80,25,0) 0%,
+              rgba(110,80,25,0.035) 30%,
+              rgba(110,80,25,0.10) 43%,
+              rgba(110,80,25,0.19) 50%,
+              rgba(110,80,25,0.10) 57%,
+              rgba(110,80,25,0.035) 70%,
+              rgba(110,80,25,0) 100%);
+          /* la pliure s'estompe en tête et en pied, comme sur un livre ouvert
+             où les bords du cahier s'écartent */
+          -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 95%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 95%, transparent 100%);
+        }
         .verse-marker {
           display: inline-flex;
           align-items: center;
@@ -596,12 +969,19 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           height: 24px;
           padding: 0 7px;
           border-radius: 999px;
-          background: rgba(184,150,46,0.08);
-          border: 1px solid rgba(184,150,46,0.30);
+          /* bague creuse : sans fond, la pastille se lit comme un renvoi
+             imprimé et non comme un badge d'interface */
+          background: transparent;
+          border: 1px solid rgba(184,150,46,0.42);
           color: ${GOLD_DEEP};
           font-family: 'Cormorant Garamond', serif;
           font-size: 14px;
           font-weight: 700;
+          /* les chiffres de Cormorant sont elzéviriens (ils montent et
+             descendent) : dans un cercle il faut des chiffres bâtons de
+             largeur fixe, sinon le centrage optique part de travers */
+          font-variant-numeric: lining-nums tabular-nums;
+          font-feature-settings: 'lnum' 1, 'tnum' 1;
           vertical-align: 3px;
           margin-right: 9px;
           text-decoration: none;
@@ -630,6 +1010,28 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           color: #FFFCF6 !important;
           border-color: transparent !important;
           transform: translateY(-1px);
+        }
+        /* Chevron SVG plutôt que les caractères ← →, qui sont des glyphes de
+           texte : ni l'épaisseur ni le centrage d'un vrai pictogramme. */
+        .page-arrow svg {
+          transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+        }
+        .page-arrow:not(:disabled):hover svg {
+          /* le chevron glisse dans son sens : on sent où on va */
+          transform: translateX(var(--chev-dir, 2px));
+        }
+        .page-arrow:disabled {
+          /* on n'éteint QUE le chevron : une bague à 35% donnait un bouton
+             qui semblait cassé plutôt que désactivé */
+          opacity: 1;
+        }
+        .page-arrow:disabled svg {
+          opacity: 0.3;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bv-page-col, .page-arrow, .page-arrow svg, .verse-marker {
+            transition: none !important;
+          }
         }
         /* Conclusion styles — chaque bloc est atomique dans notre pagination.
            On laisse le browser wrap naturellement aux espaces. Aucun
@@ -747,6 +1149,156 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           }
         }
       ` }} />
+      {debug && (
+        <DebugOverlay
+          measurerHeightsRef={measurerHeightsRef}
+          splitLogRef={splitLogRef}
+          pages={pages}
+          spread={spread}
+          pagesPerSpread={pagesPerSpread}
+          pageHeight={pageHeight}
+          pageWidth={pageWidth}
+        />
+      )}
+    </div>
+  )
+}
+
+function DebugOverlay({
+  measurerHeightsRef,
+  splitLogRef,
+  pages,
+  spread,
+  pagesPerSpread,
+  pageHeight,
+  pageWidth,
+}: {
+  measurerHeightsRef: React.MutableRefObject<number[]>
+  splitLogRef: React.MutableRefObject<string[]>
+  pages: Slot[][]
+  spread: number
+  pagesPerSpread: number
+  pageHeight: number
+  pageWidth: number
+}) {
+  const [, setTick] = useState(0)
+  useEffect(() => {
+    const id = window.setInterval(() => setTick(t => t + 1), 500)
+    return () => window.clearInterval(id)
+  }, [])
+
+  type KidData = { i: number; measured: number; rendered: number; diff: number; overflowH: boolean }
+  type ColData = { clientH: number; scrollH: number; overflowV: number; clientW: number; scrollW: number; overflowH: number; kids: KidData[] }
+  const cols: ColData[] = []
+
+  if (typeof document !== 'undefined') {
+    const nodes = document.querySelectorAll('.bv-page-col')
+    nodes.forEach((col, pIdx) => {
+      const el = col as HTMLElement
+      const clientH = el.clientHeight
+      const scrollH = el.scrollHeight
+      const clientW = el.clientWidth
+      const scrollW = el.scrollWidth
+      const kids = Array.from(el.children) as HTMLElement[]
+      const pageSlots = pages[pIdx] || []
+      // slice : le renvoi ConclusionCue est un enfant en plus, hors pagination
+      const kidData: KidData[] = kids.slice(0, pageSlots.length).map((k, ci) => {
+        const itemIdx = pageSlots[ci].i
+        // un fragment de paragraphe coupé n'a pas de hauteur dans le measurer
+        // global : Δ non significatif, on affiche 0
+        const measured = pageSlots[ci].html !== undefined ? 0 : (measurerHeightsRef.current[itemIdx] || 0)
+        const cs = getComputedStyle(k)
+        const rendered = k.offsetHeight + parseFloat(cs.marginBottom || '0') + parseFloat(cs.marginTop || '0')
+        // Check horizontal overflow ON ANY child of this wrapper (paragraphs, headings...)
+        let overflowH = false
+        const inner = k.querySelectorAll('*')
+        inner.forEach(node => {
+          const n = node as HTMLElement
+          if (n.scrollWidth - n.clientWidth > 1) overflowH = true
+        })
+        return {
+          i: itemIdx,
+          measured: Math.round(measured),
+          rendered: Math.round(rendered),
+          diff: Math.round(rendered - measured),
+          overflowH,
+        }
+      })
+      cols.push({
+        clientH,
+        scrollH,
+        overflowV: scrollH - clientH,
+        clientW,
+        scrollW,
+        overflowH: scrollW - clientW,
+        kids: kidData,
+      })
+    })
+  }
+
+  const anyOverflowV = cols.some(c => c.overflowV > 1)
+  const anyOverflowH = cols.some(c => c.overflowH > 1 || c.kids.some(k => k.overflowH))
+  const anyBigDiff = cols.some(c => c.kids.some(k => Math.abs(k.diff) > 1))
+
+  return (
+    <div style={{
+      position: 'fixed',
+      bottom: 8,
+      right: 8,
+      zIndex: 9999,
+      background: 'rgba(0,0,0,0.88)',
+      color: '#0f0',
+      fontFamily: 'ui-monospace, Menlo, Consolas, monospace',
+      fontSize: '10px',
+      padding: '10px 12px',
+      borderRadius: '6px',
+      maxHeight: '60vh',
+      overflowY: 'auto',
+      maxWidth: '400px',
+      minWidth: '260px',
+      lineHeight: 1.45,
+      boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+    }}>
+      <div style={{ color: '#ff0', marginBottom: 6, fontWeight: 700 }}>
+        DEBUG · pageW={Math.round(pageWidth)} · pageH={Math.round(pageHeight)}
+      </div>
+      <div style={{ marginBottom: 6, color: "#9cf" }}>
+        coupes : {splitLogRef.current.length === 0 ? "aucune tentative" : ""}
+        {splitLogRef.current.map((l, k) => (
+          <div key={k} style={{ marginLeft: 6, color: l.includes(" OK ") ? "#8f8" : "#f96" }}>{l}</div>
+        ))}
+      </div>
+      <div style={{ marginBottom: 6 }}>
+        spread {spread + 1}/{Math.max(1, Math.ceil(pages.length / pagesPerSpread))} · {pages.length} pages · {pagesPerSpread}/spread
+      </div>
+      <div style={{ marginBottom: 6 }}>
+        <span style={{ color: anyOverflowV ? '#f66' : '#8f8' }}>V:{anyOverflowV ? 'OVF' : 'ok'}</span>{' '}
+        <span style={{ color: anyOverflowH ? '#f66' : '#8f8' }}>H:{anyOverflowH ? 'OVF' : 'ok'}</span>{' '}
+        <span style={{ color: anyBigDiff ? '#fc6' : '#8f8' }}>Δ:{anyBigDiff ? 'MISMATCH' : 'ok'}</span>
+      </div>
+      {cols.map((d, pIdx) => {
+        const inCurrentSpread = pIdx >= spread * pagesPerSpread && pIdx < (spread + 1) * pagesPerSpread
+        return (
+          <div key={pIdx} style={{
+            marginTop: 6,
+            paddingTop: 4,
+            borderTop: '1px dashed #444',
+            opacity: inCurrentSpread ? 1 : 0.45,
+          }}>
+            <div style={{ color: d.overflowV > 1 ? '#f66' : '#0f0' }}>
+              p{pIdx} · cH={d.clientH} sH={d.scrollH}{d.overflowV > 1 ? ` V+${d.overflowV}` : ''}{d.overflowH > 1 ? ` H+${d.overflowH}` : ''}
+            </div>
+            {d.kids.map((k, ci) => {
+              const bigDiff = Math.abs(k.diff) > 1
+              return (
+                <div key={ci} style={{ color: k.overflowH ? '#f66' : (bigDiff ? '#fc6' : '#8f8'), marginLeft: 8 }}>
+                  #{k.i} m={k.measured} r={k.rendered} Δ={k.diff > 0 ? '+' : ''}{k.diff}{k.overflowH ? ' Hovf' : ''}
+                </div>
+              )
+            })}
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -819,7 +1371,7 @@ function SurahHeader({ surah, isBaraah }: { surah: Surah; isBaraah: boolean }) {
           )}
         </div>
       )}
-      <div style={{ padding: '4px 0 12px' }}>
+      <div style={{ padding: '4px 0 22px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
           <span style={{ flex: '0 0 60px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.5 }} />
           <span aria-hidden style={{ color: GOLD, fontSize: '10px' }}>✦</span>
@@ -827,6 +1379,52 @@ function SurahHeader({ surah, isBaraah }: { surah: Surah; isBaraah: boolean }) {
         </div>
       </div>
     </>
+  )
+}
+
+/* Renvoi de pied de page — la « réclame » des livres anciens.
+   Posé en absolu (hors flux) pour ne pas fausser les hauteurs mesurées — sa
+   bande est donc réservée explicitement par la pagination (CUE_H), sinon il
+   recouvre le dernier verset et l'efface. Il n'apparaît que quand la
+   conclusion s'ouvre sur une double-page encore invisible — sans lui, le
+   lecteur voit la sourate se terminer en bas d'une page de droite et croit
+   avoir fini le livre. */
+function ConclusionCue() {
+  return (
+    <div
+      aria-hidden
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        // hauteur FIGÉE = celle que la pagination réserve (CUE_H). Toute
+        // dérive ici et le renvoi remordrait sur le texte.
+        height: `${CUE_H}px`,
+        boxSizing: 'border-box',
+        paddingBottom: '2px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        textAlign: 'center',
+        pointerEvents: 'none',
+        // filet de sécurité : si le texte débordait malgré la réservation, il
+        // s'efface derrière le papier au lieu de se chevaucher avec le renvoi
+        background: `linear-gradient(to bottom, rgba(255,251,240,0) 0%, ${CREAM_PAGE} 42%, ${CREAM_PAGE} 100%)`,
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '5px' }}>
+        <span style={{ flex: '1 1 auto', maxWidth: '70px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.55 }} />
+        <span style={{ color: GOLD, fontSize: '11px', opacity: 0.85 }}>✦</span>
+        <span style={{ flex: '1 1 auto', maxWidth: '70px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.55 }} />
+      </div>
+      <div style={{ fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+        Conclusion
+      </div>
+      <div style={{ fontSize: '12px', fontStyle: 'italic', color: MUTED, marginTop: '2px', letterSpacing: '0.02em' }}>
+        page suivante
+      </div>
+    </div>
   )
 }
 
@@ -848,6 +1446,57 @@ function ConclusionTitle({ surah }: { surah: Surah }) {
   )
 }
 
+/* Chevron dessiné : trait fin, extrémités arrondies, il hérite de la couleur
+   du bouton (`currentColor`) donc il vire au crème quand la bague se remplit. */
+function Chevron({ dir }: { dir: 'left' | 'right' }) {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      focusable="false"
+    >
+      {dir === 'left' ? <path d="M14.5 5.5 8 12l6.5 6.5" /> : <path d="M9.5 5.5 16 12l-6.5 6.5" />}
+    </svg>
+  )
+}
+
+/* État visuel d'une page pendant la tourne. `slot` est sa position dans la
+   double-page (0 = gauche, 1 = droite) et sert à décaler son départ : le papier
+   ne bouge pas d'un bloc. Le léger scale donne de la profondeur sans rotation
+   3D — la piste « page qui pivote » avait été écartée, elle fait daté. */
+function turnStyle(
+  turn: { phase: 'rest' | 'out' | 'in'; dir: 1 | -1 },
+  slot: number,
+): React.CSSProperties {
+  const delay = `${slot * TURN_STAGGER_MS}ms`
+  if (turn.phase === 'rest') {
+    return {
+      opacity: 1,
+      transform: 'none',
+      transition: `opacity ${TURN_IN_MS}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${TURN_IN_MS}ms cubic-bezier(0.16, 1, 0.3, 1)`,
+      transitionDelay: delay,
+      willChange: 'opacity, transform',
+    }
+  }
+  // la sortante s'efface dans le sens de lecture, l'entrante arrive de l'autre
+  const shift = (turn.phase === 'out' ? -turn.dir : turn.dir) * TURN_SHIFT_PX
+  return {
+    opacity: 0,
+    transform: `translateX(${shift}px) scale(0.988)`,
+    // phase « in » : placement instantané, la page est invisible à ce moment
+    transition: turn.phase === 'in' ? 'none' : `opacity ${TURN_OUT_MS}ms ease-in, transform ${TURN_OUT_MS}ms ease-in`,
+    transitionDelay: turn.phase === 'in' ? '0ms' : delay,
+    willChange: 'opacity, transform',
+  }
+}
+
 function arrowStyle(disabled: boolean): React.CSSProperties {
   return {
     display: 'inline-flex',
@@ -859,10 +1508,10 @@ function arrowStyle(disabled: boolean): React.CSSProperties {
     border: `1px solid ${LINE_STRONG}`,
     background: 'rgba(255,251,240,0.7)',
     color: GOLD_DEEP,
-    fontSize: '16px',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    opacity: disabled ? 0.35 : 1,
-    transition: 'background 200ms ease, transform 200ms ease',
+    // pas d'opacité globale ici : l'état désactivé n'éteint que le chevron
+    // (voir .page-arrow:disabled svg), la bague reste nette
+    transition: 'background 200ms ease, transform 200ms ease, border-color 200ms ease',
     fontFamily: "'Cormorant Garamond', serif",
   }
 }
