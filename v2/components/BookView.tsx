@@ -832,7 +832,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   height: '100%',
                   columnCount: 2,
                   columnGap: '80px',
-                  columnFill: 'auto',
+                  columnFill: 'balance',
                   textAlign: 'justify',
                   hyphens: 'auto',
                   fontSize: '15px',
@@ -906,7 +906,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   height: '100%',
                   columnCount: 2,
                   columnGap: '80px',
-                  columnFill: 'balance',
+                  // Si starter présent : balance équilibre versets+conclusion.
+                  // Sinon (starter vide, juste versets) : auto remplit col gauche
+                  // à fond puis col droite (plus dense).
+                  columnFill: conclusionStarterMd ? 'balance' : 'auto',
                   textAlign: 'justify',
                   hyphens: 'auto',
                   fontSize: '16px',
