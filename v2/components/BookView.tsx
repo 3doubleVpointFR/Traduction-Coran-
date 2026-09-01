@@ -682,6 +682,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .conclusion-body p {
           margin: 0 0 12px 0;
           text-indent: 0;
+          /* Un paragraphe reste entier — pas de coupure au milieu qui rend
+             la lecture bizarre. Si trop long pour la col courante, il saute
+             en entier à la col suivante. */
+          break-inside: avoid;
+          page-break-inside: avoid;
         }
         .conclusion-body p:first-of-type::first-letter {
           font-size: 2.2em;
