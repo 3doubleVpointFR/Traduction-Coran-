@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import { buckwalterToPhonetic } from '@/lib/utils'
 import BookView from '@/components/BookView'
@@ -24,6 +25,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+/* Liste des sourates + celles qui ont au moins un verset traduit.
+   Le balayage est paginé par 1000 comme sur l'accueil : Supabase ne sait pas
+   faire de GROUP BY côté client, et une requête par sourate ferait 114 allers-
+   retours. On ne demande que la clé de regroupement, donc la charge utile
+   reste minuscule même sur plusieurs milliers de lignes. */
+async function getRailData(db: ReturnType<typeof getSupabaseAdmin>) {
+  const [{ data: surahs }, translatedIds] = await Promise.all([
+    db.from('surahs').select('id, name_ar, name_latin, name_fr').order('id'),
+    (async () => {
+      const ids = new Set<number>()
+      let offset = 0
+      while (true) {
+        const { data: chunk } = await db
+          .from('verse_analyses')
+          .select('verses!inner(surah_id)')
+          .not('translation_arab', 'is', null)
+          .range(offset, offset + 999)
+        if (!chunk || chunk.length === 0) break
+        for (const row of chunk) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const sid = (row as any).verses?.surah_id
+          if (sid) ids.add(sid)
+        }
+        if (chunk.length < 1000) break
+        offset += 1000
+      }
+      return Array.from(ids)
+    })(),
+  ])
+  return { surahs: surahs ?? [], availableIds: translatedIds }
+}
+
 export default async function SurahLivrePage({ params }: Props) {
   const surahId = parseInt(params.id)
   if (isNaN(surahId) || surahId < 1 || surahId > 114) {
@@ -36,9 +69,13 @@ export default async function SurahLivrePage({ params }: Props) {
 
   const db = getSupabaseAdmin()
 
-  const [surahRes, versesRes] = await Promise.all([
+  const [surahRes, versesRes, railRes] = await Promise.all([
     db.from('surahs').select('*').eq('id', surahId).single(),
     db.from('verses').select('id, verse_num, arabic_text').eq('surah_id', surahId).order('verse_num'),
+    // Réglette de navigation au pied du livre : les 114 sourates, et celles
+    // qui sont réellement lisibles. En parallèle du reste pour ne rien coûter
+    // en latence série.
+    getRailData(db),
   ])
 
   // Conclusion de la sourate — stockée sur le dernier verset via verse_analyses.surah_conclusion
@@ -125,6 +162,9 @@ export default async function SurahLivrePage({ params }: Props) {
       phonetic: phonByVerseId.get(v.id) ?? '',
     }))
 
+  // première sourate réellement lisible : cible du bouton de retour
+  const firstReadableSurahId = railRes.availableIds.length > 0 ? Math.min(...railRes.availableIds) : 1
+
   if (readableVerses.length === 0) {
     return (
       <div className="text-center py-20">
@@ -135,9 +175,48 @@ export default async function SurahLivrePage({ params }: Props) {
         <p style={{ color: '#9E9089', fontSize: '14px' }}>
           Aucun signe traduit pour le moment dans cette sourate.
         </p>
+        {/* Sortie obligatoire : la tranche rend les 114 sourates cliquables,
+            sans ce retour le lecteur serait piégé sur une page sans navigation. */}
+        <div style={{ marginTop: '22px', display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link
+            href={`/surah/${firstReadableSurahId}/livre`}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              padding: '9px 20px', borderRadius: '999px',
+              background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
+              color: '#FFFCF6', fontSize: '13px', fontStyle: 'italic', letterSpacing: '0.08em',
+              textDecoration: 'none', fontFamily: "'Cormorant Garamond', serif",
+              boxShadow: '0 4px 12px rgba(120,90,30,0.30)',
+            }}
+          >
+            <span aria-hidden>✦</span>
+            Revenir au livre
+          </Link>
+          <Link
+            href="/"
+            style={{
+              display: 'inline-flex', alignItems: 'center',
+              padding: '9px 20px', borderRadius: '999px',
+              border: '1px solid rgba(184,150,46,0.42)', background: 'rgba(255,251,240,0.7)',
+              color: '#8A6E1F', fontSize: '13px', fontStyle: 'italic', letterSpacing: '0.08em',
+              textDecoration: 'none', fontFamily: "'Cormorant Garamond', serif",
+            }}
+          >
+            Toutes les sourates
+          </Link>
+        </div>
       </div>
     )
   }
 
-  return <BookView surah={surahRes.data} verses={readableVerses} pageSize={PAGE_SIZE} conclusion={surahConclusion} />
+  return (
+    <BookView
+      surah={surahRes.data}
+      verses={readableVerses}
+      pageSize={PAGE_SIZE}
+      conclusion={surahConclusion}
+      railSurahs={railRes.surahs}
+      railAvailableIds={railRes.availableIds}
+    />
+  )
 }

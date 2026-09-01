@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React, { useState, useEffect, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
+import SurahTranche, { TRANCHE_W, type RailSurah } from './SurahTranche'
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BookView — vue livre paginée avec pagination JS calculée.
@@ -40,6 +42,8 @@ interface Props {
   verses: ReadVerse[]
   pageSize: number
   conclusion?: string | null
+  railSurahs?: RailSurah[]
+  railAvailableIds?: number[]
 }
 
 // Palette identique au site
@@ -85,16 +89,27 @@ function parseConclusionMarkdown(md: string): string {
       paraBuffer = []
     }
   }
+  // Le numéro du premier point : la liste peut ne pas commencer à 1, et le
+  // compteur CSS doit alors partir de là plutôt que de renuméroter d'office.
+  let listStart = 1
   const flushList = () => {
     if (currentList && currentList.length) {
-      blocks.push(`<ol>${currentList.map(li => `<li>${formatInline(li)}</li>`).join('')}</ol>`)
+      blocks.push(
+        `<ol style="counter-reset: conclusion-item ${listStart - 1}">` +
+        currentList.map(li => `<li>${formatInline(li)}</li>`).join('') +
+        `</ol>`
+      )
       currentList = null
     }
   }
   for (const raw of lines) {
     const line = raw.trim()
     if (!line) {
-      flushPara(); flushList()
+      // Une ligne vide ferme un paragraphe mais PAS une liste : entre deux
+      // points numérotés, elle ne fait qu'aérer (c'est une « liste ample » au
+      // sens markdown). La fermer ici découpait « 1. 2. 3. » en trois listes
+      // d'un seul élément, chacune repartant du compteur à 1.
+      flushPara()
       continue
     }
     const headerMatch = line.match(/^\*\*(.+)\*\*$/)
@@ -106,7 +121,10 @@ function parseConclusionMarkdown(md: string): string {
     const listMatch = line.match(/^(\d+)\.\s+(.+)$/)
     if (listMatch) {
       flushPara()
-      if (!currentList) currentList = []
+      if (!currentList) {
+        currentList = []
+        listStart = parseInt(listMatch[1], 10) || 1
+      }
       currentList.push(listMatch[2])
       continue
     }
@@ -136,7 +154,32 @@ type Slot = { i: number; html?: string }
 // versets, les titres et les listes numérotées restent insécables : couper un
 // verset en deux le rendrait incitable, et une liste coupée perd sa numérotation.
 function isSplittable(item: PageItem | undefined): item is { type: 'conclusion-block'; html: string } {
-  return !!item && item.type === 'conclusion-block' && /^\s*<p[\s>]/i.test(item.html)
+  return !!item && item.type === 'conclusion-block' && /^\s*<(p|ol)[\s>]/i.test(item.html)
+}
+
+function isList(html: string): boolean {
+  return /^\s*<ol[\s>]/i.test(html)
+}
+
+/* Coupe une liste numérotée entre deux points. Le compteur CSS de la suite est
+   repositionné via counter-reset : sans ça, la fin de liste sur la page
+   suivante repartirait de 1 — exactement le défaut qu'on vient de corriger sur
+   la numérotation. */
+function cutList(html: string, k: number): { head: string; tail: string } {
+  const build = () => {
+    const d = document.createElement('div')
+    d.innerHTML = html
+    return d.querySelector('ol') as HTMLOListElement | null
+  }
+  const a = build()
+  const b = build()
+  if (!a || !b) return { head: html, tail: '' }
+  const m = (a.getAttribute('style') || '').match(/conclusion-item\s+(-?\d+)/)
+  const base = m ? (parseInt(m[1], 10) || 0) : 0
+  while (a.children.length > k && a.lastElementChild) a.removeChild(a.lastElementChild)
+  for (let i = 0; i < k && b.firstElementChild; i++) b.removeChild(b.firstElementChild)
+  b.setAttribute('style', `counter-reset: conclusion-item ${base + k}`)
+  return { head: a.outerHTML, tail: b.outerHTML }
 }
 
 // line-height calculé en px, avec repli si le navigateur répond « normal »
@@ -180,7 +223,7 @@ function measureHtml(measure: HTMLElement, html: string): number {
   measure.appendChild(probe)
   try {
     const rect = probe.getBoundingClientRect()
-    const p = probe.querySelector('p')
+    const p = probe.querySelector('p, ol')
     if (!p) return rect.height
     const cs = window.getComputedStyle(p)
     return rect.height + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0)
@@ -189,7 +232,7 @@ function measureHtml(measure: HTMLElement, html: string): number {
   }
 }
 
-export default function BookView({ surah, verses, pageSize, conclusion }: Props) {
+export default function BookView({ surah, verses, pageSize, conclusion, railSurahs, railAvailableIds }: Props) {
   const hasConclusion = !!(conclusion && conclusion.trim())
   const conclusionHtml = useMemo(() => (hasConclusion ? parseConclusionMarkdown(conclusion!) : ''), [conclusion, hasConclusion])
   const pageForVerse = (verseNum: number) => Math.ceil(verseNum / pageSize)
@@ -322,7 +365,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         // que ses premières lignes. Un bloc INsécable (liste numérotée) reste
         // tout ou rien : le titre doit alors réserver le bloc entier.
         if (isSplittable(next)) {
-          const target = (nextEl.querySelector('p') as HTMLElement | null) || nextEl
+          const target = (nextEl.querySelector('p, li') as HTMLElement | null) || nextEl
           orphanGuard[i] = Math.min(lineHeightOf(target) * MIN_LINES_AFTER_HEADING, heights[i + 1] || 0)
         } else {
           orphanGuard[i] = heights[i + 1] || 0
@@ -351,6 +394,31 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         probe.innerHTML = `<div class="bv-conclusion-block">${src}</div>`
         measure.appendChild(probe)
         try {
+          // ═══ LISTE NUMÉROTÉE ═══ elle se coupe entre deux points, jamais au
+          // milieu d'un point : un « 2. » orphelin en haut de page n'aurait
+          // aucun sens. Le compteur de la suite est repositionné par cutList.
+          if (isList(src)) {
+            const listEl = probe.querySelector('ol')
+            const count = listEl ? listEl.children.length : 0
+            if (count < 2) return bail('liste d’un seul point')
+            const headAt = (k: number) => measureHtml(measure, cutList(src, k).head)
+            let lo = 0
+            let hi = count - 1
+            while (lo < hi) {
+              const mid = Math.ceil((lo + hi) / 2)
+              if (headAt(mid) <= avail) lo = mid
+              else hi = mid - 1
+            }
+            if (lo < 1) return bail('même le premier point ne tient pas')
+            const { head, tail } = cutList(src, lo)
+            const hH = measureHtml(measure, head)
+            const tH = measureHtml(measure, tail)
+            if (hH <= 0 || tH <= 0) return bail('fragment de liste vide')
+            if (hH > avail) return bail('tête ' + Math.round(hH) + ' > place')
+            splitLog.push('#' + i + ' OK liste ' + lo + '/' + count + ' h=' + Math.round(hH))
+            return { headHtml: head, headH: hH, tailHtml: tail, tailH: tH }
+          }
+
           const p = probe.querySelector('p') as HTMLElement | null
           if (!p) return bail('pas de <p>')
           const lh = lineHeightOf(p)
@@ -552,8 +620,47 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   // invisible (in), puis elle se repose (rest). L'ancien translateX de 780ms
   // sur toute la largeur se lisait comme un carrousel — on voyait le livre
   // bouger au lieu de voir la page arriver.
-  const [turn, setTurn] = useState<{ phase: 'rest' | 'out' | 'in'; dir: 1 | -1 }>({ phase: 'rest', dir: 1 })
+  const [turn, setTurn] = useState<{ phase: 'rest' | 'out' | 'in'; dir: 1 | -1 }>({ phase: 'in', dir: 1 })
   const turnTimer = useRef<number | null>(null)
+  const router = useRouter()
+  const enteredRef = useRef(false)
+
+  // Entree : le livre se pose a l'arrivee, exactement comme une page qui tourne.
+  // On attend que la pagination ait produit ses pages, sinon la transition se
+  // jouerait sur un livre encore vide et on ne verrait rien.
+  useEffect(() => {
+    if (enteredRef.current || pages.length === 0) return
+    enteredRef.current = true
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) { setTurn({ phase: 'rest', dir: 1 }); return }
+    requestAnimationFrame(() => requestAnimationFrame(() => setTurn(t => ({ phase: 'rest', dir: t.dir }))))
+  }, [pages.length])
+
+  // Filet de sécurité : la phase d'entrée pose les pages à opacité 0. Si la
+  // mesure ne produisait jamais de pages, le livre resterait invisible — on
+  // force donc l'état de repos passé un délai, quoi qu'il arrive.
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      if (enteredRef.current) return
+      enteredRef.current = true
+      setTurn(cur => ({ phase: 'rest', dir: cur.dir }))
+    }, 1500)
+    return () => window.clearTimeout(t)
+  }, [])
+
+  // Sortie vers une autre sourate : on joue la meme phase « out » que pour une
+  // page, PUIS on navigue. Sans ca le changement de sourate etait un a-coup au
+  // milieu d'une vue par ailleurs entierement animee.
+  // Depart vers une autre sourate : la page actuelle passe au flou et y reste
+  // tant que le serveur n'a pas repondu. En App Router l'ancienne page demeure
+  // montee pendant ce temps — la faire disparaitre donnait du blanc, la flouter
+  // dit « ca change » sans rien demander a lire.
+  const [leaving, setLeaving] = useState(false)
+  const leaveTo = useCallback((href: string) => {
+    if (leaving) return
+    setLeaving(true)
+    router.push(href)
+  }, [router, leaving])
 
   const go = useCallback((dir: 1 | -1) => {
     if (turnTimer.current !== null) return // tourne déjà en cours
@@ -601,6 +708,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   }, [bvOpts.arabic, bvOpts.phon])
 
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
+  const hasRail = !!(railSurahs && railSurahs.length > 0)
 
   // translateX = -spread * (pagesPerSpread * pageWidth + pagesPerSpread * gap)
   //            = -spread * pagesPerSpread * (pageWidth + gap)
@@ -676,6 +784,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             `,
             position: 'relative',
             overflow: 'hidden',
+            // La réglette des sourates se loge sous le livre : on lui réserve
+            // sa hauteur ici, sinon elle tombe sous la ligne de flottaison et
+            // ne sert à rien. Sans réglette, on garde les valeurs d'origine.
             height: isMobile
               ? 'min(720px, calc(100vh - 160px))'
               : 'min(820px, calc(100vh - 110px))',
@@ -687,14 +798,20 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             <div aria-hidden className="bv-spine" />
           )}
 
+
           {/* ═════ ZONE PAGE : contient measurer offscreen + viewport visible ═════ */}
           <div
             ref={bookBodyRef}
-            className="book-body"
+            className={`book-body${leaving ? ' is-leaving' : ''}`}
             style={{
               position: 'relative',
               zIndex: 2,
-              padding: isMobile ? '12px 12px 16px' : '20px 40px 20px',
+              // la gouttiere droite s'elargit de la tranche : la mesure de
+              // pagination deduit deja les paddings, donc les pages se
+              // retrecissent seules et rien ne passe sous les onglets
+              padding: isMobile
+                ? `12px ${12 + (hasRail ? TRANCHE_W : 0)}px 16px 12px`
+                : `20px ${40 + (hasRail ? TRANCHE_W : 0)}px 20px 40px`,
               flex: 1,
               minHeight: 0,
               overflow: 'hidden',
@@ -725,6 +842,17 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 <div key={`m-${i}`}>{renderItem(item, surah, pageForVerse, isBaraah)}</div>
               ))}
             </div>
+
+            {/* Chapelet des sourates : DANS book-body, donc il s'arrete de
+                lui-meme au-dessus du pied de page */}
+            {hasRail && (
+              <SurahTranche
+                surahs={railSurahs!}
+                availableIds={railAvailableIds ?? []}
+                currentId={surah.id}
+                onNavigate={leaveTo}
+              />
+            )}
 
             {/* VIEWPORT : montre les pages visibles */}
             <div
@@ -794,6 +922,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 ))}
               </div>
             </div>
+
           </div>
 
           {/* Pied du livre — navigation + compteur */}
@@ -896,16 +1025,36 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         body.bv-show-arabic .bv-arabic-block {
           display: block;
         }
+        /* ═══ PHONÉTIQUE ═══
+           Elle n'est ni du texte ni de la traduction : c'est un appareil de
+           lecture. Elle doit donc se lire comme tel — rattachée à l'arabe
+           au-dessus, distincte du français en dessous.
+
+           · Droite et non italique. L'italique était le pire choix pour une
+             translittération : les macrons et les points souscrits (ā, ḥ, ṣ,
+             ṭ) se bousculent avec l'inclinaison et deviennent illisibles.
+           · Interlettrage ouvert : c'est ce qui donne à une ligne sa texture
+             de guide de prononciation plutôt que de prose.
+           · Brun doré plutôt que gris, pour la raccrocher à l'arabe.
+           · Posée sur une plaque à peine teintée, centrée et ajustée au texte :
+             l'arabe et sa prononciation forment un bloc « source », le français
+             reste seul en drapeau à gauche. */
         .bv-phon-block {
           display: none;
+          width: fit-content;
+          max-width: 100%;
+          margin: 3px auto 8px;
+          padding: 3px 13px;
+          border-radius: 999px;
+          background: rgba(184,150,46,0.055);
           text-align: center;
-          font-size: 12px;
-          line-height: 1.4;
-          color: ${MUTED};
-          margin: 2px 0 6px;
-          padding: 0 6px;
-          font-style: italic;
-          letter-spacing: 0.02em;
+          font-size: 12.5px;
+          line-height: 1.5;
+          color: #8A7647;
+          font-style: normal;
+          font-weight: 500;
+          letter-spacing: 0.06em;
+          word-spacing: 0.09em;
         }
         body.bv-show-phon .bv-phon-block {
           display: block;
@@ -961,6 +1110,24 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 95%, transparent 100%);
           mask-image: linear-gradient(180deg, transparent 0%, #000 4%, #000 95%, transparent 100%);
         }
+        /* Départ vers une autre sourate : le livre s'estompe au lieu de
+           disparaître. Pas de message — à 300ms de navigation, personne n'a le
+           temps de le lire, et un panneau qui clignote fait plus lent que le
+           flou. La transition est plus lente en sortie (420ms) qu'un fondu :
+           on doit sentir que ça part, pas que ça s'éteint. */
+        .book-body {
+          transition: filter 420ms ease, opacity 420ms ease;
+        }
+        .book-body.is-leaving {
+          filter: blur(5px) saturate(0.9);
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .book-body { transition: opacity 150ms ease; }
+          .book-body.is-leaving { filter: none; opacity: 0.5; }
+        }
+
         .verse-marker {
           display: inline-flex;
           align-items: center;
@@ -1119,8 +1286,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             margin: 3px 0 4px !important;
           }
           .bv-phon-block {
-            font-size: 8.5px !important;
-            margin: 1px 0 4px !important;
+            font-size: 9.5px !important;
+            margin: 2px auto 5px !important;
+            padding: 2px 9px !important;
+            letter-spacing: 0.045em !important;
           }
           .verse-marker {
             min-width: 17px !important;
