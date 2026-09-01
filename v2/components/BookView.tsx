@@ -142,20 +142,17 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const flowRef = useRef<HTMLDivElement | null>(null)
 
-  // isMobile via ref → remeasure reste STABLE (pas de deps) : useLayoutEffect
-  // ne s'annule plus à chaque changement d'isMobile, timeouts survivent.
-  const isMobileRef = useRef(isMobile)
-  useEffect(() => { isMobileRef.current = isMobile }, [isMobile])
-
-  const remeasure = useCallback(() => {
-    requestAnimationFrame(() => {
+  useLayoutEffect(() => {
+    // remeasure inline, sans useCallback (deps qui posaient problème)
+    // et sans rAF (closure qui pouvait rater le composant monté).
+    const doRemeasure = () => {
       const v = viewportRef.current
       const f = flowRef.current
       if (!v || !f || !f.isConnected) return
       const vw = v.clientWidth
       if (vw <= 0) return
       setViewportWidth(vw)
-      const gap = isMobileRef.current ? 0 : 80
+      const gap = isMobile ? 0 : 80
       let extent = 0
       try {
         const range = document.createRange()
@@ -167,31 +164,24 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       }
       if (extent <= 0) extent = f.scrollWidth
       const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
-      setTotalSpreads(n)
+      setTotalSpreads(prev => (prev !== n ? n : prev))
       setSpread(s => Math.min(s, n - 1))
-    })
-  }, [])
-
-  useLayoutEffect(() => {
-    remeasure()
-    // Polling court : le flow a une hauteur/largeur fixe donc ResizeObserver
-    // ne détecte pas les changements de scrollWidth quand les fonts arrivent
-    // ou que le contenu se réorganise. Un intervalle sur 4 s capture ces
-    // moments sans coût perceptible.
-    const interval = window.setInterval(remeasure, 200)
+    }
+    doRemeasure()
+    // Polling 200 ms sur 4 s pour capturer les changements de scrollWidth
+    // (fonts qui chargent, contenu qui s'installe).
+    const interval = window.setInterval(doRemeasure, 200)
     const stopTimeout = window.setTimeout(() => window.clearInterval(interval), 4000)
-    // Une remesure supplémentaire quand les fonts finissent de charger
-    // (Cormorant Garamond peut mettre 500-2000 ms selon connexion).
     const fontsReady = (document as unknown as { fonts?: { ready: Promise<unknown> } }).fonts?.ready
-    fontsReady?.then(() => remeasure()).catch(() => {})
-    const onResize = () => remeasure()
+    fontsReady?.then(() => doRemeasure()).catch(() => {})
+    const onResize = () => doRemeasure()
     window.addEventListener('resize', onResize)
     return () => {
       window.clearInterval(interval)
       window.clearTimeout(stopTimeout)
       window.removeEventListener('resize', onResize)
     }
-  }, [remeasure, verses, conclusion, bvOpts.arabic, bvOpts.phon, isMobile])
+  }, [verses, conclusion, bvOpts.arabic, bvOpts.phon, isMobile])
 
   // Navigation
   const canPrev = spread > 0
