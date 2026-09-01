@@ -174,24 +174,22 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
 
   useLayoutEffect(() => {
     remeasure()
-    const t1 = window.setTimeout(remeasure, 100)
-    const t2 = window.setTimeout(remeasure, 400)
-    const t3 = window.setTimeout(remeasure, 1200)
+    // Polling court : le flow a une hauteur/largeur fixe donc ResizeObserver
+    // ne détecte pas les changements de scrollWidth quand les fonts arrivent
+    // ou que le contenu se réorganise. Un intervalle sur 4 s capture ces
+    // moments sans coût perceptible.
+    const interval = window.setInterval(remeasure, 200)
+    const stopTimeout = window.setTimeout(() => window.clearInterval(interval), 4000)
+    // Une remesure supplémentaire quand les fonts finissent de charger
+    // (Cormorant Garamond peut mettre 500-2000 ms selon connexion).
+    const fontsReady = (document as unknown as { fonts?: { ready: Promise<unknown> } }).fonts?.ready
+    fontsReady?.then(() => remeasure()).catch(() => {})
     const onResize = () => remeasure()
     window.addEventListener('resize', onResize)
-    // ResizeObserver capture les changements de taille du flow
-    // (fonts qui chargent, contenu qui grandit, etc.).
-    let ro: ResizeObserver | null = null
-    if (typeof ResizeObserver !== 'undefined' && flowRef.current) {
-      ro = new ResizeObserver(() => remeasure())
-      ro.observe(flowRef.current)
-    }
     return () => {
-      window.clearTimeout(t1)
-      window.clearTimeout(t2)
-      window.clearTimeout(t3)
+      window.clearInterval(interval)
+      window.clearTimeout(stopTimeout)
       window.removeEventListener('resize', onResize)
-      ro?.disconnect()
     }
   }, [remeasure, verses, conclusion, bvOpts.arabic, bvOpts.phon, isMobile])
 
