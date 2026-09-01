@@ -289,7 +289,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           className="book"
           style={{
             maxWidth: isMobile ? undefined : '1180px',
-            width: isMobile ? '95vw' : '100%',
+            // Mobile : width 100% du wrap qui a padding 12px de chaque côté
+            // → centrage garanti sans risque de débordement horizontal.
+            width: '100%',
             margin: '0 auto',
             background: CREAM_PAGE,
             borderRadius: '4px',
@@ -434,7 +436,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   columnGap: isMobile ? '20px' : '80px',
                   columnFill: 'auto',
                   height: '100%',
-                  fontSize: '16px',
+                  // Mobile : police réduite ~30% (les gens zoomeront pour lire).
+                  fontSize: isMobile ? '11px' : '16px',
                   lineHeight: 1.5,
                   color: INK,
                   fontWeight: 500,
@@ -754,13 +757,15 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           width: 20px;
           text-align: right;
         }
-        /* Mobile : livre miniature 75vw, 2 pages, l'utilisateur zoome pour lire */
+        /* Mobile : livre miniature quasi plein écran, 2 pages, police -30%
+           (l'utilisateur zoome nativement avec pinch pour lire).
+           Padding horizontal 12px sur le wrap → centrage garanti. */
         @media (max-width: 900px) {
           .bv-page {
             overflow-x: hidden !important;
           }
           .bv-book-wrap {
-            padding: 8px 0 12px !important;
+            padding: 8px 12px 12px !important;
           }
           .book {
             border-radius: 3px !important;
@@ -768,6 +773,43 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
               0 8px 24px -6px rgba(60,40,10,0.28),
               0 2px 8px rgba(60,40,10,0.12),
               inset 0 0 0 1px rgba(184,150,46,0.22) !important;
+          }
+          .bv-arabic-block {
+            font-size: 15px !important;
+            margin: 3px 0 4px !important;
+          }
+          .bv-phon-block {
+            font-size: 8.5px !important;
+            margin: 1px 0 4px !important;
+          }
+          .verse-marker {
+            min-width: 17px !important;
+            height: 17px !important;
+            font-size: 10px !important;
+            padding: 0 5px !important;
+            margin-right: 6px !important;
+            vertical-align: 2px !important;
+          }
+          .conclusion-title {
+            margin-top: 15px !important;
+            margin-bottom: 10px !important;
+          }
+          .conclusion-title > div:nth-child(2) {
+            font-size: 7px !important;
+          }
+          .conclusion-title > div:nth-child(3) {
+            font-size: 12px !important;
+          }
+          .conclusion-body {
+            font-size: 10.5px !important;
+            line-height: 1.55 !important;
+          }
+          .conclusion-body h3 {
+            font-size: 10.5px !important;
+          }
+          .conclusion-body ol li::before {
+            font-size: 10px !important;
+            width: 14px !important;
           }
         }
       ` }} />
