@@ -289,7 +289,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           className="book"
           style={{
             maxWidth: isMobile ? undefined : '1180px',
-            width: isMobile ? '75vw' : '100%',
+            width: isMobile ? '95vw' : '100%',
             margin: '0 auto',
             background: CREAM_PAGE,
             borderRadius: '4px',
@@ -300,11 +300,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             `,
             position: 'relative',
             overflow: 'hidden',
-            // Desktop : hauteur fixe ; Mobile : ratio livre ouvert 1.4:1 (largeur/hauteur)
-            // → sur 75vw le livre garde la proportion d'un livre paysage ouvert.
-            ...(isMobile
-              ? { aspectRatio: '1.4 / 1' }
-              : { height: 'min(820px, calc(100vh - 110px))' }),
+            // Desktop : max 820px ; Mobile : prend la place disponible verticalement
+            // (livre en portrait, presque plein écran → l'utilisateur zoome pour lire).
+            height: isMobile
+              ? 'min(720px, calc(100vh - 160px))'
+              : 'min(820px, calc(100vh - 110px))',
             display: 'flex',
             flexDirection: 'column',
           }}
