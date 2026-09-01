@@ -195,12 +195,18 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   // spread des versets (pour éviter la page blanche qui donne l'impression que
   // la sourate est finie). « tail » = reste réparti sur N spreads conclusion.
   const { starter: conclusionStarterMd, tail: conclusionTailMds } = useMemo(
-    () => (hasConclusion
-      // Starter généreux (~1800) sur mixed spread + tail dans 1 spread.
-      // Balance équilibre chaque spread sur ses 2 colonnes.
-      ? splitConclusionForBook(conclusion!, 1800, 1)
-      : { starter: '', tail: [] as string[] }),
-    [conclusion, hasConclusion]
+    () => {
+      if (!hasConclusion) return { starter: '', tail: [] as string[] }
+      // Starter dynamique : + les versets prennent de la place (arabe/phon
+      // activés), - le starter peut être gros sur le mixed spread. Le tail
+      // reçoit le reste sur 1 ou 2 spreads selon volume.
+      let starterMax = 1800
+      let tailN = 1
+      if (bvOpts.arabic && bvOpts.phon) { starterMax = 400; tailN = 2 }
+      else if (bvOpts.arabic || bvOpts.phon) { starterMax = 700; tailN = 2 }
+      return splitConclusionForBook(conclusion!, starterMax, tailN)
+    },
+    [conclusion, hasConclusion, bvOpts.arabic, bvOpts.phon]
   )
   const conclusionStarterHtml = useMemo(() => parseConclusionMarkdown(conclusionStarterMd), [conclusionStarterMd])
   const conclusionTailHtmls = useMemo(() => conclusionTailMds.map(md => parseConclusionMarkdown(md)), [conclusionTailMds])
