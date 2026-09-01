@@ -438,6 +438,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       textAlign: 'left',
                       overflow: 'hidden',
+                      // Petit padding interne pour aérer le texte du bord
+                      // de la page — le book-body a déjà 12 px mais on ajoute
+                      // 4 px de sécurité contre les débordements subpixel.
+                      paddingRight: isMobile ? '4px' : '0',
+                      boxSizing: 'border-box',
                     }}
                   >
                     {pageIndices.map(i => (
