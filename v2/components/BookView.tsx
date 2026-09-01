@@ -436,8 +436,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   // Desktop : 2 colonnes par spread (livre ouvert classique).
                   ...(isMobile
                     ? {
+                        // column-width n'accepte PAS les % (spec CSS) → il faut
+                        // une longueur en px. Fallback 100vw le temps que le
+                        // useLayoutEffect mesure la vraie viewport.
                         columnCount: 'auto' as const,
-                        columnWidth: viewportWidth > 0 ? `${viewportWidth}px` : '100%',
+                        columnWidth: viewportWidth > 0 ? `${viewportWidth}px` : '100vw',
                         columnGap: '0',
                       }
                     : {
