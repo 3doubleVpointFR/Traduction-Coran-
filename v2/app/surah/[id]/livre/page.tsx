@@ -59,7 +59,7 @@ export default async function SurahLivrePage({ params }: Props) {
   const allVerses = versesRes.data ?? []
   const allVerseIds = allVerses.map(v => v.id)
 
-  // Fetch translations + words (phonétique) en chunks parallèles
+  // Fetch translations + segments (phon canonique du pipeline) + words fallback
   const chunks: number[][] = []
   for (let i = 0; i < allVerseIds.length; i += 100) chunks.push(allVerseIds.slice(i, i + 100))
   const [tradResults, wordsResults] = await Promise.all([
@@ -67,7 +67,7 @@ export default async function SurahLivrePage({ params }: Props) {
       chunks.map(chunk =>
         db
           .from('verse_analyses')
-          .select('verse_id, translation_arab')
+          .select('verse_id, translation_arab, segments')
           .in('verse_id', chunk)
           .not('translation_arab', 'is', null)
       )
@@ -84,17 +84,27 @@ export default async function SurahLivrePage({ params }: Props) {
     ),
   ])
   const tradByVerseId = new Map<number, string>()
+  const phonByVerseId = new Map<number, string>()
+  // Source primaire : segments[].phon (phon canonique du pipeline, correcte)
   for (const { data: rows } of tradResults) {
-    for (const r of (rows ?? []) as Array<{ verse_id: number; translation_arab: string }>) {
+    for (const r of (rows ?? []) as Array<{ verse_id: number; translation_arab: string; segments: Array<{ phon?: string }> | null }>) {
       if (!tradByVerseId.has(r.verse_id) && r.translation_arab) tradByVerseId.set(r.verse_id, r.translation_arab)
+      if (!phonByVerseId.has(r.verse_id) && Array.isArray(r.segments) && r.segments.length > 0) {
+        const phon = r.segments
+          .map(s => (s && typeof s.phon === 'string' ? s.phon : ''))
+          .filter(Boolean)
+          .join(' ')
+          .trim()
+        if (phon) phonByVerseId.set(r.verse_id, phon)
+      }
     }
   }
-  // Aggreg phon par verse_id = concat des transliteration des mots
-  const phonByVerseId = new Map<number, string>()
+  // Source fallback : words.transliteration en Buckwalter (versets sans segments)
   const phonBuckets = new Map<number, Array<{ position: number; transliteration: string }>>()
   for (const { data: rows } of wordsResults) {
     for (const w of (rows ?? []) as Array<{ verse_id: number; position: number; transliteration: string }>) {
       if (!w.transliteration) continue
+      if (phonByVerseId.has(w.verse_id)) continue // déjà couvert par segments
       if (!phonBuckets.has(w.verse_id)) phonBuckets.set(w.verse_id, [])
       phonBuckets.get(w.verse_id)!.push(w)
     }

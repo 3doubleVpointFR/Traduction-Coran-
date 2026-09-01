@@ -604,11 +604,12 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         }
         .bv-phon-block {
           display: none;
-          text-align: left;
+          text-align: center;
           font-size: 12px;
           line-height: 1.4;
           color: ${MUTED};
-          margin: 2px 0 4px;
+          margin: 2px 0 6px;
+          padding: 0 6px;
           font-style: italic;
           letter-spacing: 0.02em;
         }
