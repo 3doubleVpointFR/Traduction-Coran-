@@ -459,9 +459,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     }}
                   >
                     {pageIndices.map(i => (
-                      <React.Fragment key={i}>
+                      // Wrapper div IDENTIQUE au measurer → même margin
+                      // collapse, mêmes hauteurs mesurées = hauteurs réelles.
+                      <div key={i}>
                         {renderItem(items[i], surah, pageForVerse, isBaraah)}
-                      </React.Fragment>
+                      </div>
                     ))}
                   </div>
                 ))}
