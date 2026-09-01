@@ -943,10 +943,46 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             )}
           </div>
 
-          {/* Invite « Conclusion à suivre » — RETIRÉE : remplacée par le début de
-              la conclusion directement affiché sur la page droite du dernier spread
-              des versets (voir bloc mixed-spread ci-dessus). */}
-          {false && hasConclusion && !isConclusionSpread && spread === spreadsForVerses - 1 && (
+          {/* Invite « Suite → » — sur les verse spreads intermédiaires (arabe
+              activé, sourate qui déborde sur plusieurs spreads), quand il reste
+              d'autres pages (versets suivants et/ou conclusion). Signal visuel
+              clair au lecteur qu'il ne faut PAS s'arrêter là. */}
+          {spread < totalSpreads - 1 && !isConclusionSpread && !isLastVerseSpreadWithConclusion && (
+            <button
+              type="button"
+              onClick={goNext}
+              className="bv-conclusion-invite"
+              aria-label="Page suivante"
+              style={{
+                position: 'relative',
+                zIndex: 2,
+                margin: '0 auto 6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '6px 16px',
+                border: `1px solid ${LINE_STRONG}`,
+                borderRadius: '999px',
+                background: 'rgba(255,251,240,0.9)',
+                color: GOLD_DEEP,
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '13px',
+                fontStyle: 'italic',
+                letterSpacing: '0.12em',
+                cursor: 'pointer',
+                boxShadow: '0 2px 6px rgba(120,90,30,0.15), inset 0 1px 0 rgba(255,255,255,0.4)',
+                transition: 'background 200ms ease, transform 200ms ease, box-shadow 200ms ease',
+                alignSelf: 'center',
+              }}
+            >
+              <span aria-hidden style={{ color: GOLD }}>✦</span>
+              <span>{hasConclusion && spread === spreadsForVerses - 2 ? 'Suite : derniers versets + conclusion' : hasConclusion ? 'Suite : versets et conclusion' : 'Suite'}</span>
+              <span aria-hidden style={{ fontSize: '15px' }}>→</span>
+            </button>
+          )}
+
+          {/* [ancienne pill inutile — kept as no-op guard] */}
+          {false && (
             <button
               type="button"
               onClick={goNext}
