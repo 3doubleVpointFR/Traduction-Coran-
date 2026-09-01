@@ -802,11 +802,13 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           }
           /* Chaque verset reste intact (pas fragmenté entre colonnes) → si
              pas assez de place dans la colonne courante, il passe entier à
-             la suivante. Évite qu'un verset (avec ses blocs arabe+phon+fr)
-             soit cropé ou saute d'une colonne. */
+             la suivante. Sur inline (span), break-inside est inefficace —
+             il faut passer en display: block pour que la règle s'applique. */
           .verse-inline {
+            display: block !important;
             break-inside: avoid !important;
             page-break-inside: avoid !important;
+            margin-bottom: 6px !important;
           }
           .bv-arabic-block {
             font-size: 15px !important;
