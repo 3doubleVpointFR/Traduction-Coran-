@@ -621,9 +621,15 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           transform: translateY(-1px);
         }
         /* Conclusion styles — chaque bloc est atomique dans notre pagination */
+        .bv-conclusion-block {
+          overflow: hidden;
+          hyphens: auto;
+          -webkit-hyphens: auto;
+        }
         .bv-conclusion-block, .bv-conclusion-block * {
           overflow-wrap: break-word;
           word-wrap: break-word;
+          word-break: break-word;
           max-width: 100%;
           box-sizing: border-box;
         }
