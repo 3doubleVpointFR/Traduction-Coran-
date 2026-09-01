@@ -414,6 +414,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 ref={flowRef}
                 className="bv-flow"
                 style={{
+                  width: '100%',
                   columnCount: isMobile ? 1 : 2,
                   columnGap: isMobile ? '0' : '80px',
                   columnFill: 'auto',
@@ -578,16 +579,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           margin-bottom: 10px;
           display: block;
         }
-        .verse-inline.drop-cap::first-letter {
-          font-size: 3em;
-          font-weight: 600;
-          float: left;
-          line-height: 0.9;
-          margin: 4px 8px 0 0;
-          color: ${GOLD_DEEP};
-          font-family: 'Cormorant Garamond', serif;
-          text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-        }
+        /* drop-cap retiré : sur les versets arabes, le float:left sur la
+           première lettre débordait hors du livre. */
         .bv-arabic-block {
           display: none;
           text-align: center;
@@ -682,21 +675,14 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .conclusion-body p {
           margin: 0 0 12px 0;
           text-indent: 0;
-          /* Un paragraphe reste entier — pas de coupure au milieu qui rend
-             la lecture bizarre. Si trop long pour la col courante, il saute
-             en entier à la col suivante. */
-          break-inside: avoid;
-          page-break-inside: avoid;
+          /* orphans/widows minimisent les fins de paragraphe en 1-2 lignes
+             seules en haut de col — meilleur compromis que break-inside qui
+             cassait les 2 colonnes. */
+          orphans: 3;
+          widows: 3;
         }
-        .conclusion-body p:first-of-type::first-letter {
-          font-size: 2.2em;
-          font-weight: 600;
-          float: left;
-          line-height: 0.9;
-          margin: 4px 6px 0 0;
-          color: ${GOLD_DEEP};
-          font-family: 'Cormorant Garamond', serif;
-        }
+        /* drop-cap conclusion retiré aussi pour cohérence + éviter
+           débordements imprévisibles en multi-column. */
         .conclusion-body strong {
           color: ${GOLD_DEEP};
           font-weight: 700;
