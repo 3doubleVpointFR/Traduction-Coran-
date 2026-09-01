@@ -141,37 +141,31 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const [viewportWidth, setViewportWidth] = useState(0)
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const flowRef = useRef<HTMLDivElement | null>(null)
-  const endMarkerRef = useRef<HTMLSpanElement | null>(null)
 
-  // Mesure & recalcul du nombre de spreads.
-  // On utilise Range.getBoundingClientRect() sur tout le contenu du flow :
-  // en multi-column c'est l'union de tous les rects fragmentés, donc son
-  // right = position du dernier caractère visible (indépendant du padding
-  // phantom que scrollWidth pouvait inclure).
+  // Mesure & recalcul du nombre de spreads. Refs lues DANS le rAF pour
+  // éviter les closures stale (ancien flow détaché après re-render).
+  // Range.getBoundingClientRect() sur le contenu du flow donne l'union
+  // des rects fragmentés en multi-column → right = position du dernier
+  // caractère visible, indépendant de tout padding phantom du scrollWidth.
   const remeasure = useCallback(() => {
-    const v = viewportRef.current
-    const f = flowRef.current
-    if (!v || !f) return
-    const vw = v.clientWidth
-    if (vw <= 0) return
-    setViewportWidth(vw)
-    const gap = isMobile ? 20 : 80
     requestAnimationFrame(() => {
-      if (!f.isConnected) return
+      const v = viewportRef.current
+      const f = flowRef.current
+      if (!v || !f || !f.isConnected) return
+      const vw = v.clientWidth
+      if (vw <= 0) return
+      setViewportWidth(vw)
+      const gap = isMobile ? 20 : 80
       let extent = 0
       try {
         const range = document.createRange()
         range.selectNodeContents(f)
         const flowLeft = f.getBoundingClientRect().left
         extent = range.getBoundingClientRect().right - flowLeft
-        range.detach?.()
       } catch {
-        extent = f.scrollWidth
+        extent = 0
       }
       if (extent <= 0) extent = f.scrollWidth
-      // Formule : spread s montre [s*(vw+gap), s*(vw+gap)+vw]. Contenu visible
-      // jusqu'à extent ⇒ N = ceil((extent - tol) / (vw + gap)) avec tolérance
-      // pour absorber les 1-5 px d'imprécision browser sans créer un spread vide.
       const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
@@ -504,21 +498,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     />
                   </>
                 )}
-                {/* Sentinel de fin — sert à mesurer l'extent réel du contenu
-                    (voir remeasure). Inline, invisible, ZWSP pour être un
-                    fragment mesurable par getBoundingClientRect. */}
-                <span
-                  ref={endMarkerRef}
-                  aria-hidden
-                  style={{
-                    display: 'inline',
-                    fontSize: 0,
-                    lineHeight: 0,
-                    color: 'transparent',
-                  }}
-                >
-                  {'​'}
-                </span>
               </div>
             </div>
           </div>
@@ -807,6 +786,15 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           }
           .book > header + div .font-arabic {
             font-size: 20px !important;
+          }
+          /* Colonnes étroites : justify étirait les espaces. On passe à
+             gauche pour éviter les gros trous entre les mots. */
+          .bv-flow {
+            text-align: left !important;
+          }
+          .conclusion-body p {
+            orphans: 1 !important;
+            widows: 1 !important;
           }
           .bv-arabic-block {
             font-size: 15px !important;
