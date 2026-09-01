@@ -155,7 +155,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       const vw = v.clientWidth
       if (vw <= 0) return
       setViewportWidth(vw)
-      const gap = isMobileRef.current ? 20 : 80
+      const gap = isMobileRef.current ? 0 : 80
       let extent = 0
       try {
         const range = document.createRange()
@@ -306,27 +306,29 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             flexDirection: 'column',
           }}
         >
-          {/* Pliure centrale douce — visible en desktop ET mobile (2 cols partout) */}
-          <div
-            aria-hidden
-            style={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: isMobile ? '20px' : '60px',
-              background: `linear-gradient(90deg,
-                rgba(120,90,30,0) 0%,
-                rgba(120,90,30,0.06) 40%,
-                rgba(120,90,30,0.14) 50%,
-                rgba(120,90,30,0.06) 60%,
-                rgba(120,90,30,0) 100%
-              )`,
-              pointerEvents: 'none',
-              zIndex: 1,
-            }}
-          />
+          {/* Pliure centrale douce — desktop uniquement (mobile = 1 col par spread) */}
+          {!isMobile && (
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '60px',
+                background: `linear-gradient(90deg,
+                  rgba(120,90,30,0) 0%,
+                  rgba(120,90,30,0.06) 40%,
+                  rgba(120,90,30,0.14) 50%,
+                  rgba(120,90,30,0.06) 60%,
+                  rgba(120,90,30,0) 100%
+                )`,
+                pointerEvents: 'none',
+                zIndex: 1,
+              }}
+            />
+          )}
 
 
           {/* HEADER SOURATE — uniquement sur spread 0 */}
@@ -427,11 +429,23 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 className="bv-flow"
                 style={{
                   width: '100%',
-                  columnCount: 2,
-                  columnGap: isMobile ? '20px' : '80px',
+                  // Mobile : 1 colonne physique par spread (columnWidth = 100 %
+                  // du viewport). Fragmentation multi-column native de Chrome
+                  // mobile produisait un rendu chaotique avec colonnes étroites
+                  // (contenu apparaissant dans un ordre non-linéaire).
+                  // Desktop : 2 colonnes par spread (livre ouvert classique).
+                  ...(isMobile
+                    ? {
+                        columnCount: 'auto' as const,
+                        columnWidth: viewportWidth > 0 ? `${viewportWidth}px` : '100%',
+                        columnGap: '0',
+                      }
+                    : {
+                        columnCount: 2 as const,
+                        columnGap: '80px',
+                      }),
                   columnFill: 'auto',
                   height: '100%',
-                  // Mobile : police réduite ~30% (les gens zoomeront pour lire).
                   fontSize: isMobile ? '11px' : '16px',
                   lineHeight: 1.5,
                   color: INK,
@@ -440,11 +454,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   textAlign: 'justify',
                   hyphens: 'auto',
-                  // La largeur d'un « spread » = viewport width + column-gap
-                  // (car le browser insère un gap entre chaque paire de
-                  // colonnes, pas seulement AU SEIN d'un spread).
                   transform: viewportWidth > 0
-                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 20 : 80))}px)`
+                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 0 : 80))}px)`
                     : 'none',
                   // Ease-out expo — démarrage rapide puis ralentissement doux
                   // (feeling de vraie page qui tourne, s'arrête en douceur).
