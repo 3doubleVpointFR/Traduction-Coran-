@@ -226,10 +226,19 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     fontsReady?.then(() => doMeasure()).catch(() => {})
     const onResize = () => doMeasure()
     window.addEventListener('resize', onResize)
+    // ResizeObserver sur le book-body : capture tout changement de taille
+    // (DevTools ouvert/fermé, split screen, etc.) que window resize peut
+    // rater.
+    let ro: ResizeObserver | null = null
+    if (typeof ResizeObserver !== 'undefined' && bookBodyRef.current) {
+      ro = new ResizeObserver(() => doMeasure())
+      ro.observe(bookBodyRef.current)
+    }
     return () => {
       window.clearInterval(interval)
       window.clearTimeout(stopTimeout)
       window.removeEventListener('resize', onResize)
+      ro?.disconnect()
     }
   }, [items, isMobile, bvOpts.arabic, bvOpts.phon, pagesPerSpread, gap])
 
