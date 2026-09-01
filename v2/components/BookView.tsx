@@ -157,8 +157,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     requestAnimationFrame(() => {
       if (!f.isConnected) return
       const sw = f.scrollWidth
-      // Le dernier spread n'a pas de gap trailing — d'où le +gap dans le num
-      const n = Math.max(1, Math.ceil((sw + gap) / (vw + gap)))
+      // Tolérance de 50px pour absorber les imprécisions du browser
+      // (petits débordements de 1-5 px qui créaient un spread vide).
+      const n = Math.max(1, Math.ceil((sw - 50) / (vw + gap)))
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
     })
