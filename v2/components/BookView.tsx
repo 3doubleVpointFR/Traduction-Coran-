@@ -612,6 +612,12 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           transform: translateY(-1px);
         }
         /* Conclusion styles — chaque bloc est atomique dans notre pagination */
+        .bv-conclusion-block, .bv-conclusion-block * {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          max-width: 100%;
+          box-sizing: border-box;
+        }
         .bv-conclusion-block h3 {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-size: 15px;
