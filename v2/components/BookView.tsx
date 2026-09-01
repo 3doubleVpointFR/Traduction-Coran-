@@ -156,7 +156,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     const vw = v.clientWidth
     if (vw <= 0) return
     setViewportWidth(vw)
-    const gap = isMobile ? 0 : 80
+    const gap = isMobile ? 20 : 80
     requestAnimationFrame(() => {
       if (!f.isConnected) return
       const marker = endMarkerRef.current
@@ -228,9 +228,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   // Lien vue analyse — vers le premier verset (contexte principal)
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
 
-  // Hauteur du book (garde le format existant : min 820px desktop, plus grand mobile)
-  const bookHeight = isMobile ? 900 : 820
-
   return (
     <div
       className="bv-page"
@@ -291,8 +288,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         <div
           className="book"
           style={{
-            maxWidth: '1180px',
-            width: '100%',
+            maxWidth: isMobile ? undefined : '1180px',
+            width: isMobile ? '75vw' : '100%',
             margin: '0 auto',
             background: CREAM_PAGE,
             borderRadius: '4px',
@@ -303,34 +300,37 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             `,
             position: 'relative',
             overflow: 'hidden',
-            height: `min(${bookHeight}px, calc(100vh - 110px))`,
+            // Desktop : hauteur fixe ; Mobile : ratio livre ouvert 1.4:1 (largeur/hauteur)
+            // → sur 75vw le livre garde la proportion d'un livre paysage ouvert.
+            ...(isMobile
+              ? { aspectRatio: '1.4 / 1' }
+              : { height: 'min(820px, calc(100vh - 110px))' }),
             display: 'flex',
             flexDirection: 'column',
           }}
         >
-          {/* Pliure centrale douce (desktop 2 cols uniquement) */}
-          {!isMobile && (
-            <div
-              aria-hidden
-              style={{
-                position: 'absolute',
-                top: 0,
-                bottom: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '60px',
-                background: `linear-gradient(90deg,
-                  rgba(120,90,30,0) 0%,
-                  rgba(120,90,30,0.06) 40%,
-                  rgba(120,90,30,0.14) 50%,
-                  rgba(120,90,30,0.06) 60%,
-                  rgba(120,90,30,0) 100%
-                )`,
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}
-            />
-          )}
+          {/* Pliure centrale douce — visible en desktop ET mobile (2 cols partout) */}
+          <div
+            aria-hidden
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: isMobile ? '20px' : '60px',
+              background: `linear-gradient(90deg,
+                rgba(120,90,30,0) 0%,
+                rgba(120,90,30,0.06) 40%,
+                rgba(120,90,30,0.14) 50%,
+                rgba(120,90,30,0.06) 60%,
+                rgba(120,90,30,0) 100%
+              )`,
+              pointerEvents: 'none',
+              zIndex: 1,
+            }}
+          />
+
 
           {/* HEADER SOURATE — uniquement sur spread 0 */}
           {spread === 0 && (
@@ -430,8 +430,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 className="bv-flow"
                 style={{
                   width: '100%',
-                  columnCount: isMobile ? 1 : 2,
-                  columnGap: isMobile ? '0' : '80px',
+                  columnCount: 2,
+                  columnGap: isMobile ? '20px' : '80px',
                   columnFill: 'auto',
                   height: '100%',
                   fontSize: '16px',
@@ -446,7 +446,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   // (car le browser insère un gap entre chaque paire de
                   // colonnes, pas seulement AU SEIN d'un spread).
                   transform: viewportWidth > 0
-                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 0 : 80))}px)`
+                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 20 : 80))}px)`
                     : 'none',
                   // Ease-out expo — démarrage rapide puis ralentissement doux
                   // (feeling de vraie page qui tourne, s'arrête en douceur).
@@ -754,20 +754,20 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           width: 20px;
           text-align: right;
         }
-        /* Mobile : 1 colonne, book plein largeur */
+        /* Mobile : livre miniature 75vw, 2 pages, l'utilisateur zoome pour lire */
         @media (max-width: 900px) {
           .bv-page {
             overflow-x: hidden !important;
           }
           .bv-book-wrap {
-            padding: 6px 10px 12px !important;
+            padding: 8px 0 12px !important;
           }
           .book {
-            border-radius: 6px !important;
-            box-shadow: 0 2px 14px rgba(120,90,30,0.18) !important;
-          }
-          .book-body {
-            padding: 20px 20px 16px !important;
+            border-radius: 3px !important;
+            box-shadow:
+              0 8px 24px -6px rgba(60,40,10,0.28),
+              0 2px 8px rgba(60,40,10,0.12),
+              inset 0 0 0 1px rgba(184,150,46,0.22) !important;
           }
         }
       ` }} />
