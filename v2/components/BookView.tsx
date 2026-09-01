@@ -823,7 +823,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   height: '100%',
                   columnCount: 2,
                   columnGap: '80px',
-                  columnFill: 'balance',
+                  columnFill: 'auto',
                   textAlign: 'justify',
                   hyphens: 'auto',
                   fontSize: '15px',
