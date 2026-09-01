@@ -41,6 +41,13 @@ export default async function SurahLivrePage({ params }: Props) {
     db.from('verses').select('id, verse_num, arabic_text').eq('surah_id', surahId).order('verse_num'),
   ])
 
+  // Conclusion de la sourate — stockée sur le dernier verset via verse_analyses.surah_conclusion
+  const lastVerseId = (versesRes.data ?? []).slice(-1)[0]?.id
+  const { data: conclusionRow } = lastVerseId
+    ? await db.from('verse_analyses').select('surah_conclusion').eq('verse_id', lastVerseId).maybeSingle()
+    : { data: null as null | { surah_conclusion: string | null } }
+  const surahConclusion = conclusionRow?.surah_conclusion ?? null
+
   if (!surahRes.data) {
     return (
       <div className="text-center py-20">
@@ -122,5 +129,5 @@ export default async function SurahLivrePage({ params }: Props) {
     )
   }
 
-  return <BookView surah={surahRes.data} verses={readableVerses} pageSize={PAGE_SIZE} />
+  return <BookView surah={surahRes.data} verses={readableVerses} pageSize={PAGE_SIZE} conclusion={surahConclusion} />
 }

@@ -64,6 +64,118 @@ interface Props {
   surah: Surah
   verses: ReadVerse[]
   pageSize: number
+  conclusion?: string | null
+}
+
+// Découpe la conclusion en sections (une par header **X** en ligne isolée).
+// Le dernier bloc sans header (paragraphe final « Al-Fatiha… ») compte comme
+// une section à part.
+function splitIntoSections(md: string): string[] {
+  const rawSections: string[] = []
+  const lines = md.split('\n')
+  let buf: string[] = []
+  const flush = () => { if (buf.length) { rawSections.push(buf.join('\n').trim()); buf = [] } }
+  for (const raw of lines) {
+    const line = raw.trim()
+    const isHeader = /^\*\*(.+)\*\*$/.test(line)
+    if (isHeader) { flush(); buf.push(raw); continue }
+    buf.push(raw)
+  }
+  flush()
+  return rawSections.filter(s => s.length > 0)
+}
+
+// Découpe la conclusion en 2 morceaux : un « starter » compact qui tient dans
+// une seule colonne (à droite du dernier verse spread) + le reste, réparti sur
+// N spreads conclusion multi-column. Le starter prend autant de sections que
+// possible sans dépasser `starterMaxChars`.
+function splitConclusionForBook(md: string, starterMaxChars = 1100, tailSpreads = 1): { starter: string; tail: string[] } {
+  const sections = splitIntoSections(md)
+  if (sections.length === 0) return { starter: '', tail: [] }
+  const starterSections: string[] = []
+  let starterLen = 0
+  let i = 0
+  // Toujours prendre au moins 1 section, tant qu'on ne dépasse pas le seuil
+  while (i < sections.length) {
+    const sec = sections[i]
+    if (starterSections.length > 0 && starterLen + sec.length > starterMaxChars) break
+    starterSections.push(sec)
+    starterLen += sec.length
+    i++
+  }
+  const remaining = sections.slice(i)
+  if (remaining.length === 0) return { starter: starterSections.join('\n\n'), tail: [] }
+
+  // Répartir le reste en `tailSpreads` groupes équilibrés
+  const total = remaining.reduce((s, x) => s + x.length, 0)
+  const perTail = Math.max(1, total / tailSpreads)
+  const tailGroups: string[][] = Array.from({ length: tailSpreads }, () => [])
+  let curIdx = 0
+  let curLen = 0
+  for (const sec of remaining) {
+    if (curLen >= perTail && curIdx < tailSpreads - 1) { curIdx++; curLen = 0 }
+    tailGroups[curIdx].push(sec)
+    curLen += sec.length
+  }
+  return { starter: starterSections.join('\n\n'), tail: tailGroups.filter(g => g.length > 0).map(g => g.join('\n\n')) }
+}
+
+// Parseur markdown minimal pour la conclusion de sourate — même vocabulaire
+// que VersePanel : gras **X**, listes numérotées "1. **X** — ", paragraphes
+// séparés par \n\n, italique *X* pour marqueurs. Renvoie du HTML sûr (le
+// texte source vient de la BDD que nous maîtrisons).
+function parseConclusionMarkdown(md: string): string {
+  const lines = md.split('\n')
+  const blocks: string[] = []
+  let currentList: string[] | null = null
+  let paraBuffer: string[] = []
+  const flushPara = () => {
+    if (paraBuffer.length) {
+      const txt = paraBuffer.join(' ').trim()
+      if (txt) blocks.push(`<p>${formatInline(txt)}</p>`)
+      paraBuffer = []
+    }
+  }
+  const flushList = () => {
+    if (currentList && currentList.length) {
+      blocks.push(`<ol>${currentList.map(li => `<li>${formatInline(li)}</li>`).join('')}</ol>`)
+      currentList = null
+    }
+  }
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (!line) {
+      flushPara()
+      flushList()
+      continue
+    }
+    // Header (paragraphe qui est en entier **xxx**)
+    const headerMatch = line.match(/^\*\*(.+)\*\*$/)
+    if (headerMatch) {
+      flushPara(); flushList()
+      blocks.push(`<h3>${formatInline(headerMatch[1])}</h3>`)
+      continue
+    }
+    // Liste numérotée
+    const listMatch = line.match(/^(\d+)\.\s+(.+)$/)
+    if (listMatch) {
+      flushPara()
+      if (!currentList) currentList = []
+      currentList.push(listMatch[2])
+      continue
+    }
+    // Sinon, ligne de paragraphe (accumule)
+    flushList()
+    paraBuffer.push(line)
+  }
+  flushPara(); flushList()
+  return blocks.join('\n')
+}
+function formatInline(txt: string): string {
+  // **gras** puis *italique* (attention : *X* seul, pas ** — on filtre après **)
+  return txt
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*][^*]*?)\*(?!\*)/g, '$1<em>$2</em>')
 }
 
 // Palette identique au site
@@ -77,7 +189,19 @@ const CREAM_PAGE = '#FFFBF0'    // page du livre (crème très clair)
 const LINE = 'rgba(184,150,46,0.20)'
 const LINE_STRONG = 'rgba(184,150,46,0.42)'
 
-export default function BookView({ surah, verses, pageSize }: Props) {
+export default function BookView({ surah, verses, pageSize, conclusion }: Props) {
+  const hasConclusion = !!(conclusion && conclusion.trim())
+  // Découpe : « starter » = début de la conclusion, affiché à droite du dernier
+  // spread des versets (pour éviter la page blanche qui donne l'impression que
+  // la sourate est finie). « tail » = reste réparti sur N spreads conclusion.
+  const { starter: conclusionStarterMd, tail: conclusionTailMds } = useMemo(
+    () => (hasConclusion
+      ? splitConclusionForBook(conclusion!, 1100, 1)
+      : { starter: '', tail: [] as string[] }),
+    [conclusion, hasConclusion]
+  )
+  const conclusionStarterHtml = useMemo(() => parseConclusionMarkdown(conclusionStarterMd), [conclusionStarterMd])
+  const conclusionTailHtmls = useMemo(() => conclusionTailMds.map(md => parseConclusionMarkdown(md)), [conclusionTailMds])
   const pageForVerse = (verseNum: number) => Math.ceil(verseNum / pageSize)
   const isFatiha = surah.id === 1
   const isBaraah = surah.id === 9
@@ -246,8 +370,14 @@ export default function BookView({ surah, verses, pageSize }: Props) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bvOpts.arabic, bvOpts.phon, verses.length])
-  const totalSpreads = counts.length
+  const spreadsForVerses = counts.length
+  const totalSpreads = spreadsForVerses + (hasConclusion ? conclusionTailHtmls.length : 0)
   const [spread, setSpread] = useState(0)
+  const isConclusionSpread = hasConclusion && spread >= spreadsForVerses
+  const conclusionSpreadIdx = isConclusionSpread ? spread - spreadsForVerses : -1
+  // Dernier spread des versets — quand une conclusion existe, on y insère le
+  // « starter » sur la page de droite (layout grid 2 cols au lieu de multi-col).
+  const isLastVerseSpreadWithConclusion = hasConclusion && !isConclusionSpread && spread === spreadsForVerses - 1
   const [direction, setDirection] = useState<null | 'next' | 'prev'>(null)
   const transitionLockRef = useRef(false)
 
@@ -350,9 +480,12 @@ export default function BookView({ surah, verses, pageSize }: Props) {
   }, [spread, counts])
 
   // Position réelle : somme des versets des spreads précédents
-  const startIdx = counts.slice(0, spread).reduce((s, n) => s + n, 0)
-  const currentCount = counts[spread] ?? 0
-  const spreadVerses = verses.slice(startIdx, startIdx + currentCount)
+  // Sur le spread conclusion (dernier virtuel), on ne calcule pas de versets.
+  const startIdx = isConclusionSpread
+    ? counts.reduce((s, n) => s + n, 0)
+    : counts.slice(0, spread).reduce((s, n) => s + n, 0)
+  const currentCount = isConclusionSpread ? 0 : (counts[spread] ?? 0)
+  const spreadVerses = isConclusionSpread ? [] : verses.slice(startIdx, startIdx + currentCount)
 
   // Chaque fois qu'un spread change (via nav), on mémorise le 1er verset visible
   useEffect(() => {
@@ -362,10 +495,10 @@ export default function BookView({ surah, verses, pageSize }: Props) {
 
   // Garde-fou : si spread dépasse le total (après reset counts), clamp
   useEffect(() => {
-    if (spread >= counts.length) {
-      setSpread(Math.max(0, counts.length - 1))
+    if (spread >= totalSpreads) {
+      setSpread(Math.max(0, totalSpreads - 1))
     }
-  }, [counts, spread])
+  }, [totalSpreads, spread])
   const showHeaderIntro = spread === 0
   // Avec CSS multi-column, plus de split JS : le browser gère.
   // Ces variables restent pour compat avec le footer (numéros de versets range).
@@ -657,40 +790,195 @@ export default function BookView({ surah, verses, pageSize }: Props) {
               overflow: 'hidden',
             }}
           >
-            <div
-              key={`spread-${spread}`}
-              ref={spreadContentRef}
-              className={`spread-content page-side ${direction ? `anim-${direction}` : ''}`}
+            {isConclusionSpread ? (
+              /* ═════ SPREAD CONCLUSION — mise en page dédiée ═════ */
+              <div
+                key={`spread-${spread}`}
+                className={`spread-content conclusion-spread ${direction ? `anim-${direction}` : ''}`}
+                style={{
+                  height: '100%',
+                  columnCount: 2,
+                  columnGap: '80px',
+                  columnFill: 'balance',
+                  textAlign: 'justify',
+                  hyphens: 'auto',
+                  fontSize: '15px',
+                  lineHeight: 1.6,
+                  color: INK,
+                  fontWeight: 500,
+                  letterSpacing: '0.005em',
+                  overflow: 'hidden',
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                }}
+              >
+                {/* Titre discret « CONCLUSION · SUITE » — le grand titre a déjà
+                    été affiché sur la page droite du dernier verse spread (mixed). */}
+                <div
+                  style={{
+                    breakInside: 'avoid',
+                    breakAfter: 'avoid',
+                    textAlign: 'center',
+                    marginBottom: '14px',
+                    fontSize: '10px',
+                    letterSpacing: '0.32em',
+                    textTransform: 'uppercase',
+                    color: GOLD,
+                    fontWeight: 600,
+                    fontStyle: 'italic',
+                    opacity: 0.85,
+                  }}
+                >
+                  Conclusion · suite
+                </div>
+
+                {/* Corps de la conclusion — Markdown parsé, spread courant */}
+                <div
+                  className="conclusion-body"
+                  dangerouslySetInnerHTML={{ __html: conclusionTailHtmls[conclusionSpreadIdx] || '' }}
+                />
+              </div>
+            ) : isLastVerseSpreadWithConclusion ? (
+              /* ═════ SPREAD MIXTE — versets à gauche, DÉBUT de conclusion à droite ═════
+                  Le lecteur voit la conclusion commencer à droite → il sait qu'il faut tourner. */
+              <div
+                key={`spread-${spread}`}
+                ref={spreadContentRef}
+                className={`spread-content mixed-spread ${direction ? `anim-${direction}` : ''}`}
+                style={{
+                  height: '100%',
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '80px',
+                  color: INK,
+                  fontWeight: 500,
+                  letterSpacing: '0.005em',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* Colonne gauche : versets (single column) */}
+                <div
+                  style={{
+                    overflow: 'hidden',
+                    textAlign: 'justify',
+                    hyphens: 'auto',
+                    fontSize: '16px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {spreadVerses.map((v, i) => (
+                    <VerseParagraph
+                      key={`v-${v.id}`}
+                      verse={v}
+                      surahId={surah.id}
+                      pageForVerse={pageForVerse}
+                      isFirst={spread === 0 && i === 0}
+                    />
+                  ))}
+                </div>
+
+                {/* Colonne droite : titre CONCLUSION + starter (single column) */}
+                <div
+                  style={{
+                    overflow: 'hidden',
+                    textAlign: 'justify',
+                    hyphens: 'auto',
+                    fontSize: '15px',
+                    lineHeight: 1.55,
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  }}
+                >
+                  <div style={{ textAlign: 'center', marginBottom: '14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
+                      <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+                      <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
+                      <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
+                    </div>
+                    <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+                      Conclusion
+                    </div>
+                    <div style={{ fontSize: '17px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
+                      {surah.name_latin} · {surah.name_fr}
+                    </div>
+                  </div>
+                  <div
+                    className="conclusion-body"
+                    dangerouslySetInnerHTML={{ __html: conclusionStarterHtml }}
+                  />
+                </div>
+              </div>
+            ) : (
+              <div
+                key={`spread-${spread}`}
+                ref={spreadContentRef}
+                className={`spread-content page-side ${direction ? `anim-${direction}` : ''}`}
+                style={{
+                  height: '100%',
+                  columnCount: 2,
+                  columnGap: '80px',
+                  columnFill: 'auto',
+                  textAlign: 'justify',
+                  hyphens: 'auto',
+                  fontSize: '16px',
+                  lineHeight: 1.5,
+                  color: INK,
+                  fontWeight: 500,
+                  letterSpacing: '0.005em',
+                  overflow: 'hidden',
+                }}
+              >
+                {spreadVerses.length > 0 ? (
+                  spreadVerses.map((v, i) => (
+                    <VerseParagraph
+                      key={`v-${v.id}`}
+                      verse={v}
+                      surahId={surah.id}
+                      pageForVerse={pageForVerse}
+                      isFirst={spread === 0 && i === 0}
+                    />
+                  ))
+                ) : (
+                  <div className="book-empty-slot">Fin de la sourate</div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Invite « Conclusion à suivre » — RETIRÉE : remplacée par le début de
+              la conclusion directement affiché sur la page droite du dernier spread
+              des versets (voir bloc mixed-spread ci-dessus). */}
+          {false && hasConclusion && !isConclusionSpread && spread === spreadsForVerses - 1 && (
+            <button
+              type="button"
+              onClick={goNext}
+              className="bv-conclusion-invite"
+              aria-label="Tourner la page vers la conclusion"
               style={{
-                height: '100%',
-                columnCount: 2,
-                columnGap: '80px',
-                columnFill: 'auto',
-                textAlign: 'justify',
-                hyphens: 'auto',
-                fontSize: '16px',
-                lineHeight: 1.5,
-                color: INK,
-                fontWeight: 500,
-                letterSpacing: '0.005em',
-                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 2,
+                margin: '0 auto 6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '6px 16px',
+                border: `1px solid ${LINE_STRONG}`,
+                borderRadius: '999px',
+                background: 'rgba(255,251,240,0.9)',
+                color: GOLD_DEEP,
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '13px',
+                fontStyle: 'italic',
+                letterSpacing: '0.12em',
+                cursor: 'pointer',
+                boxShadow: '0 2px 6px rgba(120,90,30,0.15), inset 0 1px 0 rgba(255,255,255,0.4)',
+                transition: 'background 200ms ease, transform 200ms ease, box-shadow 200ms ease',
+                alignSelf: 'center',
               }}
             >
-              {spreadVerses.length > 0 ? (
-                spreadVerses.map((v, i) => (
-                  <VerseParagraph
-                    key={`v-${v.id}`}
-                    verse={v}
-                    surahId={surah.id}
-                    pageForVerse={pageForVerse}
-                    isFirst={spread === 0 && i === 0}
-                  />
-                ))
-              ) : (
-                <div className="book-empty-slot">Fin de la sourate</div>
-              )}
-            </div>
-          </div>
+              <span aria-hidden style={{ color: GOLD }}>✦</span>
+              <span>Suite : conclusion de la sourate</span>
+              <span aria-hidden style={{ fontSize: '15px' }}>→</span>
+            </button>
+          )}
 
           {/* Pied du livre avec navigation */}
           <footer
@@ -879,6 +1167,82 @@ export default function BookView({ surah, verses, pageSize }: Props) {
         .bv-cta:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(120,90,30,0.40), inset 0 1px 0 rgba(255,255,255,0.30);
+        }
+        .bv-conclusion-invite:hover {
+          background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
+          color: #FFFCF6 !important;
+          border-color: transparent !important;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(120,90,30,0.30), inset 0 1px 0 rgba(255,255,255,0.30) !important;
+        }
+        .bv-conclusion-invite:hover span:first-child,
+        .bv-conclusion-invite:hover span:last-child {
+          color: #FFFCF6 !important;
+        }
+        /* ═══ Spread CONCLUSION — styles typographiques dédiés ═══ */
+        .conclusion-body h3 {
+          font-family: 'Cormorant Garamond', Georgia, serif;
+          font-size: 15px;
+          font-weight: 700;
+          color: ${GOLD_DEEP};
+          letterSpacing: 0.02em;
+          margin: 18px 0 8px 0;
+          text-align: left;
+          break-after: avoid;
+          break-inside: avoid;
+          border-bottom: 1px solid rgba(184,150,46,0.28);
+          padding-bottom: 4px;
+        }
+        .conclusion-body h3:first-child {
+          margin-top: 0;
+        }
+        .conclusion-body p {
+          margin: 0 0 12px 0;
+          text-indent: 0;
+          orphans: 2;
+          widows: 2;
+        }
+        .conclusion-body p:first-of-type::first-letter {
+          font-size: 2.4em;
+          font-weight: 600;
+          float: left;
+          line-height: 0.9;
+          margin: 4px 6px 0 0;
+          color: ${GOLD_DEEP};
+          font-family: 'Cormorant Garamond', serif;
+        }
+        .conclusion-body strong {
+          color: ${GOLD_DEEP};
+          font-weight: 700;
+        }
+        .conclusion-body em {
+          font-style: italic;
+          color: ${INK_SOFT};
+        }
+        .conclusion-body ol {
+          margin: 8px 0 12px 0;
+          padding-left: 22px;
+          counter-reset: conclusion-item;
+          list-style: none;
+        }
+        .conclusion-body ol li {
+          position: relative;
+          margin-bottom: 8px;
+          padding-left: 6px;
+          break-inside: avoid;
+          counter-increment: conclusion-item;
+        }
+        .conclusion-body ol li::before {
+          content: counter(conclusion-item) ".";
+          position: absolute;
+          left: -22px;
+          top: 0;
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 700;
+          color: ${GOLD};
+          font-size: 14px;
+          width: 20px;
+          text-align: right;
         }
         /* ═══ Mobile & tablette étroite : livre 2 pages MINIATURE ═══
            On garde les 2 pages côte à côte (comme sur PC) mais on utilise
