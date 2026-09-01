@@ -629,16 +629,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           border-color: transparent !important;
           transform: translateY(-1px);
         }
-        /* Conclusion styles — chaque bloc est atomique dans notre pagination */
-        .bv-conclusion-block {
-          overflow: hidden;
-          hyphens: auto;
-          -webkit-hyphens: auto;
-        }
+        /* Conclusion styles — chaque bloc est atomique dans notre pagination.
+           On laisse le browser wrap naturellement aux espaces. Aucun
+           overflow: hidden ni word-break: break-word (qui cachait/coupait
+           du contenu de manière imprévisible). */
         .bv-conclusion-block, .bv-conclusion-block * {
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-          word-break: break-word;
           max-width: 100%;
           box-sizing: border-box;
         }
