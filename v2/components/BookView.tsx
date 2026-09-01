@@ -800,6 +800,14 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             orphans: 1 !important;
             widows: 1 !important;
           }
+          /* Chaque verset reste intact (pas fragmenté entre colonnes) → si
+             pas assez de place dans la colonne courante, il passe entier à
+             la suivante. Évite qu'un verset (avec ses blocs arabe+phon+fr)
+             soit cropé ou saute d'une colonne. */
+          .verse-inline {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
           .bv-arabic-block {
             font-size: 15px !important;
             margin: 3px 0 4px !important;
