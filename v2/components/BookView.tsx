@@ -317,7 +317,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     }
     const SLOT = slotHeights.normal
     const SLOT_SPREAD_0 = slotHeights.spread0
-    const arr: number[] = []
+    // 1) Passe greedy : détermine le nombre MINIMAL de spreads nécessaires.
+    const greedy: number[] = []
     let i = 0
     let isFirst = true
     while (i < verses.length) {
@@ -334,11 +335,32 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         total += h
         count++
       }
-      arr.push(Math.max(1, count))
+      greedy.push(Math.max(1, count))
       i += Math.max(1, count)
       isFirst = false
     }
-    return arr.length > 0 ? arr : [0]
+    if (greedy.length === 0) return [0]
+    if (greedy.length === 1) return greedy
+    // 2) Passe rebalance : distribue les versets équitablement sur les mêmes
+    // N spreads (évite qu'un spread final soit quasi-vide, ex: [6,1] → [4,3]).
+    // On vérifie que chaque spread rebalancé rentre bien dans sa capacité.
+    const N = greedy.length
+    const base = Math.floor(verses.length / N)
+    const extras = verses.length % N
+    const rebalanced = Array.from({ length: N }, (_, s) => base + (s < extras ? 1 : 0))
+    let idx = 0
+    let ok = true
+    for (let s = 0; s < N; s++) {
+      const slotAvail = s === 0 ? SLOT_SPREAD_0 : SLOT
+      const capacity = (slotAvail + SLOT) * 0.85
+      let total = 0
+      for (let k = 0; k < rebalanced[s]; k++) {
+        total += verseHeights[idx + k] || 100
+      }
+      if (total > capacity) { ok = false; break }
+      idx += rebalanced[s]
+    }
+    return ok ? rebalanced : greedy
   }, [verses.length, verseHeights, slotHeights])
   const [counts, setCounts] = useState<number[]>(initialCounts)
   // Synchronise counts avec initialCounts quand la mesure évolue
@@ -915,7 +937,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   height: '100%',
                   columnCount: 2,
                   columnGap: '80px',
-                  columnFill: 'auto',
+                  columnFill: 'balance',
                   textAlign: 'justify',
                   hyphens: 'auto',
                   fontSize: '16px',
