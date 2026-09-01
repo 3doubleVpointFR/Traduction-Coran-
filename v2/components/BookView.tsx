@@ -860,73 +860,67 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 />
               </div>
             ) : isLastVerseSpreadWithConclusion ? (
-              /* ═════ SPREAD MIXTE — versets à gauche, DÉBUT de conclusion à droite ═════
-                  Le lecteur voit la conclusion commencer à droite → il sait qu'il faut tourner. */
+              /* ═════ FLUX CONTINU — versets + début conclusion dans le MÊME
+                  container multi-column. Le browser fait couler naturellement :
+                  versets d'abord (col gauche puis col droite s'il déborde), puis
+                  la conclusion continue là où les versets s'arrêtent. AUCUN blanc. */
               <div
                 key={`spread-${spread}`}
                 ref={spreadContentRef}
-                className={`spread-content mixed-spread ${direction ? `anim-${direction}` : ''}`}
+                className={`spread-content mixed-flow ${direction ? `anim-${direction}` : ''}`}
                 style={{
                   height: '100%',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '80px',
+                  columnCount: 2,
+                  columnGap: '80px',
+                  columnFill: 'auto',
+                  textAlign: 'justify',
+                  hyphens: 'auto',
+                  fontSize: '16px',
+                  lineHeight: 1.5,
                   color: INK,
                   fontWeight: 500,
                   letterSpacing: '0.005em',
                   overflow: 'hidden',
                 }}
               >
-                {/* Colonne gauche : versets (single column) */}
+                {spreadVerses.map((v, i) => (
+                  <VerseParagraph
+                    key={`v-${v.id}`}
+                    verse={v}
+                    surahId={surah.id}
+                    pageForVerse={pageForVerse}
+                    isFirst={spread === 0 && i === 0}
+                  />
+                ))}
+                {/* Titre CONCLUSION intercalé — reste avec le contenu conclusion */}
                 <div
                   style={{
-                    overflow: 'hidden',
-                    textAlign: 'justify',
-                    hyphens: 'auto',
-                    fontSize: '16px',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {spreadVerses.map((v, i) => (
-                    <VerseParagraph
-                      key={`v-${v.id}`}
-                      verse={v}
-                      surahId={surah.id}
-                      pageForVerse={pageForVerse}
-                      isFirst={spread === 0 && i === 0}
-                    />
-                  ))}
-                </div>
-
-                {/* Colonne droite : titre CONCLUSION + starter (single column) */}
-                <div
-                  style={{
-                    overflow: 'hidden',
-                    textAlign: 'justify',
-                    hyphens: 'auto',
-                    fontSize: '15px',
-                    lineHeight: 1.55,
+                    breakInside: 'avoid',
+                    breakBefore: 'avoid',
+                    breakAfter: 'avoid',
+                    textAlign: 'center',
+                    marginTop: '18px',
+                    marginBottom: '12px',
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
-                  <div style={{ textAlign: 'center', marginBottom: '14px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
-                      <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
-                      <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
-                      <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
-                    </div>
-                    <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
-                      Conclusion
-                    </div>
-                    <div style={{ fontSize: '17px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
-                      {surah.name_latin} · {surah.name_fr}
-                    </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
+                    <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+                    <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
+                    <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
                   </div>
-                  <div
-                    className="conclusion-body"
-                    dangerouslySetInnerHTML={{ __html: conclusionStarterHtml }}
-                  />
+                  <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+                    Conclusion
+                  </div>
+                  <div style={{ fontSize: '16px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
+                    {surah.name_latin} · {surah.name_fr}
+                  </div>
                 </div>
+                <div
+                  className="conclusion-body"
+                  style={{ fontSize: '15px', lineHeight: 1.55, fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                  dangerouslySetInnerHTML={{ __html: conclusionStarterHtml }}
+                />
               </div>
             ) : (
               <div
