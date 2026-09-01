@@ -3,19 +3,21 @@ import Link from 'next/link'
 import React, { useState, useEffect, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BookView — vue livre paginée avec conclusion intégrée au flux.
+   BookView — vue livre paginée avec pagination JS calculée.
 
-   Architecture (refactor 2026-09-01) :
+   Architecture (refactor 2026-09-01 v2) :
 
-   1. UN SEUL flux de contenu : versets + titre CONCLUSION + conclusion HTML.
-   2. CSS `columnCount: 2` (1 sur mobile) + `columnFill: auto` : le browser
-      crée AUTANT de colonnes que nécessaire pour tenir tout le contenu.
-   3. Pagination : mesure `scrollWidth / clientWidth` → nombre de spreads,
-      puis `transform: translateX(-spread * spreadWidth)` pour naviguer.
+   1. Le contenu est découpé en ITEMS atomiques : header, chaque verset,
+      titre conclusion, chaque bloc HTML de la conclusion (h3, p, ol).
+   2. Un MEASURER invisible rend chaque item à la vraie largeur de page,
+      permet de mesurer sa hauteur réelle.
+   3. Un algo distribue les items dans des PAGES en respectant la hauteur
+      max — un item qui déborderait passe à la page suivante.
+   4. Un SPREAD = 1 page sur mobile, 2 pages sur desktop. Navigation via
+      translateX horizontal.
 
-   Aucune estimation. Aucun split ad-hoc. Le browser garantit qu'aucun
-   contenu n'est perdu ni coupé au milieu. Marche pour tous les toggles
-   (arabe/phon) et toutes les tailles d'écran automatiquement.
+   Avantage vs CSS multi-column : contrôle total, pas de fragmentation
+   imprévisible, chaque page reste intacte visuellement.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 interface Surah {
@@ -50,9 +52,7 @@ const CREAM_PAGE = '#FFFBF0'
 const LINE = 'rgba(184,150,46,0.20)'
 const LINE_STRONG = 'rgba(184,150,46,0.42)'
 
-// Parseur markdown minimal pour la conclusion : gras **X**, italique *X*,
-// headers (paragraphe qui est en entier **xxx**), listes numérotées "1. ...",
-// paragraphes séparés par \n\n.
+// Parseur markdown minimal — headers **X** seul sur une ligne, listes 1., paragraphes.
 function parseConclusionMarkdown(md: string): string {
   const lines = md.split('\n')
   const blocks: string[] = []
@@ -102,13 +102,19 @@ function formatInline(txt: string): string {
     .replace(/(^|[^*])\*([^*][^*]*?)\*(?!\*)/g, '$1<em>$2</em>')
 }
 
+type PageItem =
+  | { type: 'header' }
+  | { type: 'verse'; verse: ReadVerse; isFirst: boolean }
+  | { type: 'conclusion-title' }
+  | { type: 'conclusion-block'; html: string }
+
 export default function BookView({ surah, verses, pageSize, conclusion }: Props) {
   const hasConclusion = !!(conclusion && conclusion.trim())
   const conclusionHtml = useMemo(() => (hasConclusion ? parseConclusionMarkdown(conclusion!) : ''), [conclusion, hasConclusion])
   const pageForVerse = (verseNum: number) => Math.ceil(verseNum / pageSize)
   const isBaraah = surah.id === 9
 
-  // Toggles arabe/phon observés depuis body classes (contrôlés par le menu ≡)
+  // Toggles arabe/phon
   const [bvOpts, setBvOpts] = useState({ arabic: false, phon: false })
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -135,83 +141,116 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     return () => mql.removeEventListener('change', sync)
   }, [])
 
-  // Pagination state — spread = index actuel, totalSpreads = calculé après mesure
-  const [spread, setSpread] = useState(0)
-  const [totalSpreads, setTotalSpreads] = useState(1)
-  const [viewportWidth, setViewportWidth] = useState(0)
-  const viewportRef = useRef<HTMLDivElement | null>(null)
-  const flowRef = useRef<HTMLDivElement | null>(null)
-
-  useLayoutEffect(() => {
-    // remeasure inline, sans useCallback (deps qui posaient problème)
-    // et sans rAF (closure qui pouvait rater le composant monté).
-    const doRemeasure = () => {
-      const v = viewportRef.current
-      const f = flowRef.current
-      if (!v || !f || !f.isConnected) return
-      const vw = v.clientWidth
-      if (vw <= 0) return
-      setViewportWidth(vw)
-      const gap = isMobile ? 0 : 80
-      let extent = 0
-      try {
-        const range = document.createRange()
-        range.selectNodeContents(f)
-        const flowLeft = f.getBoundingClientRect().left
-        extent = range.getBoundingClientRect().right - flowLeft
-      } catch {
-        extent = 0
-      }
-      if (extent <= 0) extent = f.scrollWidth
-      const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
-      setTotalSpreads(prev => (prev !== n ? n : prev))
-      setSpread(s => Math.min(s, n - 1))
+  // Items ordonnés à paginer
+  const items: PageItem[] = useMemo(() => {
+    const list: PageItem[] = [{ type: 'header' }]
+    verses.forEach((v, i) => list.push({ type: 'verse', verse: v, isFirst: i === 0 }))
+    if (hasConclusion) {
+      list.push({ type: 'conclusion-title' })
+      const blocks = conclusionHtml.split('\n').map(l => l.trim()).filter(Boolean)
+      blocks.forEach(html => list.push({ type: 'conclusion-block', html }))
     }
-    doRemeasure()
-    // Polling 200 ms sur 4 s pour capturer les changements de scrollWidth
-    // (fonts qui chargent, contenu qui s'installe).
-    const interval = window.setInterval(doRemeasure, 200)
+    return list
+  }, [verses, hasConclusion, conclusionHtml])
+
+  // Pagination state
+  const [pages, setPages] = useState<number[][]>([])
+  const [pageWidth, setPageWidth] = useState(0)
+  const [pageHeight, setPageHeight] = useState(0)
+  const [spread, setSpread] = useState(0)
+
+  const bookBodyRef = useRef<HTMLDivElement | null>(null)
+  const measureRef = useRef<HTMLDivElement | null>(null)
+
+  const pagesPerSpread = isMobile ? 1 : 2
+  const gap = isMobile ? 0 : 80
+
+  // Mesure & distribution en pages
+  useLayoutEffect(() => {
+    const doMeasure = () => {
+      const body = bookBodyRef.current
+      const measure = measureRef.current
+      if (!body || !measure || !measure.isConnected) return
+      const bodyW = body.clientWidth
+      const bodyH = body.clientHeight
+      if (bodyW <= 0 || bodyH <= 0) return
+      const pw = pagesPerSpread === 1 ? bodyW : (bodyW - gap) / pagesPerSpread
+      if (pw <= 0) return
+      setPageWidth(pw)
+      setPageHeight(bodyH)
+      // Mesure la hauteur de chaque item du measurer
+      const kids = Array.from(measure.children) as HTMLElement[]
+      const heights = kids.map(el => el.getBoundingClientRect().height)
+      // Distribution : chaque page respecte bodyH ; un item qui ne rentre pas passe à la page suivante
+      const newPages: number[][] = []
+      let cur: number[] = []
+      let curH = 0
+      for (let i = 0; i < items.length; i++) {
+        const h = heights[i] || 0
+        if (cur.length > 0 && curH + h > bodyH) {
+          newPages.push(cur)
+          cur = []
+          curH = 0
+        }
+        cur.push(i)
+        curH += h
+      }
+      if (cur.length > 0) newPages.push(cur)
+      setPages(prev => {
+        // Éviter update si égal (limite les re-renders)
+        if (prev.length === newPages.length && prev.every((p, i) => p.length === newPages[i].length && p.every((v, j) => v === newPages[i][j]))) {
+          return prev
+        }
+        return newPages
+      })
+      const maxSpread = Math.max(0, Math.ceil(newPages.length / pagesPerSpread) - 1)
+      setSpread(s => Math.min(s, maxSpread))
+    }
+    doMeasure()
+    const interval = window.setInterval(doMeasure, 200)
     const stopTimeout = window.setTimeout(() => window.clearInterval(interval), 4000)
     const fontsReady = (document as unknown as { fonts?: { ready: Promise<unknown> } }).fonts?.ready
-    fontsReady?.then(() => doRemeasure()).catch(() => {})
-    const onResize = () => doRemeasure()
+    fontsReady?.then(() => doMeasure()).catch(() => {})
+    const onResize = () => doMeasure()
     window.addEventListener('resize', onResize)
     return () => {
       window.clearInterval(interval)
       window.clearTimeout(stopTimeout)
       window.removeEventListener('resize', onResize)
     }
-  }, [verses, conclusion, bvOpts.arabic, bvOpts.phon, isMobile])
+  }, [items, isMobile, bvOpts.arabic, bvOpts.phon, pagesPerSpread, gap])
 
-  // Navigation
+  // Nav
+  const totalSpreads = Math.max(1, Math.ceil(pages.length / pagesPerSpread))
   const canPrev = spread > 0
   const canNext = spread < totalSpreads - 1
-  const goPrev = useCallback(() => { if (canPrev) setSpread(s => s - 1) }, [canPrev])
-  const goNext = useCallback(() => { if (canNext) setSpread(s => s + 1) }, [canNext])
+  const goPrev = useCallback(() => { setSpread(s => Math.max(0, s - 1)) }, [])
+  const goNext = useCallback(() => { setSpread(s => s + 1) }, [])
 
-  // Keyboard nav
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') goPrev()
-      else if (e.key === 'ArrowRight') goNext()
+      else if (e.key === 'ArrowRight' && canNext) goNext()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [goPrev, goNext])
+  }, [goPrev, goNext, canNext])
 
-  // Scroll top quand on change de spread
   useEffect(() => {
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [spread])
 
-  // Reset au premier spread si toggles changent (contenu réorganisé)
+  // Reset au premier spread si toggles changent
   useEffect(() => {
     setSpread(0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bvOpts.arabic, bvOpts.phon])
 
-  // Lien vue analyse — vers le premier verset (contexte principal)
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
+
+  // translateX = -spread * (pagesPerSpread * pageWidth + pagesPerSpread * gap)
+  //            = -spread * pagesPerSpread * (pageWidth + gap)
+  const spreadShift = pagesPerSpread * (pageWidth + gap)
 
   return (
     <div
@@ -223,7 +262,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         fontFamily: "'Cormorant Garamond', Georgia, serif",
       }}
     >
-      {/* Toggle Analyse flottant top-right */}
       <Link
         href={analyseHref}
         target="_blank"
@@ -260,7 +298,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         Vue analyse
       </Link>
 
-      {/* ═══════════════ LIVRE OUVERT ═══════════════ */}
       <div
         className="bv-book-wrap"
         style={{
@@ -274,8 +311,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           className="book"
           style={{
             maxWidth: isMobile ? undefined : '1180px',
-            // Mobile : width 100% du wrap qui a padding 12px de chaque côté
-            // → centrage garanti sans risque de débordement horizontal.
             width: '100%',
             margin: '0 auto',
             background: CREAM_PAGE,
@@ -287,8 +322,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             `,
             position: 'relative',
             overflow: 'hidden',
-            // Desktop : max 820px ; Mobile : prend la place disponible verticalement
-            // (livre en portrait, presque plein écran → l'utilisateur zoome pour lire).
             height: isMobile
               ? 'min(720px, calc(100vh - 160px))'
               : 'min(820px, calc(100vh - 110px))',
@@ -296,7 +329,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             flexDirection: 'column',
           }}
         >
-          {/* Pliure centrale douce — desktop uniquement (mobile = 1 col par spread) */}
           {!isMobile && (
             <div
               aria-hidden
@@ -320,92 +352,44 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             />
           )}
 
-
-          {/* HEADER SOURATE — uniquement sur spread 0 */}
-          {spread === 0 && (
-            <>
-              <header
-                style={{
-                  textAlign: 'center',
-                  padding: '16px 40px 4px',
-                  position: 'relative',
-                  zIndex: 2,
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '10px',
-                    letterSpacing: '0.28em',
-                    textTransform: 'uppercase',
-                    color: GOLD,
-                    fontWeight: 600,
-                    marginBottom: '6px',
-                    fontFamily: "'Cormorant Garamond', serif",
-                  }}
-                >
-                  Sourate {toRoman(surah.id)}
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '22px', marginBottom: '6px' }}>
-                  <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6 }}>❦</span>
-                  <h1 className="font-arabic" style={{ fontSize: 'clamp(36px, 4vw, 48px)', color: GOLD_DEEP, lineHeight: 1, margin: 0, letterSpacing: '0.02em' }}>
-                    {surah.name_ar}
-                  </h1>
-                  <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6, transform: 'scaleX(-1)' }}>❦</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', color: INK_SOFT }}>
-                  <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
-                  <span style={{ fontSize: '16px', letterSpacing: '0.2em', fontWeight: 500 }}>
-                    {surah.name_latin.toUpperCase()}
-                  </span>
-                  <span aria-hidden style={{ color: GOLD, fontSize: '11px' }}>✦</span>
-                  <span style={{ fontSize: '14px', fontStyle: 'italic', color: MUTED }}>
-                    {surah.name_fr}
-                  </span>
-                  <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
-                </div>
-              </header>
-
-              {/* BASMALA (spread 0 uniquement, sauf S9) */}
-              {!isBaraah && (
-                <div style={{ padding: '4px 40px 4px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-                  <div className="font-arabic" style={{ fontSize: '24px', color: INK, lineHeight: 1.3, letterSpacing: '0.02em', fontWeight: 400 }}>
-                    بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
-                  </div>
-                  {surah.id !== 1 && (
-                    <div style={{ fontSize: '13px', color: MUTED, fontStyle: 'italic', marginTop: '10px' }}>
-                      Au nom de Dieu, le Tout-Miséricordieux, le Très-Miséricordieux
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Séparateur fin */}
-              <div style={{ padding: '4px 60px 12px', position: 'relative', zIndex: 2 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
-                  <span style={{ flex: '0 0 140px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.5 }} />
-                  <span aria-hidden style={{ color: GOLD, fontSize: '10px' }}>✦</span>
-                  <span style={{ flex: '0 0 140px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.5 }} />
-                </div>
-              </div>
-            </>
-          )}
-
-          {/* ═════ CORPS PAGINÉ ═════
-              Un seul flux (versets + conclusion) réparti par le browser
-              en autant de colonnes que nécessaire. Pagination via translateX. */}
+          {/* ═════ ZONE PAGE : contient measurer offscreen + viewport visible ═════ */}
           <div
+            ref={bookBodyRef}
             className="book-body"
             style={{
               position: 'relative',
               zIndex: 2,
-              padding: spread === 0 ? '4px 56px 20px' : '32px 56px 20px',
+              padding: isMobile ? '12px 12px 16px' : '20px 40px 20px',
               flex: 1,
               minHeight: 0,
               overflow: 'hidden',
             }}
           >
+            {/* MEASURER offscreen — rend chaque item à la vraie pageWidth pour mesurer sa hauteur */}
             <div
-              ref={viewportRef}
+              ref={measureRef}
+              aria-hidden
+              style={{
+                position: 'absolute',
+                top: -99999,
+                left: 0,
+                width: pageWidth > 0 ? pageWidth : '100%',
+                visibility: 'hidden',
+                fontSize: isMobile ? '11px' : '16px',
+                lineHeight: 1.5,
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                color: INK,
+                fontWeight: 500,
+                textAlign: 'left',
+              }}
+            >
+              {items.map((item, i) => (
+                <div key={`m-${i}`}>{renderItem(item, surah, pageForVerse, isBaraah)}</div>
+              ))}
+            </div>
+
+            {/* VIEWPORT : montre les pages visibles */}
+            <div
               className="bv-viewport"
               style={{
                 width: '100%',
@@ -415,89 +399,41 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
               }}
             >
               <div
-                ref={flowRef}
                 className="bv-flow"
                 style={{
-                  width: '100%',
-                  // Mobile : 1 colonne physique par spread (columnWidth = 100 %
-                  // du viewport). Fragmentation multi-column native de Chrome
-                  // mobile produisait un rendu chaotique avec colonnes étroites
-                  // (contenu apparaissant dans un ordre non-linéaire).
-                  // Desktop : 2 colonnes par spread (livre ouvert classique).
-                  ...(isMobile
-                    ? {
-                        // column-width n'accepte PAS les % (spec CSS) → il faut
-                        // une longueur en px. Fallback 100vw le temps que le
-                        // useLayoutEffect mesure la vraie viewport.
-                        columnCount: 'auto' as const,
-                        columnWidth: viewportWidth > 0 ? `${viewportWidth}px` : '100vw',
-                        columnGap: '0',
-                      }
-                    : {
-                        columnCount: 2 as const,
-                        columnGap: '80px',
-                      }),
-                  columnFill: 'auto',
+                  display: 'flex',
+                  gap: `${gap}px`,
                   height: '100%',
-                  fontSize: isMobile ? '11px' : '16px',
-                  lineHeight: 1.5,
-                  color: INK,
-                  fontWeight: 500,
-                  letterSpacing: '0.005em',
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  textAlign: 'justify',
-                  hyphens: 'auto',
-                  transform: viewportWidth > 0
-                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 0 : 80))}px)`
+                  transform: pageWidth > 0
+                    ? `translateX(-${spread * spreadShift}px)`
                     : 'none',
-                  // Ease-out expo — démarrage rapide puis ralentissement doux
-                  // (feeling de vraie page qui tourne, s'arrête en douceur).
                   transition: 'transform 780ms cubic-bezier(0.16, 1, 0.3, 1)',
                   willChange: 'transform',
                 }}
               >
-                {/* Versets */}
-                {verses.map((v, i) => (
-                  <VerseParagraph
-                    key={`v-${v.id}`}
-                    verse={v}
-                    surahId={surah.id}
-                    pageForVerse={pageForVerse}
-                    isFirst={i === 0}
-                  />
+                {pages.map((pageIndices, pIdx) => (
+                  <div
+                    key={pIdx}
+                    className="bv-page-col"
+                    style={{
+                      width: pageWidth,
+                      flex: '0 0 auto',
+                      height: '100%',
+                      fontSize: isMobile ? '11px' : '16px',
+                      lineHeight: 1.5,
+                      color: INK,
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      textAlign: 'left',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    {pageIndices.map(i => (
+                      <React.Fragment key={i}>
+                        {renderItem(items[i], surah, pageForVerse, isBaraah)}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 ))}
-
-                {/* Titre CONCLUSION + corps — intercalé dans le flow */}
-                {hasConclusion && (
-                  <>
-                    <div
-                      className="conclusion-title"
-                      style={{
-                        breakInside: 'avoid',
-                        textAlign: 'center',
-                        marginTop: '18px',
-                        marginBottom: '14px',
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
-                        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
-                        <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
-                        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
-                      </div>
-                      <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
-                        Conclusion
-                      </div>
-                      <div style={{ fontSize: '17px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
-                        {surah.name_latin} · {surah.name_fr}
-                      </div>
-                    </div>
-                    <div
-                      className="conclusion-body"
-                      style={{ fontSize: '15px', lineHeight: 1.55 }}
-                      dangerouslySetInnerHTML={{ __html: conclusionHtml }}
-                    />
-                  </>
-                )}
               </div>
             </div>
           </div>
@@ -530,17 +466,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 ←
               </button>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '4px',
-                fontStyle: 'italic',
-                color: GOLD_DEEP,
-                letterSpacing: '0.2em',
-              }}
-            >
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', fontStyle: 'italic', color: GOLD_DEEP, letterSpacing: '0.2em' }}>
               <span className="font-arabic" style={{ fontSize: '14px', color: GOLD_DEEP, fontStyle: 'normal', letterSpacing: '0.02em' }}>
                 {surah.name_ar}
               </span>
@@ -562,7 +488,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           </footer>
         </div>
 
-        {/* CTA final vers analyse */}
         <div style={{ textAlign: 'center', marginTop: '14px' }}>
           <Link
             href={analyseHref}
@@ -594,15 +519,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         </div>
       </div>
 
-      {/* Styles globaux */}
       <style dangerouslySetInnerHTML={{ __html: `
         .verse-inline {
-          break-inside: avoid;
-          margin-bottom: 10px;
           display: block;
+          margin-bottom: 10px;
         }
-        /* drop-cap retiré : sur les versets arabes, le float:left sur la
-           première lettre débordait hors du livre. */
         .bv-arabic-block {
           display: none;
           text-align: center;
@@ -677,59 +598,50 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           border-color: transparent !important;
           transform: translateY(-1px);
         }
-        /* Conclusion styles */
-        .conclusion-body h3 {
+        /* Conclusion styles — chaque bloc est atomique dans notre pagination */
+        .bv-conclusion-block h3 {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-size: 15px;
           font-weight: 700;
           color: ${GOLD_DEEP};
           letter-spacing: 0.02em;
-          margin: 18px 0 8px 0;
+          margin: 12px 0 8px 0;
           text-align: left;
           border-bottom: 1px solid rgba(184,150,46,0.28);
           padding-bottom: 4px;
-          /* break-inside: avoid pour éviter que le titre soit coupé en deux
-             (« Pourquoi commencer par nommer » | « Dieu »).
-             Pas de break-after: avoid — ça forçait le browser à déplacer
-             tout le paragraphe suivant, cassant l'ordre visuel. */
-          break-inside: avoid;
-          page-break-inside: avoid;
         }
-        .conclusion-body h3:first-child {
+        .bv-conclusion-block:first-child h3 {
           margin-top: 0;
         }
-        .conclusion-body p {
+        .bv-conclusion-block p {
           margin: 0 0 12px 0;
+          font-size: 15px;
+          line-height: 1.55;
           text-indent: 0;
-          /* orphans/widows minimum (1/1) : le browser fragmente naturellement
-             sans déplacer intempestivement du texte hors de vue. */
-          orphans: 1;
-          widows: 1;
         }
-        /* drop-cap conclusion retiré aussi pour cohérence + éviter
-           débordements imprévisibles en multi-column. */
-        .conclusion-body strong {
+        .bv-conclusion-block strong {
           color: ${GOLD_DEEP};
           font-weight: 700;
         }
-        .conclusion-body em {
+        .bv-conclusion-block em {
           font-style: italic;
           color: ${INK_SOFT};
         }
-        .conclusion-body ol {
+        .bv-conclusion-block ol {
           margin: 8px 0 12px 0;
           padding-left: 22px;
           counter-reset: conclusion-item;
           list-style: none;
         }
-        .conclusion-body ol li {
+        .bv-conclusion-block ol li {
           position: relative;
           margin-bottom: 8px;
           padding-left: 6px;
-          break-inside: avoid;
           counter-increment: conclusion-item;
+          font-size: 15px;
+          line-height: 1.55;
         }
-        .conclusion-body ol li::before {
+        .bv-conclusion-block ol li::before {
           content: counter(conclusion-item) ".";
           position: absolute;
           left: -22px;
@@ -741,10 +653,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           width: 20px;
           text-align: right;
         }
-        /* Mobile : livre miniature quasi plein écran, 2 pages, police -30%
-           (l'utilisateur zoome nativement avec pinch pour lire).
-           Padding horizontal 12px sur le wrap → centrage garanti.
-           Marges intérieures book réduites au minimum pour maximiser le texte. */
+        /* Mobile */
         @media (max-width: 900px) {
           .bv-page {
             overflow-x: hidden !important;
@@ -759,56 +668,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
               0 2px 8px rgba(60,40,10,0.12),
               inset 0 0 0 1px rgba(184,150,46,0.22) !important;
           }
-          .book > header {
-            padding: 12px 12px 3px !important;
-          }
-          .book-body {
-            padding-left: 12px !important;
-            padding-right: 12px !important;
-          }
           .book > footer {
             padding-left: 14px !important;
             padding-right: 14px !important;
-          }
-          /* Bloc titre mobile : tout réduit ~15 % pour gagner de la place. */
-          .book > header > div:first-child {
-            font-size: 8.5px !important;
-            margin-bottom: 4px !important;
-          }
-          .book > header .font-arabic {
-            font-size: clamp(30px, 8vw, 40px) !important;
-          }
-          .book > header > div:nth-child(2) {
-            gap: 16px !important;
-            margin-bottom: 4px !important;
-          }
-          .book > header > div:nth-child(3) span:nth-child(2) {
-            font-size: 13.5px !important;
-          }
-          .book > header > div:nth-child(3) span:nth-child(4) {
-            font-size: 12px !important;
-          }
-          .book > header + div .font-arabic {
-            font-size: 20px !important;
-          }
-          /* Colonnes étroites : justify étirait les espaces. On passe à
-             gauche pour éviter les gros trous entre les mots. */
-          .bv-flow {
-            text-align: left !important;
-          }
-          .conclusion-body p {
-            orphans: 1 !important;
-            widows: 1 !important;
-          }
-          /* Chaque verset reste intact (pas fragmenté entre colonnes) → si
-             pas assez de place dans la colonne courante, il passe entier à
-             la suivante. Sur inline (span), break-inside est inefficace —
-             il faut passer en display: block pour que la règle s'applique. */
-          .verse-inline {
-            display: block !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-            margin-bottom: 6px !important;
           }
           .bv-arabic-block {
             font-size: 15px !important;
@@ -826,24 +688,20 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
             margin-right: 6px !important;
             vertical-align: 2px !important;
           }
-          .conclusion-title {
-            margin-top: 15px !important;
-            margin-bottom: 10px !important;
+          .bv-conclusion-block h3 {
+            font-size: 10.5px !important;
+            margin: 8px 0 5px 0 !important;
           }
-          .conclusion-title > div:nth-child(2) {
-            font-size: 7px !important;
-          }
-          .conclusion-title > div:nth-child(3) {
-            font-size: 12px !important;
-          }
-          .conclusion-body {
+          .bv-conclusion-block p {
             font-size: 10.5px !important;
             line-height: 1.55 !important;
+            margin: 0 0 8px 0 !important;
           }
-          .conclusion-body h3 {
+          .bv-conclusion-block ol li {
             font-size: 10.5px !important;
+            margin-bottom: 5px !important;
           }
-          .conclusion-body ol li::before {
+          .bv-conclusion-block ol li::before {
             font-size: 10px !important;
             width: 14px !important;
           }
@@ -853,7 +711,102 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   )
 }
 
-/* ══════════════════════════════════════════════════════════ */
+function renderItem(
+  item: PageItem,
+  surah: Surah,
+  pageForVerse: (n: number) => number,
+  isBaraah: boolean,
+): React.ReactNode {
+  switch (item.type) {
+    case 'header':
+      return <SurahHeader surah={surah} isBaraah={isBaraah} />
+    case 'verse':
+      return (
+        <VerseParagraph
+          verse={item.verse}
+          surahId={surah.id}
+          pageForVerse={pageForVerse}
+          isFirst={item.isFirst}
+        />
+      )
+    case 'conclusion-title':
+      return <ConclusionTitle surah={surah} />
+    case 'conclusion-block':
+      return (
+        <div
+          className="bv-conclusion-block"
+          dangerouslySetInnerHTML={{ __html: item.html }}
+        />
+      )
+  }
+}
+
+function SurahHeader({ surah, isBaraah }: { surah: Surah; isBaraah: boolean }) {
+  return (
+    <>
+      <header style={{ textAlign: 'center', padding: '0 0 4px', position: 'relative', zIndex: 2 }}>
+        <div style={{ fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, fontWeight: 600, marginBottom: '6px', fontFamily: "'Cormorant Garamond', serif" }}>
+          Sourate {toRoman(surah.id)}
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '22px', marginBottom: '6px' }}>
+          <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6 }}>❦</span>
+          <h1 className="font-arabic" style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: GOLD_DEEP, lineHeight: 1, margin: 0, letterSpacing: '0.02em' }}>
+            {surah.name_ar}
+          </h1>
+          <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6, transform: 'scaleX(-1)' }}>❦</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', color: INK_SOFT, flexWrap: 'wrap' }}>
+          <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+          <span style={{ fontSize: '14px', letterSpacing: '0.2em', fontWeight: 500 }}>
+            {surah.name_latin.toUpperCase()}
+          </span>
+          <span aria-hidden style={{ color: GOLD, fontSize: '11px' }}>✦</span>
+          <span style={{ fontSize: '13px', fontStyle: 'italic', color: MUTED }}>
+            {surah.name_fr}
+          </span>
+          <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
+        </div>
+      </header>
+      {!isBaraah && (
+        <div style={{ padding: '6px 0 6px', textAlign: 'center' }}>
+          <div className="font-arabic" style={{ fontSize: '22px', color: INK, lineHeight: 1.3, letterSpacing: '0.02em', fontWeight: 400 }}>
+            بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+          </div>
+          {surah.id !== 1 && (
+            <div style={{ fontSize: '12px', color: MUTED, fontStyle: 'italic', marginTop: '8px' }}>
+              Au nom de Dieu, le Tout-Miséricordieux, le Très-Miséricordieux
+            </div>
+          )}
+        </div>
+      )}
+      <div style={{ padding: '4px 0 12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
+          <span style={{ flex: '0 0 60px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.5 }} />
+          <span aria-hidden style={{ color: GOLD, fontSize: '10px' }}>✦</span>
+          <span style={{ flex: '0 0 60px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.5 }} />
+        </div>
+      </div>
+    </>
+  )
+}
+
+function ConclusionTitle({ surah }: { surah: Surah }) {
+  return (
+    <div style={{ textAlign: 'center', margin: '18px 0 14px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
+        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+        <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
+        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
+      </div>
+      <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+        Conclusion
+      </div>
+      <div style={{ fontSize: '15px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
+        {surah.name_latin} · {surah.name_fr}
+      </div>
+    </div>
+  )
+}
 
 function arrowStyle(disabled: boolean): React.CSSProperties {
   return {
@@ -878,29 +831,28 @@ function VerseParagraph({
   verse,
   surahId,
   pageForVerse,
-  isFirst,
 }: {
   verse: ReadVerse
   surahId: number
   pageForVerse: (n: number) => number
-  isFirst: boolean
+  isFirst?: boolean
 }) {
   return (
-    <span
+    <div
       id={`livre-verse-${surahId}-${verse.verse_num}`}
-      className={`verse-inline ${isFirst ? 'drop-cap' : ''}`}
+      className="verse-inline"
     >
       {verse.arabic_text && (
-        <span className="bv-arabic-block font-arabic" dir="rtl" lang="ar">
+        <div className="bv-arabic-block font-arabic" dir="rtl" lang="ar">
           {verse.arabic_text}
-        </span>
+        </div>
       )}
       {verse.phonetic && (
-        <span className="bv-phon-block">
+        <div className="bv-phon-block">
           {verse.phonetic}
-        </span>
+        </div>
       )}
-      <span className="bv-fr-block">
+      <div className="bv-fr-block">
         <Link
           href={`/surah/${surahId}?page=${pageForVerse(verse.verse_num)}#verse-${surahId}-${verse.verse_num}`}
           target="_blank"
@@ -912,8 +864,8 @@ function VerseParagraph({
           {verse.verse_num}
         </Link>
         {verse.translation_arab}
-      </span>
-    </span>
+      </div>
+    </div>
   )
 }
 
