@@ -172,9 +172,12 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       } else {
         extent = f.scrollWidth
       }
-      // Tolérance 20px pour arrondis subpixel (retour à un chiffre serré
-      // maintenant qu'on mesure le contenu réel et non le padding phantom).
-      const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
+      // Un spread s montre [s*(vw+gap), s*(vw+gap)+vw]. Pour couvrir extent,
+      // il faut : (N-1)*(vw+gap) + vw >= extent  ⇒  N = ceil((extent - vw)/(vw+gap)) + 1.
+      // Tolérance 5px pour arrondis subpixel du sentinel.
+      const n = extent <= vw + 5
+        ? 1
+        : Math.ceil((extent - vw - 5) / (vw + gap)) + 1
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
     })
@@ -474,11 +477,16 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     <div
                       className="conclusion-title"
                       style={{
+                        // Toujours démarrer une nouvelle colonne : évite
+                        // que le titre CONCLUSION apparaisse en bas d'une
+                        // colonne avec « Vue d'ensemble » + paragraphe 1
+                        // reportés à la colonne suivante (user perdait le
+                        // début de la conclusion).
+                        breakBefore: 'column',
                         breakInside: 'avoid',
-                        breakBefore: 'avoid',
                         breakAfter: 'avoid',
                         textAlign: 'center',
-                        marginTop: '22px',
+                        marginTop: '0',
                         marginBottom: '14px',
                       }}
                     >
@@ -716,11 +724,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .conclusion-body p {
           margin: 0 0 12px 0;
           text-indent: 0;
-          /* orphans/widows minimisent les fins de paragraphe en 1-2 lignes
-             seules en haut de col — meilleur compromis que break-inside qui
-             cassait les 2 colonnes. */
-          orphans: 3;
-          widows: 3;
+          /* orphans/widows permissifs : minimise le blanc en fin de colonne. */
+          orphans: 2;
+          widows: 2;
         }
         /* drop-cap conclusion retiré aussi pour cohérence + éviter
            débordements imprévisibles en multi-column. */
