@@ -759,7 +759,8 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         }
         /* Mobile : livre miniature quasi plein écran, 2 pages, police -30%
            (l'utilisateur zoome nativement avec pinch pour lire).
-           Padding horizontal 12px sur le wrap → centrage garanti. */
+           Padding horizontal 12px sur le wrap → centrage garanti.
+           Marges intérieures book réduites au minimum pour maximiser le texte. */
         @media (max-width: 900px) {
           .bv-page {
             overflow-x: hidden !important;
@@ -773,6 +774,18 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
               0 8px 24px -6px rgba(60,40,10,0.28),
               0 2px 8px rgba(60,40,10,0.12),
               inset 0 0 0 1px rgba(184,150,46,0.22) !important;
+          }
+          .book > header {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+          }
+          .book-body {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+          }
+          .book > footer {
+            padding-left: 14px !important;
+            padding-right: 14px !important;
           }
           .bv-arabic-block {
             font-size: 15px !important;
