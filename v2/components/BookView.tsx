@@ -872,7 +872,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   height: '100%',
                   columnCount: 2,
                   columnGap: '80px',
-                  columnFill: 'auto',
+                  columnFill: 'balance',
                   textAlign: 'justify',
                   hyphens: 'auto',
                   fontSize: '16px',
@@ -1240,8 +1240,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           letterSpacing: 0.02em;
           margin: 18px 0 8px 0;
           text-align: left;
-          break-after: avoid;
-          break-inside: avoid;
+          /* Pas de break-after: avoid — laisse le browser couler naturellement
+             pour éviter les gros vides en bas de colonne quand un h3 ne peut
+             pas rester avec son paragraphe. Le titre peut être orphelin. */
           border-bottom: 1px solid rgba(184,150,46,0.28);
           padding-bottom: 4px;
         }
@@ -1251,8 +1252,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .conclusion-body p {
           margin: 0 0 12px 0;
           text-indent: 0;
-          orphans: 2;
-          widows: 2;
+          /* orphans/widows à 1 pour minimiser les blancs — accepte qu'une ligne
+             seule d'un paragraphe soit en haut/bas de colonne. */
+          orphans: 1;
+          widows: 1;
         }
         .conclusion-body p:first-of-type::first-letter {
           font-size: 2.4em;
