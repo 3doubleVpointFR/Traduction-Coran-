@@ -141,11 +141,14 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const [viewportWidth, setViewportWidth] = useState(0)
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const flowRef = useRef<HTMLDivElement | null>(null)
+  const endMarkerRef = useRef<HTMLSpanElement | null>(null)
 
   // Mesure & recalcul du nombre de spreads.
-  // Chaque spread = 2 colonnes visibles ; entre 2 spreads, un column-gap
-  // supplémentaire. Distance entre spread N et N+1 = viewport + gap.
-  // Formule : N = ceil((scrollWidth + gap) / (viewport + gap))
+  // On utilise un sentinel <span> en fin de flow au lieu de scrollWidth :
+  // scrollWidth peut inclure une colonne « phantom » vide quand le contenu
+  // tient exactement, ce qui créait un spread vierge en fin. Le sentinel,
+  // placé après le dernier contenu utile, donne l'extent visuel réel via
+  // getBoundingClientRect().right - flow.getBoundingClientRect().left.
   const remeasure = useCallback(() => {
     const v = viewportRef.current
     const f = flowRef.current
@@ -156,10 +159,22 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     const gap = isMobile ? 0 : 80
     requestAnimationFrame(() => {
       if (!f.isConnected) return
-      const sw = f.scrollWidth
-      // Tolérance de 50px pour absorber les imprécisions du browser
-      // (petits débordements de 1-5 px qui créaient un spread vide).
-      const n = Math.max(1, Math.ceil((sw - 50) / (vw + gap)))
+      const marker = endMarkerRef.current
+      let extent: number
+      if (marker && marker.isConnected) {
+        const flowLeft = f.getBoundingClientRect().left
+        const markerRect = marker.getBoundingClientRect()
+        // Position du sentinel = fin visuelle du contenu utile
+        extent = markerRect.right - flowLeft
+        // Filet de sécurité : si le sentinel n'a pas encore été fragmenté
+        // correctement (retourne 0×0 ou position à gauche), fallback scrollWidth.
+        if (extent <= 0) extent = f.scrollWidth
+      } else {
+        extent = f.scrollWidth
+      }
+      // Tolérance 20px pour arrondis subpixel (retour à un chiffre serré
+      // maintenant qu'on mesure le contenu réel et non le padding phantom).
+      const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
     })
@@ -483,6 +498,21 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     />
                   </>
                 )}
+                {/* Sentinel de fin — sert à mesurer l'extent réel du contenu
+                    (voir remeasure). Inline, invisible, ZWSP pour être un
+                    fragment mesurable par getBoundingClientRect. */}
+                <span
+                  ref={endMarkerRef}
+                  aria-hidden
+                  style={{
+                    display: 'inline',
+                    fontSize: 0,
+                    lineHeight: 0,
+                    color: 'transparent',
+                  }}
+                >
+                  {'​'}
+                </span>
               </div>
             </div>
           </div>
