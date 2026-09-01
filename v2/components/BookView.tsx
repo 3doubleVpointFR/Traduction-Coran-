@@ -95,9 +95,11 @@ function splitConclusionForBook(md: string, starterMaxChars = 1100, tailSpreads 
   const starterSections: string[] = []
   let starterLen = 0
   let i = 0
-  // Toujours prendre au moins 1 section, tant qu'on ne dépasse pas le seuil
+  // Si starterMaxChars <= 0 → starter vide, toutes les sections vont en tail.
+  // Sinon : prendre au moins 1 section tant qu'on ne dépasse pas le seuil.
   while (i < sections.length) {
     const sec = sections[i]
+    if (starterMaxChars <= 0) break
     if (starterSections.length > 0 && starterLen + sec.length > starterMaxChars) break
     starterSections.push(sec)
     starterLen += sec.length
@@ -208,11 +210,13 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const { starter: conclusionStarterMd, tail: conclusionTailMds } = useMemo(
     () => {
       if (!hasConclusion) return { starter: '', tail: [] as string[] }
-      let starterMax = 1800
-      let tailN = 1
-      if (bvOpts.arabic && bvOpts.phon) { starterMax = 400; tailN = 2 }
-      else if (bvOpts.arabic || bvOpts.phon) { starterMax = 700; tailN = 2 }
-      return splitConclusionForBook(conclusion!, starterMax, tailN)
+      // arabe + phon : starter vide (versets prennent trop de place),
+      // toute la conclusion va sur 3 tail spreads.
+      if (bvOpts.arabic && bvOpts.phon) return splitConclusionForBook(conclusion!, 0, 3)
+      // arabe OU phon : starter petit, tail sur 2 spreads.
+      if (bvOpts.arabic || bvOpts.phon) return splitConclusionForBook(conclusion!, 700, 2)
+      // fr seul : starter généreux, tail sur 1 spread.
+      return splitConclusionForBook(conclusion!, 1800, 1)
     },
     [conclusion, hasConclusion, bvOpts.arabic, bvOpts.phon]
   )
@@ -840,25 +844,48 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                 }}
               >
-                {/* Titre discret « CONCLUSION · SUITE » — le grand titre a déjà
-                    été affiché sur la page droite du dernier verse spread (mixed). */}
-                <div
-                  style={{
-                    breakInside: 'avoid',
-                    breakAfter: 'avoid',
-                    textAlign: 'center',
-                    marginBottom: '14px',
-                    fontSize: '10px',
-                    letterSpacing: '0.32em',
-                    textTransform: 'uppercase',
-                    color: GOLD,
-                    fontWeight: 600,
-                    fontStyle: 'italic',
-                    opacity: 0.85,
-                  }}
-                >
-                  Conclusion · suite
-                </div>
+                {/* Titre : GRAND si aucun starter (mixed spread n'a pas affiché
+                    le titre), DISCRET « CONCLUSION · SUITE » sinon. */}
+                {(!conclusionStarterMd && conclusionSpreadIdx === 0) ? (
+                  <div
+                    style={{
+                      breakInside: 'avoid',
+                      breakAfter: 'avoid',
+                      textAlign: 'center',
+                      marginBottom: '18px',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px' }}>
+                      <span style={{ flex: '0 0 40px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+                      <span aria-hidden style={{ color: GOLD, fontSize: '14px' }}>✦</span>
+                      <span style={{ flex: '0 0 40px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
+                    </div>
+                    <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+                      Conclusion
+                    </div>
+                    <div style={{ fontSize: '20px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '6px', fontWeight: 500, letterSpacing: '0.02em' }}>
+                      {surah.name_latin} · {surah.name_fr}
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      breakInside: 'avoid',
+                      breakAfter: 'avoid',
+                      textAlign: 'center',
+                      marginBottom: '14px',
+                      fontSize: '10px',
+                      letterSpacing: '0.32em',
+                      textTransform: 'uppercase',
+                      color: GOLD,
+                      fontWeight: 600,
+                      fontStyle: 'italic',
+                      opacity: 0.85,
+                    }}
+                  >
+                    Conclusion · suite
+                  </div>
+                )}
 
                 {/* Corps de la conclusion — Markdown parsé, spread courant */}
                 <div
@@ -899,35 +926,40 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     isFirst={spread === 0 && i === 0}
                   />
                 ))}
-                {/* Titre CONCLUSION intercalé — reste avec le contenu conclusion */}
-                <div
-                  style={{
-                    breakInside: 'avoid',
-                    breakBefore: 'avoid',
-                    breakAfter: 'avoid',
-                    textAlign: 'center',
-                    marginTop: '18px',
-                    marginBottom: '12px',
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
-                    <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
-                    <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
-                    <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
-                  </div>
-                  <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
-                    Conclusion
-                  </div>
-                  <div style={{ fontSize: '16px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
-                    {surah.name_latin} · {surah.name_fr}
-                  </div>
-                </div>
-                <div
-                  className="conclusion-body"
-                  style={{ fontSize: '15px', lineHeight: 1.55, fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                  dangerouslySetInnerHTML={{ __html: conclusionStarterHtml }}
-                />
+                {/* Titre + starter conclusion — affichés SEULEMENT si le starter
+                    n'est pas vide (arabe+phon → tout va sur les tail spreads). */}
+                {conclusionStarterMd && (
+                  <>
+                    <div
+                      style={{
+                        breakInside: 'avoid',
+                        breakBefore: 'avoid',
+                        breakAfter: 'avoid',
+                        textAlign: 'center',
+                        marginTop: '18px',
+                        marginBottom: '12px',
+                        fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '6px' }}>
+                        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
+                        <span aria-hidden style={{ color: GOLD, fontSize: '12px' }}>✦</span>
+                        <span style={{ flex: '0 0 30px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
+                      </div>
+                      <div style={{ fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase', color: GOLD, fontWeight: 700 }}>
+                        Conclusion
+                      </div>
+                      <div style={{ fontSize: '16px', fontStyle: 'italic', color: GOLD_DEEP, marginTop: '4px', fontWeight: 500, letterSpacing: '0.02em' }}>
+                        {surah.name_latin} · {surah.name_fr}
+                      </div>
+                    </div>
+                    <div
+                      className="conclusion-body"
+                      style={{ fontSize: '15px', lineHeight: 1.55, fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                      dangerouslySetInnerHTML={{ __html: conclusionStarterHtml }}
+                    />
+                  </>
+                )}
               </div>
             ) : (
               <div
