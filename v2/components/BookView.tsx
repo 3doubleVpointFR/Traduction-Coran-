@@ -432,7 +432,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   transform: viewportWidth > 0
                     ? `translateX(-${spread * (viewportWidth + (isMobile ? 0 : 80))}px)`
                     : 'none',
-                  transition: 'transform 460ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+                  // Ease-out expo — démarrage rapide puis ralentissement doux
+                  // (feeling de vraie page qui tourne, s'arrête en douceur).
+                  transition: 'transform 780ms cubic-bezier(0.16, 1, 0.3, 1)',
                   willChange: 'transform',
                 }}
               >
