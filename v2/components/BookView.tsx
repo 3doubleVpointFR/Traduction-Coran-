@@ -142,11 +142,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const flowRef = useRef<HTMLDivElement | null>(null)
 
-  // Mesure & recalcul du nombre de spreads. Refs lues DANS le rAF pour
-  // éviter les closures stale (ancien flow détaché après re-render).
-  // Range.getBoundingClientRect() sur le contenu du flow donne l'union
-  // des rects fragmentés en multi-column → right = position du dernier
-  // caractère visible, indépendant de tout padding phantom du scrollWidth.
+  // isMobile via ref → remeasure reste STABLE (pas de deps) : useLayoutEffect
+  // ne s'annule plus à chaque changement d'isMobile, timeouts survivent.
+  const isMobileRef = useRef(isMobile)
+  useEffect(() => { isMobileRef.current = isMobile }, [isMobile])
+
   const remeasure = useCallback(() => {
     requestAnimationFrame(() => {
       const v = viewportRef.current
@@ -155,7 +155,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       const vw = v.clientWidth
       if (vw <= 0) return
       setViewportWidth(vw)
-      const gap = isMobile ? 20 : 80
+      const gap = isMobileRef.current ? 20 : 80
       let extent = 0
       try {
         const range = document.createRange()
@@ -170,23 +170,28 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
     })
-  }, [isMobile])
+  }, [])
 
   useLayoutEffect(() => {
     remeasure()
-    // Le layout multi-column peut prendre plusieurs frames à se stabiliser
-    // (surtout après toggle arabe/phon qui change les hauteurs des versets).
-    // On re-mesure à intervalles pour capturer l'état final.
     const t1 = window.setTimeout(remeasure, 100)
     const t2 = window.setTimeout(remeasure, 400)
     const t3 = window.setTimeout(remeasure, 1200)
     const onResize = () => remeasure()
     window.addEventListener('resize', onResize)
+    // ResizeObserver capture les changements de taille du flow
+    // (fonts qui chargent, contenu qui grandit, etc.).
+    let ro: ResizeObserver | null = null
+    if (typeof ResizeObserver !== 'undefined' && flowRef.current) {
+      ro = new ResizeObserver(() => remeasure())
+      ro.observe(flowRef.current)
+    }
     return () => {
       window.clearTimeout(t1)
       window.clearTimeout(t2)
       window.clearTimeout(t3)
       window.removeEventListener('resize', onResize)
+      ro?.disconnect()
     }
   }, [remeasure, verses, conclusion, bvOpts.arabic, bvOpts.phon, isMobile])
 
