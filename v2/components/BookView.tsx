@@ -427,7 +427,12 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   textAlign: 'justify',
                   hyphens: 'auto',
-                  transform: viewportWidth > 0 ? `translateX(-${spread * viewportWidth}px)` : 'none',
+                  // La largeur d'un « spread » = viewport width + column-gap
+                  // (car le browser insère un gap entre chaque paire de
+                  // colonnes, pas seulement AU SEIN d'un spread).
+                  transform: viewportWidth > 0
+                    ? `translateX(-${spread * (viewportWidth + (isMobile ? 0 : 80))}px)`
+                    : 'none',
                   transition: 'transform 460ms cubic-bezier(0.4, 0.0, 0.2, 1)',
                   willChange: 'transform',
                 }}
