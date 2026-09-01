@@ -144,11 +144,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const endMarkerRef = useRef<HTMLSpanElement | null>(null)
 
   // Mesure & recalcul du nombre de spreads.
-  // On utilise un sentinel <span> en fin de flow au lieu de scrollWidth :
-  // scrollWidth peut inclure une colonne « phantom » vide quand le contenu
-  // tient exactement, ce qui créait un spread vierge en fin. Le sentinel,
-  // placé après le dernier contenu utile, donne l'extent visuel réel via
-  // getBoundingClientRect().right - flow.getBoundingClientRect().left.
+  // On utilise Range.getBoundingClientRect() sur tout le contenu du flow :
+  // en multi-column c'est l'union de tous les rects fragmentés, donc son
+  // right = position du dernier caractère visible (indépendant du padding
+  // phantom que scrollWidth pouvait inclure).
   const remeasure = useCallback(() => {
     const v = viewportRef.current
     const f = flowRef.current
@@ -159,25 +158,21 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     const gap = isMobile ? 20 : 80
     requestAnimationFrame(() => {
       if (!f.isConnected) return
-      const marker = endMarkerRef.current
-      let extent: number
-      if (marker && marker.isConnected) {
+      let extent = 0
+      try {
+        const range = document.createRange()
+        range.selectNodeContents(f)
         const flowLeft = f.getBoundingClientRect().left
-        const markerRect = marker.getBoundingClientRect()
-        // Position du sentinel = fin visuelle du contenu utile
-        extent = markerRect.right - flowLeft
-        // Filet de sécurité : si le sentinel n'a pas encore été fragmenté
-        // correctement (retourne 0×0 ou position à gauche), fallback scrollWidth.
-        if (extent <= 0) extent = f.scrollWidth
-      } else {
+        extent = range.getBoundingClientRect().right - flowLeft
+        range.detach?.()
+      } catch {
         extent = f.scrollWidth
       }
-      // Un spread s montre [s*(vw+gap), s*(vw+gap)+vw]. Pour couvrir extent,
-      // il faut : (N-1)*(vw+gap) + vw >= extent  ⇒  N = ceil((extent - vw)/(vw+gap)) + 1.
-      // Tolérance 5px pour arrondis subpixel du sentinel.
-      const n = extent <= vw + 5
-        ? 1
-        : Math.ceil((extent - vw - 5) / (vw + gap)) + 1
+      if (extent <= 0) extent = f.scrollWidth
+      // Formule : spread s montre [s*(vw+gap), s*(vw+gap)+vw]. Contenu visible
+      // jusqu'à extent ⇒ N = ceil((extent - tol) / (vw + gap)) avec tolérance
+      // pour absorber les 1-5 px d'imprécision browser sans créer un spread vide.
+      const n = Math.max(1, Math.ceil((extent - 20) / (vw + gap)))
       setTotalSpreads(n)
       setSpread(s => Math.min(s, n - 1))
     })
@@ -782,8 +777,7 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
               inset 0 0 0 1px rgba(184,150,46,0.22) !important;
           }
           .book > header {
-            padding-left: 12px !important;
-            padding-right: 12px !important;
+            padding: 12px 12px 3px !important;
           }
           .book-body {
             padding-left: 12px !important;
@@ -792,6 +786,27 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           .book > footer {
             padding-left: 14px !important;
             padding-right: 14px !important;
+          }
+          /* Bloc titre mobile : tout réduit ~15 % pour gagner de la place. */
+          .book > header > div:first-child {
+            font-size: 8.5px !important;
+            margin-bottom: 4px !important;
+          }
+          .book > header .font-arabic {
+            font-size: clamp(30px, 8vw, 40px) !important;
+          }
+          .book > header > div:nth-child(2) {
+            gap: 16px !important;
+            margin-bottom: 4px !important;
+          }
+          .book > header > div:nth-child(3) span:nth-child(2) {
+            font-size: 13.5px !important;
+          }
+          .book > header > div:nth-child(3) span:nth-child(4) {
+            font-size: 12px !important;
+          }
+          .book > header + div .font-arabic {
+            font-size: 20px !important;
           }
           .bv-arabic-block {
             font-size: 15px !important;
