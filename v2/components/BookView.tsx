@@ -471,16 +471,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                     <div
                       className="conclusion-title"
                       style={{
-                        // Toujours démarrer une nouvelle colonne : évite
-                        // que le titre CONCLUSION apparaisse en bas d'une
-                        // colonne avec « Vue d'ensemble » + paragraphe 1
-                        // reportés à la colonne suivante (user perdait le
-                        // début de la conclusion).
-                        breakBefore: 'column',
                         breakInside: 'avoid',
-                        breakAfter: 'avoid',
                         textAlign: 'center',
-                        marginTop: '0',
+                        marginTop: '18px',
                         marginBottom: '14px',
                       }}
                     >
@@ -693,9 +686,12 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
           text-align: left;
           border-bottom: 1px solid rgba(184,150,46,0.28);
           padding-bottom: 4px;
-          /* Le titre reste toujours avec son paragraphe qui suit */
-          break-after: avoid;
-          page-break-after: avoid;
+          /* break-inside: avoid pour éviter que le titre soit coupé en deux
+             (« Pourquoi commencer par nommer » | « Dieu »).
+             Pas de break-after: avoid — ça forçait le browser à déplacer
+             tout le paragraphe suivant, cassant l'ordre visuel. */
+          break-inside: avoid;
+          page-break-inside: avoid;
         }
         .conclusion-body h3:first-child {
           margin-top: 0;
@@ -703,9 +699,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
         .conclusion-body p {
           margin: 0 0 12px 0;
           text-indent: 0;
-          /* orphans/widows permissifs : minimise le blanc en fin de colonne. */
-          orphans: 2;
-          widows: 2;
+          /* orphans/widows minimum (1/1) : le browser fragmente naturellement
+             sans déplacer intempestivement du texte hors de vue. */
+          orphans: 1;
+          widows: 1;
         }
         /* drop-cap conclusion retiré aussi pour cohérence + éviter
            débordements imprévisibles en multi-column. */
