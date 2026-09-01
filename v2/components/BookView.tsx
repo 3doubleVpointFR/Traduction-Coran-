@@ -143,9 +143,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   const flowRef = useRef<HTMLDivElement | null>(null)
 
   // Mesure & recalcul du nombre de spreads.
-  // Le browser crée autant de colonnes que nécessaire dans le flow. On mesure
-  // la largeur totale du flow (avec toutes ses colonnes horizontales) puis
-  // divise par la largeur visible du viewport (2 colonnes = 1 spread).
+  // Chaque spread = 2 colonnes visibles ; entre 2 spreads, un column-gap
+  // supplémentaire. Distance entre spread N et N+1 = viewport + gap.
+  // Formule : N = ceil((scrollWidth + gap) / (viewport + gap))
   const remeasure = useCallback(() => {
     const v = viewportRef.current
     const f = flowRef.current
@@ -153,17 +153,16 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     const vw = v.clientWidth
     if (vw <= 0) return
     setViewportWidth(vw)
-    // Force reflow puis mesure — attend un frame pour que le browser ait
-    // recalculé les colonnes après changement de contenu/dimensions.
+    const gap = isMobile ? 0 : 80
     requestAnimationFrame(() => {
       if (!f.isConnected) return
       const sw = f.scrollWidth
-      const n = Math.max(1, Math.ceil(sw / vw))
+      // Le dernier spread n'a pas de gap trailing — d'où le +gap dans le num
+      const n = Math.max(1, Math.ceil((sw + gap) / (vw + gap)))
       setTotalSpreads(n)
-      // Clamp spread si contenu a rétréci
       setSpread(s => Math.min(s, n - 1))
     })
-  }, [])
+  }, [isMobile])
 
   useLayoutEffect(() => {
     remeasure()
