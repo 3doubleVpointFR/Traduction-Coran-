@@ -387,6 +387,9 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                 top: -99999,
                 left: 0,
                 width: pageWidth > 0 ? pageWidth : '100%',
+                paddingLeft: isMobile ? '4px' : '10px',
+                paddingRight: isMobile ? '12px' : '20px',
+                boxSizing: 'border-box',
                 visibility: 'hidden',
                 fontSize: isMobile ? '11px' : '16px',
                 lineHeight: 1.5,
@@ -438,10 +441,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       textAlign: 'left',
                       overflow: 'hidden',
-                      // Petit padding interne pour aérer le texte du bord
-                      // de la page — le book-body a déjà 12 px mais on ajoute
-                      // 4 px de sécurité contre les débordements subpixel.
-                      paddingRight: isMobile ? '4px' : '0',
+                      // Padding-right généreux pour aérer le texte du bord
+                      // du livre — même sur desktop, garantit une marge
+                      // visible entre le texte et le contour de la page.
+                      paddingRight: isMobile ? '12px' : '20px',
+                      paddingLeft: isMobile ? '4px' : '10px',
                       boxSizing: 'border-box',
                     }}
                   >
