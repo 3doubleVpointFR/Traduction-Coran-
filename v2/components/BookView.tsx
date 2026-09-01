@@ -211,10 +211,11 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
     () => {
       if (!hasConclusion) return { starter: '', tail: [] as string[] }
       // arabe + phon : starter vide (versets prennent trop de place),
-      // toute la conclusion va sur 3 tail spreads.
-      if (bvOpts.arabic && bvOpts.phon) return splitConclusionForBook(conclusion!, 0, 3)
-      // arabe OU phon : starter petit, tail sur 2 spreads.
-      if (bvOpts.arabic || bvOpts.phon) return splitConclusionForBook(conclusion!, 700, 2)
+      // toute la conclusion CONCENTRÉE sur 1 seul tail spread (2 cols bien
+      // remplies au lieu de 3 spreads à moitié vides).
+      if (bvOpts.arabic && bvOpts.phon) return splitConclusionForBook(conclusion!, 0, 1)
+      // arabe OU phon : starter petit, tail sur 1 spread aussi.
+      if (bvOpts.arabic || bvOpts.phon) return splitConclusionForBook(conclusion!, 700, 1)
       // fr seul : starter généreux, tail sur 1 spread.
       return splitConclusionForBook(conclusion!, 1800, 1)
     },
