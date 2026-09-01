@@ -196,7 +196,10 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   // la sourate est finie). « tail » = reste réparti sur N spreads conclusion.
   const { starter: conclusionStarterMd, tail: conclusionTailMds } = useMemo(
     () => (hasConclusion
-      ? splitConclusionForBook(conclusion!, 1100, 1)
+      // Starter généreux (~1800 chars) pour remplir le mixed spread après les
+      // versets. Le reste (~1800 chars) va dans 1 spread tail dédié qui remplira
+      // ses 2 colonnes. Balance des 2 côtés → pas de gros vides.
+      ? splitConclusionForBook(conclusion!, 1800, 1)
       : { starter: '', tail: [] as string[] }),
     [conclusion, hasConclusion]
   )
