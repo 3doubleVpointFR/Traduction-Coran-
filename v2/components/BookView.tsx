@@ -191,15 +191,23 @@ const LINE_STRONG = 'rgba(184,150,46,0.42)'
 
 export default function BookView({ surah, verses, pageSize, conclusion }: Props) {
   const hasConclusion = !!(conclusion && conclusion.trim())
-  // Découpe : « starter » = début de la conclusion, affiché à droite du dernier
-  // spread des versets (pour éviter la page blanche qui donne l'impression que
-  // la sourate est finie). « tail » = reste réparti sur N spreads conclusion.
+  const pageForVerse = (verseNum: number) => Math.ceil(verseNum / pageSize)
+  const isFatiha = surah.id === 1
+  const isBaraah = surah.id === 9
+
+  // Observe les classes body pilotées par le hamburger ≡ (Affichage) —
+  // dès qu'on toggle Arabe / Phonétique, on réinitialise la pagination adaptative
+  // pour re-mesurer proprement (sinon les verses retirés lors d'un débordement
+  // ne reviennent pas quand on redésactive l'arabe/la phon).
+  const [bvOpts, setBvOpts] = useState({ arabic: false, phon: false })
+
+  // Découpe conclusion : « starter » = début affiché à droite du dernier verse
+  // spread. « tail » = reste réparti sur N spreads conclusion. Starter dynamique
+  // selon les toggles arabe/phon (versets plus hauts → moins de conclusion sur
+  // le mixed spread).
   const { starter: conclusionStarterMd, tail: conclusionTailMds } = useMemo(
     () => {
       if (!hasConclusion) return { starter: '', tail: [] as string[] }
-      // Starter dynamique : + les versets prennent de la place (arabe/phon
-      // activés), - le starter peut être gros sur le mixed spread. Le tail
-      // reçoit le reste sur 1 ou 2 spreads selon volume.
       let starterMax = 1800
       let tailN = 1
       if (bvOpts.arabic && bvOpts.phon) { starterMax = 400; tailN = 2 }
@@ -210,15 +218,6 @@ export default function BookView({ surah, verses, pageSize, conclusion }: Props)
   )
   const conclusionStarterHtml = useMemo(() => parseConclusionMarkdown(conclusionStarterMd), [conclusionStarterMd])
   const conclusionTailHtmls = useMemo(() => conclusionTailMds.map(md => parseConclusionMarkdown(md)), [conclusionTailMds])
-  const pageForVerse = (verseNum: number) => Math.ceil(verseNum / pageSize)
-  const isFatiha = surah.id === 1
-  const isBaraah = surah.id === 9
-
-  // Observe les classes body pilotées par le hamburger ≡ (Affichage) —
-  // dès qu'on toggle Arabe / Phonétique, on réinitialise la pagination adaptative
-  // pour re-mesurer proprement (sinon les verses retirés lors d'un débordement
-  // ne reviennent pas quand on redésactive l'arabe/la phon).
-  const [bvOpts, setBvOpts] = useState({ arabic: false, phon: false })
   useEffect(() => {
     if (typeof window === 'undefined') return
     const sync = () => {
