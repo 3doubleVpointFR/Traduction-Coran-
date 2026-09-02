@@ -1122,7 +1122,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           </footer>
         </div>
 
-        <div className="bv-cta-wrap" style={{ textAlign: 'center', marginTop: '14px' }}>
+        {/* Aligné sur le pli comme le compteur, pas sur la boîte du livre :
+            sinon il casse l'axe vertical que forment la pliure et le pied de
+            page, décalés d'une demi-tranche vers la gauche. */}
+        <div
+          className="bv-cta-wrap"
+          style={{
+            textAlign: 'center',
+            marginTop: '14px',
+            paddingRight: !isMobile && hasRail ? `${TRANCHE_W}px` : undefined,
+          }}
+        >
           <Link
             href={analyseHref}
             target="_blank"
@@ -1460,11 +1470,30 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           transition: background 220ms ease, color 220ms ease,
                       border-color 220ms ease, box-shadow 220ms ease;
         }
+        /* Le tour lent du ✦ — copié sur « Visite guidée » (.tuto-cta-star) :
+           600 ms, même courbe, et surtout un tour COMPLET.
+
+           Un demi-tour ne convient pas ici : l'encre du ✦ ne remplit pas sa
+           boîte et n'y est pas centrée, donc la rotation se fait autour d'un
+           point qui n'est pas le sien — à 180° l'encre atterrit ailleurs et le
+           losange a l'air de partir vers le bas au lieu de pivoter. À 360° il
+           revient exactement d'où il vient, quel que soit le décalage.
+
+           Même corps que le texte pour la même raison : un ✦ à 10 px centré
+           dans une ligne de 14 se lit plus haut que le texte, son encre étant
+           haute dans sa boîte. */
         .bv-cta-orn {
-          font-size: 10px;
+          display: inline-block;
+          font-size: 14px;
+          line-height: 1;
           color: ${GOLD};
           font-style: normal;
-          transition: color 220ms ease;
+          transition: color 220ms ease,
+                      transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bv-cta:hover .bv-cta-orn,
+        .bv-cta:focus-visible .bv-cta-orn {
+          transform: rotate(360deg);
         }
         .bv-cta-arrow {
           display: inline-flex;
@@ -1483,7 +1512,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           transform: translateX(3px);
         }
         @media (prefers-reduced-motion: reduce) {
-          .bv-cta, .bv-cta-arrow { transition: none; }
+          .bv-cta, .bv-cta-arrow, .bv-cta-orn { transition: none; }
+          .bv-cta:hover .bv-cta-orn { transform: none; }
         }
         .page-arrow:not(:disabled):hover {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
@@ -1639,7 +1669,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             letter-spacing: 0.07em !important;
           }
           .bv-cta-orn {
-            font-size: 8px !important;
+            font-size: 12px !important;
           }
           .bv-cta-wrap {
             margin-top: 5px !important;
