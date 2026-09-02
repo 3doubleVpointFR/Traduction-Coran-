@@ -1820,7 +1820,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             55%       { background-position: 0 150%; opacity: 1; }
             70%, 100% { background-position: 0 150%; opacity: 0; }
           }
-          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
+          /* La reprise discrète : même course, mais bien plus rapide que sa
+             période — elle passe puis laisse la barre tranquille jusqu'au
+             tour suivant. */
+          @keyframes bvRailSheenSoft {
+            0%        { background-position: 0 -50%; opacity: 0; }
+            6%        { opacity: 1; }
+            30%       { background-position: 0 150%; opacity: 1; }
+            38%, 100% { background-position: 0 150%; opacity: 0; }
+          }
+          .bv-rail-mob:not(.is-open) .bv-tranche-host::after,
+          .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1829,17 +1839,34 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             width: ${RAIL_SLIVER}px;
             pointer-events: none;
             z-index: 4;
+            background-size: 100% 38%;
+            background-repeat: no-repeat;
+            opacity: 0;
+          }
+          /* Trois passages appuyés, pour qui n'a jamais ouvert la tranche. */
+          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
             background: linear-gradient(180deg,
               rgba(201,162,58,0) 0%,
               rgba(201,162,58,0.55) 50%,
               rgba(201,162,58,0) 100%);
-            background-size: 100% 38%;
-            background-repeat: no-repeat;
-            opacity: 0;
             animation: bvRailSheen 4200ms ease-in-out 1400ms 3;
           }
+          /* Puis une lueur légère toutes les cinq secondes, sans fin : la
+             barre reste vivante sans redevenir un clignotant. Elle démarre
+             après les trois passages appuyés quand il y en a eu. */
+          .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
+            background: linear-gradient(180deg,
+              rgba(201,162,58,0) 0%,
+              rgba(201,162,58,0.20) 50%,
+              rgba(201,162,58,0) 100%);
+            animation: bvRailSheenSoft 5000ms ease-in-out 2500ms infinite;
+          }
+          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::before {
+            animation-delay: 14000ms;
+          }
           @media (prefers-reduced-motion: reduce) {
-            .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
+            .bv-rail-mob:not(.is-open) .bv-tranche-host::after,
+            .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
               animation: none;
             }
           }
@@ -1864,7 +1891,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
-            transform: scale(0.794);
+            transform: scale(0.873);
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         filter 260ms ease;
           }
@@ -1874,8 +1901,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-rail-mob .bv-tr-num {
             display: block;
             position: absolute;
-            right: 6px;
-            font-size: 9.3px;
+            right: 4px;
+            font-size: 10.2px;
             opacity: 0;
             transition: opacity 200ms ease;
           }
@@ -1891,7 +1918,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-star {
-            transform: scale(1.048);
+            transform: scale(1.153);
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-num {
