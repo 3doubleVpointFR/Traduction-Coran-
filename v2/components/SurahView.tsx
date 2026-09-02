@@ -456,24 +456,65 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
     })
   }, [router, surah.id])
 
-  // Helper : scroll smooth + flash or sur un verset déjà rendu dans le DOM
-  const HEADER_GAP = 70
+  /* ═══ OUVERTURE DU LIVRE ═══
+     L'analyse s'efface avant que la navigation parte : le contenu se retire
+     vers le haut en perdant sa netteté, la page reste vide un instant, puis le
+     livre arrive. Sans ça on passait d'un écran chargé à un autre écran chargé
+     sans transition, et rien ne disait qu'on changeait de mode de lecture.
+
+     Même idiome qu'au changement de sourate dans la vue livre : on floute la
+     page sortante, on n'affiche jamais de panneau d'attente — sur 300 ms
+     personne ne le lit et ça fait paraître l'application plus lente. */
+  const [leavingToBook, setLeavingToBook] = useState(false)
+  const openBook = useCallback(() => {
+    if (leavingToBook) return
+    const reduce = typeof window !== 'undefined'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) {
+      router.push(`/surah/${surah.id}/livre`)
+      return
+    }
+    setLeavingToBook(true)
+    window.setTimeout(() => router.push(`/surah/${surah.id}/livre`), 260)
+  }, [router, surah.id, leavingToBook])
+
+  // Helper : scroll smooth + flash or sur un verset déjà rendu dans le DOM.
+  //
+  // Le verset se pose au MILIEU de la zone lisible, pas juste sous la barre du
+  // site. L'ancienne marge fixe de 70 px était plus courte que la barre elle-
+  // même — clamp(58px, 8vw, 72px), donc 72 px sur desktop — et le haut du
+  // verset passait dessous. Une marge de sécurité n'aurait fait que le coller
+  // au bord ; on le centre.
+  //
+  // La hauteur de barre est mesurée et non écrite en dur : elle dépend de la
+  // largeur de la fenêtre.
+  const verseOffsetTop = (el: HTMLElement) => {
+    const header = document.querySelector('header.sticky') as HTMLElement | null
+    const headerH = header ? header.getBoundingClientRect().height : 72
+    const visibleH = window.innerHeight - headerH
+    // Un verset plus haut que la zone lisible ne peut pas être centré sans
+    // passer sous la barre : on le pose alors juste dessous.
+    const marge = Math.max(14, (visibleH - el.getBoundingClientRect().height) / 2)
+    return headerH + marge
+  }
   const scrollAndFlash = (n: number) => {
     const tryScroll = (attempt = 0) => {
       const el = document.getElementById(`verse-${surah.id}-${n}`) as HTMLElement | null
       if (el) {
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
+            const offset = verseOffsetTop(el)
             const rect = el.getBoundingClientRect()
-            const targetY = Math.max(0, window.scrollY + rect.top - HEADER_GAP)
+            const targetY = Math.max(0, window.scrollY + rect.top - offset)
             window.scrollTo({ top: targetY, behavior: 'smooth' })
             el.classList.add('verse-jump-flash')
             setTimeout(() => el.classList.remove('verse-jump-flash'), 1500)
             // Correction après le smooth scroll
             setTimeout(() => {
+              const o = verseOffsetTop(el)
               const r = el.getBoundingClientRect()
-              if (Math.abs(r.top - HEADER_GAP) > 6) {
-                const ty = Math.max(0, window.scrollY + r.top - HEADER_GAP)
+              if (Math.abs(r.top - o) > 6) {
+                const ty = Math.max(0, window.scrollY + r.top - o)
                 window.scrollTo({ top: ty, behavior: 'auto' })
               }
             }, 750)
@@ -747,7 +788,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
   }, [activeWordKey])
 
   return (
-    <div>
+    <div className={`surah-page${leavingToBook ? ' is-opening-book' : ''}`}>
       {/* Surah header — compact, raffiné, cohérent avec la home */}
       <header className="surah-header text-center pt-4 pb-4 mb-5">
         {/* Petit préfixe "Sourate III" en italique Cormorant or */}
@@ -965,34 +1006,108 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             Analyse
           </span>
 
-          {/* Onglet inactif : Livre */}
+          {/* Onglet inactif : Livre. Le clic ne suit pas le lien tout de
+              suite : la page d'analyse s'efface d'abord, puis on navigue —
+              c'est ce qui donne le sentiment d'ouvrir le livre plutôt que de
+              charger une URL. Le href reste vrai pour l'ouverture en nouvel
+              onglet, le clic milieu et les moteurs. */}
           <a
             href={`/surah/${surah.id}/livre`}
             className="view-toggle-livre"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '7px',
-              padding: '8px 20px',
-              borderRadius: '999px',
-              color: '#8A6E1F',
-              fontSize: '13.5px',
-              fontWeight: 500,
-              letterSpacing: '0.08em',
-              fontStyle: 'italic',
-              textDecoration: 'none',
-              transition: 'background 220ms ease, color 220ms ease',
+            onClick={e => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+              e.preventDefault()
+              openBook()
             }}
           >
-            <span aria-hidden>❦</span>
+            <span aria-hidden className="view-toggle-orn">❦</span>
             Livre
+            <span aria-hidden className="view-toggle-arrow">›</span>
           </a>
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .view-toggle-livre:hover {
-            background: rgba(184,150,46,0.12);
+          /* ═══ BASCULE ANALYSE / LIVRE ═══
+             L'onglet inactif ne se voyait pas comme cliquable : même corps que
+             l'actif, aucun signe de sortie. Il reçoit donc un chevron qui
+             glisse, et le ❦ tourne comme les ✦ du site — mêmes 600 ms, même
+             courbe (voir .tuto-cta-star). Un tour COMPLET : à 180°, l'encre
+             d'un glyphe qui ne remplit pas sa boîte atterrit ailleurs et il a
+             l'air de se déplacer au lieu de pivoter. */
+          .view-toggle-livre {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px 8px 20px;
+            border-radius: 999px;
+            color: #8A6E1F;
+            font-size: 13.5px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            font-style: italic;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 220ms ease, color 220ms ease;
+          }
+          .view-toggle-orn {
+            display: inline-block;
+            font-style: normal;
+            /* reste doré même quand le texte fonce au survol : c'est
+               l'ornement, pas du texte */
+            color: #8A6E1F;
+            transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .view-toggle-arrow {
+            display: inline-block;
+            font-style: normal;
+            opacity: 0.5;
+            margin-left: -1px;
+            transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), opacity 220ms ease;
+          }
+          .view-toggle-livre:hover,
+          .view-toggle-livre:focus-visible {
+            background: rgba(184,150,46,0.14);
             color: #1A1410;
+          }
+          .view-toggle-livre:hover .view-toggle-orn,
+          .view-toggle-livre:focus-visible .view-toggle-orn {
+            transform: rotate(360deg);
+          }
+          .view-toggle-livre:hover .view-toggle-arrow,
+          .view-toggle-livre:focus-visible .view-toggle-arrow {
+            transform: translateX(3px);
+            opacity: 0.85;
+          }
+
+          /* ═══ OUVERTURE DU LIVRE ═══
+             La page se retire vers le haut en perdant sa netteté. On ne cache
+             pas la page pour autant : en App Router l'ancienne reste montée
+             jusqu'à la réponse du serveur, la faire disparaître donnerait du
+             blanc. */
+          .surah-page {
+            transition: opacity 260ms ease, filter 260ms ease, transform 260ms ease;
+          }
+          .surah-page.is-opening-book {
+            opacity: 0;
+            filter: blur(7px);
+            transform: translateY(-14px) scale(0.985);
+            pointer-events: none;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .surah-page { transition: opacity 120ms ease; }
+            .surah-page.is-opening-book {
+              filter: none;
+              transform: none;
+              opacity: 0.4;
+            }
+            .view-toggle-orn, .view-toggle-arrow { transition: none; }
+            .view-toggle-livre:hover .view-toggle-orn { transform: none; }
+          }
+          @media (max-width: 640px) {
+            .view-toggle-livre {
+              padding: 8px 14px 8px 16px;
+              font-size: 12.5px;
+            }
           }
         `}} />
 

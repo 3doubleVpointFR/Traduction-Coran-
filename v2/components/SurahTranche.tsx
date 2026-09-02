@@ -165,6 +165,12 @@ export default function SurahTranche({
                 onFocus={e => showLabel(i, e.currentTarget)}
               >
                 <Losange />
+                {/* Numéro : caché par défaut. Sur la tranche large du desktop
+                    c'est l'étiquette au survol qui renseigne, mais au doigt il
+                    n'y a pas de survol — sans numéro, une colonne de 114
+                    losanges identiques ne dit pas où l'on est. Révélé par
+                    .bv-rail-mob.is-open (voir BookView). */}
+                <span className="bv-tr-num" aria-hidden>{s.id}</span>
               </Link>
             )
           })}
@@ -240,6 +246,29 @@ export default function SurahTranche({
           justify-content: center;
           text-decoration: none;
           cursor: pointer;
+        }
+
+        /* Le numéro de sourate. Chiffres bâtons de largeur fixe : Cormorant a
+           des chiffres elzéviriens, qui montent et descendent et feraient
+           danser une colonne de 114 nombres. */
+        .bv-tr-num {
+          display: none;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 9.5px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 0.01em;
+          color: rgba(110,80,25,0.45);
+          font-variant-numeric: lining-nums tabular-nums;
+          font-feature-settings: 'lnum' 1, 'tnum' 1;
+          transition: color 240ms ease;
+        }
+        .bv-tr-tick.is-open .bv-tr-num {
+          color: rgba(110,80,25,0.82);
+        }
+        .bv-tr-tick.is-current .bv-tr-num {
+          color: #8A6E1F;
+          font-weight: 700;
         }
 
         /* LE LOSANGE — même tracé pour les 114 sourates. L'état ne joue que sur

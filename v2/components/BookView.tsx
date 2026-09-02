@@ -746,14 +746,18 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   const hasRail = !!(railSurahs && railSurahs.length > 0)
   /* ═══ LA TRANCHE SUR MOBILE ═══
      Elle reste visible en permanence — sinon rien ne dit qu'elle existe — mais
-     réduite à un liséré de 15 px au lieu de 38 : on voit les perles, on sait
-     qu'on peut les toucher. Au doigt elle s'élargit à 52 px pour qu'on puisse
-     viser et faire défiler, puis se rétracte seule.
+     réduite à un liséré au lieu des 38 px du desktop : on voit les perles, on
+     sait qu'on peut les toucher. Au doigt elle s'élargit pour qu'on puisse
+     viser, lire les numéros et faire défiler, puis se rétracte seule.
 
      L'élargissement se fait PAR-DESSUS le texte (l'hôte est en position
      absolue, ancré à droite) : seul le liséré est réservé dans la gouttière,
      donc la pagination n'est jamais recalculée en cours de geste. */
-  const RAIL_SLIVER = 15
+  // Encre visible au repos, et zone tactile qui la déborde vers la gauche.
+  // Les deux nourrissent le CSS plus bas : sans ça le retrait du contenu
+  // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
+  const RAIL_SLIVER = 17
+  const RAIL_TOUCH = 44
   const [railOpen, setRailOpen] = useState(false)
   const railTimer = useRef<number | null>(null)
   // Le premier contact ne fait qu'ouvrir. Sans ça, poser le doigt sur un
@@ -1694,23 +1698,23 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
              repli est plus lent que l'ouverture — on subit la rétraction, on
              provoque l'ouverture. */
           .bv-rail-mob .bv-tranche-host {
-            width: 44px !important;
+            width: ${RAIL_TOUCH}px !important;
             top: 0 !important;
             bottom: 0 !important;
             transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tranche {
-            padding-left: 29px;
+            padding-left: ${RAIL_TOUCH - RAIL_SLIVER}px;
             background: linear-gradient(90deg,
-              rgba(184,150,46,0) 0 29px,
-              rgba(184,150,46,0.05) 29px,
+              rgba(184,150,46,0) 0 ${RAIL_TOUCH - RAIL_SLIVER}px,
+              rgba(184,150,46,0.05) ${RAIL_TOUCH - RAIL_SLIVER}px,
               rgba(184,150,46,0.13) 100%) !important;
             border-left: none !important;
             transition: padding-left 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
-            width: 8px !important;
-            height: 8px !important;
+            width: 9px !important;
+            height: 9px !important;
             transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         height 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -1720,8 +1724,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
              viser une perle et faire défiler. Fond OPAQUE — en translucide le
              texte transparaît et les deux deviennent illisibles. */
           .bv-rail-mob.is-open .bv-tranche-host {
-            width: 56px !important;
+            width: 62px !important;
             transition-duration: 300ms;
+          }
+          /* Les numéros n'apparaissent qu'une fois la barre ouverte : au doigt
+             il n'y a pas de survol, donc pas d'étiquette, et 114 losanges
+             identiques ne disent pas où l'on est. */
+          .bv-rail-mob.is-open .bv-tr-num {
+            display: inline;
+          }
+          .bv-rail-mob.is-open .bv-tr-tick {
+            gap: 5px;
           }
           .bv-rail-mob.is-open .bv-tranche {
             padding-left: 0;
