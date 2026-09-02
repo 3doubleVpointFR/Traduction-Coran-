@@ -1843,20 +1843,23 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             background-repeat: no-repeat;
             opacity: 0;
           }
-          /* Reflet BLANC et non doré, comme celui qui traverse « Visite
-             guidée ». Le sien passe sur un fond doré foncé, il éclate ; ici
-             le fond est déjà presque blanc, donc le blanc seul ne suffirait
-             pas à se voir. D'où un cœur quasi opaque sur une bande étroite —
-             c'est le contraste avec les bords du reflet qui le rend visible,
-             pas sa clarté propre.
+          /* Reflet DORÉ, et doré pour de bon : un aplat de #C9A23A sur du
+             crème ne donne pas de l'or, il donne du jaune. L'or se reconnaît
+             à son dégradé — un cœur clair pris entre deux bords chauds et
+             sombres. On reprend donc la rampe des perles elles-mêmes
+             (#EFD98C clair, #8A6E1F profond), la même que le dégradé qui les
+             remplit : c'est déjà l'or du site, il n'y a pas à en inventer un
+             second.
 
              Trois passages appuyés, pour qui n'a jamais ouvert la tranche. */
           .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
             background: linear-gradient(180deg,
-              rgba(255,255,255,0) 0%,
-              rgba(255,255,255,0.98) 50%,
-              rgba(255,255,255,0) 100%);
-            background-size: 100% 30%;
+              rgba(138,110,31,0) 0%,
+              rgba(138,110,31,0.30) 32%,
+              rgba(239,217,140,0.95) 50%,
+              rgba(138,110,31,0.30) 68%,
+              rgba(138,110,31,0) 100%);
+            background-size: 100% 34%;
             animation: bvRailSheen 4200ms ease-in-out 1400ms 3;
           }
           /* Puis un reflet léger toutes les cinq secondes, sans fin : la
@@ -1864,10 +1867,12 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
              après les trois passages appuyés quand il y en a eu. */
           .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
             background: linear-gradient(180deg,
-              rgba(255,255,255,0) 0%,
-              rgba(255,255,255,0.85) 50%,
-              rgba(255,255,255,0) 100%);
-            background-size: 100% 26%;
+              rgba(138,110,31,0) 0%,
+              rgba(138,110,31,0.16) 32%,
+              rgba(239,217,140,0.62) 50%,
+              rgba(138,110,31,0.16) 68%,
+              rgba(138,110,31,0) 100%);
+            background-size: 100% 30%;
             animation: bvRailSheenSoft 5000ms ease-in-out 2500ms infinite;
           }
           .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::before {
