@@ -756,20 +756,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
      par id, et la liste des disponibles est déjà calculée pour le chapelet —
      rien à demander de plus.
 
-     Le parcours BOUCLE : après la dernière traduite vient la première, et
-     inversement. Sans ça, les deux extrémités du corpus étaient des
-     cul-de-sac, alors qu'il n'y a pas de raison de s'y arrêter. On ne renvoie
-     rien si la voisine est la sourate courante — cas d'une seule traduite. */
+     Le parcours NE BOUCLE PAS. Al-Fatiha n'a pas de précédente et la 114
+     n'aura pas de suivante : le recueil a un ordre, et le refermer en anneau
+     l'efface. Aux extrémités on ne montre donc rien — la flèche de page
+     éteinte reprend sa place. */
   const [prevSurah, nextSurah] = useMemo(() => {
     if (!railSurahs || !railAvailableIds) return [null, null]
     const dispo = new Set(railAvailableIds)
     const lisibles = railSurahs.filter(s => dispo.has(s.id))
-    if (lisibles.length === 0) return [null, null]
-    const apres = lisibles.find(s => s.id > surah.id) ?? lisibles[0]
-    const avant = [...lisibles].reverse().find(s => s.id < surah.id) ?? lisibles[lisibles.length - 1]
     return [
-      avant.id === surah.id ? null : avant,
-      apres.id === surah.id ? null : apres,
+      [...lisibles].reverse().find(s => s.id < surah.id) ?? null,
+      lisibles.find(s => s.id > surah.id) ?? null,
     ]
   }, [railSurahs, railAvailableIds, surah.id])
   /* ═══ LA TRANCHE SUR MOBILE ═══
@@ -1698,13 +1695,12 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
            le survole pas. */
         .bv-next-surah {
           display: inline-flex;
-          align-items: baseline;
+          /* center et non baseline : le chevron n'a pas de ligne de base, et
+             le passer de la fin au début changeait la hauteur de la bague
+             (34 px d'un côté, 32 de l'autre) */
+          align-items: center;
           gap: 7px;
           padding: 6px 13px 6px 15px;
-          /* le rembourrage suit le sens de lecture du bouton */
-        }
-        .bv-next-surah.is-prev {
-          padding: 6px 15px 6px 13px;
           border-radius: 999px;
           border: 1px solid rgba(184,150,46,0.42);
           color: ${GOLD_DEEP};
@@ -1714,6 +1710,10 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           white-space: nowrap;
           max-width: 100%;
           transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+        }
+        /* seul le rembourrage change de sens, tout le reste est commun */
+        .bv-next-surah.is-prev {
+          padding: 6px 15px 6px 13px;
         }
         .bv-next-label {
           font-size: 10px;
