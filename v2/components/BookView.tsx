@@ -305,7 +305,12 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   const splitLogRef = useRef<string[]>([])
 
   const pagesPerSpread = isMobile ? 1 : 2
-  const gap = isMobile ? 0 : 80
+  // L'écart entre pages du ruban. Sur mobile il ne sert pas à aérer — une
+  // seule page est visible — mais à ABSORBER la course de la tourne : tout le
+  // ruban glisse de TURN_SHIFT_PX, donc à écart nul la page suivante entrait
+  // de 18 px dans le champ avant d'avoir fini de s'effacer, et on apercevait
+  // le bord de ses lignes à droite. Il doit rester supérieur à cette course.
+  const gap = isMobile ? TURN_SHIFT_PX + 10 : 80
 
   // Debug overlay activable via ?debug=1
   const [debug, setDebug] = useState(false)
