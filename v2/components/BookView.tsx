@@ -1749,8 +1749,15 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             flex: 0 0 auto;
           }
           /* Pied du livre sur une seule ligne : nom, compteur, chevrons */
+          /* Le compteur se cale sur l'axe de la COLONNE DE TEXTE, pas sur
+             celui du livre : la gouttière droite de book-body est plus large
+             que la gauche du liséré de la tranche, donc la colonne est
+             décalée vers la gauche. Sans cette compensation, « page n / N »
+             ne tombait pas sous le milieu du texte qu'il numérote. Même
+             correction que sur desktop, où c'est la tranche entière qui
+             creuse l'écart. */
           .bv-book-footer {
-            padding: 5px 10px 6px !important;
+            padding: 5px ${10 + RAIL_SLIVER + 4}px 6px 10px !important;
             gap: 8px !important;
           }
           .bv-foot-count {
@@ -1773,6 +1780,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           }
           .bv-cta-wrap {
             margin-top: 5px !important;
+            /* même axe que le compteur et que la colonne de texte */
+            padding-right: ${RAIL_SLIVER + 4}px;
             /* barre de geste des iPhone : elle flotte au-dessus de la page et
                couperait le lien sans cette réserve */
             padding-bottom: 5px;
