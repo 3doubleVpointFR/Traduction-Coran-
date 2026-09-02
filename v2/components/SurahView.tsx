@@ -968,15 +968,18 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           </form>
         )}
 
-        {/* Toggle segmenté Analyse | Livre — pill élégante centrée */}
+        {/* Toggle segmenté Analyse | Livre — pill élégante centrée.
+            L'intitulé au-dessus dit ce que la bascule commande : « Analyse »
+            et « Livre » nomment les deux modes, rien ne nommait la chose
+            elle-même. */}
+        <p className="view-toggle-label">Mode de lecture</p>
         <div
           className="view-toggle"
           role="tablist"
-          aria-label="Mode d'affichage"
+          aria-label="Mode de lecture"
           style={{
             display: 'inline-flex',
             alignItems: 'stretch',
-            marginTop: '22px',
             padding: '4px',
             borderRadius: '999px',
             border: '1px solid rgba(184,150,46,0.42)',
@@ -988,6 +991,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           {/* Onglet actif : Analyse */}
           <span
             aria-current="page"
+            className="view-toggle-active"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -1003,7 +1007,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
               textShadow: '0 1px 1px rgba(80,55,10,0.28)',
             }}
           >
-            <span aria-hidden>✦</span>
+            <span aria-hidden className="view-toggle-orn-active">✦</span>
             Analyse
           </span>
 
@@ -1134,10 +1138,51 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             .view-toggle-orn, .view-toggle-arrow { transition: none; }
             .view-toggle-livre:hover .view-toggle-orn { transform: none; }
           }
+          /* L'intitulé de la bascule — mêmes petites capitales dorées que
+             « SOURATE n » au-dessus, pour qu'il se lise comme une légende et
+             non comme un troisième bouton. */
+          .view-toggle-label {
+            margin: 20px 0 7px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 9.5px;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #B8962E;
+            opacity: 0.9;
+            /* l'interlettrage laisse un blanc après la dernière lettre */
+            text-indent: 0.3em;
+          }
+
+          /* Sur mobile la bascule prenait presque toute la largeur alors
+             qu'elle ne porte que deux mots. Elle se resserre — les styles de
+             l'onglet actif sont en ligne, d'où les !important. */
           @media (max-width: 640px) {
+            .view-toggle-label {
+              margin: 15px 0 5px;
+              font-size: 8.5px;
+              letter-spacing: 0.24em;
+            }
+            .view-toggle {
+              padding: 3px !important;
+            }
+            .view-toggle-active {
+              padding: 5px 13px !important;
+              font-size: 11.5px !important;
+              gap: 5px !important;
+              letter-spacing: 0.05em !important;
+            }
+            .view-toggle-orn-active {
+              font-size: 9px;
+            }
             .view-toggle-livre {
-              padding: 8px 14px 8px 16px;
-              font-size: 12.5px;
+              padding: 5px 11px 5px 13px;
+              font-size: 11.5px;
+              gap: 5px;
+              letter-spacing: 0.05em;
+            }
+            .view-toggle-orn {
+              font-size: 10px;
             }
           }
         `}} />

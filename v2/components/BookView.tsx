@@ -758,7 +758,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
   const RAIL_SLIVER = 20
   const RAIL_TOUCH = 44
-  const RAIL_OPEN = 45
+  const RAIL_OPEN = 54
   const [railOpen, setRailOpen] = useState(false)
   // Le lueur qui parcourt le liséré ne se déclenche que pour qui n'a jamais
   // ouvert la tranche. Vrai par défaut : rien ne scintille pendant le rendu
@@ -1864,7 +1864,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
-            transform: scale(0.735);
+            transform: scale(0.794);
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         filter 260ms ease;
           }
@@ -1874,8 +1874,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-rail-mob .bv-tr-num {
             display: block;
             position: absolute;
-            right: 3px;
-            font-size: 8.6px;
+            right: 6px;
+            font-size: 9.3px;
             opacity: 0;
             transition: opacity 200ms ease;
           }
@@ -1891,7 +1891,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-star {
-            transform: scale(0.97);
+            transform: scale(1.048);
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-num {
