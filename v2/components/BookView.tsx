@@ -756,11 +756,35 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   const RAIL_SLIVER = 15
   const [railOpen, setRailOpen] = useState(false)
   const railTimer = useRef<number | null>(null)
-  const keepRailOpen = useCallback(() => {
-    setRailOpen(true)
+  // Le premier contact ne fait qu'ouvrir. Sans ça, poser le doigt sur un
+  // liséré de 15 px pour l'agrandir revenait à choisir la sourate qui se
+  // trouvait dessous — on naviguait en voulant seulement regarder.
+  const railWasClosed = useRef(false)
+  const railMoved = useRef(false)
+  const railStartY = useRef(0)
+  const armRailTimer = useCallback(() => {
     if (railTimer.current !== null) window.clearTimeout(railTimer.current)
     railTimer.current = window.setTimeout(() => setRailOpen(false), 2400)
   }, [])
+  const onRailTouchStart = useCallback((e: React.TouchEvent) => {
+    railWasClosed.current = !railOpen
+    railMoved.current = false
+    railStartY.current = e.touches[0].clientY
+    setRailOpen(true)
+    armRailTimer()
+  }, [railOpen, armRailTimer])
+  const onRailTouchMove = useCallback((e: React.TouchEvent) => {
+    // au-delà de 8 px c'est un défilement, pas un choix de sourate
+    if (Math.abs(e.touches[0].clientY - railStartY.current) > 8) railMoved.current = true
+    armRailTimer()
+  }, [armRailTimer])
+  const onRailClickCapture = useCallback((e: React.MouseEvent) => {
+    if (!isMobile) return
+    if (railWasClosed.current || railMoved.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }, [isMobile])
   useEffect(() => {
     if (!isMobile) setRailOpen(false)
   }, [isMobile])
@@ -882,7 +906,15 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           }}
         >
           {!isMobile && (
-            <div aria-hidden className="bv-spine" />
+            // Le pli n'est pas au centre du livre : la tranche élargit la
+            // gouttière droite, donc les deux pages se rejoignent une
+            // demi-tranche plus à gauche. Sans ce décalage l'ombre de pliure
+            // est peinte à 19 px du vrai pli.
+            <div
+              aria-hidden
+              className="bv-spine"
+              style={hasRail ? { left: `calc(50% - ${TRANCHE_W / 2}px)` } : undefined}
+            />
           )}
 
 
@@ -939,9 +971,10 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             {hasRail && (
               <div
                 className={isMobile ? `bv-rail-mob${railOpen ? ' is-open' : ''}` : undefined}
-                onTouchStart={isMobile ? keepRailOpen : undefined}
-                onTouchMove={isMobile ? keepRailOpen : undefined}
-                onTouchEnd={isMobile ? keepRailOpen : undefined}
+                onTouchStart={isMobile ? onRailTouchStart : undefined}
+                onTouchMove={isMobile ? onRailTouchMove : undefined}
+                onTouchEnd={isMobile ? armRailTimer : undefined}
+                onClickCapture={isMobile ? onRailClickCapture : undefined}
               >
                 <SurahTranche
                   surahs={railSurahs!}
@@ -1034,7 +1067,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           <footer
             className="bv-book-footer"
             style={{
-              padding: '12px 60px 16px',
+              // même décalage que la pliure : le compteur doit tomber sur le
+              // pli, pas sur le centre géométrique du livre
+              padding: `12px ${60 + (!isMobile && hasRail ? TRANCHE_W : 0)}px 16px 60px`,
               display: 'grid',
               gridTemplateColumns: '1fr auto 1fr',
               alignItems: 'center',
@@ -1093,27 +1128,10 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             target="_blank"
             rel="noopener noreferrer"
             className="bv-cta"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '10px 24px',
-              borderRadius: '999px',
-              background: 'linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%)',
-              color: '#FFFCF6',
-              fontSize: '14px',
-              fontWeight: 500,
-              fontStyle: 'italic',
-              letterSpacing: '0.08em',
-              textDecoration: 'none',
-              boxShadow: '0 4px 12px rgba(120,90,30,0.30), inset 0 1px 0 rgba(255,255,255,0.30)',
-              transition: 'transform 200ms ease, box-shadow 200ms ease',
-              fontFamily: "'Cormorant Garamond', serif",
-            }}
           >
-            <span aria-hidden>✦</span>
-            Explorer l&apos;analyse
-            <span aria-hidden>→</span>
+            <span aria-hidden className="bv-cta-orn">✦</span>
+            <span>Explorer l&apos;analyse</span>
+            <span aria-hidden className="bv-cta-arrow"><Chevron dir="right" /></span>
           </Link>
         </div>
       </div>
@@ -1418,9 +1436,54 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           border-color: transparent;
           transform: translateY(-1px);
         }
+        /* ═══ SORTIE VERS L'ANALYSE ═══
+           Bague creuse et non pastille pleine : c'est déjà la règle des
+           numéros de verset (« sans fond, ça se lit comme un renvoi imprimé et
+           non comme un badge d'interface »). Une lozange dorée massive sous un
+           livre en filets d'or se voyait comme une pièce rapportée. Au survol
+           seulement, elle se remplit — même dégradé que les pastilles. */
+        .bv-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 11px;
+          padding: 9px 22px;
+          border-radius: 999px;
+          border: 1px solid rgba(184,150,46,0.45);
+          background: transparent;
+          color: ${GOLD_DEEP};
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 14px;
+          font-weight: 600;
+          font-style: italic;
+          letter-spacing: 0.1em;
+          text-decoration: none;
+          transition: background 220ms ease, color 220ms ease,
+                      border-color 220ms ease, box-shadow 220ms ease;
+        }
+        .bv-cta-orn {
+          font-size: 10px;
+          color: ${GOLD};
+          font-style: normal;
+          transition: color 220ms ease;
+        }
+        .bv-cta-arrow {
+          display: inline-flex;
+          transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
         .bv-cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(120,90,30,0.40), inset 0 1px 0 rgba(255,255,255,0.30);
+          background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
+          color: #FFFCF6;
+          border-color: transparent;
+          box-shadow: 0 4px 12px rgba(120,90,30,0.28);
+        }
+        .bv-cta:hover .bv-cta-orn {
+          color: #FFFCF6;
+        }
+        .bv-cta:hover .bv-cta-arrow {
+          transform: translateX(3px);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bv-cta, .bv-cta-arrow { transition: none; }
         }
         .page-arrow:not(:disabled):hover {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%) !important;
@@ -1568,11 +1631,15 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             width: 30px !important;
             height: 30px !important;
           }
-          /* Lien vers l'analyse : un filet de texte, pas une pastille de 41 px */
+          /* Lien vers l'analyse : la bague reste, resserrée */
           .bv-cta {
-            padding: 5px 16px !important;
+            padding: 5px 15px !important;
             font-size: 12px !important;
-            box-shadow: 0 2px 6px rgba(120,90,30,0.22) !important;
+            gap: 9px !important;
+            letter-spacing: 0.07em !important;
+          }
+          .bv-cta-orn {
+            font-size: 8px !important;
           }
           .bv-cta-wrap {
             margin-top: 5px !important;
@@ -1584,19 +1651,38 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             display: none !important;
           }
           /* ═══ LE LISÉRÉ ═══ (voir le commentaire RAIL_SLIVER)
-             Au repos 15 px : assez pour voir les perles et savoir qu'on peut
-             les toucher, sept fois moins cher que les 38 px du desktop. */
+             L'encre ne fait que 15 px, mais la ZONE TACTILE en fait 44 : un
+             liséré de 15 px est plus fin qu'un doigt, on le manquait une fois
+             sur deux. Les 29 px de rab sont transparents et débordent sur le
+             texte — d'où le dégradé à butée franche plutôt qu'un fond plein.
+             Le contenu est repoussé d'autant pour que les perles tombent dans
+             la partie encrée.
+
+             La courbe est une décélération douce et non le cubic-bezier de
+             signature (0.16, 1, 0.3, 1) : celui-ci avale 35 % de la course en
+             40 ms, ce qui se lit comme un saut sur une largeur de 37 px. Le
+             repli est plus lent que l'ouverture — on subit la rétraction, on
+             provoque l'ouverture. */
           .bv-rail-mob .bv-tranche-host {
-            width: 15px !important;
+            width: 44px !important;
             top: 0 !important;
             bottom: 0 !important;
-            transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1);
+          }
+          .bv-rail-mob .bv-tranche {
+            padding-left: 29px;
+            background: linear-gradient(90deg,
+              rgba(184,150,46,0) 0 29px,
+              rgba(184,150,46,0.05) 29px,
+              rgba(184,150,46,0.13) 100%) !important;
+            border-left: none !important;
+            transition: padding-left 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
             width: 8px !important;
             height: 8px !important;
-            transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1),
-                        height 260ms cubic-bezier(0.16, 1, 0.3, 1),
+            transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1),
+                        height 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
                         filter 260ms ease;
           }
@@ -1604,19 +1690,24 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
              viser une perle et faire défiler. Fond OPAQUE — en translucide le
              texte transparaît et les deux deviennent illisibles. */
           .bv-rail-mob.is-open .bv-tranche-host {
-            width: 52px !important;
+            width: 56px !important;
+            transition-duration: 300ms;
+          }
+          .bv-rail-mob.is-open .bv-tranche {
+            padding-left: 0;
+            background: #FBF6E8 !important;
+            border-left: 1px solid rgba(184,150,46,0.35) !important;
+            box-shadow: -14px 0 24px -10px rgba(60,40,10,0.28);
+            transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-star {
             width: 13px !important;
             height: 13px !important;
-          }
-          .bv-rail-mob.is-open .bv-tranche {
-            background: #FBF6E8 !important;
-            border-left: 1px solid rgba(184,150,46,0.35) !important;
-            box-shadow: -14px 0 24px -10px rgba(60,40,10,0.28);
+            transition-duration: 300ms;
           }
           @media (prefers-reduced-motion: reduce) {
             .bv-rail-mob .bv-tranche-host,
+            .bv-rail-mob .bv-tranche,
             .bv-rail-mob .bv-tr-star {
               transition: none !important;
             }
