@@ -758,8 +758,20 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
   const RAIL_SLIVER = 20
   const RAIL_TOUCH = 44
-  const RAIL_OPEN = 62
+  const RAIL_OPEN = 53
   const [railOpen, setRailOpen] = useState(false)
+  // Le lueur qui parcourt le liséré ne se déclenche que pour qui n'a jamais
+  // ouvert la tranche. Vrai par défaut : rien ne scintille pendant le rendu
+  // serveur ni l'hydratation, l'effet ne démarre qu'une fois monté.
+  const [railUsed, setRailUsed] = useState(true)
+  useEffect(() => {
+    try { setRailUsed(window.localStorage.getItem('bv-tranche-vue') === '1') }
+    catch { setRailUsed(false) }
+  }, [])
+  const markRailUsed = useCallback(() => {
+    setRailUsed(true)
+    try { window.localStorage.setItem('bv-tranche-vue', '1') } catch { /* navigation privée */ }
+  }, [])
   const railTimer = useRef<number | null>(null)
   // Le premier contact ne fait qu'ouvrir. Sans ça, poser le doigt sur un
   // liséré de 15 px pour l'agrandir revenait à choisir la sourate qui se
@@ -776,8 +788,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
     railMoved.current = false
     railStartY.current = e.touches[0].clientY
     setRailOpen(true)
+    markRailUsed()
     armRailTimer()
-  }, [railOpen, armRailTimer])
+  }, [railOpen, armRailTimer, markRailUsed])
   const onRailTouchMove = useCallback((e: React.TouchEvent) => {
     // au-delà de 8 px c'est un défilement, pas un choix de sourate
     if (Math.abs(e.touches[0].clientY - railStartY.current) > 8) railMoved.current = true
@@ -975,7 +988,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                 lui-meme au-dessus du pied de page */}
             {hasRail && (
               <div
-                className={isMobile ? `bv-rail-mob${railOpen ? ' is-open' : ''}` : undefined}
+                className={isMobile
+                  ? `bv-rail-mob${railOpen ? ' is-open' : ''}${railUsed ? '' : ' is-hinting'}`
+                  : undefined}
                 onTouchStart={isMobile ? onRailTouchStart : undefined}
                 onTouchMove={isMobile ? onRailTouchMove : undefined}
                 onTouchEnd={isMobile ? armRailTimer : undefined}
@@ -1273,6 +1288,44 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           gap: 13px;
           margin-top: 15px;
         }
+        /* La consigne montre l'objet dont elle parle : une vraie bague, à la
+           même échelle que celles du texte. Dire « le numéro » sans le montrer
+           obligeait à chercher. */
+        .bv-fp-hint {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 7px;
+          margin: 13px 0 0;
+          font-size: 11px;
+          font-style: italic;
+          color: ${MUTED};
+          letter-spacing: 0.03em;
+          opacity: 0.85;
+        }
+        .bv-fp-hint-mark {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 17px;
+          height: 17px;
+          padding: 0 5px;
+          border-radius: 999px;
+          border: 1px solid rgba(184,150,46,0.42);
+          color: ${GOLD_DEEP};
+          font-size: 10px;
+          font-weight: 700;
+          font-style: normal;
+          font-variant-numeric: lining-nums tabular-nums;
+          font-feature-settings: 'lnum' 1, 'tnum' 1;
+        }
+        /* le verbe suit le pointeur : on ne touche pas une souris */
+        .bv-hint-click { display: none; }
+        @media (hover: hover) and (pointer: fine) {
+          .bv-hint-tap { display: none; }
+          .bv-hint-click { display: inline; }
+        }
         .bv-fp-close span {
           flex: 0 1 72px;
           height: 1px;
@@ -1438,12 +1491,39 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           transition: background 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
           cursor: pointer;
         }
-        .verse-marker:hover {
+        /* Le survol sous vrai pointeur seulement : sur un écran tactile le
+           navigateur laisse :hover collé au dernier élément touché, et la
+           pastille restait dorée après le tap. */
+        @media (hover: hover) and (pointer: fine) {
+          .verse-marker:hover {
+            background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
+            color: #FFFCF6;
+            border-color: transparent;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(120,90,30,0.35);
+          }
+        }
+        /* Au doigt, c'est l'appui qui répond — sans lui rien ne se passe entre
+           le tap et l'ouverture de l'onglet, et on doute d'avoir touché. */
+        .verse-marker:active {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
           color: #FFFCF6;
           border-color: transparent;
-          transform: translateY(-1px);
-          box-shadow: 0 3px 8px rgba(120,90,30,0.35);
+          transform: scale(0.94);
+        }
+        /* Deux battements sur la première pastille de la sourate, le temps
+           qu'on comprenne que ces bagues mènent quelque part. Deux, pas une
+           boucle : une pulsation perpétuelle sur une page de lecture
+           deviendrait un clignotant. */
+        @keyframes bvMarkerHint {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(184,150,46,0); border-color: rgba(184,150,46,0.42); }
+          45%      { box-shadow: 0 0 0 5px rgba(184,150,46,0.16); border-color: rgba(184,150,46,0.85); }
+        }
+        .verse-marker.is-hint {
+          animation: bvMarkerHint 1500ms ease-in-out 900ms 2;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .verse-marker.is-hint { animation: none; }
         }
         .bv-floating-toggle:hover {
           background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
@@ -1723,6 +1803,46 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             /* la tranche déborde de son hôte une fois ouverte */
             overflow: visible !important;
           }
+          /* ═══ LA LUEUR ═══
+             Une lueur descend le long du liséré pour signaler qu'il est là.
+             Elle est posée sur l'hôte et non sur la tranche : la tranche
+             défile, la lueur suivrait le texte au lieu de rester sur la barre.
+             Sa largeur est celle de l'encre — au repos les 24 px restants de
+             l'hôte sont transparents et couvrent du texte.
+
+             Trois passages, puis plus rien, et plus jamais une fois la tranche
+             ouverte — le drapeau tient dans le navigateur. Un scintillement
+             perpétuel sur une surface de lecture devient un clignotant :
+             il apprend en trente secondes puis dérange pendant une heure. */
+          @keyframes bvRailSheen {
+            0%        { background-position: 0 -50%; opacity: 0; }
+            10%       { opacity: 1; }
+            55%       { background-position: 0 150%; opacity: 1; }
+            70%, 100% { background-position: 0 150%; opacity: 0; }
+          }
+          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: ${RAIL_SLIVER}px;
+            pointer-events: none;
+            z-index: 4;
+            background: linear-gradient(180deg,
+              rgba(201,162,58,0) 0%,
+              rgba(201,162,58,0.55) 50%,
+              rgba(201,162,58,0) 100%);
+            background-size: 100% 38%;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: bvRailSheen 4200ms ease-in-out 1400ms 3;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
+              animation: none;
+            }
+          }
           .bv-rail-mob .bv-tranche {
             position: absolute;
             top: 0;
@@ -1754,7 +1874,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-rail-mob .bv-tr-num {
             display: block;
             position: absolute;
-            right: 5px;
+            right: 7px;
+            font-size: 8.5px;
             opacity: 0;
             transition: opacity 200ms ease;
           }
@@ -2114,6 +2235,22 @@ function SurahHeader({ surah, isBaraah }: { surah: Surah; isBaraah: boolean }) {
       <div className="bv-fp-close" aria-hidden>
         <span /><i>❦</i><span />
       </div>
+
+      {/* Rien ne disait que les numéros de signe menaient quelque part. La
+          bague creuse se lit comme un renvoi imprimé — c'est voulu — mais un
+          renvoi imprimé ne se touche pas, et sur un écran tactile il n'y a
+          aucun survol pour le révéler. Une ligne le dit, une fois, à
+          l'ouverture de la sourate. Le verbe suit le pointeur. */}
+      <p className="bv-fp-hint">
+        <span aria-hidden className="bv-fp-hint-mark">1</span>
+        {/* toute la phrase dans UN seul élément de flex : sinon l'écart du
+            flex s'ajoute à l'espace du texte et le verbe se détache */}
+        <span>
+          <span className="bv-hint-tap">Touchez</span>
+          <span className="bv-hint-click">Cliquez sur</span> un numéro de signe
+          pour ouvrir son analyse
+        </span>
+      </p>
     </header>
   )
 }
@@ -2256,6 +2393,7 @@ function VerseParagraph({
   verse,
   surahId,
   pageForVerse,
+  isFirst,
 }: {
   verse: ReadVerse
   surahId: number
@@ -2282,7 +2420,7 @@ function VerseParagraph({
           href={`/surah/${surahId}?page=${pageForVerse(verse.verse_num)}#verse-${surahId}-${verse.verse_num}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="verse-marker"
+          className={`verse-marker${isFirst ? ' is-hint' : ''}`}
           title={`Analyser le signe ${verse.verse_num} (nouvel onglet)`}
           aria-label={`Analyser le signe ${verse.verse_num} dans un nouvel onglet`}
         >
