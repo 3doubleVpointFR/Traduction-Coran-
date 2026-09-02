@@ -1864,7 +1864,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
-            transform: scale(0.68);
+            transform: scale(0.735);
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
                         filter 260ms ease;
           }
@@ -1874,8 +1874,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-rail-mob .bv-tr-num {
             display: block;
             position: absolute;
-            right: 5px;
-            font-size: 8px;
+            right: 3px;
+            font-size: 8.6px;
             opacity: 0;
             transition: opacity 200ms ease;
           }
@@ -1891,7 +1891,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-star {
-            transform: scale(0.9);
+            transform: scale(0.97);
             transition-duration: 300ms;
           }
           .bv-rail-mob.is-open .bv-tr-num {
