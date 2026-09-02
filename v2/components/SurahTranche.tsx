@@ -317,13 +317,23 @@ export default function SurahTranche({
                   drop-shadow(0 0 7px rgba(184,150,46,0.70));
         }
 
-        .bv-tr-tick:hover .bv-tr-star { transform: scale(1.3) rotate(180deg); }
-        .bv-tr-tick.is-open:hover .bv-tr-star {
-          filter: drop-shadow(0 1px 2px rgba(120,90,30,0.45))
-                  drop-shadow(0 0 8px rgba(184,150,46,0.70));
+        /* Le survol n'existe QUE sous un vrai pointeur. Sur un écran tactile,
+           le navigateur laisse :hover collé au dernier élément touché : le
+           losange sous le doigt restait grossi et tourné une fois la tranche
+           refermée, seul de sa colonne. Même raison pour l'étiquette, qui
+           s'ouvrait au premier effleurement et ne repartait plus. */
+        @media (hover: hover) and (pointer: fine) {
+          .bv-tr-tick:hover .bv-tr-star { transform: scale(1.3) rotate(180deg); }
+          .bv-tr-tick.is-open:hover .bv-tr-star {
+            filter: drop-shadow(0 1px 2px rgba(120,90,30,0.45))
+                    drop-shadow(0 0 8px rgba(184,150,46,0.70));
+          }
+          .bv-tr-tick:not(.is-open):hover .bv-tr-star path {
+            stroke: rgba(110,80,25,0.58);
+          }
         }
-        .bv-tr-tick:not(.is-open):hover .bv-tr-star path {
-          stroke: rgba(110,80,25,0.58);
+        @media (hover: none) {
+          .bv-tr-cursor { display: none !important; }
         }
 
         /* ═══ L'ÉTIQUETTE ═══ un cartouche de papier, avec une pointe qui vise

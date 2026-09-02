@@ -475,7 +475,8 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
       return
     }
     setLeavingToBook(true)
-    window.setTimeout(() => router.push(`/surah/${surah.id}/livre`), 260)
+    // assez pour que la cascade se lise, pas assez pour qu'on l'attende
+    window.setTimeout(() => router.push(`/surah/${surah.id}/livre`), 420)
   }, [router, surah.id, leavingToBook])
 
   // Helper : scroll smooth + flash or sur un verset déjà rendu dans le DOM.
@@ -1079,26 +1080,56 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             opacity: 0.85;
           }
 
-          /* ═══ OUVERTURE DU LIVRE ═══
-             La page se retire vers le haut en perdant sa netteté. On ne cache
-             pas la page pour autant : en App Router l'ancienne reste montée
-             jusqu'à la réponse du serveur, la faire disparaître donnerait du
-             blanc. */
-          .surah-page {
-            transition: opacity 260ms ease, filter 260ms ease, transform 260ms ease;
+          /* ═══ OUVERTURE DU LIVRE — LE MUR QUI S'ÉCARTE ═══
+             Les blocs ne s'effacent pas ensemble : ils partent l'un après
+             l'autre en s'écartant de l'axe, un sur deux de chaque côté. Un
+             fondu global disait « la page s'en va » ; le décalage dit « ça
+             s'ouvre ». Le retard est court — 38 ms — parce qu'au-delà on
+             n'admire plus, on attend.
+
+             La grille elle-même n'est PAS animée, seulement ses blocs : si le
+             conteneur s'effaçait aussi, la cascade de ses enfants deviendrait
+             invisible sous lui. */
+          @keyframes bvPartL {
+            to { opacity: 0; filter: blur(7px); transform: translate3d(-34px, 0, 0) scale(0.96); }
+          }
+          @keyframes bvPartR {
+            to { opacity: 0; filter: blur(7px); transform: translate3d(34px, 0, 0) scale(0.96); }
           }
           .surah-page.is-opening-book {
-            opacity: 0;
-            filter: blur(7px);
-            transform: translateY(-14px) scale(0.985);
             pointer-events: none;
           }
+          .surah-page.is-opening-book > .surah-header,
+          .surah-page.is-opening-book > *:not(.surah-header):not(.page-section-anim),
+          .surah-page.is-opening-book .verses-page-enter > *,
+          .surah-page.is-opening-book .page-section-anim > div:last-child {
+            animation: bvPartL 380ms cubic-bezier(0.55, 0, 0.85, 0.25) forwards;
+            will-change: transform, opacity;
+          }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(even),
+          .surah-page.is-opening-book .page-section-anim > div:last-child {
+            animation-name: bvPartR;
+          }
+          /* le retard suit la lecture, de haut en bas */
+          .surah-page.is-opening-book > .surah-header { animation-delay: 0ms; }
+          .surah-page.is-opening-book > *:not(.surah-header):not(.page-section-anim) { animation-delay: 30ms; }
+          .surah-page.is-opening-book .page-section-anim > div:last-child { animation-delay: 90ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(1) { animation-delay: 60ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(2) { animation-delay: 98ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(3) { animation-delay: 136ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(4) { animation-delay: 174ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(5) { animation-delay: 212ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(6) { animation-delay: 250ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(7) { animation-delay: 288ms; }
+          .surah-page.is-opening-book .verses-page-enter > *:nth-child(n+8) { animation-delay: 320ms; }
           @media (prefers-reduced-motion: reduce) {
-            .surah-page { transition: opacity 120ms ease; }
-            .surah-page.is-opening-book {
-              filter: none;
-              transform: none;
-              opacity: 0.4;
+            .surah-page.is-opening-book > .surah-header,
+            .surah-page.is-opening-book > *:not(.surah-header):not(.page-section-anim),
+            .surah-page.is-opening-book .verses-page-enter > *,
+            .surah-page.is-opening-book .page-section-anim > div:last-child {
+              animation: none !important;
+              opacity: 0.35;
+              transition: opacity 120ms ease;
             }
             .view-toggle-orn, .view-toggle-arrow { transition: none; }
             .view-toggle-livre:hover .view-toggle-orn { transform: none; }

@@ -756,8 +756,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   // Encre visible au repos, et zone tactile qui la déborde vers la gauche.
   // Les deux nourrissent le CSS plus bas : sans ça le retrait du contenu
   // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
-  const RAIL_SLIVER = 17
+  const RAIL_SLIVER = 20
   const RAIL_TOUCH = 44
+  const RAIL_OPEN = 62
   const [railOpen, setRailOpen] = useState(false)
   const railTimer = useRef<number | null>(null)
   // Le premier contact ne fait qu'ouvrir. Sans ça, poser le doigt sur un
@@ -1630,10 +1631,20 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                composant n'existe que sur /surah/[id]/livre */
             padding: 0 !important;
           }
+          /* svh et non dvh — c'est LA bonne unité pour cette page.
+             dvh suit l'état courant de l'interface du navigateur ; au tout
+             premier affichage, avant que la barre d'outils du bas se pose,
+             il rend une hauteur trop grande et le pied du livre finit
+             dessous. Après un aller-retour vers l'analyse la valeur s'est
+             stabilisée, d'où le défaut qui ne se voyait qu'à la première
+             visite. svh est la hauteur avec l'interface du navigateur
+             DÉPLOYÉE : c'est une constante, et comme cette page ne défile
+             jamais, la barre ne se rétracte pas — on n'y perd rien.
+             La ligne en vh reste pour les navigateurs qui ignorent svh. */
           .bv-page {
             min-height: 0 !important;
             height: calc(100vh - clamp(58px, 8vw, 72px));
-            height: calc(100dvh - clamp(58px, 8vw, 72px));
+            height: calc(100svh - clamp(58px, 8vw, 72px));
             display: flex;
             flex-direction: column;
           }
@@ -1677,7 +1688,10 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           }
           .bv-cta-wrap {
             margin-top: 5px !important;
+            /* barre de geste des iPhone : elle flotte au-dessus de la page et
+               couperait le lien sans cette réserve */
             padding-bottom: 5px;
+            padding-bottom: max(5px, env(safe-area-inset-bottom));
           }
           /* La pastille flottante « Vue analyse » tombe sous la barre du site
              sur mobile : invisible mais cliquable, donc un piège. */
@@ -1685,73 +1699,89 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             display: none !important;
           }
           /* ═══ LE LISÉRÉ ═══ (voir le commentaire RAIL_SLIVER)
-             L'encre ne fait que 15 px, mais la ZONE TACTILE en fait 44 : un
-             liséré de 15 px est plus fin qu'un doigt, on le manquait une fois
-             sur deux. Les 29 px de rab sont transparents et débordent sur le
-             texte — d'où le dégradé à butée franche plutôt qu'un fond plein.
-             Le contenu est repoussé d'autant pour que les perles tombent dans
-             la partie encrée.
+             Tout s'anime en translation, rien ne change de taille. L'ancienne
+             version animait la largeur de l'hôte, le retrait du contenu ET la
+             taille des 114 losanges : le navigateur replaçait toute la colonne
+             à chaque image, d'où les à-coups. Une translation ne coûte rien —
+             elle est composée, pas mise en page.
+
+             L'hôte garde donc une largeur fixe : c'est la ZONE TACTILE, plus
+             large que l'encre parce qu'un liséré est plus fin qu'un doigt et
+             qu'on le manquait une fois sur deux. Il est transparent ; c'est la
+             tranche elle-même, plus large que lui et calée à droite, qui
+             coulisse. Au repos elle dépasse par la droite et le livre, qui
+             coupe ce qui sort de lui, n'en laisse voir que le liséré.
 
              La courbe est une décélération douce et non le cubic-bezier de
              signature (0.16, 1, 0.3, 1) : celui-ci avale 35 % de la course en
-             40 ms, ce qui se lit comme un saut sur une largeur de 37 px. Le
-             repli est plus lent que l'ouverture — on subit la rétraction, on
-             provoque l'ouverture. */
+             40 ms, ce qui se lit comme un saut. Le repli est plus lent que
+             l'ouverture — on subit la rétraction, on provoque l'ouverture. */
           .bv-rail-mob .bv-tranche-host {
             width: ${RAIL_TOUCH}px !important;
             top: 0 !important;
             bottom: 0 !important;
-            transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1);
+            /* la tranche déborde de son hôte une fois ouverte */
+            overflow: visible !important;
           }
           .bv-rail-mob .bv-tranche {
-            padding-left: ${RAIL_TOUCH - RAIL_SLIVER}px;
-            background: linear-gradient(90deg,
-              rgba(184,150,46,0) 0 ${RAIL_TOUCH - RAIL_SLIVER}px,
-              rgba(184,150,46,0.05) ${RAIL_TOUCH - RAIL_SLIVER}px,
-              rgba(184,150,46,0.13) 100%) !important;
-            border-left: none !important;
-            transition: padding-left 420ms cubic-bezier(0.33, 0, 0.2, 1);
-          }
-          .bv-rail-mob .bv-tr-star {
-            width: 9px !important;
-            height: 9px !important;
-            transition: width 420ms cubic-bezier(0.33, 0, 0.2, 1),
-                        height 420ms cubic-bezier(0.33, 0, 0.2, 1),
-                        transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
-                        filter 260ms ease;
-          }
-          /* Sous le doigt : on s'élargit par-dessus le texte pour pouvoir
-             viser une perle et faire défiler. Fond OPAQUE — en translucide le
-             texte transparaît et les deux deviennent illisibles. */
-          .bv-rail-mob.is-open .bv-tranche-host {
-            width: 62px !important;
-            transition-duration: 300ms;
-          }
-          /* Les numéros n'apparaissent qu'une fois la barre ouverte : au doigt
-             il n'y a pas de survol, donc pas d'étiquette, et 114 losanges
-             identiques ne disent pas où l'on est. */
-          .bv-rail-mob.is-open .bv-tr-num {
-            display: inline;
-          }
-          .bv-rail-mob.is-open .bv-tr-tick {
-            gap: 5px;
-          }
-          .bv-rail-mob.is-open .bv-tranche {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: ${RAIL_OPEN}px;
             padding-left: 0;
             background: #FBF6E8 !important;
-            border-left: 1px solid rgba(184,150,46,0.35) !important;
+            border-left: 1px solid rgba(184,150,46,0.30) !important;
+            transform: translateX(${RAIL_OPEN - RAIL_SLIVER}px);
+            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
+                        box-shadow 420ms ease;
+            will-change: transform;
+          }
+          /* Les perles reviennent dans le liséré : sans ce rappel elles
+             restent centrées sur une tranche dont la moitié est hors champ. */
+          .bv-rail-mob .bv-tr-inner {
+            transform: translateX(-${(RAIL_OPEN - RAIL_SLIVER) / 2}px);
+            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
+          }
+          .bv-rail-mob .bv-tr-star {
+            transform: scale(0.68);
+            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
+                        filter 260ms ease;
+          }
+          /* Le numéro est posé hors flux, à droite : le losange doit rester au
+             MILIEU de la tranche, et une paire losange+numéro centrée comme un
+             tout aurait décalé le losange vers la gauche. */
+          .bv-rail-mob .bv-tr-num {
+            display: block;
+            position: absolute;
+            right: 5px;
+            opacity: 0;
+            transition: opacity 200ms ease;
+          }
+          /* Sous le doigt : la tranche coulisse par-dessus le texte pour qu'on
+             puisse viser une perle, lire les numéros et faire défiler. */
+          .bv-rail-mob.is-open .bv-tranche {
+            transform: translateX(0);
             box-shadow: -14px 0 24px -10px rgba(60,40,10,0.28);
             transition-duration: 300ms;
           }
-          .bv-rail-mob.is-open .bv-tr-star {
-            width: 13px !important;
-            height: 13px !important;
+          .bv-rail-mob.is-open .bv-tr-inner {
+            transform: translateX(0);
             transition-duration: 300ms;
           }
+          .bv-rail-mob.is-open .bv-tr-star {
+            transform: scale(1);
+            transition-duration: 300ms;
+          }
+          .bv-rail-mob.is-open .bv-tr-num {
+            opacity: 1;
+            transition-delay: 90ms;
+          }
           @media (prefers-reduced-motion: reduce) {
-            .bv-rail-mob .bv-tranche-host,
             .bv-rail-mob .bv-tranche,
-            .bv-rail-mob .bv-tr-star {
+            .bv-rail-mob .bv-tr-inner,
+            .bv-rail-mob .bv-tr-star,
+            .bv-rail-mob .bv-tr-num {
               transition: none !important;
             }
           }
