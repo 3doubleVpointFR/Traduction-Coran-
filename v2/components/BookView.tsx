@@ -1843,22 +1843,31 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             background-repeat: no-repeat;
             opacity: 0;
           }
-          /* Trois passages appuyés, pour qui n'a jamais ouvert la tranche. */
+          /* Reflet BLANC et non doré, comme celui qui traverse « Visite
+             guidée ». Le sien passe sur un fond doré foncé, il éclate ; ici
+             le fond est déjà presque blanc, donc le blanc seul ne suffirait
+             pas à se voir. D'où un cœur quasi opaque sur une bande étroite —
+             c'est le contraste avec les bords du reflet qui le rend visible,
+             pas sa clarté propre.
+
+             Trois passages appuyés, pour qui n'a jamais ouvert la tranche. */
           .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
             background: linear-gradient(180deg,
-              rgba(201,162,58,0) 0%,
-              rgba(201,162,58,0.55) 50%,
-              rgba(201,162,58,0) 100%);
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,0.98) 50%,
+              rgba(255,255,255,0) 100%);
+            background-size: 100% 30%;
             animation: bvRailSheen 4200ms ease-in-out 1400ms 3;
           }
-          /* Puis une lueur légère toutes les cinq secondes, sans fin : la
-             barre reste vivante sans redevenir un clignotant. Elle démarre
+          /* Puis un reflet léger toutes les cinq secondes, sans fin : la
+             barre reste vivante sans redevenir un clignotant. Il démarre
              après les trois passages appuyés quand il y en a eu. */
           .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
             background: linear-gradient(180deg,
-              rgba(201,162,58,0) 0%,
-              rgba(201,162,58,0.20) 50%,
-              rgba(201,162,58,0) 100%);
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,0.85) 50%,
+              rgba(255,255,255,0) 100%);
+            background-size: 100% 26%;
             animation: bvRailSheenSoft 5000ms ease-in-out 2500ms infinite;
           }
           .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::before {
