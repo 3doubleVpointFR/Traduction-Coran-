@@ -27,6 +27,10 @@ interface Surah {
   name_ar: string
   name_latin: string
   name_fr: string
+  // Optionnels : la page passe la ligne entière, mais l'en-tête doit rester
+  // affichable si l'un des deux manque.
+  verse_count?: number
+  revelation?: string
 }
 
 interface ReadVerse {
@@ -159,6 +163,14 @@ function isSplittable(item: PageItem | undefined): item is { type: 'conclusion-b
 
 function isList(html: string): boolean {
   return /^\s*<ol[\s>]/i.test(html)
+}
+
+// Un item qui n'annonce que ce qui le suit : seul en pied de page il ne dit
+// rien. Sert à le faire redescendre avec son texte quand la garde a échoué.
+function isHeadingItem(it: PageItem | undefined): boolean {
+  if (!it) return false
+  if (it.type === 'conclusion-title') return true
+  return it.type === 'conclusion-block' && /^\s*<h3[\s>]/i.test(it.html)
 }
 
 /* Coupe une liste numérotée entre deux points. Le compteur CSS de la suite est
@@ -366,7 +378,14 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
         // tout ou rien : le titre doit alors réserver le bloc entier.
         if (isSplittable(next)) {
           const target = (nextEl.querySelector('p, li') as HTMLElement | null) || nextEl
-          orphanGuard[i] = Math.min(lineHeightOf(target) * MIN_LINES_AFTER_HEADING, heights[i + 1] || 0)
+          // Les marges du paragraphe comptent dans la réserve : la coupe les
+          // soustrait de la place disponible AVANT de vérifier qu'il reste
+          // deux lignes (cf. trySplit). Une garde qui ne réserve que les
+          // lignes laisse donc le titre orphelin de la valeur des marges —
+          // 8 px en mobile, assez pour faire refuser la coupe de justesse.
+          const tcs = window.getComputedStyle(target)
+          const tm = (parseFloat(tcs.marginTop) || 0) + (parseFloat(tcs.marginBottom) || 0)
+          orphanGuard[i] = Math.min(lineHeightOf(target) * MIN_LINES_AFTER_HEADING + tm, heights[i + 1] || 0)
         } else {
           orphanGuard[i] = heights[i + 1] || 0
         }
@@ -548,12 +567,28 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             continue
           }
           // 2) sinon page suivante, et on retente : sur une page vierge le
-          //    bloc pourra peut-être se couper là où il ne pouvait pas ici
+          //    bloc pourra peut-être se couper là où il ne pouvait pas ici.
+          //    Les titres posés juste avant redescendent AVEC lui : la garde
+          //    anti-orphelin prédit la place à partir des mesures, et il
+          //    suffit de deux pixels de dérive pour que la coupe soit refusée
+          //    ici alors que la garde l'avait crue possible — le titre restait
+          //    alors seul en pied de page. Le rattrapage garantit la règle au
+          //    lieu de la prédire.
           if (cur.length > 0) {
+            const carried: Slot[] = []
+            while (cur.length > 1) {
+              const last = cur[cur.length - 1]
+              // un fragment déjà coupé n'est pas un titre : il reste en place
+              if (last.html !== undefined || !isHeadingItem(items[last.i])) break
+              carried.unshift(cur.pop()!)
+            }
             newPages.push(cur)
             cur = []
             curH = 0
             queue.unshift(slot)
+            for (let k = carried.length - 1; k >= 0; k--) {
+              queue.unshift({ i: carried[k].i, h: heights[carried[k].i] || 0 })
+            }
             continue
           }
           // 3) page vierge et toujours pas sécable : on le pose tel quel
@@ -709,6 +744,62 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
 
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
   const hasRail = !!(railSurahs && railSurahs.length > 0)
+  /* ═══ LA TRANCHE SUR MOBILE ═══
+     Elle reste visible en permanence — sinon rien ne dit qu'elle existe — mais
+     réduite à un liséré de 15 px au lieu de 38 : on voit les perles, on sait
+     qu'on peut les toucher. Au doigt elle s'élargit à 52 px pour qu'on puisse
+     viser et faire défiler, puis se rétracte seule.
+
+     L'élargissement se fait PAR-DESSUS le texte (l'hôte est en position
+     absolue, ancré à droite) : seul le liséré est réservé dans la gouttière,
+     donc la pagination n'est jamais recalculée en cours de geste. */
+  const RAIL_SLIVER = 15
+  const [railOpen, setRailOpen] = useState(false)
+  const railTimer = useRef<number | null>(null)
+  const keepRailOpen = useCallback(() => {
+    setRailOpen(true)
+    if (railTimer.current !== null) window.clearTimeout(railTimer.current)
+    railTimer.current = window.setTimeout(() => setRailOpen(false), 2400)
+  }, [])
+  useEffect(() => {
+    if (!isMobile) setRailOpen(false)
+  }, [isMobile])
+  useEffect(() => () => {
+    if (railTimer.current !== null) window.clearTimeout(railTimer.current)
+  }, [])
+
+  /* ═══ BALAYAGE ET ZONES DE TAP ═══
+     Posés sur le viewport et non sur book-body : la tranche est un frère du
+     viewport et fait défiler au doigt, un écouteur plus haut lui volerait ses
+     gestes. On exige que la composante horizontale domine, sinon un
+     défilement vertical tournerait la page. */
+  const touchRef = useRef<{ x: number; y: number } | null>(null)
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0]
+    touchRef.current = { x: t.clientX, y: t.clientY }
+  }, [])
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    const s = touchRef.current
+    touchRef.current = null
+    if (!s) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - s.x
+    const dy = t.clientY - s.y
+    if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.4) return
+    if (dx < 0) goNext()
+    else goPrev()
+  }, [goNext, goPrev])
+  // Tap sur le tiers gauche ou droit — la convention des liseuses. Le tiers
+  // central reste inerte pour qu'on puisse viser une pastille de verset sans
+  // tourner la page par accident.
+  const onZoneTap = useCallback((e: React.MouseEvent) => {
+    if (!isMobile) return
+    if ((e.target as HTMLElement).closest('a, button')) return
+    const r = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    const x = e.clientX - r.left
+    if (x < r.width * 0.28) goPrev()
+    else if (x > r.width * 0.72) goNext()
+  }, [isMobile, goNext, goPrev])
 
   // translateX = -spread * (pagesPerSpread * pageWidth + pagesPerSpread * gap)
   //            = -spread * pagesPerSpread * (pageWidth + gap)
@@ -784,12 +875,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             `,
             position: 'relative',
             overflow: 'hidden',
-            // La réglette des sourates se loge sous le livre : on lui réserve
-            // sa hauteur ici, sinon elle tombe sous la ligne de flottaison et
-            // ne sert à rien. Sans réglette, on garde les valeurs d'origine.
-            height: isMobile
-              ? 'min(720px, calc(100vh - 160px))'
-              : 'min(820px, calc(100vh - 110px))',
+            // hauteur : en CSS et non ici, pour pouvoir donner deux
+            // déclarations (vh puis dvh) — voir la règle .book
             display: 'flex',
             flexDirection: 'column',
           }}
@@ -809,8 +896,12 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
               // la gouttiere droite s'elargit de la tranche : la mesure de
               // pagination deduit deja les paddings, donc les pages se
               // retrecissent seules et rien ne passe sous les onglets
+              // Sur mobile on ne réserve que le liséré : l'élargissement au
+              // doigt déborde par-dessus le texte, donc la gouttière ne bouge
+              // pas et la pagination n'est pas recalculée en cours de geste.
+              // Sur desktop la tranche occupe sa gouttière en permanence.
               padding: isMobile
-                ? `12px ${12 + (hasRail ? TRANCHE_W : 0)}px 16px 12px`
+                ? `10px ${10 + (hasRail ? RAIL_SLIVER : 0)}px 12px 14px`
                 : `20px ${40 + (hasRail ? TRANCHE_W : 0)}px 20px 40px`,
               flex: 1,
               minHeight: 0,
@@ -830,7 +921,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                 paddingRight: isMobile ? '12px' : '20px',
                 boxSizing: 'border-box',
                 visibility: 'hidden',
-                fontSize: isMobile ? '11px' : '16px',
+                fontSize: isMobile ? '13px' : '16px',
                 lineHeight: 1.5,
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 color: INK,
@@ -846,22 +937,34 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             {/* Chapelet des sourates : DANS book-body, donc il s'arrete de
                 lui-meme au-dessus du pied de page */}
             {hasRail && (
-              <SurahTranche
-                surahs={railSurahs!}
-                availableIds={railAvailableIds ?? []}
-                currentId={surah.id}
-                onNavigate={leaveTo}
-              />
+              <div
+                className={isMobile ? `bv-rail-mob${railOpen ? ' is-open' : ''}` : undefined}
+                onTouchStart={isMobile ? keepRailOpen : undefined}
+                onTouchMove={isMobile ? keepRailOpen : undefined}
+                onTouchEnd={isMobile ? keepRailOpen : undefined}
+              >
+                <SurahTranche
+                  surahs={railSurahs!}
+                  availableIds={railAvailableIds ?? []}
+                  currentId={surah.id}
+                  onNavigate={leaveTo}
+                />
+              </div>
             )}
 
             {/* VIEWPORT : montre les pages visibles */}
             <div
               className="bv-viewport"
+              onTouchStart={onTouchStart}
+              onTouchEnd={onTouchEnd}
+              onClick={onZoneTap}
               style={{
                 width: '100%',
                 height: '100%',
                 overflow: 'hidden',
                 position: 'relative',
+                // le doigt ne fait rien horizontalement à part tourner la page
+                touchAction: 'pan-y',
               }}
             >
               <div
@@ -888,7 +991,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                       height: '100%',
                       // ancre le renvoi « la conclusion suit » en pied de page
                       position: 'relative',
-                      fontSize: isMobile ? '11px' : '16px',
+                      fontSize: isMobile ? '13px' : '16px',
                       lineHeight: 1.5,
                       color: INK,
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -925,8 +1028,11 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
 
           </div>
 
-          {/* Pied du livre — navigation + compteur */}
+          {/* Pied du livre — navigation + compteur. Sur mobile il tombe de 74
+              à ~34 px : la page se tourne au doigt, les chevrons ne sont plus
+              que le secours. Les 40 px rendus font trois lignes de texte. */}
           <footer
+            className="bv-book-footer"
             style={{
               padding: '12px 60px 16px',
               display: 'grid',
@@ -953,12 +1059,18 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                 <Chevron dir="left" />
               </button>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', fontStyle: 'italic', color: GOLD_DEEP, letterSpacing: '0.2em' }}>
-              <span className="font-arabic" style={{ fontSize: '14px', color: GOLD_DEEP, fontStyle: 'normal', letterSpacing: '0.02em' }}>
-                {surah.name_ar}
-              </span>
-              <span style={{ fontSize: '13px' }}>
-                {spread + 1} / {totalSpreads}
+            {/* Le seul repère utile en pied de page : où j'en suis. Le nom de
+                la sourate est déjà dans l'en-tête et dans le liséré des
+                perles — le répéter ici ne servait à rien. */}
+            <div
+              className="bv-foot-id"
+              style={{
+                display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '7px',
+                fontStyle: 'italic', color: MUTED, letterSpacing: '0.2em',
+              }}
+            >
+              <span className="bv-foot-count" style={{ fontSize: '13px' }}>
+                page {spread + 1} / {totalSpreads}
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', justifyContent: 'flex-end' }}>
@@ -975,7 +1087,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           </footer>
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '14px' }}>
+        <div className="bv-cta-wrap" style={{ textAlign: 'center', marginTop: '14px' }}>
           <Link
             href={analyseHref}
             target="_blank"
@@ -1007,6 +1119,144 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        /* Hauteur du livre. Deux déclarations : les navigateurs qui ignorent
+           dvh gardent vh. Sur mobile, vh compte la barre d'URL rétractée —
+           le livre était donc calculé plus haut que la zone réellement
+           visible et son pied passait sous la barre du navigateur. */
+        .book {
+          height: min(820px, calc(100vh - 110px));
+          height: min(820px, calc(100dvh - 110px));
+        }
+
+        /* ═══ FRONTISPICE ═══ (voir le commentaire de SurahHeader) */
+        .bv-frontispiece {
+          text-align: center;
+          position: relative;
+          z-index: 2;
+          padding: 4px 0 20px;
+        }
+        .bv-fp-legend, .bv-fp-meta {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: ${GOLD};
+          /* Cormorant a des chiffres elzéviriens : dans une ligne de capitales
+             espacées ils dépassent au-dessus et en dessous et cassent la ligne */
+          font-variant-numeric: lining-nums;
+          font-feature-settings: 'lnum' 1;
+          /* l'interlettrage laisse un blanc après la dernière lettre : sans ce
+             retrait la ligne paraît décalée vers la droite */
+          text-indent: 0.3em;
+        }
+        .bv-fp-legend {
+          font-size: 10px;
+          letter-spacing: 0.3em;
+          margin-bottom: 9px;
+        }
+        .bv-fp-meta {
+          font-size: 8.5px;
+          letter-spacing: 0.26em;
+          opacity: 0.8;
+          margin-top: 10px;
+        }
+        .bv-fp-name {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.4em;
+          font-size: clamp(30px, 4.4vw, 46px);
+          line-height: 1.18;
+          color: ${GOLD_DEEP};
+          margin: 0;
+          letter-spacing: 0.02em;
+          font-weight: 400;
+        }
+        .bv-fp-paren {
+          color: ${GOLD};
+          font-size: 0.85em;
+          opacity: 0.85;
+          font-weight: 400;
+        }
+        .bv-fp-orn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 11px;
+          margin: 10px 0 9px;
+        }
+        .bv-fp-orn span {
+          flex: 0 1 66px;
+          height: 1px;
+          background: linear-gradient(to right, transparent, ${GOLD});
+          opacity: 0.6;
+        }
+        .bv-fp-orn span:last-child {
+          background: linear-gradient(to left, transparent, ${GOLD});
+        }
+        .bv-fp-orn i {
+          font-style: normal;
+          color: ${GOLD};
+          font-size: 10px;
+          line-height: 1;
+        }
+        .bv-fp-latin {
+          font-size: 14.5px;
+          letter-spacing: 0.22em;
+          font-weight: 600;
+          color: ${INK_SOFT};
+          line-height: 1.3;
+        }
+        .bv-fp-fr {
+          font-size: 13px;
+          font-style: italic;
+          color: ${MUTED};
+          margin-top: 2px;
+          line-height: 1.3;
+        }
+        .bv-fp-basmala {
+          margin-top: 18px;
+        }
+        .bv-fp-basmala-ar {
+          /* or et non encre, 19 px et non 22 : c'est un ornement d'ouverture,
+             pas le texte du signe — la distinction compte dans Al-Fatiha, où
+             la même phrase revient deux lignes plus bas comme signe 1 */
+          font-size: 19px;
+          line-height: 1.55;
+          color: ${GOLD_DEEP};
+          letter-spacing: 0.01em;
+          font-weight: 400;
+        }
+        .bv-fp-basmala-fr {
+          font-size: 11.5px;
+          font-style: italic;
+          color: ${MUTED};
+          margin-top: 5px;
+          line-height: 1.4;
+        }
+        .bv-fp-close {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 13px;
+          margin-top: 15px;
+        }
+        .bv-fp-close span {
+          flex: 0 1 72px;
+          height: 1px;
+          background: linear-gradient(to right, transparent, ${GOLD});
+          opacity: 0.45;
+        }
+        .bv-fp-close span:last-child {
+          background: linear-gradient(to left, transparent, ${GOLD});
+        }
+        .bv-fp-close i {
+          font-style: normal;
+          color: ${GOLD};
+          font-size: 13px;
+          line-height: 1;
+          opacity: 0.75;
+        }
+
         .verse-inline {
           display: block;
           margin-bottom: 10px;
@@ -1267,53 +1517,201 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-page {
             overflow-x: hidden !important;
           }
+          /* ═══ PLEIN ÉCRAN ═══
+             Sur un téléphone, l'écran EST la page : le cadre du livre coûtait
+             62 px de largeur et 40 px de hauteur pour figurer un objet qu'on
+             ne voit de toute façon pas en entier. Le cadre reste sur desktop,
+             où la double-page a besoin de son contour.
+
+             La hauteur n'est plus une soustraction de constantes : la page se
+             cale sur le viewport moins la barre du site (dont la hauteur est
+             une valeur CSS connue, clamp(58px, 8vw, 72px)), puis le livre
+             prend tout ce que le lien d'analyse laisse. Aucun nombre magique
+             à re-régler si le pied change de taille. */
+          #main {
+            /* neutralise la gouttière de <main> (px-4 pt-2 pb-6) — ce
+               composant n'existe que sur /surah/[id]/livre */
+            padding: 0 !important;
+          }
+          .bv-page {
+            min-height: 0 !important;
+            height: calc(100vh - clamp(58px, 8vw, 72px));
+            height: calc(100dvh - clamp(58px, 8vw, 72px));
+            display: flex;
+            flex-direction: column;
+          }
           .bv-book-wrap {
-            padding: 8px 12px 12px !important;
+            padding: 0 !important;
+            flex: 1 1 auto;
+            min-height: 0;
           }
           .book {
-            border-radius: 3px !important;
-            box-shadow:
-              0 8px 24px -6px rgba(60,40,10,0.28),
-              0 2px 8px rgba(60,40,10,0.12),
-              inset 0 0 0 1px rgba(184,150,46,0.22) !important;
+            border-radius: 0 !important;
+            box-shadow: inset 0 1px 0 rgba(184,150,46,0.20) !important;
+            height: auto !important;
+            flex: 1 1 auto;
+            min-height: 0;
           }
-          .book > footer {
-            padding-left: 14px !important;
-            padding-right: 14px !important;
+          .bv-cta-wrap {
+            flex: 0 0 auto;
           }
+          /* Pied du livre sur une seule ligne : nom, compteur, chevrons */
+          .bv-book-footer {
+            padding: 5px 10px 6px !important;
+            gap: 8px !important;
+          }
+          .bv-foot-count {
+            font-size: 11px !important;
+            letter-spacing: 0.12em !important;
+          }
+          .page-arrow {
+            width: 30px !important;
+            height: 30px !important;
+          }
+          /* Lien vers l'analyse : un filet de texte, pas une pastille de 41 px */
+          .bv-cta {
+            padding: 5px 16px !important;
+            font-size: 12px !important;
+            box-shadow: 0 2px 6px rgba(120,90,30,0.22) !important;
+          }
+          .bv-cta-wrap {
+            margin-top: 5px !important;
+            padding-bottom: 5px;
+          }
+          /* La pastille flottante « Vue analyse » tombe sous la barre du site
+             sur mobile : invisible mais cliquable, donc un piège. */
+          .bv-floating-toggle {
+            display: none !important;
+          }
+          /* ═══ LE LISÉRÉ ═══ (voir le commentaire RAIL_SLIVER)
+             Au repos 15 px : assez pour voir les perles et savoir qu'on peut
+             les toucher, sept fois moins cher que les 38 px du desktop. */
+          .bv-rail-mob .bv-tranche-host {
+            width: 15px !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .bv-rail-mob .bv-tr-star {
+            width: 8px !important;
+            height: 8px !important;
+            transition: width 260ms cubic-bezier(0.16, 1, 0.3, 1),
+                        height 260ms cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 260ms ease;
+          }
+          /* Sous le doigt : on s'élargit par-dessus le texte pour pouvoir
+             viser une perle et faire défiler. Fond OPAQUE — en translucide le
+             texte transparaît et les deux deviennent illisibles. */
+          .bv-rail-mob.is-open .bv-tranche-host {
+            width: 52px !important;
+          }
+          .bv-rail-mob.is-open .bv-tr-star {
+            width: 13px !important;
+            height: 13px !important;
+          }
+          .bv-rail-mob.is-open .bv-tranche {
+            background: #FBF6E8 !important;
+            border-left: 1px solid rgba(184,150,46,0.35) !important;
+            box-shadow: -14px 0 24px -10px rgba(60,40,10,0.28);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .bv-rail-mob .bv-tranche-host,
+            .bv-rail-mob .bv-tr-star {
+              transition: none !important;
+            }
+          }
+          /* Frontispice — tout ce qui est fixe en px doit rétrécir : à 300 px
+             de colonne, les filets à 66/72 px touchent les bords. */
+          .bv-frontispiece {
+            padding: 2px 0 12px !important;
+          }
+          .bv-fp-legend {
+            font-size: 9px !important;
+            letter-spacing: 0.24em !important;
+            margin-bottom: 6px !important;
+          }
+          .bv-fp-meta {
+            font-size: 8px !important;
+            letter-spacing: 0.18em !important;
+            margin-top: 7px !important;
+          }
+          .bv-fp-name {
+            font-size: 31px !important;
+          }
+          .bv-fp-orn {
+            gap: 8px !important;
+            margin: 6px 0 6px !important;
+          }
+          .bv-fp-orn span {
+            flex-basis: 40px !important;
+          }
+          .bv-fp-orn i {
+            font-size: 8px !important;
+          }
+          .bv-fp-latin {
+            font-size: 12.5px !important;
+            letter-spacing: 0.16em !important;
+          }
+          .bv-fp-fr {
+            font-size: 11.5px !important;
+          }
+          .bv-fp-basmala {
+            margin-top: 12px !important;
+          }
+          /* toujours sous les 15 px de l'arabe des versets */
+          .bv-fp-basmala-ar {
+            font-size: 16.5px !important;
+            line-height: 1.5 !important;
+          }
+          .bv-fp-basmala-fr {
+            font-size: 10px !important;
+            margin-top: 3px !important;
+          }
+          .bv-fp-close {
+            gap: 10px !important;
+            margin-top: 10px !important;
+          }
+          .bv-fp-close span {
+            flex-basis: 44px !important;
+          }
+          .bv-fp-close i {
+            font-size: 11px !important;
+          }
+
           .bv-arabic-block {
-            font-size: 15px !important;
+            font-size: 17.5px !important;
             margin: 3px 0 4px !important;
           }
           .bv-phon-block {
-            font-size: 9.5px !important;
+            font-size: 11px !important;
             margin: 2px auto 5px !important;
             padding: 2px 9px !important;
             letter-spacing: 0.045em !important;
           }
           .verse-marker {
-            min-width: 17px !important;
-            height: 17px !important;
-            font-size: 10px !important;
+            min-width: 19px !important;
+            height: 19px !important;
+            font-size: 11.5px !important;
             padding: 0 5px !important;
             margin-right: 6px !important;
             vertical-align: 2px !important;
           }
           .bv-conclusion-block h3 {
-            font-size: 10.5px !important;
+            font-size: 12.5px !important;
             margin: 8px 0 5px 0 !important;
           }
           .bv-conclusion-block p {
-            font-size: 10.5px !important;
+            font-size: 12.5px !important;
             line-height: 1.55 !important;
             margin: 0 0 8px 0 !important;
           }
           .bv-conclusion-block ol li {
-            font-size: 10.5px !important;
+            font-size: 12.5px !important;
             margin-bottom: 5px !important;
           }
           .bv-conclusion-block ol li::before {
-            font-size: 10px !important;
+            font-size: 11.5px !important;
             width: 14px !important;
           }
         }
@@ -1502,52 +1900,57 @@ function renderItem(
   }
 }
 
+/* ═══ FRONTISPICE ═══
+   Pas de cadre : l'en-tête est une pile centrée, comme le corps du livre. Ce
+   qui le distingue d'un verset tient à l'ordre et aux registres, pas à un
+   contour.
+
+   L'agencement, de haut en bas : le numéro en petites capitales dorées, le nom
+   arabe en grand et en or profond entre les parenthèses ornées ﴾ ﴿ (les mêmes
+   qu'en vue analyse), un filet à ✦, le nom translittéré espacé, le nom
+   français en italique, le nombre de signes.
+
+   La basmala vient ensuite, en or et plus petite que l'arabe des versets
+   (19 px contre 22) : dans Al-Fatiha elle est aussi le signe 1, et les deux ne
+   doivent pas se confondre — ici un ornement d'ouverture, deux lignes plus bas
+   le texte lui-même. Le filet à ❦ ferme l'en-tête. */
 function SurahHeader({ surah, isBaraah }: { surah: Surah; isBaraah: boolean }) {
+  const meta = surah.verse_count
+    ? `${surah.verse_count} signe${surah.verse_count > 1 ? 's' : ''}`
+    : ''
+
   return (
-    <>
-      <header style={{ textAlign: 'center', padding: '0 0 4px', position: 'relative', zIndex: 2 }}>
-        <div style={{ fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, fontWeight: 600, marginBottom: '6px', fontFamily: "'Cormorant Garamond', serif" }}>
-          Sourate {toRoman(surah.id)}
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '22px', marginBottom: '6px' }}>
-          <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6 }}>❦</span>
-          <h1 className="font-arabic" style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: GOLD_DEEP, lineHeight: 1, margin: 0, letterSpacing: '0.02em' }}>
-            {surah.name_ar}
-          </h1>
-          <span aria-hidden style={{ color: GOLD, fontSize: '16px', opacity: 0.6, transform: 'scaleX(-1)' }}>❦</span>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', color: INK_SOFT, flexWrap: 'wrap' }}>
-          <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.7 }} />
-          <span style={{ fontSize: '14px', letterSpacing: '0.2em', fontWeight: 500 }}>
-            {surah.name_latin.toUpperCase()}
-          </span>
-          <span aria-hidden style={{ color: GOLD, fontSize: '11px' }}>✦</span>
-          <span style={{ fontSize: '13px', fontStyle: 'italic', color: MUTED }}>
-            {surah.name_fr}
-          </span>
-          <span style={{ flex: '0 0 50px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.7 }} />
-        </div>
-      </header>
+    <header className="bv-frontispiece">
+      <div className="bv-fp-legend">Sourate {surah.id}</div>
+      {/* Parenthèses ornées coraniques ﴾ ﴿ — mêmes qu'en vue analyse, pour que
+          le nom de la sourate se présente pareil dans les deux vues. */}
+      <h1 className="bv-fp-name font-arabic" dir="rtl" lang="ar">
+        <span aria-hidden="true" className="bv-fp-paren">﴾</span>
+        <span>{surah.name_ar}</span>
+        <span aria-hidden="true" className="bv-fp-paren">﴿</span>
+      </h1>
+      <div className="bv-fp-orn" aria-hidden>
+        <span /><i>✦</i><span />
+      </div>
+      <div className="bv-fp-latin">{surah.name_latin.toUpperCase()}</div>
+      <div className="bv-fp-fr">{surah.name_fr}</div>
+      {meta && <div className="bv-fp-meta">{meta}</div>}
+
       {!isBaraah && (
-        <div style={{ padding: '6px 0 6px', textAlign: 'center' }}>
-          <div className="font-arabic" style={{ fontSize: '22px', color: INK, lineHeight: 1.3, letterSpacing: '0.02em', fontWeight: 400 }}>
+        <div className="bv-fp-basmala">
+          <div className="bv-fp-basmala-ar font-arabic" dir="rtl" lang="ar">
             بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
           </div>
-          {surah.id !== 1 && (
-            <div style={{ fontSize: '12px', color: MUTED, fontStyle: 'italic', marginTop: '8px' }}>
-              Au nom de Dieu, le Tout-Miséricordieux, le Très-Miséricordieux
-            </div>
-          )}
+          <div className="bv-fp-basmala-fr">
+            Au nom de Dieu, le Tout-Miséricordieux, le Très-Miséricordieux
+          </div>
         </div>
       )}
-      <div style={{ padding: '4px 0 22px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
-          <span style={{ flex: '0 0 60px', height: '1px', background: `linear-gradient(to right, transparent, ${GOLD})`, opacity: 0.5 }} />
-          <span aria-hidden style={{ color: GOLD, fontSize: '10px' }}>✦</span>
-          <span style={{ flex: '0 0 60px', height: '1px', background: `linear-gradient(to left, transparent, ${GOLD})`, opacity: 0.5 }} />
-        </div>
+
+      <div className="bv-fp-close" aria-hidden>
+        <span /><i>❦</i><span />
       </div>
-    </>
+    </header>
   )
 }
 
@@ -1727,13 +2130,3 @@ function VerseParagraph({
   )
 }
 
-function toRoman(n: number): string {
-  const r: Array<[number, string]> = [
-    [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
-    [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
-    [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
-  ]
-  let s = ''
-  for (const [v, sym] of r) while (n >= v) { s += sym; n -= v }
-  return s
-}

@@ -299,19 +299,6 @@ interface Surah {
   revelation: string
 }
 
-// Convertit un entier en chiffres romains (max 114 → CXIV)
-function toRoman(n: number): string {
-  const map: Array<[number, string]> = [
-    [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
-    [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
-  ]
-  let r = ''
-  for (const [v, s] of map) {
-    while (n >= v) { r += s; n -= v }
-  }
-  return r
-}
-
 interface Verse {
   id: number
   surah_id: number
@@ -777,7 +764,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
             lineHeight: 1,
           }}
         >
-          Sourate {toRoman(surah.id)}
+          Sourate {surah.id}
         </p>
 
         {/* Nom arabe encadré par les parenthèses ornées coraniques ﴾ ﴿ */}
