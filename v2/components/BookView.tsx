@@ -751,15 +751,26 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
   const hasRail = !!(railSurahs && railSurahs.length > 0)
 
-  /* La sourate suivante QUI EXISTE : les non traduites sont sautées, y aller
-     ne mènerait qu'à « Aucun signe traduit ». railSurahs arrive trié par id,
-     donc le premier trouvé est le bon. Sert au bout de la dernière page, où
-     la flèche « suivant » n'avait plus rien à faire et laissait le lecteur
-     dans un cul-de-sac. */
-  const nextSurah = useMemo(() => {
-    if (!railSurahs || !railAvailableIds) return null
+  /* Les sourates voisines QUI EXISTENT : les non traduites sont sautées, y
+     aller ne mènerait qu'à « Aucun signe traduit ». railSurahs arrive trié
+     par id, et la liste des disponibles est déjà calculée pour le chapelet —
+     rien à demander de plus.
+
+     Le parcours BOUCLE : après la dernière traduite vient la première, et
+     inversement. Sans ça, les deux extrémités du corpus étaient des
+     cul-de-sac, alors qu'il n'y a pas de raison de s'y arrêter. On ne renvoie
+     rien si la voisine est la sourate courante — cas d'une seule traduite. */
+  const [prevSurah, nextSurah] = useMemo(() => {
+    if (!railSurahs || !railAvailableIds) return [null, null]
     const dispo = new Set(railAvailableIds)
-    return railSurahs.find(s => s.id > surah.id && dispo.has(s.id)) ?? null
+    const lisibles = railSurahs.filter(s => dispo.has(s.id))
+    if (lisibles.length === 0) return [null, null]
+    const apres = lisibles.find(s => s.id > surah.id) ?? lisibles[0]
+    const avant = [...lisibles].reverse().find(s => s.id < surah.id) ?? lisibles[lisibles.length - 1]
+    return [
+      avant.id === surah.id ? null : avant,
+      apres.id === surah.id ? null : apres,
+    ]
   }, [railSurahs, railAvailableIds, surah.id])
   /* ═══ LA TRANCHE SUR MOBILE ═══
      Elle reste visible en permanence — sinon rien ne dit qu'elle existe — mais
@@ -1121,15 +1132,34 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <button
-                onClick={goPrev}
-                disabled={!canPrev}
-                className="page-arrow"
-                aria-label="Page précédente"
-                style={{ ...arrowStyle(!canPrev), ["--chev-dir" as string]: "-2px" }}
-              >
-                <Chevron dir="left" />
-              </button>
+              {/* Symétrique du passage à la sourate suivante : à la première
+                  page, « précédent » n'a plus de page où reculer. */}
+              {!canPrev && prevSurah ? (
+                <a
+                  href={`/surah/${prevSurah.id}/livre`}
+                  className="bv-next-surah is-prev"
+                  onClick={e => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                    e.preventDefault()
+                    leaveTo(`/surah/${prevSurah.id}/livre`)
+                  }}
+                  title={`Sourate ${prevSurah.id} — ${prevSurah.name_fr}`}
+                >
+                  <span aria-hidden className="bv-next-chev"><Chevron dir="left" /></span>
+                  <span className="bv-next-label">Sourate précédente</span>
+                  <span className="bv-next-name">{prevSurah.name_latin}</span>
+                </a>
+              ) : (
+                <button
+                  onClick={goPrev}
+                  disabled={!canPrev}
+                  className="page-arrow"
+                  aria-label="Page précédente"
+                  style={{ ...arrowStyle(!canPrev), ["--chev-dir" as string]: "-2px" }}
+                >
+                  <Chevron dir="left" />
+                </button>
+              )}
             </div>
             {/* Le seul repère utile en pied de page : où j'en suis. Le nom de
                 la sourate est déjà dans l'en-tête et dans le liséré des
@@ -1671,6 +1701,10 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           align-items: baseline;
           gap: 7px;
           padding: 6px 13px 6px 15px;
+          /* le rembourrage suit le sens de lecture du bouton */
+        }
+        .bv-next-surah.is-prev {
+          padding: 6px 15px 6px 13px;
           border-radius: 999px;
           border: 1px solid rgba(184,150,46,0.42);
           color: ${GOLD_DEEP};
@@ -1710,6 +1744,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           }
           .bv-next-surah:hover .bv-next-chev {
             transform: translateX(3px);
+          }
+          .bv-next-surah.is-prev:hover .bv-next-chev {
+            transform: translateX(-3px);
           }
         }
         .bv-next-surah:active {
@@ -1869,6 +1906,9 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-next-surah {
             padding: 4px 9px 4px 12px !important;
             gap: 5px !important;
+          }
+          .bv-next-surah.is-prev {
+            padding: 4px 12px 4px 9px !important;
           }
           .bv-next-name {
             font-size: 11.5px !important;
