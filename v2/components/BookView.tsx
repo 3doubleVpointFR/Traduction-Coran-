@@ -758,7 +758,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
   // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
   const RAIL_SLIVER = 20
   const RAIL_TOUCH = 44
-  const RAIL_OPEN = 60
+  const RAIL_OPEN = 50
   const [railOpen, setRailOpen] = useState(false)
   // Le lueur qui parcourt le liséré ne se déclenche que pour qui n'a jamais
   // ouvert la tranche. Vrai par défaut : rien ne scintille pendant le rendu
@@ -1884,10 +1884,35 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                         box-shadow 420ms ease;
             will-change: transform;
           }
-          /* Les perles reviennent dans le liséré : sans ce rappel elles
-             restent centrées sur une tranche dont la moitié est hors champ. */
+          /* ═══ LA COLONNE DES PERLES ═══
+             La barre ne fait plus un cadre autour du losange : elle COMMENCE
+             au losange, et le numéro suit à sa droite. C'est ce qui supprime
+             le vide — un losange centré sur la largeur avec le numéro calé à
+             droite condamnait toute la moitié gauche, et aucune taille de
+             glyphe ne pouvait la combler puisque les deux se rejoignaient
+             bien avant.
+
+             Le losange reste centré sur le cordon, qui est son axe à lui : la
+             colonne des 114 perles est droite, c'est tout ce qui compte. Ce
+             qui n'est plus centré, c'est le couple perle + numéro dans la
+             largeur, et ça ne se voit pas.
+
+             Le rappel qui suit repose la perle au milieu du liséré quand la
+             barre est fermée. Au repos le bord gauche de la tranche tombe
+             toujours à une largeur de liséré du bord de l'écran, quelle que
+             soit la largeur ouverte : le décalage vaut donc demi-liséré,
+             moins le retrait, moins le demi-losange. */
+          .bv-rail-mob .bv-tr-tick {
+            justify-content: flex-start;
+            padding-left: 7px;
+          }
+          .bv-rail-mob .bv-tr-cord {
+            left: 13px;
+            right: auto;
+            transform: none;
+          }
           .bv-rail-mob .bv-tr-inner {
-            transform: translateX(-${(RAIL_OPEN - RAIL_SLIVER) / 2}px);
+            transform: translateX(-3.5px);
             transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
           }
           .bv-rail-mob .bv-tr-star {
@@ -1902,6 +1927,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             display: block;
             position: absolute;
             right: 7px;
+            left: auto;
             font-size: 10.2px;
             opacity: 0;
             transition: opacity 200ms ease;
