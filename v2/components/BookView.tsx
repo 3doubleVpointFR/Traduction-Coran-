@@ -750,6 +750,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
 
   const analyseHref = `/surah/${surah.id}?page=1#verse-${surah.id}-1`
   const hasRail = !!(railSurahs && railSurahs.length > 0)
+
+  /* La sourate suivante QUI EXISTE : les non traduites sont sautées, y aller
+     ne mènerait qu'à « Aucun signe traduit ». railSurahs arrive trié par id,
+     donc le premier trouvé est le bon. Sert au bout de la dernière page, où
+     la flèche « suivant » n'avait plus rien à faire et laissait le lecteur
+     dans un cul-de-sac. */
+  const nextSurah = useMemo(() => {
+    if (!railSurahs || !railAvailableIds) return null
+    const dispo = new Set(railAvailableIds)
+    return railSurahs.find(s => s.id > surah.id && dispo.has(s.id)) ?? null
+  }, [railSurahs, railAvailableIds, surah.id])
   /* ═══ LA TRANCHE SUR MOBILE ═══
      Elle reste visible en permanence — sinon rien ne dit qu'elle existe — mais
      réduite à un liséré au lieu des 38 px du desktop : on voit les perles, on
@@ -1135,15 +1146,36 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', justifyContent: 'flex-end' }}>
-              <button
-                onClick={goNext}
-                disabled={!canNext}
-                className="page-arrow"
-                aria-label="Page suivante"
-                style={{ ...arrowStyle(!canNext), ["--chev-dir" as string]: "2px" }}
-              >
-                <Chevron dir="right" />
-              </button>
+              {/* Au bout du livre, la flèche « suivant » n'a plus de page où
+                  aller : elle devient le passage à la sourate suivante. Le
+                  href reste vrai pour le nouvel onglet et le clic milieu, mais
+                  le clic passe par leaveTo pour garder le flou de sortie. */}
+              {!canNext && nextSurah ? (
+                <a
+                  href={`/surah/${nextSurah.id}/livre`}
+                  className="bv-next-surah"
+                  onClick={e => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                    e.preventDefault()
+                    leaveTo(`/surah/${nextSurah.id}/livre`)
+                  }}
+                  title={`Sourate ${nextSurah.id} — ${nextSurah.name_fr}`}
+                >
+                  <span className="bv-next-label">Sourate suivante</span>
+                  <span className="bv-next-name">{nextSurah.name_latin}</span>
+                  <span aria-hidden className="bv-next-chev"><Chevron dir="right" /></span>
+                </a>
+              ) : (
+                <button
+                  onClick={goNext}
+                  disabled={!canNext}
+                  className="page-arrow"
+                  aria-label="Page suivante"
+                  style={{ ...arrowStyle(!canNext), ["--chev-dir" as string]: "2px" }}
+                >
+                  <Chevron dir="right" />
+                </button>
+              )}
             </div>
           </footer>
         </div>
@@ -1629,6 +1661,65 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
         .page-arrow:disabled svg {
           opacity: 0.3;
         }
+
+        /* ═══ PASSAGE À LA SOURATE SUIVANTE ═══
+           Bague creuse, comme les pastilles de verset et la sortie vers
+           l'analyse : dans ce livre rien n'est un badge plein tant qu'on ne
+           le survole pas. */
+        .bv-next-surah {
+          display: inline-flex;
+          align-items: baseline;
+          gap: 7px;
+          padding: 6px 13px 6px 15px;
+          border-radius: 999px;
+          border: 1px solid rgba(184,150,46,0.42);
+          color: ${GOLD_DEEP};
+          font-family: 'Cormorant Garamond', serif;
+          font-style: italic;
+          text-decoration: none;
+          white-space: nowrap;
+          max-width: 100%;
+          transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+        }
+        .bv-next-label {
+          font-size: 10px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          font-style: normal;
+          opacity: 0.72;
+        }
+        .bv-next-name {
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          /* aucun nom ne doit pouvoir casser la mise en page du pied */
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 15ch;
+        }
+        .bv-next-chev {
+          display: inline-flex;
+          align-self: center;
+          transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .bv-next-surah:hover {
+            background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
+            color: #FFFCF6;
+            border-color: transparent;
+          }
+          .bv-next-surah:hover .bv-next-chev {
+            transform: translateX(3px);
+          }
+        }
+        .bv-next-surah:active {
+          background: linear-gradient(135deg, #C9A23A 0%, #B8962E 55%, #9E7E1F 100%);
+          color: #FFFCF6;
+          border-color: transparent;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bv-next-surah, .bv-next-chev { transition: none; }
+        }
         @media (prefers-reduced-motion: reduce) {
           .bv-page-col, .page-arrow, .page-arrow svg, .verse-marker {
             transition: none !important;
@@ -1768,6 +1859,20 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .page-arrow {
             width: 30px !important;
             height: 30px !important;
+          }
+          /* Le pied mobile tient sur une ligne de 35 px : « SOURATE SUIVANTE »
+             n'y entre pas à côté du nom. Le nom et le chevron suffisent — on
+             est au bout du livre, il n'y a pas d'autre lecture possible. */
+          .bv-next-label {
+            display: none;
+          }
+          .bv-next-surah {
+            padding: 4px 9px 4px 12px !important;
+            gap: 5px !important;
+          }
+          .bv-next-name {
+            font-size: 11.5px !important;
+            max-width: 13ch;
           }
           /* Lien vers l'analyse : la bague reste, resserrée */
           .bv-cta {
