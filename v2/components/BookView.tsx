@@ -154,9 +154,10 @@ type PageItem =
 // entre deux pages — le fragment HTML à rendre à la place de l'item complet.
 type Slot = { i: number; html?: string }
 
-// Seuls les paragraphes de la conclusion se coupent entre deux pages. Les
-// versets, les titres et les listes numérotées restent insécables : couper un
-// verset en deux le rendrait incitable, et une liste coupée perd sa numérotation.
+// Se coupent entre deux pages : les paragraphes de la conclusion, et ses
+// listes numérotées entre deux points (cf. cutList, qui repositionne le
+// compteur sur la suite). Restent insécables : les versets — couper un verset
+// en deux le rendrait incitable — et les titres.
 function isSplittable(item: PageItem | undefined): item is { type: 'conclusion-block'; html: string } {
   return !!item && item.type === 'conclusion-block' && /^\s*<(p|ol)[\s>]/i.test(item.html)
 }
