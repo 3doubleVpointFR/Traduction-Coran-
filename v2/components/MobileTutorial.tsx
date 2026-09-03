@@ -14,7 +14,7 @@ interface Card {
   title: string
   body: string
   highlight?: string  // mot/expression à mettre en valeur dans le body
-  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'note' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'display-settings' | 'verse-toggles' | 'book-page' | 'book-bandeau' | 'book-gestures' | 'final'
+  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'note' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'display-settings' | 'verse-toggles' | 'book-page' | 'book-bandeau' | 'book-gestures' | 'book-display' | 'final'
 }
 
 const CARDS: Card[] = [
@@ -131,8 +131,15 @@ const CARDS: Card[] = [
   },
   {
     emoji: '❦',
+    title: 'Arabe et phonétique dans le livre',
+    body: "Le bouton à 3 lignes, en haut à droite, n'offre pas la même chose ici : dans le livre, il ajoute au choix le texte arabe et la phonétique sous chaque signe. Le livre se repagine tout seul pour en tenir compte. Par défaut, le français seul — c'est la lecture d'une traite.",
+    highlight: "le français seul",
+    illustration: 'book-display',
+  },
+  {
+    emoji: '❦',
     title: 'Si tu lis mal de près',
-    body: "Écarte deux doigts sur la page pour agrandir le texte autant que tu veux, puis déplace-toi d'un doigt dans la page grossie. Tant que tu es agrandi, le balayage ne tourne plus les pages — sers-toi des flèches du pied. Et dans le panneau d'affichage, le livre peut aussi montrer l'arabe et la phonétique sous chaque signe.",
+    body: "Écarte deux doigts sur la page pour agrandir le texte autant que tu veux, puis déplace-toi d'un doigt dans la page grossie. Tant que tu es agrandi, le balayage ne tourne plus les pages — sers-toi des flèches du pied, qui grossissent avec le reste.",
     highlight: 'Écarte deux doigts',
   },
   {
@@ -658,6 +665,42 @@ function Illustration({ kind }: { kind: Card['illustration'] }) {
         </div>
         <div style={{ marginTop: 10, textAlign: 'center' as const, fontSize: 8.5, color: '#6B5E52', fontStyle: 'italic' as const }}>
           ou balaye <span style={{ color: '#8A6E1F' }}>←</span> <span style={{ color: '#8A6E1F' }}>→</span> n&apos;importe où
+        </div>
+      </div>
+    )
+  }
+
+  /* ═══ LE PANNEAU D'AFFICHAGE, VERSION LIVRE ═══
+     Deux interrupteurs seulement, et surtout ce qu'ils changent : un signe
+     rendu avec son arabe et sa phonétique par-dessus le français. Montrer le
+     résultat vaut mieux que de le décrire. */
+  if (kind === 'book-display') {
+    return (
+      <div style={{ ...cardStyle, padding: '12px' }}>
+        <div style={{ background: '#FFFCF6', border: '1px solid rgba(184,150,46,0.32)', borderRadius: 10, padding: '9px 11px', boxShadow: '0 4px 12px rgba(184,150,46,0.12)' }}>
+          <div style={{ height: 2, background: 'linear-gradient(to right, transparent, #B8962E, transparent)', marginBottom: 6, borderRadius: 1 }} />
+          <div style={{ fontSize: 8.5, fontWeight: 700, color: '#8A7428', letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginBottom: 5, fontStyle: 'italic' as const }}>✦ Affichage</div>
+          {[{ label: 'Texte arabe', on: true }, { label: 'Phonétique', on: true }].map((row, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '3px 0', fontSize: 9.5, color: '#3D3228' }}>
+              <span>{row.label}</span>
+              <span style={{ width: 22, height: 12, borderRadius: 6, background: row.on ? 'linear-gradient(135deg, #C9A23A, #B8962E)' : 'rgba(184,150,46,0.20)', position: 'relative' as const }}>
+                <span style={{ position: 'absolute' as const, top: 2, left: row.on ? 12 : 2, width: 8, height: 8, borderRadius: '50%', background: '#FFFFFF', boxShadow: '0 1px 2px rgba(0,0,0,0.18)' }} />
+              </span>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center' as const, fontSize: 10, color: '#B8962E', margin: '6px 0 4px' }}>↓</div>
+        <div style={{ background: '#FFFBF0', border: '1px solid rgba(184,150,46,0.22)', borderRadius: 8, padding: '9px 10px' }}>
+          <div style={{ textAlign: 'center' as const, fontSize: 15, color: '#8A6E1F', direction: 'rtl' as const, lineHeight: 1.6 }}>
+            ٱلْحَىُّ ٱلْقَيُّومُ
+          </div>
+          <div style={{ textAlign: 'center' as const, fontSize: 8.5, color: '#8A7647', fontStyle: 'normal' as const, letterSpacing: '0.05em', background: 'rgba(184,150,46,0.055)', borderRadius: 8, padding: '2px 8px', margin: '5px auto 6px', display: 'inline-block' as const, width: '100%' }}>
+            al-ḥayyu al-qayyūm
+          </div>
+          <div style={{ display: 'flex', gap: 6, alignItems: 'flex-start' }}>
+            <span style={{ flexShrink: 0, width: 14, height: 14, borderRadius: '50%', border: '1px solid rgba(184,150,46,0.55)', color: '#8A6E1F', fontSize: 8, fontWeight: 600, display: 'grid', placeItems: 'center' as const }}>2</span>
+            <span style={{ fontSize: 9.5, lineHeight: 1.45, color: '#1A1410' }}>le Vivant, le Subsistant.</span>
+          </div>
         </div>
       </div>
     )
