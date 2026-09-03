@@ -1937,6 +1937,17 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-floating-toggle {
             display: none !important;
           }
+          /* ⚠️ Le pli central n'appartient qu'à la double page, et le rendu
+             le conditionne déjà à isMobile — mais isMobile NAÎT FAUX : le
+             serveur ne connaît pas la largeur de l'écran, et la mesure
+             n'arrive qu'après le montage. Le temps d'une image, le pli du
+             livre de bureau se peignait donc au milieu de l'écran du
+             téléphone. Un média-query, lui, s'applique dès la première
+             peinture, avant le moindre JavaScript : c'est la seule barrière
+             qui tienne avant l'hydratation. */
+          .bv-spine {
+            display: none !important;
+          }
           /* Frontispice — tout ce qui est fixe en px doit rétrécir : à 300 px
              de colonne, les filets à 66/72 px touchent les bords. */
           .bv-frontispiece {
