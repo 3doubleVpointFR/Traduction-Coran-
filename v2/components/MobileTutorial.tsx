@@ -746,26 +746,15 @@ export default function MobileTutorial({ onClose }: Props) {
 
   const goNext = useCallback(() => {
     if (isLast) {
-      // Termine le tuto. Si on n'est pas sur la home, redirige vers la home
-      // pour que l'utilisateur tombe sur la liste des sourates explorables.
-      // Si déjà sur la home, on scroll juste vers la grille des sourates.
+      // La sortie est décidée par TutorialGuide (`stop`), qui seul sait d'où
+      // la visite a été lancée. Renvoyer d'office à l'accueil depuis ici
+      // arrachait le lecteur à la page qu'il était en train de lire.
       onClose()
-      if (typeof window !== 'undefined') {
-        if (window.location.pathname !== '/') {
-          router.push('/')
-        } else {
-          // Scroll vers la grille des sourates après un court délai pour laisser le tuto se fermer
-          setTimeout(() => {
-            const grid = document.querySelector('[data-tour-surah-grid="1"]') as HTMLElement | null
-            if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }, 100)
-        }
-      }
       return
     }
     setDirection('next')
     setStep(s => s + 1)
-  }, [isLast, onClose, router])
+  }, [isLast, onClose])
 
   const goPrev = () => {
     if (step === 0) return

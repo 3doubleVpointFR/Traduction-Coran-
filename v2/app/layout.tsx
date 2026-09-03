@@ -4,6 +4,7 @@ import Link from 'next/link'
 import './globals.css'
 import TutorialGuide from '@/components/TutorialGuide'
 import TutorialModal from '@/components/TutorialModal'
+import ScrollOnArrival from '@/components/ScrollOnArrival'
 import DisplaySettings from '@/components/DisplaySettings'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} font-sans`}>
+        <ScrollOnArrival />
         <a href="#main" className="skip-link">Aller au contenu</a>
         <header
           className="sticky top-0 z-40"

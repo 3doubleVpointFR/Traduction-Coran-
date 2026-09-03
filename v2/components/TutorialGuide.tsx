@@ -350,7 +350,13 @@ export default function TutorialGuide() {
     setNavigating(false)
   }, [pathname])
 
-  // Stop the tour entirely
+  /* Fin de la visite — ou abandon en cours de route.
+     La visite déplace le lecteur : elle démarre sur l'accueil et finit dans le
+     livre de la sourate 3. Le ramener là où il était quand il l'a lancée est
+     la moindre des politesses — sinon on lui prend sa page pour lui rendre
+     une autre. `tuto-origin` est posé par TutorialModal au démarrage ; s'il
+     est absent, c'est qu'on partait de l'accueil, et on l'y laisse en lui
+     montrant la grille des sourates. */
   const stop = useCallback(() => {
     setActive(false)
     setStep(0)
@@ -358,7 +364,25 @@ export default function TutorialGuide() {
     localStorage.removeItem('tuto-step')
     localStorage.setItem('tuto-seen', '1')
     setRects([])
-  }, [])
+
+    let origine: string | null = null
+    try {
+      origine = localStorage.getItem('tuto-origin')
+      localStorage.removeItem('tuto-origin')
+    } catch { /* navigation privée */ }
+
+    if (origine && origine !== window.location.pathname + window.location.search + window.location.hash) {
+      router.push(origine)
+      return
+    }
+    if (window.location.pathname === '/') {
+      // Déjà chez soi : on laisse au moins la grille des sourates sous les yeux.
+      setTimeout(() => {
+        const grid = document.querySelector('[data-tour-surah-grid="1"]') as HTMLElement | null
+        if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    }
+  }, [router])
 
   // Helper : calcule la liste des rects à mettre en surbrillance
   // (élément principal + alsoHighlight si visible)

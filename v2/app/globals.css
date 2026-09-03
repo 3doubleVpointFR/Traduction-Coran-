@@ -1064,9 +1064,20 @@ body.hide-sections [data-tour-sections="1"],
   contain-intrinsic-size: auto 600px;
 }
 
-/* Promotion GPU sur les éléments sticky (header, search bar, panneau droit) :
-   évite les reflow coûteux lors du scroll en les plaçant sur leur propre couche. */
-header.sticky,
+/* Promotion GPU sur les éléments sticky (search bar, panneau droit) :
+   évite les reflow coûteux lors du scroll en les plaçant sur leur propre couche.
+
+   ⚠️ LA BARRE DU SITE EN A ÉTÉ RETIRÉE. `transform` + `backface-visibility`
+   sur un élément `position: sticky` est une recette connue d'écran manquant
+   sur les navigateurs mobiles : la couche est créée mais pas peinte au
+   premier affichage, et il faut un événement qui force un repaint pour la
+   voir apparaître. D'où le défaut signalé — la barre « UN CORAN ARAB »
+   absente à la première arrivée sur le site, sur toutes les pages, et
+   rétablie par un simple rafraîchissement.
+
+   La barre n'a de toute façon rien à y gagner : elle est haute de 58 px, ne
+   contient que trois éléments, et les navigateurs composent déjà les
+   éléments collants sans qu'on le leur demande. */
 .word-panel-wrapper,
 .surah-search-bar {
   transform: translateZ(0);

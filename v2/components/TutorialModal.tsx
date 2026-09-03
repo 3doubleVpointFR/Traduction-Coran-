@@ -61,6 +61,14 @@ export default function TutorialModal() {
     router.prefetch('/surah/3')
     localStorage.setItem('tuto-active', '1')
     localStorage.setItem('tuto-step', '0')
+    // D'où l'on part. La visite commence forcément sur l'accueil (sa première
+    // étape vise la grille des sourates), mais elle n'a pas à y abandonner le
+    // lecteur : à la fin, ou dès qu'il quitte, on le ramène à sa page.
+    try {
+      const origine = window.location.pathname + window.location.search + window.location.hash
+      if (origine !== '/') localStorage.setItem('tuto-origin', origine)
+      else localStorage.removeItem('tuto-origin')
+    } catch { /* navigation privée */ }
     setOpen(false)
     // Step 1 cible la grille des sourates (présente uniquement sur /).
     // Si on est sur une sourate, on revient à la home — TutorialGuide
