@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useState, useEffect, useCallback, useRef, useMemo, useLayoutEffect } from 'react'
-import SurahTranche, { TRANCHE_W, type RailSurah } from './SurahTranche'
+import SurahBandeau, { type RailSurah } from './SurahBandeau'
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BookView — vue livre paginée avec pagination JS calculée.
@@ -769,76 +769,11 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
       lisibles.find(s => s.id > surah.id) ?? null,
     ]
   }, [railSurahs, railAvailableIds, surah.id])
-  /* ═══ LA TRANCHE SUR MOBILE ═══
-     Elle reste visible en permanence — sinon rien ne dit qu'elle existe — mais
-     réduite à un liséré au lieu des 38 px du desktop : on voit les perles, on
-     sait qu'on peut les toucher. Au doigt elle s'élargit pour qu'on puisse
-     viser, lire les numéros et faire défiler, puis se rétracte seule.
-
-     L'élargissement se fait PAR-DESSUS le texte (l'hôte est en position
-     absolue, ancré à droite) : seul le liséré est réservé dans la gouttière,
-     donc la pagination n'est jamais recalculée en cours de geste. */
-  // Encre visible au repos, et zone tactile qui la déborde vers la gauche.
-  // Les deux nourrissent le CSS plus bas : sans ça le retrait du contenu
-  // (RAIL_TOUCH − RAIL_SLIVER) dérive dès qu'on retouche l'une des valeurs.
-  const RAIL_SLIVER = 20
-  const RAIL_TOUCH = 44
-  const RAIL_OPEN = 50
-  const [railOpen, setRailOpen] = useState(false)
-  // Le lueur qui parcourt le liséré ne se déclenche que pour qui n'a jamais
-  // ouvert la tranche. Vrai par défaut : rien ne scintille pendant le rendu
-  // serveur ni l'hydratation, l'effet ne démarre qu'une fois monté.
-  const [railUsed, setRailUsed] = useState(true)
-  useEffect(() => {
-    try { setRailUsed(window.localStorage.getItem('bv-tranche-vue') === '1') }
-    catch { setRailUsed(false) }
-  }, [])
-  const markRailUsed = useCallback(() => {
-    setRailUsed(true)
-    try { window.localStorage.setItem('bv-tranche-vue', '1') } catch { /* navigation privée */ }
-  }, [])
-  const railTimer = useRef<number | null>(null)
-  // Le premier contact ne fait qu'ouvrir. Sans ça, poser le doigt sur un
-  // liséré de 15 px pour l'agrandir revenait à choisir la sourate qui se
-  // trouvait dessous — on naviguait en voulant seulement regarder.
-  const railWasClosed = useRef(false)
-  const railMoved = useRef(false)
-  const railStartY = useRef(0)
-  const armRailTimer = useCallback(() => {
-    if (railTimer.current !== null) window.clearTimeout(railTimer.current)
-    railTimer.current = window.setTimeout(() => setRailOpen(false), 2400)
-  }, [])
-  const onRailTouchStart = useCallback((e: React.TouchEvent) => {
-    railWasClosed.current = !railOpen
-    railMoved.current = false
-    railStartY.current = e.touches[0].clientY
-    setRailOpen(true)
-    markRailUsed()
-    armRailTimer()
-  }, [railOpen, armRailTimer, markRailUsed])
-  const onRailTouchMove = useCallback((e: React.TouchEvent) => {
-    // au-delà de 8 px c'est un défilement, pas un choix de sourate
-    if (Math.abs(e.touches[0].clientY - railStartY.current) > 8) railMoved.current = true
-    armRailTimer()
-  }, [armRailTimer])
-  const onRailClickCapture = useCallback((e: React.MouseEvent) => {
-    if (!isMobile) return
-    if (railWasClosed.current || railMoved.current) {
-      e.preventDefault()
-      e.stopPropagation()
-    }
-  }, [isMobile])
-  useEffect(() => {
-    if (!isMobile) setRailOpen(false)
-  }, [isMobile])
-  useEffect(() => () => {
-    if (railTimer.current !== null) window.clearTimeout(railTimer.current)
-  }, [])
 
   /* ═══ BALAYAGE ET ZONES DE TAP ═══
-     Posés sur le viewport et non sur book-body : la tranche est un frère du
-     viewport et fait défiler au doigt, un écouteur plus haut lui volerait ses
-     gestes. On exige que la composante horizontale domine, sinon un
+     Posés sur le viewport et non sur book-body : le bandeau des sourates a
+     son propre défilement horizontal, et un écouteur au-dessus de lui aurait
+     capté ses gestes. On exige que la composante horizontale domine, sinon un
      défilement vertical tournerait la page. */
   const touchRef = useRef<{ x: number; y: number } | null>(null)
   const onTouchStart = useCallback((e: React.TouchEvent) => {
@@ -948,15 +883,18 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             flexDirection: 'column',
           }}
         >
-          {!isMobile && (
-            // Le pli n'est pas au centre du livre : la tranche élargit la
-            // gouttière droite, donc les deux pages se rejoignent une
-            // demi-tranche plus à gauche. Sans ce décalage l'ombre de pliure
-            // est peinte à 19 px du vrai pli.
-            <div
-              aria-hidden
-              className="bv-spine"
-              style={hasRail ? { left: `calc(50% - ${TRANCHE_W / 2}px)` } : undefined}
+          {!isMobile && <div aria-hidden className="bv-spine" />}
+
+          {/* Le chapelet des sourates, en tête du livre — pendant du pied de
+              page. Il vit hors de book-body, comme le footer : sa hauteur est
+              retranchée de la zone de texte, donc la pagination s'y adapte
+              seule sans qu'aucune constante n'ait à être tenue en phase. */}
+          {hasRail && (
+            <SurahBandeau
+              surahs={railSurahs!}
+              availableIds={railAvailableIds ?? []}
+              currentId={surah.id}
+              onNavigate={leaveTo}
             />
           )}
 
@@ -968,16 +906,11 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             style={{
               position: 'relative',
               zIndex: 2,
-              // la gouttiere droite s'elargit de la tranche : la mesure de
-              // pagination deduit deja les paddings, donc les pages se
-              // retrecissent seules et rien ne passe sous les onglets
-              // Sur mobile on ne réserve que le liséré : l'élargissement au
-              // doigt déborde par-dessus le texte, donc la gouttière ne bouge
-              // pas et la pagination n'est pas recalculée en cours de geste.
-              // Sur desktop la tranche occupe sa gouttière en permanence.
-              padding: isMobile
-                ? `10px ${10 + (hasRail ? RAIL_SLIVER : 0)}px 12px 14px`
-                : `20px ${40 + (hasRail ? TRANCHE_W : 0)}px 20px 40px`,
+              // Gouttières symétriques depuis que le chapelet est passé en
+              // bandeau : plus rien ne vit dans la marge droite. La mesure de
+              // pagination déduit déjà les paddings, donc les pages se
+              // rétrécissent seules.
+              padding: isMobile ? '10px 10px 12px 14px' : '20px 40px',
               flex: 1,
               minHeight: 0,
               overflow: 'hidden',
@@ -1009,27 +942,6 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
               ))}
             </div>
 
-            {/* Chapelet des sourates : DANS book-body, donc il s'arrete de
-                lui-meme au-dessus du pied de page */}
-            {hasRail && (
-              <div
-                className={isMobile
-                  ? `bv-rail-mob${railOpen ? ' is-open' : ''}${railUsed ? '' : ' is-hinting'}`
-                  : undefined}
-                onTouchStart={isMobile ? onRailTouchStart : undefined}
-                onTouchMove={isMobile ? onRailTouchMove : undefined}
-                onTouchEnd={isMobile ? armRailTimer : undefined}
-                onClickCapture={isMobile ? onRailClickCapture : undefined}
-              >
-                <SurahTranche
-                  surahs={railSurahs!}
-                  availableIds={railAvailableIds ?? []}
-                  currentId={surah.id}
-                  onNavigate={leaveTo}
-                />
-              </div>
-            )}
-
             {/* VIEWPORT : montre les pages visibles */}
             <div
               className="bv-viewport"
@@ -1041,8 +953,13 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                 height: '100%',
                 overflow: 'hidden',
                 position: 'relative',
-                // le doigt ne fait rien horizontalement à part tourner la page
-                touchAction: 'pan-y',
+                // Un doigt ne fait rien horizontalement à part tourner la
+                // page. Mais `pinch-zoom` doit être demandé explicitement :
+                // sans lui, `pan-y` seul interdisait au navigateur d'agrandir
+                // la page — et le livre couvre tout l'écran, donc le
+                // pincement n'avait nulle part où prendre. Deux doigts
+                // agrandissent et se déplacent, un doigt tourne la page.
+                touchAction: 'pan-y pinch-zoom',
               }}
             >
               <div
@@ -1112,9 +1029,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           <footer
             className="bv-book-footer"
             style={{
-              // même décalage que la pliure : le compteur doit tomber sur le
-              // pli, pas sur le centre géométrique du livre
-              padding: `12px ${60 + (!isMobile && hasRail ? TRANCHE_W : 0)}px 16px 60px`,
+              padding: '12px 60px 16px',
               display: 'grid',
               gridTemplateColumns: '1fr auto 1fr',
               alignItems: 'center',
@@ -1159,8 +1074,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
               )}
             </div>
             {/* Le seul repère utile en pied de page : où j'en suis. Le nom de
-                la sourate est déjà dans l'en-tête et dans le liséré des
-                perles — le répéter ici ne servait à rien. */}
+                la sourate est déjà dans l'en-tête et dans le bandeau du
+                haut — le répéter ici ne servait à rien. */}
             <div
               className="bv-foot-id"
               style={{
@@ -1207,15 +1122,11 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           </footer>
         </div>
 
-        {/* Aligné sur le pli comme le compteur, pas sur la boîte du livre :
-            sinon il casse l'axe vertical que forment la pliure et le pied de
-            page, décalés d'une demi-tranche vers la gauche. */}
         <div
           className="bv-cta-wrap"
           style={{
             textAlign: 'center',
             marginTop: '14px',
-            paddingRight: !isMobile && hasRail ? `${TRANCHE_W}px` : undefined,
           }}
         >
           <Link
@@ -1879,14 +1790,13 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           }
           /* Pied du livre sur une seule ligne : nom, compteur, chevrons */
           /* Le compteur se cale sur l'axe de la COLONNE DE TEXTE, pas sur
-             celui du livre : la gouttière droite de book-body est plus large
-             que la gauche du liséré de la tranche, donc la colonne est
-             décalée vers la gauche. Sans cette compensation, « page n / N »
-             ne tombait pas sous le milieu du texte qu'il numérote. Même
-             correction que sur desktop, où c'est la tranche entière qui
-             creuse l'écart. */
+             celui du livre. Les gouttières restent asymétriques de 4 px :
+             book-body réserve 14 px à gauche contre 10 à droite, la colonne
+             4 contre 12 — soit 18 à gauche et 22 à droite. Sans cette
+             compensation, « page n / N » ne tombe pas sous le milieu du
+             texte qu'il numérote. */
           .bv-book-footer {
-            padding: 5px ${10 + RAIL_SLIVER + 4}px 6px 10px !important;
+            padding: 5px 14px 6px 10px !important;
             gap: 8px !important;
           }
           .bv-foot-count {
@@ -1927,7 +1837,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           .bv-cta-wrap {
             margin-top: 5px !important;
             /* même axe que le compteur et que la colonne de texte */
-            padding-right: ${RAIL_SLIVER + 4}px;
+            padding-right: 4px;
             /* barre de geste des iPhone : elle flotte au-dessus de la page et
                couperait le lien sans cette réserve */
             padding-bottom: 5px;
@@ -1937,197 +1847,6 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
              sur mobile : invisible mais cliquable, donc un piège. */
           .bv-floating-toggle {
             display: none !important;
-          }
-          /* ═══ LE LISÉRÉ ═══ (voir le commentaire RAIL_SLIVER)
-             Tout s'anime en translation, rien ne change de taille. L'ancienne
-             version animait la largeur de l'hôte, le retrait du contenu ET la
-             taille des 114 losanges : le navigateur replaçait toute la colonne
-             à chaque image, d'où les à-coups. Une translation ne coûte rien —
-             elle est composée, pas mise en page.
-
-             L'hôte garde donc une largeur fixe : c'est la ZONE TACTILE, plus
-             large que l'encre parce qu'un liséré est plus fin qu'un doigt et
-             qu'on le manquait une fois sur deux. Il est transparent ; c'est la
-             tranche elle-même, plus large que lui et calée à droite, qui
-             coulisse. Au repos elle dépasse par la droite et le livre, qui
-             coupe ce qui sort de lui, n'en laisse voir que le liséré.
-
-             La courbe est une décélération douce et non le cubic-bezier de
-             signature (0.16, 1, 0.3, 1) : celui-ci avale 35 % de la course en
-             40 ms, ce qui se lit comme un saut. Le repli est plus lent que
-             l'ouverture — on subit la rétraction, on provoque l'ouverture. */
-          .bv-rail-mob .bv-tranche-host {
-            width: ${RAIL_TOUCH}px !important;
-            top: 0 !important;
-            bottom: 0 !important;
-            /* la tranche déborde de son hôte une fois ouverte */
-            overflow: visible !important;
-          }
-          /* ═══ LA LUEUR ═══
-             Une lueur descend le long du liséré pour signaler qu'il est là.
-             Elle est posée sur l'hôte et non sur la tranche : la tranche
-             défile, la lueur suivrait le texte au lieu de rester sur la barre.
-             Sa largeur est celle de l'encre — au repos les 24 px restants de
-             l'hôte sont transparents et couvrent du texte.
-
-             Trois passages, puis plus rien, et plus jamais une fois la tranche
-             ouverte — le drapeau tient dans le navigateur. Un scintillement
-             perpétuel sur une surface de lecture devient un clignotant :
-             il apprend en trente secondes puis dérange pendant une heure. */
-          @keyframes bvRailSheen {
-            0%        { background-position: 0 -50%; opacity: 0; }
-            10%       { opacity: 1; }
-            55%       { background-position: 0 150%; opacity: 1; }
-            70%, 100% { background-position: 0 150%; opacity: 0; }
-          }
-          /* La reprise discrète : même course, mais bien plus rapide que sa
-             période — elle passe puis laisse la barre tranquille jusqu'au
-             tour suivant. */
-          @keyframes bvRailSheenSoft {
-            0%        { background-position: 0 -50%; opacity: 0; }
-            6%        { opacity: 1; }
-            30%       { background-position: 0 150%; opacity: 1; }
-            38%, 100% { background-position: 0 150%; opacity: 0; }
-          }
-          .bv-rail-mob:not(.is-open) .bv-tranche-host::after,
-          .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            width: ${RAIL_SLIVER}px;
-            pointer-events: none;
-            z-index: 4;
-            background-size: 100% 38%;
-            background-repeat: no-repeat;
-            opacity: 0;
-          }
-          /* UNE seule bande, d'un seul ton. La rampe « métal » essayée avant
-             — cœur clair entre deux bords sombres — se lisait comme DEUX
-             bandes qui se suivent, une blanche et une dorée : à cette
-             largeur, l'œil ne recompose pas un reflet, il compte les zones.
-
-             Et un ton profond plutôt que le doré moyen : sur du crème, un
-             #C9A23A translucide vire au jaune citron. Le #8A6E1F des perles
-             posé à demi-opacité donne un or chaud, qui se lit comme une
-             ombre dorée qui passe.
-
-             Trois passages appuyés, pour qui n'a jamais ouvert la tranche. */
-          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::after {
-            background: linear-gradient(180deg,
-              rgba(138,110,31,0) 0%,
-              rgba(138,110,31,0.45) 50%,
-              rgba(138,110,31,0) 100%);
-            animation: bvRailSheen 4200ms ease-in-out 1400ms 3;
-          }
-          /* Puis un reflet léger toutes les cinq secondes, sans fin : la
-             barre reste vivante sans redevenir un clignotant. Il démarre
-             après les trois passages appuyés quand il y en a eu. */
-          .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
-            background: linear-gradient(180deg,
-              rgba(138,110,31,0) 0%,
-              rgba(138,110,31,0.22) 50%,
-              rgba(138,110,31,0) 100%);
-            animation: bvRailSheenSoft 5000ms ease-in-out 2500ms infinite;
-          }
-          .bv-rail-mob.is-hinting:not(.is-open) .bv-tranche-host::before {
-            animation-delay: 14000ms;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .bv-rail-mob:not(.is-open) .bv-tranche-host::after,
-            .bv-rail-mob:not(.is-open) .bv-tranche-host::before {
-              animation: none;
-            }
-          }
-          .bv-rail-mob .bv-tranche {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            width: ${RAIL_OPEN}px;
-            padding-left: 0;
-            background: #FBF6E8 !important;
-            border-left: 1px solid rgba(184,150,46,0.30) !important;
-            transform: translateX(${RAIL_OPEN - RAIL_SLIVER}px);
-            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
-                        box-shadow 420ms ease;
-            will-change: transform;
-          }
-          /* ═══ LA COLONNE DES PERLES ═══
-             La barre ne fait plus un cadre autour du losange : elle COMMENCE
-             au losange, et le numéro suit à sa droite. C'est ce qui supprime
-             le vide — un losange centré sur la largeur avec le numéro calé à
-             droite condamnait toute la moitié gauche, et aucune taille de
-             glyphe ne pouvait la combler puisque les deux se rejoignaient
-             bien avant.
-
-             Le losange reste centré sur le cordon, qui est son axe à lui : la
-             colonne des 114 perles est droite, c'est tout ce qui compte. Ce
-             qui n'est plus centré, c'est le couple perle + numéro dans la
-             largeur, et ça ne se voit pas.
-
-             Le rappel qui suit repose la perle au milieu du liséré quand la
-             barre est fermée. Au repos le bord gauche de la tranche tombe
-             toujours à une largeur de liséré du bord de l'écran, quelle que
-             soit la largeur ouverte : le décalage vaut donc demi-liséré,
-             moins le retrait, moins le demi-losange. */
-          .bv-rail-mob .bv-tr-tick {
-            justify-content: flex-start;
-            padding-left: 7px;
-          }
-          .bv-rail-mob .bv-tr-cord {
-            left: 13px;
-            right: auto;
-            transform: none;
-          }
-          .bv-rail-mob .bv-tr-inner {
-            transform: translateX(-3.5px);
-            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1);
-          }
-          .bv-rail-mob .bv-tr-star {
-            transform: scale(0.873);
-            transition: transform 420ms cubic-bezier(0.33, 0, 0.2, 1),
-                        filter 260ms ease;
-          }
-          /* Le numéro est posé hors flux, à droite : le losange doit rester au
-             MILIEU de la tranche, et une paire losange+numéro centrée comme un
-             tout aurait décalé le losange vers la gauche. */
-          .bv-rail-mob .bv-tr-num {
-            display: block;
-            position: absolute;
-            right: 7px;
-            left: auto;
-            font-size: 10.2px;
-            opacity: 0;
-            transition: opacity 200ms ease;
-          }
-          /* Sous le doigt : la tranche coulisse par-dessus le texte pour qu'on
-             puisse viser une perle, lire les numéros et faire défiler. */
-          .bv-rail-mob.is-open .bv-tranche {
-            transform: translateX(0);
-            box-shadow: -14px 0 24px -10px rgba(60,40,10,0.28);
-            transition-duration: 300ms;
-          }
-          .bv-rail-mob.is-open .bv-tr-inner {
-            transform: translateX(0);
-            transition-duration: 300ms;
-          }
-          .bv-rail-mob.is-open .bv-tr-star {
-            transform: scale(1.153);
-            transition-duration: 300ms;
-          }
-          .bv-rail-mob.is-open .bv-tr-num {
-            opacity: 1;
-            transition-delay: 90ms;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .bv-rail-mob .bv-tranche,
-            .bv-rail-mob .bv-tr-inner,
-            .bv-rail-mob .bv-tr-star,
-            .bv-rail-mob .bv-tr-num {
-              transition: none !important;
-            }
           }
           /* Frontispice — tout ce qui est fixe en px doit rétrécir : à 300 px
              de colonne, les filets à 66/72 px touchent les bords. */

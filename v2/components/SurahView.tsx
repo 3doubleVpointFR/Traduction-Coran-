@@ -236,10 +236,10 @@ function MobileSheet({
 // Toujours le même layout, pas de trous, pas de boutons qui bougent.
 // Pour sauter directement à une page précise, l'utilisateur a le verse jumper
 // (qui calcule la page cible à partir d'un numéro de signe).
-function Pagination({ current, total, onChange, delayMs }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number }) {
+function Pagination({ current, total, onChange, delayMs, edge }: { current: number; total: number; onChange: (page: number) => void; delayMs?: number; edge: 'top' | 'bottom' }) {
   return (
     <div
-      className="surah-pagination page-section-anim flex items-center justify-center gap-4 py-4"
+      className={`surah-pagination is-${edge} page-section-anim flex items-center justify-center gap-4 py-4`}
       style={delayMs != null ? { animationDelay: `${delayMs}ms` } : undefined}
     >
       <button
@@ -1126,9 +1126,34 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           .surah-page.is-opening-book .verses-page-enter > *:nth-child(6) { animation-delay: 250ms; }
           .surah-page.is-opening-book .verses-page-enter > *:nth-child(7) { animation-delay: 288ms; }
           .surah-page.is-opening-book .verses-page-enter > *:nth-child(n+8) { animation-delay: 320ms; }
+
+          /* ═══ LES DEUX BARRES « PAGE N SUR N » ═══
+             Elles portent elles aussi la classe .page-section-anim, et
+             l'exclusion :not(.page-section-anim) plus haut — écrite pour
+             épargner la GRILLE, dont l'effacement aurait masqué la cascade
+             de ses enfants — les épargnait du même coup. Elles restaient
+             donc en place, intactes, pendant que tout le reste s'écartait :
+             on lisait encore « Page 1 sur 20 » par-dessus le livre qui
+             arrivait. D'où ce rattrapage, qui les vise nommément.
+
+             ⚠️ Leur retard d'ENTRÉE est posé en style en ligne (600 et
+             750 ms). Sans !important il s'appliquerait aussi à la sortie et
+             elles partiraient une demi-seconde après les autres — le même
+             bug, seulement plus discret. */
+          .surah-page.is-opening-book > .surah-pagination {
+            animation: bvPartR 380ms cubic-bezier(0.55, 0, 0.85, 0.25) forwards;
+            animation-delay: 20ms !important;
+            will-change: transform, opacity;
+          }
+          .surah-page.is-opening-book > .surah-pagination.is-bottom {
+            animation-name: bvPartL;
+            animation-delay: 160ms !important;
+          }
+
           @media (prefers-reduced-motion: reduce) {
             .surah-page.is-opening-book > .surah-header,
             .surah-page.is-opening-book > *:not(.surah-header):not(.page-section-anim),
+            .surah-page.is-opening-book > .surah-pagination,
             .surah-page.is-opening-book .verses-page-enter > *,
             .surah-page.is-opening-book .page-section-anim > div:last-child {
               animation: none !important;
@@ -1238,6 +1263,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           current={currentPage}
           total={totalPages}
           delayMs={600}
+          edge="top"
           onChange={goToPage}
         />
       )}
@@ -1473,6 +1499,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
         current={currentPage}
         total={totalPages}
         delayMs={750}
+        edge="bottom"
         onChange={goToPage}
       />
     )}
