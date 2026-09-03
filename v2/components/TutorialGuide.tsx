@@ -49,6 +49,30 @@ const STEPS: TourStep[] = [
     waitForSelector: 5000,
   },
   {
+    selector: '[data-tour-verse-num="2"] [data-tour-note="1"]',
+    position: 'bottom',
+    title: 'La note contextuelle',
+    desc: 'Un second encadré, replié par défaut. Il ne redit pas le verset : il le situe. D\'abord où il tombe dans la sourate et à qui il parle, puis ce que disait celui d\'avant et en quoi celui-ci répond, enfin — en italique — un fait du texte qu\'on risque de ne pas voir en lisant vite.',
+    scrollIntoView: true,
+    forceCorner: true,
+    waitForSelector: 5000,
+    triggerAction: () => {
+      // La note est repliée : on l'ouvre pour que l'étape montre son contenu
+      // et pas seulement son titre. Plusieurs essais — le verset peut encore
+      // être en train de se poser.
+      const tryOpen = (attempt = 0) => {
+        const note = document.querySelector('[data-tour-verse-num="2"] [data-tour-note="1"]')
+        if (!note) {
+          if (attempt < 10) setTimeout(() => tryOpen(attempt + 1), 200)
+          return
+        }
+        const header = note.querySelector('.note-toggle-header') as HTMLButtonElement | null
+        if (header && header.getAttribute('aria-expanded') !== 'true') header.click()
+      }
+      setTimeout(tryOpen, 100)
+    },
+  },
+  {
     selector: '[data-tour-verse-num="2"] [data-tour-word-key]',
     position: 'bottom',
     title: 'Clique sur un mot',
@@ -214,11 +238,79 @@ const STEPS: TourStep[] = [
       setTimeout(tryOpen, 100)
     },
   },
+  /* ═══ LA VUE LIVRE ═══
+     Le tour s'arrêtait au mode analyse, alors que la moitié du site est
+     ailleurs. On y va pour de vrai : la bascule navigue, et les étapes
+     suivantes se jouent sur /surah/3/livre. `requiresPath` sert au bouton
+     « Précédent », qui doit savoir revenir sur la bonne page. */
+  {
+    selector: '[data-tour-view-toggle="1"]',
+    position: 'top',
+    title: 'L\'autre façon de lire',
+    desc: 'Tout ce qu\'on vient de voir, c\'est le mode analyse : un verset, ses mots, ses preuves. Cette bascule ouvre la même sourate en mode livre — la traduction seule, paginée comme un vrai ouvrage, sans rien autour. Clique sur « Suivant » pour y aller.',
+    scrollIntoView: true,
+    waitForSelector: 4000,
+    navigateOnNext: '/surah/3/livre',
+    requiresPath: '/surah/3',
+  },
+  {
+    selector: '[data-tour-book="1"]',
+    position: 'top',
+    title: 'Le livre',
+    desc: 'Deux pages côte à côte, et le texte réparti dedans comme sur du papier : rien n\'est coupé au milieu d\'un verset, et la conclusion de la sourate suit à la fin. Les numéros de signe restent cliquables — un clic dessus rouvre l\'analyse complète du verset dans l\'autre vue.',
+    requiresPath: '/surah/3/livre',
+    waitForSelector: 10000,
+    forceCorner: true,
+    fullHeight: true,
+  },
+  {
+    selector: '[data-tour-book-bandeau="1"]',
+    position: 'bottom',
+    title: 'Le bandeau des sourates',
+    desc: 'En tête du livre, les 114 sourates en pastilles numérotées. Celle qui est pleine est celle que tu lis ; celles qui sont cerclées d\'or sont traduites et t\'attendent ; les pâles sont des places réservées, pas encore écrites. Survole-en une pour lire son nom, clique pour y aller.',
+    requiresPath: '/surah/3/livre',
+    waitForSelector: 6000,
+    forceCorner: true,
+  },
+  {
+    selector: '[data-tour-book-footer="1"]',
+    position: 'top',
+    title: 'Tourner les pages',
+    desc: 'En pied, les deux flèches et le numéro de page. Les flèches du clavier marchent aussi. Et à la toute fin du livre, la flèche de droite change de rôle : elle devient le passage à la sourate suivante — en sautant celles qui ne sont pas encore traduites.',
+    requiresPath: '/surah/3/livre',
+    waitForSelector: 6000,
+    forceCorner: true,
+  },
+  {
+    selector: '[data-tour-display-btn="1"]',
+    position: 'left',
+    title: 'Arabe et phonétique dans le livre',
+    desc: 'Le même bouton qu\'en mode analyse, mais il n\'offre pas la même chose ici : dans le livre, il ajoute au choix le texte arabe et la phonétique sous chaque signe. Le livre se repagine tout seul pour en tenir compte. Par défaut, le français seul — c\'est la lecture d\'une traite.',
+    requiresPath: '/surah/3/livre',
+    waitForSelector: 4000,
+    forceCorner: true,
+    alsoHighlight: '[data-tour-display-popover="1"]',
+    triggerAction: () => {
+      const tryOpen = (attempt = 0) => {
+        if (document.querySelector('[data-tour-display-popover="1"]')) return
+        const btn = document.querySelector('[data-tour-display-btn="1"]') as HTMLButtonElement | null
+        if (btn) {
+          btn.click()
+          setTimeout(() => {
+            if (!document.querySelector('[data-tour-display-popover="1"]') && attempt < 5) tryOpen(attempt + 1)
+          }, 200)
+        } else if (attempt < 10) {
+          setTimeout(() => tryOpen(attempt + 1), 150)
+        }
+      }
+      setTimeout(tryOpen, 100)
+    },
+  },
   {
     selector: 'body',
     position: 'center',
     title: 'À toi de méditer ✦',
-    desc: 'Tu as toutes les clés. Explore les autres versets, suis ton intuition, construis ton propre sens. La traduction n\'est pas le dernier mot.',
+    desc: 'Tu as toutes les clés. Le mode analyse pour peser chaque mot, le mode livre pour lire d\'une traite. Explore les autres versets, suis ton intuition, construis ton propre sens. La traduction n\'est pas le dernier mot.',
   },
 ]
 

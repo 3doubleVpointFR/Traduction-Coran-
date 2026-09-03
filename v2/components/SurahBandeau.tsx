@@ -145,7 +145,7 @@ export default function SurahBandeau({
   const hovered = hover ? surahs[hover.i] : null
 
   return (
-    <div className="bv-bandeau" ref={hostRef} aria-label="Parcourir les sourates">
+    <div className="bv-bandeau" ref={hostRef} data-tour-book-bandeau="1" aria-label="Parcourir les sourates">
       <span className="bv-bd-legend" aria-hidden>Sourates</span>
 
       <button

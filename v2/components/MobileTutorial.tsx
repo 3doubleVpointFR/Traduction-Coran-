@@ -14,7 +14,7 @@ interface Card {
   title: string
   body: string
   highlight?: string  // mot/expression à mettre en valeur dans le body
-  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'display-settings' | 'verse-toggles' | 'final'
+  illustration?: 'meditation' | 'surah-list' | 'verse-layout' | 'summary' | 'note' | 'word-tap' | 'concepts' | 'retenu' | 'proof-ctx' | 'verses-refs' | 'sections' | 'display-settings' | 'verse-toggles' | 'book-page' | 'book-bandeau' | 'book-gestures' | 'final'
 }
 
 const CARDS: Card[] = [
@@ -44,6 +44,13 @@ const CARDS: Card[] = [
     body: "Cet encadré or apparaît en haut de chaque verset analysé. Il résume en 1-2 phrases l'idée centrale et la portée du verset — une vue d'ensemble avant de plonger dans l'analyse.",
     highlight: "l'idée centrale",
     illustration: 'summary',
+  },
+  {
+    emoji: '✦',
+    title: 'La note contextuelle',
+    body: "Juste en dessous, un second encadré, replié. Il ne redit pas le verset : il le situe. D'abord où il tombe dans la sourate et à qui il parle, puis ce que disait celui d'avant et en quoi celui-ci lui répond, enfin — en italique — un fait du texte qu'on risque de ne pas voir en lisant vite.",
+    highlight: 'il le situe',
+    illustration: 'note',
   },
   {
     emoji: '✦',
@@ -102,9 +109,36 @@ const CARDS: Card[] = [
     illustration: 'verse-toggles',
   },
   {
+    emoji: '❦',
+    title: "L'autre façon de lire",
+    body: "Tout ça, c'était le mode analyse : un verset, ses mots, ses preuves. Sous la sourate, une bascule ouvre le mode livre — la traduction seule, paginée comme un vrai ouvrage, sans rien autour. Les numéros de signe y restent tactiles : tape dessus et tu reviens à l'analyse du verset.",
+    highlight: 'paginée comme un vrai ouvrage',
+    illustration: 'book-page',
+  },
+  {
+    emoji: '❦',
+    title: 'Le bandeau des sourates',
+    body: "En tête du livre, les 114 sourates en pastilles numérotées. La pleine est celle que tu lis. Celles cerclées d'or sont traduites et t'attendent. Les pâles sont des places réservées, pas encore écrites. Fais glisser la barre du doigt, tape pour y aller.",
+    highlight: "cerclées d'or sont traduites",
+    illustration: 'book-bandeau',
+  },
+  {
+    emoji: '❦',
+    title: 'Tourner les pages au doigt',
+    body: "Balaye vers la gauche ou la droite, ou tape simplement sur le bord gauche ou droit de la page. Le milieu ne fait rien — c'est ce qui te permet de viser un numéro de signe sans tourner par accident. Les flèches du pied restent là si tu préfères viser.",
+    highlight: 'Le milieu ne fait rien',
+    illustration: 'book-gestures',
+  },
+  {
+    emoji: '❦',
+    title: 'Si tu lis mal de près',
+    body: "Écarte deux doigts sur la page pour agrandir le texte autant que tu veux, puis déplace-toi d'un doigt dans la page grossie. Tant que tu es agrandi, le balayage ne tourne plus les pages — sers-toi des flèches du pied. Et dans le panneau d'affichage, le livre peut aussi montrer l'arabe et la phonétique sous chaque signe.",
+    highlight: 'Écarte deux doigts',
+  },
+  {
     emoji: '✦',
     title: 'À toi de méditer',
-    body: "Tu as toutes les clés. Explore les sourates analysées, suis ton intuition, construis ton propre sens. La traduction n'est jamais le dernier mot — c'est une invitation à raisonner.",
+    body: "Tu as toutes les clés. Le mode analyse pour peser chaque mot, le mode livre pour lire d'une traite. Explore les sourates analysées, suis ton intuition, construis ton propre sens. La traduction n'est jamais le dernier mot — c'est une invitation à raisonner.",
     highlight: "n'est jamais le dernier mot",
     illustration: 'final',
   },
@@ -480,6 +514,151 @@ function Illustration({ kind }: { kind: Card['illustration'] }) {
         </div>
         <div style={{ height: 1, background: 'rgba(184,150,46,0.2)', marginBottom: 8 }} />
         <div style={{ fontSize: 9, color: '#6B5E52', fontStyle: 'italic' as const, textAlign: 'center' as const }}>↑ uniquement pour ce verset</div>
+      </div>
+    )
+  }
+
+  /* ═══ LA NOTE CONTEXTUELLE ═══
+     Trois lignes, la dernière en italique : la maquette montre la forme de
+     la note plutôt que d'en écrire le contenu. */
+  if (kind === 'note') {
+    return (
+      <div style={{ ...cardStyle, padding: '14px 12px' }}>
+        <div style={{ background: 'rgba(180,165,120,0.10)', border: '1px solid rgba(180,165,120,0.30)', borderLeft: '4px solid rgba(180,165,120,0.65)', borderRadius: '0 8px 8px 0', overflow: 'hidden' as const }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 10px', fontSize: 8.5, letterSpacing: '0.14em', textTransform: 'uppercase' as const, color: '#7A6A38', fontWeight: 700 }}>
+            <span><span style={{ color: '#A8902E', marginRight: 4 }}>✦</span>Note contextuelle</span>
+            <span style={{ opacity: 0.85 }}>▾</span>
+          </div>
+          <div style={{ borderTop: '1px dashed rgba(180,165,120,0.30)', padding: '9px 10px', display: 'flex', flexDirection: 'column' as const, gap: 7 }}>
+            {[
+              { txt: 'Où le verset tombe dans la sourate, à qui il parle.', it: false },
+              { txt: "Ce que disait celui d'avant, et en quoi celui-ci répond.", it: false },
+              { txt: "Un fait du texte qu'on risque de ne pas voir.", it: true },
+            ].map((l, i) => (
+              <div key={i} style={{ display: 'flex', gap: 6, alignItems: 'flex-start' }}>
+                <span style={{ color: '#B8962E', fontSize: 8, lineHeight: 1.7, flexShrink: 0 }}>✦</span>
+                <span style={{ fontSize: 9.5, lineHeight: 1.5, color: l.it ? '#7A6A38' : '#5A4E42', fontStyle: l.it ? ('italic' as const) : ('normal' as const) }}>{l.txt}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  /* ═══ LA PAGE DE LIVRE ═══ le crème, les pastilles de signe, le pied. */
+  if (kind === 'book-page') {
+    return (
+      <div style={{ ...cardStyle, background: '#FFFBF0', padding: 0 }}>
+        <div style={{ padding: '12px 12px 4px', textAlign: 'center' as const }}>
+          <div style={{ fontSize: 7.5, letterSpacing: '0.28em', textTransform: 'uppercase' as const, color: '#B8962E', fontWeight: 600 }}>Sourate 3</div>
+          <div style={{ fontSize: 20, color: '#8A6E1F', direction: 'rtl' as const, margin: '3px 0 2px' }}>آل عمران</div>
+          <div style={{ fontSize: 8, letterSpacing: '0.16em', color: '#8A6E1F' }}>ALI &apos;IMRAN</div>
+        </div>
+        <div style={{ padding: '6px 14px 10px', display: 'flex', flexDirection: 'column' as const, gap: 7 }}>
+          {['Alif, Lām, Mīm.', "Dieu, il n'y a de divinité que Lui, le Vivant.", "Il a fait descendre sur toi l'écriture avec la vérité."].map((t, i) => (
+            <div key={i} style={{ display: 'flex', gap: 6, alignItems: 'flex-start' }}>
+              <span style={{ flexShrink: 0, width: 15, height: 15, borderRadius: '50%', border: '1px solid rgba(184,150,46,0.55)', color: '#8A6E1F', fontSize: 8.5, fontWeight: 600, display: 'grid', placeItems: 'center' as const }}>{i + 1}</span>
+              <span style={{ fontSize: 9.5, lineHeight: 1.45, color: '#1A1410' }}>{t}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ borderTop: '1px solid rgba(184,150,46,0.20)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '6px 12px' }}>
+          {['‹', '›'].map((c, i) => (
+            <span key={c} style={{ order: i === 0 ? 0 : 2, width: 17, height: 17, borderRadius: '50%', border: '1px solid rgba(184,150,46,0.35)', color: '#8A6E1F', fontSize: 10, display: 'grid', placeItems: 'center' as const }}>{c}</span>
+          ))}
+          <span style={{ order: 1, fontSize: 8.5, fontStyle: 'italic' as const, letterSpacing: '0.14em', color: '#6B5E52' }}>page 1 / 28</span>
+        </div>
+      </div>
+    )
+  }
+
+  /* ═══ LE BANDEAU ═══ les trois états de pastille, côte à côte. */
+  if (kind === 'book-bandeau') {
+    const beads = [
+      { n: 1, state: 'ready' }, { n: 2, state: 'pale' }, { n: 3, state: 'current' },
+      { n: 4, state: 'ready' }, { n: 5, state: 'pale' }, { n: 6, state: 'pale' }, { n: 7, state: 'pale' },
+    ]
+    return (
+      <div style={{ ...cardStyle, background: '#FFFBF0', padding: '12px 8px' }}>
+        <div style={{ position: 'relative' as const, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
+          <span style={{ position: 'absolute' as const, left: 10, right: 10, top: '50%', height: 1, background: 'rgba(184,150,46,0.22)' }} />
+          {beads.map(b => {
+            const ready = b.state === 'ready', cur = b.state === 'current'
+            return (
+              <span
+                key={b.n}
+                style={{
+                  position: 'relative' as const,
+                  width: cur ? 25 : ready ? 23 : 18,
+                  height: cur ? 25 : ready ? 23 : 18,
+                  borderRadius: '50%',
+                  display: 'grid',
+                  placeItems: 'center' as const,
+                  fontSize: cur || ready ? 10.5 : 8.5,
+                  fontWeight: ready || cur ? 700 : 500,
+                  border: `1px solid ${cur ? '#8A6E1F' : ready ? 'rgba(184,150,46,0.85)' : 'rgba(184,150,46,0.16)'}`,
+                  background: cur
+                    ? 'linear-gradient(150deg, #EFD98C 0%, #C9A23A 45%, #8A6E1F 100%)'
+                    : ready ? 'linear-gradient(180deg, rgba(184,150,46,0.20), rgba(184,150,46,0.06)), #FFFBF0' : '#FFFBF0',
+                  color: cur ? '#FFFBF0' : ready ? '#8A6E1F' : 'rgba(107,94,82,0.34)',
+                  boxShadow: ready ? '0 0 0 3px rgba(184,150,46,0.11)' : undefined,
+                }}
+              >
+                {b.n}
+              </span>
+            )
+          })}
+        </div>
+        <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column' as const, gap: 4, fontSize: 8.5, color: '#6B5E52', fontStyle: 'italic' as const }}>
+          <div><span style={{ color: '#8A6E1F', fontWeight: 700, fontStyle: 'normal' as const }}>3</span> — celle que tu lis</div>
+          <div><span style={{ color: '#8A6E1F', fontWeight: 700, fontStyle: 'normal' as const }}>1, 4</span> — traduites, tu peux y aller</div>
+          <div><span style={{ color: 'rgba(107,94,82,0.5)', fontStyle: 'normal' as const }}>2, 5, 6…</span> — pas encore écrites</div>
+        </div>
+      </div>
+    )
+  }
+
+  /* ═══ LES GESTES ═══ les trois bandes de la page, dont celle du milieu
+     qui ne fait rien — c'est elle qu'il faut faire comprendre. */
+  if (kind === 'book-gestures') {
+    const zones = [
+      { txt: 'page\nprécédente', live: true },
+      { txt: 'rien\n(vise un signe)', live: false },
+      { txt: 'page\nsuivante', live: true },
+    ]
+    return (
+      <div style={{ ...cardStyle, background: '#FFFBF0', padding: '12px 10px' }}>
+        <div style={{ display: 'flex', gap: 4, height: 96 }}>
+          {zones.map((z, i) => (
+            <div
+              key={i}
+              style={{
+                flex: 1,
+                borderRadius: 6,
+                border: `1px ${z.live ? 'solid' : 'dashed'} rgba(184,150,46,${z.live ? 0.5 : 0.25})`,
+                background: z.live ? 'rgba(184,150,46,0.09)' : 'transparent',
+                display: 'flex',
+                flexDirection: 'column' as const,
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 5,
+                textAlign: 'center' as const,
+                fontSize: 8,
+                lineHeight: 1.35,
+                whiteSpace: 'pre-line' as const,
+                color: z.live ? '#8A6E1F' : 'rgba(107,94,82,0.55)',
+                fontStyle: z.live ? ('normal' as const) : ('italic' as const),
+              }}
+            >
+              <span style={{ fontSize: 15, opacity: z.live ? 1 : 0.35 }}>{z.live ? (i === 0 ? '‹' : '›') : '·'}</span>
+              {z.txt}
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 10, textAlign: 'center' as const, fontSize: 8.5, color: '#6B5E52', fontStyle: 'italic' as const }}>
+          ou balaye <span style={{ color: '#8A6E1F' }}>←</span> <span style={{ color: '#8A6E1F' }}>→</span> n&apos;importe où
+        </div>
       </div>
     )
   }

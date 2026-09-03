@@ -933,6 +933,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
       >
         <div
           className="book"
+          data-tour-book="1"
           style={{
             maxWidth: isMobile ? undefined : '1180px',
             width: '100%',
@@ -1102,6 +1103,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
               que le secours. Les 40 px rendus font trois lignes de texte. */}
           <footer
             className="bv-book-footer"
+            data-tour-book-footer="1"
             style={{
               padding: '12px 60px 16px',
               display: 'grid',

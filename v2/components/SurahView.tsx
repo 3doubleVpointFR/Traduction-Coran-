@@ -977,6 +977,7 @@ export default function SurahView({ surah, verses, wordsByVerse, analysesByVerse
           className="view-toggle"
           role="tablist"
           aria-label="Mode de lecture"
+          data-tour-view-toggle="1"
           style={{
             display: 'inline-flex',
             alignItems: 'stretch',
