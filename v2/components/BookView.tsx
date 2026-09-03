@@ -738,7 +738,30 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
     return () => window.removeEventListener('keydown', onKey)
   }, [goPrev, goNext, canNext])
 
+  /* ═══ SE POSER EN HAUT, SANS ANIMATION, À L'ARRIVÉE ═══
+     `html` porte `scroll-behavior: smooth` pour tout le site : le
+     `scrollTo(0, 0)` de la navigation devient donc un défilement ANIMÉ. Or la
+     page du livre rétrécit aussitôt à la hauteur de l'écran — elle ne défile
+     plus —, ce qui coupe l'animation en cours de route. On restait bloqué à
+     mi-hauteur, la barre du site hors champ et tout décalé, sans pouvoir
+     remonter : seul un rafraîchissement s'en sortait.
+
+     D'où un saut sec, réaffirmé sur l'image suivante puis une fois la
+     pagination stabilisée — c'est elle qui fixe la hauteur définitive. */
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return
+    const jump = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior })
+    jump()
+    const raf = requestAnimationFrame(jump)
+    const late = window.setTimeout(jump, 300)
+    return () => { cancelAnimationFrame(raf); window.clearTimeout(late) }
+  }, [])
+
+  // Au CHANGEMENT de page, en revanche, le défilement animé est le bon —
+  // mais pas au premier rendu, qui vient d'être traité juste au-dessus.
+  const firstSpread = useRef(true)
   useEffect(() => {
+    if (firstSpread.current) { firstSpread.current = false; return }
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [spread])
 
@@ -770,38 +793,84 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
     ]
   }, [railSurahs, railAvailableIds, surah.id])
 
+  /* ═══ LA PAGE EST-ELLE AGRANDIE ? ═══
+     Tant qu'on lit à taille normale, le doigt tourne les pages. Dès que le
+     lecteur a pincé pour agrandir, le même doigt doit servir à SE DÉPLACER
+     dans la page grossie : un balayage y est un déplacement, pas une tourne,
+     et un appui n'est pas un ordre de changer de page. Les deux régimes ne
+     peuvent pas coexister, il faut savoir dans lequel on est.
+
+     `visualViewport.scale` est la seule mesure fiable de l'agrandissement —
+     il n'apparaît nulle part dans la mise en page, qui, elle, ne bouge pas. */
+  const [zoomed, setZoomed] = useState(false)
+  useEffect(() => {
+    const vv = window.visualViewport
+    if (!vv) return
+    const sync = () => setZoomed(vv.scale > 1.02)
+    sync()
+    vv.addEventListener('resize', sync)
+    vv.addEventListener('scroll', sync)
+    return () => {
+      vv.removeEventListener('resize', sync)
+      vv.removeEventListener('scroll', sync)
+    }
+  }, [])
+
   /* ═══ BALAYAGE ET ZONES DE TAP ═══
      Posés sur le viewport et non sur book-body : le bandeau des sourates a
      son propre défilement horizontal, et un écouteur au-dessus de lui aurait
      capté ses gestes. On exige que la composante horizontale domine, sinon un
      défilement vertical tournerait la page. */
   const touchRef = useRef<{ x: number; y: number } | null>(null)
+  // Un pincement met deux doigts en jeu, et ils s'écartent : mesuré depuis le
+  // premier, l'écart dépassait allègrement le seuil de balayage et la page
+  // tournait au relâchement. Dès qu'un second doigt se pose, le geste cesse
+  // d'être une tourne — et le clic de compatibilité qui suit est écarté lui
+  // aussi, sans quoi le simple fait de lâcher le pincement changeait de page.
+  const multiTouch = useRef(false)
+  const noTapUntil = useRef(0)
   const onTouchStart = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length > 1) {
+      multiTouch.current = true
+      touchRef.current = null
+      return
+    }
+    if (zoomed) { touchRef.current = null; return }
     const t = e.touches[0]
     touchRef.current = { x: t.clientX, y: t.clientY }
-  }, [])
+  }, [zoomed])
   const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    // e.touches = ce qui reste posé. Le geste n'est fini qu'à zéro doigt.
+    if (e.touches.length === 0 && multiTouch.current) {
+      multiTouch.current = false
+      noTapUntil.current = Date.now() + 500
+      touchRef.current = null
+      return
+    }
     const s = touchRef.current
     touchRef.current = null
-    if (!s) return
+    if (!s || multiTouch.current || zoomed) return
     const t = e.changedTouches[0]
     const dx = t.clientX - s.x
     const dy = t.clientY - s.y
     if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.4) return
     if (dx < 0) goNext()
     else goPrev()
-  }, [goNext, goPrev])
+  }, [goNext, goPrev, zoomed])
   // Tap sur le tiers gauche ou droit — la convention des liseuses. Le tiers
   // central reste inerte pour qu'on puisse viser une pastille de verset sans
-  // tourner la page par accident.
+  // tourner la page par accident. Rien de tout cela quand la page est
+  // agrandie : on y déplace la vue, les chevrons du pied restent là pour
+  // tourner la page.
   const onZoneTap = useCallback((e: React.MouseEvent) => {
-    if (!isMobile) return
+    if (!isMobile || zoomed) return
+    if (Date.now() < noTapUntil.current) return
     if ((e.target as HTMLElement).closest('a, button')) return
     const r = (e.currentTarget as HTMLElement).getBoundingClientRect()
     const x = e.clientX - r.left
     if (x < r.width * 0.28) goPrev()
     else if (x > r.width * 0.72) goNext()
-  }, [isMobile, goNext, goPrev])
+  }, [isMobile, goNext, goPrev, zoomed])
 
   // translateX = -spread * (pagesPerSpread * pageWidth + pagesPerSpread * gap)
   //            = -spread * pagesPerSpread * (pageWidth + gap)
@@ -809,7 +878,7 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
 
   return (
     <div
-      className="bv-page"
+      className={`bv-page${zoomed ? ' is-zoomed' : ''}`}
       style={{
         minHeight: '100vh',
         background: 'transparent',
@@ -953,13 +1022,18 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
                 height: '100%',
                 overflow: 'hidden',
                 position: 'relative',
-                // Un doigt ne fait rien horizontalement à part tourner la
-                // page. Mais `pinch-zoom` doit être demandé explicitement :
-                // sans lui, `pan-y` seul interdisait au navigateur d'agrandir
-                // la page — et le livre couvre tout l'écran, donc le
-                // pincement n'avait nulle part où prendre. Deux doigts
-                // agrandissent et se déplacent, un doigt tourne la page.
-                touchAction: 'pan-y pinch-zoom',
+                // À taille normale, un doigt ne fait rien horizontalement à
+                // part tourner la page — mais `pinch-zoom` doit être demandé
+                // nommément, sans quoi `pan-y` seul interdit au navigateur
+                // d'agrandir, et le livre couvrant tout l'écran, le
+                // pincement n'a nulle part où prendre.
+                //
+                // Une fois la page agrandie, tout est rendu au navigateur :
+                // c'est ce qui permet de se déplacer d'un seul doigt dans
+                // toutes les directions. Avec `pan-y`, le déplacement
+                // horizontal restait interdit et on ne pouvait pas atteindre
+                // les bords du texte grossi.
+                touchAction: zoomed ? 'auto' : 'pan-y pinch-zoom',
               }}
             >
               <div
@@ -1150,6 +1224,13 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
         .book {
           height: min(820px, calc(100vh - 110px));
           height: min(820px, calc(100dvh - 110px));
+        }
+
+        /* Page agrandie : le bandeau des sourates rend lui aussi ses gestes
+           au navigateur, sinon il restait une bande où le déplacement se
+           bloquait net au milieu de la lecture. */
+        .bv-page.is-zoomed .bv-bd-scroll {
+          touch-action: auto !important;
         }
 
         /* ═══ FRONTISPICE ═══ (voir le commentaire de SurahHeader) */
@@ -1357,7 +1438,15 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
           max-width: 100%;
           margin: 3px auto 8px;
           padding: 3px 13px;
-          border-radius: 999px;
+          /* ⚠️ PAS 999px. Un rayon « pilule » vaut la moitié de la hauteur
+             du bloc : sur une ligne il donne le demi-cercle voulu, mais sur
+             un verset long de quatre ou cinq lignes il devient un arc de
+             40 px qui mord la première et la dernière ligne — les lettres
+             des bords sortaient du surlignage. Le rayon est donc calé sur
+             UNE ligne (12,5 px × 1,5 + 2 × 3 de retrait, moitié ≈ 12), ce
+             qui garde la pilule quand il n'y a qu'une ligne et devient un
+             simple angle arrondi quand il y en a plusieurs. */
+          border-radius: 12px;
           background: rgba(184,150,46,0.055);
           text-align: center;
           font-size: 12.5px;
@@ -1915,6 +2004,8 @@ export default function BookView({ surah, verses, pageSize, conclusion, railSura
             margin: 2px auto 5px !important;
             padding: 2px 9px !important;
             letter-spacing: 0.045em !important;
+            /* même calcul qu'en grand : 11 × 1,5 + 2 × 2, moitié ≈ 10 */
+            border-radius: 10px !important;
           }
           .verse-marker {
             min-width: 19px !important;

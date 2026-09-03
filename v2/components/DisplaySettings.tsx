@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import { createPortal } from 'react-dom'
 
@@ -93,28 +93,66 @@ export default function DisplaySettings() {
     } catch { /* ignore quota errors */ }
   }, [settings, hydrated])
 
+  /* ═══ AVALER LE CLIC QUI REFERME LE PANNEAU ═══
+     Le geste qui referme ne doit RIEN faire d'autre. Au doigt, une pression
+     produit ensuite un `click` sur ce qu'il y a dessous : refermer le panneau
+     en touchant le livre tournait la page du même geste, et il n'y avait
+     aucun endroit sûr où appuyer. On avale donc le clic suivant, une fois, en
+     phase de capture.
+
+     ⚠️ Cet écouteur vit HORS de l'effet de fermeture. Posé dedans, il était
+     retiré par le nettoyage de l'effet — que `setOpen(false)` déclenche
+     aussitôt — bien avant que le clic n'arrive : il n'avalait jamais rien.
+     Il n'est démonté qu'avec le composant, ou par sa purge de sécurité si
+     aucun clic ne vient (un glissement, par exemple). */
+  const swallowRef = useRef<((ev: MouseEvent) => void) | null>(null)
+  const purgeRef = useRef(0)
+  const disarmSwallow = useCallback(() => {
+    if (purgeRef.current) { window.clearTimeout(purgeRef.current); purgeRef.current = 0 }
+    if (swallowRef.current) {
+      document.removeEventListener('click', swallowRef.current, true)
+      swallowRef.current = null
+    }
+  }, [])
+  const armSwallow = useCallback(() => {
+    if (swallowRef.current) return
+    const fn = (ev: MouseEvent) => {
+      ev.stopPropagation()
+      ev.preventDefault()
+      disarmSwallow()
+    }
+    swallowRef.current = fn
+    document.addEventListener('click', fn, true)
+    purgeRef.current = window.setTimeout(disarmSwallow, 500)
+  }, [disarmSwallow])
+  useEffect(() => disarmSwallow, [disarmSwallow])
+
   // Fermeture sur Escape ou clic extérieur
   useEffect(() => {
     if (!open) return
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false)
     }
-    const handleClick = (e: MouseEvent) => {
+    // `pointerdown` et non `mousedown` : au doigt, les événements souris ne
+    // sont émis qu'après le relâchement, le panneau restait donc affiché
+    // pendant toute la pression.
+    const handleDown = (e: PointerEvent) => {
       const target = e.target as Node
       if (
         popoverRef.current && !popoverRef.current.contains(target) &&
         buttonRef.current && !buttonRef.current.contains(target)
       ) {
         setOpen(false)
+        armSwallow()
       }
     }
     window.addEventListener('keydown', handleKey)
-    document.addEventListener('mousedown', handleClick)
+    document.addEventListener('pointerdown', handleDown)
     return () => {
       window.removeEventListener('keydown', handleKey)
-      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('pointerdown', handleDown)
     }
-  }, [open])
+  }, [open, armSwallow])
 
   const toggle = (key: keyof Settings) => {
     // Sur mobile, désactive l'animation pendant le toggle pour éviter le
