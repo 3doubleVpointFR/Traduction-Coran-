@@ -31,11 +31,15 @@ async function getData() {
   }
 
   const allSurahs = surahsRes.data ?? []
-  // Affiche TOUTES les sourates, triées par nb de versets étoilés décroissant.
-  // En cas d'égalité (souvent à 0), tri par n° de sourate croissant pour garder l'ordre canonique.
+  /* Toutes les sourates, dans l'ORDRE DU RECUEIL. Elles étaient triées par
+     nombre de signes traduits, ce qui remontait les lisibles en tête : utile
+     tant qu'il y en avait trois, mais dès qu'on déplie la liste entière on
+     perd le seul ordre que le lecteur connaisse par cœur, et chercher la 18e
+     revient à la chercher des yeux une à une. La liste réduite montre déjà
+     les sourates commencées en premier, puisqu'elle ne montre qu'elles. */
   const surahs = allSurahs
     .map(s => ({ ...s, validated_count: validatedBySurah.get(s.id) ?? 0 }))
-    .sort((a, b) => (b.validated_count - a.validated_count) || (a.id - b.id))
+    .sort((a, b) => a.id - b.id)
 
   return { surahs }
 }
