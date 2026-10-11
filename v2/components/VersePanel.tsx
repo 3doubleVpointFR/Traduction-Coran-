@@ -483,33 +483,121 @@ export default function VersePanel({
             })
           }
 
-          const renderContent = (content: string, accentColor: string) => (
-            <div className="section-unfold" style={{
-              padding: '12px 18px',
-              borderLeft: `4px solid ${accentColor}`,
-              borderRadius: '0 10px 10px 0',
-              background: `${accentColor}0A`,
-              fontSize: '12.5px',
-              lineHeight: 1.85,
-              color: '#5A4E42',
-              marginTop: '6px',
-              boxShadow: '0 1px 3px rgba(184,150,46,0.05)',
-            }}>
-              {content.split('\n\n').filter((s: string) => s.trim()).map((paragraph: string, j: number) => {
-                const chunks = paragraph.split(/(\*\*[^*]+\*\*)/g)
-                return (
-                  <p key={j} style={{ marginBottom: '8px' }}>
-                    {chunks.map((chunk: string, k: number) => {
-                      if (chunk.startsWith('**') && chunk.endsWith('**')) {
-                        return <span key={k} style={{ color: accentColor, fontWeight: 700 }}>{chunk.slice(2, -2)}</span>
-                      }
-                      return <React.Fragment key={k}>{renderChunk(chunk, accentColor, j + '-' + k)}</React.Fragment>
-                    })}
-                  </p>
-                )
-              })}
-            </div>
+          // Démarche découpée (forme du 2026-10-11) : un bloc par mot, avec en tête « **phon** (fr) »,
+          // puis « Nature : a · b », « Découpage : na · [ʿ] · [b] · u · [d] · u » (crochets = lettre de la
+          // racine), des lignes « - morceau — explication » et une clôture « Ce que cela donne : … ».
+          // Un paragraphe sans ces lignes garde l'affichage en texte (anciens versets).
+          const DEM_ROOT = '#1A5F5F'
+          const DEM_ADD = '#8A6D1F'
+          const isStructured = (p: string) => /\n(Nature|Découpage) :/.test('\n' + p)
+          const demChip = (txt: string, root: boolean, key: string, small?: boolean) => (
+            <span key={key} style={{ display: 'inline-block', padding: small ? '1px 9px' : '3px 11px', borderRadius: '8px', fontSize: small ? '12px' : '14px', fontWeight: 600, lineHeight: 1.6, color: root ? DEM_ROOT : DEM_ADD, background: root ? 'rgba(26,95,95,0.09)' : 'rgba(184,150,46,0.13)', border: `1px solid ${root ? 'rgba(26,95,95,0.45)' : 'rgba(184,150,46,0.5)'}` }}>{txt}</span>
           )
+          const renderStructured = (paragraph: string, accentColor: string, j: number, used: Set<number>) => {
+            const lines = paragraph.split('\n').map((l: string) => l.trim()).filter((l: string) => l)
+            const head = lines[0].match(/^\*\*(.+?)\*\*\s*\((.+?)\)\s*(.*)$/)
+            const phon = head ? head[1] : ''
+            const fr = head ? head[2] : ''
+            const tail = head ? head[3] : lines[0]
+            let arabic = ''
+            if (segments && phon) {
+              const idx = segments.findIndex((s, i) => !used.has(i) && s.phon === phon)
+              if (idx >= 0) { used.add(idx); arabic = segments[idx].arabic || '' }
+            }
+            const nature: string[] = []
+            const pieces: { txt: string; root: boolean }[] = []
+            const rows: { label: string; text: string }[] = []
+            const closings: { label: string; text: string }[] = []
+            const others: string[] = []
+            for (const l of lines.slice(1)) {
+              if (l.startsWith('Nature :')) { nature.push(...l.slice(8).split('·').map((x: string) => x.trim()).filter(Boolean)); continue }
+              if (l.startsWith('Découpage :')) {
+                for (const x of l.slice(11).split('·').map((y: string) => y.trim()).filter(Boolean)) { const m = x.match(/^\[(.+)\]$/); pieces.push({ txt: m ? m[1] : x, root: !!m }) }
+                continue
+              }
+              const row = l.match(/^[-·]\s+(.+?)\s+—\s+(.*)$/)
+              if (row) { rows.push({ label: row[1], text: row[2] }); continue }
+              const clo = l.match(/^([^:«»]{2,60}) : (.*)$/)
+              if (clo) closings.push({ label: clo[1], text: clo[2] }); else others.push(l)
+            }
+            return (
+              <div key={j} style={{ background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.3)', borderRadius: '12px', padding: '14px 18px', marginBottom: '14px', fontSize: '14px', lineHeight: 1.6, color: '#3D3228' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                  {arabic && <span dir="rtl" className="font-arabic" style={{ fontSize: '26px', color: '#3D3228', lineHeight: 1.3 }}>{arabic}</span>}
+                  <span style={{ fontStyle: 'italic', color: accentColor, fontWeight: 600, fontSize: '15px' }}>{phon}</span>
+                  <span style={{ color: '#3D3228', fontWeight: 700, fontSize: '15px' }}>{fr}</span>
+                  {tail && <span>{renderChunk(tail, accentColor, j + '-tail')}</span>}
+                </div>
+                {nature.length > 0 && (
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
+                    {nature.map((n: string, i: number) => <span key={i} style={{ fontSize: '12.5px', padding: '2px 10px', borderRadius: '12px', background: 'rgba(184,150,46,0.07)', color: '#6B5B45', border: '1px solid rgba(184,150,46,0.3)', lineHeight: 1.6 }}>{n}</span>)}
+                  </div>
+                )}
+                {pieces.length > 0 && (
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '10px' }}>
+                    {pieces.map((p, i) => demChip(p.txt, p.root, 'c' + i))}
+                  </div>
+                )}
+                {rows.length > 0 && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 76px) minmax(0, 1fr)', columnGap: '12px', rowGap: '5px', marginBottom: '10px' }}>
+                    {rows.map((r, i) => (
+                      <React.Fragment key={i}>
+                        <span style={{ color: DEM_ADD, fontWeight: 600 }}>{r.label}</span>
+                        <span>{renderChunk(r.text, accentColor, j + '-r' + i)}</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                )}
+                {closings.map((c, i) => (
+                  <p key={'k' + i} style={{ margin: 0, paddingTop: '8px', borderTop: '1px solid rgba(184,150,46,0.25)' }}>
+                    <span style={{ color: accentColor, fontWeight: 700 }}>{c.label} : </span>{renderChunk(c.text, accentColor, j + '-c' + i)}
+                  </p>
+                ))}
+                {others.map((o: string, i: number) => <p key={'o' + i} style={{ margin: 0 }}>{renderChunk(o, accentColor, j + '-o' + i)}</p>)}
+              </div>
+            )
+          }
+
+          const renderContent = (content: string, accentColor: string) => {
+            const paras = content.split('\n\n').filter((s: string) => s.trim())
+            const structured = paras.some((p: string) => isStructured(p))
+            const used = new Set<number>()
+            return (
+              <div className="section-unfold" style={{
+                padding: '12px 18px',
+                borderLeft: `4px solid ${accentColor}`,
+                borderRadius: '0 10px 10px 0',
+                background: `${accentColor}0A`,
+                fontSize: '12.5px',
+                lineHeight: 1.85,
+                color: '#5A4E42',
+                marginTop: '6px',
+                boxShadow: '0 1px 3px rgba(184,150,46,0.05)',
+              }}>
+                {structured && (
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '8px', fontSize: '11px', color: '#6B5B45' }}>
+                    {demChip('racine', true, 'lg-r')}
+                    {demChip("ce qui s'ajoute", false, 'lg-a')}
+                    <span>chaque mot : sa nature, son découpage, une ligne par morceau, puis ce que cela donne</span>
+                  </div>
+                )}
+                {paras.map((paragraph: string, j: number) => {
+                  if (isStructured(paragraph)) return renderStructured(paragraph, accentColor, j, used)
+                  const chunks = paragraph.split(/(\*\*[^*]+\*\*)/g)
+                  return (
+                    <p key={j} style={{ marginBottom: '8px' }}>
+                      {chunks.map((chunk: string, k: number) => {
+                        if (chunk.startsWith('**') && chunk.endsWith('**')) {
+                          return <span key={k} style={{ color: accentColor, fontWeight: 700 }}>{chunk.slice(2, -2)}</span>
+                        }
+                        return <React.Fragment key={k}>{renderChunk(chunk, accentColor, j + '-' + k)}</React.Fragment>
+                      })}
+                    </p>
+                  )
+                })}
+              </div>
+            )
+          }
 
           const sections = [
             { key: 'DEMARCHE', label: 'Démarche de la traduction', color: '#B8962E', show: showDemarche, toggle: () => setShowDemarche(!showDemarche) },
@@ -694,10 +782,13 @@ export default function VersePanel({
                 }, 0)
                 const escaped = searchFr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
                 const parts = trad.split(new RegExp(`(${escaped})`, 'g'))
+                // Mot partagé par deux segments voisins (kāna + verbe : « mentaient » / « mentaient ») : si l'occurrence visée n'existe pas dans la trad, surligner la dernière existante (2026-09-30).
+                const totalOcc = parts.filter(p => p === searchFr).length
+                const wantedOcc = totalOcc > 0 ? Math.min(targetOccurrence, totalOcc - 1) : targetOccurrence
                 let seenCount = 0
                 return parts.map((part, idx) => {
                   if (part === searchFr) {
-                    const isTargetOcc = seenCount === targetOccurrence
+                    const isTargetOcc = seenCount === wantedOcc
                     seenCount++
                     if (isTargetOcc) {
                       return <span key={idx} style={{ color: '#B8962E', borderBottom: '2px solid #B8962E', paddingBottom: '2px' }}>{part}</span>
