@@ -558,9 +558,67 @@ export default function VersePanel({
             )
           }
 
+          // Justification en cartes (forme du 2026-10-12) : « **fr** — pourquoi », « Sens retenu : X », puis une ligne par rendu
+          // possible (« Retenu : », « Autre sens attesté : », « Choix de Hamidullah : », « Autre tournure : », « Sens absent de la racine : »),
+          // chacune « : « rendu » — raison », puis « Hamidullah : … ». Un paragraphe sans ligne « Retenu : » garde l'affichage en texte.
+          const isJustifStructured = (p: string) => /\nRetenu :/.test('\n' + p)
+          const JKIND: Record<string, { bg: string; fg: string; bd: string }> = {
+            'Retenu': { bg: 'rgba(26,95,95,0.09)', fg: '#1A5F5F', bd: 'rgba(26,95,95,0.45)' },
+            'Autre sens attesté': { bg: 'rgba(184,150,46,0.13)', fg: '#8A6D1F', bd: 'rgba(184,150,46,0.5)' },
+            'Choix de Hamidullah': { bg: 'rgba(139,69,19,0.09)', fg: '#8B4513', bd: 'rgba(139,69,19,0.4)' },
+            'Autre tournure': { bg: 'rgba(90,78,66,0.07)', fg: '#5A4E42', bd: 'rgba(90,78,66,0.3)' },
+            'Sens absent de la racine': { bg: 'rgba(90,78,66,0.07)', fg: '#5A4E42', bd: 'rgba(90,78,66,0.3)' },
+          }
+          const jChip = (txt: string, kind: string, key: string, small?: boolean) => {
+            const c = JKIND[kind] || JKIND['Autre tournure']
+            return <span key={key} style={{ display: 'inline-block', padding: small ? '1px 9px' : '2px 10px', borderRadius: '8px', fontSize: small ? '12px' : '13.5px', fontWeight: 600, lineHeight: 1.6, color: c.fg, background: c.bg, border: `1px solid ${c.bd}`, maxWidth: '100%' }}>{txt}</span>
+          }
+          const renderJustifStructured = (paragraph: string, accentColor: string, j: number, used: Set<number>) => {
+            const lines = paragraph.split('\n').map((l: string) => l.trim()).filter((l: string) => l)
+            const head = lines[0].match(/^\*\*(.+?)\*\*\s*—\s*(.*)$/)
+            const fr = head ? head[1] : lines[0].replace(/\*\*/g, '')
+            const why = head ? head[2] : ''
+            let phon = ''
+            if (segments) {
+              const idx = segments.findIndex((s, i) => !used.has(i) && s.fr === fr)
+              if (idx >= 0) { used.add(idx); phon = segments[idx].phon || '' }
+            }
+            let sens = ''
+            const rows: { kind: string; cand: string; why: string }[] = []
+            const foot: string[] = []
+            for (const l of lines.slice(1)) {
+              if (l.startsWith('Sens retenu :')) { sens = l.slice(13).trim(); continue }
+              const m = l.match(/^(Retenu|Autre sens attesté|Choix de Hamidullah|Autre tournure|Sens absent de la racine) : (.*)$/)
+              if (m) { const parts = m[2].split(' — '); rows.push({ kind: m[1], cand: parts[0].replace(/\.$/, ''), why: parts.slice(1).join(' — ') }); continue }
+              foot.push(l)
+            }
+            return (
+              <div key={j} style={{ background: '#FFFFFF', border: '1px solid rgba(26,95,95,0.25)', borderRadius: '12px', padding: '14px 18px', marginBottom: '14px', fontSize: '14px', lineHeight: 1.6, color: '#3D3228' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap', marginBottom: '6px' }}>
+                  <span style={{ color: accentColor, fontWeight: 700, fontSize: '15px' }}>{fr}</span>
+                  {phon && <span style={{ fontStyle: 'italic', color: '#6B5B45', fontSize: '13.5px' }}>{phon}</span>}
+                  {sens && <span style={{ fontSize: '12px', padding: '2px 10px', borderRadius: '12px', background: 'rgba(26,95,95,0.06)', color: '#1A5F5F', border: '1px solid rgba(26,95,95,0.3)', lineHeight: 1.6 }}>sens retenu : {sens}</span>}
+                </div>
+                {why && <p style={{ margin: '0 0 10px' }}>{renderChunk(why, accentColor, j + '-w')}</p>}
+                {rows.length > 0 && (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 200px) minmax(0, 1fr)', columnGap: '12px', rowGap: '7px', marginBottom: '8px', alignItems: 'start' }}>
+                    {rows.map((r, i) => (
+                      <React.Fragment key={i}>
+                        <span>{jChip(r.cand, r.kind, 'c' + i)}{r.kind === 'Retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>retenu</span>}</span>
+                        <span>{renderChunk(r.why, accentColor, j + '-r' + i)}</span>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                )}
+                {foot.map((f: string, i: number) => <p key={'f' + i} style={{ margin: 0, paddingTop: '8px', borderTop: '1px solid rgba(26,95,95,0.2)', fontSize: '13px', color: '#6B5B45' }}>{renderChunk(f, accentColor, j + '-f' + i)}</p>)}
+              </div>
+            )
+          }
+
           const renderContent = (content: string, accentColor: string) => {
             const paras = content.split('\n\n').filter((s: string) => s.trim())
             const structured = paras.some((p: string) => isStructured(p))
+            const structuredJ = paras.some((p: string) => isJustifStructured(p))
             const used = new Set<number>()
             return (
               <div className="section-unfold" style={{
@@ -578,10 +636,20 @@ export default function VersePanel({
                   <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '8px', fontSize: '11px', color: '#6B5B45' }}>
                     {demChip('racine', true, 'lg-r')}
                     {demChip("ce qui s'ajoute", false, 'lg-a')}
-                    <span>chaque mot : sa nature, son découpage, une ligne par morceau, puis ce que cela donne</span>
+                    <span>le sens est dans les lettres de la racine ; les voyelles et ce qui s'ajoute font la forme du mot, pas son sens</span>
+                  </div>
+                )}
+                {structuredJ && (
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '8px', fontSize: '11px', color: '#6B5B45' }}>
+                    {jChip('retenu', 'Retenu', 'lj-r', true)}
+                    {jChip('autre sens attesté de la racine', 'Autre sens attesté', 'lj-a', true)}
+                    {jChip('choix de Hamidullah', 'Choix de Hamidullah', 'lj-h', true)}
+                    {jChip("autre tournure, ou sens que la racine n'a pas", 'Autre tournure', 'lj-t', true)}
+                    <span>pour chaque mot : le rendu retenu, puis chaque autre rendu possible et pourquoi il est écarté</span>
                   </div>
                 )}
                 {paras.map((paragraph: string, j: number) => {
+                  if (isJustifStructured(paragraph)) return renderJustifStructured(paragraph, accentColor, j, used)
                   if (isStructured(paragraph)) return renderStructured(paragraph, accentColor, j, used)
                   const chunks = paragraph.split(/(\*\*[^*]+\*\*)/g)
                   return (
