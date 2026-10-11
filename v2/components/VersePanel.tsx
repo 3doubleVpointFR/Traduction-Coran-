@@ -615,8 +615,60 @@ export default function VersePanel({
             )
           }
 
+          // Critique en carte (forme du 2026-10-12) : les deux lignes « **Notre traduction :** » et « **Hamidullah :** »,
+          // puis un paragraphe par écart « Écart : « mot de Hamidullah » / « le nôtre » — raison », et « Pour le reste : … ».
+          const isCritiqueStructured = (paras: string[]) => paras.some((p: string) => p.startsWith('Écart :'))
+          const HAM = { bg: 'rgba(139,69,19,0.09)', fg: '#8B4513', bd: 'rgba(139,69,19,0.4)' }
+          const NOUS = { bg: 'rgba(26,95,95,0.09)', fg: '#1A5F5F', bd: 'rgba(26,95,95,0.45)' }
+          const cChip = (txt: string, c: { bg: string; fg: string; bd: string }, key: string, small?: boolean) => (
+            <span key={key} style={{ display: 'inline-block', padding: small ? '1px 9px' : '2px 10px', borderRadius: '8px', fontSize: small ? '12px' : '13.5px', fontWeight: 600, lineHeight: 1.6, color: c.fg, background: c.bg, border: `1px solid ${c.bd}`, maxWidth: '100%' }}>{txt}</span>
+          )
+          const renderCritiqueStructured = (paras: string[], accentColor: string) => {
+            let nous = '', ham = ''
+            const rows: { h: string; n: string; why: string }[] = []
+            const foot: string[] = []
+            const others: string[] = []
+            for (const p of paras) {
+              for (const l of p.split('\n').map((x: string) => x.trim()).filter((x: string) => x)) {
+                const mn = l.match(/^\*\*Notre traduction :\*\*\s*(.*)$/); if (mn) { nous = mn[1]; continue }
+                const mh = l.match(/^\*\*Hamidullah :\*\*\s*(.*)$/); if (mh) { ham = mh[1]; continue }
+                const me = l.match(/^Écart : (.+?) \/ (.+?) — (.*)$/); if (me) { rows.push({ h: me[1], n: me[2], why: me[3] }); continue }
+                if (l.startsWith('Pour le reste :')) { foot.push(l); continue }
+                others.push(l)
+              }
+            }
+            const strip = (s: string) => s.replace(/^«\s*/, '').replace(/\s*»$/, '')
+            return (
+              <div style={{ background: '#FFFFFF', border: '1px solid rgba(139,69,19,0.22)', borderRadius: '12px', padding: '14px 18px', fontSize: '14px', lineHeight: 1.6, color: '#3D3228' }}>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '10px', fontSize: '11px', color: '#6B5B45' }}>
+                  {cChip('Hamidullah', HAM, 'lc-h', true)}{cChip('notre traduction', NOUS, 'lc-n', true)}
+                  <span>les deux traductions en entier, puis une ligne par écart : son mot, le nôtre, et pourquoi</span>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 118px) minmax(0, 1fr)', columnGap: '12px', rowGap: '6px', marginBottom: '12px', alignItems: 'start' }}>
+                  <span>{cChip('Hamidullah', HAM, 'h-h', true)}</span><span>{renderChunk(ham, accentColor, 'ham')}</span>
+                  <span>{cChip('notre traduction', NOUS, 'h-n', true)}</span><span>{renderChunk(nous, accentColor, 'nous')}</span>
+                </div>
+                {rows.map((r, i) => (
+                  <div key={i} style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 230px) minmax(0, 1fr)', columnGap: '12px', alignItems: 'start', paddingTop: '8px', marginBottom: '8px', borderTop: '1px solid rgba(139,69,19,0.18)' }}>
+                    <span style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>{cChip(strip(r.h), HAM, 'rh' + i)}{cChip(strip(r.n), NOUS, 'rn' + i)}</span>
+                    <span>{renderChunk(r.why, accentColor, 'rw' + i)}</span>
+                  </div>
+                ))}
+                {others.map((o: string, i: number) => <p key={'o' + i} style={{ margin: '0 0 6px' }}>{renderChunk(o, accentColor, 'co' + i)}</p>)}
+                {foot.map((f: string, i: number) => <p key={'f' + i} style={{ margin: 0, paddingTop: '8px', borderTop: '1px solid rgba(139,69,19,0.18)', fontSize: '13px', color: '#6B5B45' }}>{renderChunk(f, accentColor, 'cf' + i)}</p>)}
+              </div>
+            )
+          }
+
           const renderContent = (content: string, accentColor: string) => {
             const paras = content.split('\n\n').filter((s: string) => s.trim())
+            if (isCritiqueStructured(paras)) {
+              return (
+                <div className="section-unfold" style={{ padding: '12px 18px', borderLeft: `4px solid ${accentColor}`, borderRadius: '0 10px 10px 0', background: `${accentColor}0A`, fontSize: '12.5px', lineHeight: 1.85, color: '#5A4E42', marginTop: '6px', boxShadow: '0 1px 3px rgba(184,150,46,0.05)' }}>
+                  {renderCritiqueStructured(paras, accentColor)}
+                </div>
+              )
+            }
             const structured = paras.some((p: string) => isStructured(p))
             const structuredJ = paras.some((p: string) => isJustifStructured(p))
             const used = new Set<number>()
