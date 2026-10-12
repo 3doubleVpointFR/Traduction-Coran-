@@ -505,6 +505,14 @@ export default function WordPanel({
             }
             return (
               <div className="wp-section wp-section-tabs flex flex-wrap gap-x-3 gap-y-2 justify-start items-end" style={{ marginTop: '8px' }}>
+                {analysis.etymological_concept === 'inconnu' && (
+                  <span
+                    title="Cette racine porte plusieurs sens différents, et aucune trace ne permet de dire lequel est le premier"
+                    style={{ fontSize: '9px', color: '#8A7E72', fontStyle: 'italic', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', paddingBottom: '6px', whiteSpace: 'nowrap' }}
+                  >
+                    ✦ premier sens inconnu
+                  </span>
+                )}
                 {[...conceptMap.entries()].map(([concept, conceptSenses], i) => {
                   const isActive = conceptRetenu.has(concept)
                   const isOpen = openTooltip === concept
@@ -579,7 +587,7 @@ export default function WordPanel({
                         {concept}
                         {analysis.etymological_concept === concept && (
                           <span
-                            title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                            title="Premier sens du mot en arabe"
                             style={{
                               fontSize: '9px',
                               color: '#B8962E',
@@ -850,7 +858,7 @@ export default function WordPanel({
                             <span style={{ fontSize: '15px', fontWeight: 600, color: '#1A1410' }}>{conceptName}</span>
                             {analysis.etymological_concept === conceptName && (
                               <span
-                                title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                                title="Premier sens du mot en arabe"
                                 style={{
                                   fontSize: '9px',
                                   color: '#B8962E',

@@ -135,6 +135,14 @@ export default function RootAnalysisView({ data }: Props) {
         {/* ═══ ONGLETS CONCEPTS ═══ */}
         {conceptGroups.length > 0 && (
           <div className="flex flex-wrap gap-x-3 gap-y-2 justify-start items-end mt-4" style={{ paddingTop: '14px', borderTop: '1px solid rgba(184,150,46,0.16)' }}>
+            {analysis.etymological_concept === 'inconnu' && (
+              <span
+                title="Cette racine porte plusieurs sens différents, et aucune trace ne permet de dire lequel est le premier"
+                style={{ fontSize: '9px', color: '#8A7E72', fontStyle: 'italic', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', paddingBottom: '6px', whiteSpace: 'nowrap' }}
+              >
+                ✦ premier sens inconnu
+              </span>
+            )}
             {conceptGroups.map(([name, ss]) => {
               const isActive = activeTab === name
               const nRefs = refsByConcept[name]?.length || 0
@@ -175,7 +183,7 @@ export default function RootAnalysisView({ data }: Props) {
                     {name}
                     {analysis.etymological_concept === name && (
                       <span
-                        title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                        title="Premier sens du mot en arabe"
                         style={{
                           fontSize: '9px',
                           color: '#B8962E',
@@ -285,7 +293,7 @@ export default function RootAnalysisView({ data }: Props) {
                     </span>
                     {analysis.etymological_concept === conceptName && (
                       <span
-                        title="Sens étymologique premier de la racine (d'après Lane's) — les autres sens en dérivent"
+                        title="Premier sens du mot en arabe"
                         style={{
                           fontSize: '9px',
                           color: '#B8962E',
