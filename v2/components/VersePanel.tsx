@@ -29,6 +29,9 @@ interface Segment {
   word_key: string | null
   is_particle: boolean
   position?: number
+  // Particule absorbée par un verbe (ʿalā après « endurer ») : `fr` reste le mot de la traduction qui la porte (outils,
+  // surlignage), `litteral` est son mot propre (« sur »), montré dans la bande et en tête de sa carte (2026-10-12).
+  litteral?: string
 }
 
 interface VerseAnalysis {
@@ -417,7 +420,7 @@ export default function VersePanel({
                       transition: 'color 0.2s ease, border-color 0.2s ease',
                     }}
                   >
-                    {seg.fr}
+                    {seg.litteral || seg.fr}
                   </span>
                 </div>
               )
@@ -500,9 +503,10 @@ export default function VersePanel({
             const fr = head ? head[2] : ''
             const tail = head ? head[3] : lines[0]
             let arabic = ''
+            let litteral = ''
             if (segments && phon) {
               const idx = segments.findIndex((s, i) => !used.has(i) && s.phon === phon)
-              if (idx >= 0) { used.add(idx); arabic = segments[idx].arabic || '' }
+              if (idx >= 0) { used.add(idx); arabic = segments[idx].arabic || ''; litteral = segments[idx].litteral || '' }
             }
             const nature: string[] = []
             const pieces: { txt: string; root: boolean }[] = []
@@ -525,7 +529,7 @@ export default function VersePanel({
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap', marginBottom: '8px' }}>
                   {arabic && <span dir="rtl" className="font-arabic" style={{ fontSize: '26px', color: '#3D3228', lineHeight: 1.3 }}>{arabic}</span>}
                   <span style={{ fontStyle: 'italic', color: accentColor, fontWeight: 600, fontSize: '15px' }}>{phon}</span>
-                  <span style={{ color: '#3D3228', fontWeight: 700, fontSize: '15px' }}>{fr}</span>
+                  <span style={{ color: '#3D3228', fontWeight: 700, fontSize: '15px' }}>{litteral || fr}</span>
                   {tail && <span>{renderChunk(tail, accentColor, j + '-tail')}</span>}
                 </div>
                 {nature.length > 0 && (
