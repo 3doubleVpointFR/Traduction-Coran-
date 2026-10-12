@@ -92,7 +92,8 @@
    unique fluide, pas d'effet "en 2 temps". */
 .section-fold-wrap {
   overflow: hidden;
-  max-height: 5000px;
+  /* 5000px coupait une démarche longue (S2:V60, 35 cartes, est cutoff après « ont connu ») : la valeur ne sert qu'à la transition, elle doit dépasser la plus longue section (2026-10-12). */
+  max-height: 100000px;
   opacity: 1;
   filter: blur(0);
   transition: max-height 420ms cubic-bezier(0.4, 0, 0.2, 1),
