@@ -568,6 +568,8 @@ export default function VersePanel({
           const isJustifStructured = (p: string) => /\nRetenu :/.test('\n' + p)
           const JKIND: Record<string, { bg: string; fg: string; bd: string }> = {
             'Retenu': { bg: 'rgba(26,95,95,0.09)', fg: '#1A5F5F', bd: 'rgba(26,95,95,0.45)' },
+            // le sens retenu (tête de la ligne de Lane) quand le mot français en diffère : la ligne dit pourquoi le mot a été préféré
+            'Comparé au sens retenu': { bg: 'rgba(26,95,95,0.04)', fg: '#1A5F5F', bd: 'rgba(26,95,95,0.35)' },
             'Autre sens attesté': { bg: 'rgba(184,150,46,0.13)', fg: '#8A6D1F', bd: 'rgba(184,150,46,0.5)' },
             'Choix de Hamidullah': { bg: 'rgba(139,69,19,0.09)', fg: '#8B4513', bd: 'rgba(139,69,19,0.4)' },
             'Autre tournure': { bg: 'rgba(90,78,66,0.07)', fg: '#5A4E42', bd: 'rgba(90,78,66,0.3)' },
@@ -592,7 +594,7 @@ export default function VersePanel({
             const foot: string[] = []
             for (const l of lines.slice(1)) {
               if (l.startsWith('Sens retenu :')) { sens = l.slice(13).trim(); continue }
-              const m = l.match(/^(Retenu|Autre sens attesté|Choix de Hamidullah|Autre tournure|Sens absent de la racine) : (.*)$/)
+              const m = l.match(/^(Retenu|Comparé au sens retenu|Autre sens attesté|Choix de Hamidullah|Autre tournure|Sens absent de la racine) : (.*)$/)
               if (m) { const parts = m[2].split(' — '); rows.push({ kind: m[1], cand: parts[0].replace(/\.$/, ''), why: parts.slice(1).join(' — ') }); continue }
               foot.push(l)
             }
@@ -608,7 +610,7 @@ export default function VersePanel({
                   <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 200px) minmax(0, 1fr)', columnGap: '12px', rowGap: '7px', marginBottom: '8px', alignItems: 'start' }}>
                     {rows.map((r, i) => (
                       <React.Fragment key={i}>
-                        <span>{jChip(r.cand, r.kind, 'c' + i)}{r.kind === 'Retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>retenu</span>}</span>
+                        <span>{jChip(r.cand, r.kind, 'c' + i)}{r.kind === 'Retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>retenu</span>}{r.kind === 'Comparé au sens retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>sens retenu</span>}</span>
                         <span>{renderChunk(r.why, accentColor, j + '-r' + i)}</span>
                       </React.Fragment>
                     ))}

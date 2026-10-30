@@ -372,6 +372,13 @@ export default function WordPanel({
   // Position fixe du tooltip mobile (calculée au tap pour éviter les problèmes
   // de positionnement absolute dans les containers transformés/scrollés)
   const [tooltipPos, setTooltipPos] = useState<{ left: number; top: number; width: number } | null>(null)
+  // Plafond d'affichage : six concepts et six sens visibles par défaut, le reste derrière « + N autres »
+  const MAX_VISIBLE = 6
+  const [showAllTabs, setShowAllTabs] = useState(false)
+  const [showAllBlocks, setShowAllBlocks] = useState(false)
+  const [chipsOpen, setChipsOpen] = useState<Set<string>>(new Set())
+  const [showAllSenses, setShowAllSenses] = useState(false)
+  const plusStyle: React.CSSProperties = { background: 'none', border: '1px solid rgba(184,150,46,0.45)', borderRadius: '999px', padding: '2px 10px', fontSize: '11px', color: '#8A7428', fontWeight: 600, cursor: 'pointer', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.04em', lineHeight: 1.4 }
   // Ferme le tooltip quand on clique en dehors
   useEffect(() => {
     if (!openTooltip) return
@@ -513,7 +520,24 @@ export default function WordPanel({
                     ✦ premier sens inconnu
                   </span>
                 )}
-                {[...conceptMap.entries()].map(([concept, conceptSenses], i) => {
+                {/* Sens premier connu mais qu'aucun concept de la fiche ne porte : la phrase seule, à la place de l'étiquette */}
+                {analysis.etymological_concept === 'aucun' && analysis.root_meaning && (
+                  <span title="Premier sens du mot en arabe ; aucun groupe de la fiche ne le dit lui-même" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '2px 10px', borderRadius: '999px', marginBottom: '6px' }}>
+                    <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1 }}>✦</span>
+                    <span style={{ fontSize: '9px', fontStyle: 'italic', letterSpacing: '0.05em', textTransform: 'uppercase' as const, color: '#B8962E' }}>sens premier</span>
+                    {analysis.root_meaning}
+                  </span>
+                )}
+                {(() => {
+                  // Ordre : concept retenu d'abord, puis les plus employés, puis l'ordre de la fiche ; six visibles par défaut
+                  const entries = [...conceptMap.entries()]
+                  const parConcept = new Map<string, typeof senses>(); for (const s of senses) { const c = s.concept || 'Sans concept'; if (!parConcept.has(c)) parConcept.set(c, []); parConcept.get(c)!.push(s) }
+                  const statutDe = (name: string) => { const ss = parConcept.get(name) || []; if (analysis.concept_chosen) { if (name === analysis.concept_chosen) return 0; const raw = ss[0]?.status || 'nul'; return ({ retenu: 1, probable: 1, ok: 1, maybe: 1, peu_probable: 2 } as Record<string, number>)[raw] ?? 3 } if (ss.some(s => s.sense === analysis.retenu)) return 0; const st = ss.map(s => s.status || 'nul'); if (st.includes('retenu')) return 0; if (st.includes('probable') || st.includes('ok') || st.includes('maybe')) return 1; if (st.includes('peu_probable')) return 2; return 3 }
+                  // Ordre demandé : le concept du sens premier ✦ d'abord, puis retenu, probable, peu probable, exclu ; à égalité les plus employés, puis l'ordre de la fiche
+                  const ordre = entries.map((e, i) => ({ e, i })).sort((a, b) => ((a.e[0] === analysis.etymological_concept ? 0 : 1) - (b.e[0] === analysis.etymological_concept ? 0 : 1)) || (statutDe(a.e[0]) - statutDe(b.e[0])) || ((counts.by_concept?.[b.e[0]] ?? 0) - (counts.by_concept?.[a.e[0]] ?? 0)) || (a.i - b.i)).map(x => x.e)
+                  const visibles = showAllTabs ? ordre : ordre.slice(0, MAX_VISIBLE)
+                  return (<>
+                {visibles.map(([concept, conceptSenses], i) => {
                   const isActive = conceptRetenu.has(concept)
                   const isOpen = openTooltip === concept
                   return (
@@ -608,7 +632,7 @@ export default function WordPanel({
                           {concept} ({conceptSenses.length} sens)
                         </div>
                         <div className="flex flex-wrap gap-1">
-                          {conceptSenses.map((s, j) => (
+                          {conceptSenses.filter(s => !(concept === analysis.etymological_concept && s === analysis.root_meaning)).map((s, j) => (
                             <span key={j} style={{
                               fontSize: '11px',
                               color: '#6B5D4F',
@@ -689,9 +713,29 @@ export default function WordPanel({
                             </span>
                           </div>
 
-                          {/* Liste des sens — cartes parchemin avec point or */}
+                          {/* Liste des sens — cartes parchemin avec point or ; six visibles par défaut */}
                           <div className="flex flex-wrap gap-1.5">
-                            {conceptSenses.map((s, j) => (
+                            {/* Sens retenu pour ce mot (la pastille), en surbrillance dans le concept retenu, couleur des cartes */}
+                            {analysis.retenu && (concept === analysis.concept_chosen || (!analysis.concept_chosen && conceptSenses.includes(analysis.retenu))) && (
+                              <span
+                                title="Sens retenu pour ce mot"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px', color: '#1A5F5F', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(26,95,95,0.10)', border: '1px solid #1A5F5F', padding: '4px 12px 4px 10px', borderRadius: '999px' }}
+                              >
+                                <span aria-hidden="true" style={{ color: '#1A5F5F', fontSize: '8px', lineHeight: 1 }}>●</span>
+                                {analysis.retenu}
+                              </span>
+                            )}
+                            {/* Sens premier ✦ de la racine, en surbrillance dans le concept qui porte l'étoile */}
+                            {concept === analysis.etymological_concept && analysis.root_meaning && (
+                              <span
+                                title="Premier sens du mot en arabe"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '14px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '4px 12px 4px 10px', borderRadius: '999px', letterSpacing: '0.01em', boxShadow: '0 1px 2px rgba(120,90,30,0.10)' }}
+                              >
+                                <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1 }}>✦</span>
+                                {analysis.root_meaning}
+                              </span>
+                            )}
+                            {(chipsOpen.has(concept) ? conceptSenses : conceptSenses.slice(0, MAX_VISIBLE)).filter(s => !(concept === analysis.etymological_concept && s === analysis.root_meaning) && !(s === analysis.retenu && (concept === analysis.concept_chosen || !analysis.concept_chosen))).map((s, j) => (
                               <span
                                 key={j}
                                 style={{
@@ -714,6 +758,11 @@ export default function WordPanel({
                                 {s}
                               </span>
                             ))}
+                            {conceptSenses.length > MAX_VISIBLE && (
+                              <button type="button" onClick={(e) => { e.stopPropagation(); setChipsOpen(prev => { const n = new Set(prev); if (n.has(concept)) n.delete(concept); else n.add(concept); return n }) }} style={plusStyle}>
+                                {chipsOpen.has(concept) ? 'Réduire' : '+ ' + (conceptSenses.length - MAX_VISIBLE) + ' autres'}
+                              </button>
+                            )}
                           </div>
                         </div>,
                         document.body
@@ -721,6 +770,43 @@ export default function WordPanel({
                     </div>
                   )
                 })}
+                {ordre.length > MAX_VISIBLE && (
+                  <button type="button" onClick={(e) => { e.stopPropagation(); setShowAllTabs(v => !v) }} style={{ ...plusStyle, alignSelf: 'center', marginBottom: '2px' }} title={showAllTabs ? 'Réduire la liste des concepts' : 'Voir tous les concepts'}>
+                    {showAllTabs ? 'Réduire' : '+ ' + (ordre.length - MAX_VISIBLE) + ' autres'}
+                  </button>
+                )}
+                {/* Liste complète de tous les sens de la racine, concept par concept, dans l'ordre des onglets */}
+                {senses.length > 0 && (
+                  <div style={{ flexBasis: '100%', marginTop: '4px' }}>
+                    <button type="button" onClick={(e) => { e.stopPropagation(); setShowAllSenses(v => !v) }} style={plusStyle} title={showAllSenses ? 'Replier la liste de tous les sens' : 'Voir tous les sens de la racine, concept par concept'}>
+                      {showAllSenses ? 'Réduire la liste des sens' : 'Tous les sens · ' + senses.length}
+                    </button>
+                    {showAllSenses && (
+                      <div style={{ marginTop: '8px', padding: '10px 12px', borderRadius: '10px', border: '1px solid rgba(184,150,46,0.3)', background: 'linear-gradient(135deg, #FFFCF6 0%, #FAF7F2 100%)' }}>
+                        {ordre.map(([c, ss], ci) => (
+                          <div key={ci} style={{ marginBottom: ci < ordre.length - 1 ? '10px' : 0 }}>
+                            <div style={{ fontSize: '10px', fontWeight: 700, color: '#8A7428', textTransform: 'uppercase' as const, letterSpacing: '0.1em', marginBottom: '4px', fontFamily: "'Cormorant Garamond', serif" }}>
+                              {c}{c === analysis.etymological_concept ? ' · ✦ sens premier' : ''}{conceptRetenu.has(c) ? ' · retenu' : ''} <span style={{ color: '#A89C90', fontWeight: 500, textTransform: 'none' as const, letterSpacing: 0 }}>{ss.length} sens</span>
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {c === analysis.etymological_concept && analysis.root_meaning && (
+                                <span title="Premier sens du mot en arabe" style={{ fontSize: '13px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '2px 10px', borderRadius: '999px' }}>✦ {analysis.root_meaning}</span>
+                              )}
+                              {analysis.retenu && (c === analysis.concept_chosen || (!analysis.concept_chosen && ss.includes(analysis.retenu))) && (
+                                <span title="Sens retenu pour ce mot" style={{ fontSize: '13px', color: '#1A5F5F', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(26,95,95,0.10)', border: '1px solid #1A5F5F', padding: '2px 10px', borderRadius: '999px' }}>● {analysis.retenu}</span>
+                              )}
+                              {ss.filter(s => !(c === analysis.etymological_concept && s === analysis.root_meaning) && !(s === analysis.retenu && (c === analysis.concept_chosen || !analysis.concept_chosen))).map((s, j) => (
+                                <span key={j} style={{ fontSize: '13px', color: '#1A1410', fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, background: '#FFFFFF', border: '1px solid rgba(184,150,46,0.35)', padding: '2px 10px', borderRadius: '999px' }}>{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+                  </>)
+                })()}
               </div>
             )
           }
@@ -789,6 +875,7 @@ export default function WordPanel({
                     if (statuses.includes('peu_probable')) return 'peu_probable'
                     return 'nul'
                   }
+                  // Ici l'ordre est celui des statuts seulement : retenu, probable, peu probable, exclu (le ✦ ne passe en tête que dans la liste des onglets)
                   const aStatus = getConceptStatus(cA, sensesA)
                   const bStatus = getConceptStatus(cB, sensesB)
                   const aOrder = statusOrder[aStatus] ?? 3
@@ -799,7 +886,9 @@ export default function WordPanel({
                   const bCount = counts.by_concept?.[cB] ?? sensesB.reduce((sum, s) => sum + (counts.by_sense[s.sense] ?? 0), 0)
                   return bCount - aCount
                 })
-                return sorted.map(([conceptName, conceptSenses], blockIdx) => {
+                // Six blocs visibles au plus, dans l'ordre des statuts ; le concept qui porte le sens premier ✦ reste toujours visible (il prend la dernière place s'il le faut)
+                const visiblesBlocs = showAllBlocks ? sorted : (() => { const tete = sorted.slice(0, MAX_VISIBLE); const etoile = sorted.find(([c]) => c === analysis.etymological_concept); if (etoile && !tete.includes(etoile) && tete.length) tete[tete.length - 1] = etoile; return tete })()
+                return (<>{visiblesBlocs.map(([conceptName, conceptSenses], blockIdx) => {
                   const conceptHasRetenu = analysis.concept_chosen ? conceptName === analysis.concept_chosen : conceptSenses.some(s => s.sense === analysis.retenu)
                   const conceptIsExpanded = expandedMeanings.has(conceptSenses[0]?.id ?? 0)
                   // Determine concept status from concept_chosen or from individual senses
@@ -879,6 +968,24 @@ export default function WordPanel({
                             <span style={{ color: '#B8962E', fontSize: '10px', marginLeft: '2px' }}>{conceptIsExpanded ? '▾' : '▸'}</span>
                           </button>
 
+                          {/* Sens retenu pour ce mot (la pastille), toujours visible sous le titre du concept retenu, dans la couleur des cartes */}
+                          {analysis.retenu && (conceptName === analysis.concept_chosen || (!analysis.concept_chosen && conceptSenses.some(s => s.sense === analysis.retenu))) && (
+                            <div style={{ marginTop: '4px', marginBottom: '2px' }}>
+                              <span title="Sens retenu pour ce mot" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#1A5F5F', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(26,95,95,0.10)', border: '1px solid #1A5F5F', padding: '2px 10px', borderRadius: '999px' }}>
+                                <span aria-hidden="true" style={{ color: '#1A5F5F', fontSize: '8px', lineHeight: 1 }}>●</span>
+                                {analysis.retenu}
+                              </span>
+                            </div>
+                          )}
+                          {/* Sens premier ✦ de la racine, toujours visible sous le titre du concept qui porte l'étoile */}
+                          {conceptName === analysis.etymological_concept && analysis.root_meaning && (
+                            <div style={{ marginTop: '4px', marginBottom: '2px' }}>
+                              <span title="Premier sens du mot en arabe" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '2px 10px', borderRadius: '999px' }}>
+                                <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1 }}>✦</span>
+                                {analysis.root_meaning}
+                              </span>
+                            </div>
+                          )}
                           {totalAnalyzed > 0 ? (
                             <div data-tour-concept-bar={conceptStatus === 'retenu' ? '1' : undefined} className="flex items-center gap-2 mt-1">
                               <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: '#E8DFCC' }}>
@@ -986,7 +1093,12 @@ export default function WordPanel({
                         </div>
                     </div>
                   )
-                })
+                })}
+                {sorted.length > MAX_VISIBLE && (
+                  <button type="button" onClick={() => setShowAllBlocks(v => !v)} style={{ ...plusStyle, display: 'block', margin: '8px auto 0', padding: '4px 14px', fontSize: '12px' }}>
+                    {showAllBlocks ? 'Réduire' : 'Voir les ' + (sorted.length - MAX_VISIBLE) + ' autres concepts'}
+                  </button>
+                )}</>)
               }
               // Fallback: pas de concepts, afficher les sens individuels
               return [...senses].sort((a, b) => {

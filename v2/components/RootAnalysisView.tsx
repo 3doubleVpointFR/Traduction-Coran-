@@ -143,6 +143,14 @@ export default function RootAnalysisView({ data }: Props) {
                 ✦ premier sens inconnu
               </span>
             )}
+            {/* Sens premier connu mais qu'aucun concept de la fiche ne porte : la phrase seule, à la place de l'étiquette */}
+            {analysis.etymological_concept === 'aucun' && analysis.root_meaning && (
+              <span title="Premier sens du mot en arabe ; aucun groupe de la fiche ne le dit lui-même" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '2px 10px', borderRadius: '999px', marginBottom: '6px' }}>
+                <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '10px', lineHeight: 1 }}>✦</span>
+                <span style={{ fontSize: '9px', fontStyle: 'italic', letterSpacing: '0.05em', textTransform: 'uppercase' as const, color: '#B8962E' }}>sens premier</span>
+                {analysis.root_meaning}
+              </span>
+            )}
             {conceptGroups.map(([name, ss]) => {
               const isActive = activeTab === name
               const nRefs = refsByConcept[name]?.length || 0
@@ -309,6 +317,24 @@ export default function RootAnalysisView({ data }: Props) {
                     )}
                   </button>
 
+                  {/* Sens retenu pour ce mot (la pastille), toujours visible sous le titre du concept retenu, dans la couleur des cartes */}
+                  {analysis.retenu && conceptSenses.some(s => s.sense === analysis.retenu) && (
+                    <div style={{ marginTop: '4px', marginBottom: '2px' }}>
+                      <span title="Sens retenu pour ce mot" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#1A5F5F', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(26,95,95,0.10)', border: '1px solid #1A5F5F', padding: '2px 10px', borderRadius: '999px' }}>
+                        <span aria-hidden="true" style={{ color: '#1A5F5F', fontSize: '8px', lineHeight: 1 }}>●</span>
+                        {analysis.retenu}
+                      </span>
+                    </div>
+                  )}
+                  {/* Sens premier ✦ de la racine, toujours visible sous le titre du concept qui porte l'étoile */}
+                  {conceptName === analysis.etymological_concept && analysis.root_meaning && (
+                    <div style={{ marginTop: '4px', marginBottom: '2px' }}>
+                      <span title="Premier sens du mot en arabe" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#8A7428', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, background: 'rgba(184,150,46,0.16)', border: '1px solid #B8962E', padding: '2px 10px', borderRadius: '999px' }}>
+                        <span aria-hidden="true" style={{ color: '#B8962E', fontSize: '11px', lineHeight: 1 }}>✦</span>
+                        {analysis.root_meaning}
+                      </span>
+                    </div>
+                  )}
                   {/* Barre de progression */}
                   {totalAnalyzed > 0 ? (
                     <div className="flex items-center gap-2 mt-1">
