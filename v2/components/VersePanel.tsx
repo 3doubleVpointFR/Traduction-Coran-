@@ -598,6 +598,10 @@ export default function VersePanel({
               if (m) { const parts = m[2].split(' — '); rows.push({ kind: m[1], cand: parts[0].replace(/\.$/, ''), why: parts.slice(1).join(' — ') }); continue }
               foot.push(l)
             }
+            // la tête « **fr** — pourquoi » : quand la ligne « Retenu : » n'a pas de raison (« Retenu : « et ». »), ce pourquoi se lit à droite de la pastille « notre traduction »
+            const iRet = rows.findIndex(r => r.kind === 'Retenu')
+            let whyTop = why
+            if (iRet >= 0 && !rows[iRet].why && why) { rows[iRet].why = why; whyTop = '' }
             return (
               <div key={j} style={{ background: '#FFFFFF', border: '1px solid rgba(26,95,95,0.25)', borderRadius: '12px', padding: '14px 18px', marginBottom: '14px', fontSize: '14px', lineHeight: 1.6, color: '#3D3228' }}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap', marginBottom: '6px' }}>
@@ -605,12 +609,13 @@ export default function VersePanel({
                   {phon && <span style={{ fontStyle: 'italic', color: '#6B5B45', fontSize: '13.5px' }}>{phon}</span>}
                   {sens && <span style={{ fontSize: '12px', padding: '2px 10px', borderRadius: '12px', background: 'rgba(26,95,95,0.06)', color: '#1A5F5F', border: '1px solid rgba(26,95,95,0.3)', lineHeight: 1.6 }}>sens retenu : {sens}</span>}
                 </div>
-                {why && <p style={{ margin: '0 0 10px' }}>{renderChunk(why, accentColor, j + '-w')}</p>}
+                {whyTop && <p style={{ margin: '0 0 10px' }}>{renderChunk(whyTop, accentColor, j + '-w')}</p>}
                 {rows.length > 0 && (
-                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 200px) minmax(0, 1fr)', columnGap: '12px', rowGap: '7px', marginBottom: '8px', alignItems: 'start' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 230px) minmax(0, 1fr)', columnGap: '12px', rowGap: '7px', marginBottom: '8px', alignItems: 'start' }}>
                     {rows.map((r, i) => (
                       <React.Fragment key={i}>
-                        <span>{jChip(r.cand, r.kind, 'c' + i)}{r.kind === 'Retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>retenu</span>}{r.kind === 'Comparé au sens retenu' && <span style={{ fontSize: '11px', color: '#8A8176', marginLeft: '6px' }}>sens retenu</span>}</span>
+                        {/* pastille et étiquette (« notre traduction », « sens retenu ») sur une même ligne : la pastille se replie à l'intérieur, l'étiquette reste à sa droite sans passer à la ligne */}
+                        <span style={{ display: 'flex', alignItems: 'baseline', gap: '6px', minWidth: 0 }}>{jChip(r.cand, r.kind, 'c' + i)}{r.kind === 'Retenu' && <span style={{ fontSize: '11px', color: '#8A8176', whiteSpace: 'nowrap', flexShrink: 0 }}>notre traduction</span>}{r.kind === 'Comparé au sens retenu' && <span style={{ fontSize: '11px', color: '#8A8176', whiteSpace: 'nowrap', flexShrink: 0 }}>sens retenu</span>}</span>
                         <span>{renderChunk(r.why, accentColor, j + '-r' + i)}</span>
                       </React.Fragment>
                     ))}
@@ -699,11 +704,11 @@ export default function VersePanel({
                 )}
                 {structuredJ && (
                   <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '8px', fontSize: '11px', color: '#6B5B45' }}>
-                    {jChip('retenu', 'Retenu', 'lj-r', true)}
+                    {jChip('notre traduction', 'Retenu', 'lj-r', true)}
                     {jChip('autre sens attesté de la racine', 'Autre sens attesté', 'lj-a', true)}
                     {jChip('choix de Hamidullah', 'Choix de Hamidullah', 'lj-h', true)}
                     {jChip("autre tournure, ou sens que la racine n'a pas", 'Autre tournure', 'lj-t', true)}
-                    <span>pour chaque mot : le rendu retenu, puis chaque autre rendu possible et pourquoi il est écarté</span>
+                    <span>pour chaque mot : notre traduction, puis chaque autre rendu possible et pourquoi il est écarté</span>
                   </div>
                 )}
                 {paras.map((paragraph: string, j: number) => {
