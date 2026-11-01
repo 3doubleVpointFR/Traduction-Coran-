@@ -464,7 +464,7 @@ export default function VersePanel({
             // Sinon (cas 1, migré) : on garde dem tel quel
           }
 
-          const renderChunk = (text: string, accentColor: string, baseKey: string) => {
+          const renderChunk = (text: string, accentColor: string, baseKey: string, colorFor?: (q: string) => string | undefined) => {
             // Split par deux motifs :
             //  1) *italique*    → phon arabe en §DEMARCHE§ (*wa-*, *mādhā*), ou sens
             //                     écrits en italique dans §JUSTIFICATION§/§CRITIQUE§ (rare)
@@ -480,7 +480,9 @@ export default function VersePanel({
                 return <span key={baseKey + '-i' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 500, opacity: 0.9 }}>{part.slice(1, -1)}</span>
               }
               if (part.startsWith('«') && part.endsWith('»')) {
-                return <span key={baseKey + '-q' + i} style={{ fontStyle: 'italic', color: accentColor, fontWeight: 600 }}>{part}</span>
+                // dans une carte de démarche, une citation qui reprend une pastille (« défini », « complément direct de ‹ établissent › ») prend la couleur de sa famille
+                const c = colorFor ? colorFor(part.slice(1, -1).trim()) : undefined
+                return <span key={baseKey + '-q' + i} style={{ fontStyle: 'italic', color: c || accentColor, fontWeight: 600 }}>{part}</span>
               }
               return <span key={baseKey + '-t' + i}>{part}</span>
             })
@@ -492,6 +494,52 @@ export default function VersePanel({
           // Un paragraphe sans ces lignes garde l'affichage en texte (anciens versets).
           const DEM_ROOT = '#1A5F5F'
           const DEM_ADD = '#8A6D1F'
+          // Code couleur des pastilles de la démarche, par famille (demande de l'utilisateur du 2026-11-01) : chaque pastille porte la couleur
+          // de sa famille, et la clause « c'est ce qui fait dire « … » » qui la justifie dans les lignes porte la même couleur.
+          // Même classement que scratch_reg/audit_sens/_pastilles_lib.mjs (familleDe) : les deux se tiennent à jour ensemble.
+          const fam = (fg: string) => { const n = parseInt(fg.slice(1), 16); const rgb = `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`; return { fg, bg: `rgba(${rgb},0.09)`, bd: `rgba(${rgb},0.42)` } }
+          const FAMILLES: Record<string, { fg: string; bg: string; bd: string }> = {
+            nature: fam('#2F5F9E'),        // nom, verbe, pronom, préposition, lettre, particule, mot de…, participe
+            nombre: fam('#7B3FA0'),        // singulier, pluriel, duel, collectif
+            determination: fam('#0F766E'), // défini, indéfini
+            temps: fam('#C2410C'),         // passé, présent, au passif, en réponse à l'ordre
+            genre: fam('#BE185D'),         // féminin, masculin
+            role: fam('#15803D'),          // sujet, objet, complément…, suivi du pronom, rendue par…
+            personne: fam('#5C6B00'),      // « il », « ils », « tu »…
+            forme: fam('#7C4A12'),         // forme simple, forme II…
+            sens: fam('#B42318'),          // « dire », « à », « pour », noms propres
+            renvoi: fam('#6B7280'),        // le même mot que plus haut
+            autre: fam('#475569'),
+          }
+          const LEGENDE_FAMILLES: [string, string][] = [['nature', 'nature'], ['nombre', 'nombre'], ['determination', 'défini ou non'], ['temps', 'temps'], ['genre', 'genre'], ['role', 'rôle dans la phrase'], ['personne', 'personne'], ['forme', 'forme'], ['sens', 'sens']]
+          const PERSONNE_RE = /^« (il|ils|elle|elles|tu|vous|nous|je|lui|eux|toi|moi|Il|Tu|Toi|Nous|Lui|Elle|Vous|Elles|Ils|Moi|Eux)( [^»]*)? »/
+          const familleDe = (chip: string): string => {
+            const c = chip.trim(), l = c.toLowerCase()
+            if (/^(le même mot|le mot du verset|comme au verset|repris|le même qu)/.test(l)) return 'renvoi'
+            if (PERSONNE_RE.test(c) || /personne du/.test(l)) return 'personne'
+            if (/^« .+ »$/.test(c) || /^[A-ZÀ-Ý][a-zà-ÿ'’-]+$/.test(c)) return 'sens'
+            if (/^forme |soudé|qualité durable|intensif/.test(l)) return 'forme'
+            if (/^(singulier|pluriel|duel|collectif)/.test(l)) return 'nombre'
+            if (/^(défini|indéfini)/.test(l)) return 'determination'
+            if (/^(passé|présent|au passif|en réponse à)|présent|passé|avenir|moment|temps|passi|accompli/.test(l)) return 'temps'
+            if (/^(féminin|masculin)|^sans genre/.test(l)) return 'genre'
+            if (/^(nom|verbe|pronom|préposition|lettre|particule|mot d|participe|adjectif|nombre)|celui qui (fait|subit) l'action|ceux qui font l'action|ce qui subit l'action|petit mot|mot qui|négation|invariable|conjonction|démonstratif|une lettre/.test(l)) return 'nature'
+            if (/^(complément|complète|sujet|objet|attribut|ce qui|ce que|ce dont|ce sur quoi|décrit|qualifie|dit d|suivi|suivie|porte|affirme|appuie|rendue? par|portée? par|premier|second|appelé|celui qu|le nom sur lequel|après|avec|ouvre|marque|demandé|posé|dit le lieu|pour |une partie|sans complément|d'appel|exception|nie|introduit|annonce|relie|joint|fait de)|collé|pronom/.test(l)) return 'role'
+            return 'autre'
+          }
+          const tete = (x: string) => x.replace(/\s*\(.*$/, '').replace(/\s*:.*$/, '').trim()
+          // la clause « c'est ce qui fait dire « X » » cite une pastille X (ses guillemets intérieurs écrits ‹ ›), en entier ou par sa tête : X prend la couleur de la pastille
+          const couleurPastille = (nature: string[]) => (q: string): string | undefined => {
+            const n = q.replace(/‹\s*/g, '« ').replace(/\s*›/g, ' »').trim()
+            const chip = nature.find(c => {
+              const x = c.trim(), x0 = tete(x)
+              if (x === n || x0 === n || x.replace(/\s*\(.*$/, '') === n) return true
+              const m = x.match(/^« ([^»]+) »/); if (m && m[1].trim() === n) return true
+              if (/^« .+ »$/.test(x0)) { const inner = x0.slice(2, -2); return inner === n || inner.split(/\s*»\s*,\s*«\s*/).includes(n) }
+              return false
+            })
+            return chip ? FAMILLES[familleDe(chip)].fg : undefined
+          }
           const isStructured = (p: string) => /\n(Nature|Découpage) :/.test('\n' + p)
           const demChip = (txt: string, root: boolean, key: string, small?: boolean) => (
             <span key={key} style={{ display: 'inline-block', padding: small ? '1px 9px' : '3px 11px', borderRadius: '8px', fontSize: small ? '12px' : '14px', fontWeight: 600, lineHeight: 1.6, color: root ? DEM_ROOT : DEM_ADD, background: root ? 'rgba(26,95,95,0.09)' : 'rgba(184,150,46,0.13)', border: `1px solid ${root ? 'rgba(26,95,95,0.45)' : 'rgba(184,150,46,0.5)'}` }}>{txt}</span>
@@ -534,7 +582,7 @@ export default function VersePanel({
                 </div>
                 {nature.length > 0 && (
                   <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
-                    {nature.map((n: string, i: number) => <span key={i} style={{ fontSize: '12.5px', padding: '2px 10px', borderRadius: '12px', background: 'rgba(184,150,46,0.07)', color: '#6B5B45', border: '1px solid rgba(184,150,46,0.3)', lineHeight: 1.6 }}>{n}</span>)}
+                    {nature.map((n: string, i: number) => { const f = FAMILLES[familleDe(n)]; return <span key={i} style={{ fontSize: '12.5px', padding: '2px 10px', borderRadius: '12px', background: f.bg, color: f.fg, border: `1px solid ${f.bd}`, lineHeight: 1.6 }}>{n}</span> })}
                   </div>
                 )}
                 {pieces.length > 0 && (
@@ -547,14 +595,14 @@ export default function VersePanel({
                     {rows.map((r, i) => (
                       <React.Fragment key={i}>
                         <span style={{ color: DEM_ADD, fontWeight: 600 }}>{r.label}</span>
-                        <span>{renderChunk(r.text, accentColor, j + '-r' + i)}</span>
+                        <span>{renderChunk(r.text, accentColor, j + '-r' + i, couleurPastille(nature))}</span>
                       </React.Fragment>
                     ))}
                   </div>
                 )}
                 {closings.map((c, i) => (
                   <p key={'k' + i} style={{ margin: 0, paddingTop: '8px', borderTop: '1px solid rgba(184,150,46,0.25)' }}>
-                    <span style={{ color: accentColor, fontWeight: 700 }}>{c.label} : </span>{renderChunk(c.text, accentColor, j + '-c' + i)}
+                    <span style={{ color: accentColor, fontWeight: 700 }}>{c.label} : </span>{renderChunk(c.text, accentColor, j + '-c' + i, couleurPastille(nature))}
                   </p>
                 ))}
                 {others.map((o: string, i: number) => <p key={'o' + i} style={{ margin: 0 }}>{renderChunk(o, accentColor, j + '-o' + i)}</p>)}
@@ -700,6 +748,12 @@ export default function VersePanel({
                     {demChip('racine', true, 'lg-r')}
                     {demChip("ce qui s'ajoute", false, 'lg-a')}
                     <span>le sens est dans les lettres de la racine ; les voyelles et ce qui s'ajoute font la forme du mot, pas son sens</span>
+                  </div>
+                )}
+                {structured && (
+                  <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '10px', fontSize: '11px', color: '#6B5B45' }}>
+                    <span>chaque pastille a sa couleur, et la ligne qui la justifie la reprend :</span>
+                    {LEGENDE_FAMILLES.map(([k, label]) => { const f = FAMILLES[k]; return <span key={k} style={{ fontSize: '10.5px', padding: '1px 8px', borderRadius: '10px', background: f.bg, color: f.fg, border: `1px solid ${f.bd}`, lineHeight: 1.6 }}>{label}</span> })}
                   </div>
                 )}
                 {structuredJ && (
